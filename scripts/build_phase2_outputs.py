@@ -196,6 +196,13 @@ SECTION_LOOKUP = {
 
 SCANNED_ALIASES = {"T2", "T3", "T9"}
 SECTION_STATUS_OVERRIDES = {
+    "C01.S01": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
+    "C01.S02": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
+    "C01.S03": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
+    "C01.S04": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
+    "C01.S05": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
+    "C01.S06": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
+    "C01.S07": ("chapter_validated", "Capitulo 1 redactado, compilado y validado"),
     "C09.S03": ("pilot_validated", "Capitulo piloto implementado y validado"),
     "C09.S04": ("pilot_validated", "Capitulo piloto implementado y validado"),
 }
@@ -503,8 +510,8 @@ def write_plan_editorial(rows: list[dict[str, str]]) -> None:
         [
             "## Prioridad de desarrollo",
             "",
-            "1. Capitulo piloto ya implementado: C09.S03-C09.S04 (recta tangente y normal).",
-            "2. Siguiente bloque recomendado: algebra (C01-C04) para aprovechar la continuidad de temas 1-4.",
+            "1. Implementado y validado: C01 completo (numeros reales) y el piloto C09.S03-C09.S04 (recta tangente y normal).",
+            "2. Siguiente bloque recomendado: C02-C04 para cerrar la Fase 4A de algebra.",
             "3. Despues: trigonometria y geometria (C05-C07).",
             "4. Cierre del bloque de analisis (C08-C09) con limites, continuidad y el resto de derivadas.",
             "",

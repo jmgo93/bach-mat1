@@ -1,9 +1,513 @@
 {
   "status": "passed",
-  "generated_on": "2026-07-10T19:11:07",
-  "exercise_count": 19,
-  "passed_count": 19,
+  "generated_on": "2026-07-10T20:06:35",
+  "exercise_count": 82,
+  "passed_count": 82,
   "results": [
+    {
+      "id": "EX-C01.S01-01",
+      "type": "classification_list",
+      "status": "passed",
+      "actual": "[Z, Q, I, N]",
+      "expected": "[Z, Q, I, N]",
+      "note": "Clasificacion del ejemplo resuelto del bloque."
+    },
+    {
+      "id": "GX-C01.S01-01",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Z",
+      "expected": "Z",
+      "note": "Guiado de entero oculto."
+    },
+    {
+      "id": "GX-C01.S01-02",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Q",
+      "expected": "Q",
+      "note": "Guiado con decimal periodico."
+    },
+    {
+      "id": "PX-C01.S01-01",
+      "type": "classification",
+      "status": "passed",
+      "actual": "I",
+      "expected": "I",
+      "note": "Practica de irracional."
+    },
+    {
+      "id": "PX-C01.S01-02",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Q",
+      "expected": "Q",
+      "note": "Practica de racional."
+    },
+    {
+      "id": "PX-C01.S01-03",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Z",
+      "expected": "Z",
+      "note": "Practica de entero."
+    },
+    {
+      "id": "PX-C01.S01-04",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Z",
+      "expected": "Z",
+      "note": "Practica con cero."
+    },
+    {
+      "id": "PX-C01.S01-05",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Z",
+      "expected": "Z",
+      "note": "Practica con simplificacion previa."
+    },
+    {
+      "id": "PX-C01.S01-06",
+      "type": "classification",
+      "status": "passed",
+      "actual": "Q",
+      "expected": "Q",
+      "note": "Practica con decimal exacto."
+    },
+    {
+      "id": "EX-C01.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "37/30",
+      "expected": "37/30",
+      "note": "Fraccion generatriz del ejemplo."
+    },
+    {
+      "id": "GX-C01.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2/11",
+      "expected": "2/11",
+      "note": "Periodico puro guiado."
+    },
+    {
+      "id": "GX-C01.S02-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "49/20",
+      "expected": "49/20",
+      "note": "Decimal exacto guiado."
+    },
+    {
+      "id": "PX-C01.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "13/18",
+      "expected": "13/18",
+      "note": "Practica con decimal mixto."
+    },
+    {
+      "id": "PX-C01.S02-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "32/9",
+      "expected": "32/9",
+      "note": "Practica con periodico puro."
+    },
+    {
+      "id": "PX-C01.S02-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/8",
+      "expected": "1/8",
+      "note": "Practica con decimal exacto."
+    },
+    {
+      "id": "PX-C01.S02-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "31/15",
+      "expected": "31/15",
+      "note": "Practica con decimal mixto."
+    },
+    {
+      "id": "PX-C01.S02-05",
+      "type": "decimal_type",
+      "status": "passed",
+      "actual": "exacto",
+      "expected": "exacto",
+      "note": "Tipo decimal para 7/40."
+    },
+    {
+      "id": "PX-C01.S02-06",
+      "type": "decimal_type",
+      "status": "passed",
+      "actual": "periodico_mixto",
+      "expected": "periodico_mixto",
+      "note": "Tipo decimal para 5/12."
+    },
+    {
+      "id": "EX-C01.S03-01",
+      "type": "interval_bundle",
+      "status": "passed",
+      "actual": "{A: Interval.Lopen(-3, 2), B: Interval(1, oo), intersection: Interval(1, 2), union: Interval.open(-3, oo)}",
+      "expected": "{A: Interval.Lopen(-3, 2), B: Interval(1, oo), intersection: Interval(1, 2), union: Interval.open(-3, oo)}",
+      "note": "Ejemplo de escritura y combinacion de intervalos."
+    },
+    {
+      "id": "GX-C01.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -1), Interval(4, oo))",
+      "expected": "Union(Interval.open(-oo, -1), Interval(4, oo))",
+      "note": "Guiado de union."
+    },
+    {
+      "id": "GX-C01.S03-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(1, 5)",
+      "expected": "Interval.open(1, 5)",
+      "note": "Guiado de interseccion."
+    },
+    {
+      "id": "PX-C01.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(-2, 3)",
+      "expected": "Interval.Lopen(-2, 3)",
+      "note": "Practica de intervalo acotado."
+    },
+    {
+      "id": "PX-C01.S03-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1}",
+      "expected": "{1}",
+      "note": "Practica con punto aislado."
+    },
+    {
+      "id": "PX-C01.S03-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Ropen(0, 8)",
+      "expected": "Interval.Ropen(0, 8)",
+      "note": "Practica de union contigua."
+    },
+    {
+      "id": "PX-C01.S03-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(2, oo)",
+      "expected": "Interval.open(2, oo)",
+      "note": "Practica de semirrecta abierta."
+    },
+    {
+      "id": "PX-C01.S03-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "EmptySet",
+      "expected": "EmptySet",
+      "note": "Practica con interseccion vacia."
+    },
+    {
+      "id": "PX-C01.S03-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-oo, 3)",
+      "expected": "Interval.open(-oo, 3)",
+      "note": "Practica con union total."
+    },
+    {
+      "id": "EX-C01.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-1, 4}",
+      "expected": "{-1, 4}",
+      "note": "Ejemplo resuelto de valor absoluto."
+    },
+    {
+      "id": "GX-C01.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-4, 2}",
+      "expected": "{-4, 2}",
+      "note": "Guiado con dos soluciones."
+    },
+    {
+      "id": "GX-C01.S04-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-2, 6)",
+      "expected": "Interval.open(-2, 6)",
+      "note": "Guiado con inecuacion."
+    },
+    {
+      "id": "PX-C01.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-7, 7}",
+      "expected": "{-7, 7}",
+      "note": "Practica con modulo simple."
+    },
+    {
+      "id": "PX-C01.S04-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-1/3, 1}",
+      "expected": "{-1/3, 1}",
+      "note": "Practica lineal."
+    },
+    {
+      "id": "PX-C01.S04-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-5, -3)",
+      "expected": "Interval(-5, -3)",
+      "note": "Practica con <=."
+    },
+    {
+      "id": "PX-C01.S04-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3, 7}",
+      "expected": "{3, 7}",
+      "note": "Distancia a un punto."
+    },
+    {
+      "id": "PX-C01.S04-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -2), Interval.open(-1, oo))",
+      "expected": "Union(Interval.open(-oo, -2), Interval.open(-1, oo))",
+      "note": "Practica con >."
+    },
+    {
+      "id": "PX-C01.S04-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1}",
+      "expected": "{1}",
+      "note": "Practica con modulo nulo."
+    },
+    {
+      "id": "EX-C01.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "10*sqrt(2)",
+      "expected": "10*sqrt(2)",
+      "note": "Ejemplo resuelto de radicales semejantes."
+    },
+    {
+      "id": "GX-C01.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0.25",
+      "expected": "1/4",
+      "note": "Guiado con exponente negativo."
+    },
+    {
+      "id": "GX-C01.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5*sqrt(3)",
+      "expected": "5*sqrt(3)",
+      "note": "Guiado de simplificacion."
+    },
+    {
+      "id": "PX-C01.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0.1111111111111111",
+      "expected": "1/9",
+      "note": "Practica con potencia negativa."
+    },
+    {
+      "id": "PX-C01.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3*sqrt(3)",
+      "expected": "3*sqrt(3)",
+      "note": "Practica con radicales."
+    },
+    {
+      "id": "PX-C01.S05-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "8",
+      "expected": "8",
+      "note": "Practica con exponente fraccionario."
+    },
+    {
+      "id": "PX-C01.S05-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Practica con raiz cubica."
+    },
+    {
+      "id": "PX-C01.S05-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4*sqrt(5)",
+      "expected": "4*sqrt(5)",
+      "note": "Practica con radicales semejantes."
+    },
+    {
+      "id": "PX-C01.S05-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "20",
+      "expected": "20",
+      "note": "Practica con producto dentro de raiz."
+    },
+    {
+      "id": "EX-C01.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "6 + 3*sqrt(5)",
+      "expected": "6 + 3*sqrt(5)",
+      "note": "Ejemplo resuelto de racionalizacion."
+    },
+    {
+      "id": "GX-C01.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5*sqrt(2)/2",
+      "expected": "5*sqrt(2)/2",
+      "note": "Guiado con monomio radical."
+    },
+    {
+      "id": "GX-C01.S06-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/(sqrt(2) + sqrt(3))",
+      "expected": "-sqrt(2) + sqrt(3)",
+      "note": "Guiado con conjugado."
+    },
+    {
+      "id": "PX-C01.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2*sqrt(7)/7",
+      "expected": "2*sqrt(7)/7",
+      "note": "Practica con radical simple."
+    },
+    {
+      "id": "PX-C01.S06-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "sqrt(5) + 3",
+      "expected": "sqrt(5) + 3",
+      "note": "Practica con conjugado."
+    },
+    {
+      "id": "PX-C01.S06-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2 - sqrt(3)",
+      "expected": "2 - sqrt(3)",
+      "note": "Practica con binomio."
+    },
+    {
+      "id": "PX-C01.S06-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "sqrt(3)",
+      "expected": "sqrt(3)",
+      "note": "Practica por cociente de radicales."
+    },
+    {
+      "id": "PX-C01.S06-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "7/6 + 7*sqrt(7)/6",
+      "expected": "7/6 + 7*sqrt(7)/6",
+      "note": "Practica con denominador de dos terminos."
+    },
+    {
+      "id": "PX-C01.S06-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-3*sqrt(2) - 3",
+      "expected": "-3*sqrt(2) - 3",
+      "note": "Practica con signo negativo final."
+    },
+    {
+      "id": "EX-C01.S07-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Ejemplo resuelto de logaritmos."
+    },
+    {
+      "id": "GX-C01.S07-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Guiado con diferencia de logaritmos."
+    },
+    {
+      "id": "GX-C01.S07-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "125",
+      "expected": "125",
+      "note": "Guiado pasando a forma exponencial."
+    },
+    {
+      "id": "PX-C01.S07-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-2",
+      "expected": "-2",
+      "note": "Practica base diez."
+    },
+    {
+      "id": "PX-C01.S07-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Practica con base cuatro."
+    },
+    {
+      "id": "PX-C01.S07-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Practica con logaritmo neperiano."
+    },
+    {
+      "id": "PX-C01.S07-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Practica sumando logaritmos."
+    },
+    {
+      "id": "PX-C01.S07-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Practica restando logaritmos."
+    },
+    {
+      "id": "PX-C01.S07-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "49",
+      "expected": "49",
+      "note": "Practica inversa de logaritmo."
+    },
     {
       "id": "EX-C09.S03-01",
       "type": "tangent_normal_at_point",

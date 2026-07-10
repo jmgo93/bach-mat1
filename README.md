@@ -8,9 +8,11 @@ respuestas breves a partir del corpus PDF disponible en `sources/`.
 - Fases 0, 1, 2 y 3 superadas para el corpus actual.
 - Corpus auditado: `8` PDF.
 - Cobertura inicial construida: `167` ejercicios fuente mapeados en `data/coverage_matrix.csv`.
-- Capitulo piloto implementado y validado: `C09.S03-C09.S04` sobre recta tangente y recta normal.
+- Capitulo ya implementado y validado en Fase 4A: `C01.S01-C01.S07`.
+- Capitulo piloto conservado y validado: `C09.S03-C09.S04` sobre recta tangente y recta normal.
+- Validaciones matematicas actuales: `82/82`.
 - Bloque pendiente por falta de corpus: probabilidad.
-- Siguiente desarrollo recomendado: bloque de algebra `C01-C04`.
+- Siguiente desarrollo recomendado: cerrar el bloque de algebra con `C02-C04`.
 
 ## Estructura
 
@@ -78,5 +80,5 @@ Significado de los comandos:
   fuera de esta iteracion.
 - Los temas 2, 3 y 9 son fuentes escaneadas sin extraccion textual fiable; su trazabilidad se ha
   construido con revision visual.
-- El libro completo no esta redactado todavia: la version actual deja aprobada la arquitectura y
-  el capitulo piloto para seguir con la Fase 4.
+- El libro completo no esta redactado todavia: la version actual deja aprobada la arquitectura,
+  el capitulo 1 completo y el piloto de derivadas para seguir con la Fase 4A.

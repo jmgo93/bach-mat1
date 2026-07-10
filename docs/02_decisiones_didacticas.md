@@ -14,10 +14,17 @@
    visual documentada, no en OCR ciego.
 7. El bloque de probabilidad queda fuera de esta iteracion por ausencia total de fuentes.
 8. La siguiente expansion editorial debe seguir el orden `C01-C04`, `C05-C07`, `C08-C09`.
+9. `C01` se toma como primer capitulo completo de la Fase 4A y fija el patron de redaccion para
+   `C02-C04`: teoria minima, metodo explicito, un ejemplo resuelto, dos guiados y practica corta
+   pero variada por seccion.
+10. La validacion matematica deja de ser solo piloto y pasa a cubrir ejemplo, guiados y practica
+    de `C01`, ademas de mantener la bateria ya existente de `C09`.
+11. La plantilla incorpora `\usetikzlibrary{babel}` para evitar conflictos entre `TikZ` y la
+    configuracion de `babel` en castellano al dibujar flechas y esquemas.
 
 ## Riesgos abiertos
 
-- El libro completo aun no esta redactado mas alla del capitulo piloto.
+- El libro completo aun no esta redactado mas alla de `C01` y del capitulo piloto de derivadas.
 - Si aparecen nuevos PDF en `sources/`, habra que regenerar auditoria y cobertura antes de
   extender la redaccion.
 - Las fuentes escaneadas pueden esconder matices de redaccion o pequenos detalles simbolicos; hay
