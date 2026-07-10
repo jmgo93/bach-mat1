@@ -1,0 +1,69 @@
+\chapter{Estado actual del proyecto}
+
+\section{Situación de arranque}
+
+El proyecto ya dispone de estructura, automatización básica y dos ediciones sincronizadas.
+La siguiente puerta de calidad exige un corpus real de PDF para poder auditar tipologías de
+ejercicios, detectar duplicados y construir la cobertura trazable.
+
+\begin{theorybox}{Condición necesaria para continuar}
+Sin fuentes no puede garantizarse la correspondencia entre los ejercicios originales y las
+secciones del cuaderno. Por ese motivo, la taxonomía presente en \texttt{data/exercise\_taxonomy.yml}
+se considera solo una hipótesis de trabajo.
+\end{theorybox}
+
+\begin{methodbox}{Qué ocurrirá cuando lleguen los PDF}
+\begin{enumerate}
+  \item Se ejecutará la auditoría con hashes SHA-256 y huella textual normalizada.
+  \item Se clasificará cada archivo por rol, nivel y fiabilidad de extracción.
+  \item Se construirá la matriz de cobertura \texttt{fuente -> tipo -> sección}.
+  \item Se aprobará un capítulo piloto antes de redactar el resto del libro.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{Comprobación de visibilidad entre ediciones}
+En la edición del alumnado deben aparecer la explicación general y las respuestas breves,
+pero no el desarrollo completo de la solución. En la edición del profesorado sí debe verse
+la solución completa. Esta sección actúa como prueba de esa separación editorial.
+\end{solvedexample}
+
+\begin{guidedexercise}{Identificar el bloqueo actual}
+Lee el estado del repositorio y contesta:
+\begin{enumerate}
+  \item ¿Existe algún PDF fuente en la carpeta?
+  \item ¿Puede superarse la Fase 1 sin ese corpus?
+\end{enumerate}
+\end{guidedexercise}
+
+\begin{shortanswer}{Ejercicio guiado}
+\begin{enumerate}
+  \item No, actualmente hay cero PDF localizados.
+  \item No, porque la auditoría quedaría vacía y sin tipologías trazables.
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{Ejercicio guiado}
+La búsqueda recursiva del proyecto no ha encontrado ningún archivo con extensión \texttt{.pdf}.
+Como la Fase 1 exige inventario, clasificación y detección de duplicados del corpus, la
+puerta de calidad no puede darse por superada mientras falten las fuentes originales.
+\end{fullsolution}
+
+\begin{commonerror}{Confundir plantilla con libro terminado}
+Un error razonable sería pensar que, porque ya existen archivos \texttt{tex/}, \texttt{docs/} y \texttt{data/},
+el cuaderno puede darse por hecho. No es así: la estructura técnica no sustituye la auditoría
+real del material de partida.
+\end{commonerror}
+
+\begin{challenge}{Siguiente acción útil}
+Incorpora los PDF originales a la carpeta raíz o a \texttt{sources/} y vuelve a ejecutar la
+auditoría. Solo entonces tendrá sentido ampliar la taxonomía y producir contenido didáctico
+definitivo.
+\end{challenge}
+
+\begin{selfcheck}
+\begin{itemize}
+  \item Sé localizar el bloqueo actual del proyecto.
+  \item Entiendo por qué no conviene inventar cobertura sin corpus.
+  \item Puedo reanudar el flujo con \texttt{scripts/tasks.ps1 audit}.
+\end{itemize}
+\end{selfcheck}

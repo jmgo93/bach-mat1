@@ -1,0 +1,62 @@
+\tcbset{
+  basebox/.style={
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black,
+    boxrule=0.6pt,
+    arc=1mm,
+    left=1mm,
+    right=1mm,
+    top=1mm,
+    bottom=1mm
+  }
+}
+
+\newcounter{examplectr}[chapter]
+\newcounter{exercisectr}[chapter]
+
+\NewDocumentEnvironment{theorybox}{m}
+  {\begin{tcolorbox}[basebox,title={Teoría mínima: #1}]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{methodbox}{m}
+  {\begin{tcolorbox}[basebox,title={Método: #1}]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{solvedexample}{m}
+  {\refstepcounter{examplectr}\begin{tcolorbox}[basebox,title={Ejemplo resuelto \thechapter.\theexamplectr: #1}]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{commonerror}{m}
+  {\begin{tcolorbox}[basebox,title={Error frecuente: #1},colback=gray!8]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{guidedexercise}{m}
+  {\refstepcounter{exercisectr}\begin{tcolorbox}[basebox,title={Ejercicio guiado \thechapter.\theexercisectr: #1}]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{exercise}{m}
+  {\refstepcounter{exercisectr}\begin{tcolorbox}[basebox,title={Ejercicio \thechapter.\theexercisectr: #1}]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{challenge}{m}
+  {\begin{tcolorbox}[basebox,title={Reto: #1},colback=gray!5]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{selfcheck}{}
+  {\begin{tcolorbox}[basebox,title={Mini-autoevaluación}]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{shortanswer}{m}
+  {\begin{tcolorbox}[basebox,title={Respuesta breve: #1},colback=gray!5]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{fullsolution}{m}
+  {\ifteacheredition\begin{tcolorbox}[basebox,title={Solución completa: #1},colback=gray!3]\fi}
+  {\ifteacheredition\end{tcolorbox}\fi}
+
+\NewDocumentEnvironment{extension}{m}
+  {\begin{tcolorbox}[basebox,title={Ampliación: #1},colback=gray!10]}
+  {\end{tcolorbox}}
+

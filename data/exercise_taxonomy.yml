@@ -1,0 +1,55 @@
+status: pending_corpus
+scope:
+  course: "1.º de Bachillerato"
+  language: "es-ES"
+generated_note: "Taxonomía provisional. No sustituye la auditoría real del corpus."
+chapters:
+  - id: C01
+    title: "Números reales y herramientas numéricas"
+    status: provisional
+    source_types: []
+  - id: C02
+    title: "Polinomios y fracciones algebraicas"
+    status: provisional
+    source_types: []
+  - id: C03
+    title: "Ecuaciones y sistemas"
+    status: provisional
+    source_types: []
+  - id: C04
+    title: "Inecuaciones"
+    status: provisional
+    source_types: []
+  - id: C05
+    title: "Trigonometría"
+    status: provisional
+    source_types: []
+  - id: C06
+    title: "Vectores"
+    status: provisional
+    source_types: []
+  - id: C07
+    title: "Geometría analítica y lugares geométricos"
+    status: provisional
+    source_types: []
+  - id: C08
+    title: "Funciones, límites, asíntotas y continuidad"
+    status: provisional
+    source_types: []
+  - id: C09
+    title: "Derivadas y aplicaciones"
+    status: provisional
+    source_types: []
+  - id: C10
+    title: "Probabilidad elemental y condicionada"
+    status: provisional
+    source_types: []
+  - id: C11
+    title: "Árboles, probabilidad total y Bayes"
+    status: provisional
+    source_types: []
+  - id: C12
+    title: "Repaso acumulativo"
+    status: provisional
+    source_types: []
+
