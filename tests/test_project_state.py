@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -32,13 +33,26 @@ class ProjectStateTests(unittest.TestCase):
             ],
         )
 
+    def test_coverage_matrix_is_not_empty(self) -> None:
+        target = ROOT / "data" / "coverage_matrix.csv"
+        with target.open("r", encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            rows = list(reader)
+        self.assertGreater(len(rows), 0)
+
     def test_validation_results_are_well_formed_json(self) -> None:
         target = ROOT / "data" / "validation_results.json"
         payload = json.loads(target.read_text(encoding="utf-8"))
-        self.assertEqual(payload["status"], "pending_corpus")
-        self.assertEqual(payload["exercise_count"], 0)
+        self.assertEqual(payload["status"], "passed")
+        self.assertGreater(payload["exercise_count"], 0)
+        self.assertEqual(payload["passed_count"], payload["exercise_count"])
+        self.assertTrue(all(item["status"] == "passed" for item in payload["results"]))
+
+    def test_source_manifest_detects_pdf_corpus(self) -> None:
+        target = ROOT / "data" / "source_manifest.yml"
+        text = target.read_text(encoding="utf-8")
+        self.assertRegex(text, r"pdf_files:\s+[1-9]\d*")
 
 
 if __name__ == "__main__":
     unittest.main()
-

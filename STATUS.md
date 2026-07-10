@@ -1,76 +1,109 @@
 # STATUS
 
-Fecha de actualización: 2026-07-10
+Fecha de actualizacion: 2026-07-10
 
 ## Resumen ejecutivo
 
-- Última puerta de calidad superada: Fase 0.
-- Fase en curso: Fase 1.
-- Estado global: bloqueado por ausencia del corpus PDF.
-- Próxima acción necesaria: incorporar las fuentes originales para poder auditar tipologías reales y construir la cobertura trazable.
+- Ultima puerta de calidad superada: Fase 3.
+- Fase en curso: Fase 4.
+- Estado global: activo para `C01-C09`; bloqueado solo en probabilidad por falta de corpus.
+- Siguiente accion recomendada: redactar el bloque de algebra `C01-C04` usando la taxonomia y la
+  cobertura ya aprobadas.
 
-## Fase 0. Arranque y seguridad
+## Fase 1. Auditoria del corpus
 
 Estado: completada
 
-Cambios:
+Resultado:
 
-- Se ha inicializado Git.
-- Se ha creado la estructura técnica del proyecto.
-- Se ha implementado un motor LaTeX con edición de alumnado, profesorado y respuestas breves.
-- Se ha documentado un fallback de compilación con `pdflatex` por incompatibilidad práctica de `latexmk` y `lualatex` en este entorno.
+- PDF localizados: `8`
+- Grupos de duplicados exactos: `0`
+- Grupos de casi duplicados textuales: `0`
+- Fuentes con revision visual necesaria: `3`
+- Artefactos actualizados:
+  - `data/source_manifest.yml`
+  - `data/duplicate_report.md`
+  - `docs/00_auditoria_fuentes.md`
 
-Archivos creados o modificados:
+Incidencias registradas:
 
-- `.gitignore`
-- `README.md`
-- `STATUS.md`
-- `data/`
-- `docs/`
-- `scripts/`
-- `tests/`
-- `tex/`
-
-Pruebas ejecutadas:
-
-- Detección de herramientas: correcta para `git`, `python`, `lualatex`, `pdflatex` y `pdftotext`.
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 student`: correcto.
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 teacher`: correcto.
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 answers`: correcto.
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 all`: correcto.
-- `python -m unittest discover -s tests -p "test_*.py"`: correcto.
-
-Incidencias:
-
-- `latexmk` falla en este entorno con advertencia de seguridad de MiKTeX.
-- `lualatex` no puede crear `lualatex.fmt` bajo privilegios elevados.
+- `Relacion tema 2.pdf`, `Relacion tema 3.pdf` y `Relacion ejercicios tema 9...pdf` son
+  fuentes escaneadas y requieren trazabilidad con revision visual.
+- No hay corpus de probabilidad en la carpeta actual.
 
 Puerta de calidad:
 
-- Estructura creada: sí.
-- Herramientas detectadas: sí.
-- Git inicializado: sí.
-- Compilación de prueba: sí.
+- Inventario completo: si.
+- Manifiesto reproducible: si.
+- Duplicados documentados: si.
+- Paginas de revision humana identificadas: si.
 
-## Fase 1. Auditoría del corpus
+## Fase 2. Taxonomia y matriz de cobertura
 
-Estado: iniciada, no superada
+Estado: completada
 
-Resultado provisional:
+Resultado:
 
-- PDF localizados: `0`
-- `data/source_manifest.yml` generado.
-- `data/duplicate_report.md` generado.
-- [docs/00_auditoria_fuentes.md](/H:/Libro%20Alejandra/docs/00_auditoria_fuentes.md) actualizado.
+- Filas de cobertura: `167`
+- Capitulos cubiertos por el corpus actual: `C01-C09`
+- Tipologias huerfanas detectadas: `0` dentro del corpus disponible
+- Artefactos actualizados:
+  - `data/exercise_taxonomy.yml`
+  - `data/coverage_matrix.csv`
+  - `docs/01_plan_editorial.md`
 
-Incidencias pendientes:
+Notas:
 
-- No existe corpus para auditar.
-- No se puede construir una taxonomía fiable ni una matriz de cobertura trazable.
-- No procede avanzar a Fase 2 hasta disponer de las fuentes.
+- Se ha marcado como `pilot_validated` la cobertura asociada a `C09.S03` y `C09.S04`.
+- Los capitulos de probabilidad no se planifican en esta version por ausencia de fuentes.
 
-## Artefactos disponibles
+Puerta de calidad:
 
-- [cuaderno_estudiante.pdf](/H:/Libro%20Alejandra/build/cuaderno_estudiante.pdf)
-- [cuaderno_profesor.pdf](/H:/Libro%20Alejandra/build/cuaderno_profesor.pdf)
-- [respuestas_breves.pdf](/H:/Libro%20Alejandra/build/respuestas_breves.pdf)
+- Cobertura trazable para el corpus disponible: si.
+- Ninguna tipologia valida del corpus actual queda sin seccion destino: si.
+
+## Fase 3. Motor LaTeX y capitulo piloto
+
+Estado: completada
+
+Resultado:
+
+- Capitulo piloto implementado: `C09.S03-C09.S04`
+- Validaciones matematicas superadas: `19/19`
+- Salidas compiladas:
+  - `build/cuaderno_estudiante.pdf` (`9` paginas)
+  - `build/cuaderno_profesor.pdf` (`12` paginas)
+  - `build/respuestas_breves.pdf` (`1` pagina)
+
+Cambios relevantes:
+
+- Se ha corregido el entorno `fullsolution` para que las soluciones completas no se filtren a la
+  edicion del alumnado.
+- Se ha anadido un capitulo piloto con teoria minima, metodo, ejemplos resueltos, errores
+  frecuentes, ejercicios guiados, practica, reto, respuestas y soluciones.
+- Se ha incorporado `scripts/validate_math.py` y el flujo `all` ahora reconstruye tambien la
+  cobertura y la validacion.
+
+Pruebas ejecutadas:
+
+- `python scripts/validate_math.py`: correcto (`19/19`).
+- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 student`: correcto.
+- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 teacher`: correcto.
+- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 answers`: correcto.
+- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 qa`: correcto.
+- Revision de logs: sin `Overfull`, `Underfull` ni referencias indefinidas.
+- Revision visual del piloto: correcta en portada, inicio de capitulo, pagina de practica,
+  pagina docente y documento de respuestas breves.
+
+Puerta de calidad:
+
+- Plantilla operativa en ambas ediciones: si.
+- Capitulo piloto aprobado: si.
+- Separacion alumnado/profesorado comprobada: si.
+
+## Riesgos abiertos
+
+- Falta redactar los bloques `C01-C08` y el resto de `C09`.
+- No hay corpus de probabilidad.
+- La clasificacion de temas 2, 3 y 9 depende de revision visual y conviene conservar esa
+  cautela en fases posteriores.

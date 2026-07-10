@@ -1,8 +1,109 @@
-generated_at: "2026-07-10T18:30:51"
+generated_at: "2026-07-10T19:10:36"
 root: "H:\\Libro Alejandra"
 totals:
-  pdf_files: 0
+  pdf_files: 8
   exact_duplicate_groups: 0
   text_duplicate_groups: 0
 files:
-  []
+  - path: "sources\\Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+    sha256: "ae773436b39080aa74eb9da403b4438608e8a5865445178dad62b40fefdcfbe6"
+    normalized_text_hash: null
+    page_count: 3
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      - 1
+      - 2
+      - 3
+    review_flags:
+      - "Sin extraccion fiable; puede requerir revision humana u OCR"
+  - path: "sources\\Relación ejercicios temas 6 y 7.pdf"
+    sha256: "a4336598bfdb49c5f1ed6b5887dafa5d1550be4fb87ecfdf540424c3ad837faa"
+    normalized_text_hash: "b71395ec6684b924eee7978d3d6b6a5184bb39294669ad46ad31d68043fac1bf"
+    page_count: 3
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      []
+    review_flags:
+      []
+  - path: "sources\\Relación tema 1.pdf"
+    sha256: "12a192cd93c38e2a9890697f9fed48c355074af153013e23f66c058acd72c844"
+    normalized_text_hash: "5f7831e8c3f0755c30cb52566ad05efe98b2c708f2d3c0e616372cbf253f3c04"
+    page_count: 6
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      []
+    review_flags:
+      []
+  - path: "sources\\Relación tema 2.pdf"
+    sha256: "8e0e9ecabb249372e1c3320f2a6bc083a01a43c9973be4a59e1d06fdf7f9ca56"
+    normalized_text_hash: null
+    page_count: 8
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+    review_flags:
+      - "Sin extraccion fiable; puede requerir revision humana u OCR"
+  - path: "sources\\Relación tema 3.pdf"
+    sha256: "1a003b64fb7d6858c1f6a50785f9f616bff02afb6f5971bb59d0e1e1e35952ec"
+    normalized_text_hash: null
+    page_count: 6
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    review_flags:
+      - "Sin extraccion fiable; puede requerir revision humana u OCR"
+  - path: "sources\\Relación Tema 4. Inecuaciones..pdf"
+    sha256: "0bb0b22f73dbfce121dde710560c6197b3a95b2cf19bd47d87ce70dc127cf188"
+    normalized_text_hash: "5b84a01fa3a7b622ef080d7fb52014e38d087275d02ec16482036baf531ae28b"
+    page_count: 2
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      []
+    review_flags:
+      []
+  - path: "sources\\Relación tema 5.pdf"
+    sha256: "59499a3a176667b4755f81fb80e0e6d4b74d63aeddbc454932f1e85d1d52d542"
+    normalized_text_hash: "4160dedfb07a739f58469d625d131dec5f5b5a2a81f2cd4d77306e570db8d9e4"
+    page_count: 4
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      []
+    review_flags:
+      []
+  - path: "sources\\Relación tema 8 (1).pdf"
+    sha256: "34a552c446236203870f93c313420687ac57a3f3b65b2ba4c5c48f2eb5144017"
+    normalized_text_hash: "fac94965965e06c1c3a7588d425f6744eec6e08f35584ff4be8b36e52d93dad7"
+    page_count: 4
+    role: "A. Relaciones primarias de ejercicios"
+    estimated_level: "1.º de Bachillerato o no determinado"
+    extraction_method: "PyMuPDF"
+    review_pages:
+      []
+    review_flags:
+      []

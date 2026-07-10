@@ -2,49 +2,64 @@
 
 Fecha: 2026-07-10
 
-## Estado del informe
+## Alcance
 
-Informe preliminar de arranque. La infraestructura se ha validado, pero no existe aún corpus PDF para una QA curricular completa.
+QA de la version con auditoria real del corpus, taxonomia inicial cerrada y capitulo piloto
+`C09.S03-C09.S04` implementado.
 
-## Métricas actuales
+## Metricas
 
-- Corpus auditado: `0` PDF
-- Páginas de `cuaderno_estudiante.pdf`: `4`
-- Páginas de `cuaderno_profesor.pdf`: `4`
-- Páginas de `respuestas_breves.pdf`: `1`
-- Ejemplos resueltos provisionales en la plantilla: `1`
-- Ejercicios guiados provisionales en la plantilla: `1`
-- Respuestas breves provisionales en la plantilla: `1`
-- Soluciones docentes provisionales en la plantilla: `1`
-- Ejemplos resueltos trazables al corpus: `0`
-- Ejercicios propuestos trazables al corpus: `0`
-- Soluciones docentes trazables al corpus: `0`
+- Corpus auditado: `8` PDF
+- Filas de cobertura: `167`
+- Fuentes con revision visual necesaria: `3`
+- Paginas de `cuaderno_estudiante.pdf`: `9`
+- Paginas de `cuaderno_profesor.pdf`: `12`
+- Paginas de `respuestas_breves.pdf`: `1`
+- Ejemplos resueltos del piloto: `2`
+- Ejercicios propuestos del piloto con respuesta breve: `17`
+- Ejercicios del piloto con solucion completa docente: `17`
+- Items validados en `data/validation_results.json`: `19`
+- Items validados correctamente: `19`
+
+## Cobertura por capitulo
+
+- `C01`: `35`
+- `C02`: `30`
+- `C03`: `11`
+- `C04`: `8`
+- `C05`: `16`
+- `C06`: `10`
+- `C07`: `28`
+- `C08`: `12`
+- `C09`: `17`
+
+## Revision tecnica
+
+- Compilacion completada sin errores LaTeX en las tres salidas.
+- No se detectan referencias indefinidas.
+- No se detectan avisos `Overfull` ni `Underfull` en los logs generados.
+- La validacion matematica pasa `19/19`.
+- Los tests de estado del proyecto pasan `4/4`.
+
+## Revision visual
+
+- Se renderizaron las paginas del piloto y de las salidas de respuestas.
+- Revision visual realizada sobre portada, apertura del capitulo, pagina de practica,
+  pagina docente con desarrollo y PDF de respuestas breves.
+- No se aprecian textos cortados, formulas invadiendo margenes ni soluciones completas filtradas
+  a la edicion del alumnado.
 
 ## Incidencias abiertas
 
-- Falta el corpus original.
-- No puede ejecutarse la revisión visual de páginas fuente.
-- No puede construirse aún una matriz de cobertura no vacía.
-- `latexmk` no es utilizable en este entorno.
-- `lualatex` no puede crear su formato bajo privilegios elevados; se usa `pdflatex` como fallback operativo.
+- No hay corpus de probabilidad.
+- El resto del libro sigue pendiente de redaccion; esta QA cubre solo la infraestructura, la
+  cobertura y el capitulo piloto.
+- Temas 2, 3 y 9 mantienen dependencia de revision visual por ser fuentes escaneadas.
 
-## Revisión de logs
+## Comandos usados
 
-- Compilación completada sin errores LaTeX.
-- No se han detectado referencias indefinidas.
-- No se han detectado avisos `Overfull` ni `Underfull` en la última reconstrucción completa.
-- Persisten mensajes de seguridad de MiKTeX al invocar `pdflatex` desde un entorno elevado; no afectan al PDF generado.
-
-## Cobertura por capítulo
-
-- Capítulo provisional `Estado actual del proyecto`: cobertura estructural interna `100 %`.
-- Cobertura curricular trazable al corpus: `0 %`, bloqueada por ausencia de fuentes.
-
-## Comandos previstos
-
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 all`
-- `python -m unittest discover -s tests -p "test_*.py"`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 audit`
+- `python scripts/build_phase2_outputs.py`
+- `python scripts/validate_math.py`
 - `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 student`
 - `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 teacher`
 - `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 answers`

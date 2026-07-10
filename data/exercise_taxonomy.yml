@@ -1,55 +1,1237 @@
-status: pending_corpus
-scope:
-  course: "1.º de Bachillerato"
-  language: "es-ES"
-generated_note: "Taxonomía provisional. No sustituye la auditoría real del corpus."
+status: "phase2_ready"
+generated_on: "2026-07-10"
+sources:
+  pdf_count: 8
+  review_required_files:
+    - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+    - "Relación tema 2.pdf"
+    - "Relación tema 3.pdf"
 chapters:
-  - id: C01
-    title: "Números reales y herramientas numéricas"
-    status: provisional
-    source_types: []
-  - id: C02
+  - id: "C01"
+    title: "Numeros reales y herramientas numericas"
+    section_count: 7
+    sections:
+      - id: "C01.S01"
+        title: "Clasificacion de numeros y conjuntos numericos"
+        level_band: "nuclear"
+        prerequisites:
+          - "reconocer naturales, enteros, racionales, irracionales y reales"
+        detected_types:
+          - "Clasificacion de numeros en conjuntos numericos"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e1 (p.1)"
+        planned_example_id: "EX-C01.S01-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C01.S01-01..08"
+      - id: "C01.S02"
+        title: "Decimales y fraccion generatriz"
+        level_band: "nuclear"
+        prerequisites:
+          - "identificar decimales exactos, periodicos y mixtos"
+          - "operar usando fracciones generatrices"
+        detected_types:
+          - "Decimales y fraccion generatriz"
+          - "Equivalencia de fracciones y razonamiento algebraico"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e2 (p.1)"
+          - "Relación tema 1.pdf:e3 (p.1)"
+          - "Relación tema 1.pdf:e4 (p.1)"
+          - "Relación tema 1.pdf:e5 (p.1)"
+          - "Relación tema 1.pdf:e16 (p.2)"
+        planned_example_id: "EX-C01.S02-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C01.S02-01..10"
+      - id: "C01.S03"
+        title: "Intervalos, union e interseccion"
+        level_band: "nuclear"
+        prerequisites:
+          - "traducir entre desigualdades, intervalos y representacion"
+        detected_types:
+          - "Intervalos, union e interseccion"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e8 (p.1)"
+          - "Relación tema 1.pdf:e9 (p.1)"
+          - "Relación tema 1.pdf:e10 (p.1)"
+          - "Relación tema 1.pdf:e11 (p.1)"
+          - "Relación tema 1.pdf:e12 (p.1)"
+          - "Relación tema 1.pdf:e13 (p.1)"
+        planned_example_id: "EX-C01.S03-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C01.S03-01..08"
+      - id: "C01.S04"
+        title: "Valor absoluto como distancia"
+        level_band: "nuclear"
+        prerequisites:
+          - "resolver igualdades e inecuaciones con valor absoluto"
+        detected_types:
+          - "Valor absoluto como distancia y restriccion"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e14 (p.2)"
+          - "Relación tema 1.pdf:e15 (p.2)"
+        planned_example_id: "EX-C01.S04-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C01.S04-01..08"
+      - id: "C01.S05"
+        title: "Potencias y radicales"
+        level_band: "nuclear"
+        prerequisites:
+          - "simplificar radicales"
+          - "usar exponentes fraccionarios"
+        detected_types:
+          - "Aplicaciones geometricas de radicales e irracionales"
+          - "Operaciones y simplificacion con potencias y radicales"
+          - "Potencias, exponentes fraccionarios y radicales"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e6 (p.1)"
+          - "Relación tema 1.pdf:e7 (p.1)"
+          - "Relación tema 1.pdf:e17 (p.3)"
+          - "Relación tema 1.pdf:e18 (p.3)"
+          - "Relación tema 1.pdf:e19 (p.3)"
+          - "Relación tema 1.pdf:e20 (p.3)"
+          - "Relación tema 1.pdf:e21 (p.3)"
+          - "Relación tema 1.pdf:e25 (p.4)"
+          - "Relación tema 1.pdf:e26 (p.4)"
+          - "Relación tema 1.pdf:e27 (p.4)"
+          - "Relación tema 1.pdf:e28 (p.4)"
+          - "Relación tema 1.pdf:e29 (p.4)"
+          - "Relación tema 1.pdf:e30 (p.4)"
+        planned_example_id: "EX-C01.S05-01"
+        planned_proposed_count: 12
+        planned_proposed_ids: "PX-C01.S05-01..12"
+      - id: "C01.S06"
+        title: "Racionalizacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "racionalizar monomios y binomios con conjugados"
+        detected_types:
+          - "Racionalizacion de expresiones"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e22 (p.3)"
+          - "Relación tema 1.pdf:e23 (p.3)"
+          - "Relación tema 1.pdf:e24 (p.3)"
+        planned_example_id: "EX-C01.S06-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C01.S06-01..08"
+      - id: "C01.S07"
+        title: "Logaritmos y propiedades operativas"
+        level_band: "nuclear"
+        prerequisites:
+          - "traducir entre forma exponencial y logaritmica"
+          - "operar con logaritmos"
+        detected_types:
+          - "Logaritmos y propiedades operativas"
+        source_files:
+          - "Relación tema 1.pdf"
+        source_refs:
+          - "Relación tema 1.pdf:e31 (p.6)"
+          - "Relación tema 1.pdf:e32 (p.6)"
+          - "Relación tema 1.pdf:e33 (p.6)"
+          - "Relación tema 1.pdf:e34 (p.6)"
+          - "Relación tema 1.pdf:e35 (p.6)"
+        planned_example_id: "EX-C01.S07-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C01.S07-01..08"
+  - id: "C02"
     title: "Polinomios y fracciones algebraicas"
-    status: provisional
-    source_types: []
-  - id: C03
+    section_count: 9
+    sections:
+      - id: "C02.S01"
+        title: "Valor numerico y lectura de polinomios"
+        level_band: "nuclear"
+        prerequisites:
+          - "sustituir y evaluar polinomios"
+        detected_types:
+          - "Valor numerico de un polinomio"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e1 (p.1)"
+        planned_example_id: "EX-C02.S01-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C02.S01-01..06"
+      - id: "C02.S02"
+        title: "Productos notables y operaciones con polinomios"
+        level_band: "nuclear"
+        prerequisites:
+          - "desarrollar y simplificar expresiones polinomicas"
+        detected_types:
+          - "Productos notables y desarrollo de polinomios"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e2 (p.1)"
+        planned_example_id: "EX-C02.S02-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C02.S02-01..10"
+      - id: "C02.S03"
+        title: "Division de polinomios"
+        level_band: "nuclear"
+        prerequisites:
+          - "dividir y comprobar cociente y resto"
+        detected_types:
+          - "Division de polinomios y comprobacion"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e3 (p.1)"
+          - "Relación tema 2.pdf:e4 (p.1)"
+        planned_example_id: "EX-C02.S03-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C02.S03-01..10"
+      - id: "C02.S04"
+        title: "Teorema del resto, del factor y parametros"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar divisibilidad y restos para hallar parametros"
+        detected_types:
+          - "Teorema del resto, divisibilidad y parametros"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e5 (p.1)"
+          - "Relación tema 2.pdf:e6 (p.1)"
+          - "Relación tema 2.pdf:e7 (p.1)"
+          - "Relación tema 2.pdf:e8 (p.1)"
+        planned_example_id: "EX-C02.S04-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C02.S04-01..08"
+      - id: "C02.S05"
+        title: "Raices y factorizacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "buscar raices enteras o racionales"
+          - "factorizar completamente"
+        detected_types:
+          - "Raices enteras y factorizacion"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e9 (p.2)"
+          - "Relación tema 2.pdf:e10 (p.2)"
+        planned_example_id: "EX-C02.S05-01"
+        planned_proposed_count: 12
+        planned_proposed_ids: "PX-C02.S05-01..12"
+      - id: "C02.S06"
+        title: "Fracciones algebraicas: dominio y simplificacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "detectar restricciones"
+          - "simplificar sin perder dominio"
+        detected_types:
+          - "Equivalencia de fracciones algebraicas"
+          - "Simplificacion de fracciones algebraicas por factorizacion"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e11 (p.2)"
+          - "Relación tema 2.pdf:e13 (p.3)"
+          - "Relación tema 2.pdf:e14 (p.3)"
+          - "Relación tema 2.pdf:e15 (p.3)"
+        planned_example_id: "EX-C02.S06-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C02.S06-01..10"
+      - id: "C02.S07"
+        title: "Suma y resta de fracciones algebraicas"
+        level_band: "nuclear"
+        prerequisites:
+          - "reducir a comun denominador y simplificar"
+        detected_types:
+          - "Suma y resta de fracciones algebraicas"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e12 (p.3)"
+          - "Relación tema 2.pdf:e20 (p.4)"
+        planned_example_id: "EX-C02.S07-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C02.S07-01..10"
+      - id: "C02.S08"
+        title: "Producto, cociente y operaciones combinadas"
+        level_band: "nuclear"
+        prerequisites:
+          - "operar expresiones racionales complejas"
+        detected_types:
+          - "Operaciones combinadas con fracciones algebraicas"
+          - "Operaciones combinadas y simplificacion avanzada de expresiones racionales"
+          - "Producto y simplificacion de expresiones racionales"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e16 (p.3)"
+          - "Relación tema 2.pdf:e18 (p.4)"
+          - "Relación tema 2.pdf:e21 (p.4)"
+          - "Relación tema 2.pdf:e22 (p.4)"
+          - "Relación tema 2.pdf:e23 (p.4)"
+          - "Relación tema 2.pdf:e24 (p.4)"
+          - "Relación tema 2.pdf:e25 (p.4)"
+          - "Relación tema 2.pdf:e26 (p.4)"
+          - "Relación tema 2.pdf:e27 (p.4)"
+          - "Relación tema 2.pdf:e28 (p.4)"
+          - "Relación tema 2.pdf:e29 (p.4)"
+          - "Relación tema 2.pdf:e30 (p.4)"
+        planned_example_id: "EX-C02.S08-01"
+        planned_proposed_count: 12
+        planned_proposed_ids: "PX-C02.S08-01..12"
+      - id: "C02.S09"
+        title: "Ecuaciones con fracciones algebraicas"
+        level_band: "nuclear"
+        prerequisites:
+          - "resolver ecuaciones racionales y comprobar restricciones"
+        detected_types:
+          - "Ecuaciones con fracciones algebraicas"
+          - "Ecuaciones racionales por reduccion a comun denominador"
+        source_files:
+          - "Relación tema 2.pdf"
+        source_refs:
+          - "Relación tema 2.pdf:e17 (p.4)"
+          - "Relación tema 2.pdf:e19 (p.4)"
+        planned_example_id: "EX-C02.S09-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C02.S09-01..10"
+  - id: "C03"
     title: "Ecuaciones y sistemas"
-    status: provisional
-    source_types: []
-  - id: C04
+    section_count: 11
+    sections:
+      - id: "C03.S01"
+        title: "Ecuaciones racionales"
+        level_band: "nuclear"
+        prerequisites:
+          - "eliminar denominadores con restricciones"
+        detected_types:
+          - "Ecuaciones racionales"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e1 (p.1)"
+        planned_example_id: "EX-C03.S01-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S01-01..10"
+      - id: "C03.S02"
+        title: "Ecuaciones irracionales"
+        level_band: "nuclear"
+        prerequisites:
+          - "aislar radicales y controlar soluciones extranas"
+        detected_types:
+          - "Ecuaciones irracionales"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e2 (p.1)"
+        planned_example_id: "EX-C03.S02-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S02-01..10"
+      - id: "C03.S03"
+        title: "Ecuaciones polinomicas reducibles"
+        level_band: "nuclear"
+        prerequisites:
+          - "factorizar, hacer sustituciones y clasificar"
+        detected_types:
+          []
+        source_files:
+          []
+        source_refs:
+          []
+        planned_example_id: "EX-C03.S03-01"
+        planned_proposed_count: 12
+        planned_proposed_ids: "PX-C03.S03-01..12"
+      - id: "C03.S04"
+        title: "Ecuaciones exponenciales"
+        level_band: "nuclear"
+        prerequisites:
+          - "igualar bases, sustituir o factorizar"
+        detected_types:
+          - "Ecuaciones exponenciales"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e4 (p.2)"
+        planned_example_id: "EX-C03.S04-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S04-01..10"
+      - id: "C03.S05"
+        title: "Ecuaciones logaritmicas"
+        level_band: "nuclear"
+        prerequisites:
+          - "imponer condiciones de existencia"
+        detected_types:
+          - "Ecuaciones logaritmicas"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e5 (p.2)"
+        planned_example_id: "EX-C03.S05-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S05-01..10"
+      - id: "C03.S06"
+        title: "Eleccion de metodo en ecuaciones mixtas"
+        level_band: "nuclear"
+        prerequisites:
+          - "reconocer el tipo y elegir tecnica"
+        detected_types:
+          - "Coleccion mixta de ecuaciones: racionales, polinomicas, irracionales, exponenciales y logaritmicas"
+          - "Reconocimiento de tipo de ecuacion y eleccion de metodo"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e3 (p.1)"
+          - "Relación tema 3.pdf:e6 (p.3)"
+        planned_example_id: "EX-C03.S06-01"
+        planned_proposed_count: 12
+        planned_proposed_ids: "PX-C03.S06-01..12"
+      - id: "C03.S07"
+        title: "Sistemas lineales 2x2"
+        level_band: "nuclear"
+        prerequisites:
+          - "resolver por sustitucion, igualacion o reduccion"
+        detected_types:
+          - "Sistemas lineales 2x2"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e7 (p.3)"
+        planned_example_id: "EX-C03.S07-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S07-01..10"
+      - id: "C03.S08"
+        title: "Sistemas lineales 3x3 y clasificacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "resolver con Gauss y analizar compatibilidad"
+        detected_types:
+          - "Sistemas lineales 3x3 y clasificacion"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e8 (p.4)"
+        planned_example_id: "EX-C03.S08-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S08-01..10"
+      - id: "C03.S09"
+        title: "Problemas de planteamiento con sistemas"
+        level_band: "nuclear"
+        prerequisites:
+          - "traducir enunciado a ecuaciones"
+        detected_types:
+          - "Problemas de planteamiento mediante sistemas"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e9 (p.4)"
+        planned_example_id: "EX-C03.S09-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S09-01..10"
+      - id: "C03.S10"
+        title: "Sistemas no lineales"
+        level_band: "nuclear"
+        prerequisites:
+          - "combinar ecuaciones polinomicas, racionales o geometricas"
+        detected_types:
+          - "Sistemas no lineales"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e10 (p.5)"
+        planned_example_id: "EX-C03.S10-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C03.S10-01..10"
+      - id: "C03.S11"
+        title: "Sistemas exponenciales y logaritmicos"
+        level_band: "nuclear"
+        prerequisites:
+          - "transformar y resolver sistemas no algebraicos"
+        detected_types:
+          - "Sistemas exponenciales y logaritmicos"
+        source_files:
+          - "Relación tema 3.pdf"
+        source_refs:
+          - "Relación tema 3.pdf:e11 (p.6)"
+        planned_example_id: "EX-C03.S11-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C03.S11-01..08"
+  - id: "C04"
     title: "Inecuaciones"
-    status: provisional
-    source_types: []
-  - id: C05
-    title: "Trigonometría"
-    status: provisional
-    source_types: []
-  - id: C06
+    section_count: 7
+    sections:
+      - id: "C04.S01"
+        title: "Inecuaciones lineales"
+        level_band: "nuclear"
+        prerequisites:
+          - "aislar la incognita y representar soluciones"
+        detected_types:
+          - "Inecuaciones lineales"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e1 (p.1)"
+        planned_example_id: "EX-C04.S01-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C04.S01-01..08"
+      - id: "C04.S02"
+        title: "Inecuaciones de segundo grado"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar factorizacion y estudio de signo"
+        detected_types:
+          - "Inecuaciones de segundo grado"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e2 (p.1)"
+        planned_example_id: "EX-C04.S02-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C04.S02-01..08"
+      - id: "C04.S03"
+        title: "Inecuaciones polinomicas"
+        level_band: "nuclear"
+        prerequisites:
+          - "tabla de signos con varios factores"
+        detected_types:
+          - "Inecuaciones polinomicas por tabla de signos"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e3 (p.1)"
+        planned_example_id: "EX-C04.S03-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C04.S03-01..08"
+      - id: "C04.S04"
+        title: "Inecuaciones racionales"
+        level_band: "nuclear"
+        prerequisites:
+          - "incluir puntos prohibidos y signos"
+        detected_types:
+          - "Inecuaciones racionales con puntos prohibidos"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e4 (p.1)"
+        planned_example_id: "EX-C04.S04-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C04.S04-01..08"
+      - id: "C04.S05"
+        title: "Sistemas de inecuaciones en una variable"
+        level_band: "nuclear"
+        prerequisites:
+          - "intersectar intervalos"
+        detected_types:
+          - "Sistemas de inecuaciones en una variable"
+          - "Sistemas de inecuaciones lineales en una variable"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e5 (p.1)"
+          - "Relación Tema 4. Inecuaciones..pdf:e6 (p.1)"
+        planned_example_id: "EX-C04.S05-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C04.S05-01..08"
+      - id: "C04.S06"
+        title: "Inecuaciones de dos variables y semiplanos"
+        level_band: "nuclear"
+        prerequisites:
+          - "representar recta frontera y semiplano"
+        detected_types:
+          - "Inecuaciones de dos variables y semiplanos"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e7 (p.2)"
+        planned_example_id: "EX-C04.S06-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C04.S06-01..06"
+      - id: "C04.S07"
+        title: "Sistemas de inecuaciones en el plano"
+        level_band: "nuclear"
+        prerequisites:
+          - "determinar la region solucion"
+        detected_types:
+          - "Sistemas de inecuaciones en el plano"
+        source_files:
+          - "Relación Tema 4. Inecuaciones..pdf"
+        source_refs:
+          - "Relación Tema 4. Inecuaciones..pdf:e8 (p.2)"
+        planned_example_id: "EX-C04.S07-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C04.S07-01..06"
+  - id: "C05"
+    title: "Trigonometria"
+    section_count: 8
+    sections:
+      - id: "C05.S01"
+        title: "Grados y radianes"
+        level_band: "nuclear"
+        prerequisites:
+          - "convertir unidades angulares"
+        detected_types:
+          - "Conversion entre grados y radianes"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e1 (p.1)"
+        planned_example_id: "EX-C05.S01-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C05.S01-01..06"
+      - id: "C05.S02"
+        title: "Razones trigonometricas en triangulos y poligonos"
+        level_band: "nuclear"
+        prerequisites:
+          - "resolver triángulos rectángulos en figuras"
+        detected_types:
+          - "Resolucion de figuras planas con razones trigonometricas"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e2 (p.1)"
+          - "Relación tema 5.pdf:e3 (p.1)"
+          - "Relación tema 5.pdf:e4 (p.1)"
+        planned_example_id: "EX-C05.S02-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C05.S02-01..10"
+      - id: "C05.S03"
+        title: "Angulos notables y reduccion al primer cuadrante"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar signos por cuadrantes"
+        detected_types:
+          - "Angulos notables y reduccion al primer cuadrante"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e6 (p.2)"
+        planned_example_id: "EX-C05.S03-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C05.S03-01..10"
+      - id: "C05.S04"
+        title: "Calculo de razones a partir de una razon conocida"
+        level_band: "nuclear"
+        prerequisites:
+          - "recuperar sen, cos y tg con cuadrantes"
+        detected_types:
+          - "Calculo de razones a partir de una razon conocida y cuadrantes"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e7 (p.2)"
+          - "Relación tema 5.pdf:e8 (p.2)"
+        planned_example_id: "EX-C05.S04-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C05.S04-01..10"
+      - id: "C05.S05"
+        title: "Identidades y transformaciones trigonométricas"
+        level_band: "nuclear"
+        prerequisites:
+          - "doble angulo y angulos relacionados"
+        detected_types:
+          - "Identidades y formulas de angulos relacionados"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e9 (p.2)"
+          - "Relación tema 5.pdf:e10 (p.2)"
+        planned_example_id: "EX-C05.S05-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C05.S05-01..08"
+      - id: "C05.S06"
+        title: "Ecuaciones trigonometricas"
+        level_band: "nuclear"
+        prerequisites:
+          - "expresar solucion general"
+        detected_types:
+          - "Ecuaciones trigonometricas"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e11 (p.3)"
+        planned_example_id: "EX-C05.S06-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C05.S06-01..10"
+      - id: "C05.S07"
+        title: "Resolucion de triangulos"
+        level_band: "nuclear"
+        prerequisites:
+          - "aplicar teorema del seno y coseno"
+        detected_types:
+          - "Resolucion de triangulos"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e12 (p.3)"
+        planned_example_id: "EX-C05.S07-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C05.S07-01..10"
+      - id: "C05.S08"
+        title: "Problemas contextualizados de trigonometria"
+        level_band: "nuclear"
+        prerequisites:
+          - "alturas, distancias y navegacion"
+        detected_types:
+          - "Aplicaciones con teorema del seno y del coseno"
+          - "Problemas de alturas y distancias"
+        source_files:
+          - "Relación tema 5.pdf"
+        source_refs:
+          - "Relación tema 5.pdf:e5 (p.1)"
+          - "Relación tema 5.pdf:e13 (p.4)"
+          - "Relación tema 5.pdf:e14 (p.4)"
+          - "Relación tema 5.pdf:e15 (p.4)"
+          - "Relación tema 5.pdf:e16 (p.4)"
+        planned_example_id: "EX-C05.S08-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C05.S08-01..08"
+  - id: "C06"
     title: "Vectores"
-    status: provisional
-    source_types: []
-  - id: C07
-    title: "Geometría analítica y lugares geométricos"
-    status: provisional
-    source_types: []
-  - id: C08
-    title: "Funciones, límites, asíntotas y continuidad"
-    status: provisional
-    source_types: []
-  - id: C09
+    section_count: 6
+    sections:
+      - id: "C06.S01"
+        title: "Bases y dependencia en R2"
+        level_band: "nuclear"
+        prerequisites:
+          - "comprobar si dos vectores forman base"
+        detected_types:
+          - "Bases y dependencia en R2"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e1 (p.1)"
+        planned_example_id: "EX-C06.S01-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C06.S01-01..06"
+      - id: "C06.S02"
+        title: "Operaciones con vectores"
+        level_band: "nuclear"
+        prerequisites:
+          - "sumar, restar y combinar linealmente"
+        detected_types:
+          - "Operaciones con vectores"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e2 (p.1)"
+        planned_example_id: "EX-C06.S02-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C06.S02-01..08"
+      - id: "C06.S03"
+        title: "Modulo, argumento y vectores unitarios"
+        level_band: "nuclear"
+        prerequisites:
+          - "calcular modulo, argumento y condiciones de norma"
+        detected_types:
+          - "Modulo y argumento de un vector"
+          - "Vectores unitarios y condiciones de modulo"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e3 (p.1)"
+          - "Relación ejercicios temas 6 y 7.pdf:e6 (p.1)"
+        planned_example_id: "EX-C06.S03-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C06.S03-01..08"
+      - id: "C06.S04"
+        title: "Producto escalar y angulo entre vectores"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar el producto escalar para angulos y perpendicularidad"
+        detected_types:
+          - "Producto escalar y angulo entre vectores"
+          - "Producto escalar, perpendicularidad y angulos entre vectores"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e4 (p.1)"
+          - "Relación ejercicios temas 6 y 7.pdf:e8 (p.1)"
+          - "Relación ejercicios temas 6 y 7.pdf:e9 (p.1)"
+          - "Relación ejercicios temas 6 y 7.pdf:e10 (p.1)"
+        planned_example_id: "EX-C06.S04-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C06.S04-01..10"
+      - id: "C06.S05"
+        title: "Paralelismo, perpendicularidad y alineacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar proporcionalidad y determinantes"
+        detected_types:
+          - "Alineacion de puntos"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e5 (p.1)"
+        planned_example_id: "EX-C06.S05-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C06.S05-01..08"
+      - id: "C06.S06"
+        title: "Construcciones con vectores y paralelogramos"
+        level_band: "nuclear"
+        prerequisites:
+          - "hallar puntos a partir de relaciones vectoriales"
+        detected_types:
+          - "Construcciones con paralelogramos"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e7 (p.1)"
+        planned_example_id: "EX-C06.S06-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C06.S06-01..08"
+  - id: "C07"
+    title: "Geometria analitica y lugares geometricos"
+    section_count: 10
+    sections:
+      - id: "C07.S01"
+        title: "Ecuaciones de la recta y vectores asociados"
+        level_band: "nuclear"
+        prerequisites:
+          - "pasar entre formas de la recta"
+        detected_types:
+          - "Ecuaciones de la recta y vectores director y normal"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e11 (p.1)"
+          - "Relación ejercicios temas 6 y 7.pdf:e12 (p.1)"
+          - "Relación ejercicios temas 6 y 7.pdf:e13 (p.1)"
+        planned_example_id: "EX-C07.S01-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C07.S01-01..10"
+      - id: "C07.S02"
+        title: "Problemas con parametros en rectas"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar datos de paso por punto o direccion"
+        detected_types:
+          - "Problemas con parametros en rectas"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e14 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e15 (p.2)"
+        planned_example_id: "EX-C07.S02-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C07.S02-01..08"
+      - id: "C07.S03"
+        title: "Simetrias respecto de punto y recta"
+        level_band: "nuclear"
+        prerequisites:
+          - "hallar puntos simetricos"
+        detected_types:
+          - "Simetrias respecto de punto y recta"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e17 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e18 (p.2)"
+        planned_example_id: "EX-C07.S03-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C07.S03-01..06"
+      - id: "C07.S04"
+        title: "Posicion relativa de rectas"
+        level_band: "nuclear"
+        prerequisites:
+          - "determinar si son secantes, paralelas o coincidentes"
+        detected_types:
+          - "Posicion relativa de rectas e intersecciones"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e20 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e21 (p.2)"
+        planned_example_id: "EX-C07.S04-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C07.S04-01..08"
+      - id: "C07.S05"
+        title: "Rectas especiales por un punto"
+        level_band: "nuclear"
+        prerequisites:
+          - "paralelas, perpendiculares y bisectrices"
+        detected_types:
+          - "Rectas especiales por un punto"
+          - "Rectas paralelas y perpendiculares por un punto"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e16 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e22 (p.2)"
+        planned_example_id: "EX-C07.S05-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C07.S05-01..08"
+      - id: "C07.S06"
+        title: "Distancias y angulos entre rectas"
+        level_band: "nuclear"
+        prerequisites:
+          - "distancia punto-recta, recta-recta y angulo"
+        detected_types:
+          - "Distancias y angulos entre rectas"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e24 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e25 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e26 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e27 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e28 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e29 (p.2)"
+        planned_example_id: "EX-C07.S06-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C07.S06-01..10"
+      - id: "C07.S07"
+        title: "Poligonos y areas con coordenadas"
+        level_band: "nuclear"
+        prerequisites:
+          - "intersecciones, vertices y areas"
+        detected_types:
+          - "Construccion de paralelogramos a partir de rectas"
+          - "Vertices y area de triangulos definidos por rectas"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e19 (p.2)"
+          - "Relación ejercicios temas 6 y 7.pdf:e23 (p.2)"
+        planned_example_id: "EX-C07.S07-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C07.S07-01..10"
+      - id: "C07.S08"
+        title: "Medianas, alturas y mediatrices"
+        level_band: "nuclear"
+        prerequisites:
+          - "construir rectas notables del triangulo"
+        detected_types:
+          - "Medianas, alturas y mediatrices"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e30 (p.3)"
+          - "Relación ejercicios temas 6 y 7.pdf:e31 (p.3)"
+          - "Relación ejercicios temas 6 y 7.pdf:e32 (p.3)"
+          - "Relación ejercicios temas 6 y 7.pdf:e33 (p.3)"
+        planned_example_id: "EX-C07.S08-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C07.S08-01..08"
+      - id: "C07.S09"
+        title: "Bisectrices, ortocentro y lugares geometricos"
+        level_band: "nuclear"
+        prerequisites:
+          - "equidistancia y centros"
+        detected_types:
+          - "Bisectrices, ortocentro y lugares geometricos"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e34 (p.3)"
+          - "Relación ejercicios temas 6 y 7.pdf:e35 (p.3)"
+          - "Relación ejercicios temas 6 y 7.pdf:e36 (p.3)"
+        planned_example_id: "EX-C07.S09-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C07.S09-01..08"
+      - id: "C07.S10"
+        title: "Condiciones geometricas combinadas"
+        level_band: "nuclear"
+        prerequisites:
+          - "compatibilidad en triángulos isosceles y polígonos"
+        detected_types:
+          - "Condiciones geometricas combinadas"
+        source_files:
+          - "Relación ejercicios temas 6 y 7.pdf"
+        source_refs:
+          - "Relación ejercicios temas 6 y 7.pdf:e37 (p.3)"
+          - "Relación ejercicios temas 6 y 7.pdf:e38 (p.3)"
+        planned_example_id: "EX-C07.S10-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C07.S10-01..08"
+  - id: "C08"
+    title: "Limites, continuidad y asintotas"
+    section_count: 11
+    sections:
+      - id: "C08.S01"
+        title: "Dominio de funciones"
+        level_band: "nuclear"
+        prerequisites:
+          - "imponer restricciones en racionales, radicales y logaritmos"
+        detected_types:
+          - "Dominio de funciones"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e1 (p.1)"
+        planned_example_id: "EX-C08.S01-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C08.S01-01..10"
+      - id: "C08.S02"
+        title: "Lectura de graficas"
+        level_band: "nuclear"
+        prerequisites:
+          - "extraer informacion cualitativa de una grafica"
+        detected_types:
+          - "Lectura e interpretacion de graficas"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e2 (p.2)"
+        planned_example_id: "EX-C08.S02-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C08.S02-01..06"
+      - id: "C08.S03"
+        title: "Limites basicos y laterales"
+        level_band: "nuclear"
+        prerequisites:
+          - "sustitucion directa, laterales y casos sencillos"
+        detected_types:
+          - "Limites basicos, laterales y en el infinito"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e3 (p.2)"
+        planned_example_id: "EX-C08.S03-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C08.S03-01..10"
+      - id: "C08.S04"
+        title: "Limites en el infinito"
+        level_band: "nuclear"
+        prerequisites:
+          - "comparacion de grados y crecimiento"
+        detected_types:
+          []
+        source_files:
+          []
+        source_refs:
+          []
+        planned_example_id: "EX-C08.S04-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C08.S04-01..08"
+      - id: "C08.S05"
+        title: "Indeterminaciones por factorizacion y racionalizacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "resolver limites no directos"
+        detected_types:
+          []
+        source_files:
+          []
+        source_refs:
+          []
+        planned_example_id: "EX-C08.S05-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C08.S05-01..10"
+      - id: "C08.S06"
+        title: "Asintotas"
+        level_band: "nuclear"
+        prerequisites:
+          - "verticales, horizontales y oblicuas"
+        detected_types:
+          - "Asintotas de funciones"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e4 (p.3)"
+        planned_example_id: "EX-C08.S06-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C08.S06-01..08"
+      - id: "C08.S07"
+        title: "Continuidad y discontinuidades"
+        level_band: "nuclear"
+        prerequisites:
+          - "clasificar discontinuidades"
+        detected_types:
+          - "Continuidad y clasificacion de discontinuidades"
+          - "Continuidad y discontinuidades con representacion"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e5 (p.3)"
+          - "Relación tema 8 (1).pdf:e7 (p.3)"
+        planned_example_id: "EX-C08.S07-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C08.S07-01..10"
+      - id: "C08.S08"
+        title: "Funciones a trozos y representacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "estudiar continuidad y dibujar"
+        detected_types:
+          - "Funciones a trozos: continuidad y representacion"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e6 (p.3)"
+        planned_example_id: "EX-C08.S08-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C08.S08-01..08"
+      - id: "C08.S09"
+        title: "Continuidad con parametros"
+        level_band: "nuclear"
+        prerequisites:
+          - "hallar parametros para continuidad"
+        detected_types:
+          - "Continuidad con parametros"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e8 (p.4)"
+        planned_example_id: "EX-C08.S09-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C08.S09-01..08"
+      - id: "C08.S10"
+        title: "Modelos de evolucion a largo plazo"
+        level_band: "nuclear"
+        prerequisites:
+          - "interpretar asintotas y valores iniciales"
+        detected_types:
+          - "Modelo de evolucion a largo plazo"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e9 (p.4)"
+        planned_example_id: "EX-C08.S10-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C08.S10-01..06"
+      - id: "C08.S11"
+        title: "Ampliacion y estilo EBAU en limites y continuidad"
+        level_band: "ampliacion_ebau"
+        prerequisites:
+          - "aplicar tecnicas en items de examen"
+        detected_types:
+          - "Selectividad en limites y continuidad"
+        source_files:
+          - "Relación tema 8 (1).pdf"
+        source_refs:
+          - "Relación tema 8 (1).pdf:e10 (p.4)"
+          - "Relación tema 8 (1).pdf:e11 (p.4)"
+          - "Relación tema 8 (1).pdf:e12 (p.4)"
+        planned_example_id: "EX-C08.S11-01"
+        planned_proposed_count: 6
+        planned_proposed_ids: "PX-C08.S11-01..06"
+  - id: "C09"
     title: "Derivadas y aplicaciones"
-    status: provisional
-    source_types: []
-  - id: C10
-    title: "Probabilidad elemental y condicionada"
-    status: provisional
-    source_types: []
-  - id: C11
-    title: "Árboles, probabilidad total y Bayes"
-    status: provisional
-    source_types: []
-  - id: C12
-    title: "Repaso acumulativo"
-    status: provisional
-    source_types: []
-
+    section_count: 8
+    sections:
+      - id: "C09.S01"
+        title: "Reglas de derivacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "potencias, producto, cociente y cadena"
+        detected_types:
+          - "Calculo de derivadas por reglas operativas"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e1 (p.1)"
+        planned_example_id: "EX-C09.S01-01"
+        planned_proposed_count: 12
+        planned_proposed_ids: "PX-C09.S01-01..12"
+      - id: "C09.S02"
+        title: "Monotonia, extremos, curvatura e inflexion"
+        level_band: "nuclear"
+        prerequisites:
+          - "usar primera y segunda derivada"
+        detected_types:
+          - "Monotonia, extremos, curvatura e inflexion"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e2 (p.1)"
+        planned_example_id: "EX-C09.S02-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C09.S02-01..10"
+      - id: "C09.S03"
+        title: "Recta tangente y recta normal en un punto"
+        level_band: "nuclear"
+        prerequisites:
+          - "hallar pendiente y ecuaciones"
+        detected_types:
+          - "Recta tangente en un punto"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e3 (p.1)"
+        planned_example_id: "EX-C09.S03-01"
+        planned_proposed_count: 10
+        planned_proposed_ids: "PX-C09.S03-01..10"
+      - id: "C09.S04"
+        title: "Tangente con pendiente dada o paralela a una recta"
+        level_band: "nuclear"
+        prerequisites:
+          - "imponer condicion sobre la derivada"
+        detected_types:
+          - "Tangente con pendiente dada o paralela a una recta"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e4 (p.1)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e5 (p.1)"
+        planned_example_id: "EX-C09.S04-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C09.S04-01..08"
+      - id: "C09.S05"
+        title: "Problemas con parametros en derivadas"
+        level_band: "nuclear"
+        prerequisites:
+          - "forzar extremos, inflexiones o tangencias"
+        detected_types:
+          - "Problemas con parametros en derivadas"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e8 (p.2)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e9 (p.2)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e10 (p.2)"
+        planned_example_id: "EX-C09.S05-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C09.S05-01..08"
+      - id: "C09.S06"
+        title: "Derivabilidad de funciones a trozos"
+        level_band: "nuclear"
+        prerequisites:
+          - "compatibilizar continuidad y derivabilidad"
+        detected_types:
+          - "Derivabilidad de funciones a trozos"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e11 (p.2)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e12 (p.2)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e13 (p.2)"
+        planned_example_id: "EX-C09.S06-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C09.S06-01..08"
+      - id: "C09.S07"
+        title: "Optimizacion"
+        level_band: "nuclear"
+        prerequisites:
+          - "modelizar y optimizar en contexto"
+        detected_types:
+          - "Optimizacion"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e14 (p.3)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e15 (p.3)"
+        planned_example_id: "EX-C09.S07-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C09.S07-01..08"
+      - id: "C09.S08"
+        title: "Ampliacion y selectividad en derivadas"
+        level_band: "ampliacion_ebau"
+        prerequisites:
+          - "estudios globales y items EBAU"
+        detected_types:
+          - "Selectividad en derivadas y aplicaciones"
+          - "Selectividad: estudio global, tangente y normal"
+        source_files:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf"
+        source_refs:
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e6 (p.1)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e7 (p.1)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e16 (p.3)"
+          - "Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf:e17 (p.3)"
+        planned_example_id: "EX-C09.S08-01"
+        planned_proposed_count: 8
+        planned_proposed_ids: "PX-C09.S08-01..08"

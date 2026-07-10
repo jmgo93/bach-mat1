@@ -1,7 +1,380 @@
 {
-  "status": "pending_corpus",
-  "generated_on": "2026-07-10",
-  "exercise_count": 0,
-  "results": []
+  "status": "passed",
+  "generated_on": "2026-07-10T19:11:07",
+  "exercise_count": 19,
+  "passed_count": 19,
+  "results": [
+    {
+      "id": "EX-C09.S03-01",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "3",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "4",
+        "intercept": "-6"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "-1/4",
+        "intercept": "27/4"
+      },
+      "note": "Ejemplo resuelto principal del piloto."
+    },
+    {
+      "id": "GX-C09.S03-01",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "-1",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "-2",
+        "intercept": "0"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "1/2",
+        "intercept": "5/2"
+      },
+      "note": "Guiado con pendiente negativa."
+    },
+    {
+      "id": "GX-C09.S03-02",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "1",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "0",
+        "intercept": "-2"
+      },
+      "normal": {
+        "kind": "vertical",
+        "x": "1"
+      },
+      "note": "Guiado con tangente horizontal y normal vertical."
+    },
+    {
+      "id": "PX-C09.S03-01",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "2",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "6",
+        "intercept": "-4"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "-1/6",
+        "intercept": "25/3"
+      },
+      "note": "Practica con parabola."
+    },
+    {
+      "id": "PX-C09.S03-02",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "3",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "-1/2",
+        "intercept": "7/2"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "2",
+        "intercept": "-4"
+      },
+      "note": "Practica con funcion racional."
+    },
+    {
+      "id": "PX-C09.S03-03",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "3",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "1/4",
+        "intercept": "5/4"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "-4",
+        "intercept": "14"
+      },
+      "note": "Practica con funcion radical."
+    },
+    {
+      "id": "PX-C09.S03-04",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "0",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "1",
+        "intercept": "1"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "-1",
+        "intercept": "1"
+      },
+      "note": "Practica con exponencial."
+    },
+    {
+      "id": "PX-C09.S03-05",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "1",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "1",
+        "intercept": "-1"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "-1",
+        "intercept": "1"
+      },
+      "note": "Practica con logaritmo."
+    },
+    {
+      "id": "PX-C09.S03-06",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "0",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "0",
+        "intercept": "0"
+      },
+      "normal": {
+        "kind": "vertical",
+        "x": "0"
+      },
+      "note": "Practica con origen e inflexion."
+    },
+    {
+      "id": "EX-C09.S04-01",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "9",
+      "points": [
+        {
+          "x": "-2",
+          "y": "-1"
+        },
+        {
+          "x": "2",
+          "y": "3"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "9",
+          "intercept": "17"
+        },
+        {
+          "kind": "slope_intercept",
+          "slope": "9",
+          "intercept": "-15"
+        }
+      ],
+      "note": "Ejemplo resuelto con dos tangentes paralelas a la misma recta."
+    },
+    {
+      "id": "GX-C09.S04-01",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "2",
+      "points": [
+        {
+          "x": "3",
+          "y": "-3"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "2",
+          "intercept": "-9"
+        }
+      ],
+      "note": "Guiado con una unica solucion."
+    },
+    {
+      "id": "GX-C09.S04-02",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "1/4",
+      "points": [
+        {
+          "x": "0",
+          "y": "2"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "1/4",
+          "intercept": "2"
+        }
+      ],
+      "note": "Guiado con funcion radical."
+    },
+    {
+      "id": "PX-C09.S04-01",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "4",
+      "points": [
+        {
+          "x": "2",
+          "y": "5"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "4",
+          "intercept": "-3"
+        }
+      ],
+      "note": "Practica con tangente dada por pendiente."
+    },
+    {
+      "id": "PX-C09.S04-02",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "12",
+      "points": [
+        {
+          "x": "-2",
+          "y": "-8"
+        },
+        {
+          "x": "2",
+          "y": "8"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "12",
+          "intercept": "16"
+        },
+        {
+          "kind": "slope_intercept",
+          "slope": "12",
+          "intercept": "-16"
+        }
+      ],
+      "note": "Practica con dos tangentes simetricas."
+    },
+    {
+      "id": "PX-C09.S04-03",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "1",
+      "points": [
+        {
+          "x": "1",
+          "y": "0"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "1",
+          "intercept": "-1"
+        }
+      ],
+      "note": "Practica con logaritmo."
+    },
+    {
+      "id": "PX-C09.S04-04",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "exp(2)",
+      "points": [
+        {
+          "x": "2",
+          "y": "exp(2)"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "exp(2)",
+          "intercept": "-exp(2)"
+        }
+      ],
+      "note": "Practica con exponencial."
+    },
+    {
+      "id": "PX-C09.S04-05",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "0",
+      "points": [
+        {
+          "x": "-1",
+          "y": "-2"
+        },
+        {
+          "x": "1",
+          "y": "2"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "0",
+          "intercept": "-2"
+        },
+        {
+          "kind": "slope_intercept",
+          "slope": "0",
+          "intercept": "2"
+        }
+      ],
+      "note": "Practica con tangentes horizontales."
+    },
+    {
+      "id": "PX-C09.S04-06",
+      "type": "parameter_and_tangent",
+      "status": "passed",
+      "parameter": {
+        "a": "3"
+      },
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "5",
+        "intercept": "-1"
+      },
+      "note": "Caso con parametro para imponer paralelismo en x=1."
+    },
+    {
+      "id": "CH-C09-01",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "0",
+      "points": [
+        {
+          "x": "3",
+          "y": "14"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "0",
+          "intercept": "14"
+        }
+      ],
+      "note": "Reto de transferencia con interpretacion fisica."
+    }
+  ]
 }
-

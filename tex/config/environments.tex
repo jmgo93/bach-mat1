@@ -17,11 +17,11 @@
 \newcounter{exercisectr}[chapter]
 
 \NewDocumentEnvironment{theorybox}{m}
-  {\begin{tcolorbox}[basebox,title={Teoría mínima: #1}]}
+  {\begin{tcolorbox}[basebox,title={Teoria minima: #1}]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{methodbox}{m}
-  {\begin{tcolorbox}[basebox,title={Método: #1}]}
+  {\begin{tcolorbox}[basebox,title={Metodo: #1}]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{solvedexample}{m}
@@ -45,18 +45,17 @@
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{selfcheck}{}
-  {\begin{tcolorbox}[basebox,title={Mini-autoevaluación}]}
+  {\begin{tcolorbox}[basebox,title={Mini-autoevaluacion}]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{shortanswer}{m}
   {\begin{tcolorbox}[basebox,title={Respuesta breve: #1},colback=gray!5]}
   {\end{tcolorbox}}
 
-\NewDocumentEnvironment{fullsolution}{m}
-  {\ifteacheredition\begin{tcolorbox}[basebox,title={Solución completa: #1},colback=gray!3]\fi}
-  {\ifteacheredition\end{tcolorbox}\fi}
+\NewDocumentEnvironment{fullsolution}{m +b}
+  {\ifteacheredition\begin{tcolorbox}[basebox,title={Solucion completa: #1},colback=gray!3]#2\end{tcolorbox}\fi}
+  {}
 
 \NewDocumentEnvironment{extension}{m}
-  {\begin{tcolorbox}[basebox,title={Ampliación: #1},colback=gray!10]}
+  {\begin{tcolorbox}[basebox,title={Ampliacion: #1},colback=gray!10]}
   {\end{tcolorbox}}
-

@@ -1,56 +1,82 @@
-# Cuaderno de repaso de Matemáticas de 1.º de Bachillerato
+# Cuaderno de repaso de Matematicas de 1.\ de Bachillerato
 
-Este repositorio prepara un proyecto reproducible para generar una edición de alumnado y otra de profesorado del cuaderno. En el estado actual no existe todavía el corpus de PDF exigido por el prompt maestro, así que el proyecto queda arrancado, compilable y auditado, pero no puede avanzar a la taxonomía real ni a la redacción del libro sin esas fuentes.
+Este repositorio genera una edicion de alumnado, una edicion de profesorado y un documento de
+respuestas breves a partir del corpus PDF disponible en `sources/`.
 
 ## Estado actual
 
-- Fase 0 superada: estructura creada, Git inicializado y compilación LaTeX de prueba verificada.
-- Fase 1 iniciada: auditoría ejecutada, con resultado de `0` PDF localizados.
-- Bloqueo actual: faltan los PDF originales que deben auditarse.
+- Fases 0, 1, 2 y 3 superadas para el corpus actual.
+- Corpus auditado: `8` PDF.
+- Cobertura inicial construida: `167` ejercicios fuente mapeados en `data/coverage_matrix.csv`.
+- Capitulo piloto implementado y validado: `C09.S03-C09.S04` sobre recta tangente y recta normal.
+- Bloque pendiente por falta de corpus: probabilidad.
+- Siguiente desarrollo recomendado: bloque de algebra `C01-C04`.
 
 ## Estructura
 
-- `sources/`: ubicación recomendada para el corpus PDF original.
-- `data/`: manifiestos, taxonomía, matriz de cobertura y validaciones.
-- `docs/`: auditoría, plan editorial, decisiones e informe QA.
-- `tex/`: motor LaTeX compartido por las ediciones.
-- `scripts/`: automatización de auditoría, compilación y QA.
+- `sources/`: PDF originales.
+- `data/`: manifiesto de fuentes, taxonomia, cobertura y validaciones.
+- `docs/`: auditoria, plan editorial, decisiones y QA.
+- `tex/`: motor LaTeX y contenido del libro.
+- `scripts/`: auditoria, cobertura, validacion y compilacion.
 - `tests/`: comprobaciones ligeras del estado del proyecto.
-- `build/`: salidas PDF y archivos auxiliares de compilación.
+- `build/`: PDF generados y artefactos de compilacion.
 
 ## Requisitos detectados
 
 - `git`
 - `python`
-- `lualatex`
+- `sympy`
 - `pdflatex`
 - `pdftotext`
+- `PyMuPDF`
 
-`latexmk` está instalado, pero en este entorno falla con una advertencia de seguridad de MiKTeX. Además, `lualatex` no puede generar su formato al ejecutarse con privilegios elevados. Por eso el flujo por defecto usa `pdflatex` como fallback operativo documentado para esta máquina.
+`latexmk` esta instalado, pero no es operativo en este entorno por restricciones de MiKTeX.
+`lualatex` tampoco puede regenerar su formato al ejecutarse con privilegios elevados. Por eso el
+flujo estable usa `pdflatex` como fallback documentado.
 
 ## Comandos
 
 En PowerShell:
 
 ```powershell
-pwsh -File scripts/tasks.ps1 audit
-pwsh -File scripts/tasks.ps1 student
-pwsh -File scripts/tasks.ps1 teacher
-pwsh -File scripts/tasks.ps1 answers
-pwsh -File scripts/tasks.ps1 qa
-pwsh -File scripts/tasks.ps1 all
-pwsh -File scripts/tasks.ps1 clean
-```
-
-Si `pwsh` no está disponible, también funciona:
-
-```powershell
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 audit
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 student
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 teacher
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 answers
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 qa
 powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 all
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 clean
 ```
 
-## Flujo recomendado cuando se añadan las fuentes
+Significado de los comandos:
 
-1. Copiar los PDF originales a la raíz del proyecto o a `sources/`.
-2. Ejecutar `scripts/tasks.ps1 audit`.
-3. Revisar `data/source_manifest.yml`, `data/duplicate_report.md` y [docs/00_auditoria_fuentes.md](/H:/Libro%20Alejandra/docs/00_auditoria_fuentes.md).
-4. Reanudar desde la Fase 2 con la taxonomía y la matriz de cobertura reales.
+- `audit`: regenera `source_manifest.yml`, `duplicate_report.md` y `00_auditoria_fuentes.md`.
+- `student`: compila `build/cuaderno_estudiante.pdf`.
+- `teacher`: compila `build/cuaderno_profesor.pdf`.
+- `answers`: compila `build/respuestas_breves.pdf`.
+- `qa`: ejecuta validacion matematica y tests.
+- `all`: auditoria, cobertura, compilacion de las tres salidas y QA.
+
+## Artefactos clave
+
+- `data/source_manifest.yml`
+- `data/exercise_taxonomy.yml`
+- `data/coverage_matrix.csv`
+- `data/validation_results.json`
+- `docs/00_auditoria_fuentes.md`
+- `docs/01_plan_editorial.md`
+- `docs/02_decisiones_didacticas.md`
+- `docs/03_informe_qa.md`
+- `build/cuaderno_estudiante.pdf`
+- `build/cuaderno_profesor.pdf`
+- `build/respuestas_breves.pdf`
+
+## Limitaciones actuales
+
+- No hay fuentes de probabilidad en la carpeta actual, asi que los capitulos `C10-C12` quedan
+  fuera de esta iteracion.
+- Los temas 2, 3 y 9 son fuentes escaneadas sin extraccion textual fiable; su trazabilidad se ha
+  construido con revision visual.
+- El libro completo no esta redactado todavia: la version actual deja aprobada la arquitectura y
+  el capitulo piloto para seguir con la Fase 4.

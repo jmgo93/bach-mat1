@@ -6,7 +6,6 @@ import hashlib
 import os
 import re
 import subprocess
-import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -27,6 +26,7 @@ class PdfRecord:
     role: str
     estimated_level: str
     extraction_method: str
+    review_pages: list[int]
     review_flags: list[str]
 
 
@@ -53,24 +53,22 @@ def detect_role(name: str) -> str:
     lowered = name.lower()
     if "solucion" in lowered:
         return "B. Solucionarios y desarrollos guiados"
-    if "bayes" in lowered or "monty" in lowered or "trucos" in lowered or "tutorial" in lowered:
-        return "C. Materiales auxiliares o de ampliación"
+    if any(token in lowered for token in ("bayes", "monty", "trucos", "tutorial")):
+        return "C. Materiales auxiliares o de ampliacion"
     return "A. Relaciones primarias de ejercicios"
 
 
 def detect_level(name: str) -> str:
     lowered = name.lower()
-    if "2" in lowered and "bach" in lowered:
-        return "Ampliación / Puente a 2.º / EBAU"
-    if "ebau" in lowered or "selectividad" in lowered:
-        return "Ampliación / Puente a 2.º / EBAU"
+    if ("2" in lowered and "bach" in lowered) or "ebau" in lowered or "selectividad" in lowered:
+        return "Ampliacion / Puente a 2.º / EBAU"
     return "1.º de Bachillerato o no determinado"
 
 
 def find_pdfs(root: Path) -> list[Path]:
     pdfs: list[Path] = []
     for current_root, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames if d not in EXCLUDED_DIRS]
+        dirnames[:] = [directory for directory in dirnames if directory not in EXCLUDED_DIRS]
         for filename in filenames:
             if filename.lower().endswith(".pdf"):
                 pdfs.append(Path(current_root) / filename)
@@ -98,9 +96,9 @@ def read_pdf(path: Path) -> tuple[int | None, str, str]:
     if backend == "pymupdf":
         import fitz  # type: ignore
 
-        with fitz.open(path) as doc:
-            text = "\n".join(page.get_text("text") for page in doc)
-            return (len(doc), text, label)
+        with fitz.open(path) as document:
+            text = "\n".join(page.get_text("text") for page in document)
+            return (len(document), text, label)
     if backend == "pypdf":
         import pypdf  # type: ignore
 
@@ -120,13 +118,38 @@ def read_pdf(path: Path) -> tuple[int | None, str, str]:
     return (None, text, label)
 
 
+def detect_review_pages(path: Path) -> list[int]:
+    backend, _label = detect_pdf_backend()
+    if backend == "pymupdf":
+        import fitz  # type: ignore
+
+        review_pages: list[int] = []
+        with fitz.open(path) as document:
+            for index, page in enumerate(document, start=1):
+                if not (page.get_text("text") or "").strip():
+                    review_pages.append(index)
+        return review_pages
+    if backend == "pypdf":
+        import pypdf  # type: ignore
+
+        review_pages = []
+        with path.open("rb") as handle:
+            reader = pypdf.PdfReader(handle)
+            for index, page in enumerate(reader.pages, start=1):
+                if not (page.extract_text() or "").strip():
+                    review_pages.append(index)
+        return review_pages
+    return []
+
+
 def build_record(path: Path) -> PdfRecord:
     page_count, raw_text, extraction_method = read_pdf(path)
+    review_pages = detect_review_pages(path)
     review_flags: list[str] = []
     normalized = normalize_text(raw_text)
     normalized_hash = sha256_bytes(normalized.encode("utf-8")) if normalized else None
-    if not raw_text.strip():
-        review_flags.append("Sin extracción fiable; puede requerir revisión humana u OCR")
+    if review_pages:
+        review_flags.append("Sin extraccion fiable; puede requerir revision humana u OCR")
     return PdfRecord(
         path=path,
         sha256=sha256_file(path),
@@ -135,6 +158,7 @@ def build_record(path: Path) -> PdfRecord:
         role=detect_role(path.name),
         estimated_level=detect_level(path.name),
         extraction_method=extraction_method,
+        review_pages=review_pages,
         review_flags=review_flags,
     )
 
@@ -177,10 +201,19 @@ def to_yaml(value: Any, indent: int = 0) -> str:
     return f"{prefix}{quote_scalar(value)}"
 
 
+def group_duplicates(records: list[PdfRecord], attribute: str) -> list[list[PdfRecord]]:
+    groups: dict[str, list[PdfRecord]] = {}
+    for record in records:
+        value = getattr(record, attribute)
+        if not value:
+            continue
+        groups.setdefault(value, []).append(record)
+    return [group for group in groups.values() if len(group) > 1]
+
+
 def write_manifest(records: list[PdfRecord]) -> None:
-    generated_at = dt.datetime.now().isoformat(timespec="seconds")
     manifest = {
-        "generated_at": generated_at,
+        "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
         "root": str(ROOT),
         "totals": {
             "pdf_files": len(records),
@@ -196,6 +229,7 @@ def write_manifest(records: list[PdfRecord]) -> None:
                 "role": record.role,
                 "estimated_level": record.estimated_level,
                 "extraction_method": record.extraction_method,
+                "review_pages": record.review_pages,
                 "review_flags": record.review_flags,
             }
             for record in records
@@ -205,20 +239,9 @@ def write_manifest(records: list[PdfRecord]) -> None:
     (DATA_DIR / "source_manifest.yml").write_text(to_yaml(manifest) + "\n", encoding="utf-8")
 
 
-def group_duplicates(records: list[PdfRecord], attribute: str) -> list[list[PdfRecord]]:
-    groups: dict[str, list[PdfRecord]] = {}
-    for record in records:
-        value = getattr(record, attribute)
-        if not value:
-            continue
-        groups.setdefault(value, []).append(record)
-    return [group for group in groups.values() if len(group) > 1]
-
-
 def write_duplicate_report(records: list[PdfRecord]) -> None:
     exact_groups = group_duplicates(records, "sha256")
     text_groups = group_duplicates(records, "normalized_text_hash")
-
     lines = [
         "# Informe de duplicados",
         "",
@@ -229,13 +252,12 @@ def write_duplicate_report(records: list[PdfRecord]) -> None:
         f"- Grupos de casi duplicados por huella textual: `{len(text_groups)}`",
         "",
     ]
-
     if not records:
         lines.extend(
             [
                 "## Resultado",
                 "",
-                "No se ha detectado ningún PDF, por lo que no existen duplicados que comparar.",
+                "No se ha detectado ningun PDF, por lo que no existen duplicados que comparar.",
             ]
         )
     else:
@@ -268,7 +290,7 @@ def write_duplicate_report(records: list[PdfRecord]) -> None:
 
 def write_audit_markdown(records: list[PdfRecord]) -> None:
     lines = [
-        "# Auditoría de fuentes",
+        "# Auditoria de fuentes",
         "",
         f"Fecha: {dt.date.today().isoformat()}",
         "",
@@ -280,12 +302,12 @@ def write_audit_markdown(records: list[PdfRecord]) -> None:
     if not records:
         lines.extend(
             [
-                "No se ha localizado ningún PDF en el proyecto. La Fase 1 no puede superar su puerta de calidad porque no existe corpus que auditar.",
+                "No se ha localizado ningun PDF en el proyecto. La Fase 1 no puede superar su puerta de calidad porque no existe corpus que auditar.",
                 "",
-                "## Revisión humana requerida",
+                "## Revision humana requerida",
                 "",
                 "- Incorporar el corpus original a la carpeta de trabajo o a `sources/`.",
-                "- Reejecutar la auditoría.",
+                "- Reejecutar la auditoria.",
             ]
         )
     else:
@@ -293,7 +315,7 @@ def write_audit_markdown(records: list[PdfRecord]) -> None:
             [
                 "## Inventario",
                 "",
-                "| Archivo | Páginas | Rol | Nivel estimado | Extracción | Observaciones |",
+                "| Archivo | Paginas | Rol | Nivel estimado | Extraccion | Observaciones |",
                 "| --- | ---: | --- | --- | --- | --- |",
             ]
         )
@@ -302,6 +324,14 @@ def write_audit_markdown(records: list[PdfRecord]) -> None:
             lines.append(
                 f"| `{record.path.relative_to(ROOT)}` | {record.page_count or '?'} | {record.role} | {record.estimated_level} | {record.extraction_method} | {notes} |"
             )
+        lines.extend(["", "## Paginas con revision humana", ""])
+        review_needed = [record for record in records if record.review_pages]
+        if review_needed:
+            for record in review_needed:
+                pages = ", ".join(str(page) for page in record.review_pages)
+                lines.append(f"- `{record.path.relative_to(ROOT)}`: paginas {pages}")
+        else:
+            lines.append("No hay paginas marcadas para revision humana.")
 
     (DOCS_DIR / "00_auditoria_fuentes.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -343,4 +373,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
