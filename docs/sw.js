@@ -1,9 +1,10 @@
-const CACHE_NAME = "mate1-interactivas-v6";
+const CACHE_NAME = "mate1-interactivas-v7";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./assets/css/styles.css",
   "./assets/js/generated-content.js",
+  "./assets/js/generated-supplements.js",
   "./assets/js/activity-bank.js",
   "./assets/js/quiz-bank.js",
   "./assets/js/app.js",

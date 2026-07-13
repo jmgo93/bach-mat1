@@ -263,6 +263,33 @@ code {
   line-height: 1.65;
 }
 
+.sidebar-resource-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.sidebar-resource-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface-strong) 78%, transparent);
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-resource-nav a:hover,
+.sidebar-resource-nav a.is-active {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
 .progress-card,
 .hero,
 .section-card,
@@ -602,6 +629,10 @@ code {
   font-size: 0.9rem;
 }
 
+.quiz-card h3 {
+  color: var(--text);
+}
+
 .quiz-options {
   display: grid;
 }
@@ -611,6 +642,14 @@ code {
   text-align: left;
   border-radius: 16px;
   background: color-mix(in srgb, var(--surface-strong) 74%, transparent);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.option-button mjx-container,
+.quiz-card h3 mjx-container,
+.quiz-feedback mjx-container {
+  color: inherit !important;
 }
 
 .option-button.is-correct {
@@ -628,10 +667,16 @@ code {
   border-radius: 16px;
   background: color-mix(in srgb, var(--surface-muted) 74%, transparent);
   border: 1px solid var(--border);
+  color: var(--text);
 }
 
 .quiz-feedback strong {
   font-family: var(--font-heading);
+}
+
+.quiz-feedback p,
+.quiz-feedback span {
+  color: var(--text-soft);
 }
 
 .quiz-feedback[data-state="correct"] {
@@ -845,6 +890,51 @@ body .goog-te-combo {
 .section-card--nested {
   padding: 1rem;
   background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
+}
+
+.inventory-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.inventory-item summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.inventory-item__heading {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.inventory-item__heading small {
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.inventory-item__body {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.inventory-item__body p {
+  margin: 0;
+}
+
+.theory-links-panel {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface-strong) 76%, transparent);
+}
+
+.theory-links-panel .card-kicker {
+  margin: 0;
 }
 
 .activity-stack {

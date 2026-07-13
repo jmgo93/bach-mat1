@@ -1,5 +1,10 @@
 (function () {
   const content = window.MATHBOOK_CONTENT || { chapters: [], meta: {} };
+  const supplements = window.MATHBOOK_SUPPLEMENTS || {
+    meta: {},
+    problems: { inventory: [], models: [] },
+    exams: { inventory: [], miniModels: [], blockModels: [] }
+  };
   const activityBank = window.MATHBOOK_ACTIVITY_BANK || [];
   const questionBank = buildQuestionBank(window.MATHBOOK_QUIZ_BANK || [], activityBank);
   const flashcardBank = buildFlashcardBank(content);
@@ -14,6 +19,8 @@
     flashcardType: "mate1-flashcard-type",
     flashcardStatus: "mate1-flashcard-status",
     labsChapter: "mate1-labs-chapter",
+    problemChapter: "mate1-problem-chapter",
+    examChapter: "mate1-exam-chapter",
     examCount: "mate1-exam-count"
   };
 
@@ -142,6 +149,8 @@
     flashcardType: window.localStorage.getItem(STORAGE_KEYS.flashcardType) || "ALL",
     flashcardStatus: window.localStorage.getItem(STORAGE_KEYS.flashcardStatus) || "ALL",
     labsChapter: window.localStorage.getItem(STORAGE_KEYS.labsChapter) || "ALL",
+    problemChapter: window.localStorage.getItem(STORAGE_KEYS.problemChapter) || "ALL",
+    examChapter: window.localStorage.getItem(STORAGE_KEYS.examChapter) || "ALL",
     examCount: Number(window.localStorage.getItem(STORAGE_KEYS.examCount) || "10"),
     examIds: [],
     examAnswers: {},
@@ -153,6 +162,7 @@
     searchQuery: "",
     activityDrafts: {},
     translationTimer: null,
+    lastScrollTarget: "",
     customLabs: {
       trigAngle: 45,
       vector: { ux: 3, uy: 2, vx: -1, vy: 4 },
@@ -222,13 +232,17 @@
       renderFlashcards();
     } else if (route.name === "labs") {
       renderLabs();
+    } else if (route.name === "problems") {
+      renderProblems();
+    } else if (route.name === "exams") {
+      renderExams();
     } else {
       renderHome();
     }
 
     updateProgressUi();
     dom.sidebar.classList.remove("is-open");
-    postRender();
+    postRender(route);
   }
 
   function parseRoute() {
@@ -241,7 +255,7 @@
     const root = parts[0];
 
     if (root === "capitulo") {
-      return { name: "chapter", chapterId: parts[1] || "C01" };
+      return { name: "chapter", chapterId: parts[1] || "C01", sectionId: parts[2] || null };
     }
     if (root === "practica") {
       return { name: "practice", chapterId: parts[1] || null };
@@ -251,6 +265,12 @@
     }
     if (root === "laboratorios") {
       return { name: "labs", chapterId: parts[1] || null };
+    }
+    if (root === "problemas") {
+      return { name: "problems", chapterId: parts[1] || null };
+    }
+    if (root === "examenes") {
+      return { name: "exams", chapterId: parts[1] || null };
     }
     return { name: "home" };
   }
@@ -268,6 +288,14 @@
       state.labsChapter = route.chapterId;
       window.localStorage.setItem(STORAGE_KEYS.labsChapter, state.labsChapter);
     }
+    if (route.name === "problems" && route.chapterId) {
+      state.problemChapter = route.chapterId;
+      window.localStorage.setItem(STORAGE_KEYS.problemChapter, state.problemChapter);
+    }
+    if (route.name === "exams" && route.chapterId) {
+      state.examChapter = route.chapterId;
+      window.localStorage.setItem(STORAGE_KEYS.examChapter, state.examChapter);
+    }
   }
 
   function updateNav(route) {
@@ -281,11 +309,15 @@
             ? "flashcards"
             : route.name === "labs"
               ? "laboratorios"
+              : route.name === "problems"
+                ? "problemas"
+                : route.name === "exams"
+                  ? "examenes"
               : "";
     if (!routeName) {
       return;
     }
-    document.querySelector(`[data-route-link="${routeName}"]`)?.classList.add("is-active");
+    document.querySelectorAll(`[data-route-link="${routeName}"]`).forEach((link) => link.classList.add("is-active"));
   }
 
   function renderSidebar(route) {
@@ -304,6 +336,10 @@
                 ? state.flashcardChapter === chapter.id
                 : route.name === "labs"
                   ? state.labsChapter === chapter.id
+                  : route.name === "problems"
+                    ? state.problemChapter === chapter.id
+                    : route.name === "exams"
+                      ? state.examChapter === chapter.id
                   : false;
         return `
           <a class="chapter-link ${isActive ? "is-active" : ""}" href="#/capitulo/${chapter.id}">
@@ -329,7 +365,11 @@
         chapter.id,
         ...chapter.sections.map((section) => section.id),
         ...chapter.sections.map((section) => section.title),
-        ...activityBank.filter((activity) => activity.chapterId === chapter.id).map((activity) => activity.title)
+        ...activityBank.filter((activity) => activity.chapterId === chapter.id).map((activity) => activity.title),
+        ...getProblemInventoryForChapter(chapter.id).map((item) => item.prompt),
+        ...getProblemModelsForChapter(chapter.id).map((item) => item.title),
+        ...getExamInventoryForChapter(chapter.id).map((item) => item.title),
+        ...getExamMiniModelsForChapter(chapter.id).map((item) => item.title)
       ]
         .join(" ")
         .toLowerCase();
@@ -339,6 +379,12 @@
 
   function renderHome() {
     const dominatedQuestions = questionBank.filter((question) => getQuestionStatus(question.id) === "mastered").length;
+    const contextualProblemCount = supplements.meta.contextualInventoryCount || supplements.problems.inventory.length;
+    const contextualModelCount = supplements.meta.contextualModelCount || supplements.problems.models.length;
+    const examProposalCount = supplements.meta.examInventoryCount || supplements.exams.inventory.length;
+    const examModelCount =
+      (supplements.meta.examMiniModelCount || supplements.exams.miniModels.length) +
+      (supplements.meta.examBlockModelCount || supplements.exams.blockModels.length);
     const cards = content.chapters
       .map((chapter) => {
         const meta = CHAPTER_META[chapter.id] || { block: "Bloque general", accent: "cool" };
@@ -370,6 +416,8 @@
               <a class="primary-button" href="#/capitulo/C01">Empezar por el temario</a>
               <a class="ghost-button" href="#/practica">Abrir banco de test</a>
               <a class="secondary-button" href="#/flashcards">Entrenar con flashcards</a>
+              <a class="ghost-button" href="#/problemas">Ver problemas contextualizados</a>
+              <a class="ghost-button" href="#/examenes">Abrir banco de examenes</a>
             </div>
           </div>
           <aside class="summary-card summary-card--accent">
@@ -408,6 +456,16 @@
           <h2>${activityBank.length} actividades por tema</h2>
           <p>Dos o mas por bloque, integradas dentro del tema y tambien reunidas aparte.</p>
         </article>
+        <article class="summary-card">
+          <p class="card-kicker">Problemas</p>
+          <h2>${contextualProblemCount} propuestas y ${contextualModelCount} modelos</h2>
+          <p>Problemas contextualizados conectados con la teoria necesaria para cada apartado.</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-kicker">Examenes</p>
+          <h2>${examProposalCount} propuestas y ${examModelCount} modelos</h2>
+          <p>Mini-examenes por seccion y examenes por bloques, todos resueltos y relacionados.</p>
+        </article>
       </section>
 
       <section class="summary-grid">
@@ -426,6 +484,11 @@
     const chapterQuestions = questionBank.filter((question) => question.chapterId === chapter.id);
     const chapterActivities = activityBank.filter((activity) => activity.chapterId === chapter.id);
     const chapterFlashcards = flashcardBank.filter((card) => card.chapterId === chapter.id);
+    const chapterProblems = getProblemInventoryForChapter(chapter.id);
+    const chapterProblemModels = getProblemModelsForChapter(chapter.id);
+    const chapterExamSeeds = getExamInventoryForChapter(chapter.id);
+    const chapterExamModels = getExamMiniModelsForChapter(chapter.id);
+    const chapterBlockExams = getExamBlockModelsForChapter(chapter.id);
     const dominatedQuestions = chapterQuestions.filter((question) => getQuestionStatus(question.id) === "mastered").length;
     const reviewQuestions = chapterQuestions.filter((question) => getQuestionStatus(question.id) === "review").length;
 
@@ -443,6 +506,8 @@
           <a class="primary-button" href="#/practica/${chapter.id}">Test del bloque</a>
           <a class="secondary-button" href="#/flashcards/${chapter.id}">Flashcards del bloque</a>
           <a class="ghost-button" href="#/laboratorios/${chapter.id}">Actividades del bloque</a>
+          <a class="ghost-button" href="#/problemas/${chapter.id}">Problemas del bloque</a>
+          <a class="ghost-button" href="#/examenes/${chapter.id}">Examenes del bloque</a>
         </div>
       </section>
 
@@ -462,8 +527,8 @@
         </article>
         <article class="summary-card">
           <p class="card-kicker">Recursos activos</p>
-          <h2>${chapterActivities.length} actividades y ${chapterFlashcards.length} flashcards</h2>
-          <p>Todo enlazado con las secciones del tema para que la practica no quede separada de la explicacion.</p>
+          <h2>${chapterActivities.length} actividades, ${chapterProblems.length} problemas y ${chapterExamSeeds.length} examenes</h2>
+          <p>${chapterFlashcards.length} flashcards, ${chapterProblemModels.length} modelos contextualizados y ${chapterExamModels.length + chapterBlockExams.length} modelos de evaluacion conectados con el tema.</p>
         </article>
       </section>
 
@@ -1185,6 +1250,398 @@
     wireLabPageEvents();
   }
 
+  function renderProblems() {
+    const selectedChapter = state.problemChapter;
+    const visibleChapters =
+      selectedChapter === "ALL" || !getChapter(selectedChapter)
+        ? content.chapters
+        : content.chapters.filter((chapter) => chapter.id === selectedChapter);
+    const visibleChapterIds = new Set(visibleChapters.map((chapter) => chapter.id));
+    const visibleModels = supplements.problems.models.filter((item) => visibleChapterIds.has(item.chapterId));
+    const visibleInventory = supplements.problems.inventory.filter((item) => visibleChapterIds.has(item.chapterId));
+
+    dom.app.innerHTML = `
+      <section class="hero">
+        <div class="hero__grid">
+          <div>
+            <p class="card-kicker">Problemas contextualizados y relacionados</p>
+            <h1>Situaciones exigentes por tema, conectadas con la teoria que hace falta activar en cada caso.</h1>
+            <p>
+              Aqui se recoge el banco de problemas inspirado en los pdfs complementarios: modelos completos
+              resueltos y propuestas por apartado para entrenar lectura, modelizacion y justificacion.
+            </p>
+          </div>
+          <aside class="summary-card summary-card--accent">
+            <p class="card-kicker">Cobertura actual</p>
+            <h2>${visibleModels.length} modelos y ${visibleInventory.length} propuestas</h2>
+            <p>Cada elemento incorpora enlaces directos a la teoria necesaria para preparar o repasar el contenido.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <p class="card-kicker">Modelos completos</p>
+          <h2>${visibleModels.length}</h2>
+          <p>Problemas desarrollados con datos, respuesta breve y solucion completa.</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-kicker">Semillas por apartado</p>
+          <h2>${visibleInventory.length}</h2>
+          <p>Propuestas listas para trabajar por seccion o para convertir en tareas de clase.</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-kicker">Nivel</p>
+          <h2>${visibleInventory.filter((item) => item.level === "Alta").length}</h2>
+          <p>La mayoria estan pensadas para consolidacion alta y transferencia a contextos reales.</p>
+        </article>
+      </section>
+
+      <section class="practice-layout">
+        <article class="practice-panel">
+          <div class="practice-panel__head">
+            <div>
+              <p class="card-kicker">Filtro</p>
+              <h2>Selecciona capitulo</h2>
+            </div>
+            <span class="badge-soft">${selectedChapter === "ALL" ? "Completo" : selectedChapter}</span>
+          </div>
+          <label>
+            <span class="sidebar__eyebrow">Capitulo</span>
+            <select id="problemsChapterSelect">
+              <option value="ALL" ${state.problemChapter === "ALL" ? "selected" : ""}>Todos los capitulos</option>
+              ${content.chapters
+                .map(
+                  (chapter) =>
+                    `<option value="${chapter.id}" ${state.problemChapter === chapter.id ? "selected" : ""}>${chapter.id} - ${chapter.title}</option>`
+                )
+                .join("")}
+            </select>
+          </label>
+        </article>
+
+        <article class="practice-panel">
+          <div class="practice-panel__head">
+            <div>
+              <p class="card-kicker">Uso recomendado</p>
+              <h2>Como trabajar este banco</h2>
+            </div>
+          </div>
+          <div class="reading-panel">
+            <ol>
+              <li>Abre primero el modelo completo del capitulo para ver el tipo de razonamiento esperado.</li>
+              <li>Usa los enlaces de teoria para volver justo al apartado que sostiene el problema.</li>
+              <li>Continua con las semillas por seccion para variar contexto sin perder foco matematico.</li>
+            </ol>
+          </div>
+        </article>
+      </section>
+
+      ${
+        visibleModels.length
+          ? `
+              <section class="search-grid">
+                ${visibleModels.map(renderProblemModelCard).join("")}
+              </section>
+            `
+          : ""
+      }
+
+      ${visibleChapters.map((chapter) => renderProblemInventorySection(chapter)).join("")}
+    `;
+
+    wireProblemEvents();
+  }
+
+  function renderProblemModelCard(model) {
+    const chapter = getChapter(model.chapterId) || { title: model.chapterId };
+    return `
+      <article class="section-card">
+        <div class="section-card__head">
+          <div>
+            <p class="card-kicker">${model.chapterId} - ${chapter.title}</p>
+            <h2>${model.title}</h2>
+          </div>
+          <span class="badge-soft">Modelo contextualizado</span>
+        </div>
+        ${renderTheoryLinksPanel(model.relatedTheorySections)}
+        ${renderCallout(model.promptTitle || "Situacion", { html: model.promptHtml }, "cool")}
+        ${model.resourceHtml ? renderCallout(model.resourceTitle || "Datos y apoyos", { html: model.resourceHtml }, "warm") : ""}
+        <details class="inline-details inventory-item">
+          <summary>Ver respuesta breve</summary>
+          <div class="rich-text">${model.answerHtml}</div>
+        </details>
+        <details class="inline-details inventory-item">
+          <summary>Ver solucion completa</summary>
+          <div class="rich-text">${model.solutionHtml}</div>
+        </details>
+      </article>
+    `;
+  }
+
+  function renderProblemInventorySection(chapter) {
+    const items = getProblemInventoryForChapter(chapter.id);
+    if (!items.length) {
+      return "";
+    }
+
+    return `
+      <section class="section-card">
+        <div class="section-card__head">
+          <div>
+            <p class="card-kicker">${(CHAPTER_META[chapter.id] || {}).block || "Bloque"}</p>
+            <h2>${chapter.id} - ${chapter.title}</h2>
+          </div>
+          <span class="badge-soft">${items.length} propuestas</span>
+        </div>
+        <p>Propuestas contextualizadas por apartado para ampliar la teoria del capitulo con situaciones reales y exigentes.</p>
+        <div class="inventory-list">
+          ${items.map(renderProblemSeedCard).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderProblemSeedCard(item) {
+    return `
+      <details class="inline-details inventory-item">
+        <summary>
+          <span class="inventory-item__heading">
+            <strong>${item.sectionId} - ${item.sectionTitle}</strong>
+            <small>${item.prompt}</small>
+          </span>
+          <span class="status-pill status-pill--cool">${item.level}</span>
+        </summary>
+        <div class="inventory-item__body">
+          <p><strong>Contexto:</strong> ${item.prompt}</p>
+          <p><strong>Apoyo visual sugerido:</strong> ${item.visual}</p>
+          ${renderTheoryLinksPanel(item.relatedTheorySections)}
+        </div>
+      </details>
+    `;
+  }
+
+  function renderExams() {
+    const selectedChapter = state.examChapter;
+    const visibleChapters =
+      selectedChapter === "ALL" || !getChapter(selectedChapter)
+        ? content.chapters
+        : content.chapters.filter((chapter) => chapter.id === selectedChapter);
+    const visibleChapterIds = new Set(visibleChapters.map((chapter) => chapter.id));
+    const visibleMiniModels = supplements.exams.miniModels.filter((item) => visibleChapterIds.has(item.chapterId));
+    const visibleExamSeeds = supplements.exams.inventory.filter((item) => visibleChapterIds.has(item.chapterId));
+    const visibleBlockModels =
+      selectedChapter === "ALL"
+        ? supplements.exams.blockModels
+        : supplements.exams.blockModels.filter((item) => item.chapterIds.includes(selectedChapter));
+
+    dom.app.innerHTML = `
+      <section class="hero">
+        <div class="hero__grid">
+          <div>
+            <p class="card-kicker">Examenes por secciones y por bloques</p>
+            <h1>Modelos de evaluacion dificiles, resueltos y conectados con los apartados que necesitas reactivar.</h1>
+            <p>
+              La seccion combina mini-examenes por apartado, examenes por bloques y un inventario de propuestas
+              para preparar evaluaciones con criterio y volver a la teoria precisa en cada momento.
+            </p>
+          </div>
+          <aside class="summary-card summary-card--accent">
+            <p class="card-kicker">Cobertura actual</p>
+            <h2>${visibleMiniModels.length} mini-modelos y ${visibleBlockModels.length} bloques</h2>
+            <p>Todos incorporan referencia directa a la teoria necesaria para planificar repaso o correccion.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <p class="card-kicker">Mini-examenes modelo</p>
+          <h2>${visibleMiniModels.length}</h2>
+          <p>Ensayos cortos por seccion, con solucion detallada y duracion orientativa.</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-kicker">Examenes por bloques</p>
+          <h2>${visibleBlockModels.length}</h2>
+          <p>Versiones mas largas para mezclar contenidos de un mismo bloque curricular.</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-kicker">Semillas de examen</p>
+          <h2>${visibleExamSeeds.length}</h2>
+          <p>Propuestas por apartado para construir pruebas relacionadas con cada tema.</p>
+        </article>
+      </section>
+
+      <section class="practice-layout">
+        <article class="practice-panel">
+          <div class="practice-panel__head">
+            <div>
+              <p class="card-kicker">Filtro</p>
+              <h2>Selecciona capitulo</h2>
+            </div>
+            <span class="badge-soft">${selectedChapter === "ALL" ? "Completo" : selectedChapter}</span>
+          </div>
+          <label>
+            <span class="sidebar__eyebrow">Capitulo</span>
+            <select id="examsChapterSelect">
+              <option value="ALL" ${state.examChapter === "ALL" ? "selected" : ""}>Todos los capitulos</option>
+              ${content.chapters
+                .map(
+                  (chapter) =>
+                    `<option value="${chapter.id}" ${state.examChapter === chapter.id ? "selected" : ""}>${chapter.id} - ${chapter.title}</option>`
+                )
+                .join("")}
+            </select>
+          </label>
+        </article>
+
+        <article class="practice-panel">
+          <div class="practice-panel__head">
+            <div>
+              <p class="card-kicker">Uso recomendado</p>
+              <h2>Como preparar un examen con esta zona</h2>
+            </div>
+          </div>
+          <div class="reading-panel">
+            <ol>
+              <li>Empieza por el mini-examen del apartado para medir si la tecnica ya esta disponible.</li>
+              <li>Si fallas, usa los enlaces de teoria necesaria antes de repetir el intento.</li>
+              <li>Cuando el bloque este listo, pasa al examen global para mezclar contenidos y tiempos.</li>
+            </ol>
+          </div>
+        </article>
+      </section>
+
+      ${
+        visibleMiniModels.length
+          ? `
+              <section class="search-grid">
+                ${visibleMiniModels.map(renderExamMiniModelCard).join("")}
+              </section>
+            `
+          : ""
+      }
+
+      ${
+        visibleBlockModels.length
+          ? `
+              <section class="section-card">
+                <div class="section-card__head">
+                  <div>
+                    <p class="card-kicker">Examenes por bloques</p>
+                    <h2>Modelos largos relacionados</h2>
+                  </div>
+                  <span class="badge-soft">${visibleBlockModels.length}</span>
+                </div>
+                <div class="search-grid">
+                  ${visibleBlockModels.map(renderExamBlockCard).join("")}
+                </div>
+              </section>
+            `
+          : ""
+      }
+
+      ${visibleChapters.map((chapter) => renderExamInventorySection(chapter)).join("")}
+    `;
+
+    wireExamEvents();
+  }
+
+  function renderExamMiniModelCard(model) {
+    const chapter = getChapter(model.chapterId) || { title: model.chapterId };
+    return `
+      <article class="section-card">
+        <div class="section-card__head">
+          <div>
+            <p class="card-kicker">${model.chapterId} - ${chapter.title}</p>
+            <h2>${model.sectionId} - ${model.title}</h2>
+          </div>
+          <span class="badge-soft">${model.duration || "Mini-examen"}</span>
+        </div>
+        <div class="quick-links">
+          ${model.blockLabel ? `<span class="status-pill status-pill--cool">${model.blockLabel}</span>` : ""}
+        </div>
+        ${renderTheoryLinksPanel(model.relatedTheorySections)}
+        ${renderCallout(model.briefTitle || "Enunciado", { html: model.briefHtml }, "cool")}
+        ${model.rubricHtml ? renderCallout(model.rubricTitle || "Rubrica", { html: model.rubricHtml }, "warm") : ""}
+        <details class="inline-details inventory-item">
+          <summary>Ver respuesta breve</summary>
+          <div class="rich-text">${model.answerHtml}</div>
+        </details>
+        <details class="inline-details inventory-item">
+          <summary>Ver solucion completa</summary>
+          <div class="rich-text">${model.solutionHtml}</div>
+        </details>
+      </article>
+    `;
+  }
+
+  function renderExamBlockCard(model) {
+    return `
+      <article class="section-card section-card--nested">
+        <div class="section-card__head">
+          <div>
+            <p class="card-kicker">${model.blockId}</p>
+            <h3>${model.title}</h3>
+          </div>
+          <span class="badge-soft">Bloque</span>
+        </div>
+        ${renderTheoryLinksPanel([], model.relatedTheoryChapters)}
+        ${renderCallout(model.briefTitle || "Enunciado", { html: model.briefHtml }, "cool")}
+        <details class="inline-details inventory-item">
+          <summary>Ver respuesta breve</summary>
+          <div class="rich-text">${model.answerHtml}</div>
+        </details>
+        <details class="inline-details inventory-item">
+          <summary>Ver solucion completa</summary>
+          <div class="rich-text">${model.solutionHtml}</div>
+        </details>
+      </article>
+    `;
+  }
+
+  function renderExamInventorySection(chapter) {
+    const items = getExamInventoryForChapter(chapter.id);
+    if (!items.length) {
+      return "";
+    }
+
+    return `
+      <section class="section-card">
+        <div class="section-card__head">
+          <div>
+            <p class="card-kicker">${(CHAPTER_META[chapter.id] || {}).block || "Bloque"}</p>
+            <h2>${chapter.id} - ${chapter.title}</h2>
+          </div>
+          <span class="badge-soft">${items.length} propuestas</span>
+        </div>
+        <p>Banco de semillas de examen para construir pruebas por secciones con enlace directo a la teoria de soporte.</p>
+        <div class="inventory-list">
+          ${items.map(renderExamSeedCard).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderExamSeedCard(item) {
+    return `
+      <details class="inline-details inventory-item">
+        <summary>
+          <span class="inventory-item__heading">
+            <strong>${item.sectionId} - ${item.sectionTitle}</strong>
+            <small>${item.title}</small>
+          </span>
+          <span class="status-pill status-pill--cool">${item.duration}</span>
+        </summary>
+        <div class="inventory-item__body">
+          <p><strong>Mini-examen propuesto:</strong> ${item.title}</p>
+          <p><strong>Bloque:</strong> ${item.blockLabel}</p>
+          ${renderTheoryLinksPanel(item.relatedTheorySections)}
+        </div>
+      </details>
+    `;
+  }
+
   function renderActivityCard(activity, compact) {
     const record = getActivityRecord(activity.id);
     const status = getActivityStatus(activity.id);
@@ -1508,6 +1965,22 @@
       }
       recordFlashcardDecision(filteredCards[state.flashcardIndex].id, "review");
       moveToNextFlashcard(filteredCards.length);
+    });
+  }
+
+  function wireProblemEvents() {
+    document.getElementById("problemsChapterSelect")?.addEventListener("change", (event) => {
+      state.problemChapter = event.target.value;
+      window.localStorage.setItem(STORAGE_KEYS.problemChapter, state.problemChapter);
+      window.location.hash = state.problemChapter === "ALL" ? "#/problemas" : `#/problemas/${state.problemChapter}`;
+    });
+  }
+
+  function wireExamEvents() {
+    document.getElementById("examsChapterSelect")?.addEventListener("change", (event) => {
+      state.examChapter = event.target.value;
+      window.localStorage.setItem(STORAGE_KEYS.examChapter, state.examChapter);
+      window.location.hash = state.examChapter === "ALL" ? "#/examenes" : `#/examenes/${state.examChapter}`;
     });
   }
 
@@ -2128,17 +2601,40 @@
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  function postRender() {
+  function postRender(route) {
     wireActivityEvents();
-    typesetMath(dom.app);
+    typesetMath(dom.app).then(() => {
+      scrollToRouteTarget(route);
+    });
     scheduleTranslationRefresh(getPreferredLanguage(), false);
   }
 
   function typesetMath(target) {
     if (!target || !window.MathJax || !window.MathJax.typesetPromise) {
+      return Promise.resolve();
+    }
+    return window.MathJax.typesetPromise([target]).catch(() => undefined);
+  }
+
+  function scrollToRouteTarget(route) {
+    const targetKey = route && route.name === "chapter" && route.sectionId ? `${route.chapterId}/${route.sectionId}` : "";
+    if (!targetKey) {
+      state.lastScrollTarget = "";
       return;
     }
-    window.MathJax.typesetPromise([target]).catch(() => undefined);
+    if (state.lastScrollTarget === targetKey) {
+      return;
+    }
+
+    state.lastScrollTarget = targetKey;
+    const targetId = route.sectionId.replace(/\./g, "-");
+    const element = document.getElementById(targetId);
+    if (!element) {
+      return;
+    }
+    window.requestAnimationFrame(() => {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }
 
   function updateNumberChallengeFeedback() {
@@ -2319,6 +2815,26 @@
     return activityBank.filter((activity) => activity.chapterId === chapterId && activity.sectionId === sectionId);
   }
 
+  function getProblemInventoryForChapter(chapterId) {
+    return supplements.problems.inventory.filter((item) => item.chapterId === chapterId);
+  }
+
+  function getProblemModelsForChapter(chapterId) {
+    return supplements.problems.models.filter((item) => item.chapterId === chapterId);
+  }
+
+  function getExamInventoryForChapter(chapterId) {
+    return supplements.exams.inventory.filter((item) => item.chapterId === chapterId);
+  }
+
+  function getExamMiniModelsForChapter(chapterId) {
+    return supplements.exams.miniModels.filter((item) => item.chapterId === chapterId);
+  }
+
+  function getExamBlockModelsForChapter(chapterId) {
+    return supplements.exams.blockModels.filter((item) => item.chapterIds.includes(chapterId));
+  }
+
   function getSectionTitle(sectionId) {
     for (const chapter of content.chapters) {
       const match = chapter.sections.find((section) => section.id === sectionId);
@@ -2327,6 +2843,38 @@
       }
     }
     return sectionId;
+  }
+
+  function renderTheoryLinksPanel(sectionIds = [], chapterIds = []) {
+    const theoryLinks = [
+      ...uniqueValues(sectionIds).map((sectionId) => {
+        const chapterId = sectionId.split(".")[0];
+        return `<a class="chip-link" href="#/capitulo/${chapterId}/${sectionId}">${sectionId} - ${getSectionTitle(sectionId)}</a>`;
+      }),
+      ...uniqueValues(chapterIds).map((chapterId) => {
+        const chapter = getChapter(chapterId);
+        return chapter ? `<a class="chip-link" href="#/capitulo/${chapterId}">${chapterId} - ${chapter.title}</a>` : "";
+      })
+    ]
+      .filter(Boolean)
+      .join("");
+
+    if (!theoryLinks) {
+      return "";
+    }
+
+    return `
+      <section class="theory-links-panel">
+        <p class="card-kicker">Teoria necesaria</p>
+        <div class="quick-links">
+          ${theoryLinks}
+        </div>
+      </section>
+    `;
+  }
+
+  function uniqueValues(items) {
+    return [...new Set((items || []).filter(Boolean))];
   }
 
   function buildQuestionBank(baseQuestions, activities) {

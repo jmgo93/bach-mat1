@@ -47,6 +47,10 @@ function Invoke-WebContent {
     if ($LASTEXITCODE -ne 0) {
         throw "Generacion de contenido web fallida"
     }
+    & python (Join-Path $root "scripts\\build_web_supplements.py")
+    if ($LASTEXITCODE -ne 0) {
+        throw "Generacion de suplementos web fallida"
+    }
 }
 
 function Invoke-LatexBuild {

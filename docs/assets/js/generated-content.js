@@ -2,7 +2,7 @@ window.MATHBOOK_CONTENT = {
   "meta": {
     "title": "Matematicas I Interactivas",
     "subtitle": "1º de Bachillerato - teoria, ejemplos resueltos, tests y laboratorios interactivos",
-    "generatedOn": "2026-07-13 12:04",
+    "generatedOn": "2026-07-13 15:06",
     "chapterCount": 10,
     "sectionCount": 84
   },
