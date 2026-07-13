@@ -1,8 +1,25 @@
-# Cuaderno de repaso de Matematicas de 1.\ de Bachillerato
+# Bach Mat1
+
+Repositorio del proyecto **Matematicas I de 1.º de Bachillerato** con:
+
+- cuaderno de alumnado
+- cuaderno de profesorado
+- respuestas breves
+- cuadernos complementarios de problemas contextualizados y examenes
+- web interactiva con teoria, ejercicios resueltos, test, flashcards y laboratorios
+
+## Enlaces
+
+- Repositorio: [jmgo93/bach-mat1](https://github.com/jmgo93/bach-mat1)
+- Web publicada: [jmgo93.github.io/bach-mat1](https://jmgo93.github.io/bach-mat1/)
+
+## Que contiene el proyecto
 
 Este repositorio genera una edicion de alumnado, una edicion de profesorado y un documento de
-respuestas breves a partir del corpus PDF disponible en `sources/`. Ademas, incluye una web
-estatica interactiva preparada para GitHub Pages y para instalarse como PWA en movil o escritorio.
+respuestas breves a partir del corpus PDF de trabajo. Ademas, incluye una web estatica
+interactiva preparada para GitHub Pages y para instalarse como PWA en movil o escritorio.
+
+Los PDF fuente originales de trabajo no se publican en este repositorio.
 
 ## Estado actual
 
@@ -34,9 +51,20 @@ estatica interactiva preparada para GitHub Pages y para instalarse como PWA en m
 - Siguiente trabajo recomendado: una revision visual editorial pagina a pagina solo si se desea
   un cierre todavia mas estricto; no quedan incidencias tecnicas criticas abiertas.
 
+## Arranque rapido
+
+En PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 webcontent
+python -m http.server 9342 --directory docs
+```
+
+Despues abre `http://localhost:9342/index.html#/inicio`.
+
 ## Estructura
 
-- `sources/`: PDF originales.
+- `sources/`: PDF originales de trabajo local, excluidos del repositorio publico.
 - `data/`: manifiesto de fuentes, taxonomia, cobertura y validaciones.
 - `docs/`: auditoria, plan editorial, QA, revision visual y web lista para publicar.
 - `tex/`: motor LaTeX, frontmatter y contenido del libro.
@@ -118,10 +146,11 @@ Despues abre `http://localhost:9342/index.html#/inicio`.
 
 ## GitHub Pages
 
-1. Sube el repositorio a GitHub.
-2. En `Settings > Pages`, selecciona `Deploy from a branch`.
-3. Elige tu rama principal y la carpeta `/docs`.
-4. Guarda la configuracion y espera a que GitHub publique el sitio.
+GitHub Pages ya esta configurado en este repositorio con:
+
+- rama: `main`
+- carpeta: `/docs`
+- URL publica: `https://jmgo93.github.io/bach-mat1/`
 
 La web usa rutas con hash (`#/capitulo/C01`), asi que funciona bien en GitHub Pages sin servidor
 adicional. Tambien puede instalarse como aplicacion gracias al `manifest` y al `service worker`.
