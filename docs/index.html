@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matematicas I Interactivas</title>
+    <meta
+      name="description"
+      content="Teoria, ejemplos resueltos, tests, flashcards y laboratorios interactivos de Matematicas I para 1.&ordm; de Bachillerato."
+    >
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["\\(", "\\)"]],
+          displayMath: [["\\[", "\\]"]],
+          packages: { "[+]": ["noerrors", "noundefined"] },
+          macros: {
+            R: "\\mathbb{R}",
+            N: "\\mathbb{N}",
+            Z: "\\mathbb{Z}",
+            Q: "\\mathbb{Q}",
+            sen: "\\operatorname{sen}",
+            tg: "\\operatorname{tg}",
+            SI: ["{#1\\,\\text{#2}}", 2],
+            si: ["{\\text{#1}}", 1]
+          }
+        },
+        options: {
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+        }
+      };
+    </script>
+    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer src="./assets/js/generated-content.js"></script>
+    <script defer src="./assets/js/activity-bank.js"></script>
+    <script defer src="./assets/js/quiz-bank.js"></script>
+    <script defer src="./assets/js/app.js"></script>
+  </head>
+  <body>
+    <div class="translate-feedback" id="translateFeedback" hidden>
+      <div class="translate-feedback__card">
+        <div class="translate-feedback__spinner" aria-hidden="true"></div>
+        <p id="translateFeedbackText">Cargando contenido...</p>
+      </div>
+    </div>
+
+    <div id="google_translate_element" class="sr-only" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="topbar__brand">
+        <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Abrir navegacion">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="brand" href="#/inicio">
+          <span class="brand__kicker">1.&ordm; de Bachillerato</span>
+          <strong>Matematicas I Interactivas</strong>
+        </a>
+      </div>
+
+      <nav class="topbar__nav" aria-label="Navegacion principal">
+        <a href="#/inicio" data-route-link="inicio">Inicio</a>
+        <a href="#/practica" data-route-link="practica">Practica</a>
+        <a href="#/flashcards" data-route-link="flashcards">Flashcards</a>
+        <a href="#/laboratorios" data-route-link="laboratorios">Laboratorios</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <label class="language-picker">
+          <span class="sr-only">Seleccionar idioma</span>
+          <select id="languageSelect">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="de">DE</option>
+            <option value="it">IT</option>
+            <option value="pt">PT</option>
+            <option value="ca">CA</option>
+          </select>
+        </label>
+        <button id="themeToggle" class="ghost-button" type="button">Modo oscuro</button>
+        <button id="installButton" class="primary-button" type="button" hidden>Instalar app</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__header">
+          <p class="sidebar__eyebrow">Ruta de estudio</p>
+          <h2>Temario vivo</h2>
+          <p class="sidebar__copy">
+            Toda la teoria del cuaderno, ejercicios resueltos, test, flashcards y laboratorios enlazados con el material real.
+          </p>
+        </div>
+
+        <section class="progress-card" aria-labelledby="progressTitle">
+          <div class="progress-card__head">
+            <p class="sidebar__eyebrow">Progreso local</p>
+            <h3 id="progressTitle">Tu avance</h3>
+          </div>
+          <div class="progress-meters">
+            <div>
+              <span class="progress-meters__label">XP</span>
+              <strong id="xpValue">0</strong>
+            </div>
+            <div>
+              <span class="progress-meters__label">Preguntas dominadas</span>
+              <strong id="quizValue">0</strong>
+            </div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <span id="progressFill"></span>
+          </div>
+          <p id="progressHint" class="progress-card__hint">Empieza por el bloque que necesites reforzar.</p>
+        </section>
+
+        <section class="sidebar__search">
+          <label for="searchInput" class="sidebar__eyebrow">Buscar concepto</label>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="search"
+            placeholder="Ej.: logaritmos, tangente, vectores"
+          >
+        </section>
+
+        <section class="sidebar__chapters" aria-labelledby="chapterListTitle">
+          <div class="sidebar__section-head">
+            <h3 id="chapterListTitle">Capitulos</h3>
+            <span id="chapterCountBadge" class="badge-soft">0</span>
+          </div>
+          <div id="chapterLinks" class="chapter-links"></div>
+        </section>
+      </aside>
+
+      <main id="app" class="app-shell" tabindex="-1"></main>
+    </div>
+
+    <footer class="site-footer">
+      <p>
+        Copyright 2026 de uso con atribucion. Realizado por Juan Maria Gamez Ortiz, profesor de
+        matematicas en el I.E.S. Al-Andalus (Almeria).
+      </p>
+      <p>Disenado para GitHub Pages, PWA instalable y estudio en escritorio o movil.</p>
+    </footer>
+  </body>
+</html>

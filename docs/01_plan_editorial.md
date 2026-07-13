@@ -3,6 +3,8 @@
 ## Estado
 
 Plan editorial definido a partir de la auditoria real del corpus disponible.
+Ademas, el libro activo incorpora un bloque original de repaso acumulativo y simulacros
+que no suma filas nuevas a la cobertura porque no procede directamente de una fuente.
 
 ## Corpus utilizado
 
@@ -145,10 +147,10 @@ Plan editorial definido a partir de la auditoria real del corpus disponible.
 
 ## Prioridad de desarrollo
 
-1. Implementado y validado: C01 completo (numeros reales) y el piloto C09.S03-C09.S04 (recta tangente y normal).
-2. Siguiente bloque recomendado: C02-C04 para cerrar la Fase 4A de algebra.
-3. Despues: trigonometria y geometria (C05-C07).
-4. Cierre del bloque de analisis (C08-C09) con limites, continuidad y el resto de derivadas.
+1. Implementado y validado: C01-C09 completos para todo el corpus matematico disponible.
+2. Ensamblaje activo: portada, guia de uso, indice rapido, repaso acumulativo, simulacros y tabla de seguimiento ya integrados.
+3. Siguiente bloque recomendado: revision visual exhaustiva pagina a pagina si se quiere un cierre editorial todavia mas estricto.
+4. El bloque de probabilidad sigue fuera de alcance mientras no exista corpus real en la carpeta.
 
 ## Advertencias curriculares
 

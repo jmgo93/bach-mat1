@@ -1,0 +1,154 @@
+\chapter{Examen de Bloque B3}
+
+\begin{exambrief}{Bloque B3: Trigonometria y Vectores}
+Duracion sugerida: \(100\) minutos.
+\begin{enumerate}
+  \item Convierte \(240^\circ\) a radianes y determina exactamente las componentes del vector de
+  longitud \(10\) con ese argumento.
+  \item Resuelve en \([0,2\pi)\)
+  \[
+  2\sen^2 x-3\sen x+1=0.
+  \]
+  \item En un triangulo se conocen dos lados de \(\SI{11}{m}\) y \(\SI{14}{m}\), con angulo
+  comprendido \(52^\circ\). Halla el tercer lado y el area.
+  \item Dados \(\vec u=(3,2)\) y \(\vec v=(-1,4)\), calcula \(\vec u+\vec v\), el producto
+  escalar y el angulo entre ambos vectores.
+  \item Desde un punto de observacion se ve la cima de una torre con angulo \(30^\circ\). Tras
+  avanzar \(\SI{20}{m}\) hacia la base, el angulo pasa a ser \(45^\circ\). Calcula la altura de
+  la torre.
+\end{enumerate}
+\end{exambrief}
+
+\begin{rubricbox}{Baremo orientativo B3}
+\begin{itemize}
+  \item Problema 1: \(2\) puntos.
+  \item Problema 2: \(2\) puntos.
+  \item Problema 3: \(2\) puntos.
+  \item Problema 4: \(2\) puntos.
+  \item Problema 5: \(2\) puntos.
+\end{itemize}
+\end{rubricbox}
+
+\begin{shortanswer}{Bloque B3}
+\[
+240^\circ=\frac{4\pi}{3},
+\qquad
+(10\cos240^\circ,10\sen240^\circ)=(-5,-5\sqrt3).
+\]
+\[
+x=\frac{\pi}{6},\ \frac{\pi}{2},\ \frac{5\pi}{6}.
+\]
+En el triangulo,
+\[
+c\approx \SI{11.29}{m},
+\qquad
+A\approx \SI{60.7}{m^2}.
+\]
+Para los vectores,
+\[
+\vec u+\vec v=(2,6),
+\qquad
+\vec u\cdot \vec v=5,
+\qquad
+\theta\approx 70.3^\circ.
+\]
+La altura de la torre es
+\[
+10(\sqrt3+1)\approx \SI{27.3}{m}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{Bloque B3}
+1. Conversion y componentes:
+\[
+240^\circ=\frac{240\pi}{180}=\frac{4\pi}{3}.
+\]
+Como
+\[
+\cos240^\circ=-\frac12,
+\qquad
+\sen240^\circ=-\frac{\sqrt3}{2},
+\]
+las componentes del vector son
+\[
+(10\cos240^\circ,10\sen240^\circ)=(-5,-5\sqrt3).
+\]
+
+2. Ecuacion trigonometrica:
+\[
+2\sen^2x-3\sen x+1=0.
+\]
+Con \(u=\sen x\):
+\[
+2u^2-3u+1=(2u-1)(u-1)=0.
+\]
+Luego
+\[
+\sen x=\frac12 \quad \text{o}\quad \sen x=1.
+\]
+En \([0,2\pi)\),
+\[
+x=\frac{\pi}{6},\ \frac{5\pi}{6},\ \frac{\pi}{2}.
+\]
+
+3. Triangulo:
+\[
+c^2=11^2+14^2-2\cdot 11\cdot 14\cos52^\circ
+=317-308\cos52^\circ.
+\]
+Como \(\cos52^\circ\approx 0.6157\),
+\[
+c^2\approx 317-189.64=127.36,
+\qquad
+c\approx \SI{11.29}{m}.
+\]
+El area es
+\[
+A=\frac12\cdot 11\cdot 14\sen52^\circ
+=77\sen52^\circ\approx 77\cdot 0.7880\approx \SI{60.7}{m^2}.
+\]
+
+4. Vectores:
+\[
+\vec u+\vec v=(3,2)+(-1,4)=(2,6).
+\]
+El producto escalar es
+\[
+\vec u\cdot \vec v=3(-1)+2\cdot 4=5.
+\]
+Los modulos son
+\[
+\|\vec u\|=\sqrt{13},
+\qquad
+\|\vec v\|=\sqrt{17}.
+\]
+Entonces
+\[
+\cos\theta=\frac{5}{\sqrt{13}\sqrt{17}},
+\qquad
+\theta\approx 70.3^\circ.
+\]
+
+5. Torre:
+Sea \(x\) la distancia desde el punto cercano a la base. Entonces el punto lejano esta a
+\(x+20\). Por trigonometria,
+\[
+\tg45^\circ=\frac{h}{x}
+\Longrightarrow h=x,
+\]
+\[
+\tg30^\circ=\frac{h}{x+20}=\frac{x}{x+20}=\frac{1}{\sqrt3}.
+\]
+De aqui,
+\[
+\sqrt3 x=x+20
+\Longrightarrow
+x(\sqrt3-1)=20
+\Longrightarrow
+x=\frac{20}{\sqrt3-1}=10(\sqrt3+1).
+\]
+Como \(h=x\),
+\[
+h=10(\sqrt3+1)\approx \SI{27.3}{m}.
+\]
+\end{fullsolution}

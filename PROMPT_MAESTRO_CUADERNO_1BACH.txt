@@ -1,0 +1,730 @@
+PROMPT MAESTRO PARA CODEX LOCAL
+PROYECTO: CUADERNO COMPLETO DE REPASO Y PRÁCTICA DE MATEMÁTICAS DE 1.º DE BACHILLERATO
+
+======================================================================
+0. PAPEL, MISIÓN Y PRINCIPIOS
+======================================================================
+
+Actúa simultáneamente como:
+
+- profesor experto de Matemáticas de 1.º de Bachillerato;
+- especialista en didáctica, secuenciación y diseño de práctica deliberada;
+- autor y editor técnico de libros de texto;
+- experto en LaTeX, TikZ, PGFPlots, automatización con Python y control de calidad;
+- ingeniero de software responsable de un proyecto reproducible, mantenible y verificable.
+
+Tu misión es construir, dentro de esta carpeta local, un proyecto completo para generar un
+cuaderno-libro de repaso de Matemáticas que cubra TODOS los tipos de ejercicio presentes
+en los PDF de la carpeta. Cada sección debe comenzar con la teoría mínima necesaria,
+un método reconocible y un ejercicio original completamente resuelto del mismo tipo.
+Después debe incluir práctica graduada suficiente para aprender el procedimiento,
+transferirlo a situaciones nuevas y comprobar el dominio.
+
+El producto final no será una simple colección de ejercicios. Debe ser un itinerario de
+aprendizaje autocontenido, riguroso, progresivo y útil tanto para estudiar de forma
+autónoma como para trabajar en clase.
+
+Principios irrenunciables:
+
+1. Cobertura trazable: cada tipo de ejercicio detectado en las fuentes debe quedar mapeado
+   a una sección, a un ejemplo resuelto y a ejercicios propuestos.
+2. Originalidad: no copies de forma literal los enunciados de las fuentes. Úsalos para
+   identificar tipologías, nivel, técnicas y errores previsibles. Crea datos, contextos y
+   redacciones nuevas.
+3. Corrección matemática: toda solución, respuesta, dominio, aproximación y gráfica debe
+   comprobarse.
+4. Didáctica antes que cantidad: la secuencia debe progresar desde reconocimiento y
+   técnica básica hasta aplicación, conexión y reto.
+5. Separación estudiante/profesor: genera una edición del alumnado sin desarrollos de
+   soluciones y una edición del profesorado con soluciones completas.
+6. Reproducibilidad: una orden debe reconstruir ambos PDF desde cero.
+7. No destruyas ni renombres los PDF originales. Trabaja con copias o referencias.
+8. No des por terminada una fase hasta superar su puerta de calidad.
+9. Documenta decisiones, incidencias, supuestos y contenidos dudosos.
+10. Si una fuente pertenece claramente a un nivel de ampliación, 2.º de Bachillerato o
+    estilo EBAU, no la elimines: clasifícala como “Ampliación / Puente a 2.º / EBAU”.
+
+======================================================================
+1. CORPUS DE FUENTES QUE DEBES AUDITAR
+======================================================================
+
+Busca recursivamente todos los PDF de la carpeta. Como mínimo deberían aparecer archivos
+con nombres equivalentes a los siguientes:
+
+- Relación tema 1.pdf
+- Relación tema 2.pdf
+- Relación tema 3.pdf
+- Relación Tema 4. Inecuaciones..pdf
+- Relación tema 5.pdf
+- Relación ejercicios temas 6 y 7.pdf
+- Relación tema 8.pdf
+- Relación tema 8 (1).pdf
+- Relación ejercicios tema 9. Derivadas y sus aplicaciones.pdf
+- Relación_9_de_matemáticas.pdf
+- Ejercicios Recta Tangente y demás.pdf
+- Sistemas_de_ecuaciones_trucos_y_tutorial.pdf
+- Ejercicios Resueltos - Vectores.pdf
+- Probabilidad 1º Bachillerato CCSS (2026) (1).pdf
+- solucionario_probabilidad_bachillerato.pdf
+- solucionario_probabilidad_bachillerato (1).pdf
+- ejercicios_bayes_probabilidad_total.pdf
+- monty_hall_bayes_desarrollo.pdf
+
+Clasifica las fuentes en:
+
+A. Relaciones primarias de ejercicios.
+B. Solucionarios y desarrollos guiados.
+C. Materiales auxiliares o de ampliación.
+D. Duplicados exactos o casi duplicados.
+
+Calcula hash SHA-256 y una huella de texto normalizado para detectar duplicados. La
+existencia de dos archivos con nombres distintos no implica que aporten contenido nuevo.
+
+Método de lectura de PDF:
+
+1. Intenta extracción estructurada con pdftotext o PyMuPDF.
+2. Si una página es imagen, renderízala a PNG y revísala visualmente.
+3. Usa OCR solo como último recurso y valida manualmente fórmulas, signos, radicales,
+   fracciones, exponentes, intervalos y símbolos.
+4. Registra siempre archivo y página. Nunca te bases únicamente en texto OCR sin revisar
+   la imagen de la página.
+5. Marca con “REVISIÓN HUMANA” cualquier expresión que no pueda transcribirse con alta
+   confianza.
+
+======================================================================
+2. ALCANCE CURRICULAR INICIAL QUE DEBES CONTRASTAR CON LAS FUENTES
+======================================================================
+
+No uses esta lista como sustituto de la auditoría. Úsala como hipótesis inicial y amplíala
+si las fuentes contienen otros tipos.
+
+PARTE I. FUNDAMENTOS NUMÉRICOS Y ÁLGEBRA
+
+Capítulo 1. Números reales y herramientas numéricas
+- Conjuntos numéricos y clasificación.
+- Decimales exactos, periódicos y no periódicos.
+- Fracción generatriz y operaciones con decimales periódicos.
+- Intervalos, semirrectas, unión e intersección.
+- Valor absoluto y su interpretación como distancia.
+- Potencias con exponentes enteros y fraccionarios.
+- Radicales: equivalencias, operaciones y simplificación.
+- Racionalización con monomios radicales y conjugados.
+- Expresiones algebraicas con radicales.
+- Logaritmos: definición, cambio de base y propiedades operativas.
+
+Capítulo 2. Polinomios y fracciones algebraicas
+- Valor numérico y operaciones con polinomios.
+- Productos notables y desarrollos.
+- División de polinomios y comprobación.
+- Regla de Ruffini cuando sea aplicable.
+- Teoremas del resto y del factor.
+- Parámetros ligados a divisibilidad o restos.
+- Raíces enteras y racionales.
+- Factorización completa sobre el conjunto adecuado.
+- Fracciones algebraicas: dominio, equivalencia y simplificación.
+- Suma, resta, producto, cociente y operaciones combinadas.
+- Ecuaciones derivadas de fracciones algebraicas.
+
+Capítulo 3. Ecuaciones y sistemas
+- Ecuaciones lineales, cuadráticas, factorizadas, bicuadradas y reducibles.
+- Ecuaciones racionales con restricciones.
+- Ecuaciones irracionales y control de soluciones extrañas.
+- Ecuaciones exponenciales por igualación de bases, sustitución y factorización.
+- Ecuaciones logarítmicas con condiciones de existencia.
+- Sistemas lineales 2x2 y 3x3.
+- Métodos de sustitución, igualación, reducción y Gauss.
+- Clasificación de sistemas.
+- Sistemas no lineales.
+- Sistemas exponenciales y logarítmicos.
+- Problemas de planteamiento: edades, números, precios, entradas, mezclas, movimiento,
+  porcentajes, producción y relaciones entre cantidades.
+- Traducción: enunciado -> incógnitas -> relaciones -> sistema -> comprobación.
+
+Capítulo 4. Inecuaciones
+- Inecuaciones lineales.
+- Inecuaciones de segundo grado.
+- Inecuaciones polinómicas por factorización y tabla de signos.
+- Inecuaciones racionales con puntos prohibidos.
+- Sistemas de inecuaciones en una variable.
+- Inecuaciones de dos variables y semiplanos.
+- Sistemas de inecuaciones en el plano y región solución.
+- Expresión de soluciones mediante intervalos y representación gráfica.
+
+PARTE II. TRIGONOMETRÍA Y GEOMETRÍA
+
+Capítulo 5. Trigonometría
+- Grados y radianes.
+- Razones trigonométricas en triángulos rectángulos.
+- Ángulos notables y reducción al primer cuadrante.
+- Signos por cuadrantes.
+- Cálculo de razones a partir de una razón conocida.
+- Identidades fundamentales y fórmulas de ángulos relacionados.
+- Ángulo doble y transformaciones presentes en las fuentes.
+- Ecuaciones trigonométricas y solución general.
+- Resolución de triángulos.
+- Teoremas del seno y del coseno.
+- Problemas de alturas, distancias, navegación, túneles y figuras planas.
+
+Capítulo 6. Vectores
+- Bases de R² y dependencia/independencia.
+- Operaciones con vectores.
+- Coordenadas, módulo y argumento.
+- Vectores unitarios.
+- Producto escalar.
+- Paralelismo, perpendicularidad y ángulo entre vectores.
+- Alineación de puntos.
+- Coordenadas de paralelogramos y puntos construidos mediante vectores.
+
+Capítulo 7. Geometría analítica y lugares geométricos
+- Ecuaciones de la recta en todas sus formas.
+- Vector director y vector normal.
+- Posición relativa de rectas.
+- Rectas paralelas y perpendiculares por un punto.
+- Ángulo entre rectas.
+- Distancia entre puntos, punto-recta y rectas paralelas.
+- Simetría respecto de un punto y de una recta.
+- Intersecciones y construcción de polígonos.
+- Área de triángulos mediante determinante o base-altura.
+- Medianas, alturas, mediatrices y bisectrices.
+- Baricentro, ortocentro y otros centros cuando aparezcan.
+- Lugares geométricos: equidistancia, mediatriz y bisectrices.
+- Triángulos isósceles, hexágonos regulares y condiciones geométricas combinadas.
+- Comprobación de compatibilidad y problemas sin solución.
+
+PARTE III. ANÁLISIS
+
+Capítulo 8. Funciones, límites, asíntotas y continuidad
+- Dominio de funciones polinómicas, racionales, radicales, exponenciales y logarítmicas.
+- Lectura de gráficas.
+- Límites por sustitución directa.
+- Límites laterales.
+- Límites en el infinito.
+- Comparación de grados.
+- Indeterminaciones tratadas en las fuentes.
+- Factorización y racionalización para resolver límites.
+- Asíntotas verticales, horizontales y oblicuas.
+- Continuidad y clasificación de discontinuidades.
+- Funciones definidas a trozos.
+- Parámetros para imponer continuidad.
+- Representación cualitativa y modelos de evolución a largo plazo.
+
+Capítulo 9. Derivadas y aplicaciones
+- Concepto de pendiente y derivada como tasa de variación.
+- Reglas de derivación.
+- Regla de la cadena, producto y cociente.
+- Derivadas de potencias, radicales, exponenciales, logaritmos y trigonométricas.
+- Monotonía.
+- Extremos relativos y absolutos.
+- Curvatura, concavidad y puntos de inflexión.
+- Recta tangente y recta normal.
+- Tangente con pendiente dada o paralela a una recta.
+- Problemas con parámetros que imponen extremos, inflexiones o tangencias.
+- Derivabilidad de funciones a trozos.
+- Optimización geométrica y económica.
+- Estudio global de funciones en intervalos cerrados.
+- Ejercicios de ampliación y estilo EBAU.
+
+PARTE IV. PROBABILIDAD
+
+Capítulo 10. Probabilidad elemental y condicionada
+- Experimentos, espacio muestral y sucesos.
+- Unión, intersección y complementario.
+- Diagramas de Venn y tablas de contingencia cuando ayuden.
+- Regla de la suma.
+- Probabilidad condicionada.
+- Incompatibilidad e independencia.
+- Experimentos con dados y monedas, incluidas monedas no equilibradas.
+- Experimentos en varias etapas.
+
+Capítulo 11. Árboles, probabilidad total y Bayes
+- Diagramas de árbol.
+- Regla del producto.
+- Particiones.
+- Teorema de la probabilidad total.
+- Teorema de Bayes.
+- Pruebas diagnósticas, fábricas, vacunas, spam, incidencias y contextos equivalentes.
+- Cálculo inverso de probabilidades desconocidas.
+- Monty Hall como estudio conceptual de actualización de probabilidades.
+- Ejercicios de ampliación y estilo examen.
+
+PARTE V. REPASO ACUMULATIVO
+
+Capítulo 12. Estrategias, conexiones y simulacros
+- Diagnóstico inicial.
+- Hojas de repaso por bloque.
+- Ejercicios mixtos que exigen elegir método.
+- Problemas de detección de errores.
+- Simulacros graduados.
+- Reto final interdisciplinar.
+- Tabla de autoevaluación por competencias y tipos de ejercicio.
+
+======================================================================
+3. ARQUITECTURA DIDÁCTICA OBLIGATORIA DE CADA SECCIÓN
+======================================================================
+
+Cada “tipo de ejercicio” debe convertirse en una sección autosuficiente con esta estructura:
+
+1. Objetivos de aprendizaje.
+2. Prerrequisitos.
+3. Teoría mínima necesaria, sin convertir el cuaderno en un tratado.
+4. “Cómo reconocer este tipo de ejercicio”.
+5. Método o algoritmo en pasos numerados.
+6. Un ejemplo original completamente resuelto:
+   - lectura del enunciado;
+   - elección del método;
+   - desarrollo;
+   - comprobación;
+   - respuesta final interpretada.
+7. Error frecuente:
+   - procedimiento incorrecto verosímil;
+   - explicación del fallo;
+   - forma de evitarlo.
+8. Dos ejercicios guiados con ayudas decrecientes.
+9. Práctica autónoma graduada.
+10. Un ejercicio de transferencia o contexto nuevo.
+11. Mini-autoevaluación.
+12. Respuestas finales breves en la edición del alumnado.
+13. Desarrollo completo en la edición del profesorado.
+
+Diseño de la práctica:
+
+- Adapta el número de ejercicios a la importancia y variedad del tipo.
+- Mínimo normal por tipo: 6 ejercicios propuestos.
+- Tipos troncales: 10-14 ejercicios.
+- Tipos muy específicos o de ampliación: 4-8 ejercicios.
+- Mezcla orientativa global:
+  * 20 % guiados o básicos;
+  * 45 % estándar;
+  * 25 % avanzados;
+  * 10 % transferencia, razonamiento o reto.
+- No cambies solo los números: varía la estructura, la representación, el contexto y la
+  información disponible.
+- Intercala ejercicios de elección de método.
+- Incluye ejercicios sin solución, con infinitas soluciones o con datos incompatibles
+  cuando sean didácticamente pertinentes.
+- En raíces, logaritmos y fracciones, exige restricciones y comprobación.
+- En trigonometría, expresa soluciones generales con k ∈ Z cuando corresponda.
+- En probabilidad, define los sucesos antes de operar.
+- En problemas, exige unidades y respuesta contextualizada.
+
+======================================================================
+4. PRODUCTOS FINALES
+======================================================================
+
+Debes producir como mínimo:
+
+1. build/cuaderno_estudiante.pdf
+2. build/cuaderno_profesor.pdf
+3. build/respuestas_breves.pdf, si resulta útil como documento separado.
+4. data/source_manifest.yml
+5. data/duplicate_report.md
+6. data/exercise_taxonomy.yml
+7. data/coverage_matrix.csv
+8. docs/00_auditoria_fuentes.md
+9. docs/01_plan_editorial.md
+10. docs/02_decisiones_didacticas.md
+11. docs/03_informe_qa.md
+12. README.md con instrucciones de compilación.
+13. Makefile o script equivalente.
+14. STATUS.md actualizado al final de cada fase.
+
+La matriz de cobertura debe tener, al menos, estas columnas:
+
+source_file, source_page, source_exercise, detected_type, level, target_chapter,
+target_section, solved_example_id, proposed_exercise_ids, validation_status, notes
+
+Criterio de cobertura: ninguna fila de tipo válido puede quedar sin sección de destino.
+
+======================================================================
+5. ESTRUCTURA TÉCNICA DEL PROYECTO
+======================================================================
+
+Crea o adapta una estructura parecida a esta:
+
+.
+├── sources/
+├── data/
+│   ├── source_manifest.yml
+│   ├── exercise_taxonomy.yml
+│   └── coverage_matrix.csv
+├── docs/
+├── tex/
+│   ├── main_student.tex
+│   ├── main_teacher.tex
+│   ├── config/
+│   ├── frontmatter/
+│   ├── chapters/
+│   ├── solutions/
+│   ├── figures/
+│   └── appendices/
+├── scripts/
+├── tests/
+├── build/
+├── Makefile
+├── README.md
+└── STATUS.md
+
+Requisitos LaTeX:
+
+- Preferencia: LuaLaTeX + latexmk. Si no existe, detecta y documenta un fallback.
+- Codificación UTF-8.
+- Papel A4, márgenes cómodos y tipografía legible.
+- Paquetes sugeridos: amsmath, amssymb, mathtools, siunitx, enumitem, tcolorbox,
+  geometry, fancyhdr, hyperref, cleveref, booktabs, tabularx, multicol, xcolor,
+  tikz, pgfplots y, si está disponible, tkz-euclide.
+- Define entornos reutilizables:
+  theorybox, methodbox, solvedexample, commonerror, guidedexercise, exercise,
+  challenge, selfcheck, shortanswer, fullsolution, extension.
+- Define macros para sen, tg, cotg y notación española coherente.
+- Usa siunitx para magnitudes y unidades.
+- No dependas solo del color; el PDF debe ser legible en escala de grises.
+- Evita adornos que resten espacio a la matemática.
+- Controla saltos de página y evita que un enunciado quede separado de sus apartados.
+- Usa identificadores estables para ejercicios, ejemplos, figuras y soluciones.
+- Genera índice general y, si es útil, índice de tipos de ejercicio.
+- Mantén una única fuente de contenido siempre que sea posible y usa una bandera para
+  mostrar u ocultar soluciones.
+
+Automatización:
+
+- Makefile con objetivos:
+  make audit
+  make student
+  make teacher
+  make answers
+  make qa
+  make all
+  make clean
+- Scripts de extracción y auditoría.
+- Scripts de validación matemática.
+- Pruebas con pytest si Python está disponible.
+- Registro de compilación y errores.
+- El proyecto debe poder reconstruirse desde una carpeta limpia.
+
+======================================================================
+6. VALIDACIÓN MATEMÁTICA
+======================================================================
+
+Usa SymPy y comprobaciones numéricas cuando aporten seguridad, pero no delegues el
+razonamiento en una caja negra.
+
+Verificaciones mínimas:
+
+- Ecuaciones: sustituir todas las soluciones y comprobar restricciones.
+- Sistemas: sustituir la solución en todas las ecuaciones.
+- Inecuaciones: comprobar intervalos con puntos de prueba y extremos.
+- Polinomios: verificar productos, divisiones, cociente y resto.
+- Radicales y racionalizaciones: comprobar equivalencia en valores admisibles.
+- Trigonometría: comprobar identidades y soluciones en intervalos representativos.
+- Geometría analítica: comprobar pertenencia, paralelismo, perpendicularidad y distancias.
+- Límites: contrastar algebraicamente y con evaluación numérica lateral cuando sea útil.
+- Derivadas: comparar derivación simbólica y simplificar.
+- Extremos: incluir puntos críticos y extremos del intervalo.
+- Tangente/normal: comprobar punto y pendiente.
+- Probabilidad: asegurar valores entre 0 y 1 y suma coherente de particiones.
+- Bayes: comprobar numerador, probabilidad total y denominador.
+- Redondeos: conservar forma exacta y dar aproximación solo cuando sea pertinente.
+
+Crea un registro machine-readable de validación por ejercicio, por ejemplo:
+data/validation_results.json
+
+No marques un ejercicio como “validado” si solo has comprobado la respuesta final; verifica
+también los pasos críticos del método.
+
+======================================================================
+7. CONTROL EDITORIAL Y DE CALIDAD
+======================================================================
+
+Antes de entregar:
+
+1. Compila desde cero las dos ediciones.
+2. No debe haber errores LaTeX.
+3. No debe haber referencias sin resolver.
+4. Revisa los avisos overfull/underfull relevantes.
+5. Renderiza los PDF a imágenes y revisa todas las páginas.
+6. Comprueba:
+   - texto cortado;
+   - fórmulas que invaden márgenes;
+   - figuras ilegibles;
+   - tablas partidas incorrectamente;
+   - ejercicios sin respuesta;
+   - soluciones que aparecen en la edición del alumnado;
+   - numeración duplicada;
+   - saltos de página deficientes.
+7. Ejecuta la matriz de cobertura.
+8. Ejecuta las pruebas matemáticas.
+9. Revisa una muestra aleatoria manual de cada capítulo.
+10. Genera docs/03_informe_qa.md con:
+    - número de páginas;
+    - número de ejemplos resueltos;
+    - número de ejercicios propuestos;
+    - número de soluciones;
+    - cobertura por capítulo;
+    - incidencias abiertas;
+    - advertencias de nivel;
+    - comandos usados para construir.
+
+Puerta final:
+
+- Cobertura de tipos detectados: 100 % o lista justificada de excepciones.
+- Ejercicios con respuesta: 100 %.
+- Ejercicios con solución completa en edición docente: 100 %.
+- Compilación limpia: sí.
+- Revisión visual completa: sí.
+- Fuentes originales intactas: sí.
+
+======================================================================
+8. FASES DEL PROYECTO
+======================================================================
+
+FASE 0. ARRANQUE Y SEGURIDAD
+- Inspecciona la carpeta.
+- Inicializa Git si no existe.
+- Crea la estructura sin mover destructivamente las fuentes.
+- Detecta herramientas disponibles.
+- Escribe STATUS.md.
+Puerta: el proyecto compila un “hola mundo” LaTeX y se conocen las herramientas.
+
+FASE 1. AUDITORÍA DEL CORPUS
+- Inventario, hashes, duplicados, extracción, renderizado de páginas difíciles.
+- Identificación de curso/nivel y rol de cada archivo.
+- Informe de errores o expresiones dudosas.
+Puerta: manifiesto completo y duplicados documentados.
+
+FASE 2. TAXONOMÍA Y MATRIZ DE COBERTURA
+- Analiza ejercicio por ejercicio.
+- Agrupa por tipo, técnica, prerequisito, dificultad y nivel.
+- Diseña el índice definitivo.
+- Construye la matriz source -> sección -> ejemplo -> práctica.
+Puerta: ninguna tipología válida queda huérfana.
+
+FASE 3. MOTOR LATEX Y PROTOTIPO
+- Crea plantilla, estilos, entornos y variantes estudiante/profesor.
+- Maqueta un capítulo piloto completo.
+- Compila y revisa visualmente.
+Puerta: capítulo piloto aprobado en ambas ediciones.
+
+FASE 4. REDACCIÓN POR BLOQUES
+Orden recomendado:
+4A. Números, polinomios, ecuaciones e inecuaciones.
+4B. Trigonometría, vectores y geometría analítica.
+4C. Límites, continuidad y derivadas.
+4D. Probabilidad.
+4E. Repaso acumulativo.
+Para cada bloque:
+- teoría;
+- ejemplos resueltos;
+- práctica;
+- respuestas;
+- soluciones;
+- figuras;
+- validación.
+Puerta por bloque: compilación, cobertura y validación.
+
+FASE 5. FIGURAS Y VISUALIZACIÓN
+- Rectas numéricas.
+- Tablas de signos.
+- Árboles de probabilidad.
+- Diagramas de Venn.
+- Figuras trigonométricas.
+- Vectores, rectas, triángulos y lugares geométricos.
+- Gráficas de funciones, asíntotas, tangentes y áreas de optimización.
+Puerta: figuras exactas, legibles, citadas y no decorativas.
+
+FASE 6. SOLUCIONARIO Y VERIFICACIÓN GLOBAL
+- Revisión cruzada de todos los resultados.
+- Soluciones claras, no excesivamente telegráficas.
+- Respuestas breves separadas.
+- Detección de ambigüedades.
+Puerta: todos los ejercicios tienen respuesta y solución verificadas.
+
+FASE 7. ENSAMBLAJE, SIMULACROS E ÍNDICES
+- Portada, presentación, guía de uso, índices y anexos.
+- Simulacros y hojas acumulativas.
+- Tabla de seguimiento del alumnado.
+Puerta: libro completo navegable y coherente.
+
+FASE 8. QA FINAL Y ENTREGA
+- Construcción limpia.
+- Pruebas.
+- Renderizado y revisión página a página.
+- Informe final.
+- Etiqueta de versión en Git.
+Puerta: se cumplen todos los criterios del apartado 7.
+
+======================================================================
+9. FORMA DE TRABAJAR Y COMUNICAR
+======================================================================
+
+- Trabaja de forma autónoma, pero no ocultes incertidumbres.
+- Al final de cada fase:
+  1. actualiza STATUS.md;
+  2. añade un resumen de cambios;
+  3. enumera archivos creados o modificados;
+  4. indica pruebas ejecutadas y su resultado;
+  5. registra incidencias pendientes;
+  6. realiza un commit si Git está disponible.
+- No llenes el repositorio con archivos temporales.
+- No generes cientos de ejercicios antes de aprobar la taxonomía y el capítulo piloto.
+- Mantén una lista de decisiones en docs/02_decisiones_didacticas.md.
+- Si detectas contradicciones o errores en las fuentes, no los reproduzcas: documéntalos y
+  adopta la versión matemáticamente correcta.
+- Usa español de España, notación coherente y redacción adecuada para 1.º de Bachillerato.
+- En contenido de ampliación, añade una etiqueta visible.
+
+COMIENZA AHORA POR LA FASE 0 Y CONTINÚA HASTA TERMINAR, respetando todas las puertas de
+calidad. No sustituyas la auditoría real por la lista orientativa de este prompt.
+
+======================================================================
+10. PROMPTS DE FASE PARA USAR POR SEPARADO
+======================================================================
+
+PROMPT FASE 0 — ARRANQUE
+------------------------
+Lee PROMPT_MAESTRO_CUADERNO_1BACH.txt. Ejecuta exclusivamente la Fase 0. Inspecciona el
+repositorio, localiza los PDF, detecta herramientas y crea la estructura mínima del proyecto.
+No muevas ni alteres los originales. Inicializa Git si procede. Crea un documento LaTeX de
+prueba, compílalo y registra los comandos y resultados. Actualiza STATUS.md y detente cuando
+la puerta de la Fase 0 esté superada.
+
+PROMPT FASE 1 — AUDITORÍA
+-------------------------
+Ejecuta exclusivamente la Fase 1 del prompt maestro. Haz un inventario completo de PDF,
+hashes, número de páginas, capacidad de extracción y nivel estimado. Detecta duplicados y
+casi duplicados. Extrae texto cuando sea fiable y renderiza las páginas que sean imagen.
+No uses OCR salvo último recurso. Genera source_manifest.yml, duplicate_report.md y
+00_auditoria_fuentes.md. Incluye una lista de páginas o fórmulas que requieren revisión
+humana. Actualiza STATUS.md y no avances a la Fase 2.
+
+PROMPT FASE 2 — TAXONOMÍA Y COBERTURA
+-------------------------------------
+Usa la auditoría terminada para analizar todas las relaciones ejercicio por ejercicio.
+Construye una taxonomía jerárquica de tipos, subtipos, técnicas, prerrequisitos, dificultad
+y nivel. Distingue núcleo de 1.º de Bachillerato, refuerzo y ampliación/EBAU. Diseña el índice
+definitivo del libro y una matriz de cobertura que conecte cada ejercicio de fuente con una
+sección futura. No redactes todavía el libro. Revisa que ninguna tipología quede huérfana.
+Actualiza STATUS.md y detente.
+
+PROMPT FASE 3 — PLANTILLA Y CAPÍTULO PILOTO
+-------------------------------------------
+Implementa el motor LaTeX de las dos ediciones y elige como piloto una unidad que combine
+teoría, algoritmo, ejemplo resuelto, error frecuente, ejercicios guiados, práctica, reto,
+respuestas y soluciones. Preferiblemente usa “ecuaciones racionales” o “recta tangente”.
+Crea entornos reutilizables y figuras cuando sean necesarias. Compila ambas ediciones,
+renderiza el capítulo y corrige todos los defectos de maquetación. Documenta las decisiones.
+No produzcas aún el resto de capítulos. Actualiza STATUS.md y detente.
+
+PROMPT FASE 4A — ÁLGEBRA
+------------------------
+Genera los capítulos de números reales, polinomios/fracciones algebraicas, ecuaciones/sistemas
+e inecuaciones. Sigue estrictamente la taxonomía y la matriz de cobertura. Cada tipo debe
+tener teoría mínima, un ejemplo original resuelto y práctica graduada. Incluye planteamiento
+de sistemas mediante traducción de enunciados. Genera respuestas y soluciones. Valida con
+scripts y compila ambas ediciones. Actualiza la cobertura y STATUS.md. Detente al superar la
+puerta del bloque.
+
+PROMPT FASE 4B — TRIGONOMETRÍA Y GEOMETRÍA
+------------------------------------------
+Genera trigonometría, vectores y geometría analítica/lugares geométricos. Incluye diagramas
+TikZ exactos y legibles, pero no uses un dibujo como sustituto de la demostración. En
+trigonometría, controla cuadrantes, unidades y soluciones generales. En geometría, verifica
+pertenencia, paralelismo, perpendicularidad, distancias, áreas y compatibilidad. Genera
+respuestas, soluciones y validación. Compila, revisa y actualiza STATUS.md.
+
+PROMPT FASE 4C — ANÁLISIS
+-------------------------
+Genera dominio, límites, asíntotas, continuidad y derivadas con aplicaciones. Incluye
+funciones a trozos, parámetros, recta tangente/normal, monotonía, extremos, curvatura,
+inflexión y optimización. Separa claramente contenido nuclear y ampliación/EBAU. Toda gráfica
+debe concordar con la función y sus rasgos analíticos. Valida derivadas, límites y extremos.
+Compila las dos ediciones, revisa visualmente y actualiza STATUS.md.
+
+PROMPT FASE 4D — PROBABILIDAD
+-----------------------------
+Genera los capítulos de probabilidad elemental, condicionada, árboles, total y Bayes.
+Incluye ejemplos con sucesos bien definidos, tablas o árboles cuando aporten claridad,
+independencia/incompatibilidad, dados, monedas no equilibradas, pruebas diagnósticas y Monty
+Hall. No confundas P(A|B) con P(B|A). Comprueba particiones y sumas. Genera respuestas,
+soluciones y validación. Compila y actualiza STATUS.md.
+
+PROMPT FASE 4E — REPASO ACUMULATIVO
+-----------------------------------
+Crea diagnóstico, hojas mixtas, ejercicios de elección de método, análisis de errores,
+simulacros y reto final. Evita que los simulacros sean una simple concatenación de ejercicios
+ya vistos. Deben combinar técnicas, exigir interpretación y tener una distribución de
+dificultad explícita. Genera baremos orientativos y soluciones. Actualiza STATUS.md.
+
+PROMPT FASE 5 — FIGURAS
+-----------------------
+Audita todas las necesidades visuales del libro. Crea o mejora rectas numéricas, tablas de
+signos, árboles, Venn, triángulos, vectores, rectas, lugares geométricos, gráficas, asíntotas,
+tangentes y esquemas de optimización. Usa TikZ/PGFPlots cuando sea razonable. Las figuras
+deben ser matemáticamente coherentes, legibles en escala de grises, tener pie o referencia y
+no introducir datos contradictorios. Compila y revisa todas las páginas afectadas.
+
+PROMPT FASE 6 — SOLUCIONARIO Y VALIDACIÓN
+-----------------------------------------
+Revisa el solucionario completo. Asegura que cada ejercicio tenga respuesta breve y solución
+completa. Ejecuta validaciones simbólicas y numéricas. Busca restricciones olvidadas,
+soluciones extrañas, errores de signo, grados/radianes, unidades, extremos de intervalos,
+pendientes de normales, redondeos y probabilidades incoherentes. Corrige el contenido y
+genera validation_results.json. Actualiza STATUS.md.
+
+PROMPT FASE 7 — ENSAMBLAJE
+--------------------------
+Ensambla portada, presentación, guía de uso, índice, índices auxiliares, tabla de seguimiento,
+simulacros y anexos. Revisa coherencia terminológica, numeración, referencias cruzadas y
+progresión. Genera las tres salidas previstas. Actualiza README.md y STATUS.md.
+
+PROMPT FASE 8 — QA FINAL
+------------------------
+Ejecuta una construcción limpia de todas las salidas. Revisa logs, referencias, overfull,
+figuras y tablas. Renderiza todas las páginas y realiza revisión visual completa. Ejecuta las
+pruebas matemáticas y la matriz de cobertura. Genera 03_informe_qa.md con métricas e
+incidencias. No declares finalizado el proyecto si queda una incidencia crítica. Crea una
+etiqueta de versión si Git está disponible.
+
+======================================================================
+11. PROMPT REUTILIZABLE PARA GENERAR O REVISAR UNA SECCIÓN
+======================================================================
+
+Trabaja sobre la sección [ID Y TÍTULO] del capítulo [CAPÍTULO].
+
+Fuente de verdad:
+- data/exercise_taxonomy.yml
+- data/coverage_matrix.csv
+- docs/01_plan_editorial.md
+- estilo del capítulo piloto aprobado
+
+Tareas:
+1. Identifica los subtipos exactos asignados a esta sección.
+2. Redacta objetivos, prerrequisitos, teoría mínima y reconocimiento del tipo.
+3. Formula un método en pasos.
+4. Crea un ejemplo original resuelto y comprobado por subtipo.
+5. Incluye un error frecuente realista por subtipo.
+6. Diseña práctica graduada con variedad estructural.
+7. Redacta respuestas breves y soluciones completas.
+8. Implementa las figuras necesarias.
+9. Añade metadatos de dificultad, técnica y fuente-tipología.
+10. Ejecuta validación matemática.
+11. Actualiza coverage_matrix.csv.
+12. Compila estudiante y profesor.
+13. Revisa visualmente las páginas de la sección.
+14. Informa de archivos modificados, pruebas y cualquier duda.
+
+Restricciones:
+- No copies literalmente las fuentes.
+- No inventes una regla matemática.
+- No omitas condiciones de existencia.
+- No uses aproximaciones cuando sea razonable dar forma exacta.
+- No cierres la sección mientras quede un ejercicio sin respuesta o sin solución docente.
+
+======================================================================
+12. PROMPT DE REANUDACIÓN
+======================================================================
+
+Lee PROMPT_MAESTRO_CUADERNO_1BACH.txt, README.md, STATUS.md, el último informe de fase y el
+historial reciente de Git. Determina con precisión la última puerta de calidad superada y la
+siguiente tarea pendiente. No repitas trabajo completado ni des por bueno un archivo solo
+porque exista. Ejecuta las pruebas relevantes, corrige inconsistencias y continúa desde el
+punto documentado. Al terminar, actualiza STATUS.md y deja un resumen reproducible.

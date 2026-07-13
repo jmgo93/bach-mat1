@@ -1,0 +1,700 @@
+\chapter{Arquitectura del Cuaderno de Examenes}
+
+\begin{planningbox}{Objetivo}
+El cuaderno de examenes se proyecta como un complemento de entrenamiento exigente. Debe servir
+para dos usos distintos:
+\begin{itemize}
+  \item mini-examenes por seccion, de \(25\) a \(35\) minutos, para cerrar un apartado;
+  \item examenes por bloques, de \(90\) a \(120\) minutos, para evaluar transferencia,
+  eleccion de metodo y resistencia cognitiva.
+\end{itemize}
+\end{planningbox}
+
+\begin{exambrief}{Estructura base}
+Cada mini-examen por seccion debe incluir:
+\begin{enumerate}
+  \item una tarea tecnica representativa del apartado;
+  \item una tarea de interpretacion o modelizacion;
+  \item una solucion completa con baremo.
+\end{enumerate}
+
+Cada examen por bloques debe incluir:
+\begin{enumerate}
+  \item al menos tres tecnicas diferentes;
+  \item un problema con datos, tabla o grafico;
+  \item un item de justificacion, no solo de calculo;
+  \item una solucion docente cerrada.
+\end{enumerate}
+\end{exambrief}
+
+\section{Inventario de mini-examenes por seccion}
+
+\input{tex/generated/exams_inventory.tex}
+
+\section{Bloques de examen previstos}
+
+\begin{databox}{Mapa de bloques}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Bloque & Contenido \\
+\midrule
+\(B1\) & Numeros reales y algebra inicial (`C01-C02`) \\
+\(B2\) & Ecuaciones, sistemas e inecuaciones (`C03-C04`) \\
+\(B3\) & Trigonometria y vectores (`C05-C06`) \\
+\(B4\) & Geometria analitica (`C07`) \\
+\(B5\) & Limites, continuidad y asintotas (`C08`) \\
+\(B6\) & Derivadas y aplicaciones (`C09`) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{databox}
+
+\chapter{Mini-Examenes Modelo por Seccion}
+
+\section{Modelo C01.S07 --- Logaritmos y propiedades operativas}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(30\) minutos.
+\begin{enumerate}
+  \item Simplifica \(\log 50+\log 2-\log 5\).
+  \item En una escala sonora se cumple \(L=10\log(I/I_0)\). Si un foco sonoro aumenta su
+  intensidad cien veces, calcula el incremento de decibelios.
+\end{enumerate}
+\end{exambrief}
+
+\begin{rubricbox}{C01.S07}
+\begin{itemize}
+  \item Item 1: \(4\) puntos.
+  \item Item 2: \(6\) puntos.
+\end{itemize}
+\end{rubricbox}
+
+\begin{shortanswer}{Mini-examen C01.S07}
+\[
+\log 50+\log 2-\log 5=\log 20,
+\qquad
+\Delta L=20\text{ dB}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C01.S07}
+\[
+\log 50+\log 2-\log 5=\log\left(\frac{50\cdot 2}{5}\right)=\log 20.
+\]
+Si la intensidad se multiplica por \(100\),
+\[
+\Delta L=10\log(100)=10\cdot 2=20\text{ dB}.
+\]
+\end{fullsolution}
+
+\section{Modelo C02.S04 --- Teorema del resto y parametros}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(30\) minutos.
+\begin{enumerate}
+  \item Halla \(a\) para que el polinomio \(P(x)=x^3-3x^2+ax+6\) sea divisible por \(x-2\).
+  \item Con el valor obtenido, factoriza \(P(x)\) sabiendo que \(x-2\) es factor.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C02.S04}
+Se obtiene \(a=-1\) y
+\[
+P(x)=(x-2)(x^2-x-3).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C02.S04}
+Para que \(x-2\) sea factor debe cumplirse \(P(2)=0\):
+\[
+8-12+2a+6=0
+\Longrightarrow
+2+2a=0
+\Longrightarrow
+a=-1.
+\]
+Entonces
+\[
+P(x)=x^3-3x^2-x+6.
+\]
+Dividiendo entre \(x-2\),
+\[
+\begin{array}{r|rrrr}
+2 & 1 & -3 & -1 & 6\\
+  &   & 2 & -2 & -6\\
+\hline
+  & 1 & -1 & -3 & 0
+\end{array}
+\]
+y por tanto
+\[
+P(x)=(x-2)(x^2-x-3).
+\]
+\end{fullsolution}
+
+\section{Modelo C03.S09 --- Problema de planteamiento con sistemas}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(35\) minutos.
+\begin{enumerate}
+  \item En una actividad se venden entradas general a \(14\) euros y reducida a \(9\) euros.
+  Se venden \(260\) entradas y se recaudan \(2980\) euros. Calcula cuantas de cada tipo se
+  vendieron.
+  \item Comprueba la coherencia de la solucion en el contexto.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C03.S09}
+Se vendieron \(128\) entradas generales y \(132\) reducidas.
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C03.S09}
+Si \(g\) es el numero de entradas generales y \(r\) el de reducidas:
+\[
+\begin{cases}
+g+r=260,\\
+14g+9r=2980.
+\end{cases}
+\]
+Restando \(9(g+r)=2340\) a la segunda ecuacion:
+\[
+5g=640 \Longrightarrow g=128.
+\]
+Entonces
+\[
+r=260-128=132.
+\]
+La comprobacion es inmediata:
+\[
+128+132=260,\qquad 14\cdot 128+9\cdot 132=2980.
+\]
+\end{fullsolution}
+
+\section{Modelo C04.S07 --- Sistemas de inecuaciones en el plano}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(35\) minutos.
+\begin{enumerate}
+  \item Representa la region definida por
+  \[
+  \begin{cases}
+  x+y\leq 8,\\
+  x\geq 1,\\
+  y\geq 2.
+  \end{cases}
+  \]
+  \item Halla sus vertices.
+  \item Maximiza \(F(x,y)=3x+2y\) en dicha region.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C04.S07}
+Los vertices son \((1,2)\), \((1,7)\) y \((6,2)\). El maximo de \(F\) es \(22\) y se alcanza
+en \((6,2)\).
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C04.S07}
+La region queda limitada por la recta \(x+y=8\), la vertical \(x=1\) y la horizontal \(y=2\).
+Sus vertices son:
+\[
+(1,2),\qquad (1,7),\qquad (6,2).
+\]
+Evaluamos:
+\[
+F(1,2)=7,\qquad F(1,7)=17,\qquad F(6,2)=22.
+\]
+Correccion: el valor mayor es \(22\), luego el maximo se alcanza en \((6,2)\).
+\end{fullsolution}
+
+\section{Modelo C05.S06 --- Ecuaciones trigonometricas}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(30\) minutos.
+\begin{enumerate}
+  \item Resuelve \(\sen x=\frac{\sqrt{3}}{2}\) en \([0,2\pi)\).
+  \item Escribe la solucion general.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C05.S06}
+En \([0,2\pi)\),
+\[
+x=\frac{\pi}{3}\quad \text{o}\quad x=\frac{2\pi}{3}.
+\]
+La solucion general es
+\[
+x=\frac{\pi}{3}+2k\pi \quad \text{o}\quad x=\frac{2\pi}{3}+2k\pi,\qquad k\in\mathbb{Z}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C05.S06}
+El seno vale \(\frac{\sqrt{3}}{2}\) para el angulo de referencia \(\frac{\pi}{3}\). Como el
+seno es positivo en los cuadrantes I y II, en \([0,2\pi)\) se obtiene
+\[
+x=\frac{\pi}{3},\qquad x=\pi-\frac{\pi}{3}=\frac{2\pi}{3}.
+\]
+Anadiendo vueltas completas:
+\[
+x=\frac{\pi}{3}+2k\pi \quad \text{o}\quad x=\frac{2\pi}{3}+2k\pi,\qquad k\in\mathbb{Z}.
+\]
+\end{fullsolution}
+
+\section{Modelo C06.S04 --- Producto escalar y angulo}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(30\) minutos.
+\begin{enumerate}
+  \item Calcula el producto escalar de \(\vec u=(4,1)\) y \(\vec v=(2,5)\).
+  \item Halla el angulo entre ambos vectores.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C06.S04}
+\[
+\vec u\cdot \vec v=13,
+\qquad
+\cos\theta=\frac{13}{\sqrt{17}\sqrt{29}},
+\]
+de donde \(\theta\approx 54.1^\circ\).
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C06.S04}
+\[
+\vec u\cdot \vec v=4\cdot 2+1\cdot 5=13.
+\]
+Los modulos son
+\[
+\|\vec u\|=\sqrt{17},\qquad \|\vec v\|=\sqrt{29}.
+\]
+Por la formula del producto escalar,
+\[
+\cos\theta=\frac{\vec u\cdot \vec v}{\|\vec u\|\,\|\vec v\|}=
+\frac{13}{\sqrt{17}\sqrt{29}}.
+\]
+Aplicando arco coseno:
+\[
+\theta\approx 54.1^\circ.
+\]
+\end{fullsolution}
+
+\section{Modelo C07.S06 --- Distancia entre rectas}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(35\) minutos.
+\begin{enumerate}
+  \item Comprueba que las rectas \(r:2x-y+1=0\) y \(s:2x-y-5=0\) son paralelas.
+  \item Calcula la distancia entre ellas.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C07.S06}
+Son paralelas porque comparten vector normal \((2,-1)\). La distancia es
+\[
+\frac{|1-(-5)|}{\sqrt{2^2+(-1)^2}}=\frac{6}{\sqrt{5}}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C07.S06}
+Ambas rectas tienen la forma
+\[
+2x-y+c=0,
+\]
+de modo que comparten el mismo vector normal \((2,-1)\) y son paralelas.
+La distancia entre rectas paralelas \(ax+by+c_1=0\) y \(ax+by+c_2=0\) es
+\[
+d=\frac{|c_1-c_2|}{\sqrt{a^2+b^2}}.
+\]
+Aplicando la formula:
+\[
+d=\frac{|1-(-5)|}{\sqrt{2^2+(-1)^2}}=\frac{6}{\sqrt{5}}.
+\]
+\end{fullsolution}
+
+\section{Modelo C08.S09 --- Continuidad con parametros}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(30\) minutos.
+\begin{enumerate}
+  \item Determina \(a\) para que la funcion
+  \[
+  f(x)=
+  \begin{cases}
+    ax+1, & x<2,\\
+    x^2-1, & x\geq 2
+  \end{cases}
+  \]
+  sea continua en \(x=2\).
+  \item Indica el valor comun en el punto de empalme.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C08.S09}
+La continuidad exige \(2a+1=3\), luego \(a=1\). El valor comun es \(3\).
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C08.S09}
+Para que haya continuidad en \(x=2\), el limite por la izquierda debe coincidir con el valor de
+la rama derecha:
+\[
+\lim_{x\to 2^-}(ax+1)=2a+1,
+\qquad
+f(2)=2^2-1=3.
+\]
+Imponemos
+\[
+2a+1=3 \Longrightarrow 2a=2 \Longrightarrow a=1.
+\]
+Con ese valor, la funcion empalma en \(3\).
+\end{fullsolution}
+
+\section{Modelo C09.S07 --- Optimizacion}
+
+\begin{exambrief}{Mini-examen de cierre}
+Duracion sugerida: \(35\) minutos.
+\begin{enumerate}
+  \item Un rectangulo tiene perimetro \(24\) cm. Expresa el area en funcion de un lado.
+  \item Halla las dimensiones que maximizan el area.
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{Mini-examen C09.S07}
+Si un lado es \(x\), el otro vale \(12-x\) y
+\[
+A(x)=x(12-x)=12x-x^2.
+\]
+El area maxima se alcanza en \(x=6\), es decir, en el cuadrado de lado \(6\).
+\end{shortanswer}
+
+\begin{fullsolution}{Mini-examen C09.S07}
+Del perimetro
+\[
+2x+2y=24
+\Longrightarrow
+y=12-x.
+\]
+Entonces
+\[
+A(x)=xy=x(12-x)=12x-x^2.
+\]
+Derivando,
+\[
+A'(x)=12-2x.
+\]
+El punto critico cumple
+\[
+12-2x=0 \Longrightarrow x=6.
+\]
+Como
+\[
+A''(x)=-2<0,
+\]
+el punto corresponde a un maximo. Luego
+\[
+y=12-6=6.
+\]
+La figura de area maxima es un cuadrado de lado \(6\) cm.
+\end{fullsolution}
+
+\chapter{Examenes Modelo por Bloques}
+
+\section{Bloque B1 --- Numeros reales y algebra inicial}
+
+\begin{exambrief}{Examen modelo}
+Duracion sugerida: \(95\) minutos.
+\begin{enumerate}
+  \item Convierte \(0.2\overline{7}\) en fraccion generatriz.
+  \item Simplifica \(\sqrt{75}-\sqrt{12}\).
+  \item Halla \(a\) para que \(x-1\) sea factor de \(x^3+ax^2-4x+3\).
+  \item Factoriza \(x^2-5x+6\) y resuelve \(\dfrac{x^2-5x+6}{x-2}=0\).
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{B1}
+\[
+0.2\overline{7}=\frac{5}{18},\qquad
+\sqrt{75}-\sqrt{12}=3\sqrt{3},\qquad
+a=0,
+\]
+y la ecuacion racional equivale a \(x=3\), con \(x\neq 2\).
+\end{shortanswer}
+
+\begin{fullsolution}{B1}
+Sea \(x=0.2\overline{7}\). Entonces
+\[
+10x=2.\overline{7},\qquad 100x=27.\overline{7}.
+\]
+Restando:
+\[
+90x=25 \Longrightarrow x=\frac{25}{90}=\frac{5}{18}.
+\]
+\[
+\sqrt{75}-\sqrt{12}=5\sqrt{3}-2\sqrt{3}=3\sqrt{3}.
+\]
+Para el factor:
+\[
+1+a-4+3=0 \Longrightarrow a=0.
+\]
+Y
+\[
+x^2-5x+6=(x-2)(x-3).
+\]
+La ecuacion
+\[
+\frac{(x-2)(x-3)}{x-2}=0
+\]
+exige \(x\neq 2\) y deja como unica solucion valida \(x=3\).
+\end{fullsolution}
+
+\section{Bloque B2 --- Ecuaciones, sistemas e inecuaciones}
+
+\begin{exambrief}{Examen modelo}
+Duracion sugerida: \(100\) minutos.
+\begin{enumerate}
+  \item Resuelve \(\sqrt{x+5}=x-1\).
+  \item Resuelve el sistema
+  \[
+  \begin{cases}
+  x+y=7,\\
+  2x-y=5.
+  \end{cases}
+  \]
+  \item Resuelve \((x-1)(x-4)\leq 0\).
+  \item Representa la solucion de
+  \[
+  \begin{cases}
+  x\geq 0,\\
+  y\geq 0,\\
+  x+y\leq 5.
+  \end{cases}
+  \]
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{B2}
+\[
+x=4,\qquad (x,y)=(4,3),\qquad x\in[1,4],
+\]
+y la region plana es el triangulo con vertices \((0,0)\), \((5,0)\) y \((0,5)\).
+\end{shortanswer}
+
+\begin{fullsolution}{B2}
+La ecuacion radical exige \(x\geq 1\). Al cuadrar:
+\[
+x+5=(x-1)^2=x^2-2x+1
+\Longrightarrow x^2-3x-4=0.
+\]
+Factorizando:
+\[
+(x-4)(x+1)=0.
+\]
+La unica solucion admisible es \(x=4\).
+
+Para el sistema, sumamos:
+\[
+3x=12 \Longrightarrow x=4,\qquad y=3.
+\]
+
+La inecuacion cuadratica se resuelve por tabla de signos:
+\[
+(x-1)(x-4)\leq 0 \Longrightarrow x\in[1,4].
+\]
+En el plano, la tercera restriccion delimita el semiplano bajo la recta \(x+y=5\), y junto con
+los ejes positivos forma el triangulo indicado.
+\end{fullsolution}
+
+\section{Bloque B3 --- Trigonometria y vectores}
+
+\begin{exambrief}{Examen modelo}
+Duracion sugerida: \(100\) minutos.
+\begin{enumerate}
+  \item Convierte \(\frac{5\pi}{6}\) radianes a grados.
+  \item En un triangulo rectangulo con hipotenusa \(10\) y angulo agudo \(30^\circ\), halla los
+  catetos.
+  \item Resuelve \(\cos x=\frac12\) en \([0,2\pi)\).
+  \item Dados \(\vec u=(3,4)\) y \(\vec v=(1,-2)\), calcula \(\vec u+\vec v\) y
+  \(\vec u\cdot \vec v\).
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{B3}
+\[
+\frac{5\pi}{6}=150^\circ,\qquad
+\text{catetos } 5 \text{ y } 5\sqrt{3},
+\]
+\[
+x=\frac{\pi}{3}\ \text{o}\ \frac{5\pi}{3},\qquad
+\vec u+\vec v=(4,2),\quad \vec u\cdot \vec v=-5.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{B3}
+\[
+\frac{5\pi}{6}\cdot \frac{180^\circ}{\pi}=150^\circ.
+\]
+En el triangulo rectangulo:
+\[
+\text{cateto opuesto}=10\sen 30^\circ=5,
+\qquad
+\text{cateto contiguo}=10\cos 30^\circ=5\sqrt{3}.
+\]
+La ecuacion trigonometrica se resuelve en los cuadrantes I y IV:
+\[
+x=\frac{\pi}{3},\qquad x=\frac{5\pi}{3}.
+\]
+Y en vectores:
+\[
+\vec u+\vec v=(3,4)+(1,-2)=(4,2),
+\]
+\[
+\vec u\cdot \vec v=3\cdot 1+4\cdot(-2)=-5.
+\]
+\end{fullsolution}
+
+\section{Bloque B4 --- Geometria analitica}
+
+\begin{exambrief}{Examen modelo}
+Duracion sugerida: \(105\) minutos.
+\begin{enumerate}
+  \item Halla la ecuacion de la recta que pasa por \(A(1,2)\) y \(B(5,6)\).
+  \item Halla la recta perpendicular a la anterior que pasa por \(P(0,3)\).
+  \item Calcula el area del triangulo de vertices \((0,0)\), \((4,0)\) y \((1,3)\).
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{B4}
+La recta \(AB\) es \(y=x+1\), la perpendicular por \(P\) es \(y=-x+3\) y el area del
+triangulo es \(6\).
+\end{shortanswer}
+
+\begin{fullsolution}{B4}
+La pendiente de \(AB\) es
+\[
+m=\frac{6-2}{5-1}=1.
+\]
+Usando el punto \(A(1,2)\),
+\[
+y-2=1(x-1) \Longrightarrow y=x+1.
+\]
+La recta perpendicular tiene pendiente \(-1\) y pasa por \(P(0,3)\):
+\[
+y-3=-1(x-0) \Longrightarrow y=-x+3.
+\]
+Para el area usamos base y altura:
+\[
+Area=\frac{4\cdot 3}{2}=6.
+\]
+\end{fullsolution}
+
+\section{Bloque B5 --- Limites, continuidad y asintotas}
+
+\begin{exambrief}{Examen modelo}
+Duracion sugerida: \(100\) minutos.
+\begin{enumerate}
+  \item Halla el dominio de \(f(x)=\dfrac{\sqrt{x-1}}{x+2}\).
+  \item Calcula \(\lim_{x\to 2}\dfrac{x^2-4}{x-2}\).
+  \item Estudia la continuidad en \(x=1\) de
+  \[
+  g(x)=
+  \begin{cases}
+    x+1, & x<1,\\
+    3x-1, & x\geq 1.
+  \end{cases}
+  \]
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{B5}
+\[
+D_f=[1,\infty),\qquad
+\lim_{x\to 2}\frac{x^2-4}{x-2}=4,
+\]
+y \(g\) es continua en \(x=1\).
+\end{shortanswer}
+
+\begin{fullsolution}{B5}
+La raiz exige \(x-1\geq 0\), luego \(x\geq 1\). La restriccion \(x\neq -2\) ya queda fuera de
+ese intervalo, de modo que
+\[
+D_f=[1,\infty).
+\]
+Factorizando:
+\[
+\frac{x^2-4}{x-2}=\frac{(x-2)(x+2)}{x-2}=x+2 \quad (x\neq 2),
+\]
+por lo que el limite vale \(4\).
+
+En la funcion a trozos:
+\[
+\lim_{x\to 1^-}g(x)=1+1=2,
+\qquad
+g(1)=3\cdot 1-1=2,
+\qquad
+\lim_{x\to 1^+}g(x)=2.
+\]
+Los tres valores coinciden, asi que \(g\) es continua en \(x=1\).
+\end{fullsolution}
+
+\section{Bloque B6 --- Derivadas y aplicaciones}
+
+\begin{exambrief}{Examen modelo}
+Duracion sugerida: \(110\) minutos.
+\begin{enumerate}
+  \item Deriva \(f(x)=x^3-3x^2+2\).
+  \item Estudia sus puntos criticos.
+  \item Halla la recta tangente en \(x=1\).
+\end{enumerate}
+\end{exambrief}
+
+\begin{shortanswer}{B6}
+\[
+f'(x)=3x^2-6x=3x(x-2).
+\]
+Los puntos criticos son \(x=0\) y \(x=2\). La tangente en \(x=1\) es \(y=-3x+3\).
+\end{shortanswer}
+
+\begin{fullsolution}{B6}
+\[
+f'(x)=3x^2-6x=3x(x-2).
+\]
+Los puntos criticos son
+\[
+x=0,\qquad x=2.
+\]
+Ademas,
+\[
+f(1)=1-3+2=0,
+\qquad
+f'(1)=3-6=-3.
+\]
+La recta tangente en \(x=1\) es
+\[
+y-f(1)=f'(1)(x-1),
+\]
+es decir,
+\[
+y=-3(x-1)=-3x+3.
+\]
+\end{fullsolution}
+
+\chapter{Hoja de Ruta de Produccion}
+
+\begin{planningbox}{Orden recomendado}
+\begin{enumerate}
+  \item Redactar primero todos los mini-examenes por seccion usando una plantilla fija.
+  \item Construir despues los examenes por bloques a partir de combinaciones ya probadas.
+  \item Anadir baremos detallados en una segunda pasada, cuando el peso de cada item este
+  equilibrado.
+  \item Cerrar con simulacros largos y control de tiempos reales.
+\end{enumerate}
+\end{planningbox}
+
+\begin{databox}{Criterios de calidad del suplemento definitivo}
+\begin{itemize}
+  \item cada mini-examen debe poder resolverse sin mirar teoria, pero exigiendo reconocer el
+  apartado;
+  \item cada examen por bloques debe incluir al menos un item de decision metodologica;
+  \item ningun bloque debe quedarse sin solucion completa ni sin baremo;
+  \item las figuras y tablas deben ser legibles en impresion y coherentes en escala de grises.
+\end{itemize}
+\end{databox}

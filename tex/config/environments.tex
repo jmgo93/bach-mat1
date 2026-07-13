@@ -1,9 +1,30 @@
+\definecolor{theorytone}{RGB}{228,236,245}
+\definecolor{methodtone}{RGB}{231,242,230}
+\definecolor{exampletone}{RGB}{247,236,226}
+\definecolor{errortone}{RGB}{247,229,229}
+\definecolor{guidedtone}{RGB}{236,233,245}
+\definecolor{exercisetone}{RGB}{242,242,242}
+\definecolor{challengetone}{RGB}{248,241,221}
+\definecolor{selfchecktone}{RGB}{229,240,239}
+\definecolor{answertone}{RGB}{243,239,230}
+\definecolor{solutiontone}{RGB}{236,236,236}
+\definecolor{extensiontone}{RGB}{240,232,245}
+\definecolor{planningtone}{RGB}{233,241,232}
+\definecolor{contexttone}{RGB}{232,243,236}
+\definecolor{datatone}{RGB}{232,237,246}
+\definecolor{examtone}{RGB}{246,234,229}
+\definecolor{rubrictone}{RGB}{242,240,229}
+
 \tcbset{
   basebox/.style={
     enhanced,
     breakable,
     colback=white,
-    colframe=black,
+    colframe=gray!55,
+    colbacktitle=gray!15,
+    coltitle=black,
+    colupper=black,
+    title filled=true,
     boxrule=0.6pt,
     arc=1mm,
     left=1mm,
@@ -17,45 +38,65 @@
 \newcounter{exercisectr}[chapter]
 
 \NewDocumentEnvironment{theorybox}{m}
-  {\begin{tcolorbox}[basebox,title={Teoria minima: #1}]}
+  {\begin{tcolorbox}[basebox,title={Teoria minima: #1},colback=theorytone!35!white,colbacktitle=theorytone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{methodbox}{m}
-  {\begin{tcolorbox}[basebox,title={Metodo: #1}]}
+  {\begin{tcolorbox}[basebox,title={Metodo: #1},colback=methodtone!35!white,colbacktitle=methodtone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{solvedexample}{m}
-  {\refstepcounter{examplectr}\begin{tcolorbox}[basebox,title={Ejemplo resuelto \thechapter.\theexamplectr: #1}]}
+  {\refstepcounter{examplectr}\begin{tcolorbox}[basebox,title={Ejemplo resuelto \thechapter.\theexamplectr: #1},colback=exampletone!30!white,colbacktitle=exampletone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{commonerror}{m}
-  {\begin{tcolorbox}[basebox,title={Error frecuente: #1},colback=gray!8]}
+  {\begin{tcolorbox}[basebox,title={Error frecuente: #1},colback=errortone!40!white,colbacktitle=errortone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{guidedexercise}{m}
-  {\refstepcounter{exercisectr}\begin{tcolorbox}[basebox,title={Ejercicio guiado \thechapter.\theexercisectr: #1}]}
+  {\refstepcounter{exercisectr}\begin{tcolorbox}[basebox,title={Ejercicio guiado \thechapter.\theexercisectr: #1},colback=guidedtone!28!white,colbacktitle=guidedtone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{exercise}{m}
-  {\refstepcounter{exercisectr}\begin{tcolorbox}[basebox,title={Ejercicio \thechapter.\theexercisectr: #1}]}
+  {\refstepcounter{exercisectr}\begin{tcolorbox}[basebox,title={Ejercicio \thechapter.\theexercisectr: #1},colback=exercisetone!20!white,colbacktitle=exercisetone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{challenge}{m}
-  {\begin{tcolorbox}[basebox,title={Reto: #1},colback=gray!5]}
+  {\begin{tcolorbox}[basebox,title={Reto: #1},colback=challengetone!35!white,colbacktitle=challengetone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{selfcheck}{}
-  {\begin{tcolorbox}[basebox,title={Mini-autoevaluacion}]}
+  {\begin{tcolorbox}[basebox,title={Mini-autoevaluacion},colback=selfchecktone!35!white,colbacktitle=selfchecktone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{shortanswer}{m}
-  {\begin{tcolorbox}[basebox,title={Respuesta breve: #1},colback=gray!5]}
+  {\begin{tcolorbox}[basebox,title={Respuesta breve: #1},colback=answertone!35!white,colbacktitle=answertone]}
   {\end{tcolorbox}}
 
 \NewDocumentEnvironment{fullsolution}{m +b}
-  {\ifteacheredition\begin{tcolorbox}[basebox,title={Solucion completa: #1},colback=gray!3]#2\end{tcolorbox}\fi}
+  {\ifteacheredition\begin{tcolorbox}[basebox,title={Solucion completa: #1},colback=solutiontone!35!white,colbacktitle=solutiontone]#2\end{tcolorbox}\fi}
   {}
 
 \NewDocumentEnvironment{extension}{m}
-  {\begin{tcolorbox}[basebox,title={Ampliacion: #1},colback=gray!10]}
+  {\begin{tcolorbox}[basebox,title={Ampliacion: #1},colback=extensiontone!35!white,colbacktitle=extensiontone]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{planningbox}{m}
+  {\begin{tcolorbox}[basebox,title={Plan de trabajo: #1},colback=planningtone!35!white,colbacktitle=planningtone]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{contextproblem}{m}
+  {\begin{tcolorbox}[basebox,title={Problema modelo: #1},colback=contexttone!35!white,colbacktitle=contexttone]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{databox}{m}
+  {\begin{tcolorbox}[basebox,title={Datos y recursos: #1},colback=datatone!35!white,colbacktitle=datatone]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{exambrief}{m}
+  {\begin{tcolorbox}[basebox,title={Diseno de examen: #1},colback=examtone!35!white,colbacktitle=examtone]}
+  {\end{tcolorbox}}
+
+\NewDocumentEnvironment{rubricbox}{m}
+  {\begin{tcolorbox}[basebox,title={Baremo orientativo: #1},colback=rubrictone!35!white,colbacktitle=rubrictone]}
   {\end{tcolorbox}}

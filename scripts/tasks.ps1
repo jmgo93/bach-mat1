@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet("audit", "student", "teacher", "answers", "qa", "all", "clean")]
+    [ValidateSet("audit", "student", "teacher", "answers", "contextplan", "examplan", "supplements", "contextbook", "exambook", "supplementbooks", "webcontent", "visualqa", "qa", "all", "clean")]
     [string]$Task
 )
 
@@ -30,6 +30,22 @@ function Invoke-Validation {
     & python (Join-Path $root "scripts\\validate_math.py")
     if ($LASTEXITCODE -ne 0) {
         throw "Validacion matematica fallida"
+    }
+}
+
+function Invoke-SupplementBlueprints {
+    Write-Host "==> Generacion de suplementos"
+    & python (Join-Path $root "scripts\\generate_supplement_blueprints.py")
+    if ($LASTEXITCODE -ne 0) {
+        throw "Generacion de suplementos fallida"
+    }
+}
+
+function Invoke-WebContent {
+    Write-Host "==> Generacion de contenido web"
+    & python (Join-Path $root "scripts\\build_web_content.py")
+    if ($LASTEXITCODE -ne 0) {
+        throw "Generacion de contenido web fallida"
     }
 }
 
@@ -64,6 +80,14 @@ function Invoke-QA {
     }
 }
 
+function Invoke-VisualQA {
+    Write-Host "==> Auditoria visual"
+    & python (Join-Path $root "scripts\\render_visual_audit.py")
+    if ($LASTEXITCODE -ne 0) {
+        throw "Auditoria visual fallida"
+    }
+}
+
 function Invoke-Clean {
     Write-Host "==> Limpieza"
     if (Test-Path $buildDir) {
@@ -84,8 +108,40 @@ switch ($Task) {
     "answers" {
         Invoke-LatexBuild -MainFile "tex/main_answers.tex" -JobName "respuestas_breves"
     }
+    "contextplan" {
+        Invoke-SupplementBlueprints
+        Invoke-LatexBuild -MainFile "tex/main_contextual_plan.tex" -JobName "proyecto_problemas_contextualizados"
+    }
+    "examplan" {
+        Invoke-SupplementBlueprints
+        Invoke-LatexBuild -MainFile "tex/main_exams_plan.tex" -JobName "proyecto_examenes_dificiles"
+    }
+    "supplements" {
+        Invoke-SupplementBlueprints
+        Invoke-LatexBuild -MainFile "tex/main_contextual_plan.tex" -JobName "proyecto_problemas_contextualizados"
+        Invoke-LatexBuild -MainFile "tex/main_exams_plan.tex" -JobName "proyecto_examenes_dificiles"
+    }
+    "contextbook" {
+        Invoke-SupplementBlueprints
+        Invoke-LatexBuild -MainFile "tex/main_contextual_book.tex" -JobName "cuaderno_problemas_contextualizados"
+    }
+    "exambook" {
+        Invoke-SupplementBlueprints
+        Invoke-LatexBuild -MainFile "tex/main_exams_book.tex" -JobName "cuaderno_examenes_dificiles"
+    }
+    "supplementbooks" {
+        Invoke-SupplementBlueprints
+        Invoke-LatexBuild -MainFile "tex/main_contextual_book.tex" -JobName "cuaderno_problemas_contextualizados"
+        Invoke-LatexBuild -MainFile "tex/main_exams_book.tex" -JobName "cuaderno_examenes_dificiles"
+    }
+    "webcontent" {
+        Invoke-WebContent
+    }
     "qa" {
         Invoke-QA
+    }
+    "visualqa" {
+        Invoke-VisualQA
     }
     "all" {
         Invoke-Audit
@@ -93,6 +149,7 @@ switch ($Task) {
         Invoke-LatexBuild -MainFile "tex/main_student.tex" -JobName "cuaderno_estudiante"
         Invoke-LatexBuild -MainFile "tex/main_teacher.tex" -JobName "cuaderno_profesor"
         Invoke-LatexBuild -MainFile "tex/main_answers.tex" -JobName "respuestas_breves"
+        Invoke-VisualQA
         Invoke-QA
     }
     "clean" {

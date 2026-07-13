@@ -1,0 +1,21 @@
+\documentclass[11pt,a4paper,openany]{book}
+\newif\ifteacheredition
+\teachereditiontrue
+\input{tex/config/preamble.tex}
+\input{tex/config/environments.tex}
+\input{tex/generated/supplement_stats.tex}
+\renewcommand{\bookrightheadertext}{Examenes resueltos}
+\hypersetup{pdftitle={Cuaderno de examenes dificiles y resueltos}}
+
+\begin{document}
+\frontmatter
+\input{tex/frontmatter/titlepage_exams_book.tex}
+\tableofcontents
+\mainmatter
+\input{tex/exams_chapters/00_intro.tex}
+\input{tex/exams_chapters/05_trigonometria_exams.tex}
+\input{tex/exams_chapters/06_vectores_exams.tex}
+\input{tex/exams_chapters/30_b3_trig_vectores.tex}
+\appendix
+\input{tex/exams_chapters/99_roadmap.tex}
+\end{document}

@@ -1,0 +1,646 @@
+\chapter{Arquitectura Editorial}
+
+\begin{planningbox}{Objetivo del suplemento}
+El futuro cuaderno de problemas contextualizados se concibe como un complemento de alta
+dificultad del libro principal. Su funcion no es repetir la practica basica, sino obligar a
+reconocer tecnicas, traducir datos de contexto a lenguaje matematico, justificar elecciones y
+cerrar cada tarea con interpretacion.
+\end{planningbox}
+
+\begin{databox}{Magnitud del proyecto}
+Con la estructura actual del libro, el suplemento queda proyectado sobre
+\textbf{\SupplementChapterCount\ capitulos troncales} y \textbf{\SupplementSectionCount\
+secciones activas}. La primera version operativa de este proyecto editorial recomienda:
+\begin{itemize}
+  \item un problema largo por seccion;
+  \item un reto integrador por capitulo;
+  \item un cierre final con tres tareas transversales;
+  \item solucion completa en la misma maqueta de trabajo para facilitar la redaccion docente.
+\end{itemize}
+\end{databox}
+
+\section{Criterios de diseno}
+
+\begin{itemize}
+  \item Cada problema debe tener un contexto realista, pero la matematica no puede quedar
+  escondida: el alumnado debe reconocer la estructura del apartado de origen.
+  \item Debe haber un recurso visual en cada pieza: tabla, recta numerica, plano, croquis,
+  semiplanos, grafica, diagrama vectorial o esquema de datos.
+  \item La dificultad se graduara en tres capas: lectura del contexto, modelizacion y cierre
+  matematico.
+  \item Las soluciones deben explicar por que se elige un metodo y no solo mostrar la cuenta.
+\end{itemize}
+
+\section{Mapa por secciones}
+
+\input{tex/generated/contextual_inventory.tex}
+
+\chapter{Banco Semilla de Problemas Modelo}
+
+\begin{planningbox}{Como leer este banco}
+Los nueve problemas siguientes no pretenden agotar el suplemento. Funcionan como semilla
+editorial: fijan tono, densidad, extension de solucion, tipo de grafico y nivel de exigencia.
+Cada uno puede inspirar despues varios problemas paralelos dentro del mismo capitulo.
+\end{planningbox}
+
+\section{C01. Escala logaritmica de ruido}
+
+\begin{contextproblem}{Biblioteca, patio y escala de decibelios}
+La biblioteca de un centro mide el nivel sonoro mediante la expresion
+\[
+L=10\log\left(\frac{I}{I_0}\right),
+\]
+donde \(L\) es el nivel en decibelios e \(I_0\) es la intensidad de referencia.
+
+En una medicion se registran dos zonas:
+\begin{enumerate}
+  \item sala de estudio: \(45\) dB;
+  \item patio cubierto: \(72\) dB.
+\end{enumerate}
+
+Se pide:
+\begin{enumerate}
+  \item comparar la intensidad del patio con la de la sala;
+  \item fijar el mayor nivel admisible en una tercera zona para que su intensidad no supere en
+  mil veces a la de la sala de estudio.
+\end{enumerate}
+\end{contextproblem}
+
+\begin{databox}{Tabla de mediciones}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Zona & Nivel registrado & Magnitud a estudiar \\
+\midrule
+Sala de estudio & \(45\) dB & Intensidad base \\
+Patio cubierto & \(72\) dB & Factor de comparacion \\
+Zona de lectura rapida & ? & Limite de seguridad \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C01 modelo}
+El patio tiene una intensidad aproximadamente \(10^{2.7}\approx 501\) veces mayor que la sala.
+Para no superar un factor \(1000\), el tercer espacio no debe pasar de \(75\) dB.
+\end{shortanswer}
+
+\begin{fullsolution}{C01 modelo}
+Si \(L_1=45\) y \(L_2=72\), entonces
+\[
+L_2-L_1=10\log\left(\frac{I_2}{I_1}\right).
+\]
+Por tanto,
+\[
+27=10\log\left(\frac{I_2}{I_1}\right)
+\Longrightarrow
+\log\left(\frac{I_2}{I_1}\right)=2.7
+\Longrightarrow
+\frac{I_2}{I_1}=10^{2.7}\approx 501.19.
+\]
+El patio multiplica aproximadamente por \(501\) la intensidad de la sala.
+
+Para el limite de mil veces:
+\[
+\frac{I}{I_1}\leq 1000=10^3.
+\]
+Entonces
+\[
+L-L_1=10\log\left(\frac{I}{I_1}\right)\leq 10\log(10^3)=30.
+\]
+Como \(L_1=45\),
+\[
+L\leq 45+30=75.
+\]
+El nivel maximo recomendable para la tercera zona es \(75\) dB.
+\end{fullsolution}
+
+\section{C02. Produccion por lotes y polinomios}
+
+\begin{contextproblem}{Margen de un taller segun el numero de lotes}
+El margen semanal \(M(n)\), en centenas de euros, de un taller que fabrica lotes numerados se
+modeliza por
+\[
+M(n)=n^3-4n^2-n+4.
+\]
+Se pide:
+\begin{enumerate}
+  \item factorizar el polinomio para detectar semanas de equilibrio;
+  \item dividir \(M(n)\) entre \(n-2\) e interpretar el resto;
+  \item decidir si el margen se anula en \(n=2\).
+\end{enumerate}
+\end{contextproblem}
+
+\begin{shortanswer}{C02 modelo}
+\[
+M(n)=(n-1)(n+1)(n-4),\qquad
+M(n)=(n-2)(n^2-2n-5)-6.
+\]
+Los puntos de equilibrio son \(n=1\), \(n=-1\) y \(n=4\). En \(n=2\) el margen no se anula:
+\(M(2)=-6\).
+\end{shortanswer}
+
+\begin{fullsolution}{C02 modelo}
+Agrupando,
+\[
+M(n)=n^2(n-4)-1(n-4)=(n^2-1)(n-4)=(n-1)(n+1)(n-4).
+\]
+Luego los ceros del modelo son
+\[
+n=1,\qquad n=-1,\qquad n=4.
+\]
+
+Dividiendo entre \(n-2\),
+\[
+\begin{array}{r|rrrr}
+2 & 1 & -4 & -1 & 4\\
+  &   & 2 & -4 & -10\\
+\hline
+  & 1 & -2 & -5 & -6
+\end{array}
+\]
+por lo que
+\[
+M(n)=(n-2)(n^2-2n-5)-6.
+\]
+El resto es \(-6\), que coincide con \(M(2)\) por el teorema del resto. Por tanto, al tomar
+\(n=2\) el margen vale \(-6\) centenas de euros y no se alcanza equilibrio.
+\end{fullsolution}
+
+\section{C03. Suscripciones y sistema lineal 3x3}
+
+\begin{contextproblem}{Campana de matriculas en tres planes}
+Una academia ofrece tres planes: basico, estandar y premium. En una campana se venden
+\(120\) suscripciones y se recauda un total de \(3030\) euros. Cada plan cuesta:
+\[
+18\text{ euros},\qquad 25\text{ euros},\qquad 40\text{ euros}.
+\]
+Ademas, el numero de planes basicos duplica al de premium.
+
+Calcula cuantas suscripciones de cada tipo se vendieron.
+\end{contextproblem}
+
+\begin{shortanswer}{C03 modelo}
+Se vendieron \(60\) planes basicos, \(30\) estandar y \(30\) premium.
+\end{shortanswer}
+
+\begin{fullsolution}{C03 modelo}
+Sean \(b,s,p\) los planes basico, estandar y premium. El sistema es
+\[
+\begin{cases}
+b+s+p=120,\\
+18b+25s+40p=3030,\\
+b=2p.
+\end{cases}
+\]
+Sustituyendo \(b=2p\) en la primera ecuacion,
+\[
+2p+s+p=120 \Longrightarrow s=120-3p.
+\]
+En la ecuacion de ingresos:
+\[
+18(2p)+25(120-3p)+40p=3030.
+\]
+Desarrollando,
+\[
+36p+3000-75p+40p=3030
+\Longrightarrow p+3000=3030
+\Longrightarrow p=30.
+\]
+Entonces
+\[
+b=2p=60,\qquad s=120-3p=30.
+\]
+La distribucion final es:
+\[
+(b,s,p)=(60,30,30).
+\]
+\end{fullsolution}
+
+\section{C04. Region factible y beneficio}
+
+\begin{contextproblem}{Plan de fabricacion con dos productos}
+Una cooperativa produce cuadernos \(x\) y archivadores \(y\). Las restricciones semanales son:
+\[
+\begin{cases}
+x+2y\leq 140,\\
+3x+2y\leq 240,\\
+x\geq 20,\\
+y\geq 10.
+\end{cases}
+\]
+El beneficio es
+\[
+B(x,y)=18x+25y.
+\]
+Se pide representar la region factible, hallar sus vertices y decidir en que punto se maximiza
+el beneficio.
+\end{contextproblem}
+
+\begin{databox}{Croquis de la region factible}
+\begin{center}
+\begin{tikzpicture}[scale=0.08]
+  \draw[->] (0,0) -- (90,0) node[right] {\(x\)};
+  \draw[->] (0,0) -- (0,80) node[above] {\(y\)};
+  \draw[thick] (0,70) -- (140,0);
+  \draw[thick] (0,120) -- (80,0);
+  \draw[dashed] (20,0) -- (20,80);
+  \draw[dashed] (0,10) -- (90,10);
+  \fill[gray!25] (20,10) -- (20,60) -- (50,45) -- (73.333,10) -- cycle;
+  \node at (58,57) {\scriptsize region viable};
+  \fill (20,10) circle (1.5pt);
+  \fill (20,60) circle (1.5pt);
+  \fill (50,45) circle (1.5pt);
+  \fill (73.333,10) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C04 modelo}
+Los vertices son \((20,10)\), \((20,60)\), \((50,45)\) y
+\(\left(\frac{220}{3},10\right)\). El beneficio maximo es \(2025\) euros y se alcanza en
+\((50,45)\).
+\end{shortanswer}
+
+\begin{fullsolution}{C04 modelo}
+La interseccion de
+\[
+x+2y=140
+\qquad\text{y}\qquad
+3x+2y=240
+\]
+se obtiene restando:
+\[
+2x=100 \Longrightarrow x=50.
+\]
+Entonces
+\[
+50+2y=140 \Longrightarrow y=45.
+\]
+Con las restricciones \(x\geq 20\) e \(y\geq 10\), los vertices de la region son:
+\[
+(20,10),\qquad (20,60),\qquad (50,45),\qquad \left(\frac{220}{3},10\right).
+\]
+Evaluamos el beneficio:
+\[
+B(20,10)=610,
+\quad
+B(20,60)=1860,
+\quad
+B(50,45)=2025,
+\]
+\[
+B\left(\frac{220}{3},10\right)=18\cdot \frac{220}{3}+25\cdot 10=1570.
+\]
+El mayor valor es \(2025\), asi que el plan optimo es producir \(50\) cuadernos y \(45\)
+archivadores.
+\end{fullsolution}
+
+\section{C05. Observacion de una torre desde dos puntos}
+
+\begin{contextproblem}{Topografia de una ladera}
+Desde un sendero recto se observa la parte superior de una torre. En el punto \(A\) el angulo
+de elevacion es \(28^\circ\). Tras avanzar \(40\) metros hacia la base, en el punto \(B\), el
+angulo pasa a ser \(41^\circ\).
+
+Calcula la altura de la torre sobre el terreno horizontal.
+\end{contextproblem}
+
+\begin{databox}{Croquis trigonometrico}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+  \draw[thick] (0,0) -- (8,0);
+  \draw[thick] (8,0) -- (8,4.8);
+  \draw[thick] (0,0) -- (8,4.8);
+  \draw[thick] (2.4,0) -- (8,4.8);
+  \node[below] at (0,0) {\(A\)};
+  \node[below] at (2.4,0) {\(B\)};
+  \node[below] at (8,0) {Base};
+  \node[right] at (8,2.4) {\(h\)};
+  \draw (0.9,0) arc[start angle=0,end angle=31,radius=0.9];
+  \node at (1.4,0.45) {\scriptsize \(28^\circ\)};
+  \draw (3.1,0) arc[start angle=0,end angle=41,radius=0.7];
+  \node at (3.55,0.45) {\scriptsize \(41^\circ\)};
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C05 modelo}
+La altura es aproximadamente \(53.4\) metros.
+\end{shortanswer}
+
+\begin{fullsolution}{C05 modelo}
+Sea \(x\) la distancia desde \(B\) hasta la base de la torre. Entonces desde \(A\) la distancia
+horizontal es \(x+40\). Por trigonometria,
+\[
+\tan 41^\circ=\frac{h}{x},
+\qquad
+\tan 28^\circ=\frac{h}{x+40}.
+\]
+Igualando \(h\),
+\[
+x\tan 41^\circ=(x+40)\tan 28^\circ.
+\]
+Despejamos:
+\[
+x(\tan 41^\circ-\tan 28^\circ)=40\tan 28^\circ,
+\]
+\[
+x=\frac{40\tan 28^\circ}{\tan 41^\circ-\tan 28^\circ}\approx 61.43.
+\]
+La altura es
+\[
+h=x\tan 41^\circ\approx 61.43\cdot 0.8693\approx 53.40.
+\]
+Por tanto, la torre mide aproximadamente \(\SI{53.4}{m}\).
+\end{fullsolution}
+
+\section{C06. Ruta vectorial de un dron}
+
+\begin{contextproblem}{Tres desplazamientos y una decision de orientacion}
+Un dron realiza tres desplazamientos sucesivos, en metros:
+\[
+\vec u=(6,2),\qquad \vec v=(-1,5),\qquad \vec w=(3,-4).
+\]
+Se pide:
+\begin{enumerate}
+  \item hallar el desplazamiento total;
+  \item calcular su modulo;
+  \item decidir si la trayectoria final esta mas alineada con el vector
+  \(\vec a=(2,1)\) o con el vector \(\vec b=(1,3)\).
+\end{enumerate}
+\end{contextproblem}
+
+\begin{databox}{Esquema del recorrido}
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  \draw[->] (-1,0) -- (10,0) node[right] {\(x\)};
+  \draw[->] (0,-2) -- (0,8) node[above] {\(y\)};
+  \draw[->,thick] (0,0) -- (6,2) node[midway,below] {\(\vec u\)};
+  \draw[->,thick] (6,2) -- (5,7) node[midway,left] {\(\vec v\)};
+  \draw[->,thick] (5,7) -- (8,3) node[midway,right] {\(\vec w\)};
+  \draw[->,very thick,gray] (0,0) -- (8,3) node[midway,above] {\(\vec r\)};
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C06 modelo}
+El desplazamiento total es \(\vec r=(8,3)\), su modulo es \(\sqrt{73}\) y queda mucho mas
+alineado con \(\vec a=(2,1)\) que con \(\vec b=(1,3)\).
+\end{shortanswer}
+
+\begin{fullsolution}{C06 modelo}
+Sumamos coordenadas:
+\[
+\vec r=\vec u+\vec v+\vec w=(6,2)+(-1,5)+(3,-4)=(8,3).
+\]
+Su modulo es
+\[
+\|\vec r\|=\sqrt{8^2+3^2}=\sqrt{73}.
+\]
+Para comparar alineacion usamos el producto escalar:
+\[
+\vec r\cdot \vec a=8\cdot 2+3\cdot 1=19,
+\qquad
+\vec r\cdot \vec b=8\cdot 1+3\cdot 3=17.
+\]
+Pero hay que tener en cuenta tambien los modulos:
+\[
+\cos(\widehat{r,a})=\frac{19}{\sqrt{73}\sqrt{5}}\approx 0.994,
+\qquad
+\cos(\widehat{r,b})=\frac{17}{\sqrt{73}\sqrt{10}}\approx 0.629.
+\]
+Como el coseno con \(\vec a\) es mucho mayor, la ruta final queda claramente mas alineada con
+\(\vec a\).
+\end{fullsolution}
+
+\section{C07. Triangulo urbano en coordenadas}
+
+\begin{contextproblem}{Parque triangular y rectas notables}
+Tres sensores se colocan en los puntos
+\[
+A(0,0),\qquad B(8,0),\qquad C(2,6).
+\]
+Se pide:
+\begin{enumerate}
+  \item calcular el area del triangulo;
+  \item hallar la altura trazada desde \(C\) al lado \(AB\);
+  \item hallar el ortocentro del triangulo.
+\end{enumerate}
+\end{contextproblem}
+
+\begin{databox}{Plano de referencia}
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \draw[->] (-1,0) -- (10,0) node[right] {\(x\)};
+  \draw[->] (0,-1) -- (0,8) node[above] {\(y\)};
+  \draw[thick] (0,0) -- (8,0) -- (2,6) -- cycle;
+  \draw[dashed] (2,6) -- (2,0);
+  \fill (0,0) circle (2pt) node[below left] {\(A\)};
+  \fill (8,0) circle (2pt) node[below right] {\(B\)};
+  \fill (2,6) circle (2pt) node[above] {\(C\)};
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C07 modelo}
+El area es \(24\) unidades cuadradas, la altura desde \(C\) es la recta \(x=2\) y el
+ortocentro es \(H(2,2)\).
+\end{shortanswer}
+
+\begin{fullsolution}{C07 modelo}
+El lado \(AB\) es horizontal y mide \(8\). La distancia vertical desde \(C\) hasta \(AB\) es
+\(6\), asi que
+\[
+Area=\frac{8\cdot 6}{2}=24.
+\]
+Como \(AB\) tiene ecuacion \(y=0\), la altura desde \(C(2,6)\) es perpendicular a \(AB\) y por
+tanto vertical:
+\[
+x=2.
+\]
+
+Para hallar el ortocentro necesitamos otra altura. La recta \(AC\) tiene pendiente
+\[
+m_{AC}=\frac{6-0}{2-0}=3.
+\]
+La altura desde \(B\) debe tener pendiente \(-\frac13\) y pasar por \(B(8,0)\):
+\[
+y=-\frac13(x-8)=-\frac{x}{3}+\frac{8}{3}.
+\]
+Intersecando con \(x=2\):
+\[
+y=-\frac{2}{3}+\frac{8}{3}=2.
+\]
+Luego el ortocentro es
+\[
+H(2,2).
+\]
+\end{fullsolution}
+
+\section{C08. Modelo de enfriamiento sencillo}
+
+\begin{contextproblem}{Temperatura estabilizada de un deposito}
+La temperatura aproximada de un deposito, en grados, viene dada por
+\[
+T(t)=2+\frac{12}{t+1},
+\]
+para \(t\) medido en horas desde que comienza el proceso.
+
+Se pide:
+\begin{enumerate}
+  \item dar el dominio fisicamente razonable;
+  \item estudiar la temperatura a largo plazo;
+  \item calcular a partir de que instante la temperatura baja de \(5^\circ\).
+\end{enumerate}
+\end{contextproblem}
+
+\begin{databox}{Grafica de apoyo}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.78\textwidth,
+  height=6cm,
+  axis lines=middle,
+  xmin=-0.2,
+  xmax=10,
+  ymin=0,
+  ymax=15,
+  samples=120,
+  grid=both,
+  grid style={line width=0.1pt, draw=gray!25},
+  major grid style={line width=0.2pt, draw=gray!45},
+  xlabel={$t$},
+  ylabel={$T(t)$}
+]
+\addplot[very thick, black, domain=0:10] {2 + 12/(x + 1)};
+\addplot[dashed] coordinates {(0,2) (10,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C08 modelo}
+En el contexto fisico se toma \(t\geq 0\). La temperatura tiende a \(2^\circ\) a largo plazo y
+queda por debajo de \(5^\circ\) para \(t>3\) horas.
+\end{shortanswer}
+
+\begin{fullsolution}{C08 modelo}
+La funcion algebraicamente no esta definida en \(t=-1\), pero en el contexto del problema solo
+tiene sentido considerar tiempos desde el inicio, de modo que el dominio fisico es
+\[
+[0,\infty).
+\]
+El limite en el infinito es
+\[
+\lim_{t\to\infty}\left(2+\frac{12}{t+1}\right)=2.
+\]
+Eso significa que la temperatura se estabiliza cerca de \(2^\circ\).
+
+Para encontrar cuando \(T(t)<5\),
+\[
+2+\frac{12}{t+1}<5
+\Longrightarrow
+\frac{12}{t+1}<3.
+\]
+Como \(t\geq 0\), se tiene \(t+1>0\) y se puede multiplicar:
+\[
+12<3(t+1)
+\Longrightarrow
+12<3t+3
+\Longrightarrow
+9<3t
+\Longrightarrow
+t>3.
+\]
+Por tanto, la temperatura cae por debajo de \(5^\circ\) despues de tres horas.
+\end{fullsolution}
+
+\section{C09. Optimizar el area de un cartel}
+
+\begin{contextproblem}{Panel rectangular apoyado en un muro}
+Se quiere construir un panel rectangular apoyado en un muro, de modo que solo hay que vallar
+tres lados con una longitud total de \(20\) metros. Si \(x\) es la profundidad y \(y\) el lado
+paralelo al muro, calcula las dimensiones que maximizan el area.
+\end{contextproblem}
+
+\begin{databox}{Esquema de la optimizacion}
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \draw[very thick] (0,0) -- (9,0);
+  \draw[thick] (1,0) rectangle (8,4);
+  \node[left] at (1,2) {\(x\)};
+  \node[right] at (8,2) {\(x\)};
+  \node[below] at (4.5,0) {muro};
+  \node[above] at (4.5,4) {\(y\)};
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C09 modelo}
+La funcion area es \(A(x)=20x-2x^2\). El maximo se alcanza en \(x=5\) y entonces \(y=10\).
+El area maxima es \(50\) metros cuadrados.
+\end{shortanswer}
+
+\begin{fullsolution}{C09 modelo}
+Si se vallan tres lados, la restriccion es
+\[
+2x+y=20 \Longrightarrow y=20-2x.
+\]
+El area del rectangulo es
+\[
+A(x)=xy=x(20-2x)=20x-2x^2.
+\]
+Derivando,
+\[
+A'(x)=20-4x.
+\]
+El punto critico cumple
+\[
+20-4x=0 \Longrightarrow x=5.
+\]
+La segunda derivada es
+\[
+A''(x)=-4<0,
+\]
+luego el punto critico corresponde a un maximo. Sustituyendo,
+\[
+y=20-2\cdot 5=10.
+\]
+El area maxima vale
+\[
+A(5)=5\cdot 10=50.
+\]
+Las dimensiones optimas son \(5\) metros de profundidad y \(10\) metros de ancho.
+\end{fullsolution}
+
+\chapter{Secuencia de Produccion}
+
+\begin{planningbox}{Ruta recomendada de ejecucion}
+\begin{enumerate}
+  \item Generar una ficha por seccion con contexto, visual, tecnicas y errores previsibles.
+  \item Redactar primero los capitulos `C05-C09`, porque son los que mas se benefician de un
+  suplemento contextualizado de alta dificultad.
+  \item Consolidar despues `C01-C04` con problemas de lectura de datos, algebra y restricciones.
+  \item Mantener una plantilla fija: enunciado, recurso visual, preguntas escalonadas,
+  respuesta breve, solucion completa y comentario didactico.
+  \item Cerrar con una revision visual y una lectura editorial en papel o escala de grises.
+\end{enumerate}
+\end{planningbox}
+
+\begin{databox}{Recursos que deben prepararse antes de la redaccion masiva}
+\begin{itemize}
+  \item biblioteca de figuras TikZ para triangulos, vectores, planos, rectas numericas y
+  regiones factibles;
+  \item tablas reutilizables para datos de produccion, costes, mediciones y lecturas
+  experimentales;
+  \item convencion estable de dificultad: alta, alta+ y muy alta;
+  \item parrilla de control para comprobar que no desaparece la tecnica central del apartado.
+\end{itemize}
+\end{databox}
+
+\begin{planningbox}{Cierre esperado del suplemento definitivo}
+Cuando este proyecto se complete como cuaderno final, el PDF deberia quedar organizado en nueve
+capitulos, un reto integrador por tema, tres problemas globales de cierre y un apendice de
+indices por tecnica, recurso visual y nivel de dificultad.
+\end{planningbox}

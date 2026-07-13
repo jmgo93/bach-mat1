@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Matemáticas I Interactivas</title>
+  <desc id="desc">Icono con una curva, una cuadrícula y una expresión matemática.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#155e75"/>
+    </linearGradient>
+    <linearGradient id="curve" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="74" y="86" width="364" height="340" rx="42" fill="#ffffff" opacity="0.1"/>
+  <g stroke="#d1fae5" stroke-width="6" opacity="0.22">
+    <path d="M114 130V382"/>
+    <path d="M176 130V382"/>
+    <path d="M238 130V382"/>
+    <path d="M300 130V382"/>
+    <path d="M362 130V382"/>
+    <path d="M98 190H414"/>
+    <path d="M98 252H414"/>
+    <path d="M98 314H414"/>
+  </g>
+  <path
+    d="M112 314C154 314 174 206 224 206C272 206 290 330 344 330C381 330 401 266 414 234"
+    fill="none"
+    stroke="url(#curve)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="18"
+  />
+  <circle cx="224" cy="206" r="12" fill="#fef3c7"/>
+  <circle cx="344" cy="330" r="12" fill="#fef3c7"/>
+  <text x="122" y="170" fill="#ecfeff" font-family="Space Grotesk, sans-serif" font-size="58" font-weight="700">
+    f'(x)
+  </text>
+  <text x="248" y="395" fill="#ecfeff" font-family="Space Grotesk, sans-serif" font-size="76" font-weight="700">
+    π
+  </text>
+</svg>

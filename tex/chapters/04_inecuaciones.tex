@@ -1,0 +1,925 @@
+\chapter{Inecuaciones}
+
+\begin{theorybox}{Trazabilidad del capitulo}
+Este capitulo desarrolla las secciones \texttt{C04.S01-C04.S07} de la matriz de cobertura a
+partir de \texttt{sources/Relacion Tema 4. Inecuaciones..pdf}. El acento didactico esta en
+traducir correctamente la solucion a intervalos y en justificar los signos.
+\end{theorybox}
+
+\section{[C04.S01] Inecuaciones lineales}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver inecuaciones lineales de una variable.
+  \item Expresar la solucion con desigualdades e intervalos.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Ecuaciones lineales y orden en \(\mathbb{R}\).
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Una inecuacion lineal se resuelve igual que una ecuacion lineal, con una precaucion importante:
+si multiplicamos o dividimos por un numero negativo, el signo de la desigualdad cambia.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Reune los terminos con \(x\) en un miembro y los numeros en el otro.
+  \item Simplifica.
+  \item Si divides por un numero negativo, invierte el signo.
+  \item Expresa el resultado en desigualdad o intervalo.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S01-01] Inecuacion lineal directa}
+Resuelve
+\[
+3x-5\leq 7.
+\]
+
+\textbf{Desarrollo.}
+\[
+3x\leq 12 \Longrightarrow x\leq 4.
+\]
+
+\textbf{Respuesta final.}
+\[
+x\leq 4 \qquad \text{o bien} \qquad (-\infty,4].
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Olvidar cambiar el signo}
+Si al despejar aparece una division por un numero negativo, el sentido de la desigualdad debe
+invertirse.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S01-01] Un paso de suma}
+Resuelve
+\[
+2x+3>7.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S01-01]}
+\[
+x>2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S01-01]}
+\[
+2x>4 \Longrightarrow x>2.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S01-02] Division por negativo}
+Resuelve
+\[
+-3x+6\geq 0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S01-02]}
+\[
+x\leq 2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S01-02]}
+\[
+-3x\geq -6.
+\]
+Al dividir por \(-3\), el signo cambia:
+\[
+x\leq 2.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S01-01] Resuelve \(x-4<0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S01-02] Resuelve \(5x+1\geq 11\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S01-03] Resuelve \(7-2x>1\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S01-04] Resuelve \(4x-3\leq 5\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S01-05] Resuelve \(2-3x<11\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S01-06] Resuelve \(-x+8\geq 10\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S01 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S01-\arabic*:}, leftmargin=*]
+  \item \(x<4\)
+  \item \(x\geq 2\)
+  \item \(x<3\)
+  \item \(x\leq 2\)
+  \item \(x>-3\)
+  \item \(x\leq -2\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S01 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S01-\arabic*:}, leftmargin=*]
+  \item \(x<4\).
+  \item \(5x\geq 10\), luego \(x\geq 2\).
+  \item \(-2x>-6\), al dividir por \(-2\), \(x<3\).
+  \item \(4x\leq 8\), luego \(x\leq 2\).
+  \item \(-3x<9\), al dividir por \(-3\), \(x>-3\).
+  \item \(-x\geq 2\), luego \(x\leq -2\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C04.S02] Inecuaciones de segundo grado}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver inecuaciones cuadraticas.
+  \item Usar las raices para estudiar el signo del polinomio.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Factorizacion de polinomios de segundo grado.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Una parabola cambia de signo en sus raices. Si el coeficiente principal es positivo, el
+polinomio es positivo fuera de las raices y negativo entre ellas; si es negativo, ocurre al
+reves.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Factoriza o halla las raices.
+  \item Situa las raices en la recta real.
+  \item Decide en que intervalos el polinomio cumple la desigualdad.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S02-01] Cuadratica factorizada}
+Resuelve
+\[
+x^2-5x+6>0.
+\]
+
+\textbf{Desarrollo.} Factorizamos:
+\[
+x^2-5x+6=(x-2)(x-3).
+\]
+Las raices son \(2\) y \(3\). Como el coeficiente de \(x^2\) es positivo, el producto es
+positivo fuera del intervalo entre raices.
+
+\textbf{Respuesta final.}
+\[
+x\in (-\infty,2)\cup (3,+\infty).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Confundir \(>\) con \(\geq\)}
+Si la desigualdad es estricta, las raices no se incluyen en la solucion.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S02-01] Entre dos raices}
+Resuelve
+\[
+x^2-9\leq 0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S02-01]}
+\[
+[-3,3].
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S02-01]}
+\[
+x^2-9=(x-3)(x+3).
+\]
+El producto es no positivo entre las raices:
+\[
+x\in [-3,3].
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S02-02] Factor comun en el signo}
+Resuelve
+\[
+x^2-4x<0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S02-02]}
+\[
+(0,4).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S02-02]}
+\[
+x^2-4x=x(x-4).
+\]
+El producto es negativo entre \(0\) y \(4\):
+\[
+x\in (0,4).
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S02-01] Resuelve \(x^2-1\geq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S02-02] Resuelve \(x^2-6x+8<0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S02-03] Resuelve \(x^2+4x+3\leq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S02-04] Resuelve \(x^2-9>0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S02-05] Resuelve \(x^2-2x-3\geq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S02-06] Resuelve \(-x^2+4x-4\leq 0\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S02 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S02-\arabic*:}, leftmargin=*]
+  \item \((-\infty,-1]\cup [1,+\infty)\)
+  \item \((2,4)\)
+  \item \([-3,-1]\)
+  \item \((-\infty,-3)\cup (3,+\infty)\)
+  \item \((-\infty,-1]\cup [3,+\infty)\)
+  \item \(\mathbb{R}\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S02 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S02-\arabic*:}, leftmargin=*]
+  \item \((x-1)(x+1)\geq 0\) fuera de las raices.
+  \item \((x-2)(x-4)<0\) entre \(2\) y \(4\).
+  \item \((x+1)(x+3)\leq 0\) entre las raices e incluyendolas.
+  \item \(x^2-9>0\) fuera de \(\pm 3\).
+  \item \((x-3)(x+1)\geq 0\) fuera del intervalo interior.
+  \item \(-x^2+4x-4=-(x-2)^2\leq 0\) para todo real.
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C04.S03] Inecuaciones polinomicas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver inecuaciones polinomicas de grado mayor que dos.
+  \item Usar tablas de signos apoyadas en los factores.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Factorizacion y estudio de signo en productos.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En una inecuacion polinomica factorizada, los puntos clave son las raices de cada factor. Entre
+dos puntos consecutivos, el signo del producto es constante.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Factoriza el polinomio.
+  \item Ordena las raices reales.
+  \item Estudia el signo en cada intervalo.
+  \item Incluye o excluye las raices segun el signo de desigualdad.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S03-01] Tres factores lineales}
+Resuelve
+\[
+(x-1)(x+2)(x-4)\geq 0.
+\]
+
+\textbf{Desarrollo.} Las raices son \(-2\), \(1\) y \(4\). El estudio de signos da:
+\[
+(-\infty,-2): -, \qquad (-2,1): +, \qquad (1,4): -, \qquad (4,+\infty): +.
+\]
+Como queremos \(\geq 0\), tomamos los intervalos positivos y las raices.
+
+\textbf{Respuesta final.}
+\[
+[-2,1]\cup [4,+\infty).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{No tener en cuenta la multiplicidad}
+Si una raiz tiene multiplicidad par, el signo no cambia al pasar por ella. Ese detalle altera la
+tabla de signos.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S03-01] Dos factores}
+Resuelve
+\[
+x(x-3)\leq 0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S03-01]}
+\[
+[0,3].
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S03-01]}
+Las raices son \(0\) y \(3\). El producto es no positivo entre ellas:
+\[
+[0,3].
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S03-02] Raiz doble}
+Resuelve
+\[
+(x+1)^2(x-2)>0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S03-02]}
+\[
+(2,+\infty).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S03-02]}
+El factor \((x+1)^2\) es siempre no negativo y solo vale \(0\) en \(x=-1\). El signo del
+producto lo decide \(x-2\), por lo que solo es positivo si \(x>2\).
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S03-01] Resuelve \(x(x-1)(x+1)<0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S03-02] Resuelve \((x-2)^2(x+3)\geq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S03-03] Resuelve \(x(x-4)^2\leq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S03-04] Resuelve \((x+2)(x-5)>0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S03-05] Resuelve \(x^2(x-1)\leq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S03-06] Resuelve \((x-3)^3\geq 0\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S03 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S03-\arabic*:}, leftmargin=*]
+  \item \((-\infty,-1)\cup (0,1)\)
+  \item \([-3,+\infty)\)
+  \item \((-\infty,0]\cup \{4\}\)
+  \item \((-\infty,-2)\cup (5,+\infty)\)
+  \item \((-\infty,1]\)
+  \item \([3,+\infty)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S03 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S03-\arabic*:}, leftmargin=*]
+  \item El signo alterna en \(-1\), \(0\) y \(1\), quedando negativo en \((-\infty,-1)\) y \((0,1)\).
+  \item \((x-2)^2\geq 0\), asi que el signo lo decide \(x+3\); se incluye \(-3\).
+  \item El signo lo decide \(x\), pero en \(x=4\) el producto vale \(0\).
+  \item Producto positivo fuera de las raices.
+  \item Como \(x^2\geq 0\), el signo depende de \(x-1\) y el producto es no positivo si \(x\leq 1\).
+  \item Una potencia impar conserva el signo de \(x-3\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C04.S04] Inecuaciones racionales}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver inecuaciones con cocientes de polinomios.
+  \item Separar raices del numerador y puntos prohibidos del denominador.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Inecuaciones polinomicas y fracciones algebraicas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En una inecuacion racional, los puntos importantes son las raices del numerador y los valores
+que anulan el denominador. Estos ultimos nunca pueden pertenecer a la solucion.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Factoriza numerador y denominador.
+  \item Marca las raices y los puntos prohibidos.
+  \item Estudia el signo en cada intervalo.
+  \item Incluye solo los ceros del numerador cuando la desigualdad lo permita.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S04-01] Cociente con un punto prohibido}
+Resuelve
+\[
+\frac{x-3}{x+1}\leq 0.
+\]
+
+\textbf{Desarrollo.} El numerador se anula en \(x=3\) y el denominador en \(x=-1\), que es
+punto prohibido. El estudio de signos da:
+\[
+(-\infty,-1): +,\qquad (-1,3): -,\qquad (3,+\infty): +.
+\]
+Como queremos \(\leq 0\), tomamos el intervalo negativo y el cero del numerador.
+
+\textbf{Respuesta final.}
+\[
+(-1,3].
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Incluir el punto prohibido}
+El valor que anula el denominador nunca se incluye, aunque la desigualdad sea \(\leq\) o \(\geq\).
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S04-01] Signo positivo}
+Resuelve
+\[
+\frac{x}{x-2}>0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S04-01]}
+\[
+(-\infty,0)\cup (2,+\infty).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S04-01]}
+El cociente es positivo cuando numerador y denominador tienen el mismo signo:
+\[
+(-\infty,0)\cup (2,+\infty).
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S04-02] Signo no negativo}
+Resuelve
+\[
+\frac{x+1}{x}\geq 0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S04-02]}
+\[
+(-\infty,-1]\cup (0,+\infty).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S04-02]}
+Los puntos clave son \(-1\) y \(0\). El cociente es no negativo en
+\[
+(-\infty,-1]\cup (0,+\infty).
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S04-01] Resuelve \(\dfrac{1}{x-4}<0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S04-02] Resuelve \(\dfrac{x-2}{x+2}\geq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S04-03] Resuelve \(\dfrac{x}{x+1}\leq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S04-04] Resuelve \(\dfrac{x+3}{x-1}>0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S04-05] Resuelve \(\dfrac{x-1}{x-3}<0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S04-06] Resuelve \(\dfrac{1}{x^2-4}>0\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S04 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S04-\arabic*:}, leftmargin=*]
+  \item \((-\infty,4)\)
+  \item \((-\infty,-2)\cup [2,+\infty)\)
+  \item \((-1,0]\)
+  \item \((-\infty,-3)\cup (1,+\infty)\)
+  \item \((1,3)\)
+  \item \((-\infty,-2)\cup (2,+\infty)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S04 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S04-\arabic*:}, leftmargin=*]
+  \item El signo lo decide \(x-4\); la fraccion es negativa si \(x<4\).
+  \item Mismo signo en numerador y denominador, incluyendo \(x=2\).
+  \item Entre \(-1\) y \(0\) el cociente es no positivo, e incluye \(x=0\).
+  \item Positiva si ambos factores tienen el mismo signo, sin incluir \(x=-3\) porque hace cero el numerador.
+  \item Negativa entre las raices y sin incluirlas.
+  \item \(x^2-4=(x-2)(x+2)\); el producto es positivo fuera de \([-2,2]\), sin incluir los extremos.
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C04.S05] Sistemas de inecuaciones en una variable}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver varias inecuaciones a la vez.
+  \item Hallar la interseccion final de sus soluciones.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Inecuaciones lineales y expresion en intervalos.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Un sistema de inecuaciones se resuelve encontrando la solucion de cada una por separado y
+tomando la interseccion de todas ellas.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Resuelve cada inecuacion por separado.
+  \item Escribe cada solucion como intervalo.
+  \item Intersecta los intervalos.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S05-01] Interseccion de dos condiciones}
+Resuelve
+\[
+\begin{cases}
+x+2>0,\\
+2x-3\leq 1.
+\end{cases}
+\]
+
+\textbf{Desarrollo.}
+\[
+x>-2,
+\qquad
+2x\leq 4 \Longrightarrow x\leq 2.
+\]
+La interseccion es
+\[
+(-2,2].
+\]
+
+\textbf{Respuesta final.}
+\[
+x\in (-2,2].
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Unir en lugar de intersectar}
+En un sistema deben cumplirse todas las condiciones, asi que se intersectan soluciones; no se
+unen.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S05-01] Dos cotas}
+Resuelve
+\[
+\begin{cases}
+x<5,\\
+x\geq 1.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S05-01]}
+\[
+[1,5).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S05-01]}
+La primera condicion da \((-\infty,5)\) y la segunda \([1,+\infty)\). Su interseccion es
+\[
+[1,5).
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S05-02] Dos lineales}
+Resuelve
+\[
+\begin{cases}
+2x+1>3,\\
+\dfrac{x}{2}\leq 4.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S05-02]}
+\[
+(1,8].
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S05-02]}
+\[
+2x>2 \Longrightarrow x>1,
+\qquad
+x\leq 8.
+\]
+Por tanto,
+\[
+(1,8].
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S05-01] Resuelve \(\begin{cases}x>-3\\ x<4\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S05-02] Resuelve \(\begin{cases}x\geq 0\\ x\leq 6\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S05-03] Resuelve \(\begin{cases}x-1>0\\ 3-x\geq 0\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S05-04] Resuelve \(\begin{cases}2x\leq 8\\ x+5>0\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S05-05] Resuelve \(\begin{cases}x<2\\ x\geq 2\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S05-06] Resuelve \(\begin{cases}x\leq -1\\ x>-4\end{cases}\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S05 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S05-\arabic*:}, leftmargin=*]
+  \item \((-3,4)\)
+  \item \([0,6]\)
+  \item \((1,3]\)
+  \item \((-5,4]\)
+  \item \(\varnothing\)
+  \item \((-4,-1]\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S05 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S05-\arabic*:}, leftmargin=*]
+  \item Interseccion de \(( -3,+\infty)\) y \((-\infty,4)\).
+  \item Interseccion de \([0,+\infty)\) y \((-\infty,6]\).
+  \item \(x>1\) y \(x\leq 3\).
+  \item \(x\leq 4\) y \(x>-5\).
+  \item No existe ningun \(x\) que cumpla ambas condiciones.
+  \item \(x\in(-4,-1]\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C04.S06] Inecuaciones de dos variables y semiplanos}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Identificar la recta frontera de una inecuacion lineal en dos variables.
+  \item Decidir que semiplano satisface la condicion.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Ecuacion de la recta y representacion en el plano.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+La inecuacion \(ax+by\leq c\) se apoya en la recta frontera \(ax+by=c\). Un punto de prueba
+como \((0,0)\) suele ayudar a decidir que lado de la recta pertenece a la solucion.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Sustituye el signo por igualdad para obtener la recta frontera.
+  \item Elige un punto sencillo que no este en la recta.
+  \item Comprueba si ese punto satisface la inecuacion.
+  \item Decide el semiplano correspondiente.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S06-01] Semiplano por punto de prueba}
+Describe geometricamente la solucion de
+\[
+x+2y\leq 4.
+\]
+
+\textbf{Desarrollo.} La recta frontera es
+\[
+x+2y=4.
+\]
+Probamos el punto \((0,0)\):
+\[
+0+2\cdot 0\leq 4,
+\]
+que es verdadero. Por tanto, la solucion es el semiplano que contiene al origen, con la recta
+incluida.
+
+\textbf{Respuesta final.}
+Recta frontera \(x+2y=4\) y semiplano que contiene \((0,0)\).
+\end{solvedexample}
+
+\begin{commonerror}{Cambiar el lado equivocado}
+No basta con dibujar la recta: hay que comprobar con un punto de prueba que lado cumple la
+inecuacion.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S06-01] Semiplano superior}
+Describe la solucion de
+\[
+y>x.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S06-01]}
+Recta frontera \(y=x\); semiplano superior, que contiene por ejemplo \((0,1)\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S06-01]}
+La frontera es \(y=x\). El punto \((0,1)\) cumple \(1>0\), asi que la solucion es el semiplano
+por encima de la recta.
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S06-02] Frontera vertical}
+Describe la solucion de
+\[
+x\geq -1.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S06-02]}
+Recta frontera \(x=-1\); semiplano a la derecha, que incluye por ejemplo \((0,0)\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S06-02]}
+La recta frontera es vertical:
+\[
+x=-1.
+\]
+Como el punto \((0,0)\) verifica \(0\geq -1\), la solucion es el semiplano derecho, incluyendo
+la recta.
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S06-01] Describe la solucion de \(x+y\leq 3\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S06-02] Describe la solucion de \(y\geq 2\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S06-03] Describe la solucion de \(x<4\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S06-04] Describe la solucion de \(2x-y>0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S06-05] Describe la solucion de \(x+y\geq 0\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S06-06] Describe la solucion de \(y\leq -x+2\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S06 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S06-\arabic*:}, leftmargin=*]
+  \item Recta \(x+y=3\); semiplano que contiene \((0,0)\)
+  \item Recta \(y=2\); semiplano superior, que contiene \((0,3)\)
+  \item Recta \(x=4\); semiplano izquierdo, que contiene \((0,0)\)
+  \item Recta \(y=2x\); semiplano inferior, que contiene \((1,0)\)
+  \item Recta \(x+y=0\); semiplano que contiene \((1,0)\)
+  \item Recta \(y=-x+2\); semiplano inferior, que contiene \((0,0)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S06 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S06-\arabic*:}, leftmargin=*]
+  \item La frontera es \(x+y=3\). El origen satisface \(0\leq 3\).
+  \item La frontera es horizontal: \(y=2\). Se toman los puntos con ordenada mayor o igual que \(2\).
+  \item La frontera es \(x=4\). Como \(0<4\), se toma el lado izquierdo.
+  \item \(2x-y>0\) equivale a \(y<2x\); la frontera es \(y=2x\).
+  \item La frontera es \(x+y=0\). El punto \((1,0)\) cumple \(1\geq 0\).
+  \item Ya esta despejada: \(y\leq -x+2\), es el semiplano por debajo de la recta.
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C04.S07] Sistemas de inecuaciones en el plano}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Combinar varias inecuaciones lineales en el plano.
+  \item Describir la region solucion mediante sus vertices o su forma.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Semiplanos y ecuacion de la recta.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+La region solucion de un sistema de inecuaciones en el plano es la interseccion de varios
+semiplanos. Cuando la region es poligonal, sus vertices ayudan a describirla con precision.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Representa o identifica cada semiplano.
+  \item Busca la zona comun.
+  \item Si la region es acotada, localiza sus vertices.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C04.S07-01] Triangulo en el primer cuadrante}
+Describe la region solucion de
+\[
+\begin{cases}
+x\geq 0,\\
+y\geq 0,\\
+x+y\leq 4.
+\end{cases}
+\]
+
+\textbf{Desarrollo.} Las dos primeras condiciones nos dejan en el primer cuadrante. La tercera
+anade el semiplano por debajo de la recta \(x+y=4\). La region comun es un triangulo.
+
+\textbf{Respuesta final.}
+Triangulo con vertices
+\[
+(0,0),\qquad (4,0),\qquad (0,4).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Olvidar una condicion}
+Si se dibuja solo una parte del sistema, la region obtenida puede ser mucho mas grande que la
+solucion real.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C04.S07-01] Triangulo desplazado}
+Describe la region solucion de
+\[
+\begin{cases}
+x\geq 1,\\
+y\geq 0,\\
+x+y\leq 5.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S07-01]}
+Triangulo con vertices \((1,0)\), \((5,0)\) y \((1,4)\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S07-01]}
+La recta vertical \(x=1\), el eje \(x\) y la recta \(x+y=5\) delimitan un triangulo con esos
+vertices.
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C04.S07-02] Triangulo apoyado sobre \(y=1\)}
+Describe la region solucion de
+\[
+\begin{cases}
+x\geq 0,\\
+y\geq 1,\\
+x+y\leq 3.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C04.S07-02]}
+Triangulo con vertices \((0,1)\), \((2,1)\) y \((0,3)\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C04.S07-02]}
+La region comun queda entre la recta \(y=1\), el eje \(y\) y la recta \(x+y=3\). Los cortes dan
+los vertices indicados.
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C04.S07-01] Describe la region de \(\begin{cases}x\geq 0\\ y\geq 0\\ x+y\leq 2\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S07-02] Describe la region de \(\begin{cases}x\geq -1\\ y\geq 0\\ x+y\leq 3\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S07-03] Describe la region de \(\begin{cases}x\geq 0\\ y\geq 0\\ x\leq 3\\ y\leq 2\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S07-04] Describe la region de \(\begin{cases}x\geq 0\\ y\geq 0\\ y\leq x\\ x+y\leq 4\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S07-05] Describe la region de \(\begin{cases}x\geq 1\\ y\geq 1\\ x+y\leq 5\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C04.S07-06] Describe la region de \(\begin{cases}x\geq 0\\ y\geq 0\\ x+2y\leq 4\end{cases}\).}
+\end{exercise}
+
+\begin{shortanswer}{C04.S07 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S07-\arabic*:}, leftmargin=*]
+  \item Triangulo con vertices \((0,0)\), \((2,0)\), \((0,2)\)
+  \item Triangulo con vertices \((-1,0)\), \((3,0)\), \((-1,4)\)
+  \item Rectangulo con vertices \((0,0)\), \((3,0)\), \((3,2)\), \((0,2)\)
+  \item Triangulo con vertices \((0,0)\), \((4,0)\), \((2,2)\)
+  \item Triangulo con vertices \((1,1)\), \((4,1)\), \((1,4)\)
+  \item Triangulo con vertices \((0,0)\), \((4,0)\), \((0,2)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C04.S07 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C04.S07-\arabic*:}, leftmargin=*]
+  \item Primer cuadrante por debajo de \(x+y=2\).
+  \item La recta \(x=-1\), el eje \(x\) y \(x+y=3\) recortan ese triangulo.
+  \item Interseccion de cuatro semiplanos: banda horizontal y banda vertical.
+  \item La recta \(y=x\) corta a \(x+y=4\) en \((2,2)\), y el eje \(x\) aporta \((0,0)\) y \((4,0)\).
+  \item Desplazando el primer cuadrante al punto \((1,1)\) y cortando con \(x+y=5\).
+  \item Interseccion con los ejes y la recta \(x+2y=4\).
+\end{enumerate}
+\end{fullsolution}
+
+\begin{selfcheck}
+\begin{itemize}
+  \item Distingo bien entre union e interseccion cuando trabajo con varias condiciones.
+  \item En inecuaciones racionales no olvido los puntos prohibidos.
+  \item En el plano, describo la frontera y luego justifico el lado correcto.
+\end{itemize}
+\end{selfcheck}
+
+\begin{extension}{Leer la geometria de una desigualdad}
+Una inecuacion en el plano no es solo un calculo: representa una region. Saber leer esa region
+ayuda mucho despues en optimizacion y programacion lineal.
+\end{extension}

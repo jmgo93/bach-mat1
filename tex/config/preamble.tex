@@ -18,6 +18,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{tabularx}
 \usepackage{multicol}
 \usepackage{xcolor}
@@ -30,22 +31,41 @@
   colorlinks=true,
   linkcolor=black,
   urlcolor=black,
-  pdftitle={Cuaderno de repaso de Matemáticas de 1.º de Bachillerato},
-  pdfauthor={Codex}
+  pdftitle={Cuaderno de repaso de Matem\'aticas de 1\textordmasculine\ de Bachillerato},
+  pdfauthor={Juan Mar\'ia G\'amez Ortiz}
 }
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5em}
 \setlength{\headheight}{14pt}
+\setlength{\footskip}{34pt}
 \raggedbottom
 \setlist[itemize]{topsep=0.3em,itemsep=0.2em}
 \setlist[enumerate]{topsep=0.3em,itemsep=0.2em}
 
+\newcommand{\bookheadertext}{1\textordmasculine\ de Bachillerato - Matem\'aticas I}
+\newcommand{\bookrightheadertext}{%
+  \ifteacheredition Edici\'on del profesorado\else Edici\'on del alumnado\fi
+}
+\newcommand{\bookcopyrightnotice}{%
+  \parbox[t]{0.78\textwidth}{\raggedright\scriptsize
+    Copyright 2026 de uso con atribuci\'on. Realizado por Juan Mar\'ia G\'amez
+    Ortiz,\linebreak profesor de matem\'aticas en el I.E.S. Al-\'Andalus (Almer\'ia).%
+  }%
+}
+\newcommand{\applybookpagestyle}{%
+  \fancyhf{}%
+  \fancyhead[L]{\bookheadertext}%
+  \fancyhead[R]{\bookrightheadertext}%
+  \fancyfoot[L]{\bookcopyrightnotice}%
+  \fancyfoot[R]{\thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
 \pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{Cuaderno de repaso de Matemáticas}
-\fancyhead[R]{\ifteacheredition Edición del profesorado\else Edición del alumnado\fi}
-\fancyfoot[C]{\thepage}
+\applybookpagestyle
+\fancypagestyle{plain}{\applybookpagestyle}
 
 \newcommand{\sen}{\operatorname{sen}}
 \newcommand{\tg}{\operatorname{tg}}

@@ -1,0 +1,16 @@
+\documentclass[11pt,a4paper,openany]{book}
+\newif\ifteacheredition
+\teachereditiontrue
+\input{tex/config/preamble.tex}
+\input{tex/config/environments.tex}
+\input{tex/generated/supplement_stats.tex}
+\renewcommand{\bookrightheadertext}{Proyecto de examenes resuelto}
+\hypersetup{pdftitle={Proyecto editorial de examenes dificiles por secciones y bloques}}
+
+\begin{document}
+\frontmatter
+\input{tex/frontmatter/titlepage_exams_plan.tex}
+\tableofcontents
+\mainmatter
+\input{tex/supplements/exams_plan.tex}
+\end{document}

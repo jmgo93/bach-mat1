@@ -1,6 +1,6 @@
 # Informe de duplicados
 
-Fecha: 2026-07-10
+Fecha: 2026-07-11
 
 - PDF analizados: `8`
 - Grupos de duplicados exactos: `0`

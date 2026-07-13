@@ -1,0 +1,410 @@
+\chapter{Trigonometria Contextualizada}
+
+\begin{planningbox}{Bloque C05}
+Los problemas de este capitulo obligan a controlar unidades, cuadrantes, lectura geometrica y
+eleccion de herramienta. La dificultad no esta solo en calcular, sino en decidir si conviene
+convertir, descomponer un triangulo, usar una identidad o resolver una ecuacion.
+\end{planningbox}
+
+\section{[C05.S01] Grados y radianes}
+
+\begin{exercise}{[CTX-C05.S01-01] Giro acumulado de una camara panoramica}
+Una camara de vigilancia parte orientada a \(35^\circ\). Durante una prueba automatica ejecuta
+tres ordenes consecutivas:
+\begin{enumerate}
+  \item gira \(\frac{13\pi}{9}\) radianes en sentido antihorario;
+  \item corrige \(95^\circ\) en sentido horario;
+  \item se comprueba si la orientacion final cae dentro del sector de seguridad
+  \([210^\circ,250^\circ]\).
+\end{enumerate}
+
+Determina la orientacion final en grados y en radianes.
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S01-01]}
+La orientacion final es \(200^\circ\), es decir,
+\[
+\frac{10\pi}{9}\text{ rad}.
+\]
+La camara termina fuera del sector de seguridad.
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S01-01]}
+Primero convertimos
+\[
+\frac{13\pi}{9}\text{ rad}=\frac{13\pi}{9}\cdot \frac{180^\circ}{\pi}=260^\circ.
+\]
+El giro total es
+\[
+35^\circ+260^\circ-95^\circ=200^\circ.
+\]
+Correccion: la suma correcta es
+\[
+35^\circ+260^\circ=295^\circ,\qquad 295^\circ-95^\circ=200^\circ.
+\]
+La orientacion final es \(200^\circ\), no \(220^\circ\). En radianes:
+\[
+200^\circ=\frac{200\pi}{180}=\frac{10\pi}{9}\text{ rad}.
+\]
+Como \(200^\circ\notin [210^\circ,250^\circ]\), la camara queda fuera del sector de seguridad.
+\end{fullsolution}
+
+\section{[C05.S02] Razones trigonometricas en triangulos y poligonos}
+
+\begin{exercise}{[CTX-C05.S02-01] Cubierta de un invernadero}
+La seccion frontal de un invernadero es un triangulo isosceles de base \(\SI{14}{m}\). Cada
+agua del tejado forma un angulo de \(36^\circ\) con la horizontal. El invernadero tiene una
+longitud de \(\SI{9}{m}\).
+
+Calcula:
+\begin{enumerate}
+  \item la altura de la cumbrera;
+  \item la longitud inclinada de cada panel del tejado;
+  \item la superficie total de cubierta.
+\end{enumerate}
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S02-01]}
+\[
+h=7\tg 36^\circ\approx \SI{5.09}{m},
+\qquad
+\ell=\frac{7}{\cos 36^\circ}\approx \SI{8.66}{m}.
+\]
+La superficie total de cubierta es aproximadamente
+\[
+2\cdot 9\ell \approx \SI{155.8}{m^2}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S02-01]}
+La mitad de la base es
+\[
+\frac{14}{2}=7.
+\]
+En uno de los triangulos rectangulos formados por la altura:
+\[
+\tg 36^\circ=\frac{h}{7}
+\Longrightarrow
+h=7\tg 36^\circ\approx 7\cdot 0.7265\approx \SI{5.09}{m}.
+\]
+La longitud inclinada del panel es
+\[
+\cos 36^\circ=\frac{7}{\ell}
+\Longrightarrow
+\ell=\frac{7}{\cos 36^\circ}\approx \frac{7}{0.8090}\approx \SI{8.66}{m}.
+\]
+Cada panel tiene area
+\[
+9\ell \approx 9\cdot 8.66\approx \SI{77.9}{m^2}.
+\]
+Como hay dos paneles:
+\[
+A_{total}\approx 2\cdot 77.9=\SI{155.8}{m^2}.
+\]
+\end{fullsolution}
+
+\section{[C05.S03] Angulos notables y reduccion al primer cuadrante}
+
+\begin{exercise}{[CTX-C05.S03-01] Componentes exactas de un brazo robotico}
+Un brazo robotico de longitud \(\SI{12}{m}\) queda orientado con angulo \(210^\circ\) medido
+desde el eje \(x\) positivo.
+
+Determina exactamente:
+\begin{enumerate}
+  \item la componente horizontal;
+  \item la componente vertical;
+  \item la distancia horizontal del extremo al eje \(y\).
+\end{enumerate}
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S03-01]}
+\[
+x=12\cos 210^\circ=-6\sqrt{3},
+\qquad
+y=12\sen 210^\circ=-6.
+\]
+La distancia horizontal al eje \(y\) es \(6\sqrt{3}\) metros.
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S03-01]}
+El angulo \(210^\circ\) esta en el tercer cuadrante y su angulo de referencia es \(30^\circ\).
+Por tanto,
+\[
+\cos 210^\circ=-\cos 30^\circ=-\frac{\sqrt{3}}{2},
+\qquad
+\sen 210^\circ=-\sen 30^\circ=-\frac{1}{2}.
+\]
+Las componentes del vector posicion son
+\[
+x=12\cos 210^\circ=12\left(-\frac{\sqrt{3}}{2}\right)=-6\sqrt{3},
+\]
+\[
+y=12\sen 210^\circ=12\left(-\frac{1}{2}\right)=-6.
+\]
+La distancia horizontal al eje \(y\) es el valor absoluto de la abscisa:
+\[
+|x|=6\sqrt{3}.
+\]
+\end{fullsolution}
+
+\section{[C05.S04] Calculo de razones a partir de una razon conocida}
+
+\begin{exercise}{[CTX-C05.S04-01] Sensor angular en el segundo cuadrante}
+Un sensor de orientacion registra que el coseno del angulo de un haz vale
+\[
+\cos\alpha=-\frac{4}{5},
+\]
+y ademas el haz esta en el segundo cuadrante.
+
+Calcula:
+\begin{enumerate}
+  \item \(\sen\alpha\) y \(\tg\alpha\);
+  \item las coordenadas del extremo del haz si su longitud es \(\SI{25}{m}\).
+\end{enumerate}
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S04-01]}
+\[
+\sen\alpha=\frac{3}{5},
+\qquad
+\tg\alpha=-\frac{3}{4}.
+\]
+Las coordenadas del extremo son
+\[
+(-20,15).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S04-01]}
+Por la identidad fundamental,
+\[
+\sen^2\alpha=1-\cos^2\alpha=1-\frac{16}{25}=\frac{9}{25}.
+\]
+Como \(\alpha\) esta en el segundo cuadrante, el seno es positivo:
+\[
+\sen\alpha=\frac{3}{5}.
+\]
+Entonces
+\[
+\tg\alpha=\frac{\sen\alpha}{\cos\alpha}=
+\frac{3/5}{-4/5}=-\frac{3}{4}.
+\]
+Si el haz mide \(25\) m, sus coordenadas son
+\[
+(25\cos\alpha,25\sen\alpha)=\left(25\cdot -\frac45,25\cdot \frac35\right)=(-20,15).
+\]
+\end{fullsolution}
+
+\section{[C05.S05] Identidades y transformaciones trigonometricas}
+
+\begin{exercise}{[CTX-C05.S05-01] Dos formulas para el mismo coeficiente}
+En un prototipo de compuerta giratoria aparece el coeficiente
+\[
+K(\alpha)=\frac{\sen 2\alpha}{1+\cos 2\alpha},
+\qquad
+\alpha\neq \frac{\pi}{2}+k\pi.
+\]
+
+Se pide:
+\begin{enumerate}
+  \item simplificar \(K(\alpha)\);
+  \item hallar las posiciones de una vuelta completa en las que \(K(\alpha)=\frac{\sqrt{3}}{3}\).
+\end{enumerate}
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S05-01]}
+\[
+K(\alpha)=\tg\alpha.
+\]
+En \([0,2\pi)\),
+\[
+\alpha=\frac{\pi}{6}\quad \text{o}\quad \alpha=\frac{7\pi}{6}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S05-01]}
+Usamos
+\[
+\sen 2\alpha=2\sen\alpha\cos\alpha,
+\qquad
+1+\cos 2\alpha=2\cos^2\alpha.
+\]
+Entonces
+\[
+K(\alpha)=\frac{2\sen\alpha\cos\alpha}{2\cos^2\alpha}=\tg\alpha,
+\]
+siempre que \(\cos\alpha\neq 0\), condicion compatible con la restriccion dada.
+
+Ahora resolvemos
+\[
+\tg\alpha=\frac{\sqrt{3}}{3}.
+\]
+El angulo de referencia es \(\frac{\pi}{6}\) y la tangente es positiva en los cuadrantes I y
+III. En \([0,2\pi)\) obtenemos
+\[
+\alpha=\frac{\pi}{6},\qquad \alpha=\pi+\frac{\pi}{6}=\frac{7\pi}{6}.
+\]
+\end{fullsolution}
+
+\section{[C05.S06] Ecuaciones trigonometricas}
+
+\begin{exercise}{[CTX-C05.S06-01] Fases de mantenimiento en un sistema oscilante}
+Un sistema de compensacion entra en modo de mantenimiento cuando el parametro angular
+\(\theta\) satisface
+\[
+2\sen^2\theta-3\sen\theta+1=0.
+\]
+
+Determina todas las fases de mantenimiento en el intervalo \([0,2\pi)\).
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S06-01]}
+\[
+\sen\theta=1\quad \text{o}\quad \sen\theta=\frac12.
+\]
+Por tanto,
+\[
+\theta=\frac{\pi}{2},\ \frac{\pi}{6},\ \frac{5\pi}{6}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S06-01]}
+Hacemos el cambio
+\[
+u=\sen\theta.
+\]
+La ecuacion queda
+\[
+2u^2-3u+1=0.
+\]
+Factorizando,
+\[
+(2u-1)(u-1)=0.
+\]
+Luego
+\[
+u=\frac12 \quad \text{o}\quad u=1.
+\]
+Es decir,
+\[
+\sen\theta=\frac12 \quad \text{o}\quad \sen\theta=1.
+\]
+En \([0,2\pi)\),
+\[
+\sen\theta=\frac12 \Longrightarrow \theta=\frac{\pi}{6},\ \frac{5\pi}{6},
+\]
+\[
+\sen\theta=1 \Longrightarrow \theta=\frac{\pi}{2}.
+\]
+Las fases de mantenimiento son
+\[
+\theta=\frac{\pi}{6},\ \frac{\pi}{2},\ \frac{5\pi}{6}.
+\]
+\end{fullsolution}
+
+\section{[C05.S07] Resolucion de triangulos}
+
+\begin{exercise}{[CTX-C05.S07-01] Parcela triangular instrumentada}
+Dos linderos de una parcela miden \(\SI{120}{m}\) y \(\SI{95}{m}\), y forman entre si un
+angulo de \(58^\circ\).
+
+Calcula:
+\begin{enumerate}
+  \item la longitud del tercer lado;
+  \item el area de la parcela;
+  \item el angulo opuesto al lado de \(\SI{95}{m}\).
+\end{enumerate}
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S07-01]}
+El tercer lado mide aproximadamente \(\SI{106.5}{m}\), el area es aproximadamente
+\(\SI{4834}{m^2}\) y el angulo opuesto al lado de \(\SI{95}{m}\) es aproximadamente
+\(49.2^\circ\).
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S07-01]}
+Por el teorema del coseno,
+\[
+c^2=120^2+95^2-2\cdot 120\cdot 95\cos 58^\circ.
+\]
+Sustituyendo,
+\[
+c^2=14400+9025-22800\cos 58^\circ\approx 23425-12082.15=11342.85.
+\]
+Por tanto,
+\[
+c\approx \sqrt{11342.85}\approx \SI{106.5}{m}.
+\]
+
+El area es
+\[
+A=\frac12 ab\sen C=\frac12\cdot 120\cdot 95\sen 58^\circ
+\approx 5700\cdot 0.8480\approx \SI{4834}{m^2}.
+\]
+
+Para el angulo \(B\) opuesto al lado de \(95\) m, usamos el teorema del seno:
+\[
+\frac{\sen B}{95}=\frac{\sen 58^\circ}{106.5}.
+\]
+Entonces
+\[
+\sen B\approx \frac{95\cdot 0.8480}{106.5}\approx 0.7565.
+\]
+Como el angulo buscado es el menor de los tres,
+\[
+B\approx \arcsen(0.7565)\approx 49.2^\circ.
+\]
+\end{fullsolution}
+
+\section{[C05.S08] Problemas contextualizados de trigonometria}
+
+\begin{exercise}{[CTX-C05.S08-01] Altura de una antena desde dos puntos de la carretera}
+Dos puntos de observacion \(A\) y \(B\) estan sobre una misma carretera recta y separados
+\(\SI{50}{m}\). Desde \(A\) el angulo de elevacion a la cima de una antena es \(32^\circ\), y
+desde \(B\), que esta mas cerca de la base, el angulo es \(47^\circ\).
+
+Calcula:
+\begin{enumerate}
+  \item la distancia desde \(B\) hasta la base de la antena;
+  \item la altura de la antena;
+  \item la distancia directa desde \(B\) hasta la cima.
+\end{enumerate}
+\end{exercise}
+
+\begin{shortanswer}{[CTX-C05.S08-01]}
+La distancia desde \(B\) hasta la base es aproximadamente \(\SI{79.9}{m}\), la altura de la
+antena es aproximadamente \(\SI{85.7}{m}\) y la visual desde \(B\) hasta la cima mide
+aproximadamente \(\SI{117.1}{m}\).
+\end{shortanswer}
+
+\begin{fullsolution}{[CTX-C05.S08-01]}
+Sea \(x\) la distancia desde \(B\) hasta la base. Entonces desde \(A\) la distancia horizontal
+es \(x+50\).
+
+Por trigonometria,
+\[
+\tg 47^\circ=\frac{h}{x},
+\qquad
+\tg 32^\circ=\frac{h}{x+50}.
+\]
+Igualando ambas expresiones de \(h\),
+\[
+x\tg 47^\circ=(x+50)\tg 32^\circ.
+\]
+Despejamos:
+\[
+x(\tg 47^\circ-\tg 32^\circ)=50\tg 32^\circ,
+\]
+\[
+x=\frac{50\tg 32^\circ}{\tg 47^\circ-\tg 32^\circ}
+\approx \frac{50\cdot 0.6249}{1.0724-0.6249}\approx \SI{79.9}{m}.
+\]
+La altura resulta
+\[
+h=x\tg 47^\circ\approx 79.9\cdot 1.0724\approx \SI{85.7}{m}.
+\]
+La distancia visual desde \(B\) a la cima es la hipotenusa:
+\[
+d=\frac{x}{\cos 47^\circ}\approx \frac{79.9}{0.6820}\approx \SI{117.1}{m}.
+\]
+\end{fullsolution}

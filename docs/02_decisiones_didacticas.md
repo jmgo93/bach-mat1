@@ -2,30 +2,38 @@
 
 ## Decisiones vigentes
 
-1. El capitulo piloto aprobado sera `C09.S03-C09.S04` porque representa dos tipologias
-   centrales, bien delimitadas y presentes con claridad en la fuente de derivadas.
+1. El piloto original `C09.S03-C09.S04` sirvio para aprobar la plantilla, pero la salida activa
+   del proyecto usa ya el capitulo completo `C09.S01-C09.S08`.
 2. Las ediciones de alumnado y profesorado comparten una unica fuente LaTeX; la visibilidad de
    soluciones completas se controla mediante el entorno `fullsolution`.
 3. La edicion del alumnado mantiene respuestas breves y, ademas, se genera un PDF independiente
-   de respuestas para consulta rapida.
+   de respuestas para consulta rapida con tabla de contenidos propia.
 4. El flujo de compilacion estable usa `pdflatex` como fallback operativo en esta maquina.
-5. La cobertura del corpus se construye de forma reproducible con `scripts/build_phase2_outputs.py`.
+5. La cobertura del corpus se construye de forma reproducible con
+   `scripts/build_phase2_outputs.py`.
 6. Los temas 2, 3 y 9 se consideran fuentes escaneadas y su taxonomia se sustenta en revision
    visual documentada, no en OCR ciego.
 7. El bloque de probabilidad queda fuera de esta iteracion por ausencia total de fuentes.
-8. La siguiente expansion editorial debe seguir el orden `C01-C04`, `C05-C07`, `C08-C09`.
-9. `C01` se toma como primer capitulo completo de la Fase 4A y fija el patron de redaccion para
-   `C02-C04`: teoria minima, metodo explicito, un ejemplo resuelto, dos guiados y practica corta
-   pero variada por seccion.
-10. La validacion matematica deja de ser solo piloto y pasa a cubrir ejemplo, guiados y practica
-    de `C01`, ademas de mantener la bateria ya existente de `C09`.
-11. La plantilla incorpora `\usetikzlibrary{babel}` para evitar conflictos entre `TikZ` y la
+8. La expansion editorial del corpus se ha ejecutado por bloques `C01-C04`, `C05-C07` y
+   `C08-C09`, manteniendo el mismo patron de teoria minima, metodo explicito, ejemplo resuelto,
+   guiados, practica graduada, autoevaluacion y extension.
+9. El libro activo anade un capitulo original de repaso acumulativo y simulacros que no amplia
+   la cobertura fuente, sino que recombina tecnicas ya cubiertas para entrenar transferencia.
+10. El ensamblaje final incorpora portada actualizada, presentacion, guia de uso, indice rapido
+    por tecnicas y tabla de seguimiento del alumnado dentro de las salidas principales.
+11. La validacion matematica ya no se limita a los capitulos fuente: cubre `C01-C09` y el nuevo
+    repaso acumulativo con `581` comprobaciones machine-readable en
+    `data/validation_results.json`.
+12. La auditoria visual de figuras se concentra en recursos exactos y funcionales; se descartan
+    diagramas decorativos y se documenta la necesidad real en `docs/04_auditoria_figuras.md`.
+13. La plantilla incorpora `\usetikzlibrary{babel}` para evitar conflictos entre `TikZ` y la
     configuracion de `babel` en castellano al dibujar flechas y esquemas.
 
 ## Riesgos abiertos
 
-- El libro completo aun no esta redactado mas alla de `C01` y del capitulo piloto de derivadas.
 - Si aparecen nuevos PDF en `sources/`, habra que regenerar auditoria y cobertura antes de
   extender la redaccion.
-- Las fuentes escaneadas pueden esconder matices de redaccion o pequenos detalles simbolicos; hay
-  que mantener la marca de revision humana en fases posteriores.
+- Las fuentes escaneadas pueden esconder matices de redaccion o pequenos detalles simbolicos;
+  hay que mantener la marca de revision humana en fases posteriores.
+- Una revision visual editorial exhaustiva pagina a pagina sigue siendo recomendable si se quiere
+  un cierre todavia mas estricto, aunque la QA tecnica actual no deja incidencias criticas.

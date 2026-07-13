@@ -1,0 +1,1229 @@
+\chapter{Polinomios y fracciones algebraicas}
+
+\begin{theorybox}{Trazabilidad del capitulo}
+Este capitulo desarrolla las secciones \texttt{C02.S01-C02.S09} de la matriz de cobertura a
+partir de \texttt{sources/Relacion tema 2.pdf}. El hilo conductor es aprender a operar,
+factorizar y controlar dominios antes de resolver ecuaciones racionales.
+\end{theorybox}
+
+\section{[C02.S01] Valor numerico y lectura de polinomios}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Sustituir un valor en un polinomio sin perder signos ni parentesis.
+  \item Interpretar el valor numerico como resultado de evaluar una expresion.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Operaciones con enteros y fracciones.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Calcular el valor numerico de un polinomio consiste en sustituir la variable por un numero y
+operar respetando la jerarquia. Si aparece un signo negativo delante de una potencia o de un
+parentesis, conviene escribirlo con cuidado.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Sustituye la variable por el numero indicado usando parentesis.
+  \item Calcula potencias y productos antes de sumar o restar.
+  \item Simplifica paso a paso para evitar errores de signo.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S01-01] Evaluar un polinomio}
+Calcula el valor numerico de
+\[
+P(x)=2x^3-x^2+3x-5
+\]
+para \(x=2\).
+
+\textbf{Desarrollo.}
+\[
+P(2)=2\cdot 2^3-2^2+3\cdot 2-5=2\cdot 8-4+6-5=13.
+\]
+
+\textbf{Respuesta final.}
+\[
+P(2)=13.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Sustituir sin parentesis}
+Si el valor es negativo, hay que escribir \(P(-2)\) con parentesis. De lo contrario, una
+potencia como \((-2)^2\) puede confundirse con \(-2^2\).
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S01-01] Evaluacion directa}
+Calcula \(Q(3)\) si
+\[
+Q(x)=x^2-4x+1.
+\]
+
+\textbf{Pista 1.} Sustituye primero y reduce despues.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S01-01]}
+\[
+Q(3)=-2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S01-01]}
+\[
+Q(3)=3^2-4\cdot 3+1=9-12+1=-2.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S01-02] Cuidado con el signo}
+Calcula \(R(-1)\) si
+\[
+R(x)=-2x^3+x-1.
+\]
+
+\textbf{Pista 1.} Empieza por \((-1)^3\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S01-02]}
+\[
+R(-1)=0.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S01-02]}
+\[
+R(-1)=-2(-1)^3+(-1)-1=-2(-1)-1-1=2-2=0.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S01-01] Calcula \(A(0)\) si \(A(x)=x^2-3x+5\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S01-02] Calcula \(B(-2)\) si \(B(x)=2x^2+x-1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S01-03] Calcula \(C\left(\tfrac{1}{2}\right)\) si \(C(x)=4x^2-1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S01-04] Calcula \(D(3)\) si \(D(x)=x^3-2x+4\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S01-05] Calcula \(E(-1)\) si \(E(x)=x^4-x^2+2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S01-06] Calcula \(F(2)\) si \(F(x)=(x-1)(x+3)\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S01 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S01-\arabic*:}, leftmargin=*]
+  \item \(5\)
+  \item \(5\)
+  \item \(0\)
+  \item \(25\)
+  \item \(2\)
+  \item \(5\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S01 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S01-\arabic*:}, leftmargin=*]
+  \item \(A(0)=0-0+5=5\).
+  \item \(B(-2)=2\cdot 4-2-1=5\).
+  \item \(C\left(\tfrac{1}{2}\right)=4\cdot \tfrac{1}{4}-1=0\).
+  \item \(D(3)=27-6+4=25\).
+  \item \(E(-1)=1-1+2=2\).
+  \item \(F(2)=(2-1)(2+3)=5\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S02] Productos notables y operaciones con polinomios}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Desarrollar productos notables y productos de polinomios.
+  \item Simplificar expresiones polinomicas combinadas.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Propiedad distributiva y operaciones con monomios.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Los productos notables ahorran tiempo:
+\[
+(a+b)^2=a^2+2ab+b^2,\qquad (a-b)^2=a^2-2ab+b^2,\qquad (a-b)(a+b)=a^2-b^2.
+\]
+Aunque se recuerden de memoria, conviene saber justificarlos con la distributiva.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Detecta si aparece un cuadrado de binomio o una diferencia de cuadrados.
+  \item Desarrolla termino a termino.
+  \item Reduce monomios semejantes al final.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S02-01] Desarrollo y reduccion}
+Desarrolla y simplifica
+\[
+(2x-3)^2+(x+1)(x-1).
+\]
+
+\textbf{Desarrollo.}
+\[
+(2x-3)^2=4x^2-12x+9,
+\qquad
+(x+1)(x-1)=x^2-1.
+\]
+Sumando:
+\[
+4x^2-12x+9+x^2-1=5x^2-12x+8.
+\]
+
+\textbf{Respuesta final.}
+\[
+(2x-3)^2+(x+1)(x-1)=5x^2-12x+8.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Olvidar el termino doble}
+En \((a-b)^2\) el termino central es \(-2ab\), no \(-ab\). Ese error cambia por completo el
+resultado final.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S02-01] Cuadrado de un binomio}
+Desarrolla \((x+5)^2\).
+
+\textbf{Pista 1.} Usa \(a=x\) y \(b=5\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S02-01]}
+\[
+(x+5)^2=x^2+10x+25.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S02-01]}
+\[
+(x+5)^2=x^2+2\cdot x\cdot 5+25=x^2+10x+25.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S02-02] Diferencia de cuadrados}
+Desarrolla \((3x-2)(3x+2)\).
+
+\textbf{Pista 1.} Es del tipo \((a-b)(a+b)\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S02-02]}
+\[
+(3x-2)(3x+2)=9x^2-4.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S02-02]}
+Aplicamos la diferencia de cuadrados:
+\[
+(3x-2)(3x+2)=(3x)^2-2^2=9x^2-4.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S02-01] Desarrolla \((x-4)^2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S02-02] Desarrolla \((2x+1)^2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S02-03] Desarrolla \((x-3)(x+3)\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S02-04] Desarrolla \((x+2)(x^2-x+3)\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S02-05] Desarrolla \((2x-1)(x-4)\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S02-06] Simplifica \((x+1)^2-(x-1)^2\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S02 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S02-\arabic*:}, leftmargin=*]
+  \item \(x^2-8x+16\)
+  \item \(4x^2+4x+1\)
+  \item \(x^2-9\)
+  \item \(x^3+x^2+x+6\)
+  \item \(2x^2-9x+4\)
+  \item \(4x\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S02 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S02-\arabic*:}, leftmargin=*]
+  \item \((x-4)^2=x^2-8x+16\).
+  \item \((2x+1)^2=4x^2+4x+1\).
+  \item \((x-3)(x+3)=x^2-9\).
+  \item \(x(x^2-x+3)+2(x^2-x+3)=x^3+x^2+x+6\).
+  \item \((2x-1)(x-4)=2x^2-8x-x+4=2x^2-9x+4\).
+  \item \((x^2+2x+1)-(x^2-2x+1)=4x\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S03] Division de polinomios}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Dividir un polinomio entre otro de menor grado.
+  \item Comprobar el cociente y el resto obtenidos.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Suma y resta ordenada de polinomios.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En una division polinomica se cumple
+\[
+\text{dividendo}=\text{divisor}\cdot \text{cociente}+\text{resto},
+\]
+donde el grado del resto es menor que el del divisor.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Ordena los polinomios por grados descendentes.
+  \item Divide el primer termino del dividendo entre el primero del divisor.
+  \item Multiplica, resta y baja el siguiente termino.
+  \item Comprueba al final multiplicando y sumando el resto.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S03-01] Division exacta}
+Divide
+\[
+2x^3-3x^2-11x+6
+\]
+entre \(x-3\).
+
+\textbf{Desarrollo.} La division da cociente \(2x^2+3x-2\). Comprobamos:
+\[
+(x-3)(2x^2+3x-2)=2x^3-3x^2-11x+6.
+\]
+Por tanto, el resto es \(0\).
+
+\textbf{Respuesta final.}
+\[
+2x^3-3x^2-11x+6=(x-3)(2x^2+3x-2).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{No dejar huecos de grados}
+Si falta un termino intermedio, por ejemplo \(0x^2\), hay que tenerlo presente para que la
+resta quede bien alineada.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S03-01] Division por una raiz conocida}
+Divide \(x^3-6x^2+11x-6\) entre \(x-1\).
+
+\textbf{Pista 1.} La division es exacta.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S03-01]}
+Cociente: \(x^2-5x+6\). Resto: \(0\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S03-01]}
+Al dividir \(x^3-6x^2+11x-6\) entre \(x-1\) se obtiene
+\[
+x^2-5x+6
+\]
+como cociente y resto \(0\). En efecto,
+\[
+(x-1)(x^2-5x+6)=x^3-6x^2+11x-6.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S03-02] Division con resto}
+Divide \(3x^3+x^2-10x+8\) entre \(x+2\).
+
+\textbf{Pista 1.} Puedes usar Ruffini con \(-2\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S03-02]}
+Cociente: \(3x^2-5x\). Resto: \(8\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S03-02]}
+Con Ruffini para \(-2\):
+\[
+\begin{array}{r|rrrr}
+-2 & 3 & 1 & -10 & 8 \\
+   &   & -6 & 10 & 0 \\
+\hline
+   & 3 & -5 & 0 & 8
+\end{array}
+\]
+Luego
+\[
+3x^3+x^2-10x+8=(x+2)(3x^2-5x)+8.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S03-01] Divide \(x^2-5x+6\) entre \(x-2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S03-02] Divide \(2x^2+x-3\) entre \(x+1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S03-03] Divide \(x^3+4x^2+4x\) entre \(x\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S03-04] Divide \(4x^3-4\) entre \(x-1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S03-05] Divide \(x^3-1\) entre \(x+1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S03-06] Divide \(2x^3+5x^2-3\) entre \(x+3\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S03 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S03-\arabic*:}, leftmargin=*]
+  \item Cociente: \(x-3\). Resto: \(0\).
+  \item Cociente: \(2x-1\). Resto: \(-2\).
+  \item Cociente: \(x^2+4x+4\). Resto: \(0\).
+  \item Cociente: \(4x^2+4x+4\). Resto: \(0\).
+  \item Cociente: \(x^2-x+1\). Resto: \(-2\).
+  \item Cociente: \(2x^2-x+3\). Resto: \(-12\).
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S03 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S03-\arabic*:}, leftmargin=*]
+  \item \(x^2-5x+6=(x-2)(x-3)\).
+  \item \(2x^2+x-3=(x+1)(2x-1)-2\).
+  \item \(x^3+4x^2+4x=x(x^2+4x+4)\).
+  \item \(4x^3-4=(x-1)(4x^2+4x+4)\).
+  \item \(x^3-1=(x+1)(x^2-x+1)-2\).
+  \item \(2x^3+5x^2-3=(x+3)(2x^2-x+3)-12\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S04] Teorema del resto, del factor y parametros}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Calcular restos sin hacer la division completa.
+  \item Usar condiciones de divisibilidad para hallar parametros.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Valor numerico y division de polinomios.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+El resto de dividir \(P(x)\) entre \(x-a\) es \(P(a)\). Ademas, \(x-a\) es factor de \(P(x)\)
+si y solo si \(P(a)=0\).
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Si piden un resto, evalua el polinomio en el numero adecuado.
+  \item Si piden que un binomio sea factor, iguala la evaluacion a \(0\).
+  \item Si hay un parametro, resuelve la ecuacion resultante.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S04-01] Hallar un parametro por divisibilidad}
+Determina \(a\) para que \(x-2\) sea factor de
+\[
+P(x)=x^3+ax^2-5x+6.
+\]
+
+\textbf{Desarrollo.} Debe cumplirse \(P(2)=0\):
+\[
+2^3+a\cdot 2^2-5\cdot 2+6=0
+\]
+\[
+8+4a-10+6=0 \Longrightarrow 4a+4=0 \Longrightarrow a=-1.
+\]
+
+\textbf{Respuesta final.}
+\[
+a=-1.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Confundir el signo del factor}
+Si el divisor es \(x+2\), el numero que hay que sustituir es \(-2\), no \(2\).
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S04-01] Resto por evaluacion}
+Halla el resto de dividir \(x^3-2x+5\) entre \(x-1\).
+
+\textbf{Pista 1.} Usa \(P(1)\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S04-01]}
+Resto: \(4\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S04-01]}
+\[
+P(1)=1-2+5=4.
+\]
+Ese es el resto de la division entre \(x-1\).
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S04-02] Hacer que un binomio sea factor}
+Determina \(b\) para que \(x+1\) sea factor de \(x^2+bx-6\).
+
+\textbf{Pista 1.} Sustituye \(x=-1\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S04-02]}
+\[
+b=-5.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S04-02]}
+Si \(x+1\) es factor, entonces
+\[
+(-1)^2+b(-1)-6=0.
+\]
+Por tanto,
+\[
+1-b-6=0 \Longrightarrow -b-5=0 \Longrightarrow b=-5.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S04-01] Halla el resto de dividir \(x^2+3x-1\) entre \(x-2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S04-02] Decide si \(x-3\) es factor de \(x^2-5x+6\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S04-03] Determina \(a\) para que \(x+2\) sea factor de \(x^2+ax-8\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S04-04] Halla el resto de dividir \(2x^3-x+1\) entre \(x+1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S04-05] Determina \(c\) para que el resto de dividir \(x^2+cx+4\) entre \(x-1\) sea \(8\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S04-06] Decide si \(x=1\) es raiz de \(x^3-4x+3\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S04 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S04-\arabic*:}, leftmargin=*]
+  \item \(9\)
+  \item Si
+  \item \(a=-2\)
+  \item \(0\)
+  \item \(c=3\)
+  \item Si
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S04 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S04-\arabic*:}, leftmargin=*]
+  \item \(2^2+3\cdot 2-1=9\).
+  \item \(3^2-5\cdot 3+6=0\), luego \(x-3\) es factor.
+  \item \(P(-2)=4-2a-8=0\), de donde \(a=-2\).
+  \item \(P(-1)=2(-1)^3-(-1)+1=-2+1+1=0\).
+  \item \(1+c+4=8\), luego \(c=3\).
+  \item \(1-4+3=0\), asi que \(x=1\) es raiz.
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S05] Raices y factorizacion}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Hallar raices enteras o evidentes.
+  \item Escribir una factorizacion util del polinomio.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Productos notables, division y teorema del factor.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Factorizar es escribir un polinomio como producto de otros mas sencillos. Buscar una raiz
+permite extraer un factor lineal. A veces tambien se puede sacar factor comun o reconocer una
+diferencia de cuadrados.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Busca factor comun si existe.
+  \item Prueba raices sencillas usando el teorema del factor.
+  \item Divide para reducir el grado y sigue factorizando.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S05-01] Factorizacion completa}
+Factoriza
+\[
+x^3-6x^2+11x-6.
+\]
+
+\textbf{Desarrollo.} Probamos \(x=1\):
+\[
+1-6+11-6=0.
+\]
+Luego \(x-1\) es factor. Al dividir, queda \(x^2-5x+6\), que factoriza como
+\[
+x^2-5x+6=(x-2)(x-3).
+\]
+
+\textbf{Respuesta final.}
+\[
+x^3-6x^2+11x-6=(x-1)(x-2)(x-3).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Parar demasiado pronto}
+Encontrar un factor no basta si el resto del polinomio aun se puede descomponer. Hay que seguir
+hasta dejar factores irreducibles en el nivel trabajado.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S05-01] Diferencia de cuadrados}
+Factoriza \(x^2-9\).
+
+\textbf{Pista 1.} Es una diferencia de cuadrados.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S05-01]}
+\[
+x^2-9=(x-3)(x+3).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S05-01]}
+\[
+x^2-9=x^2-3^2=(x-3)(x+3).
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S05-02] Sustitucion en bicuadradas}
+Factoriza \(x^4-5x^2+4\).
+
+\textbf{Pista 1.} Haz \(y=x^2\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S05-02]}
+\[
+x^4-5x^2+4=(x-1)(x+1)(x-2)(x+2).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S05-02]}
+Tomamos \(y=x^2\). Entonces
+\[
+y^2-5y+4=(y-1)(y-4).
+\]
+Volviendo a \(x\):
+\[
+(x^2-1)(x^2-4)=(x-1)(x+1)(x-2)(x+2).
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S05-01] Factoriza \(x^2+5x+6\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S05-02] Factoriza \(x^3-4x^2+4x\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S05-03] Factoriza \(x^2-1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S05-04] Factoriza \(2x^2-8\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S05-05] Factoriza \(x^3+3x^2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S05-06] Factoriza \(x^4-16\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S05 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S05-\arabic*:}, leftmargin=*]
+  \item \((x+2)(x+3)\)
+  \item \(x(x-2)^2\)
+  \item \((x-1)(x+1)\)
+  \item \(2(x-2)(x+2)\)
+  \item \(x^2(x+3)\)
+  \item \((x-2)(x+2)(x^2+4)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S05 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S05-\arabic*:}, leftmargin=*]
+  \item Dos numeros que suman \(5\) y multiplican \(6\): \(2\) y \(3\).
+  \item Saco factor comun \(x\): \(x(x^2-4x+4)=x(x-2)^2\).
+  \item Diferencia de cuadrados.
+  \item \(2x^2-8=2(x^2-4)=2(x-2)(x+2)\).
+  \item Factor comun \(x^2\): \(x^2(x+3)\).
+  \item \(x^4-16=(x^2-4)(x^2+4)=(x-2)(x+2)(x^2+4)\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S06] Fracciones algebraicas: dominio y simplificacion}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Determinar el dominio de una fraccion algebraica.
+  \item Simplificar sin perder las restricciones originales.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Factorizacion basica.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Una fraccion algebraica no esta definida cuando su denominador vale \(0\). Aunque un factor se
+pueda simplificar, la restriccion original sigue formando parte del dominio.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Factoriza numerador y denominador.
+  \item Impone que el denominador original sea distinto de \(0\).
+  \item Simplifica factores comunes y conserva las restricciones.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S06-01] Simplificar con dominio}
+Simplifica
+\[
+\frac{x^2-9}{x^2-3x}.
+\]
+
+\textbf{Desarrollo.}
+\[
+\frac{x^2-9}{x^2-3x}=\frac{(x-3)(x+3)}{x(x-3)}.
+\]
+El denominador original se anula en \(x=0\) y en \(x=3\), asi que
+\[
+x\neq 0,\qquad x\neq 3.
+\]
+Simplificando el factor comun:
+\[
+\frac{x^2-9}{x^2-3x}=\frac{x+3}{x},\qquad x\neq 0,3.
+\]
+
+\textbf{Respuesta final.}
+\[
+\frac{x^2-9}{x^2-3x}=\frac{x+3}{x},\qquad D=\mathbb{R}\setminus\{0,3\}.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Borrar una restriccion al simplificar}
+El factor \(x-3\) se simplifica, pero eso no significa que \(x=3\) pase a estar permitido.
+El dominio siempre se decide antes de simplificar.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S06-01] Simplificacion con dos restricciones}
+Simplifica
+\[
+\frac{x^2-4}{x^2-2x}.
+\]
+
+\textbf{Pista 1.} Factoriza numerador y denominador.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S06-01]}
+\[
+\frac{x^2-4}{x^2-2x}=\frac{x+2}{x},\qquad x\neq 0,2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S06-01]}
+\[
+\frac{x^2-4}{x^2-2x}=\frac{(x-2)(x+2)}{x(x-2)}.
+\]
+Las restricciones del denominador original son \(x\neq 0\) y \(x\neq 2\). Tras simplificar:
+\[
+\frac{x+2}{x},\qquad x\neq 0,2.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S06-02] Binomio al cuadrado}
+Simplifica
+\[
+\frac{x^2-1}{x^2+2x+1}.
+\]
+
+\textbf{Pista 1.} El denominador es un cuadrado perfecto.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S06-02]}
+\[
+\frac{x^2-1}{x^2+2x+1}=\frac{x-1}{x+1},\qquad x\neq -1.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S06-02]}
+\[
+\frac{x^2-1}{x^2+2x+1}=\frac{(x-1)(x+1)}{(x+1)^2}.
+\]
+Como \(x+1\neq 0\), se tiene \(x\neq -1\). Simplificando:
+\[
+\frac{x-1}{x+1},\qquad x\neq -1.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S06-01] Indica el dominio de \(\dfrac{1}{x-4}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S06-02] Simplifica \(\dfrac{x^2-x}{x^2-1}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S06-03] Simplifica \(\dfrac{x^2-16}{x^2-8x+16}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S06-04] Simplifica \(\dfrac{x^2+5x}{x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S06-05] Simplifica \(\dfrac{x^2-25}{5-x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S06-06] Simplifica \(\dfrac{x^2-6x+9}{x^2-9}\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S06 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S06-\arabic*:}, leftmargin=*]
+  \item \(D=\mathbb{R}\setminus\{4\}\)
+  \item \(\dfrac{x}{x+1}\), con \(x\neq -1,1\)
+  \item \(\dfrac{x+4}{x-4}\), con \(x\neq 4\)
+  \item \(x+5\), con \(x\neq 0\)
+  \item \(-(x+5)\), con \(x\neq 5\)
+  \item \(\dfrac{x-3}{x+3}\), con \(x\neq -3,3\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S06 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S06-\arabic*:}, leftmargin=*]
+  \item El denominador se anula en \(x=4\).
+  \item \(\dfrac{x(x-1)}{(x-1)(x+1)}=\dfrac{x}{x+1}\), con \(x\neq -1,1\).
+  \item \(\dfrac{(x-4)(x+4)}{(x-4)^2}=\dfrac{x+4}{x-4}\), con \(x\neq 4\).
+  \item \(\dfrac{x(x+5)}{x}=x+5\), con \(x\neq 0\).
+  \item \(5-x=-(x-5)\), luego \(\dfrac{(x-5)(x+5)}{5-x}=-(x+5)\), con \(x\neq 5\).
+  \item \(\dfrac{(x-3)^2}{(x-3)(x+3)}=\dfrac{x-3}{x+3}\), con \(x\neq -3,3\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S07] Suma y resta de fracciones algebraicas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Hallar el comun denominador adecuado.
+  \item Reducir y simplificar el resultado final.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Fracciones algebraicas y factorizacion basica.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Para sumar o restar fracciones algebraicas hay que expresarlas con el mismo denominador. Igual
+que con las fracciones numericas, conviene simplificar al final.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Factoriza denominadores si hace falta.
+  \item Busca el minimo comun denominador.
+  \item Reescribe, suma o resta numeradores y simplifica.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S07-01] Suma con denominadores distintos}
+Calcula
+\[
+\frac{1}{x-1}+\frac{2}{x+1}.
+\]
+
+\textbf{Desarrollo.} El comun denominador es \((x-1)(x+1)=x^2-1\):
+\[
+\frac{x+1}{x^2-1}+\frac{2(x-1)}{x^2-1}=
+\frac{x+1+2x-2}{x^2-1}=
+\frac{3x-1}{x^2-1}.
+\]
+
+\textbf{Respuesta final.}
+\[
+\frac{1}{x-1}+\frac{2}{x+1}=\frac{3x-1}{x^2-1}.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Sumar denominadores}
+No se puede escribir
+\[
+\frac{1}{x-1}+\frac{2}{x+1}=\frac{3}{2x}.
+\]
+Hay que igualar denominadores, no sumarlos.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S07-01] Denominador ya relacionado}
+Calcula
+\[
+\frac{1}{x}+\frac{1}{2x}.
+\]
+
+\textbf{Pista 1.} El comun denominador es \(2x\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S07-01]}
+\[
+\frac{1}{x}+\frac{1}{2x}=\frac{3}{2x}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S07-01]}
+\[
+\frac{1}{x}=\frac{2}{2x}.
+\]
+Entonces
+\[
+\frac{2}{2x}+\frac{1}{2x}=\frac{3}{2x}.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S07-02] Misma base, resta sencilla}
+Calcula
+\[
+\frac{3}{x+2}-\frac{1}{x+2}.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S07-02]}
+\[
+\frac{2}{x+2}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S07-02]}
+Como el denominador ya coincide:
+\[
+\frac{3}{x+2}-\frac{1}{x+2}=\frac{2}{x+2}.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S07-01] Calcula \(\dfrac{1}{x}+\dfrac{2}{x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S07-02] Calcula \(\dfrac{1}{x-2}+\dfrac{1}{x+2}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S07-03] Calcula \(\dfrac{3}{x}-\dfrac{1}{2x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S07-04] Calcula \(\dfrac{2}{x+1}-\dfrac{1}{x-1}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S07-05] Calcula \(\dfrac{x}{x+1}+\dfrac{1}{x+1}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S07-06] Calcula \(\dfrac{1}{x^2-1}-\dfrac{1}{x-1}\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S07 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S07-\arabic*:}, leftmargin=*]
+  \item \(\dfrac{3}{x}\)
+  \item \(\dfrac{2x}{x^2-4}\)
+  \item \(\dfrac{5}{2x}\)
+  \item \(\dfrac{x-3}{x^2-1}\)
+  \item \(1\)
+  \item \(-\dfrac{x}{x^2-1}\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S07 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S07-\arabic*:}, leftmargin=*]
+  \item \(\dfrac{1}{x}+\dfrac{2}{x}=\dfrac{3}{x}\).
+  \item \(\dfrac{x+2+x-2}{(x-2)(x+2)}=\dfrac{2x}{x^2-4}\).
+  \item \(\dfrac{6}{2x}-\dfrac{1}{2x}=\dfrac{5}{2x}\).
+  \item \(\dfrac{2(x-1)-(x+1)}{(x+1)(x-1)}=\dfrac{x-3}{x^2-1}\).
+  \item \(\dfrac{x+1}{x+1}=1\).
+  \item \(\dfrac{1-(x+1)}{x^2-1}=-\dfrac{x}{x^2-1}\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S08] Producto, cociente y operaciones combinadas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Multiplicar y dividir fracciones algebraicas.
+  \item Simplificar operaciones combinadas con criterio.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Fracciones algebraicas y factorizacion.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Para multiplicar se multiplican numeradores y denominadores. Para dividir, se multiplica por la
+fraccion inversa. Conviene factorizar antes de simplificar.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Factoriza numeradores y denominadores.
+  \item Si hay cociente, cambia la division por producto de la inversa.
+  \item Simplifica factores comunes antes de expandir.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S08-01] Cociente de expresiones racionales}
+Simplifica
+\[
+\frac{x^2-1}{x^2-4}:\frac{x+1}{x-2}.
+\]
+
+\textbf{Desarrollo.}
+\[
+\frac{(x-1)(x+1)}{(x-2)(x+2)}\cdot \frac{x-2}{x+1}.
+\]
+Se simplifican \(x-2\) y \(x+1\):
+\[
+\frac{x-1}{x+2}.
+\]
+
+\textbf{Respuesta final.}
+\[
+\frac{x^2-1}{x^2-4}:\frac{x+1}{x-2}=\frac{x-1}{x+2}.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Dividir sin invertir}
+En una division de fracciones no se divide termino a termino: hay que multiplicar por la
+inversa de la segunda fraccion.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S08-01] Producto con cancelacion}
+Simplifica
+\[
+\frac{x}{x+1}\cdot \frac{x+1}{2}.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S08-01]}
+\[
+\frac{x}{2}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S08-01]}
+\[
+\frac{x}{x+1}\cdot \frac{x+1}{2}=\frac{x}{2}.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S08-02] Cociente con simplificacion}
+Simplifica
+\[
+\frac{x^2-4}{x+2}:x.
+\]
+
+\textbf{Pista 1.} Escribe la division entre \(x\) como division por \(\frac{x}{1}\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S08-02]}
+\[
+\frac{x-2}{x}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S08-02]}
+\[
+\frac{x^2-4}{x+2}:x=\frac{(x-2)(x+2)}{x+2}\cdot \frac{1}{x}=\frac{x-2}{x}.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S08-01] Simplifica \(\dfrac{x-1}{x+3}\cdot \dfrac{x+3}{x+1}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S08-02] Simplifica \(\dfrac{x^2-9}{x-3}\cdot \dfrac{1}{x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S08-03] Simplifica \(\dfrac{x+2}{x}:\dfrac{2}{x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S08-04] Simplifica \(\dfrac{x}{x-1}\cdot \dfrac{x-1}{x}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S08-05] Simplifica \(\dfrac{x^2-1}{x}:(x-1)\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S08-06] Simplifica \(\dfrac{2}{x+1}\cdot \dfrac{x^2-1}{3}\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S08 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S08-\arabic*:}, leftmargin=*]
+  \item \(\dfrac{x-1}{x+1}\)
+  \item \(\dfrac{x+3}{x}\)
+  \item \(\dfrac{x+2}{2}\)
+  \item \(1\)
+  \item \(\dfrac{x+1}{x}\)
+  \item \(\dfrac{2(x-1)}{3}\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S08 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S08-\arabic*:}, leftmargin=*]
+  \item Se simplifica \(x+3\).
+  \item \(\dfrac{(x-3)(x+3)}{x-3}\cdot \dfrac{1}{x}=\dfrac{x+3}{x}\).
+  \item \(\dfrac{x+2}{x}\cdot \dfrac{x}{2}=\dfrac{x+2}{2}\).
+  \item Todos los factores se cancelan y queda \(1\).
+  \item \(\dfrac{(x-1)(x+1)}{x}\cdot \dfrac{1}{x-1}=\dfrac{x+1}{x}\).
+  \item \(\dfrac{2}{x+1}\cdot \dfrac{(x-1)(x+1)}{3}=\dfrac{2(x-1)}{3}\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C02.S09] Ecuaciones con fracciones algebraicas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver ecuaciones racionales controlando restricciones.
+  \item Detectar cuando una ecuacion no tiene solucion admisible.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Operaciones con fracciones algebraicas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En una ecuacion racional hay que imponer primero las restricciones del denominador. Despues se
+eliminan denominadores multiplicando por el comun denominador y al final se comprueba que las
+soluciones halladas son admisibles.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Escribe las restricciones del denominador.
+  \item Multiplica toda la ecuacion por el comun denominador.
+  \item Resuelve la ecuacion obtenida.
+  \item Rechaza las soluciones prohibidas.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C02.S09-01] Ecuacion racional con dos soluciones}
+Resuelve
+\[
+\frac{1}{x-1}+\frac{1}{x+1}=\frac{3}{4}.
+\]
+
+\textbf{Desarrollo.} Restricciones: \(x\neq 1\) y \(x\neq -1\). Sumando la izquierda:
+\[
+\frac{2x}{x^2-1}=\frac{3}{4}.
+\]
+Multiplicamos en cruz:
+\[
+8x=3x^2-3.
+\]
+Entonces
+\[
+3x^2-8x-3=0.
+\]
+Resolviendo:
+\[
+x=\frac{8\pm \sqrt{64+36}}{6}=\frac{8\pm 10}{6}.
+\]
+Por tanto
+\[
+x=3 \quad \text{o} \quad x=-\frac{1}{3}.
+\]
+Ambas soluciones son admisibles.
+
+\textbf{Respuesta final.}
+\[
+x=3,\qquad x=-\frac{1}{3}.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Olvidar las restricciones}
+Si una solucion anula un denominador, no vale aunque aparezca al resolver la ecuacion reducida.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C02.S09-01] Ecuacion inmediata}
+Resuelve
+\[
+\frac{2}{x}=1.
+\]
+
+\textbf{Pista 1.} Recuerda que \(x\neq 0\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S09-01]}
+\[
+x=2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S09-01]}
+Como \(x\neq 0\), multiplicamos por \(x\):
+\[
+2=x.
+\]
+Luego
+\[
+x=2.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C02.S09-02] Fraccion igualada a un numero}
+Resuelve
+\[
+\frac{x+1}{x-2}=3.
+\]
+
+\textbf{Pista 1.} La restriccion es \(x\neq 2\).
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C02.S09-02]}
+\[
+x=\frac{7}{2}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C02.S09-02]}
+\[
+x+1=3(x-2)=3x-6.
+\]
+Entonces
+\[
+7=2x \Longrightarrow x=\frac{7}{2}.
+\]
+No contradice la restriccion \(x\neq 2\).
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C02.S09-01] Resuelve \(\dfrac{1}{x}=5\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S09-02] Resuelve \(\dfrac{x}{x-1}=2\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S09-03] Resuelve \(\dfrac{3}{x+1}=1\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S09-04] Resuelve \(\dfrac{x-1}{x+1}=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S09-05] Resuelve \(\dfrac{1}{x-2}=\dfrac{1}{x+2}\).}
+\end{exercise}
+\begin{exercise}{[PX-C02.S09-06] Resuelve \(\dfrac{2}{x-1}+1=3\).}
+\end{exercise}
+
+\begin{shortanswer}{C02.S09 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S09-\arabic*:}, leftmargin=*]
+  \item \(x=\dfrac{1}{5}\)
+  \item \(x=2\)
+  \item \(x=2\)
+  \item \(x=1\)
+  \item Sin solucion
+  \item \(x=2\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C02.S09 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C02.S09-\arabic*:}, leftmargin=*]
+  \item \(1=5x\), luego \(x=\frac{1}{5}\).
+  \item \(x=2x-2\), luego \(x=2\), que es admisible.
+  \item \(3=x+1\), luego \(x=2\).
+  \item Una fraccion vale \(0\) cuando el numerador vale \(0\) y el denominador no: \(x=1\).
+  \item Igualando en cruz sale \(x+2=x-2\), contradiccion. No hay solucion.
+  \item \(\dfrac{2}{x-1}=2\), luego \(1=x-1\) y por tanto \(x=2\).
+\end{enumerate}
+\end{fullsolution}
+
+\begin{selfcheck}
+\begin{itemize}
+  \item Distingo entre evaluar, factorizar, dividir y resolver una ecuacion racional.
+  \item Antes de simplificar o resolver, reviso si hay restricciones del denominador.
+  \item Compruebo que una factorizacion o una division realmente reconstruyen el polinomio inicial.
+\end{itemize}
+\end{selfcheck}
+
+\begin{extension}{Conectar algebra de polinomios y ecuaciones}
+Si una ecuacion racional se transforma en un polinomio, no basta con resolver ese polinomio:
+siempre hay que volver a las restricciones iniciales para decidir que soluciones sobreviven.
+\end{extension}

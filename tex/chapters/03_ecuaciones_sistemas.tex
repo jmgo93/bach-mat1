@@ -1,0 +1,1538 @@
+\chapter{Ecuaciones y sistemas}
+
+\begin{theorybox}{Trazabilidad del capitulo}
+Este capitulo desarrolla las secciones \texttt{C03.S01-C03.S11} de la matriz de cobertura a
+partir de \texttt{sources/Relacion tema 3.pdf}. La prioridad didactica es reconocer el tipo de
+ecuacion o sistema y escoger un metodo coherente antes de operar.
+\end{theorybox}
+
+\section{[C03.S01] Ecuaciones racionales}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver ecuaciones con fracciones algebraicas.
+  \item Controlar las restricciones del denominador.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Operaciones con fracciones algebraicas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Una ecuacion racional contiene la incognita en un denominador. Antes de eliminar denominadores
+hay que anotar que valores estan prohibidos.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Escribe las restricciones.
+  \item Multiplica por el comun denominador.
+  \item Resuelve la ecuacion resultante.
+  \item Comprueba que las soluciones no anulan denominadores.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S01-01] Ecuacion racional sencilla}
+Resuelve
+\[
+\frac{2}{x-1}=\frac{1}{x+2}.
+\]
+
+\textbf{Desarrollo.} Restricciones: \(x\neq 1\), \(x\neq -2\). Igualamos en cruz:
+\[
+2(x+2)=x-1.
+\]
+Entonces
+\[
+2x+4=x-1 \Longrightarrow x=-5.
+\]
+La solucion es admisible.
+
+\textbf{Respuesta final.}
+\[
+x=-5.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Multiplicar solo a una parte}
+El comun denominador tiene que multiplicar toda la ecuacion, no solo uno de los terminos.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S01-01] Una sola fraccion}
+Resuelve
+\[
+\frac{3}{x+1}=1.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S01-01]}
+\[
+x=2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S01-01]}
+La restriccion es \(x\neq -1\). Multiplicando por \(x+1\):
+\[
+3=x+1 \Longrightarrow x=2.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S01-02] Fraccion igualada a un numero}
+Resuelve
+\[
+\frac{x+2}{x-1}=4.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S01-02]}
+\[
+x=2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S01-02]}
+Con \(x\neq 1\), tenemos
+\[
+x+2=4(x-1)=4x-4.
+\]
+Luego
+\[
+6=3x \Longrightarrow x=2.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S01-01] Resuelve \(\dfrac{1}{x}=2\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S01-02] Resuelve \(\dfrac{5}{x-3}=1\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S01-03] Resuelve \(\dfrac{1}{x+1}+\dfrac{1}{x-1}=1\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S01-04] Resuelve \(\dfrac{x-2}{x+1}=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S01-05] Resuelve \(\dfrac{1}{x-2}=\dfrac{1}{x+2}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S01-06] Resuelve \(\dfrac{x+3}{x}=4\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S01 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S01-\arabic*:}, leftmargin=*]
+  \item \(x=\dfrac{1}{2}\)
+  \item \(x=8\)
+  \item \(x=1\pm \sqrt{2}\)
+  \item \(x=2\)
+  \item Sin solucion
+  \item \(x=1\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S01 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S01-\arabic*:}, leftmargin=*]
+  \item \(1=2x\), luego \(x=\tfrac{1}{2}\).
+  \item \(5=x-3\), luego \(x=8\).
+  \item \(\dfrac{2x}{x^2-1}=1 \Longrightarrow x^2-2x-1=0\), de donde \(x=1\pm \sqrt{2}\).
+  \item El numerador debe valer \(0\): \(x-2=0\).
+  \item Igualando en cruz: \(x+2=x-2\), contradiccion.
+  \item \(x+3=4x\), luego \(x=1\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S02] Ecuaciones irracionales}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Aislar radicales y resolver ecuaciones con raices.
+  \item Detectar soluciones extranas tras elevar al cuadrado.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Operaciones con radicales y ecuaciones cuadraticas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Una ecuacion irracional contiene la incognita dentro de una raiz. Para eliminarla suele
+aislarse el radical y despues se elevan ambos miembros a una potencia adecuada.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Aisla el radical.
+  \item Eleva ambos miembros al cuadrado.
+  \item Resuelve la ecuacion obtenida.
+  \item Comprueba en la ecuacion inicial.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S02-01] Una solucion valida}
+Resuelve
+\[
+\sqrt{x+5}=x-1.
+\]
+
+\textbf{Desarrollo.} Como el segundo miembro debe ser no negativo, \(x\geq 1\). Elevamos al
+cuadrado:
+\[
+x+5=(x-1)^2=x^2-2x+1.
+\]
+Entonces
+\[
+x^2-3x-4=0 \Longrightarrow (x-4)(x+1)=0.
+\]
+Aparecen \(x=4\) y \(x=-1\), pero solo \(x=4\) cumple la ecuacion inicial.
+
+\textbf{Respuesta final.}
+\[
+x=4.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{No comprobar despues de cuadrar}
+Al elevar al cuadrado pueden aparecer soluciones que no valen en la ecuacion inicial. Siempre
+hay que volver a comprobar.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S02-01] Radical igual a numero}
+Resuelve
+\[
+\sqrt{x+1}=3.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S02-01]}
+\[
+x=8.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S02-01]}
+\[
+x+1=9 \Longrightarrow x=8.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S02-02] Radical igual a la incognita}
+Resuelve
+\[
+\sqrt{2x+3}=x.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S02-02]}
+\[
+x=3.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S02-02]}
+Como \(x\geq 0\), elevamos al cuadrado:
+\[
+2x+3=x^2.
+\]
+Entonces
+\[
+x^2-2x-3=0 \Longrightarrow (x-3)(x+1)=0.
+\]
+Solo \(x=3\) es admisible.
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S02-01] Resuelve \(\sqrt{x}=5\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S02-02] Resuelve \(\sqrt{x+4}=2\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S02-03] Resuelve \(\sqrt{3x-2}=4\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S02-04] Resuelve \(\sqrt{x+6}=x\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S02-05] Resuelve \(\sqrt{x-1}=x-5\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S02-06] Resuelve \(\sqrt{2x+1}=x+1\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S02 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S02-\arabic*:}, leftmargin=*]
+  \item \(x=25\)
+  \item \(x=0\)
+  \item \(x=6\)
+  \item \(x=3\)
+  \item \(x=\dfrac{11+\sqrt{17}}{2}\)
+  \item \(x=0\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S02 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S02-\arabic*:}, leftmargin=*]
+  \item \(x=25\).
+  \item \(x+4=4\), luego \(x=0\).
+  \item \(3x-2=16\), luego \(x=6\).
+  \item \(x+6=x^2\), de donde \(x^2-x-6=0\). Solo vale \(x=3\).
+  \item \(x-1=(x-5)^2\), luego \(x^2-11x+26=0\). Las raices son \(\dfrac{11\pm\sqrt{17}}{2}\), pero solo cumple \(x\geq 5\) la mayor.
+  \item \(2x+1=(x+1)^2\), luego \(x^2=0\) y por tanto \(x=0\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S03] Ecuaciones polinomicas reducibles}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Reconocer ecuaciones bicuadradas o factorizables.
+  \item Traducir la solucion auxiliar a la variable original.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Factorizacion y ecuaciones de segundo grado.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Muchas ecuaciones polinomicas no lineales se resuelven por factorizacion o por sustitucion. En
+una bicuadrada se suele hacer \(y=x^2\).
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Busca factor comun o una factorizacion evidente.
+  \item Si solo aparecen potencias pares, intenta \(y=x^2\).
+  \item Recupera despues los valores de \(x\).
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S03-01] Bicuadrada clasica}
+Resuelve
+\[
+x^4-5x^2+4=0.
+\]
+
+\textbf{Desarrollo.} Tomamos \(y=x^2\):
+\[
+y^2-5y+4=0=(y-1)(y-4).
+\]
+Luego
+\[
+y=1 \quad \text{o} \quad y=4.
+\]
+Volviendo a \(x\):
+\[
+x^2=1 \Longrightarrow x=\pm 1,
+\qquad
+x^2=4 \Longrightarrow x=\pm 2.
+\]
+
+\textbf{Respuesta final.}
+\[
+x=-2,-1,1,2.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Olvidar las dos raices cuadradas}
+De \(x^2=4\) no sale solo \(x=2\), sino \(x=2\) y \(x=-2\).
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S03-01] Factor comun}
+Resuelve
+\[
+x^4-9x^2=0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S03-01]}
+\[
+x=-3,0,3.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S03-01]}
+\[
+x^4-9x^2=x^2(x^2-9)=x^2(x-3)(x+3).
+\]
+Por tanto,
+\[
+x=0,\quad x=3,\quad x=-3.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S03-02] Factorizacion inmediata}
+Resuelve
+\[
+x^3-4x=0.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S03-02]}
+\[
+x=-2,0,2.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S03-02]}
+\[
+x^3-4x=x(x^2-4)=x(x-2)(x+2).
+\]
+Luego
+\[
+x=-2,0,2.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S03-01] Resuelve \(x^2-16=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S03-02] Resuelve \(x^4-13x^2+36=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S03-03] Resuelve \(x^3-9x=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S03-04] Resuelve \(x^4=x^2\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S03-05] Resuelve \(x^2+5x=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S03-06] Resuelve \(x^4-1=0\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S03 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S03-\arabic*:}, leftmargin=*]
+  \item \(x=\pm 4\)
+  \item \(x=\pm 2,\pm 3\)
+  \item \(x=-3,0,3\)
+  \item \(x=-1,0,1\)
+  \item \(x=0,-5\)
+  \item \(x=\pm 1\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S03 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S03-\arabic*:}, leftmargin=*]
+  \item \(x^2=16\), luego \(x=\pm 4\).
+  \item Con \(y=x^2\): \(y^2-13y+36=0=(y-4)(y-9)\).
+  \item \(x(x^2-9)=0\).
+  \item \(x^4-x^2=0 \Longrightarrow x^2(x^2-1)=0\).
+  \item \(x(x+5)=0\).
+  \item \(x^4-1=(x^2-1)(x^2+1)\), y sobre \(\mathbb{R}\) solo salen \(x=\pm 1\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S04] Ecuaciones exponenciales}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Igualar bases cuando sea posible.
+  \item Resolver ecuaciones exponenciales sencillas por inspeccion o transformacion.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Potencias y propiedades de los exponentes.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Si dos potencias tienen la misma base positiva distinta de \(1\), entonces se pueden igualar
+los exponentes. A veces hay que reescribir una base como potencia de otra.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Reescribe todas las expresiones con una base comun si se puede.
+  \item Iguala exponentes.
+  \item Comprueba el valor hallado en la ecuacion inicial.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S04-01] Igualacion de bases}
+Resuelve
+\[
+2^{x+1}=8^{x-1}.
+\]
+
+\textbf{Desarrollo.} Como \(8=2^3\),
+\[
+2^{x+1}=2^{3x-3}.
+\]
+Entonces
+\[
+x+1=3x-3 \Longrightarrow 4=2x \Longrightarrow x=2.
+\]
+
+\textbf{Respuesta final.}
+\[
+x=2.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Forzar bases incompatibles}
+Si no se puede pasar a una base comun de forma razonable, hay que buscar otro enfoque. No todo
+se resuelve igualando exponentes sin justificarlo.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S04-01] Potencia exacta}
+Resuelve
+\[
+3^x=27.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S04-01]}
+\[
+x=3.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S04-01]}
+Como \(27=3^3\), se sigue que \(x=3\).
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S04-02] Potencia con exponente lineal}
+Resuelve
+\[
+5^{2x-1}=25.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S04-02]}
+\[
+x=\frac{3}{2}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S04-02]}
+Como \(25=5^2\),
+\[
+2x-1=2 \Longrightarrow 2x=3 \Longrightarrow x=\frac{3}{2}.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S04-01] Resuelve \(2^x=16\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S04-02] Resuelve \(4^{x+1}=64\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S04-03] Resuelve \(9^x=3\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S04-04] Resuelve \(2^x=2^{3x-4}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S04-05] Resuelve \(10^{x-1}=1000\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S04-06] Resuelve \(5^x=\dfrac{1}{25}\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S04 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S04-\arabic*:}, leftmargin=*]
+  \item \(x=4\)
+  \item \(x=2\)
+  \item \(x=\dfrac{1}{2}\)
+  \item \(x=2\)
+  \item \(x=4\)
+  \item \(x=-2\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S04 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S04-\arabic*:}, leftmargin=*]
+  \item \(16=2^4\).
+  \item \(64=4^3\), asi que \(x+1=3\).
+  \item \(9^x=(3^2)^x=3^{2x}=3^1\), luego \(2x=1\).
+  \item Igualamos exponentes: \(x=3x-4\).
+  \item \(1000=10^3\), por tanto \(x-1=3\).
+  \item \(\tfrac{1}{25}=5^{-2}\), luego \(x=-2\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S05] Ecuaciones logaritmicas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Imponer condiciones de existencia en logaritmos.
+  \item Transformar expresiones logaritmicas en ecuaciones algebraicas.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Definicion de logaritmo y propiedades operativas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Un logaritmo solo existe si su argumento es positivo. Las propiedades
+\[
+\log(ab)=\log a+\log b,\qquad \log\left(\frac{a}{b}\right)=\log a-\log b
+\]
+permiten pasar a ecuaciones algebraicas mas sencillas.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Escribe las condiciones de existencia.
+  \item Usa propiedades logaritmicas si ayudan.
+  \item Pasa a forma exponencial o algebraica.
+  \item Comprueba que la solucion respeta el dominio.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S05-01] Producto dentro del logaritmo}
+Resuelve
+\[
+\log(x-1)+\log(x-3)=1.
+\]
+
+\textbf{Desarrollo.} Condiciones: \(x-1>0\) y \(x-3>0\), luego \(x>3\). Sumamos logaritmos:
+\[
+\log\bigl((x-1)(x-3)\bigr)=1.
+\]
+En base \(10\), eso significa
+\[
+(x-1)(x-3)=10.
+\]
+Entonces
+\[
+x^2-4x+3=10 \Longrightarrow x^2-4x-7=0.
+\]
+Las soluciones son
+\[
+x=2\pm \sqrt{11}.
+\]
+Solo cumple \(x>3\) la solucion \(x=2+\sqrt{11}\).
+
+\textbf{Respuesta final.}
+\[
+x=2+\sqrt{11}.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Resolver sin dominio}
+Aunque una ecuacion transformada tenga dos soluciones, una puede quedar descartada porque hace
+negativo el argumento de un logaritmo.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S05-01] Paso a forma exponencial}
+Resuelve
+\[
+\log_2 x=3.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S05-01]}
+\[
+x=8.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S05-01]}
+\[
+\log_2 x=3 \Longleftrightarrow x=2^3=8.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S05-02] Suma de logaritmos decimales}
+Resuelve
+\[
+\log x+\log 4=1.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S05-02]}
+\[
+x=\frac{5}{2}.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S05-02]}
+\[
+\log(4x)=1 \Longleftrightarrow 4x=10 \Longrightarrow x=\frac{5}{2}.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S05-01] Resuelve \(\log_3 x=2\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S05-02] Resuelve \(\ln x=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S05-03] Resuelve \(\log(x-2)=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S05-04] Resuelve \(\log_2(x+1)=4\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S05-05] Resuelve \(\log x+\log x=2\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S05-06] Resuelve \(\log_3(x-1)+\log_3(x-1)=2\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S05 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S05-\arabic*:}, leftmargin=*]
+  \item \(x=9\)
+  \item \(x=1\)
+  \item \(x=3\)
+  \item \(x=15\)
+  \item \(x=10\)
+  \item \(x=4\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S05 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S05-\arabic*:}, leftmargin=*]
+  \item \(x=3^2=9\).
+  \item \(\ln x=0\) implica \(x=e^0=1\).
+  \item \(x-2=10^0=1\), luego \(x=3\).
+  \item \(x+1=2^4=16\), luego \(x=15\).
+  \item \(\log(x^2)=2\), asi que \(x^2=100\). Por dominio, \(x=10\).
+  \item \(2\log_3(x-1)=2\), luego \(\log_3(x-1)=1\) y \(x=4\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S06] Eleccion de metodo en ecuaciones mixtas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Reconocer la estructura dominante de una ecuacion.
+  \item Elegir la tecnica adecuada antes de operar.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Ecuaciones racionales, irracionales, polinomicas, exponenciales y logaritmicas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+No todas las ecuaciones se atacan igual. Antes de calcular conviene identificar si lo esencial
+es factorizar, despejar un radical, igualar bases o trabajar con logaritmos.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Mira donde aparece la incognita: denominador, radical, exponente, argumento del logaritmo.
+  \item Elige la tecnica principal.
+  \item Resuelve con esa tecnica y comprueba el resultado.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S06-01] Elegir el metodo por la forma}
+Resuelve
+\[
+\frac{x-1}{x+2}=2.
+\]
+
+\textbf{Lectura del tipo.} La incognita aparece en un denominador, asi que es una ecuacion
+racional.
+
+\textbf{Desarrollo.} Restriccion: \(x\neq -2\).
+\[
+x-1=2(x+2)=2x+4.
+\]
+Entonces
+\[
+-5=x.
+\]
+La solucion es valida.
+
+\textbf{Respuesta final.}
+\[
+x=-5.
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Empezar a operar sin clasificar}
+Si no reconoces el tipo, es facil aplicar una tecnica equivocada, por ejemplo factorizar cuando
+lo importante es imponer restricciones o pasar a forma exponencial.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S06-01] Metodo logaritmico}
+Resuelve
+\[
+\log_2 x=5.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S06-01]}
+\[
+x=32.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S06-01]}
+La ecuacion es logaritmica, asi que pasamos a forma exponencial:
+\[
+x=2^5=32.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S06-02] Metodo exponencial}
+Resuelve
+\[
+3^x=81.
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S06-02]}
+\[
+x=4.
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S06-02]}
+Como \(81=3^4\), igualamos exponentes y obtenemos \(x=4\).
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S06-01] Resuelve \((x-3)(x+2)=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S06-02] Resuelve \(\sqrt{x+9}=5\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S06-03] Resuelve \(2^x=8\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S06-04] Resuelve \(\log x=2\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S06-05] Resuelve \(x^4-17x^2+16=0\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S06-06] Resuelve \(\dfrac{1}{x-1}=2\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S06 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S06-\arabic*:}, leftmargin=*]
+  \item \(x=3,-2\)
+  \item \(x=16\)
+  \item \(x=3\)
+  \item \(x=100\)
+  \item \(x=\pm 1,\pm 4\)
+  \item \(x=\dfrac{3}{2}\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S06 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S06-\arabic*:}, leftmargin=*]
+  \item Ecuacion factorizada: cada factor se iguala a \(0\).
+  \item Ecuacion irracional: \(x+9=25\).
+  \item Ecuacion exponencial: \(8=2^3\).
+  \item Ecuacion logaritmica decimal: \(x=10^2\).
+  \item Con \(y=x^2\): \(y^2-17y+16=0=(y-1)(y-16)\).
+  \item Ecuacion racional: \(1=2(x-1)\), luego \(x=\tfrac{3}{2}\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S07] Sistemas lineales 2x2}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver sistemas lineales de dos ecuaciones con dos incognitas.
+  \item Comprobar la solucion en ambas ecuaciones.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Ecuaciones lineales.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En un sistema lineal \(2\times 2\) la solucion es el par \((x,y)\) que cumple simultaneamente
+las dos ecuaciones. Los metodos mas habituales son sustitucion, igualacion y reduccion.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Elige una incognita facil de aislar o eliminar.
+  \item Resuelve la ecuacion resultante.
+  \item Sustituye para recuperar la otra incognita.
+  \item Comprueba ambas ecuaciones.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S07-01] Sistema por reduccion}
+Resuelve
+\[
+\begin{cases}
+x+y=5,\\
+2x-y=1.
+\end{cases}
+\]
+
+\textbf{Desarrollo.} Sumamos ambas ecuaciones:
+\[
+3x=6 \Longrightarrow x=2.
+\]
+Sustituyendo en \(x+y=5\):
+\[
+2+y=5 \Longrightarrow y=3.
+\]
+
+\textbf{Respuesta final.}
+\[
+(x,y)=(2,3).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{No sustituir en el sistema original}
+Comprobar solo una ecuacion no basta: la solucion debe verificar las dos a la vez.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S07-01] Suma y diferencia}
+Resuelve
+\[
+\begin{cases}
+x-y=1,\\
+x+y=7.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S07-01]}
+\[
+(x,y)=(4,3).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S07-01]}
+Sumando:
+\[
+2x=8 \Longrightarrow x=4.
+\]
+Entonces
+\[
+4+y=7 \Longrightarrow y=3.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S07-02] Sustitucion corta}
+Resuelve
+\[
+\begin{cases}
+2x+y=8,\\
+x-y=1.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S07-02]}
+\[
+(x,y)=(3,2).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S07-02]}
+De \(x-y=1\) sale \(y=x-1\). Sustituyendo:
+\[
+2x+(x-1)=8 \Longrightarrow 3x=9 \Longrightarrow x=3.
+\]
+Luego \(y=2\).
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S07-01] Resuelve \(\begin{cases}x+y=6\\ x-y=2\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S07-02] Resuelve \(\begin{cases}3x+y=11\\ x+y=5\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S07-03] Resuelve \(\begin{cases}2x-y=7\\ x+y=5\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S07-04] Resuelve \(\begin{cases}x+2y=8\\ 3x-y=3\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S07-05] Resuelve \(\begin{cases}2x+3y=13\\ x+y=5\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S07-06] Resuelve \(\begin{cases}x+3y=11\\ 2x-y=1\end{cases}\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S07 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S07-\arabic*:}, leftmargin=*]
+  \item \((4,2)\)
+  \item \((3,2)\)
+  \item \((4,1)\)
+  \item \((2,3)\)
+  \item \((2,3)\)
+  \item \((2,3)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S07 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S07-\arabic*:}, leftmargin=*]
+  \item Sumando: \(2x=8\), luego \(x=4\), \(y=2\).
+  \item Restando ecuaciones: \(2x=6\), luego \(x=3\), \(y=2\).
+  \item De \(x+y=5\), \(y=5-x\). Sustituyendo sale \(x=4\), \(y=1\).
+  \item Sustituyendo \(x=8-2y\) se obtiene \(24-7y=3\), luego \(y=3\) y \(x=2\).
+  \item De \(x+y=5\), \(x=5-y\). Sale \(10-2y+3y=13\), luego \(y=3\), \(x=2\).
+  \item De \(2x-y=3\), \(y=2x-3\). Sale \(x+6x-9=11\), luego \(x=2\), \(y=3\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S08] Sistemas lineales 3x3 y clasificacion}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver sistemas lineales \(3\times 3\).
+  \item Clasificar sistemas como compatibles determinados, incompatibles o indeterminados.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Sistemas lineales \(2\times 2\).
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+Un sistema \(3\times 3\) puede resolverse por eliminacion sucesiva o Gauss. Segun la
+informacion disponible, puede tener una unica solucion, ninguna o infinitas.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Combina ecuaciones para eliminar una incognita.
+  \item Reduce el sistema a uno de dos ecuaciones.
+  \item Resuelve y sustituye hacia atras.
+  \item Interpreta si hay unica solucion, contradiccion o dependencia.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S08-01] Compatible determinado}
+Resuelve y clasifica
+\[
+\begin{cases}
+x+y+z=6,\\
+x-y+z=4,\\
+2x+z=7.
+\end{cases}
+\]
+
+\textbf{Desarrollo.} Restando la segunda ecuacion a la primera:
+\[
+2y=2 \Longrightarrow y=1.
+\]
+Con ello,
+\[
+x+z=5,\qquad 2x+z=7.
+\]
+Restando:
+\[
+x=2,\qquad z=3.
+\]
+
+\textbf{Respuesta final.}
+\[
+(x,y,z)=(2,1,3),
+\]
+y el sistema es \textbf{compatible determinado}.
+\end{solvedexample}
+
+\begin{commonerror}{Confundir contradiccion con dependencia}
+Llegar a \(0=0\) indica dependencia entre ecuaciones; llegar a una igualdad falsa como \(0=2\)
+indica incompatibilidad.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S08-01] Tres ecuaciones con unica solucion}
+Resuelve
+\[
+\begin{cases}
+x+y+z=3,\\
+x+y-z=1,\\
+x-y+z=1.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S08-01]}
+\[
+(x,y,z)=(1,1,1).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S08-01]}
+Sumando las dos primeras:
+\[
+2x+2y=4 \Longrightarrow x+y=2.
+\]
+Con la tercera y \(z=1\), se llega a \(x=1\), \(y=1\), \(z=1\).
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S08-02] Detectar incompatibilidad}
+Clasifica el sistema
+\[
+\begin{cases}
+x+y+z=1,\\
+x+y+z=2,\\
+x-y+z=0.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S08-02]}
+Sistema incompatible: no tiene solucion.
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S08-02]}
+Las dos primeras ecuaciones tienen el mismo primer miembro y distinto segundo miembro:
+\[
+x+y+z=1,\qquad x+y+z=2.
+\]
+Eso lleva a una contradiccion, luego el sistema es incompatible.
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S08-01] Resuelve \(\begin{cases}x+y+z=6\\ x+z=4\\ y+z=5\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S08-02] Resuelve \(\begin{cases}x+y+z=9\\ x-y+z=5\\ x+y-z=3\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S08-03] Clasifica \(\begin{cases}x+y+z=1\\ x+y+z=3\\ x-y=0\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S08-04] Clasifica \(\begin{cases}x+y+z=2\\ 2x+2y+2z=4\\ x-y=0\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S08-05] Resuelve \(\begin{cases}2x+y+z=7\\ x-y+z=3\\ x+y-z=1\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S08-06] Resuelve \(\begin{cases}x+2y-z=2\\ 2x-y+z=3\\ x+y+z=6\end{cases}\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S08 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S08-\arabic*:}, leftmargin=*]
+  \item \((1,2,3)\)
+  \item \((4,2,3)\)
+  \item Incompatible
+  \item Compatible indeterminado
+  \item \((2,1,2)\)
+  \item \((1,2,3)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S08 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S08-\arabic*:}, leftmargin=*]
+  \item De \(x+z=4\) y \(y+z=5\), junto con \(x+y+z=6\), sale \(z=3\), \(x=1\), \(y=2\).
+  \item Restando la segunda y tercera a la primera se obtiene \(2y=4\) y \(2z=6\), luego \(y=2\), \(z=3\), \(x=4\).
+  \item Las dos primeras ecuaciones se contradicen, luego no hay solucion.
+  \item La segunda ecuacion es el doble de la primera; con \(x-y=0\) quedan infinitas soluciones.
+  \item Sustituyendo se obtiene \(z=2\), \(y=1\), \(x=2\).
+  \item El sistema lo verifica \((1,2,3)\) y es la unica solucion.
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S09] Problemas de planteamiento con sistemas}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Traducir un enunciado verbal a ecuaciones.
+  \item Interpretar la solucion en su contexto.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Sistemas lineales \(2\times 2\).
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En los problemas de planteamiento lo mas importante es decidir bien las incognitas y escribir
+con claridad las relaciones que da el enunciado.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Elige las incognitas y anota su significado.
+  \item Traduce cada dato a una ecuacion.
+  \item Resuelve el sistema.
+  \item Responde con unidades o contexto.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S09-01] Precio de entradas}
+En una excursion, \(3\) entradas de adulto y \(2\) de estudiante cuestan \(34\) euros. Dos
+entradas de adulto y una de estudiante cuestan \(21\) euros. Halla el precio de cada tipo.
+
+\textbf{Desarrollo.} Sean \(a\) el precio de adulto y \(e\) el de estudiante:
+\[
+\begin{cases}
+3a+2e=34,\\
+2a+e=21.
+\end{cases}
+\]
+De la segunda ecuacion,
+\[
+e=21-2a.
+\]
+Sustituyendo:
+\[
+3a+2(21-2a)=34 \Longrightarrow 3a+42-4a=34 \Longrightarrow a=8.
+\]
+Entonces
+\[
+e=21-16=5.
+\]
+
+\textbf{Respuesta final.}
+La entrada de adulto cuesta \(8\) euros y la de estudiante \(5\) euros.
+\end{solvedexample}
+
+\begin{commonerror}{No definir las incognitas}
+Si no se especifica que representa cada letra, es muy facil perder el sentido del sistema y de
+la respuesta final.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S09-01] Dos numeros}
+La suma de dos numeros es \(11\) y su diferencia es \(3\). Hallalos.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S09-01]}
+Los numeros son \(7\) y \(4\).
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S09-01]}
+Si \(x\) es el mayor e \(y\) el menor:
+\[
+\begin{cases}
+x+y=11,\\
+x-y=3.
+\end{cases}
+\]
+Sumando:
+\[
+2x=14 \Longrightarrow x=7,\qquad y=4.
+\]
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S09-02] Cuadernos y boligrafos}
+Dos cuadernos y un boligrafo cuestan \(7\) euros. Un cuaderno y dos boligrafos cuestan \(8\)
+euros. Halla el precio de cada objeto.
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S09-02]}
+Cuaderno: \(2\) euros. Boligrafo: \(3\) euros.
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S09-02]}
+Sean \(c\) y \(b\) los precios:
+\[
+\begin{cases}
+2c+b=7,\\
+c+2b=8.
+\end{cases}
+\]
+De la primera, \(b=7-2c\). Sustituyendo:
+\[
+c+2(7-2c)=8 \Longrightarrow -3c=-6 \Longrightarrow c=2.
+\]
+Entonces \(b=3\).
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S09-01] La suma de dos numeros es \(20\) y uno supera al otro en \(4\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S09-02] Dos entradas adultas y tres infantiles cuestan \(25\) euros; una adulta y una infantil cuestan \(11\) euros.}
+\end{exercise}
+\begin{exercise}{[PX-C03.S09-03] En una granja hay \(10\) cabezas y \(28\) patas entre gallinas y conejos.}
+\end{exercise}
+\begin{exercise}{[PX-C03.S09-04] Un numero de dos cifras tiene suma de cifras \(9\) y la cifra de las decenas supera en \(3\) a la de las unidades.}
+\end{exercise}
+\begin{exercise}{[PX-C03.S09-05] Tres cuadernos y dos lapices cuestan \(13\) euros; un cuaderno y un lapiz cuestan \(5\) euros.}
+\end{exercise}
+\begin{exercise}{[PX-C03.S09-06] Hay monedas de \(1\) y \(2\) euros. En total son \(8\) monedas y suman \(13\) euros.}
+\end{exercise}
+
+\begin{shortanswer}{C03.S09 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S09-\arabic*:}, leftmargin=*]
+  \item \(12\) y \(8\)
+  \item Adulta: \(8\) euros. Infantil: \(3\) euros.
+  \item \(6\) gallinas y \(4\) conejos
+  \item \(63\)
+  \item Cuaderno: \(3\) euros. Lapiz: \(2\) euros.
+  \item \(3\) monedas de \(1\) euro y \(5\) monedas de \(2\) euros
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S09 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S09-\arabic*:}, leftmargin=*]
+  \item Sistema \(x+y=20\), \(x-y=4\). Sale \(x=12\), \(y=8\).
+  \item Si \(a\) es adulta e \(i\) infantil: \(\begin{cases}2a+3i=25\\ a+i=11\end{cases}\), de donde \(a=8\), \(i=3\).
+  \item \(g+c=10\), \(2g+4c=28\). Sale \(c=4\), \(g=6\).
+  \item Si la decena es \(d\) y la unidad \(u\): \(d+u=9\), \(d-u=3\). Sale \(d=6\), \(u=3\), numero \(63\).
+  \item \(3c+2l=13\), \(c+l=5\). Sale \(c=3\), \(l=2\).
+  \item \(x+y=8\), \(x+2y=13\). Sale \(y=5\), \(x=3\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S10] Sistemas no lineales}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver sistemas donde al menos una ecuacion no es lineal.
+  \item Interpretar que un sistema puede tener varias soluciones ordenadas.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Sistemas lineales y ecuaciones cuadraticas.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+En un sistema no lineal se combinan ecuaciones de distintos tipos. Suele funcionar bien la
+sustitucion para transformar el problema en una sola ecuacion.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Despeja una variable en la ecuacion mas simple.
+  \item Sustituye en la otra ecuacion.
+  \item Resuelve la ecuacion obtenida y recupera los pares ordenados.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S10-01] Suma y producto}
+Resuelve
+\[
+\begin{cases}
+x+y=5,\\
+xy=6.
+\end{cases}
+\]
+
+\textbf{Desarrollo.} De \(x+y=5\), despejamos \(y=5-x\). Sustituimos:
+\[
+x(5-x)=6.
+\]
+Entonces
+\[
+5x-x^2=6 \Longrightarrow x^2-5x+6=0.
+\]
+Factorizando:
+\[
+(x-2)(x-3)=0.
+\]
+Si \(x=2\), entonces \(y=3\). Si \(x=3\), entonces \(y=2\).
+
+\textbf{Respuesta final.}
+\[
+(x,y)=(2,3)\quad \text{y}\quad (3,2).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Olvidar el orden de los pares}
+En un sistema, \((2,3)\) y \((3,2)\) son soluciones distintas salvo que ambas coordenadas
+coincidan.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S10-01] Diferencia y producto}
+Resuelve
+\[
+\begin{cases}
+x-y=1,\\
+xy=6.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S10-01]}
+\[
+(x,y)=(3,2)\quad \text{y}\quad (-2,-3).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S10-01]}
+De \(x-y=1\), \(y=x-1\). Sustituyendo:
+\[
+x(x-1)=6 \Longrightarrow x^2-x-6=0.
+\]
+Sale \(x=3\) o \(x=-2\). Luego \(y=2\) o \(y=-3\).
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S10-02] Circunferencia y recta horizontal}
+Resuelve
+\[
+\begin{cases}
+x^2+y^2=25,\\
+y=4.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S10-02]}
+\[
+(x,y)=(3,4)\quad \text{y}\quad (-3,4).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S10-02]}
+Sustituyendo \(y=4\):
+\[
+x^2+16=25 \Longrightarrow x^2=9 \Longrightarrow x=\pm 3.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S10-01] Resuelve \(\begin{cases}x+y=7\\ xy=12\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S10-02] Resuelve \(\begin{cases}y=x^2\\ y=4\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S10-03] Resuelve \(\begin{cases}x^2+y^2=13\\ y=2\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S10-04] Resuelve \(\begin{cases}x-y=5\\ xy=14\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S10-05] Resuelve \(\begin{cases}x+y=1\\ x^2+y^2=1\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S10-06] Resuelve \(\begin{cases}y=2x\\ x^2+y^2=20\end{cases}\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S10 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S10-\arabic*:}, leftmargin=*]
+  \item \((3,4)\) y \((4,3)\)
+  \item \((2,4)\) y \((-2,4)\)
+  \item \((3,2)\) y \((-3,2)\)
+  \item \((7,2)\) y \((-2,-7)\)
+  \item \((0,1)\) y \((1,0)\)
+  \item \((2,4)\) y \((-2,-4)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S10 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S10-\arabic*:}, leftmargin=*]
+  \item \(y=7-x\). Sale \(x^2-7x+12=0\), luego \(x=3\) o \(4\).
+  \item Si \(x^2=4\), entonces \(x=\pm 2\) y \(y=4\).
+  \item \(x^2+4=13\), luego \(x=\pm 3\).
+  \item \(y=x-5\). Sale \(x^2-5x-14=0\), luego \(x=7\) o \(-2\).
+  \item \((x+y)^2=x^2+y^2+2xy\) da \(1=1+2xy\), luego \(xy=0\).
+  \item Sustituyendo \(y=2x\): \(x^2+4x^2=20\), de donde \(x=\pm 2\).
+\end{enumerate}
+\end{fullsolution}
+
+\section{[C03.S11] Sistemas exponenciales y logaritmicos}
+
+\subsection*{Objetivos de aprendizaje}
+\begin{itemize}
+  \item Resolver sistemas donde intervienen exponenciales o logaritmos.
+  \item Traducir parte del sistema a una relacion algebraica mas simple.
+\end{itemize}
+
+\subsection*{Prerrequisitos}
+\begin{itemize}
+  \item Ecuaciones exponenciales, logaritmicas y sistemas lineales.
+\end{itemize}
+
+\begin{theorybox}{Idea minima}
+A menudo una condicion exponencial o logaritmica se convierte en una ecuacion algebraica
+sencilla, que luego se combina con la otra ecuacion del sistema.
+\end{theorybox}
+
+\begin{methodbox}{Como reconocer y resolver}
+\begin{enumerate}
+  \item Simplifica la parte exponencial o logaritmica.
+  \item Reescribe la informacion en forma algebraica.
+  \item Resuelve el sistema resultante.
+\end{enumerate}
+\end{methodbox}
+
+\begin{solvedexample}{[EX-C03.S11-01] Suma y diferencia ocultas}
+Resuelve
+\[
+\begin{cases}
+2^x\cdot 2^y=32,\\
+x-y=1.
+\end{cases}
+\]
+
+\textbf{Desarrollo.} La primera ecuacion equivale a
+\[
+2^{x+y}=32=2^5,
+\]
+luego
+\[
+x+y=5.
+\]
+El sistema queda
+\[
+\begin{cases}
+x+y=5,\\
+x-y=1.
+\end{cases}
+\]
+Sumando:
+\[
+2x=6 \Longrightarrow x=3,\qquad y=2.
+\]
+
+\textbf{Respuesta final.}
+\[
+(x,y)=(3,2).
+\]
+\end{solvedexample}
+
+\begin{commonerror}{Quedarse solo en la forma simbolica}
+Si \(2^x\cdot 2^y=2^{x+y}\), hay que convertir esa igualdad en una relacion concreta entre
+exponentes para poder resolver el sistema.
+\end{commonerror}
+
+\begin{guidedexercise}{[GX-C03.S11-01] Una exponencial y una recta}
+Resuelve
+\[
+\begin{cases}
+2^x=8,\\
+y=x-1.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S11-01]}
+\[
+(x,y)=(3,2).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S11-01]}
+De \(2^x=8=2^3\) sale \(x=3\). Entonces \(y=2\).
+\end{fullsolution}
+
+\begin{guidedexercise}{[GX-C03.S11-02] Logaritmo directo}
+Resuelve
+\[
+\begin{cases}
+\log_2 x=y,\\
+x=8.
+\end{cases}
+\]
+\end{guidedexercise}
+
+\begin{shortanswer}{[GX-C03.S11-02]}
+\[
+(x,y)=(8,3).
+\]
+\end{shortanswer}
+
+\begin{fullsolution}{[GX-C03.S11-02]}
+Si \(x=8\), entonces
+\[
+y=\log_2 8=3.
+\]
+\end{fullsolution}
+
+\subsection*{Practica autonoma graduada}
+\begin{exercise}{[PX-C03.S11-01] Resuelve \(\begin{cases}3^x=27\\ x+y=5\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S11-02] Resuelve \(\begin{cases}2^x\cdot 2^y=64\\ x-y=0\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S11-03] Resuelve \(\begin{cases}\log x=2\\ y=x-95\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S11-04] Resuelve \(\begin{cases}\ln x=0\\ x+y=4\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S11-05] Resuelve \(\begin{cases}2^x=4\\ 3^y=27\end{cases}\).}
+\end{exercise}
+\begin{exercise}{[PX-C03.S11-06] Resuelve \(\begin{cases}\log_2 x=3\\ x-y=5\end{cases}\).}
+\end{exercise}
+
+\begin{shortanswer}{C03.S11 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S11-\arabic*:}, leftmargin=*]
+  \item \((3,2)\)
+  \item \((3,3)\)
+  \item \((100,5)\)
+  \item \((1,3)\)
+  \item \((2,3)\)
+  \item \((8,3)\)
+\end{enumerate}
+\end{shortanswer}
+
+\begin{fullsolution}{C03.S11 practica autonoma}
+\begin{enumerate}[label=\textbf{PX-C03.S11-\arabic*:}, leftmargin=*]
+  \item \(3^x=27\) da \(x=3\). Entonces \(y=2\).
+  \item \(2^{x+y}=64=2^6\), asi que \(x+y=6\). Con \(x-y=0\), sale \(x=y=3\).
+  \item \(\log x=2\) implica \(x=100\). Luego \(y=5\).
+  \item \(\ln x=0\) implica \(x=1\). Luego \(y=3\).
+  \item \(x=2\) y \(y=3\).
+  \item \(\log_2 x=3\) implica \(x=8\). Como \(x-y=5\), sale \(y=3\).
+\end{enumerate}
+\end{fullsolution}
+
+\begin{selfcheck}
+\begin{itemize}
+  \item Identifico si una ecuacion es racional, irracional, exponencial, logaritmica o reducible.
+  \item Antes de resolver, pienso que metodo encaja mejor con la estructura.
+  \item En sistemas, compruebo siempre el par o la terna final en todas las ecuaciones.
+\end{itemize}
+\end{selfcheck}
+
+\begin{extension}{Compatibilidad y modelos}
+Cuando un sistema es incompatible, no significa que el calculo este mal: a veces el propio
+enunciado describe datos imposibles de cumplir simultaneamente.
+\end{extension}

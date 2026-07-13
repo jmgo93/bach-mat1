@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "generated_on": "2026-07-10T20:06:35",
-  "exercise_count": 82,
-  "passed_count": 82,
+  "generated_on": "2026-07-11T11:04:13",
+  "exercise_count": 581,
+  "passed_count": 581,
   "results": [
     {
       "id": "EX-C01.S01-01",
@@ -509,6 +509,3518 @@
       "note": "Practica inversa de logaritmo."
     },
     {
+      "id": "EX-C02.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "13",
+      "expected": "13",
+      "note": "Ejemplo resuelto de valor numerico."
+    },
+    {
+      "id": "PX-C02.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Practica de evaluacion en cero."
+    },
+    {
+      "id": "PX-C02.S01-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Practica con signo negativo."
+    },
+    {
+      "id": "PX-C02.S01-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Practica con fraccion."
+    },
+    {
+      "id": "PX-C02.S01-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "25",
+      "expected": "25",
+      "note": "Practica con cubica."
+    },
+    {
+      "id": "PX-C02.S01-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Practica con potencia par."
+    },
+    {
+      "id": "PX-C02.S01-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Practica factorizada."
+    },
+    {
+      "id": "EX-C02.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5*x**2 - 12*x + 8",
+      "expected": "5*x**2 - 12*x + 8",
+      "note": "Ejemplo resuelto de operaciones con polinomios."
+    },
+    {
+      "id": "PX-C02.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "x**2 - 8*x + 16",
+      "expected": "x**2 - 8*x + 16",
+      "note": "Cuadrado de binomio."
+    },
+    {
+      "id": "PX-C02.S02-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4*x**2 + 4*x + 1",
+      "expected": "4*x**2 + 4*x + 1",
+      "note": "Cuadrado con coeficiente 2."
+    },
+    {
+      "id": "PX-C02.S02-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "x**2 - 9",
+      "expected": "x**2 - 9",
+      "note": "Diferencia de cuadrados."
+    },
+    {
+      "id": "PX-C02.S02-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "x**3 + x**2 + x + 6",
+      "expected": "x**3 + x**2 + x + 6",
+      "note": "Producto por un trinomio."
+    },
+    {
+      "id": "PX-C02.S02-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2*x**2 - 9*x + 4",
+      "expected": "2*x**2 - 9*x + 4",
+      "note": "Producto general."
+    },
+    {
+      "id": "PX-C02.S02-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4*x",
+      "expected": "4*x",
+      "note": "Simplificacion por cancelacion estructural."
+    },
+    {
+      "id": "EX-C02.S03-01",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: 2*x**2 + 3*x - 2, remainder: 0}",
+      "expected": "{quotient: 2*x**2 + 3*x - 2, remainder: 0}",
+      "note": "Ejemplo resuelto de division exacta."
+    },
+    {
+      "id": "PX-C02.S03-01",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: x - 3, remainder: 0}",
+      "expected": "{quotient: x - 3, remainder: 0}",
+      "note": "Division exacta sencilla."
+    },
+    {
+      "id": "PX-C02.S03-02",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: 2*x - 1, remainder: -2}",
+      "expected": "{quotient: 2*x - 1, remainder: -2}",
+      "note": "Division con resto negativo."
+    },
+    {
+      "id": "PX-C02.S03-03",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: x**2 + 4*x + 4, remainder: 0}",
+      "expected": "{quotient: x**2 + 4*x + 4, remainder: 0}",
+      "note": "Division por monomio."
+    },
+    {
+      "id": "PX-C02.S03-04",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: 4*x**2 + 4*x + 4, remainder: 0}",
+      "expected": "{quotient: 4*x**2 + 4*x + 4, remainder: 0}",
+      "note": "Division de diferencia de cubos incompleta."
+    },
+    {
+      "id": "PX-C02.S03-05",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: x**2 - x + 1, remainder: -2}",
+      "expected": "{quotient: x**2 - x + 1, remainder: -2}",
+      "note": "Division con resto distinto de cero."
+    },
+    {
+      "id": "PX-C02.S03-06",
+      "type": "polynomial_division",
+      "status": "passed",
+      "actual": "{quotient: 2*x**2 - x + 3, remainder: -12}",
+      "expected": "{quotient: 2*x**2 - x + 3, remainder: -12}",
+      "note": "Division sintetica con termino ausente."
+    },
+    {
+      "id": "EX-C02.S04-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-1",
+      "expected": "-1",
+      "note": "Parametro para que x-2 sea factor."
+    },
+    {
+      "id": "PX-C02.S04-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "9",
+      "expected": "9",
+      "note": "Resto por teorema del resto."
+    },
+    {
+      "id": "PX-C02.S04-02",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "Comprobacion de factor x-3."
+    },
+    {
+      "id": "PX-C02.S04-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-2",
+      "expected": "-2",
+      "note": "Parametro para factor x+2."
+    },
+    {
+      "id": "PX-C02.S04-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Resto al dividir por x+1."
+    },
+    {
+      "id": "PX-C02.S04-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Parametro a partir del resto 8."
+    },
+    {
+      "id": "PX-C02.S04-06",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "Comprobacion de raiz x=1."
+    },
+    {
+      "id": "EX-C02.S05-01",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "(x - 3)*(x - 2)*(x - 1)",
+      "expected": "x**3 - 6*x**2 + 11*x - 6",
+      "note": "Ejemplo resuelto de factorizacion completa."
+    },
+    {
+      "id": "PX-C02.S05-01",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "(x + 2)*(x + 3)",
+      "expected": "x**2 + 5*x + 6",
+      "note": "Trinomio cuadratico."
+    },
+    {
+      "id": "PX-C02.S05-02",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "x*(x - 2)**2",
+      "expected": "x*(x**2 - 4*x + 4)",
+      "note": "Factor comun y cuadrado perfecto."
+    },
+    {
+      "id": "PX-C02.S05-03",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "x**2 - 1",
+      "expected": "x**2 - 1",
+      "note": "Diferencia de cuadrados."
+    },
+    {
+      "id": "PX-C02.S05-04",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "2*x**2 - 8",
+      "expected": "2*x**2 - 8",
+      "note": "Extraccion de factor comun."
+    },
+    {
+      "id": "PX-C02.S05-05",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "x**2*(x + 3)",
+      "expected": "x**2*(x + 3)",
+      "note": "Factor comun de grado dos."
+    },
+    {
+      "id": "PX-C02.S05-06",
+      "type": "factorization",
+      "status": "passed",
+      "actual": "x**4 - 16",
+      "expected": "x**4 - 16",
+      "note": "Bicuadrada factorizada."
+    },
+    {
+      "id": "EX-C02.S06-01",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: (x + 3)/x, domain: Union(Interval.open(-oo, 0), Interval.open(0, 3), Interval.open(3, oo))}",
+      "expected": "{expression: (x + 3)/x, domain: Union(Interval.open(-oo, 0), Interval.open(0, 3), Interval.open(3, oo))}",
+      "note": "Ejemplo resuelto con dominio y simplificacion."
+    },
+    {
+      "id": "PX-C02.S06-01",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: 1/(x - 4), domain: Union(Interval.open(-oo, 4), Interval.open(4, oo))}",
+      "expected": "{expression: 1/(x - 4), domain: Union(Interval.open(-oo, 4), Interval.open(4, oo))}",
+      "note": "Dominio de fraccion elemental."
+    },
+    {
+      "id": "PX-C02.S06-02",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: x/(x + 1), domain: Union(Interval.open(-oo, -1), Interval.open(-1, 1), Interval.open(1, oo))}",
+      "expected": "{expression: x/(x + 1), domain: Union(Interval.open(-oo, -1), Interval.open(-1, 1), Interval.open(1, oo))}",
+      "note": "Simplificacion con factor comun."
+    },
+    {
+      "id": "PX-C02.S06-03",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: (x + 4)/(x - 4), domain: Union(Interval.open(-oo, 4), Interval.open(4, oo))}",
+      "expected": "{expression: (x + 4)/(x - 4), domain: Union(Interval.open(-oo, 4), Interval.open(4, oo))}",
+      "note": "Simplificacion con cuadrado de binomio."
+    },
+    {
+      "id": "PX-C02.S06-04",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: x + 5, domain: Union(Interval.open(-oo, 0), Interval.open(0, oo))}",
+      "expected": "{expression: x + 5, domain: Union(Interval.open(-oo, 0), Interval.open(0, oo))}",
+      "note": "Cancelacion controlada."
+    },
+    {
+      "id": "PX-C02.S06-05",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: -x - 5, domain: Union(Interval.open(-oo, 5), Interval.open(5, oo))}",
+      "expected": "{expression: -x - 5, domain: Union(Interval.open(-oo, 5), Interval.open(5, oo))}",
+      "note": "Simplificacion con cambio de signo."
+    },
+    {
+      "id": "PX-C02.S06-06",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{expression: (x - 3)/(x + 3), domain: Union(Interval.open(-oo, -3), Interval.open(-3, 3), Interval.open(3, oo))}",
+      "expected": "{expression: (x - 3)/(x + 3), domain: Union(Interval.open(-oo, -3), Interval.open(-3, 3), Interval.open(3, oo))}",
+      "note": "Factor comun y restricciones dobles."
+    },
+    {
+      "id": "EX-C02.S07-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(3*x - 1)/(x**2 - 1)",
+      "expected": "(3*x - 1)/(x**2 - 1)",
+      "note": "Ejemplo resuelto de suma racional."
+    },
+    {
+      "id": "PX-C02.S07-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3/x",
+      "expected": "3/x",
+      "note": "Mismo denominador."
+    },
+    {
+      "id": "PX-C02.S07-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2*x/(x**2 - 4)",
+      "expected": "2*x/(x**2 - 4)",
+      "note": "Comun denominador simetrico."
+    },
+    {
+      "id": "PX-C02.S07-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5/(2*x)",
+      "expected": "5/(2*x)",
+      "note": "Resta con fraccion de coeficientes."
+    },
+    {
+      "id": "PX-C02.S07-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(x - 3)/(x**2 - 1)",
+      "expected": "(x - 3)/(x**2 - 1)",
+      "note": "Resta con binomios conjugados."
+    },
+    {
+      "id": "PX-C02.S07-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Suma que se simplifica por numerador."
+    },
+    {
+      "id": "PX-C02.S07-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-x/(x**2 - 1)",
+      "expected": "-x/(x**2 - 1)",
+      "note": "Resta tras descomponer denominador."
+    },
+    {
+      "id": "EX-C02.S08-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(x - 1)/(x + 2)",
+      "expected": "(x - 1)/(x + 2)",
+      "note": "Ejemplo resuelto de cociente de fracciones algebraicas."
+    },
+    {
+      "id": "PX-C02.S08-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(x - 1)/(x + 1)",
+      "expected": "(x - 1)/(x + 1)",
+      "note": "Producto con cancelacion inmediata."
+    },
+    {
+      "id": "PX-C02.S08-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(x + 3)/x",
+      "expected": "(x + 3)/x",
+      "note": "Producto con factorizacion previa."
+    },
+    {
+      "id": "PX-C02.S08-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "x/2 + 1",
+      "expected": "x/2 + 1",
+      "note": "Cociente por una fraccion constante."
+    },
+    {
+      "id": "PX-C02.S08-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Producto identico a uno."
+    },
+    {
+      "id": "PX-C02.S08-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(x + 1)/x",
+      "expected": "(x + 1)/x",
+      "note": "Cociente con cancelacion lateral."
+    },
+    {
+      "id": "PX-C02.S08-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2*x/3 - 2/3",
+      "expected": "2*x/3 - 2/3",
+      "note": "Producto con diferencia de cuadrados."
+    },
+    {
+      "id": "EX-C02.S09-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-1/3, 3}",
+      "expected": "{-1/3, 3}",
+      "note": "Ejemplo resuelto con dos soluciones validas."
+    },
+    {
+      "id": "PX-C02.S09-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1/5}",
+      "expected": "{1/5}",
+      "note": "Ecuacion racional inmediata."
+    },
+    {
+      "id": "PX-C02.S09-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Reduccion con una restriccion."
+    },
+    {
+      "id": "PX-C02.S09-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Ecuacion por productos cruzados."
+    },
+    {
+      "id": "PX-C02.S09-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1}",
+      "expected": "{1}",
+      "note": "Fraccion igual a cero."
+    },
+    {
+      "id": "PX-C02.S09-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "EmptySet",
+      "expected": "EmptySet",
+      "note": "Caso sin solucion."
+    },
+    {
+      "id": "PX-C02.S09-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Ecuacion racional con termino independiente."
+    },
+    {
+      "id": "EX-C03.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-5}",
+      "expected": "{-5}",
+      "note": "Ejemplo resuelto de ecuacion racional."
+    },
+    {
+      "id": "PX-C03.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1/2}",
+      "expected": "{1/2}",
+      "note": "Racional elemental."
+    },
+    {
+      "id": "PX-C03.S01-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{8}",
+      "expected": "{8}",
+      "note": "Una sola restriccion."
+    },
+    {
+      "id": "PX-C03.S01-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1 - sqrt(2), 1 + sqrt(2)}",
+      "expected": "{1 - sqrt(2), 1 + sqrt(2)}",
+      "note": "Suma de fracciones racionales."
+    },
+    {
+      "id": "PX-C03.S01-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Numerador nulo."
+    },
+    {
+      "id": "PX-C03.S01-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "EmptySet",
+      "expected": "EmptySet",
+      "note": "Sin solucion por igualdad imposible."
+    },
+    {
+      "id": "PX-C03.S01-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1}",
+      "expected": "{1}",
+      "note": "Racional con variable en denominador."
+    },
+    {
+      "id": "EX-C03.S02-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{4}",
+      "expected": "{4}",
+      "note": "Ejemplo resuelto con control de extranas."
+    },
+    {
+      "id": "PX-C03.S02-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{25}",
+      "expected": "{25}",
+      "note": "Raiz igual a entero."
+    },
+    {
+      "id": "PX-C03.S02-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{0}",
+      "expected": "{0}",
+      "note": "Traslado simple."
+    },
+    {
+      "id": "PX-C03.S02-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{6}",
+      "expected": "{6}",
+      "note": "Radical con coeficiente."
+    },
+    {
+      "id": "PX-C03.S02-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3}",
+      "expected": "{3}",
+      "note": "Extrana descartada por signo."
+    },
+    {
+      "id": "PX-C03.S02-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{sqrt(17)/2 + 11/2}",
+      "expected": "{sqrt(17)/2 + 11/2}",
+      "note": "Dominio impuesto por segundo miembro."
+    },
+    {
+      "id": "PX-C03.S02-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{0}",
+      "expected": "{0}",
+      "note": "Caso con solucion unica."
+    },
+    {
+      "id": "EX-C03.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-2, -1, 1, 2}",
+      "expected": "{-2, -1, 1, 2}",
+      "note": "Ejemplo resuelto bicuadrado."
+    },
+    {
+      "id": "PX-C03.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-4, 4}",
+      "expected": "{-4, 4}",
+      "note": "Diferencia de cuadrados."
+    },
+    {
+      "id": "PX-C03.S03-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-3, -2, 2, 3}",
+      "expected": "{-3, -2, 2, 3}",
+      "note": "Bicuadrada con dos valores positivos."
+    },
+    {
+      "id": "PX-C03.S03-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-3, 0, 3}",
+      "expected": "{-3, 0, 3}",
+      "note": "Factor comun por x."
+    },
+    {
+      "id": "PX-C03.S03-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-1, 0, 1}",
+      "expected": "{-1, 0, 1}",
+      "note": "Traslado y factorizacion."
+    },
+    {
+      "id": "PX-C03.S03-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-5, 0}",
+      "expected": "{-5, 0}",
+      "note": "Factor comun lineal."
+    },
+    {
+      "id": "PX-C03.S03-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-1, 1}",
+      "expected": "{-1, 1}",
+      "note": "Raices reales de una cuarta potencia."
+    },
+    {
+      "id": "EX-C03.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Ejemplo resuelto por igualacion de bases."
+    },
+    {
+      "id": "PX-C03.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{4}",
+      "expected": "{4}",
+      "note": "Potencia exacta base 2."
+    },
+    {
+      "id": "PX-C03.S04-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Potencia de potencia."
+    },
+    {
+      "id": "PX-C03.S04-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{log(3)/log(9)}",
+      "expected": "{1/2}",
+      "note": "Cambio a base comun 3."
+    },
+    {
+      "id": "PX-C03.S04-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2}",
+      "expected": "{2}",
+      "note": "Igualacion de exponentes."
+    },
+    {
+      "id": "PX-C03.S04-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{4}",
+      "expected": "{4}",
+      "note": "Base decimal."
+    },
+    {
+      "id": "PX-C03.S04-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-2}",
+      "expected": "{-2}",
+      "note": "Exponente negativo."
+    },
+    {
+      "id": "EX-C03.S05-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2 + sqrt(11)}",
+      "expected": "{2 + sqrt(11)}",
+      "note": "Ejemplo resuelto de ecuacion logaritmica."
+    },
+    {
+      "id": "PX-C03.S05-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{9}",
+      "expected": "{9}",
+      "note": "Logaritmo en base 3."
+    },
+    {
+      "id": "PX-C03.S05-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1}",
+      "expected": "{1}",
+      "note": "Logaritmo neperiano nulo."
+    },
+    {
+      "id": "PX-C03.S05-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3}",
+      "expected": "{3}",
+      "note": "Logaritmo decimal con traslado."
+    },
+    {
+      "id": "PX-C03.S05-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{15}",
+      "expected": "{15}",
+      "note": "Logaritmo en base 2."
+    },
+    {
+      "id": "PX-C03.S05-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{10}",
+      "expected": "{10}",
+      "note": "Suma de logaritmos iguales."
+    },
+    {
+      "id": "PX-C03.S05-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{4}",
+      "expected": "{4}",
+      "note": "Condicion de existencia con argumento repetido."
+    },
+    {
+      "id": "EX-C03.S06-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-5}",
+      "expected": "{-5}",
+      "note": "Ejemplo resuelto de eleccion de metodo."
+    },
+    {
+      "id": "PX-C03.S06-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-2, 3}",
+      "expected": "{-2, 3}",
+      "note": "Ecuacion factorizada."
+    },
+    {
+      "id": "PX-C03.S06-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{16}",
+      "expected": "{16}",
+      "note": "Ecuacion irracional en bloque mixto."
+    },
+    {
+      "id": "PX-C03.S06-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3}",
+      "expected": "{3}",
+      "note": "Exponencial basica."
+    },
+    {
+      "id": "PX-C03.S06-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{100}",
+      "expected": "{100}",
+      "note": "Logaritmica decimal."
+    },
+    {
+      "id": "PX-C03.S06-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-4, -1, 1, 4}",
+      "expected": "{-4, -1, 1, 4}",
+      "note": "Bicuadrada en coleccion mixta."
+    },
+    {
+      "id": "PX-C03.S06-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3/2}",
+      "expected": "{3/2}",
+      "note": "Racional corta con restriccion."
+    },
+    {
+      "id": "EX-C03.S07-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3)}",
+      "expected": "{(2, 3)}",
+      "note": "Ejemplo resuelto de sistema 2x2."
+    },
+    {
+      "id": "PX-C03.S07-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(4, 2)}",
+      "expected": "{(4, 2)}",
+      "note": "Suma y diferencia."
+    },
+    {
+      "id": "PX-C03.S07-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 2)}",
+      "expected": "{(3, 2)}",
+      "note": "Sistema por resta."
+    },
+    {
+      "id": "PX-C03.S07-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(4, 1)}",
+      "expected": "{(4, 1)}",
+      "note": "Sustitucion directa."
+    },
+    {
+      "id": "PX-C03.S07-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3)}",
+      "expected": "{(2, 3)}",
+      "note": "Sistema con coeficientes distintos."
+    },
+    {
+      "id": "PX-C03.S07-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3)}",
+      "expected": "{(2, 3)}",
+      "note": "Sistema compatible determinado."
+    },
+    {
+      "id": "PX-C03.S07-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3)}",
+      "expected": "{(2, 3)}",
+      "note": "Sistema corregido para concordar con su solucion."
+    },
+    {
+      "id": "EX-C03.S08-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 1, 3)}",
+      "expected": "{(2, 1, 3)}",
+      "note": "Ejemplo resuelto 3x3."
+    },
+    {
+      "id": "PX-C03.S08-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(1, 2, 3)}",
+      "expected": "{(1, 2, 3)}",
+      "note": "Sistema 3x3 determinado."
+    },
+    {
+      "id": "PX-C03.S08-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(4, 2, 3)}",
+      "expected": "{(4, 2, 3)}",
+      "note": "Sistema 3x3 con solucion unica."
+    },
+    {
+      "id": "PX-C03.S08-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 1, 2)}",
+      "expected": "{(2, 1, 2)}",
+      "note": "Sistema 3x3 con combinacion simetrica."
+    },
+    {
+      "id": "PX-C03.S08-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(1, 2, 3)}",
+      "expected": "{(1, 2, 3)}",
+      "note": "Sistema 3x3 final del bloque."
+    },
+    {
+      "id": "PX-C03.S08-03",
+      "type": "linear_system_classification",
+      "status": "passed",
+      "actual": "incompatible",
+      "expected": "incompatible",
+      "note": "Clasificacion de sistema imposible."
+    },
+    {
+      "id": "PX-C03.S08-04",
+      "type": "linear_system_classification",
+      "status": "passed",
+      "actual": "compatible_indeterminado",
+      "expected": "compatible_indeterminado",
+      "note": "Clasificacion de sistema dependiente."
+    },
+    {
+      "id": "PX-C03.S09-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(12, 8)}",
+      "expected": "{(12, 8)}",
+      "note": "Dos numeros con suma y diferencia."
+    },
+    {
+      "id": "PX-C03.S09-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(8, 3)}",
+      "expected": "{(8, 3)}",
+      "note": "Entradas adultas e infantiles."
+    },
+    {
+      "id": "PX-C03.S09-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(6, 4)}",
+      "expected": "{(6, 4)}",
+      "note": "Granja con cabezas y patas."
+    },
+    {
+      "id": "PX-C03.S09-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(6, 3)}",
+      "expected": "{(6, 3)}",
+      "note": "Numero de dos cifras por sus digitos."
+    },
+    {
+      "id": "PX-C03.S09-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 2)}",
+      "expected": "{(3, 2)}",
+      "note": "Cuadernos y lapices."
+    },
+    {
+      "id": "PX-C03.S09-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 5)}",
+      "expected": "{(3, 5)}",
+      "note": "Monedas de 1 y 2 euros."
+    },
+    {
+      "id": "EX-C03.S10-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3), (3, 2)}",
+      "expected": "{(2, 3), (3, 2)}",
+      "note": "Ejemplo resuelto de sistema no lineal."
+    },
+    {
+      "id": "PX-C03.S10-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 4), (4, 3)}",
+      "expected": "{(3, 4), (4, 3)}",
+      "note": "Suma y producto."
+    },
+    {
+      "id": "PX-C03.S10-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(-2, 4), (2, 4)}",
+      "expected": "{(-2, 4), (2, 4)}",
+      "note": "Parabola y recta horizontal."
+    },
+    {
+      "id": "PX-C03.S10-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(-3, 2), (3, 2)}",
+      "expected": "{(-3, 2), (3, 2)}",
+      "note": "Circunferencia y recta."
+    },
+    {
+      "id": "PX-C03.S10-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(-2, -7), (7, 2)}",
+      "expected": "{(-2, -7), (7, 2)}",
+      "note": "Diferencia y producto con dos soluciones."
+    },
+    {
+      "id": "PX-C03.S10-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(0, 1), (1, 0)}",
+      "expected": "{(0, 1), (1, 0)}",
+      "note": "Sistema simetrico con suma fija."
+    },
+    {
+      "id": "PX-C03.S10-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(-2, -4), (2, 4)}",
+      "expected": "{(-2, -4), (2, 4)}",
+      "note": "Recta y circunferencia."
+    },
+    {
+      "id": "EX-C03.S11-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 2)}",
+      "expected": "{(3, 2)}",
+      "note": "Ejemplo resuelto tras linealizar exponentes."
+    },
+    {
+      "id": "PX-C03.S11-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 2)}",
+      "expected": "{(3, 2)}",
+      "note": "Sistema exponencial con sustitucion directa."
+    },
+    {
+      "id": "PX-C03.S11-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(3, 3)}",
+      "expected": "{(3, 3)}",
+      "note": "Producto exponencial reducido a suma de exponentes."
+    },
+    {
+      "id": "PX-C03.S11-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3)}",
+      "expected": "{(2, 3)}",
+      "note": "Dos ecuaciones exponenciales desacopladas."
+    },
+    {
+      "id": "PX-C03.S11-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(100, 5)}",
+      "expected": "{(100, 5)}",
+      "note": "Sistema con logaritmo decimal."
+    },
+    {
+      "id": "PX-C03.S11-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(1, 3)}",
+      "expected": "{(1, 3)}",
+      "note": "Sistema con logaritmo neperiano."
+    },
+    {
+      "id": "PX-C03.S11-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(8, 3)}",
+      "expected": "{(8, 3)}",
+      "note": "Logaritmo en base dos y ecuacion lineal."
+    },
+    {
+      "id": "EX-C04.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-oo, 4)",
+      "expected": "Interval(-oo, 4)",
+      "note": "Ejemplo resuelto de inecuacion lineal."
+    },
+    {
+      "id": "PX-C04.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-oo, 4)",
+      "expected": "Interval.open(-oo, 4)",
+      "note": "Inecuacion lineal abierta."
+    },
+    {
+      "id": "PX-C04.S01-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(2, oo)",
+      "expected": "Interval(2, oo)",
+      "note": "Inecuacion lineal cerrada por la izquierda."
+    },
+    {
+      "id": "PX-C04.S01-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-oo, 3)",
+      "expected": "Interval.open(-oo, 3)",
+      "note": "Cambio de sentido al dividir por negativo."
+    },
+    {
+      "id": "PX-C04.S01-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-oo, 2)",
+      "expected": "Interval(-oo, 2)",
+      "note": "Cota superior inclusiva."
+    },
+    {
+      "id": "PX-C04.S01-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-3, oo)",
+      "expected": "Interval.open(-3, oo)",
+      "note": "Cota inferior abierta."
+    },
+    {
+      "id": "PX-C04.S01-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-oo, -2)",
+      "expected": "Interval(-oo, -2)",
+      "note": "Inecuacion con coeficiente -1."
+    },
+    {
+      "id": "EX-C04.S02-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, 2), Interval.open(3, oo))",
+      "expected": "Union(Interval.open(-oo, 2), Interval.open(3, oo))",
+      "note": "Ejemplo resuelto de segundo grado."
+    },
+    {
+      "id": "PX-C04.S02-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval(-oo, -1), Interval(1, oo))",
+      "expected": "Union(Interval(-oo, -1), Interval(1, oo))",
+      "note": "Fuera del intervalo entre raices."
+    },
+    {
+      "id": "PX-C04.S02-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(2, 4)",
+      "expected": "Interval.open(2, 4)",
+      "note": "Entre las dos raices reales."
+    },
+    {
+      "id": "PX-C04.S02-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-3, -1)",
+      "expected": "Interval(-3, -1)",
+      "note": "Trinomio con soluciones acotadas."
+    },
+    {
+      "id": "PX-C04.S02-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -3), Interval.open(3, oo))",
+      "expected": "Union(Interval.open(-oo, -3), Interval.open(3, oo))",
+      "note": "Exterior de dos raices."
+    },
+    {
+      "id": "PX-C04.S02-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval(-oo, -1), Interval(3, oo))",
+      "expected": "Union(Interval(-oo, -1), Interval(3, oo))",
+      "note": "Incluyendo extremos por el igual."
+    },
+    {
+      "id": "PX-C04.S02-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-oo, oo)",
+      "expected": "Reals",
+      "note": "Cuadrado negativo o nulo siempre valido."
+    },
+    {
+      "id": "EX-C04.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval(-2, 1), Interval(4, oo))",
+      "expected": "Union(Interval(-2, 1), Interval(4, oo))",
+      "note": "Ejemplo resuelto de tabla de signos."
+    },
+    {
+      "id": "PX-C04.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -1), Interval.open(0, 1))",
+      "expected": "Union(Interval.open(-oo, -1), Interval.open(0, 1))",
+      "note": "Tres factores lineales."
+    },
+    {
+      "id": "PX-C04.S03-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-3, oo)",
+      "expected": "Interval(-3, oo)",
+      "note": "Raiz doble que no cambia el signo."
+    },
+    {
+      "id": "PX-C04.S03-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union({4}, Interval(-oo, 0))",
+      "expected": "Union({4}, Interval(-oo, 0))",
+      "note": "Producto con cuadrado y punto aislado."
+    },
+    {
+      "id": "PX-C04.S03-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -2), Interval.open(5, oo))",
+      "expected": "Union(Interval.open(-oo, -2), Interval.open(5, oo))",
+      "note": "Exterior de las raices."
+    },
+    {
+      "id": "PX-C04.S03-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(-oo, 1)",
+      "expected": "Interval(-oo, 1)",
+      "note": "Factor cuadratico no negativo."
+    },
+    {
+      "id": "PX-C04.S03-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(3, oo)",
+      "expected": "Interval(3, oo)",
+      "note": "Potencia impar conserva el signo."
+    },
+    {
+      "id": "EX-C04.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(-1, 3)",
+      "expected": "Interval.Lopen(-1, 3)",
+      "note": "Ejemplo resuelto de inecuacion racional."
+    },
+    {
+      "id": "PX-C04.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-oo, 4)",
+      "expected": "Interval.open(-oo, 4)",
+      "note": "Signo negativo de una fraccion simple."
+    },
+    {
+      "id": "PX-C04.S04-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -2), Interval(2, oo))",
+      "expected": "Union(Interval.open(-oo, -2), Interval(2, oo))",
+      "note": "Mismo signo en numerador y denominador."
+    },
+    {
+      "id": "PX-C04.S04-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(-1, 0)",
+      "expected": "Interval.Lopen(-1, 0)",
+      "note": "Cociente no positivo con cero permitido."
+    },
+    {
+      "id": "PX-C04.S04-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -3), Interval.open(1, oo))",
+      "expected": "Union(Interval.open(-oo, -3), Interval.open(1, oo))",
+      "note": "Inecuacion estricta: la raiz del numerador no se incluye."
+    },
+    {
+      "id": "PX-C04.S04-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(1, 3)",
+      "expected": "Interval.open(1, 3)",
+      "note": "Signo negativo entre dos puntos criticos."
+    },
+    {
+      "id": "PX-C04.S04-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -2), Interval.open(2, oo))",
+      "expected": "Union(Interval.open(-oo, -2), Interval.open(2, oo))",
+      "note": "Reciproco positivo fuera de las raices del denominador."
+    },
+    {
+      "id": "EX-C04.S05-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(-2, 2)",
+      "expected": "Interval.Lopen(-2, 2)",
+      "note": "Ejemplo resuelto de sistema de inecuaciones."
+    },
+    {
+      "id": "PX-C04.S05-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-3, 4)",
+      "expected": "Interval.open(-3, 4)",
+      "note": "Dos cotas abiertas."
+    },
+    {
+      "id": "PX-C04.S05-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(0, 6)",
+      "expected": "Interval(0, 6)",
+      "note": "Banda cerrada."
+    },
+    {
+      "id": "PX-C04.S05-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(1, 3)",
+      "expected": "Interval.Lopen(1, 3)",
+      "note": "Interseccion semiabierta."
+    },
+    {
+      "id": "PX-C04.S05-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(-5, 4)",
+      "expected": "Interval.Lopen(-5, 4)",
+      "note": "Sistema con desigualdades equivalentes."
+    },
+    {
+      "id": "PX-C04.S05-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "EmptySet",
+      "expected": "EmptySet",
+      "note": "Sistema incompatible."
+    },
+    {
+      "id": "PX-C04.S05-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.Lopen(-4, -1)",
+      "expected": "Interval.Lopen(-4, -1)",
+      "note": "Franja izquierda semiabierta."
+    },
+    {
+      "id": "EX-C04.S06-01",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: x + 2*y - 4, witness: [0, 0], satisfies: True}",
+      "expected": "{boundary: x + 2*y - 4, witness: [0, 0], satisfies: True}",
+      "note": "Ejemplo resuelto de semiplano."
+    },
+    {
+      "id": "PX-C04.S06-01",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: x + y - 3, witness: [0, 0], satisfies: True}",
+      "expected": "{boundary: x + y - 3, witness: [0, 0], satisfies: True}",
+      "note": "Semiplano que contiene el origen."
+    },
+    {
+      "id": "PX-C04.S06-02",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: y - 2, witness: [0, 3], satisfies: True}",
+      "expected": "{boundary: y - 2, witness: [0, 3], satisfies: True}",
+      "note": "Semiplano superior."
+    },
+    {
+      "id": "PX-C04.S06-03",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: x - 4, witness: [0, 0], satisfies: True}",
+      "expected": "{boundary: x - 4, witness: [0, 0], satisfies: True}",
+      "note": "Semiplano izquierdo de una recta vertical."
+    },
+    {
+      "id": "PX-C04.S06-04",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: 2*x - y, witness: [1, 0], satisfies: True}",
+      "expected": "{boundary: 2*x - y, witness: [1, 0], satisfies: True}",
+      "note": "Semiplano inferior respecto de y=2x."
+    },
+    {
+      "id": "PX-C04.S06-05",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: x + y, witness: [1, 0], satisfies: True}",
+      "expected": "{boundary: x + y, witness: [1, 0], satisfies: True}",
+      "note": "Semiplano que contiene un punto sobre el eje X."
+    },
+    {
+      "id": "PX-C04.S06-06",
+      "type": "halfplane_description",
+      "status": "passed",
+      "actual": "{boundary: x + y - 2, witness: [0, 0], satisfies: True}",
+      "expected": "{boundary: x + y - 2, witness: [0, 0], satisfies: True}",
+      "note": "Semiplano por debajo de una recta decreciente."
+    },
+    {
+      "id": "EX-C04.S07-01",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(0, 0), (0, 4), (4, 0)}",
+      "expected": "{(0, 0), (0, 4), (4, 0)}",
+      "note": "Ejemplo resuelto de region triangular."
+    },
+    {
+      "id": "PX-C04.S07-01",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(0, 0), (0, 2), (2, 0)}",
+      "expected": "{(0, 0), (0, 2), (2, 0)}",
+      "note": "Triangulo rectangulo en el origen."
+    },
+    {
+      "id": "PX-C04.S07-02",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(-1, 0), (-1, 4), (3, 0)}",
+      "expected": "{(-1, 0), (-1, 4), (3, 0)}",
+      "note": "Triangulo desplazado a la izquierda."
+    },
+    {
+      "id": "PX-C04.S07-03",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(0, 0), (0, 2), (3, 0), (3, 2)}",
+      "expected": "{(0, 0), (0, 2), (3, 0), (3, 2)}",
+      "note": "Rectangulo alineado con los ejes."
+    },
+    {
+      "id": "PX-C04.S07-04",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(0, 0), (2, 2), (4, 0)}",
+      "expected": "{(0, 0), (2, 2), (4, 0)}",
+      "note": "Triangulo con restriccion y<=x."
+    },
+    {
+      "id": "PX-C04.S07-05",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(1, 1), (1, 4), (4, 1)}",
+      "expected": "{(1, 1), (1, 4), (4, 1)}",
+      "note": "Triangulo trasladado en el primer cuadrante."
+    },
+    {
+      "id": "PX-C04.S07-06",
+      "type": "region_vertices",
+      "status": "passed",
+      "actual": "{(0, 0), (0, 2), (4, 0)}",
+      "expected": "{(0, 0), (0, 2), (4, 0)}",
+      "note": "Triangulo con pendiente -1/2."
+    },
+    {
+      "id": "EX-C05.S01-01",
+      "type": "angle_conversion_bundle",
+      "status": "passed",
+      "actual": "(3*pi/4, 210)",
+      "expected": "(3*pi/4, 210)",
+      "note": "Conversion directa de grados y radianes del ejemplo resuelto."
+    },
+    {
+      "id": "EX-C05.S02-01",
+      "type": "triangle_measure_bundle",
+      "status": "passed",
+      "actual": "(10*sqrt(3), 25*sqrt(3))",
+      "expected": "(10*sqrt(3), 25*sqrt(3))",
+      "note": "Base y area del triangulo isosceles resuelto por descomposicion."
+    },
+    {
+      "id": "EX-C05.S03-01",
+      "type": "trigonometric_value_bundle",
+      "status": "passed",
+      "actual": "(1/2, -1/2, -sqrt(3)/3)",
+      "expected": "(1/2, -1/2, -sqrt(3)/3)",
+      "note": "Valores exactos con control de cuadrante."
+    },
+    {
+      "id": "EX-C05.S04-01",
+      "type": "trigonometric_value_bundle",
+      "status": "passed",
+      "actual": "(-4/5, -3/4)",
+      "expected": "(-4/5, -3/4)",
+      "note": "Reconstruccion de coseno y tangente desde el seno en el segundo cuadrante."
+    },
+    {
+      "id": "EX-C05.S05-01",
+      "type": "trigonometric_identity_bundle",
+      "status": "passed",
+      "actual": "(3/5, 4/3, 24/25, -7/25)",
+      "expected": "(3/5, 4/3, 24/25, -7/25)",
+      "note": "Aplicacion del pitagorico trigonometrico y del angulo doble."
+    },
+    {
+      "id": "EX-C05.S06-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/6, 5*pi/6}",
+      "expected": "{pi/6, 5*pi/6}",
+      "note": "Se contrastan las soluciones en [0, 2pi) que sostienen la familia general del seno."
+    },
+    {
+      "id": "EX-C05.S07-01",
+      "type": "triangle_resolution_bundle",
+      "status": "passed",
+      "actual": "(90, 5*sqrt(3), 10)",
+      "expected": "(90, 5*sqrt(3), 10)",
+      "note": "Resolucion del triangulo por suma de angulos y teorema del seno."
+    },
+    {
+      "id": "EX-C05.S08-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "10*sqrt(3)",
+      "expected": "10*sqrt(3)",
+      "note": "Altura de la torre obtenida al combinar dos tangentes."
+    },
+    {
+      "id": "PX-C05.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "pi/6",
+      "expected": "pi/6",
+      "note": "Conversion de 30 grados a radianes."
+    },
+    {
+      "id": "PX-C05.S01-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5*pi/3",
+      "expected": "5*pi/3",
+      "note": "Conversion de 300 grados a radianes."
+    },
+    {
+      "id": "PX-C05.S01-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "36",
+      "expected": "36",
+      "note": "Conversion de pi/5 a grados."
+    },
+    {
+      "id": "PX-C05.S01-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "330",
+      "expected": "330",
+      "note": "Conversion de 11pi/6 a grados."
+    },
+    {
+      "id": "PX-C05.S01-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5*pi/4",
+      "expected": "5*pi/4",
+      "note": "Conversion de 225 grados a radianes."
+    },
+    {
+      "id": "PX-C05.S01-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "120",
+      "expected": "120",
+      "note": "Conversion de 2pi/3 a grados."
+    },
+    {
+      "id": "PX-C05.S02-01",
+      "type": "trigonometric_geometry",
+      "status": "passed",
+      "actual": "(8, 4*sqrt(3))",
+      "expected": "(8, 4*sqrt(3))",
+      "note": "Hipotenusa y cateto restante con seno y coseno de 30 grados."
+    },
+    {
+      "id": "PX-C05.S02-02",
+      "type": "trigonometric_geometry",
+      "status": "passed",
+      "actual": "(6, 6*sqrt(3))",
+      "expected": "(6, 6*sqrt(3))",
+      "note": "Catetos obtenidos desde una hipotenusa de 12 cm."
+    },
+    {
+      "id": "PX-C05.S02-03",
+      "type": "trigonometric_geometry",
+      "status": "passed",
+      "actual": "10*sqrt(3)",
+      "expected": "10*sqrt(3)",
+      "note": "Base del triangulo isosceles del mismo tipo que el ejemplo."
+    },
+    {
+      "id": "PX-C05.S02-04",
+      "type": "trigonometric_geometry",
+      "status": "passed",
+      "actual": "(8, 8*sqrt(3))",
+      "expected": "(8, 8*sqrt(3))",
+      "note": "Diagonales del rombo con angulo agudo de 60 grados."
+    },
+    {
+      "id": "PX-C05.S02-05",
+      "type": "trigonometric_geometry",
+      "status": "passed",
+      "actual": "2*sqrt(3)",
+      "expected": "2*sqrt(3)",
+      "note": "Apotema del hexagono regular de lado 4."
+    },
+    {
+      "id": "PX-C05.S02-06",
+      "type": "trigonometric_geometry",
+      "status": "passed",
+      "actual": "(5*sqrt(3), 5)",
+      "expected": "(5*sqrt(3), 5)",
+      "note": "Base y altura del rectangulo desde su diagonal inclinada."
+    },
+    {
+      "id": "PX-C05.S03-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-sqrt(2)/2",
+      "expected": "-sqrt(2)/2",
+      "note": "Coseno en el segundo cuadrante."
+    },
+    {
+      "id": "PX-C05.S03-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-sqrt(2)/2",
+      "expected": "-sqrt(2)/2",
+      "note": "Seno en el tercer cuadrante."
+    },
+    {
+      "id": "PX-C05.S03-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-sqrt(3)/3",
+      "expected": "-sqrt(3)/3",
+      "note": "Tangente negativa en el segundo cuadrante."
+    },
+    {
+      "id": "PX-C05.S03-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "sqrt(3)/2",
+      "expected": "sqrt(3)/2",
+      "note": "Coseno positivo en el cuarto cuadrante."
+    },
+    {
+      "id": "PX-C05.S03-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-sqrt(3)/2",
+      "expected": "-sqrt(3)/2",
+      "note": "Reduccion de un angulo coterminal mayor que una vuelta."
+    },
+    {
+      "id": "PX-C05.S03-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "sqrt(3)/3",
+      "expected": "sqrt(3)/3",
+      "note": "Tangente positiva en el tercer cuadrante."
+    },
+    {
+      "id": "PX-C05.S04-01",
+      "type": "trigonometric_reconstruction",
+      "status": "passed",
+      "actual": "(12/13, 12/5)",
+      "expected": "(12/13, 12/5)",
+      "note": "Seno y tangente en el primer cuadrante."
+    },
+    {
+      "id": "PX-C05.S04-02",
+      "type": "trigonometric_reconstruction",
+      "status": "passed",
+      "actual": "(3/5, -4/3)",
+      "expected": "(3/5, -4/3)",
+      "note": "Coseno y tangente cuando el seno es negativo en el cuarto cuadrante."
+    },
+    {
+      "id": "PX-C05.S04-03",
+      "type": "trigonometric_reconstruction",
+      "status": "passed",
+      "actual": "(-3/5, -4/5)",
+      "expected": "(-3/5, -4/5)",
+      "note": "Seno y coseno asociados a una tangente 3/4 en el tercer cuadrante."
+    },
+    {
+      "id": "PX-C05.S04-04",
+      "type": "trigonometric_reconstruction",
+      "status": "passed",
+      "actual": "(15/17, -15/8)",
+      "expected": "(15/17, -15/8)",
+      "note": "Reconstruccion desde un coseno negativo con triangulo 8-15-17."
+    },
+    {
+      "id": "PX-C05.S04-05",
+      "type": "trigonometric_reconstruction",
+      "status": "passed",
+      "actual": "(5/13, 12/5)",
+      "expected": "(5/13, 12/5)",
+      "note": "Coseno y tangente desde un seno 12/13 en el primer cuadrante."
+    },
+    {
+      "id": "PX-C05.S04-06",
+      "type": "trigonometric_reconstruction",
+      "status": "passed",
+      "actual": "(sqrt(2)/2, -sqrt(2)/2)",
+      "expected": "(sqrt(2)/2, -sqrt(2)/2)",
+      "note": "Caso de tangente -1 en el segundo cuadrante."
+    },
+    {
+      "id": "PX-C05.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "120/169",
+      "expected": "120/169",
+      "note": "Seno del angulo doble a partir de un triangulo 5-12-13."
+    },
+    {
+      "id": "PX-C05.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "119/169",
+      "expected": "119/169",
+      "note": "Coseno del angulo doble desde el seno conocido."
+    },
+    {
+      "id": "PX-C05.S05-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "sin(x)",
+      "expected": "sin(x)",
+      "note": "Identidad de angulos suplementarios para el seno."
+    },
+    {
+      "id": "PX-C05.S05-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-cos(x)",
+      "expected": "-cos(x)",
+      "note": "Identidad de coseno con suma de pi."
+    },
+    {
+      "id": "PX-C05.S05-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "24/7",
+      "expected": "24/7",
+      "note": "Tangente del angulo doble."
+    },
+    {
+      "id": "PX-C05.S05-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "7/25",
+      "expected": "7/25",
+      "note": "Coseno del angulo doble con seno positivo en el segundo cuadrante."
+    },
+    {
+      "id": "PX-C05.S06-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/2, 3*pi/2}",
+      "expected": "{pi/2, 3*pi/2}",
+      "note": "Raices del coseno en una vuelta completa."
+    },
+    {
+      "id": "PX-C05.S06-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/4, 5*pi/4}",
+      "expected": "{pi/4, 5*pi/4}",
+      "note": "Raices de la tangente igual a 1 en [0, 2pi)."
+    },
+    {
+      "id": "PX-C05.S06-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3*pi/2}",
+      "expected": "{3*pi/2}",
+      "note": "Unica solucion basal del seno igual a -1."
+    },
+    {
+      "id": "PX-C05.S06-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/4, 7*pi/4}",
+      "expected": "{pi/4, 7*pi/4}",
+      "note": "Coseno positivo con referencia pi/4."
+    },
+    {
+      "id": "PX-C05.S06-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/3, 2*pi/3}",
+      "expected": "{pi/3, 2*pi/3}",
+      "note": "Seno positivo con referencia pi/3."
+    },
+    {
+      "id": "PX-C05.S06-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "{2*pi/3, 5*pi/3}",
+      "expected": "{2*pi/3, 5*pi/3}",
+      "note": "Tangente negativa con periodo pi."
+    },
+    {
+      "id": "PX-C05.S07-01",
+      "type": "triangle_resolution",
+      "status": "passed",
+      "actual": "(90, 4, 4*sqrt(2))",
+      "expected": "(90, 4, 4*sqrt(2))",
+      "note": "Triangulo isosceles rectangulo."
+    },
+    {
+      "id": "PX-C05.S07-02",
+      "type": "triangle_resolution",
+      "status": "passed",
+      "actual": "(60, 3*sqrt(3), 6)",
+      "expected": "(60, 3*sqrt(3), 6)",
+      "note": "Triangulo 30-60-90 resuelto por el teorema del seno."
+    },
+    {
+      "id": "PX-C05.S07-03",
+      "type": "triangle_resolution",
+      "status": "passed",
+      "actual": "10",
+      "expected": "10",
+      "note": "Hipotenusa del triangulo rectangulo 6-8-10."
+    },
+    {
+      "id": "PX-C05.S07-04",
+      "type": "triangle_resolution",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Tercer lado por teorema del coseno."
+    },
+    {
+      "id": "PX-C05.S07-05",
+      "type": "triangle_resolution",
+      "status": "passed",
+      "actual": "(90, 4*sqrt(3), 8)",
+      "expected": "(90, 4*sqrt(3), 8)",
+      "note": "Triangulo semejante al ejemplo con escala distinta."
+    },
+    {
+      "id": "PX-C05.S07-06",
+      "type": "triangle_resolution",
+      "status": "passed",
+      "actual": "(1, sqrt(3))",
+      "expected": "(1, sqrt(3))",
+      "note": "Catetos desde hipotenusa 2 y angulo 60 grados."
+    },
+    {
+      "id": "PX-C05.S08-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "12",
+      "expected": "12",
+      "note": "Altura desde un angulo de 45 grados."
+    },
+    {
+      "id": "PX-C05.S08-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "15*sqrt(3)",
+      "expected": "15*sqrt(3)",
+      "note": "Altura del edificio por doble visual."
+    },
+    {
+      "id": "PX-C05.S08-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "10*sqrt(7)",
+      "expected": "10*sqrt(7)",
+      "note": "Distancia entre barcos por teorema del coseno."
+    },
+    {
+      "id": "PX-C05.S08-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "14",
+      "expected": "14",
+      "note": "Tercer lado con angulo comprendido de 120 grados."
+    },
+    {
+      "id": "PX-C05.S08-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "60",
+      "expected": "60",
+      "note": "Angulo bajo el que se ve la porteria."
+    },
+    {
+      "id": "PX-C05.S08-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "24",
+      "expected": "24",
+      "note": "Longitud del cable a partir de un seno de 30 grados."
+    },
+    {
+      "id": "EX-C06.S01-01",
+      "type": "basis_and_coordinates",
+      "status": "passed",
+      "actual": "{forms_base: True, coordinates: (-2, 3)}",
+      "expected": "{forms_base: True, coordinates: (-2, 3)}",
+      "note": "Independencia y cambio de coordenadas del ejemplo resuelto."
+    },
+    {
+      "id": "EX-C06.S02-01",
+      "type": "vector_combination_bundle",
+      "status": "passed",
+      "actual": "((3, -5), (8, 3))",
+      "expected": "((3, -5), (8, 3))",
+      "note": "Combinaciones lineales basicas del ejemplo resuelto."
+    },
+    {
+      "id": "EX-C06.S03-01",
+      "type": "module_argument_unit_vector",
+      "status": "passed",
+      "actual": "{module: 2, argument: pi/3, unit: (1/2, sqrt(3)/2)}",
+      "expected": "{module: 2, argument: pi/3, unit: (1/2, sqrt(3)/2)}",
+      "note": "Modulo, argumento y unitario del vector del ejemplo."
+    },
+    {
+      "id": "EX-C06.S04-01",
+      "type": "dot_and_angle",
+      "status": "passed",
+      "actual": "{dot: 0, angle: pi/2}",
+      "expected": "{dot: 0, angle: pi/2}",
+      "note": "Producto escalar nulo y perpendicularidad."
+    },
+    {
+      "id": "EX-C06.S05-01",
+      "type": "vector_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: parallel, aligned: True}",
+      "expected": "{relation: parallel, aligned: True}",
+      "note": "Paralelismo entre vectores y alineacion de tres puntos del ejemplo."
+    },
+    {
+      "id": "EX-C06.S06-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(5, 6)",
+      "expected": "(5, 6)",
+      "note": "Cuarto vertice del paralelogramo resuelto en el ejemplo."
+    },
+    {
+      "id": "PX-C06.S01-01",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "La base canonica forma una base de R2."
+    },
+    {
+      "id": "PX-C06.S01-02",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "False",
+      "expected": "False",
+      "note": "Vectores dependientes por proporcionalidad exacta."
+    },
+    {
+      "id": "PX-C06.S01-03",
+      "type": "basis_value",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Parametro de dependencia lineal."
+    },
+    {
+      "id": "PX-C06.S01-04",
+      "type": "basis_value",
+      "status": "passed",
+      "actual": "2/3",
+      "expected": "2/3",
+      "note": "Valor que anula el determinante."
+    },
+    {
+      "id": "PX-C06.S01-05",
+      "type": "basis_value",
+      "status": "passed",
+      "actual": "(7/3, 4/3)",
+      "expected": "(7/3, 4/3)",
+      "note": "Coordenadas del vector en la base dada."
+    },
+    {
+      "id": "PX-C06.S01-06",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "Determinante no nulo para una base con ejes permutados."
+    },
+    {
+      "id": "PX-C06.S02-01",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(1, 5)",
+      "expected": "(1, 5)",
+      "note": "Suma coordenada a coordenada."
+    },
+    {
+      "id": "PX-C06.S02-02",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(3, 3)",
+      "expected": "(3, 3)",
+      "note": "Resta de vectores."
+    },
+    {
+      "id": "PX-C06.S02-03",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(-3, 6)",
+      "expected": "(-3, 6)",
+      "note": "Producto por escalar negativo."
+    },
+    {
+      "id": "PX-C06.S02-04",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(3, 3)",
+      "expected": "(3, 3)",
+      "note": "Semisuma de dos vectores."
+    },
+    {
+      "id": "PX-C06.S02-05",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(11, -7)",
+      "expected": "(11, -7)",
+      "note": "Combinacion lineal 4u+v."
+    },
+    {
+      "id": "PX-C06.S02-06",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(0, -7)",
+      "expected": "(0, -7)",
+      "note": "Resta tras escalar el primer vector."
+    },
+    {
+      "id": "PX-C06.S03-01",
+      "type": "module_argument_vector",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Modulo del vector 3-4-5."
+    },
+    {
+      "id": "PX-C06.S03-02",
+      "type": "module_argument_vector",
+      "status": "passed",
+      "actual": "3*pi/2",
+      "expected": "3*pi/2",
+      "note": "Argumento principal sobre el eje Y negativo."
+    },
+    {
+      "id": "PX-C06.S03-03",
+      "type": "module_argument_vector",
+      "status": "passed",
+      "actual": "(0, 1)",
+      "expected": "(0, 1)",
+      "note": "Unitario en la misma direccion del eje Y positivo."
+    },
+    {
+      "id": "PX-C06.S03-04",
+      "type": "module_argument_vector",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Parametro positivo compatible con modulo 5."
+    },
+    {
+      "id": "PX-C06.S03-05",
+      "type": "module_argument_vector",
+      "status": "passed",
+      "actual": "(-sqrt(3), 1)",
+      "expected": "(-sqrt(3), 1)",
+      "note": "Vector de modulo 2 y argumento 150 grados."
+    },
+    {
+      "id": "PX-C06.S03-06",
+      "type": "module_argument_vector",
+      "status": "passed",
+      "actual": "{module: 2, argument: 5*pi/6}",
+      "expected": "{module: 2, argument: 5*pi/6}",
+      "note": "Modulo y argumento principal en el segundo cuadrante."
+    },
+    {
+      "id": "PX-C06.S04-01",
+      "type": "dot_angle_vector",
+      "status": "passed",
+      "actual": "-1",
+      "expected": "-1",
+      "note": "Producto escalar directo."
+    },
+    {
+      "id": "PX-C06.S04-02",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "Comprobacion de perpendicularidad."
+    },
+    {
+      "id": "PX-C06.S04-03",
+      "type": "dot_angle_vector",
+      "status": "passed",
+      "actual": "pi/2",
+      "expected": "pi/2",
+      "note": "Angulo recto entre diagonales simetricas."
+    },
+    {
+      "id": "PX-C06.S04-04",
+      "type": "dot_angle_vector",
+      "status": "passed",
+      "actual": "pi/3",
+      "expected": "pi/3",
+      "note": "Angulo con el eje X para un vector notable."
+    },
+    {
+      "id": "PX-C06.S04-05",
+      "type": "dot_angle_vector",
+      "status": "passed",
+      "actual": "(5/2, 5*sqrt(3)/2)",
+      "expected": "(5/2, 5*sqrt(3)/2)",
+      "note": "Vector de modulo 5 que forma 60 grados con el eje X."
+    },
+    {
+      "id": "PX-C06.S04-06",
+      "type": "dot_angle_vector",
+      "status": "passed",
+      "actual": "6",
+      "expected": "6",
+      "note": "Producto escalar a partir de modulos y angulo."
+    },
+    {
+      "id": "PX-C06.S05-01",
+      "type": "vector_relation",
+      "status": "passed",
+      "actual": "parallel",
+      "expected": "parallel",
+      "note": "Relacion de proporcionalidad entre los dos vectores."
+    },
+    {
+      "id": "PX-C06.S05-02",
+      "type": "vector_relation",
+      "status": "passed",
+      "actual": "perpendicular",
+      "expected": "perpendicular",
+      "note": "Producto escalar nulo."
+    },
+    {
+      "id": "PX-C06.S05-03",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "Alineacion de tres puntos con incremento constante."
+    },
+    {
+      "id": "PX-C06.S05-04",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "False",
+      "expected": "False",
+      "note": "No hay proporcionalidad entre los vectores generados."
+    },
+    {
+      "id": "PX-C06.S05-05",
+      "type": "vector_relation",
+      "status": "passed",
+      "actual": "8",
+      "expected": "8",
+      "note": "Parametro que anula el producto escalar."
+    },
+    {
+      "id": "PX-C06.S05-06",
+      "type": "vector_relation",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Parametro que hace paralelos los vectores."
+    },
+    {
+      "id": "PX-C06.S06-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(4, 5)",
+      "expected": "(4, 5)",
+      "note": "Cuarto vertice del paralelogramo desde A, B y D."
+    },
+    {
+      "id": "PX-C06.S06-02",
+      "type": "point",
+      "status": "passed",
+      "actual": "(-1, 3)",
+      "expected": "(-1, 3)",
+      "note": "Traslacion del punto P por el vector dado."
+    },
+    {
+      "id": "PX-C06.S06-03",
+      "type": "point",
+      "status": "passed",
+      "actual": "(4, 2)",
+      "expected": "(4, 2)",
+      "note": "Punto medio de un segmento."
+    },
+    {
+      "id": "PX-C06.S06-04",
+      "type": "point",
+      "status": "passed",
+      "actual": "(5, 4)",
+      "expected": "(5, 4)",
+      "note": "Reconstruccion del extremo desde el punto medio."
+    },
+    {
+      "id": "PX-C06.S06-05",
+      "type": "point",
+      "status": "passed",
+      "actual": "(3, 4)",
+      "expected": "(3, 4)",
+      "note": "Extremo final al sumar un vector de desplazamiento."
+    },
+    {
+      "id": "PX-C06.S06-06",
+      "type": "point",
+      "status": "passed",
+      "actual": "(4, 4)",
+      "expected": "(4, 4)",
+      "note": "Cuarto vertice obtenido con la formula D=A+C-B."
+    },
+    {
+      "id": "EX-C07.S01-01",
+      "type": "line_bundle",
+      "status": "passed",
+      "actual": "{line: {kind: slope_intercept, slope: 1, intercept: 1}, director: (1, 1), normal: (1, -1)}",
+      "expected": "{line: {kind: slope_intercept, slope: 1, intercept: 1}, director: (1, 1), normal: (1, -1)}",
+      "note": "Recta, director y normal obtenidos a partir de dos puntos."
+    },
+    {
+      "id": "EX-C07.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Valor del parametro que hace pasar la recta por (1, 2)."
+    },
+    {
+      "id": "EX-C07.S03-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(-1, 3)",
+      "expected": "(-1, 3)",
+      "note": "Simetrico central del punto respecto de C(1, 2)."
+    },
+    {
+      "id": "EX-C07.S04-01",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: secant, intersection: (2, 1)}",
+      "expected": "{relation: secant, intersection: (2, 1)}",
+      "note": "Clasificacion e interseccion de las dos rectas del ejemplo."
+    },
+    {
+      "id": "EX-C07.S05-01",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -1/2, intercept: 5/2}",
+      "expected": "{kind: slope_intercept, slope: -1/2, intercept: 5/2}",
+      "note": "Recta perpendicular construida desde la pendiente de la recta dada."
+    },
+    {
+      "id": "EX-C07.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "9*sqrt(5)/5",
+      "expected": "9*sqrt(5)/5",
+      "note": "Distancia entre dos rectas paralelas con mismos coeficientes A y B."
+    },
+    {
+      "id": "EX-C07.S07-01",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{vertices: {(1, 2), (1, 5), (4, 2)}, area: 9/2}",
+      "expected": "{vertices: {(1, 2), (1, 5), (4, 2)}, area: 9/2}",
+      "note": "Vertices por interseccion y area del triangulo delimitado por tres rectas."
+    },
+    {
+      "id": "EX-C07.S08-01",
+      "type": "notable_lines_bundle",
+      "status": "passed",
+      "actual": "{median: {kind: slope_intercept, slope: -4, intercept: 12}, altitude: {kind: vertical, x: 2}, perpendicular_bisector: {kind: vertical, x: 3}}",
+      "expected": "{median: {kind: slope_intercept, slope: -4, intercept: 12}, altitude: {kind: vertical, x: 2}, perpendicular_bisector: {kind: vertical, x: 3}}",
+      "note": "Rectas notables del triangulo del ejemplo."
+    },
+    {
+      "id": "EX-C07.S09-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(0, 0)",
+      "expected": "(0, 0)",
+      "note": "En un triangulo rectangulo, el ortocentro coincide con el vertice del angulo recto."
+    },
+    {
+      "id": "EX-C07.S10-01",
+      "type": "point_and_area",
+      "status": "passed",
+      "actual": "{vertex: (0, 3), area: 6}",
+      "expected": "{vertex: (0, 3), area: 6}",
+      "note": "Vertice sobre la mediatriz de la base y area del triangulo isosceles."
+    },
+    {
+      "id": "PX-C07.S01-01",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: vertical, x: 2}",
+      "expected": "{kind: vertical, x: 2}",
+      "note": "Recta vertical por dos puntos con la misma abscisa."
+    },
+    {
+      "id": "PX-C07.S01-02",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 3, intercept: -1}",
+      "expected": "{kind: slope_intercept, slope: 3, intercept: -1}",
+      "note": "Recta por un punto con pendiente dada."
+    },
+    {
+      "id": "PX-C07.S01-03",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -2, intercept: 6}",
+      "expected": "{kind: slope_intercept, slope: -2, intercept: 6}",
+      "note": "Recta por dos puntos con pendiente negativa."
+    },
+    {
+      "id": "PX-C07.S01-06",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -1, intercept: 1}",
+      "expected": "{kind: slope_intercept, slope: -1, intercept: 1}",
+      "note": "Paralela a x+y=4 que pasa por (-1, 2)."
+    },
+    {
+      "id": "PX-C07.S01-04",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(1, -2)",
+      "expected": "(1, -2)",
+      "note": "Vector normal leido desde la forma general."
+    },
+    {
+      "id": "PX-C07.S01-05",
+      "type": "vector",
+      "status": "passed",
+      "actual": "(1, -3)",
+      "expected": "(1, -3)",
+      "note": "Un vector director perpendicular al normal (3, 1)."
+    },
+    {
+      "id": "PX-C07.S02-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Parametro por paso de la recta por (1, 1)."
+    },
+    {
+      "id": "PX-C07.S02-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Parametro que iguala la pendiente a 3."
+    },
+    {
+      "id": "PX-C07.S02-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-1/2",
+      "expected": "-1/2",
+      "note": "Pendiente perpendicular a una recta de pendiente 2."
+    },
+    {
+      "id": "PX-C07.S02-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Parametro por pertenencia del punto (2, 4)."
+    },
+    {
+      "id": "PX-C07.S02-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-2",
+      "expected": "-2",
+      "note": "Parametro que hace paralela la recta a x-2y+3=0."
+    },
+    {
+      "id": "PX-C07.S02-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Parametro que produce una recta perpendicular a y=-x."
+    },
+    {
+      "id": "PX-C07.S03-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(-2, 1)",
+      "expected": "(-2, 1)",
+      "note": "Simetria respecto del origen."
+    },
+    {
+      "id": "PX-C07.S03-02",
+      "type": "point",
+      "status": "passed",
+      "actual": "(3, 4)",
+      "expected": "(3, 4)",
+      "note": "Simetria respecto del eje Y."
+    },
+    {
+      "id": "PX-C07.S03-03",
+      "type": "point",
+      "status": "passed",
+      "actual": "(-3, 1)",
+      "expected": "(-3, 1)",
+      "note": "Reflexion respecto de la recta vertical x=1."
+    },
+    {
+      "id": "PX-C07.S03-04",
+      "type": "point",
+      "status": "passed",
+      "actual": "(2, -3)",
+      "expected": "(2, -3)",
+      "note": "Reflexion respecto de la horizontal y=1."
+    },
+    {
+      "id": "PX-C07.S03-05",
+      "type": "point",
+      "status": "passed",
+      "actual": "(-2, -4)",
+      "expected": "(-2, -4)",
+      "note": "Simetrico central de P respecto de M."
+    },
+    {
+      "id": "PX-C07.S03-06",
+      "type": "point",
+      "status": "passed",
+      "actual": "(1, 3)",
+      "expected": "(1, 3)",
+      "note": "Reflexion respecto de la bisectriz y=x."
+    },
+    {
+      "id": "PX-C07.S04-01",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: secant, intersection: (1, 3)}",
+      "expected": "{relation: secant, intersection: (1, 3)}",
+      "note": "Rectas de pendientes distintas."
+    },
+    {
+      "id": "PX-C07.S04-02",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: parallel, intersection: None}",
+      "expected": "{relation: parallel, intersection: None}",
+      "note": "Rectas con misma pendiente y distinto termino independiente."
+    },
+    {
+      "id": "PX-C07.S04-03",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: coincident, intersection: None}",
+      "expected": "{relation: coincident, intersection: None}",
+      "note": "Rectas que representan la misma ecuacion tras simplificar."
+    },
+    {
+      "id": "PX-C07.S04-04",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: secant, intersection: (2, 3)}",
+      "expected": "{relation: secant, intersection: (2, 3)}",
+      "note": "Interseccion entre una recta vertical y una horizontal."
+    },
+    {
+      "id": "PX-C07.S04-05",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: parallel, intersection: None}",
+      "expected": "{relation: parallel, intersection: None}",
+      "note": "Rectas paralelas con pendiente -2."
+    },
+    {
+      "id": "PX-C07.S04-06",
+      "type": "line_relation_bundle",
+      "status": "passed",
+      "actual": "{relation: secant, intersection: (3, 2)}",
+      "expected": "{relation: secant, intersection: (3, 2)}",
+      "note": "Sistema de dos rectas secantes con solucion unica."
+    },
+    {
+      "id": "PX-C07.S05-01",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 2, intercept: -2}",
+      "expected": "{kind: slope_intercept, slope: 2, intercept: -2}",
+      "note": "Paralela a una recta de pendiente 2 por (1, 0)."
+    },
+    {
+      "id": "PX-C07.S05-02",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 1, intercept: -1}",
+      "expected": "{kind: slope_intercept, slope: 1, intercept: -1}",
+      "note": "Perpendicular a y=-x+4 por (2, 1)."
+    },
+    {
+      "id": "PX-C07.S05-03",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: vertical, x: -2}",
+      "expected": "{kind: vertical, x: -2}",
+      "note": "Recta vertical por el punto dado."
+    },
+    {
+      "id": "PX-C07.S05-04",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 0, intercept: 4}",
+      "expected": "{kind: slope_intercept, slope: 0, intercept: 4}",
+      "note": "Perpendicular horizontal a una recta vertical."
+    },
+    {
+      "id": "PX-C07.S05-05",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 1, intercept: 0}",
+      "expected": "{kind: slope_intercept, slope: 1, intercept: 0}",
+      "note": "Bisectriz de los cuadrantes I y III."
+    },
+    {
+      "id": "PX-C07.S05-06",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -1, intercept: 0}",
+      "expected": "{kind: slope_intercept, slope: -1, intercept: 0}",
+      "note": "Bisectriz de los cuadrantes II y IV."
+    },
+    {
+      "id": "PX-C07.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3*sqrt(2)",
+      "expected": "3*sqrt(2)",
+      "note": "Distancia entre dos rectas paralelas con A=1 y B=-1."
+    },
+    {
+      "id": "PX-C07.S06-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Distancia del origen a una recta en forma general."
+    },
+    {
+      "id": "PX-C07.S06-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "pi/2",
+      "expected": "pi/2",
+      "note": "Pendientes reciprocamente opuestas."
+    },
+    {
+      "id": "PX-C07.S06-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "pi/2",
+      "expected": "pi/2",
+      "note": "Angulo entre los ejes coordenados."
+    },
+    {
+      "id": "PX-C07.S06-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Distancia vertical entre dos rectas horizontales."
+    },
+    {
+      "id": "PX-C07.S06-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Distancia horizontal de un punto a x=5."
+    },
+    {
+      "id": "PX-C07.S07-01",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{area: 6}",
+      "expected": "{area: 6}",
+      "note": "Area de un triangulo rectangulo con catetos 4 y 3."
+    },
+    {
+      "id": "PX-C07.S07-02",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{vertices: {(2, 1), (2, 4), (5, 1)}, area: 9/2}",
+      "expected": "{vertices: {(2, 1), (2, 4), (5, 1)}, area: 9/2}",
+      "note": "Vertices por interseccion y area del triangulo delimitado por tres rectas sencillas."
+    },
+    {
+      "id": "PX-C07.S07-03",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{vertex: (5, 3), area: 6}",
+      "expected": "{vertex: (5, 3), area: 6}",
+      "note": "Cuarto vertice y area del paralelogramo coordenado."
+    },
+    {
+      "id": "PX-C07.S07-04",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{vertices: {(-3, 2), (0, 2), (0, 5)}, area: 9/2}",
+      "expected": "{vertices: {(-3, 2), (0, 2), (0, 5)}, area: 9/2}",
+      "note": "Triangulo delimitado por una vertical, una horizontal y una recta oblicua."
+    },
+    {
+      "id": "PX-C07.S07-05",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{area: 6}",
+      "expected": "{area: 6}",
+      "note": "Area por base 4 y altura 3."
+    },
+    {
+      "id": "PX-C07.S07-06",
+      "type": "vertices_and_area",
+      "status": "passed",
+      "actual": "{area: 12}",
+      "expected": "{area: 12}",
+      "note": "Area del rectangulo delimitado por dos verticales y dos horizontales."
+    },
+    {
+      "id": "PX-C07.S08-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(2, 3)",
+      "expected": "(2, 3)",
+      "note": "Punto medio del segmento AB."
+    },
+    {
+      "id": "PX-C07.S08-02",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 0, intercept: 3}",
+      "expected": "{kind: slope_intercept, slope: 0, intercept: 3}",
+      "note": "Mediatriz horizontal de un segmento vertical."
+    },
+    {
+      "id": "PX-C07.S08-03",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 1/2, intercept: 0}",
+      "expected": "{kind: slope_intercept, slope: 1/2, intercept: 0}",
+      "note": "Mediana desde A al punto medio de BC."
+    },
+    {
+      "id": "PX-C07.S08-04",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 0, intercept: 0}",
+      "expected": "{kind: slope_intercept, slope: 0, intercept: 0}",
+      "note": "Altura horizontal a un lado vertical."
+    },
+    {
+      "id": "PX-C07.S08-05",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: vertical, x: 0}",
+      "expected": "{kind: vertical, x: 0}",
+      "note": "Mediatriz del segmento horizontal centrado en el origen."
+    },
+    {
+      "id": "PX-C07.S08-06",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -2, intercept: 6}",
+      "expected": "{kind: slope_intercept, slope: -2, intercept: 6}",
+      "note": "Mediana desde C al punto medio de AB."
+    },
+    {
+      "id": "PX-C07.S09-01",
+      "type": "point",
+      "status": "passed",
+      "actual": "(0, 0)",
+      "expected": "(0, 0)",
+      "note": "Ortocentro de un triangulo rectangulo en A."
+    },
+    {
+      "id": "PX-C07.S09-02",
+      "type": "line_pair",
+      "status": "passed",
+      "actual": "[{kind: vertical, x: 0}, {kind: slope_intercept, slope: 0, intercept: 0}]",
+      "expected": "[{kind: vertical, x: 0}, {kind: slope_intercept, slope: 0, intercept: 0}]",
+      "note": "Bisectrices de las diagonales y=x e y=-x."
+    },
+    {
+      "id": "PX-C07.S09-03",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: vertical, x: 3}",
+      "expected": "{kind: vertical, x: 3}",
+      "note": "Mediatriz del segmento horizontal entre (1,1) y (5,1)."
+    },
+    {
+      "id": "PX-C07.S09-04",
+      "type": "point",
+      "status": "passed",
+      "actual": "(2, 2)",
+      "expected": "(2, 2)",
+      "note": "Interseccion entre y=2 y el lugar equidistante de A y B."
+    },
+    {
+      "id": "PX-C07.S09-05",
+      "type": "point",
+      "status": "passed",
+      "actual": "(3, 3)",
+      "expected": "(3, 3)",
+      "note": "Ortocentro de un triangulo rectangulo en C."
+    },
+    {
+      "id": "PX-C07.S09-06",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: 1, intercept: 0}",
+      "expected": "{kind: slope_intercept, slope: 1, intercept: 0}",
+      "note": "Lugar de puntos equidistantes de los ejes en I y III."
+    },
+    {
+      "id": "PX-C07.S10-01",
+      "type": "combined_geometry",
+      "status": "passed",
+      "actual": "{vertex: (2, 3), area: 6}",
+      "expected": "{vertex: (2, 3), area: 6}",
+      "note": "Vertice fijado sobre la mediatriz y area del triangulo isosceles."
+    },
+    {
+      "id": "PX-C07.S10-02",
+      "type": "combined_geometry",
+      "status": "passed",
+      "actual": "(2, 1)",
+      "expected": "(2, 1)",
+      "note": "Punto de y=1 que pertenece a la mediatriz de AB."
+    },
+    {
+      "id": "PX-C07.S10-03",
+      "type": "combined_geometry",
+      "status": "passed",
+      "actual": "(0, 0)",
+      "expected": "(0, 0)",
+      "note": "Centro del cuadrado por interseccion de diagonales."
+    },
+    {
+      "id": "PX-C07.S10-04",
+      "type": "combined_geometry",
+      "status": "passed",
+      "actual": "12",
+      "expected": "12",
+      "note": "Area de un triangulo con base 6 y altura 4."
+    },
+    {
+      "id": "PX-C07.S10-05",
+      "type": "combined_geometry",
+      "status": "passed",
+      "actual": "(-2, 0)",
+      "expected": "(-2, 0)",
+      "note": "Vertice opuesto por simetria respecto del centro."
+    },
+    {
+      "id": "PX-C07.S10-06",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "False",
+      "expected": "False",
+      "note": "La recta x=1 no corta al lugar x=2 de los puntos equidistantes."
+    },
+    {
+      "id": "EX-C08.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.Ropen(-1, 2), Interval.open(2, oo))",
+      "expected": "Union(Interval.Ropen(-1, 2), Interval.open(2, oo))",
+      "note": "Dominio con radical y denominador."
+    },
+    {
+      "id": "GX-C08.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(-oo, 3)",
+      "expected": "Interval.open(-oo, 3)",
+      "note": "Guiado de dominio logaritmico."
+    },
+    {
+      "id": "GX-C08.S01-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -3), Interval.open(-3, 3), Interval.open(3, oo))",
+      "expected": "Union(Interval.open(-oo, -3), Interval.open(-3, 3), Interval.open(3, oo))",
+      "note": "Guiado de dominio racional."
+    },
+    {
+      "id": "PX-C08.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Reals",
+      "expected": "Reals",
+      "note": "Polinomio con dominio total."
+    },
+    {
+      "id": "PX-C08.S01-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, 5), Interval.open(5, oo))",
+      "expected": "Union(Interval.open(-oo, 5), Interval.open(5, oo))",
+      "note": "Racional con punto prohibido."
+    },
+    {
+      "id": "PX-C08.S01-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval(4, oo)",
+      "expected": "Interval(4, oo)",
+      "note": "Radical simple."
+    },
+    {
+      "id": "PX-C08.S01-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -2), Interval(1, oo))",
+      "expected": "Union(Interval.open(-oo, -2), Interval(1, oo))",
+      "note": "Radical con cociente."
+    },
+    {
+      "id": "PX-C08.S01-05",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.open(-oo, -2), Interval.open(2, oo))",
+      "expected": "Union(Interval.open(-oo, -2), Interval.open(2, oo))",
+      "note": "Logaritmo con trinomio."
+    },
+    {
+      "id": "PX-C08.S01-06",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval.Ropen(-3, -1), Interval.Lopen(-1, 3))",
+      "expected": "Union(Interval.Ropen(-3, -1), Interval.Lopen(-1, 3))",
+      "note": "Radical acotado con punto excluido."
+    },
+    {
+      "id": "EX-C08.S03-01",
+      "type": "lateral_limits",
+      "status": "passed",
+      "actual": "{left: -1, right: 1, exists: False}",
+      "expected": "{left: -1, right: 1, exists: False}",
+      "note": "Laterales no coincidentes con valor absoluto."
+    },
+    {
+      "id": "GX-C08.S03-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Sustitucion directa en limite lineal."
+    },
+    {
+      "id": "GX-C08.S03-02",
+      "type": "lateral_limits",
+      "status": "passed",
+      "actual": "{left: -oo, right: oo, exists: False}",
+      "expected": "{left: -oo, right: oo, exists: False}",
+      "note": "Laterales de una funcion inversa."
+    },
+    {
+      "id": "PX-C08.S03-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "7",
+      "expected": "7",
+      "note": "Limite polinomico simple."
+    },
+    {
+      "id": "PX-C08.S03-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Limite racional regular."
+    },
+    {
+      "id": "PX-C08.S03-03",
+      "type": "lateral_limits",
+      "status": "passed",
+      "actual": "{left: -1, right: 1, exists: False}",
+      "expected": "{left: -1, right: 1, exists: False}",
+      "note": "Modulo dividido por la variable."
+    },
+    {
+      "id": "PX-C08.S03-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Limite con radical."
+    },
+    {
+      "id": "PX-C08.S03-05",
+      "type": "lateral_limits",
+      "status": "passed",
+      "actual": "{left: -oo, right: oo, exists: False}",
+      "expected": "{left: -oo, right: oo, exists: False}",
+      "note": "Laterales de una inversa desplazada."
+    },
+    {
+      "id": "PX-C08.S03-06",
+      "type": "lateral_limits",
+      "status": "passed",
+      "actual": "{left: -1, right: 1, exists: False}",
+      "expected": "{left: -1, right: 1, exists: False}",
+      "note": "Laterales con valor absoluto en el denominador efectivo."
+    },
+    {
+      "id": "EX-C08.S04-01",
+      "type": "limit_pair",
+      "status": "passed",
+      "actual": "[2, 0]",
+      "expected": "[2, 0]",
+      "note": "Comparacion de grados en dos cocientes."
+    },
+    {
+      "id": "GX-C08.S04-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Grados iguales."
+    },
+    {
+      "id": "GX-C08.S04-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Numerador de menor grado."
+    },
+    {
+      "id": "PX-C08.S04-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Cociente de grados iguales."
+    },
+    {
+      "id": "PX-C08.S04-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Denominador dominante."
+    },
+    {
+      "id": "PX-C08.S04-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-oo",
+      "expected": "-oo",
+      "note": "Crecimiento lineal hacia menos infinito."
+    },
+    {
+      "id": "PX-C08.S04-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Cociente de coeficientes principales."
+    },
+    {
+      "id": "PX-C08.S04-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Racionalizacion en el infinito."
+    },
+    {
+      "id": "PX-C08.S04-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/3",
+      "expected": "1/3",
+      "note": "Cociente de cuadraticas con coeficientes 1 y 3."
+    },
+    {
+      "id": "EX-C08.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Factorizacion del ejemplo resuelto."
+    },
+    {
+      "id": "GX-C08.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "6",
+      "expected": "6",
+      "note": "Cociente notable guiado."
+    },
+    {
+      "id": "GX-C08.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/4",
+      "expected": "1/4",
+      "note": "Racionalizacion guiada."
+    },
+    {
+      "id": "PX-C08.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Factorizacion elemental."
+    },
+    {
+      "id": "PX-C08.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-1",
+      "expected": "-1",
+      "note": "Trinomio factorizable."
+    },
+    {
+      "id": "PX-C08.S05-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/2",
+      "expected": "1/2",
+      "note": "Racionalizacion con radicando 1+x."
+    },
+    {
+      "id": "PX-C08.S05-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/4",
+      "expected": "1/4",
+      "note": "Derivada implicita del radical en 4."
+    },
+    {
+      "id": "PX-C08.S05-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-1",
+      "expected": "-1",
+      "note": "Factorizacion con una raiz en 2."
+    },
+    {
+      "id": "PX-C08.S05-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/2",
+      "expected": "1/2",
+      "note": "Limite notable trigonometrico."
+    },
+    {
+      "id": "EX-C08.S09-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Rellenar un agujero con el valor del limite."
+    },
+    {
+      "id": "GX-C08.S09-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Continuidad en x=2 para un tramo lineal."
+    },
+    {
+      "id": "GX-C08.S09-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Valor del tramo izquierdo en x=0."
+    },
+    {
+      "id": "PX-C08.S09-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Parametro a para continuidad en x=1."
+    },
+    {
+      "id": "PX-C08.S09-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Parametro b para continuidad en x=3."
+    },
+    {
+      "id": "PX-C08.S09-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Constante del tramo izquierdo en x=0."
+    },
+    {
+      "id": "PX-C08.S09-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Parametro d en el punto 2."
+    },
+    {
+      "id": "PX-C08.S09-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "6",
+      "expected": "6",
+      "note": "Valor que hace continua la funcion con agujero en 3."
+    },
+    {
+      "id": "PX-C08.S09-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Parametro m para continuidad en x=1."
+    },
+    {
+      "id": "EX-C08.S10-01",
+      "type": "model_limits",
+      "status": "passed",
+      "actual": "{initial: 78, limit: 18}",
+      "expected": "{initial: 78, limit: 18}",
+      "note": "Modelo de temperatura con valor inicial y equilibrio."
+    },
+    {
+      "id": "GX-C08.S10-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "80",
+      "expected": "80",
+      "note": "Valor inicial guiado."
+    },
+    {
+      "id": "GX-C08.S10-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "5",
+      "expected": "5",
+      "note": "Tendencia guiada a largo plazo."
+    },
+    {
+      "id": "PX-C08.S10-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "30",
+      "expected": "30",
+      "note": "Valor inicial de un deposito."
+    },
+    {
+      "id": "PX-C08.S10-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Limite de g(t)."
+    },
+    {
+      "id": "PX-C08.S10-03",
+      "type": "model_limits",
+      "status": "passed",
+      "actual": "{initial: 85, limit: 100}",
+      "expected": "{initial: 85, limit: 100}",
+      "note": "Valor inicial y limite de h(t)."
+    },
+    {
+      "id": "PX-C08.S10-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "20",
+      "expected": "20",
+      "note": "Valor a largo plazo del deposito."
+    },
+    {
+      "id": "PX-C08.S10-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Valor inicial de M(t)."
+    },
+    {
+      "id": "PX-C08.S10-06",
+      "type": "model_limits",
+      "status": "passed",
+      "actual": "{initial: 6, limit: 4}",
+      "expected": "{initial: 6, limit: 4}",
+      "note": "Modelo N(t) con valor inicial y limite."
+    },
+    {
+      "id": "EX-C08.S11-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3/2",
+      "expected": "3/2",
+      "note": "Racionalizacion de examen en el infinito."
+    },
+    {
+      "id": "GX-C08.S11-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Limite mixto por factorizacion."
+    },
+    {
+      "id": "GX-C08.S11-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Continuidad de examen en x=1."
+    },
+    {
+      "id": "PX-C08.S11-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Racionalizacion con coeficiente 2."
+    },
+    {
+      "id": "PX-C08.S11-02",
+      "type": "lateral_limits",
+      "status": "passed",
+      "actual": "{left: -oo, right: oo, exists: False}",
+      "expected": "{left: -oo, right: oo, exists: False}",
+      "note": "Cociente que diverge en x=1."
+    },
+    {
+      "id": "PX-C08.S11-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Parametro k para continuidad en x=2."
+    },
+    {
+      "id": "PX-C08.S11-04",
+      "type": "asymptotes",
+      "status": "passed",
+      "actual": "{verticals: [-2], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: -2}, remainder: 5}",
+      "expected": "{verticals: [-2], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: -2}, remainder: 5}",
+      "note": "Asintota vertical y oblicua del item EBAU."
+    },
+    {
+      "id": "PX-C08.S11-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1",
+      "expected": "1",
+      "note": "Racionalizacion con 1+2x."
+    },
+    {
+      "id": "PX-C08.S11-06",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "False",
+      "expected": "False",
+      "note": "Funcion no continua en x=3 porque no esta definida ahi."
+    },
+    {
+      "id": "EX-C09.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(5*x**2 + 8*x + 1)/(2*sqrt(x + 2))",
+      "expected": "(5*x**2 + 8*x + 1)/(2*sqrt(x + 2))",
+      "note": "Producto con radical."
+    },
+    {
+      "id": "GX-C09.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "(-3*x**2 + 6*x*(x + 1) + 1)/(x + 1)**2",
+      "expected": "(3*x**2 + 6*x + 1)/(x + 1)**2",
+      "note": "Cociente guiado."
+    },
+    {
+      "id": "GX-C09.S01-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/sqrt(2*x + 5)",
+      "expected": "1/sqrt(2*x + 5)",
+      "note": "Cadena con radical."
+    },
+    {
+      "id": "PX-C09.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4*x**3 - 3",
+      "expected": "4*x**3 - 3",
+      "note": "Derivada polinomica."
+    },
+    {
+      "id": "PX-C09.S01-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3*x**2 - 6*x + 1",
+      "expected": "3*x**2 - 6*x + 1",
+      "note": "Producto de polinomios."
+    },
+    {
+      "id": "PX-C09.S01-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-5/(x - 2)**2",
+      "expected": "-5/(x - 2)**2",
+      "note": "Cociente con numerador lineal."
+    },
+    {
+      "id": "PX-C09.S01-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "x/sqrt(x**2 + 4)",
+      "expected": "x/sqrt(x**2 + 4)",
+      "note": "Cadena en un radical."
+    },
+    {
+      "id": "PX-C09.S01-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3*exp(3*x)",
+      "expected": "3*exp(3*x)",
+      "note": "Exponencial compuesta."
+    },
+    {
+      "id": "PX-C09.S01-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2*x/(x**2 + 1)",
+      "expected": "2*x/(x**2 + 1)",
+      "note": "Logaritmo compuesto."
+    },
+    {
+      "id": "PX-C09.S01-07",
+      "type": "expression",
+      "status": "passed",
+      "actual": "cos(2*x)",
+      "expected": "cos(2*x)",
+      "note": "Producto trigonometrico."
+    },
+    {
+      "id": "PX-C09.S01-08",
+      "type": "expression",
+      "status": "passed",
+      "actual": "6*x*(x**2 - 1)**2",
+      "expected": "6*x*(x**2 - 1)**2",
+      "note": "Cadena de potencia."
+    },
+    {
+      "id": "EX-C09.S02-01",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, -1), Interval.open(1, oo)], decreasing: [Interval.open(-1, 1)], maxima: {(-1, 2)}, minima: {(1, -2)}, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 0)}}",
+      "expected": "{increasing: [Interval.open(-oo, -1), Interval.open(1, oo)], decreasing: [Interval.open(-1, 1)], maxima: {(-1, 2)}, minima: {(1, -2)}, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 0)}}",
+      "note": "Cubic complete study with first and second derivative."
+    },
+    {
+      "id": "GX-C09.S02-01",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(2, oo)], decreasing: [Interval.open(-oo, 2)], maxima: EmptySet, minima: {(2, -3)}}",
+      "expected": "{increasing: [Interval.open(2, oo)], decreasing: [Interval.open(-oo, 2)], maxima: EmptySet, minima: {(2, -3)}}",
+      "note": "Parabola with a minimum at x=2."
+    },
+    {
+      "id": "GX-C09.S02-02",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, 0), Interval.open(0, oo)], decreasing: [], maxima: EmptySet, minima: EmptySet, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 0)}}",
+      "expected": "{increasing: [Interval.open(-oo, 0), Interval.open(0, oo)], decreasing: [], maxima: EmptySet, minima: EmptySet, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 0)}}",
+      "note": "x^3 is increasing with inflection at the origin."
+    },
+    {
+      "id": "PX-C09.S02-01",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, 2)], decreasing: [Interval.open(2, oo)], maxima: {(2, 4)}, minima: EmptySet}",
+      "expected": "{increasing: [Interval.open(-oo, 2)], decreasing: [Interval.open(2, oo)], maxima: {(2, 4)}, minima: EmptySet}",
+      "note": "Concave parabola with a maximum at x=2."
+    },
+    {
+      "id": "PX-C09.S02-02",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, 0), Interval.open(4, oo)], decreasing: [Interval.open(0, 4)], maxima: {(0, 0)}, minima: {(4, -32)}, concave_up: [Interval.open(2, oo)], concave_down: [Interval.open(-oo, 2)], inflection: {(2, -16)}}",
+      "expected": "{increasing: [Interval.open(-oo, 0), Interval.open(4, oo)], decreasing: [Interval.open(0, 4)], maxima: {(0, 0)}, minima: {(4, -32)}, concave_up: [Interval.open(2, oo)], concave_down: [Interval.open(-oo, 2)], inflection: {(2, -16)}}",
+      "note": "Cubic with one maximum, one minimum and one inflection."
+    },
+    {
+      "id": "PX-C09.S02-03",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-1, 0), Interval.open(1, oo)], decreasing: [Interval.open(-oo, -1), Interval.open(0, 1)], maxima: {(0, 0)}, minima: {(-1, -1), (1, -1)}}",
+      "expected": "{increasing: [Interval.open(-1, 0), Interval.open(1, oo)], decreasing: [Interval.open(-oo, -1), Interval.open(0, 1)], maxima: {(0, 0)}, minima: {(-1, -1), (1, -1)}}",
+      "note": "Quartic with two minima and one maximum."
+    },
+    {
+      "id": "PX-C09.S02-04",
+      "type": "absolute_extrema",
+      "status": "passed",
+      "actual": "{maxima: {(0, 5)}, minima: {(2, 1)}}",
+      "expected": "{maxima: {(0, 5)}, minima: {(2, 1)}}",
+      "note": "Absolute extrema on a closed interval."
+    },
+    {
+      "id": "PX-C09.S02-05",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(0, oo)], decreasing: [], maxima: EmptySet, minima: EmptySet, concave_up: [], concave_down: [Interval.open(0, oo)], inflection: EmptySet}",
+      "expected": "{increasing: [Interval.open(0, oo)], decreasing: [], maxima: EmptySet, minima: EmptySet, concave_up: [], concave_down: [Interval.open(0, oo)], inflection: EmptySet}",
+      "note": "Logarithm on its natural domain."
+    },
+    {
+      "id": "PX-C09.S02-06",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(0, oo)], decreasing: [Interval.open(-oo, 0)], maxima: EmptySet, minima: {(0, 1)}, concave_up: [Interval(-oo, oo)], concave_down: [], inflection: EmptySet}",
+      "expected": "{increasing: [Interval.open(0, oo)], decreasing: [Interval.open(-oo, 0)], maxima: EmptySet, minima: {(0, 1)}, concave_up: [Interval(-oo, oo)], concave_down: [], inflection: EmptySet}",
+      "note": "Exponential shifted by a line."
+    },
+    {
       "id": "EX-C09.S03-01",
       "type": "tangent_normal_at_point",
       "status": "passed",
@@ -523,7 +4035,7 @@
         "slope": "-1/4",
         "intercept": "27/4"
       },
-      "note": "Ejemplo resuelto principal del piloto."
+      "note": "Tangente y normal del ejemplo resuelto."
     },
     {
       "id": "GX-C09.S03-01",
@@ -556,7 +4068,7 @@
         "kind": "vertical",
         "x": "1"
       },
-      "note": "Guiado con tangente horizontal y normal vertical."
+      "note": "Caso con tangente horizontal y normal vertical."
     },
     {
       "id": "PX-C09.S03-01",
@@ -657,7 +4169,7 @@
         "kind": "vertical",
         "x": "0"
       },
-      "note": "Practica con origen e inflexion."
+      "note": "Practica con tangente horizontal en el origen."
     },
     {
       "id": "EX-C09.S04-01",
@@ -686,7 +4198,7 @@
           "intercept": "-15"
         }
       ],
-      "note": "Ejemplo resuelto con dos tangentes paralelas a la misma recta."
+      "note": "Dos tangentes paralelas a una misma recta."
     },
     {
       "id": "GX-C09.S04-01",
@@ -706,7 +4218,7 @@
           "intercept": "-9"
         }
       ],
-      "note": "Guiado con una unica solucion."
+      "note": "Una unica tangente con pendiente dada."
     },
     {
       "id": "GX-C09.S04-02",
@@ -726,7 +4238,7 @@
           "intercept": "2"
         }
       ],
-      "note": "Guiado con funcion radical."
+      "note": "Tangencia guiada en una raiz."
     },
     {
       "id": "PX-C09.S04-01",
@@ -746,7 +4258,7 @@
           "intercept": "-3"
         }
       ],
-      "note": "Practica con tangente dada por pendiente."
+      "note": "Tangente a una parabola con pendiente 4."
     },
     {
       "id": "PX-C09.S04-02",
@@ -775,7 +4287,7 @@
           "intercept": "-16"
         }
       ],
-      "note": "Practica con dos tangentes simetricas."
+      "note": "Dos tangentes simetricas en una cubica."
     },
     {
       "id": "PX-C09.S04-03",
@@ -795,7 +4307,7 @@
           "intercept": "-1"
         }
       ],
-      "note": "Practica con logaritmo."
+      "note": "Tangente al logaritmo paralela a y=x+3."
     },
     {
       "id": "PX-C09.S04-04",
@@ -815,7 +4327,7 @@
           "intercept": "-exp(2)"
         }
       ],
-      "note": "Practica con exponencial."
+      "note": "Tangente a la exponencial con pendiente e^2."
     },
     {
       "id": "PX-C09.S04-05",
@@ -844,7 +4356,7 @@
           "intercept": "2"
         }
       ],
-      "note": "Practica con tangentes horizontales."
+      "note": "Tangentes horizontales de una racional simple."
     },
     {
       "id": "PX-C09.S04-06",
@@ -859,6 +4371,303 @@
         "intercept": "-1"
       },
       "note": "Caso con parametro para imponer paralelismo en x=1."
+    },
+    {
+      "id": "EX-C09.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-3/2",
+      "expected": "-3/2",
+      "note": "Parametro que impone un minimo local en x=1."
+    },
+    {
+      "id": "GX-C09.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3",
+      "expected": "3",
+      "note": "Pendiente 5 en x=1."
+    },
+    {
+      "id": "GX-C09.S05-02",
+      "type": "parameter_bundle",
+      "status": "passed",
+      "actual": "{b: 3/2, classification: maximo_local}",
+      "expected": "{b: 3/2, classification: maximo_local}",
+      "note": "Punto critico en x=-1 y clasificacion."
+    },
+    {
+      "id": "PX-C09.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-3",
+      "expected": "-3",
+      "note": "Tangente horizontal en x=1."
+    },
+    {
+      "id": "PX-C09.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-4",
+      "expected": "-4",
+      "note": "Minimo de una parabola en x=2."
+    },
+    {
+      "id": "PX-C09.S05-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-3",
+      "expected": "-3",
+      "note": "Punto de inflexion en x=1."
+    },
+    {
+      "id": "PX-C09.S05-04",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Tangente paralela a y=2x-1 en x=0."
+    },
+    {
+      "id": "PX-C09.S05-05",
+      "type": "expression",
+      "status": "passed",
+      "actual": "-3",
+      "expected": "-3",
+      "note": "Punto critico fijado en x=2."
+    },
+    {
+      "id": "PX-C09.S05-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Tangente horizontal en x=-1."
+    },
+    {
+      "id": "EX-C09.S06-01",
+      "type": "piecewise_parameters",
+      "status": "passed",
+      "actual": "{a: 2, b: 0}",
+      "expected": "{a: 2, b: 0}",
+      "note": "Ajuste simultaneo de continuidad y derivabilidad."
+    },
+    {
+      "id": "GX-C09.S06-01",
+      "type": "piecewise_status",
+      "status": "passed",
+      "actual": "{left_limit: 1, right_limit: 1, value: 1, continuous: True, left_derivative: 1, right_derivative: 0, derivable: False}",
+      "expected": "{left_limit: 1, right_limit: 1, value: 1, continuous: True, left_derivative: 1, right_derivative: 0, derivable: False}",
+      "note": "Funcion continua pero no derivable en el origen."
+    },
+    {
+      "id": "GX-C09.S06-02",
+      "type": "piecewise_parameters",
+      "status": "passed",
+      "actual": "{continuous_for_all: True, derivable_value: 1}",
+      "expected": "{continuous_for_all: True, derivable_value: 1}",
+      "note": "Una familia continua para todo k y derivable solo para k=1."
+    },
+    {
+      "id": "PX-C09.S06-01",
+      "type": "piecewise_status",
+      "status": "passed",
+      "actual": "{left_limit: 3, right_limit: 3, value: 3, continuous: True, left_derivative: 2, right_derivative: 2, derivable: True}",
+      "expected": "{left_limit: 3, right_limit: 3, value: 3, continuous: True, left_derivative: 2, right_derivative: 2, derivable: True}",
+      "note": "Coincidencia de valor y pendientes en x=1."
+    },
+    {
+      "id": "PX-C09.S06-02",
+      "type": "piecewise_status",
+      "status": "passed",
+      "actual": "{left_limit: 5, right_limit: 5, value: 5, continuous: True, left_derivative: 1, right_derivative: 0, derivable: False}",
+      "expected": "{left_limit: 5, right_limit: 5, value: 5, continuous: True, left_derivative: 1, right_derivative: 0, derivable: False}",
+      "note": "Salto de derivada con continuidad mantenida."
+    },
+    {
+      "id": "PX-C09.S06-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "0",
+      "expected": "0",
+      "note": "Parametro para derivabilidad en x=0."
+    },
+    {
+      "id": "PX-C09.S06-04",
+      "type": "piecewise_status",
+      "status": "passed",
+      "actual": "{left_limit: 0, right_limit: 0, value: 0, continuous: True, left_derivative: -1, right_derivative: 1, derivable: False}",
+      "expected": "{left_limit: 0, right_limit: 0, value: 0, continuous: True, left_derivative: -1, right_derivative: 1, derivable: False}",
+      "note": "Pico de la funcion valor absoluto."
+    },
+    {
+      "id": "PX-C09.S06-05",
+      "type": "piecewise_parameters",
+      "status": "passed",
+      "actual": "{b: -4, status: {left_limit: 4, right_limit: 4, value: 4, continuous: True, left_derivative: 4, right_derivative: 4, derivable: True}}",
+      "expected": "{b: -4, status: {left_limit: 4, right_limit: 4, value: 4, continuous: True, left_derivative: 4, right_derivative: 4, derivable: True}}",
+      "note": "Ajuste lineal para continuidad y derivabilidad en x=2."
+    },
+    {
+      "id": "PX-C09.S06-06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Parametro m para derivabilidad en x=1."
+    },
+    {
+      "id": "EX-C09.S07-01",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 5, area: 25}",
+      "expected": "{x: 5, area: 25}",
+      "note": "Rectangulo de area maxima con perimetro 20."
+    },
+    {
+      "id": "GX-C09.S07-01",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 9/2, other_side: 9, area: 81/2}",
+      "expected": "{x: 9/2, other_side: 9, area: 81/2}",
+      "note": "Valla junto a un muro."
+    },
+    {
+      "id": "GX-C09.S07-02",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 3, value: 6}",
+      "expected": "{x: 3, value: 6}",
+      "note": "Minimo de x+9/x para x>0."
+    },
+    {
+      "id": "PX-C09.S07-01",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{side: 6, area: 36}",
+      "expected": "{side: 6, area: 36}",
+      "note": "Perimetro 24 y area maxima."
+    },
+    {
+      "id": "PX-C09.S07-02",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 5, product: 25}",
+      "expected": "{x: 5, product: 25}",
+      "note": "Producto maximo con suma 10."
+    },
+    {
+      "id": "PX-C09.S07-03",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 2, value: 4}",
+      "expected": "{x: 2, value: 4}",
+      "note": "Minimo de x+4/x."
+    },
+    {
+      "id": "PX-C09.S07-04",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 15/2, other_side: 15, area: 225/2}",
+      "expected": "{x: 15/2, other_side: 15, area: 225/2}",
+      "note": "Rectangulo junto a un rio con 30 m de valla."
+    },
+    {
+      "id": "PX-C09.S07-05",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 6, value: 36}",
+      "expected": "{x: 6, value: 36}",
+      "note": "Maximo de una cuadratica en un intervalo natural."
+    },
+    {
+      "id": "PX-C09.S07-06",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 4/3, volume: 1024/27}",
+      "expected": "{x: 4/3, volume: 1024/27}",
+      "note": "Caja sin tapa a partir de un cuadrado de lado 8."
+    },
+    {
+      "id": "EX-C09.S08-01",
+      "type": "calculus_and_tangent",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, -1), Interval.open(1, oo)], decreasing: [Interval.open(-1, 1)], maxima: {(-1, 3)}, minima: {(1, -1)}, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 1)}, tangent: {kind: slope_intercept, slope: 0, intercept: -1}}",
+      "expected": "{increasing: [Interval.open(-oo, -1), Interval.open(1, oo)], decreasing: [Interval.open(-1, 1)], maxima: {(-1, 3)}, minima: {(1, -1)}, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 1)}, tangent: {kind: slope_intercept, slope: 0, intercept: -1}}",
+      "note": "Estudio global y tangente horizontal en x=1."
+    },
+    {
+      "id": "GX-C09.S08-01",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, 0), Interval.open(2, oo)], decreasing: [Interval.open(0, 2)], maxima: {(0, 0)}, minima: {(2, -4)}, concave_up: [Interval.open(1, oo)], concave_down: [Interval.open(-oo, 1)], inflection: {(1, -2)}}",
+      "expected": "{increasing: [Interval.open(-oo, 0), Interval.open(2, oo)], decreasing: [Interval.open(0, 2)], maxima: {(0, 0)}, minima: {(2, -4)}, concave_up: [Interval.open(1, oo)], concave_down: [Interval.open(-oo, 1)], inflection: {(1, -2)}}",
+      "note": "Cubica con maximo, minimo e inflexion."
+    },
+    {
+      "id": "GX-C09.S08-02",
+      "type": "horizontal_tangents",
+      "status": "passed",
+      "actual": "{points: [(-1, 4), (1, 0)], lines: [{kind: slope_intercept, slope: 0, intercept: 4}, {kind: slope_intercept, slope: 0, intercept: 0}]}",
+      "expected": "{points: [(-1, 4), (1, 0)], lines: [{kind: slope_intercept, slope: 0, intercept: 4}, {kind: slope_intercept, slope: 0, intercept: 0}]}",
+      "note": "Tangentes horizontales de h(x)=x^3-3x+2."
+    },
+    {
+      "id": "PX-C09.S08-01",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, -sqrt(2)), Interval.open(sqrt(2), oo)], decreasing: [Interval.open(-sqrt(2), sqrt(2))], maxima: {(-sqrt(2), 4*sqrt(2))}, minima: {(sqrt(2), -4*sqrt(2))}, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 0)}}",
+      "expected": "{increasing: [Interval.open(-oo, -sqrt(2)), Interval.open(sqrt(2), oo)], decreasing: [Interval.open(-sqrt(2), sqrt(2))], maxima: {(-sqrt(2), 4*sqrt(2))}, minima: {(sqrt(2), -4*sqrt(2))}, concave_up: [Interval.open(0, oo)], concave_down: [Interval.open(-oo, 0)], inflection: {(0, 0)}}",
+      "note": "Estudio global de una cubica escalada."
+    },
+    {
+      "id": "PX-C09.S08-02",
+      "type": "tangent_normal_at_point",
+      "status": "passed",
+      "x0": "0",
+      "tangent": {
+        "kind": "slope_intercept",
+        "slope": "-3",
+        "intercept": "1"
+      },
+      "normal": {
+        "kind": "slope_intercept",
+        "slope": "1/3",
+        "intercept": "1"
+      },
+      "note": "Tangente y normal en x=0 dentro del bloque de ampliacion."
+    },
+    {
+      "id": "PX-C09.S08-03",
+      "type": "horizontal_tangents",
+      "status": "passed",
+      "actual": "{points: [(-2, 16), (2, -16)], lines: [{kind: slope_intercept, slope: 0, intercept: 16}, {kind: slope_intercept, slope: 0, intercept: -16}]}",
+      "expected": "{points: [(-2, 16), (2, -16)], lines: [{kind: slope_intercept, slope: 0, intercept: 16}, {kind: slope_intercept, slope: 0, intercept: -16}]}",
+      "note": "Tangentes horizontales de x^3-12x."
+    },
+    {
+      "id": "PX-C09.S08-04",
+      "type": "absolute_extrema",
+      "status": "passed",
+      "actual": "{maxima: {(-1, 2), (2, 2)}, minima: {(-2, -2), (1, -2)}}",
+      "expected": "{maxima: {(-1, 2), (2, 2)}, minima: {(-2, -2), (1, -2)}}",
+      "note": "Extremos absolutos de una cubica en [-2,2]."
+    },
+    {
+      "id": "PX-C09.S08-05",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-sqrt(2), 0), Interval.open(sqrt(2), oo)], decreasing: [Interval.open(-oo, -sqrt(2)), Interval.open(0, sqrt(2))], maxima: {(0, 0)}, minima: {(-sqrt(2), -4), (sqrt(2), -4)}}",
+      "expected": "{increasing: [Interval.open(-sqrt(2), 0), Interval.open(sqrt(2), oo)], decreasing: [Interval.open(-oo, -sqrt(2)), Interval.open(0, sqrt(2))], maxima: {(0, 0)}, minima: {(-sqrt(2), -4), (sqrt(2), -4)}}",
+      "note": "Puntos criticos y extremos de una cuartica par."
+    },
+    {
+      "id": "PX-C09.S08-06",
+      "type": "piecewise_parameters",
+      "status": "passed",
+      "actual": "{a: 2, b: -1}",
+      "expected": "{a: 2, b: -1}",
+      "note": "Continuidad y derivabilidad en una funcion a trozos de ampliacion."
     },
     {
       "id": "CH-C09-01",
@@ -879,6 +4688,210 @@
         }
       ],
       "note": "Reto de transferencia con interpretacion fisica."
+    },
+    {
+      "id": "EX-R10.S02-01",
+      "type": "expression_with_domain",
+      "status": "passed",
+      "actual": "{simplified: (x + 3)/x, domain: Union(Interval.open(-oo, 0), Interval.open(0, 3), Interval.open(3, oo))}",
+      "expected": "{simplified: (x + 3)/x, domain: Union(Interval.open(-oo, 0), Interval.open(0, 3), Interval.open(3, oo))}",
+      "note": "Simplificacion con restriccion de dominio conservada."
+    },
+    {
+      "id": "PX-R10.S01-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Interval.open(1, oo)",
+      "expected": "Interval.open(1, oo)",
+      "note": "Dominio de una funcion con logaritmo y denominador."
+    },
+    {
+      "id": "PX-R10.S01-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{4}",
+      "expected": "{4}",
+      "note": "Ecuacion con radical y control de soluciones extranas."
+    },
+    {
+      "id": "PX-R10.S01-03",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/3, 5*pi/3}",
+      "expected": "{pi/3, 5*pi/3}",
+      "note": "Angulos de coseno igual a un medio en una vuelta completa."
+    },
+    {
+      "id": "PX-R10.S01-04",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -1, intercept: -1}",
+      "expected": "{kind: slope_intercept, slope: -1, intercept: -1}",
+      "note": "Tangente a una parabola en x=1."
+    },
+    {
+      "id": "PX-R10.S02-01",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -1/2, intercept: 5/2}",
+      "expected": "{kind: slope_intercept, slope: -1/2, intercept: 5/2}",
+      "note": "Recta perpendicular por un punto dado."
+    },
+    {
+      "id": "PX-R10.S02-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4",
+      "expected": "4",
+      "note": "Limite por factorizacion en x=2."
+    },
+    {
+      "id": "PX-R10.S02-03",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{side: 5, area: 25}",
+      "expected": "{side: 5, area: 25}",
+      "note": "Rectangulo de area maxima con perimetro 20."
+    },
+    {
+      "id": "PX-R10.S02-04",
+      "type": "set",
+      "status": "passed",
+      "actual": "{(2, 3), (3, 2)}",
+      "expected": "{(2, 3), (3, 2)}",
+      "note": "Sistema mixto resuelto a partir de suma y producto."
+    },
+    {
+      "id": "PX-R10.S03-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{3}",
+      "expected": "{3}",
+      "note": "Ecuacion logaritmica reducida a una cuadratica con dominio x>1."
+    },
+    {
+      "id": "PX-R10.S03-02",
+      "type": "rational_asymptotes",
+      "status": "passed",
+      "actual": "{verticals: [1], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: 1}, remainder: 2}",
+      "expected": "{verticals: [1], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: 1}, remainder: 2}",
+      "note": "Asintotas de una racional con division exacta mas resto."
+    },
+    {
+      "id": "PX-R10.S03-03",
+      "type": "calculus_summary",
+      "status": "passed",
+      "actual": "{increasing: [Interval.open(-oo, -1), Interval.open(1, oo)], decreasing: [Interval.open(-1, 1)], maxima: {(-1, 2)}, minima: {(1, -2)}}",
+      "expected": "{increasing: [Interval.open(-oo, -1), Interval.open(1, oo)], decreasing: [Interval.open(-1, 1)], maxima: {(-1, 2)}, minima: {(1, -2)}}",
+      "note": "Monotonia y extremos de una cubica clasica."
+    },
+    {
+      "id": "PX-R10.S04-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{-2, 3}",
+      "expected": "{-2, 3}",
+      "note": "Control del doble caso en una ecuacion con valor absoluto."
+    },
+    {
+      "id": "PX-R10.S04-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/2 + sqrt(3)/2",
+      "expected": "1/2 + sqrt(3)/2",
+      "note": "Racionalizacion mediante el conjugado."
+    },
+    {
+      "id": "PX-R10.S04-03",
+      "type": "line",
+      "status": "passed",
+      "actual": "{kind: slope_intercept, slope: -1/2, intercept: 3/2}",
+      "expected": "{kind: slope_intercept, slope: -1/2, intercept: 3/2}",
+      "note": "Normal a y=x^2 en x=1."
+    },
+    {
+      "id": "SM-R10.S05-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "Union(Interval(-oo, -1), Interval.open(2, oo))",
+      "expected": "Union(Interval(-oo, -1), Interval.open(2, oo))",
+      "note": "Dominio de una raiz de cociente algebraico."
+    },
+    {
+      "id": "SM-R10.S05-02",
+      "type": "set",
+      "status": "passed",
+      "actual": "{pi/3, 2*pi/3}",
+      "expected": "{pi/3, 2*pi/3}",
+      "note": "Soluciones de seno igual a raiz de tres medios en una vuelta."
+    },
+    {
+      "id": "SM-R10.S05-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "2",
+      "expected": "2",
+      "note": "Parametro de continuidad en x=2."
+    },
+    {
+      "id": "SM-R10.S05-04",
+      "type": "tangent_with_given_slope",
+      "status": "passed",
+      "target_slope": "4",
+      "points": [
+        {
+          "x": "2",
+          "y": "5"
+        }
+      ],
+      "lines": [
+        {
+          "kind": "slope_intercept",
+          "slope": "4",
+          "intercept": "-3"
+        }
+      ],
+      "note": "Tangente a una parabola paralela a y=4x-3."
+    },
+    {
+      "id": "SM-R10.S06-01",
+      "type": "set",
+      "status": "passed",
+      "actual": "{1 - sqrt(2), 1 + sqrt(2)}",
+      "expected": "{1 - sqrt(2), 1 + sqrt(2)}",
+      "note": "Ecuacion racional con dos soluciones validas."
+    },
+    {
+      "id": "SM-R10.S06-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "6*sqrt(5)/5",
+      "expected": "6*sqrt(5)/5",
+      "note": "Distancia de un punto a una recta en forma general."
+    },
+    {
+      "id": "SM-R10.S06-03",
+      "type": "rational_asymptotes",
+      "status": "passed",
+      "actual": "{verticals: [1], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: -1}, remainder: 2}",
+      "expected": "{verticals: [1], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: -1}, remainder: 2}",
+      "note": "Asintota oblicua con cociente x-1."
+    },
+    {
+      "id": "SM-R10.S06-04",
+      "type": "optimization_bundle",
+      "status": "passed",
+      "actual": "{x: 2, value: 4}",
+      "expected": "{x: 2, value: 4}",
+      "note": "Minimo de x+4/x en el dominio positivo."
+    },
+    {
+      "id": "CH-R10-01",
+      "type": "review_challenge",
+      "status": "passed",
+      "actual": "{domain: Union(Interval.open(-oo, 0), Interval.open(0, oo)), verticals: [0], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: 0}, remainder: 4, increasing: [Interval.open(-oo, -2), Interval.open(2, oo)], decreasing: [Interval.open(-2, 0), Interval.open(0, 2)], maxima: {(-2, -4)}, minima: {(2, 4)}, tangent: {kind: slope_intercept, slope: 0, intercept: 4}}",
+      "expected": "{domain: Union(Interval.open(-oo, 0), Interval.open(0, oo)), verticals: [0], horizontal: None, oblique: {kind: slope_intercept, slope: 1, intercept: 0}, remainder: 4, increasing: [Interval.open(-oo, -2), Interval.open(2, oo)], decreasing: [Interval.open(-2, 0), Interval.open(0, 2)], maxima: {(-2, -4)}, minima: {(2, 4)}, tangent: {kind: slope_intercept, slope: 0, intercept: 4}}",
+      "note": "Reto final de sintesis sobre una racional con estudio completo."
     }
   ]
 }

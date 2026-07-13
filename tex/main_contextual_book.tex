@@ -1,0 +1,20 @@
+\documentclass[11pt,a4paper,openany]{book}
+\newif\ifteacheredition
+\teachereditiontrue
+\input{tex/config/preamble.tex}
+\input{tex/config/environments.tex}
+\input{tex/generated/supplement_stats.tex}
+\renewcommand{\bookrightheadertext}{Contextualizados resueltos}
+\hypersetup{pdftitle={Cuaderno de problemas contextualizados y dificiles}}
+
+\begin{document}
+\frontmatter
+\input{tex/frontmatter/titlepage_contextual_book.tex}
+\tableofcontents
+\mainmatter
+\input{tex/contextual_chapters/00_intro.tex}
+\input{tex/contextual_chapters/05_trigonometria_contextual.tex}
+\input{tex/contextual_chapters/06_vectores_contextual.tex}
+\appendix
+\input{tex/contextual_chapters/99_roadmap.tex}
+\end{document}
