@@ -70,6 +70,66 @@
     R10: { short: "Repaso final", block: "Repaso y simulacros", accent: "cool" }
   };
 
+  const UI_ICONS = {
+    home: '<path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v10h13V10"></path><path d="M9.5 20v-6h5v6"></path>',
+    target: '<circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1"></circle><path d="m15.5 8.5 4-4m0 0v3m0-3h-3"></path>',
+    cards: '<rect x="4" y="5" width="13" height="16" rx="2"></rect><path d="m8 5 .7-1.2a2 2 0 0 1 2.7-.7l7.5 4.3a2 2 0 0 1 .7 2.7L17 14.6"></path><path d="M8 10h5m-5 4h5"></path>',
+    flask: '<path d="M9 3h6m-5 0v5l-5.8 9.3A2.4 2.4 0 0 0 6.2 21h11.6a2.4 2.4 0 0 0 2-3.7L14 8V3"></path><path d="M7.5 15h9"></path>',
+    puzzle: '<path d="M8.5 3H4a1 1 0 0 0-1 1v4.5a2.5 2.5 0 1 1 0 5V20a1 1 0 0 0 1 1h4.5a2.5 2.5 0 1 1 5 0H20a1 1 0 0 0 1-1v-6.5a2.5 2.5 0 1 0 0-5V4a1 1 0 0 0-1-1h-6.5a2.5 2.5 0 1 0-5 0Z"></path>',
+    clipboard: '<rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.5V3h6v1.5M8.5 10h7m-7 4h7m-7 4H13"></path>',
+    book: '<path d="M3.5 5.5A3.5 3.5 0 0 1 7 3h4v17H7a3.5 3.5 0 0 0-3.5 1V5.5Z"></path><path d="M20.5 5.5A3.5 3.5 0 0 0 17 3h-4v17h4a3.5 3.5 0 0 1 3.5 1V5.5Z"></path>',
+    sparkles: '<path d="m12 3 1.2 3.8L17 8l-3.8 1.2L12 13l-1.2-3.8L7 8l3.8-1.2L12 3Z"></path><path d="m5 14 .8 2.2L8 17l-2.2.8L5 20l-.8-2.2L2 17l2.2-.8L5 14Zm14-2 .7 1.8 1.8.7-1.8.7L19 17l-.7-1.8-1.8-.7 1.8-.7L19 12Z"></path>',
+    route: '<circle cx="6" cy="18" r="2"></circle><circle cx="18" cy="6" r="2"></circle><path d="M8 18h3a3 3 0 0 0 3-3v-6a3 3 0 0 1 3-3h-1"></path><path d="m16 3 3 3-3 3"></path>',
+    chart: '<path d="M4 20V10m5 10V5m5 15v-7m5 7V8"></path><path d="M2.5 20.5h19"></path>',
+    brain: '<path d="M9.5 5A3 3 0 0 0 4 6.5a3 3 0 0 0-1 5.7A3.5 3.5 0 0 0 7 18a3 3 0 0 0 5 1V5.5A3 3 0 0 0 9.5 5Z"></path><path d="M14.5 5A3 3 0 0 1 20 6.5a3 3 0 0 1 1 5.7 3.5 3.5 0 0 1-4 5.8 3 3 0 0 1-5 1V5.5A3 3 0 0 1 14.5 5Z"></path><path d="M7 9h2m8 0h-2M7.5 14H10m6.5 0H14"></path>',
+    grid: '<rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect>',
+    trophy: '<path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"></path><path d="M8 6H4v1a4 4 0 0 0 5 4m7-5h4v1a4 4 0 0 1-5 4m-3 1v5m-4 3h8m-6-3h4"></path>',
+    clock: '<circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path>',
+    alert: '<path d="M10.3 4.2 2.7 18a2 2 0 0 0 1.8 3h15a2 2 0 0 0 1.8-3L13.7 4.2a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4m0 4h.01"></path>',
+    check: '<circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16.5 8"></path>',
+    search: '<circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path>',
+    moon: '<path d="M20.5 14.5A8 8 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>',
+    sun: '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>',
+    download: '<path d="M12 3v12m-4-4 4 4 4-4"></path><path d="M4 18v3h16v-3"></path>',
+    upload: '<path d="M12 16V4m-4 4 4-4 4 4"></path><path d="M4 18v3h16v-3"></path>',
+    refresh: '<path d="M20 7v5h-5"></path><path d="M19 12a7 7 0 1 0-2 5"></path>',
+    left: '<path d="m14.5 5-7 7 7 7"></path>',
+    right: '<path d="m9.5 5 7 7-7 7"></path>',
+    shuffle: '<path d="M4 7h3c5 0 5 10 10 10h3"></path><path d="m17 14 3 3-3 3M4 17h3c1.4 0 2.4-.8 3.3-2m3.4-6C14.6 7.8 15.6 7 17 7h3m-3-3 3 3-3 3"></path>',
+    rotate: '<path d="M20 7v5h-5"></path><path d="M19 12a7 7 0 1 0-2.1 5"></path><path d="m11 9 3 3-3 3"></path>',
+    lightbulb: '<path d="M9 18h6m-5 3h4"></path><path d="M8.2 15.5A7 7 0 1 1 15.8 15.5 4 4 0 0 0 15 18H9a4 4 0 0 0-.8-2.5Z"></path>',
+    calculator: '<rect x="5" y="2.5" width="14" height="19" rx="2"></rect><path d="M8 6h8v3H8zm0 7h.01m4 0h.01m4 0h.01M8 17h.01m4 0h.01m4 0h.01"></path>',
+    sigma: '<path d="M18 4H6l6 8-6 8h12"></path>',
+    polynomial: '<path d="M3 18c3-10 5-10 8 0s5 10 10-6"></path><circle cx="3" cy="18" r="1"></circle><circle cx="11" cy="18" r="1"></circle><circle cx="21" cy="12" r="1"></circle>',
+    equation: '<path d="M4 8h16M4 16h16"></path><circle cx="8" cy="4" r="1"></circle><circle cx="16" cy="20" r="1"></circle>',
+    inequality: '<path d="m9 6-6 6 6 6m6-12 6 6-6 6"></path>',
+    triangle: '<path d="m12 3 9 17H3L12 3Z"></path><path d="M12 8v5m0 3h.01"></path>',
+    vector: '<path d="M4 19 19 4m-6 0h6v6"></path><path d="M4 5v14h14"></path>',
+    compass: '<circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"></path>',
+    infinity: '<path d="M8.5 9C5 5.5 2.5 8 2.5 12s2.5 6.5 6 3l7-6c3.5-3.5 6 0 6 3s-2.5 6.5-6 3l-7-6Z"></path>',
+    derivative: '<path d="M3 19h18M5 21V3"></path><path d="M6 17c3-1 4-8 8-9 2.5-.7 4.5 1 5 3"></path><path d="m9 14 9-7"></path>',
+    statistics: '<path d="M12 3v9h9A9 9 0 1 1 12 3Z"></path><path d="M15 3.5A8.5 8.5 0 0 1 20.5 9H15V3.5Z"></path>',
+    filter: '<path d="M3 5h18l-7 8v6l-4 2v-8L3 5Z"></path>',
+    eye: '<path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle>',
+    play: '<circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4V8Z"></path>',
+    flag: '<path d="M5 21V4m0 1h11l-2 3 2 3H5"></path>',
+    layers: '<path d="m12 3 9 5-9 5-9-5 9-5Z"></path><path d="m3 12 9 5 9-5m-18 4 9 5 9-5"></path>'
+  };
+
+  const CHAPTER_ICONS = {
+    C01: "sigma",
+    C02: "polynomial",
+    C03: "equation",
+    C04: "inequality",
+    C05: "triangle",
+    C06: "vector",
+    C07: "compass",
+    C08: "infinity",
+    C09: "derivative",
+    C10: "statistics",
+    R10: "trophy"
+  };
+
   const NUMBER_CHALLENGES = [
     {
       expression: "\\(\\sqrt{64}-9\\)",
@@ -366,6 +426,191 @@
     });
   }
 
+  function icon(name, className = "") {
+    const paths = UI_ICONS[name] || UI_ICONS.sparkles;
+    return `<svg class="ui-icon notranslate ${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" translate="no">${paths}</svg>`;
+  }
+
+  function iconTone(name) {
+    if (["target", "check", "trophy", "chart"].includes(name)) {
+      return "success";
+    }
+    if (["alert", "lightbulb", "triangle", "flag"].includes(name)) {
+      return "warm";
+    }
+    if (["cards", "brain", "statistics", "infinity", "derivative"].includes(name)) {
+      return "cool";
+    }
+    if (["puzzle", "flask", "polynomial", "vector", "compass"].includes(name)) {
+      return "coral";
+    }
+    return "accent";
+  }
+
+  function inferIconFromLabel(value) {
+    const label = normalizeSearchText(stripHtml(String(value || "")));
+    const rules = [
+      [/estadistic|probabilidad|datos bidimensionales/, "statistics"],
+      [/derivad|pendiente|tangente/, "derivative"],
+      [/limite|continuidad|asintota/, "infinity"],
+      [/geometria analitica|lugar geometrico/, "compass"],
+      [/vector/, "vector"],
+      [/trigonom|triangulo/, "triangle"],
+      [/inecuacion|desigualdad/, "inequality"],
+      [/ecuacion|sistema/, "equation"],
+      [/polinom|fraccion algebraica/, "polynomial"],
+      [/numero real|numerico/, "sigma"],
+      [/flashcard|tarjeta|mazo/, "cards"],
+      [/laboratorio|actividad interactiva/, "flask"],
+      [/problema|situacion/, "puzzle"],
+      [/examen|evaluacion|simulacro/, "clipboard"],
+      [/teoria|temario|panorama/, "book"],
+      [/metodo|procedimiento|ruta|orden/, "route"],
+      [/objetivo|practica|test|pregunta/, "target"],
+      [/ejemplo|solucion|pista/, "lightbulb"],
+      [/error|por aprender|repasar|fragil/, "alert"],
+      [/dominad|respondid|correct/, "check"],
+      [/progreso|seguimiento|consolidacion|nivel|cobertura/, "chart"],
+      [/nueva|plataforma|inicio/, "sparkles"],
+      [/filtro/, "filter"],
+      [/reto|sintesis|desafio/, "trophy"],
+      [/recurso|bloque|capitulo/, "grid"],
+      [/prerrequisito|fundamento/, "layers"],
+      [/formula|calculo|nucleo matematico/, "calculator"],
+      [/ritmo|estado|pendiente/, "clock"]
+    ];
+    const match = rules.find(([pattern]) => pattern.test(label));
+    return match ? match[1] : "sparkles";
+  }
+
+  function inferActionIcon(element) {
+    if (element.dataset.icon) {
+      return element.dataset.icon;
+    }
+    const href = element.getAttribute("href") || "";
+    const routeIcons = [
+      ["#/inicio", "home"],
+      ["#/capitulo", "book"],
+      ["#/practica", "target"],
+      ["#/flashcards", "cards"],
+      ["#/laboratorios", "flask"],
+      ["#/problemas", "puzzle"],
+      ["#/examenes", "clipboard"]
+    ];
+    const routeMatch = routeIcons.find(([prefix]) => href.startsWith(prefix));
+    if (routeMatch) {
+      return routeMatch[1];
+    }
+    const idIcons = {
+      generateExamButton: "shuffle",
+      submitExamButton: "check",
+      exportProgressButton: "download",
+      importProgressButton: "upload",
+      resetProgressButton: "refresh",
+      practicePrevButton: "left",
+      practiceRandomButton: "shuffle",
+      practiceNextButton: "right",
+      flashcardPrevButton: "left",
+      flashcardFlipButton: "rotate",
+      flashcardNextButton: "right",
+      flashcardShuffleButton: "shuffle",
+      flashcardMasteredButton: "check",
+      flashcardReviewButton: "clock",
+      probabilityResetButton: "refresh",
+      nextNumberChallenge: "shuffle"
+    };
+    if (idIcons[element.id]) {
+      return idIcons[element.id];
+    }
+    const label = normalizeSearchText(element.textContent);
+    if (/anterior|volver/.test(label)) return "left";
+    if (/siguiente/.test(label)) return "right";
+    if (/aleatori|otro reto|generar/.test(label)) return "shuffle";
+    if (/voltear|anverso/.test(label)) return "rotate";
+    if (/reiniciar/.test(label)) return "refresh";
+    if (/exportar/.test(label)) return "download";
+    if (/importar/.test(label)) return "upload";
+    if (/comprobar|corregir|descubrir|recordaba/.test(label)) return "check";
+    if (/ver respuesta|ver solucion|ver correccion|mostrar/.test(label)) return "eye";
+    if (/lanzar|simular/.test(label)) return "play";
+    return inferIconFromLabel(label);
+  }
+
+  function addElementIcon(element, name) {
+    if (!element || !name) {
+      return;
+    }
+    const directIcon = Array.from(element.children).find((child) => child.classList.contains("ui-icon"));
+    if (directIcon) {
+      return;
+    }
+    element.insertAdjacentHTML("afterbegin", icon(name));
+    element.classList.add("has-ui-icon");
+  }
+
+  function replaceElementIcon(element, name) {
+    if (!element) {
+      return;
+    }
+    Array.from(element.children)
+      .filter((child) => child.classList.contains("ui-icon"))
+      .forEach((child) => child.remove());
+    addElementIcon(element, name);
+  }
+
+  function decorateVisualLanguage(root = document, route = parseRoute()) {
+    root
+      .querySelectorAll(
+        [
+          "[data-icon]",
+          ".hero__actions > a",
+          ".hero__actions > button",
+          ".section-pagination a",
+          ".study-session__navigation button"
+        ].join(", ")
+      )
+      .forEach((element) => addElementIcon(element, inferActionIcon(element)));
+
+    root.querySelectorAll(".card-kicker").forEach((label) => {
+      if (!label.closest(".summary-card")) {
+        addElementIcon(label, inferIconFromLabel(label.textContent));
+      }
+    });
+    root.querySelectorAll(".status-pill").forEach((pill) => addElementIcon(pill, inferIconFromLabel(pill.textContent)));
+    root.querySelectorAll(".activity-card__head h3").forEach((heading) => addElementIcon(heading, "flask"));
+    root.querySelectorAll(".section-card__head h3").forEach((heading) => addElementIcon(heading, inferIconFromLabel(heading.textContent)));
+    root.querySelectorAll(".flashcard-stage__meta h2").forEach((heading) => addElementIcon(heading, "cards"));
+
+    root
+      .querySelectorAll(".summary-grid > .summary-card, .hero__grid > .summary-card")
+      .forEach((card) => {
+        if (card.querySelector(".feature-icon")) {
+          return;
+        }
+        const headingText = card.querySelector("h3, h2")?.textContent || "";
+        const chapterMatch = headingText.match(/\b(C\d{2}|R10)\b/);
+        const name = card.dataset.visualIcon || (chapterMatch ? CHAPTER_ICONS[chapterMatch[1]] : "") || inferIconFromLabel(card.querySelector(".card-kicker")?.textContent || headingText);
+        card.insertAdjacentHTML(
+          "afterbegin",
+          `<span class="feature-icon feature-icon--${iconTone(name)}" aria-hidden="true">${icon(name)}</span>`
+        );
+      });
+
+    const hero = root.querySelector(".app-shell .hero") || (root.classList?.contains("hero") ? root : null);
+    if (hero && !hero.querySelector(".hero-watermark")) {
+      const routeIcons = {
+        home: "sparkles",
+        practice: "target",
+        flashcards: "cards",
+        labs: "flask",
+        problems: "puzzle",
+        exams: "clipboard"
+      };
+      const name = route.name === "chapter" ? CHAPTER_ICONS[route.chapterId] || "book" : routeIcons[route.name] || "sparkles";
+      hero.insertAdjacentHTML("afterbegin", `<span class="hero-watermark" aria-hidden="true">${icon(name)}</span>`);
+    }
+  }
+
   function renderSidebar(route) {
     if (state.searchQuery) {
       const results = buildSearchResults(state.searchQuery);
@@ -375,7 +620,7 @@
             .map(
               (result) => `
                 <a class="chapter-link search-result" href="${result.href}">
-                  <span class="chapter-link__index">${result.code}</span>
+                  <span class="chapter-link__index">${icon(inferIconFromLabel(result.kind))}<small>${result.code}</small></span>
                   <span class="chapter-link__copy">
                     <strong>${result.title}</strong>
                     <small>${result.kind} - ${result.description}</small>
@@ -415,7 +660,7 @@
                   : false;
         return `
           <a class="chapter-link ${isActive ? "is-active" : ""}" href="#/capitulo/${chapter.id}" ${isActive ? 'aria-current="page"' : ""}>
-            <span class="chapter-link__index">${String(index + 1).padStart(2, "0")}</span>
+            <span class="chapter-link__index">${icon(CHAPTER_ICONS[chapter.id] || "book")}<small>${String(index + 1).padStart(2, "0")}</small></span>
             <span class="chapter-link__copy">
               <strong>${chapter.id} - ${chapter.title}</strong>
               <small>${chapter.sectionCount} secciones - ${dominated}/${chapterQuestions.length} preguntas dominadas</small>
@@ -554,7 +799,7 @@
       .map((chapter) => {
         const meta = CHAPTER_META[chapter.id] || { block: "Bloque general", accent: "cool" };
         return `
-          <article class="summary-card summary-card--${meta.accent}">
+          <article class="summary-card summary-card--${meta.accent}" data-visual-icon="${CHAPTER_ICONS[chapter.id] || "book"}">
             <p class="card-kicker">${meta.block}</p>
             <h3>${chapter.id} - ${chapter.title}</h3>
             <p>${excerptFromHtml(chapter.summaryHtml, 210)}</p>
@@ -3068,18 +3313,23 @@
     const preferredDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = stored || (preferredDark ? "dark" : "light");
     document.body.dataset.theme = theme;
-    dom.themeToggle.textContent = theme === "dark" ? "Modo claro" : "Modo oscuro";
-    dom.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-    dom.themeToggle.setAttribute("aria-label", theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    syncThemeControl(theme);
   }
 
   function toggleTheme() {
     const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
     document.body.dataset.theme = nextTheme;
-    dom.themeToggle.textContent = nextTheme === "dark" ? "Modo claro" : "Modo oscuro";
-    dom.themeToggle.setAttribute("aria-pressed", String(nextTheme === "dark"));
-    dom.themeToggle.setAttribute("aria-label", nextTheme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    syncThemeControl(nextTheme);
     window.localStorage.setItem(STORAGE_KEYS.theme, nextTheme);
+  }
+
+  function syncThemeControl(theme) {
+    const isDark = theme === "dark";
+    dom.themeToggle.textContent = isDark ? "Modo claro" : "Modo oscuro";
+    dom.themeToggle.dataset.icon = isDark ? "sun" : "moon";
+    dom.themeToggle.setAttribute("aria-pressed", String(isDark));
+    dom.themeToggle.setAttribute("aria-label", isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    replaceElementIcon(dom.themeToggle, dom.themeToggle.dataset.icon);
   }
 
   function registerServiceWorker() {
@@ -3290,6 +3540,7 @@
 
   function postRender(route) {
     wireActivityEvents();
+    decorateVisualLanguage(document, route || parseRoute());
     typesetMath(dom.app).then(() => {
       scrollToRouteTarget(route);
     });

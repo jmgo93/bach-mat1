@@ -92,6 +92,21 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn('event.request.mode === "navigate"', worker)
         self.assertIn('new Response("Recurso no disponible sin conexion."', worker)
 
+    def test_visual_icon_system_is_local_and_accessible(self) -> None:
+        index = (DOCS / "index.html").read_text(encoding="utf-8")
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        styles = (DOCS / "assets" / "css" / "styles.css").read_text(encoding="utf-8")
+        worker = (DOCS / "sw.js").read_text(encoding="utf-8")
+        self.assertGreaterEqual(index.count('data-icon="'), 15)
+        self.assertIn("const UI_ICONS", app)
+        self.assertIn("const CHAPTER_ICONS", app)
+        self.assertIn('aria-hidden="true"', app)
+        self.assertIn("decorateVisualLanguage", app)
+        self.assertIn(".feature-icon", styles)
+        self.assertIn(".hero-watermark", styles)
+        self.assertNotIn("lucide", index.lower())
+        self.assertIn("mate1-interactivas-v13", worker)
+
     def test_no_known_mojibake_sequences(self) -> None:
         for path in [DOCS / "index.html", JS / "app.js", JS / "activity-bank.js", JS / "quiz-bank.js"]:
             text = path.read_text(encoding="utf-8")

@@ -75,18 +75,21 @@
           <span></span>
         </button>
         <a class="brand" href="#/inicio">
-          <span class="brand__kicker">1.&ordm; de Bachillerato</span>
-          <strong>Matematicas I Interactivas</strong>
+          <span class="brand-mark" data-icon="sparkles" aria-hidden="true"></span>
+          <span class="brand__copy">
+            <span class="brand__kicker">1.&ordm; de Bachillerato</span>
+            <strong>Matematicas I Interactivas</strong>
+          </span>
         </a>
       </div>
 
       <nav class="topbar__nav" aria-label="Navegacion principal">
-        <a href="#/inicio" data-route-link="inicio">Inicio</a>
-        <a href="#/practica" data-route-link="practica">Practica</a>
-        <a href="#/flashcards" data-route-link="flashcards">Flashcards</a>
-        <a href="#/laboratorios" data-route-link="laboratorios">Laboratorios</a>
-        <a href="#/problemas" data-route-link="problemas">Problemas</a>
-        <a href="#/examenes" data-route-link="examenes">Examenes</a>
+        <a href="#/inicio" data-route-link="inicio" data-icon="home">Inicio</a>
+        <a href="#/practica" data-route-link="practica" data-icon="target">Practica</a>
+        <a href="#/flashcards" data-route-link="flashcards" data-icon="cards">Flashcards</a>
+        <a href="#/laboratorios" data-route-link="laboratorios" data-icon="flask">Laboratorios</a>
+        <a href="#/problemas" data-route-link="problemas" data-icon="puzzle">Problemas</a>
+        <a href="#/examenes" data-route-link="examenes" data-icon="clipboard">Examenes</a>
       </nav>
 
       <div class="topbar__actions">
@@ -102,8 +105,8 @@
             <option value="ca">CA</option>
           </select>
         </label>
-        <button id="themeToggle" class="ghost-button" type="button" aria-pressed="false">Modo oscuro</button>
-        <button id="installButton" class="primary-button" type="button" hidden>Instalar app</button>
+        <button id="themeToggle" class="ghost-button" type="button" data-icon="moon" aria-pressed="false">Modo oscuro</button>
+        <button id="installButton" class="primary-button" type="button" data-icon="download" hidden>Instalar app</button>
       </div>
     </header>
 
@@ -113,33 +116,33 @@
     <div class="layout">
       <aside class="sidebar" id="sidebar">
         <div class="sidebar__header">
-          <p class="sidebar__eyebrow">Ruta de estudio</p>
+          <p class="sidebar__eyebrow" data-icon="route">Ruta de estudio</p>
           <h2>Temario vivo</h2>
           <p class="sidebar__copy">
             Toda la teoria del cuaderno, ejercicios resueltos, test, flashcards y laboratorios enlazados con el material real.
           </p>
           <nav class="sidebar-resource-nav" aria-label="Recursos principales">
-            <a href="#/inicio" data-route-link="inicio">Inicio</a>
-            <a href="#/practica" data-route-link="practica">Practica</a>
-            <a href="#/flashcards" data-route-link="flashcards">Flashcards</a>
-            <a href="#/laboratorios" data-route-link="laboratorios">Laboratorios</a>
-            <a href="#/problemas" data-route-link="problemas">Problemas</a>
-            <a href="#/examenes" data-route-link="examenes">Examenes</a>
+            <a href="#/inicio" data-route-link="inicio" data-icon="home">Inicio</a>
+            <a href="#/practica" data-route-link="practica" data-icon="target">Practica</a>
+            <a href="#/flashcards" data-route-link="flashcards" data-icon="cards">Flashcards</a>
+            <a href="#/laboratorios" data-route-link="laboratorios" data-icon="flask">Laboratorios</a>
+            <a href="#/problemas" data-route-link="problemas" data-icon="puzzle">Problemas</a>
+            <a href="#/examenes" data-route-link="examenes" data-icon="clipboard">Examenes</a>
           </nav>
         </div>
 
         <section class="progress-card" aria-labelledby="progressTitle">
           <div class="progress-card__head">
-            <p class="sidebar__eyebrow">Progreso local</p>
+            <p class="sidebar__eyebrow" data-icon="chart">Progreso local</p>
             <h3 id="progressTitle">Tu avance</h3>
           </div>
           <div class="progress-meters">
             <div>
-              <span class="progress-meters__label">XP</span>
+              <span class="progress-meters__label" data-icon="sparkles">XP</span>
               <strong id="xpValue">0</strong>
             </div>
             <div>
-              <span class="progress-meters__label">Preguntas dominadas</span>
+              <span class="progress-meters__label" data-icon="trophy">Preguntas dominadas</span>
               <strong id="quizValue">0</strong>
             </div>
           </div>
@@ -150,7 +153,7 @@
         </section>
 
         <section class="sidebar__search">
-          <label for="searchInput" class="sidebar__eyebrow">Buscar concepto</label>
+          <label for="searchInput" class="sidebar__eyebrow" data-icon="search">Buscar concepto</label>
           <input
             id="searchInput"
             class="search-input"
@@ -161,7 +164,7 @@
 
         <section class="sidebar__chapters" aria-labelledby="chapterListTitle">
           <div class="sidebar__section-head">
-            <h3 id="chapterListTitle">Capitulos</h3>
+            <h3 id="chapterListTitle" data-icon="book">Capitulos</h3>
             <span id="chapterCountBadge" class="badge-soft">0</span>
           </div>
           <div id="chapterLinks" class="chapter-links"></div>
