@@ -949,22 +949,21 @@
         </article>
       </section>
 
-      <section class="toc-strip">
-        ${chapter.sections
-          .map(
-            (section) => `
-              <a
-                class="chip-link ${section.id === activeSection.id ? "is-active" : ""}"
-                href="#/capitulo/${chapter.id}/${section.id}"
-                ${section.id === activeSection.id ? 'aria-current="step"' : ""}
-              >
-                <span>${section.id}</span>
-                <strong>${section.title}</strong>
-              </a>
-            `
-          )
-          .join("")}
-      </section>
+      <nav class="chapter-section-nav" aria-label="Apartados del capitulo">
+        <span class="chapter-section-nav__icon" aria-hidden="true">${icon(CHAPTER_ICONS[chapter.id] || "book")}</span>
+        <label class="chapter-section-nav__select" for="chapterSectionSelect">
+          <span>Apartado actual</span>
+          <select id="chapterSectionSelect" data-chapter-id="${chapter.id}">
+            ${chapter.sections
+              .map(
+                (section, index) =>
+                  `<option value="${section.id}" ${section.id === activeSection.id ? "selected" : ""}>${index + 1}. ${section.title}</option>`
+              )
+              .join("")}
+          </select>
+        </label>
+        <span class="chapter-section-nav__counter" aria-label="Apartado ${activeSectionIndex + 1} de ${chapter.sections.length}">${activeSectionIndex + 1}/${chapter.sections.length}</span>
+      </nav>
 
       <section class="search-grid section-focus">
         ${renderSectionCard(chapter, activeSection)}
@@ -3540,11 +3539,26 @@
 
   function postRender(route) {
     wireActivityEvents();
+    wireChapterSectionNavigation();
     decorateVisualLanguage(document, route || parseRoute());
     typesetMath(dom.app).then(() => {
       scrollToRouteTarget(route);
     });
     scheduleTranslationRefresh(getPreferredLanguage(), false);
+  }
+
+  function wireChapterSectionNavigation() {
+    const select = document.getElementById("chapterSectionSelect");
+    if (!select) {
+      return;
+    }
+    select.addEventListener("change", (event) => {
+      const chapterId = event.currentTarget.dataset.chapterId;
+      const sectionId = event.currentTarget.value;
+      if (chapterId && sectionId) {
+        window.location.hash = `#/capitulo/${chapterId}/${sectionId}`;
+      }
+    });
   }
 
   function typesetMath(target) {
@@ -3573,7 +3587,7 @@
 
     state.lastScrollTarget = targetKey;
     const targetId = route.sectionId.replace(/\./g, "-");
-    const element = document.getElementById(targetId);
+    const element = dom.app.querySelector(".chapter-section-nav") || document.getElementById(targetId);
     if (!element) {
       return;
     }

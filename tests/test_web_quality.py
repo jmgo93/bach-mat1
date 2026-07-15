@@ -105,7 +105,17 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v13", worker)
+        self.assertIn("mate1-interactivas-v17", worker)
+
+    def test_chapter_navigation_uses_a_compact_selector(self) -> None:
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        styles = (DOCS / "assets" / "css" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('id="chapterSectionSelect"', app)
+        self.assertIn("wireChapterSectionNavigation", app)
+        self.assertIn('dom.app.querySelector(".chapter-section-nav")', app)
+        self.assertIn(".chapter-section-nav", styles)
+        self.assertNotIn('<section class="toc-strip">', app)
+        self.assertNotIn(".toc-strip {", styles)
 
     def test_no_known_mojibake_sequences(self) -> None:
         for path in [DOCS / "index.html", JS / "app.js", JS / "activity-bank.js", JS / "quiz-bank.js"]:
