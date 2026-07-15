@@ -20,6 +20,7 @@ CHAPTER_FILES = [
     "07_geometria_analitica.tex",
     "08_limites_continuidad.tex",
     "09_derivadas_aplicaciones.tex",
+    "10_estadistica_probabilidad.tex",
     "10_repaso_acumulativo.tex",
 ]
 
@@ -83,6 +84,40 @@ def protect_display_math(text: str, html_blocks: list[str]) -> str:
     return re.sub(r"\\\[(.*?)\\\]", replacer, text, flags=re.S)
 
 
+def tabular_to_html(body: str, group_count: int) -> str:
+    body = body.strip()
+    for _ in range(group_count):
+        if not body.startswith("{"):
+            break
+        _, next_index = extract_braced(body, 0)
+        body = body[next_index:].lstrip()
+
+    body = re.sub(r"\\(?:toprule|midrule|bottomrule|hline)", "", body)
+    body = re.sub(r"\\multicolumn\{\d+\}\{[^{}]*\}\{([^{}]*)\}", r"\1", body)
+    raw_rows = re.split(r"\\\\(?:\[[^\]]*\])?", body)
+    rows: list[list[str]] = []
+    for raw_row in raw_rows:
+        raw_row = raw_row.strip()
+        if not raw_row:
+            continue
+        cells = [cell.strip() for cell in re.split(r"(?<!\\)&", raw_row)]
+        if any(cells):
+            rows.append(cells)
+
+    if not rows:
+        return '<div class="figure-fallback">La tabla no contiene datos legibles.</div>'
+
+    header = "".join(f"<th scope=\"col\">{convert_latex_to_html(cell)}</th>" for cell in rows[0])
+    body_rows = "".join(
+        "<tr>" + "".join(f"<td>{convert_latex_to_html(cell)}</td>" for cell in row) + "</tr>"
+        for row in rows[1:]
+    )
+    return (
+        '<div class="table-scroll"><table class="math-table">'
+        f"<thead><tr>{header}</tr></thead><tbody>{body_rows}</tbody></table></div>"
+    )
+
+
 def protect_structures(text: str, html_blocks: list[str]) -> str:
     center_pattern = re.compile(r"\\begin\{center\}(.*?)\\end\{center\}", re.S)
     while True:
@@ -94,18 +129,22 @@ def protect_structures(text: str, html_blocks: list[str]) -> str:
         token = protect_block(text, html_blocks, f'<div class="centered-block">{inner_html}</div>')
         text = text[: match.start()] + token + text[match.end() :]
 
+    table_patterns = [
+        (re.compile(r"\\begin\{tabularx\}(.*?)\\end\{tabularx\}", re.S), 2),
+        (re.compile(r"\\begin\{tabular\}(.*?)\\end\{tabular\}", re.S), 1),
+    ]
+    for pattern, group_count in table_patterns:
+        while True:
+            match = pattern.search(text)
+            if not match:
+                break
+            token = protect_block(text, html_blocks, tabular_to_html(match.group(1), group_count))
+            text = text[: match.start()] + token + text[match.end() :]
+
     patterns = [
         (
             re.compile(r"\\begin\{tikzpicture\}(.*?)\\end\{tikzpicture\}", re.S),
             '<div class="figure-fallback">Esquema disponible en el cuaderno PDF. Refuerza esta idea con el laboratorio interactivo.</div>',
-        ),
-        (
-            re.compile(r"\\begin\{tabularx\}(.*?)\\end\{tabularx\}", re.S),
-            '<div class="figure-fallback">Tabla resumida disponible en la version impresa.</div>',
-        ),
-        (
-            re.compile(r"\\begin\{tabular\}(.*?)\\end\{tabular\}", re.S),
-            '<div class="figure-fallback">Tabla resumida disponible en la version impresa.</div>',
         ),
     ]
 

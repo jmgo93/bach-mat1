@@ -40,16 +40,18 @@
         }
       };
     </script>
-    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script defer src="./assets/js/generated-content.js"></script>
     <script defer src="./assets/js/generated-supplements.js"></script>
     <script defer src="./assets/js/activity-bank.js"></script>
     <script defer src="./assets/js/quiz-bank.js"></script>
     <script defer src="./assets/js/app.js"></script>
+    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </head>
   <body>
-    <div class="translate-feedback" id="translateFeedback" hidden>
+    <a class="skip-link" href="#app">Saltar al contenido principal</a>
+
+    <div class="translate-feedback" id="translateFeedback" role="status" aria-live="polite" aria-atomic="true" hidden>
       <div class="translate-feedback__card">
         <div class="translate-feedback__spinner" aria-hidden="true"></div>
         <p id="translateFeedbackText">Cargando contenido...</p>
@@ -60,7 +62,14 @@
 
     <header class="topbar">
       <div class="topbar__brand">
-        <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Abrir navegacion">
+        <button
+          class="mobile-menu"
+          id="mobileMenuButton"
+          type="button"
+          aria-label="Abrir navegación"
+          aria-controls="sidebar"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -81,9 +90,9 @@
       </nav>
 
       <div class="topbar__actions">
-        <label class="language-picker">
+        <label class="language-picker notranslate" translate="no">
           <span class="sr-only">Seleccionar idioma</span>
-          <select id="languageSelect">
+          <select id="languageSelect" translate="no">
             <option value="es">ES</option>
             <option value="en">EN</option>
             <option value="fr">FR</option>
@@ -93,10 +102,13 @@
             <option value="ca">CA</option>
           </select>
         </label>
-        <button id="themeToggle" class="ghost-button" type="button">Modo oscuro</button>
+        <button id="themeToggle" class="ghost-button" type="button" aria-pressed="false">Modo oscuro</button>
         <button id="installButton" class="primary-button" type="button" hidden>Instalar app</button>
       </div>
     </header>
+
+    <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar navegación" hidden></button>
+    <div id="routeAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
     <div class="layout">
       <aside class="sidebar" id="sidebar">

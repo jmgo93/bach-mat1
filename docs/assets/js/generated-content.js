@@ -2,9 +2,9 @@ window.MATHBOOK_CONTENT = {
   "meta": {
     "title": "Matematicas I Interactivas",
     "subtitle": "1º de Bachillerato - teoria, ejemplos resueltos, tests y laboratorios interactivos",
-    "generatedOn": "2026-07-13 15:06",
-    "chapterCount": 10,
-    "sectionCount": 84
+    "generatedOn": "2026-07-15 10:39",
+    "chapterCount": 11,
+    "sectionCount": 91
   },
   "chapters": [
     {
@@ -6961,6 +6961,513 @@ window.MATHBOOK_CONTENT = {
             "html": "<p>La altura de una pelota, en metros, viene dada por</p><div class=\"math-display\">\\[\nh(t)=-t^2+6t+5,\n\\]</div><p>donde \\(t\\) se mide en segundos.</p><ol><li><p>Determina el instante en el que la tangente a la grafica es horizontal.</p></li><li><p>Escribe la ecuacion de esa tangente.</p></li><li><p>Interpreta el resultado en el contexto del problema.</p></li></ol>",
             "answerHtml": "<p>La tangente es horizontal en \\(t=3\\). Su ecuacion es \\(y=14\\). En ese instante la pelota alcanza una altura maxima instantanea y la velocidad vertical es cero.</p>",
             "solutionHtml": "<p>La tangente es horizontal cuando \\(h'(t)=0\\). Como</p><div class=\"math-display\">\\[\nh'(t)=-2t+6,\n\\]</div><p>se cumple</p><div class=\"math-display\">\\[\n-2t+6=0 \\Longrightarrow t=3.\n\\]</div><p>La altura entonces es</p><div class=\"math-display\">\\[\nh(3)=-9+18+5=14.\n\\]</div><p>La tangente en ese instante es la recta horizontal</p><div class=\"math-display\">\\[\ny=14.\n\\]</div><p>En contexto, la pelota esta en un punto alto de su trayectoria y, en ese instante concreto, su velocidad vertical es nula.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "slug": "10_estadistica_probabilidad",
+      "title": "Estadistica, probabilidad e inferencia",
+      "summaryHtml": "<p>Este capitulo desarrolla el sentido estocastico de Matematicas I: organizacion y analisis de datos bidimensionales, regresion lineal y cuadratica, correlacion, experimentos aleatorios, algebra de sucesos, tecnicas de recuento, probabilidad condicionada, probabilidad total, Bayes e inferencia con herramientas tecnologicas.</p>",
+      "studyRouteHtml": "<ol><li><p>Empieza por organizar datos y distinguir poblacion, muestra y variable.</p></li><li><p>Aprende a leer la nube de puntos antes de calcular una recta de regresion.</p></li><li><p>Interpreta correlacion y coeficiente de determinacion sin confundirlos con causalidad.</p></li><li><p>Modeliza el azar mediante espacios muestrales, sucesos y frecuencias relativas.</p></li><li><p>Cierra con recuento, probabilidad condicionada, arboles, probabilidad total y Bayes.</p></li></ol>",
+      "sectionCount": 7,
+      "sections": [
+        {
+          "id": "C10.S01",
+          "title": "Datos bidimensionales y tablas de contingencia",
+          "rawTitle": "[C10.S01] Datos bidimensionales y tablas de contingencia",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Organizar pares de datos y distribuciones conjuntas.</p></li><li><p>Obtener distribuciones marginales y condicionadas.</p></li><li><p>Detectar dependencia estadistica sin confundirla con causalidad.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Porcentajes, frecuencias absolutas y relativas.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>Una variable bidimensional asigna a cada individuo un par \\((x_i,y_i)\\). Si las variables son categoricas, una tabla de contingencia recoge las frecuencias conjuntas. Los totales de filas y columnas son las distribuciones marginales. Una distribucion condicionada se calcula dentro de un grupo concreto; por ejemplo,</p><div class=\"math-display\">\\[\nP(B\\mid A)=\\frac{n(A\\cap B)}{n(A)}.\n\\]</div>"
+          },
+          "method": {
+            "title": "Como leer una tabla sin mezclar denominadores",
+            "titleText": "Como leer una tabla sin mezclar denominadores",
+            "tagId": "",
+            "html": "<ol><li><p>Identifica si te piden una frecuencia conjunta, marginal o condicionada.</p></li><li><p>Marca primero el conjunto que actua como condicion.</p></li><li><p>Divide por el total de ese conjunto, no por el total general.</p></li><li><p>Compara porcentajes condicionados para estudiar dependencia.</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S01-01] Uso de una plataforma de estudio",
+            "titleText": "Uso de una plataforma de estudio",
+            "tagId": "EX-C10.S01-01",
+            "html": "<p>En una clase se registra si el alumnado usa una plataforma de practica y si supera una prueba:</p><div class=\"centered-block\"><div class=\"table-scroll\"><table class=\"math-table\"><thead><tr><th scope=\"col\"><p>Grupo</p></th><th scope=\"col\"><p>Supera</p></th><th scope=\"col\"><p>No supera</p></th><th scope=\"col\"><p>Total</p></th></tr></thead><tbody><tr><td><p>Usa plataforma</p></td><td><p>18</p></td><td><p>6</p></td><td><p>24</p></td></tr><tr><td><p>No la usa</p></td><td><p>8</p></td><td><p>8</p></td><td><p>16</p></td></tr><tr><td><p>Total</p></td><td><p>26</p></td><td><p>14</p></td><td><p>40</p></td></tr></tbody></table></div></div><p>La proporcion que supera la prueba entre quienes usan la plataforma es</p><div class=\"math-display\">\\[\nP(S\\mid U)=\\frac{18}{24}=0.75.\n\\]</div><p>Entre quienes no la usan es</p><div class=\"math-display\">\\[\nP(S\\mid \\overline U)=\\frac{8}{16}=0.50.\n\\]</div><p>Los porcentajes son distintos, por lo que los datos muestran asociacion. No permiten afirmar por si solos que la plataforma sea la causa de la mejora.</p>"
+          },
+          "commonError": {
+            "title": "Dividir siempre por el total general",
+            "titleText": "Dividir siempre por el total general",
+            "tagId": "",
+            "html": "<p>En una probabilidad condicionada el denominador es el total del grupo condicionado. Para \\(P(S\\mid U)\\), el denominador es \\(24\\), no \\(40\\).</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S01-01",
+              "title": "Lectura condicionada",
+              "promptHtml": "<p>Con la tabla anterior, calcula \\(P(U\\mid S)\\). <strong>Pista 1.</strong> Restringe el recuento a quienes superan la prueba.</p>",
+              "answerHtml": "<p>\\(P(U\\mid S)=\\dfrac{18}{26}=\\dfrac9{13}\\).</p>",
+              "solutionHtml": "<p>Entre las \\(26\\) personas que superan la prueba, \\(18\\) usan la plataforma. Por tanto, \\(P(U\\mid S)=18/26=9/13\\).</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S01-01",
+                "prompt": "Calcula la frecuencia relativa conjunta de usar la plataforma y superar la prueba."
+              },
+              {
+                "tagId": "PX-C10.S01-02",
+                "prompt": "Calcula la distribucion marginal de superar y no superar."
+              },
+              {
+                "tagId": "PX-C10.S01-03",
+                "prompt": "Explica por que la tabla no demuestra causalidad."
+              }
+            ],
+            "answersHtml": "<ol><li><p>\\(18/40=0.45\\).</p></li><li><p>Supera: \\(26/40=0.65\\); no supera: \\(14/40=0.35\\).</p></li><li><p>Es un estudio observacional y pueden existir variables de confusion.</p></li></ol>",
+            "solutionsHtml": "<p>La frecuencia conjunta usa la celda \\(18\\) y el total \\(40\\). Las marginales usan los totales de columna. La diferencia entre porcentajes describe asociacion, pero no controla motivacion, tiempo de estudio u otras variables que tambien pueden explicar el resultado.</p>"
+          },
+          "challenge": {}
+        },
+        {
+          "id": "C10.S02",
+          "title": "Nubes de puntos, correlacion y causalidad",
+          "rawTitle": "[C10.S02] Nubes de puntos, correlacion y causalidad",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Interpretar forma, direccion e intensidad de una nube de puntos.</p></li><li><p>Usar el coeficiente de correlacion lineal \\(r\\).</p></li><li><p>Distinguir correlacion, causalidad y correlacion espuria.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Coordenadas cartesianas, media y desviacion tipica.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>El diagrama de dispersion representa cada observacion como un punto \\((x_i,y_i)\\). El coeficiente de correlacion lineal cumple \\(-1\\le r\\le 1\\). Su signo indica la direccion y \\(|r|\\) mide la intensidad de la relacion lineal. Un valor cercano a cero no descarta una relacion no lineal.</p>"
+          },
+          "method": {
+            "title": "Lectura en cuatro preguntas",
+            "titleText": "Lectura en cuatro preguntas",
+            "tagId": "",
+            "html": "<ol><li><p>¿La nube sube, baja o no muestra direccion clara?</p></li><li><p>¿Los puntos siguen aproximadamente una recta o una curva?</p></li><li><p>¿Hay valores atipicos que cambien mucho el resultado?</p></li><li><p>¿El contexto permite hablar de causa o solo de asociacion?</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S02-01] Temperatura y consumo electrico",
+            "titleText": "Temperatura y consumo electrico",
+            "tagId": "EX-C10.S02-01",
+            "html": "<p>Una nube de puntos relaciona temperatura exterior y consumo de aire acondicionado. Se obtiene \\(r=0.91\\). Existe una asociacion lineal positiva fuerte: en los datos, las temperaturas altas tienden a coincidir con consumos altos. El valor \\(0.91\\) no significa que el \\(91\\%\\) del consumo este causado por la temperatura ni que todos los puntos esten sobre una recta.</p>"
+          },
+          "commonError": {
+            "title": "Interpretar \\(r\\) como porcentaje explicado",
+            "titleText": "Interpretar \\(r\\) como porcentaje explicado",
+            "tagId": "",
+            "html": "<p>El porcentaje de variabilidad explicado por un modelo lineal se relaciona con \\(R^2\\), no con \\(r\\). Ademas, ni \\(r\\) ni \\(R^2\\) demuestran causalidad.</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S02-01",
+              "title": "Relacion no lineal",
+              "promptHtml": "<p>Los puntos siguen aproximadamente una U y se obtiene \\(r=0.03\\). ¿Puede existir relacion?</p>",
+              "answerHtml": "<p>Si; \\(r\\) solo mide relacion lineal.</p>",
+              "solutionHtml": "<p>Las ramas descendente y ascendente pueden compensarse en el calculo de \\(r\\). La nube muestra una relacion cuadratica aunque la correlacion lineal sea casi nula.</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S02-01",
+                "prompt": "Interpreta \\(r=-0.82\\) en un contexto de velocidad y tiempo de viaje."
+              },
+              {
+                "tagId": "PX-C10.S02-02",
+                "prompt": "Decide si \\(r=1\\) implica causalidad."
+              },
+              {
+                "tagId": "PX-C10.S02-03",
+                "prompt": "Explica el efecto posible de un valor atipico sobre \\(r\\)."
+              }
+            ],
+            "answersHtml": "<ol><li><p>Asociacion lineal negativa fuerte.</p></li><li><p>No.</p></li><li><p>Puede aumentar, reducir o incluso cambiar el signo de la correlacion.</p></li></ol>",
+            "solutionsHtml": "<p>Una asociacion negativa indica que, al aumentar una variable, la otra tiende a disminuir. La causalidad exige un diseno y una argumentacion adicionales. Los valores atipicos deben estudiarse en contexto, no borrarse de forma automatica.</p>"
+          },
+          "challenge": {}
+        },
+        {
+          "id": "C10.S03",
+          "title": "Regresion lineal y cuadratica",
+          "rawTitle": "[C10.S03] Regresion lineal y cuadratica",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Ajustar e interpretar modelos lineales y cuadraticos.</p></li><li><p>Usar \\(R^2\\) y los residuos para valorar un ajuste.</p></li><li><p>Diferenciar interpolacion y extrapolacion.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Ecuacion de la recta y funciones cuadraticas.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>Una recta de regresion tiene forma \\(\\hat y=a+bx\\). El residuo de un dato es \\(e_i=y_i-\\hat y_i\\). El coeficiente \\(R^2\\) mide que proporcion de la variabilidad de \\(y\\) queda explicada por el modelo. Un buen modelo combina ajuste numerico, residuos sin patron y sentido en el contexto.</p>"
+          },
+          "method": {
+            "title": "Elegir y validar el modelo",
+            "titleText": "Elegir y validar el modelo",
+            "tagId": "",
+            "html": "<ol><li><p>Representa los datos y decide si la tendencia parece lineal o curvada.</p></li><li><p>Obtiene el ajuste con calculadora, hoja de calculo o software.</p></li><li><p>Interpreta los parametros con unidades.</p></li><li><p>Revisa \\(R^2\\), los residuos y el intervalo observado antes de predecir.</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S03-01] Calibracion de un sensor",
+            "titleText": "Calibracion de un sensor",
+            "tagId": "EX-C10.S03-01",
+            "html": "<p>Para entradas \\(x=1,2,3,4\\), un sensor produce \\(y=2.1,4.0,5.9,8.0\\). Un ajuste da</p><div class=\"math-display\">\\[\n\\hat y=0.10+1.96x,\\qquad R^2=0.999.\n\\]</div><p>Para \\(x=2.5\\), la prediccion es \\(\\hat y=0.10+1.96\\cdot2.5=5.00\\). Es una interpolacion y resulta fiable dentro de las condiciones medidas. Para \\(x=20\\) seria una extrapolacion lejana: el alto \\(R^2\\) no garantiza que el sensor siga siendo lineal alli.</p>"
+          },
+          "commonError": {
+            "title": "Elegir solo por el mayor \\(R^2\\)",
+            "titleText": "Elegir solo por el mayor \\(R^2\\)",
+            "tagId": "",
+            "html": "<p>Un polinomio complejo puede aumentar \\(R^2\\) y empeorar la interpretacion o las predicciones. Hay que valorar la forma de la nube, los residuos, el contexto y la sencillez del modelo.</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S03-01",
+              "title": "Interpretar la pendiente",
+              "promptHtml": "<p>En \\(\\hat y=12+0.8x\\), donde \\(x\\) son horas y \\(y\\) gramos, interpreta \\(0.8\\).</p>",
+              "answerHtml": "<p>El modelo aumenta \\(0.8\\) gramos por cada hora adicional.</p>",
+              "solutionHtml": "<p>La pendiente es la variacion prevista de \\(y\\) al aumentar \\(x\\) una unidad. Sus unidades son gramos por hora.</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S03-01",
+                "prompt": "Predice \\(y\\) para \\(x=10\\) con \\(\\hat y=3+1.5x\\)."
+              },
+              {
+                "tagId": "PX-C10.S03-02",
+                "prompt": "Calcula el residuo si para \\(x=4\\) se observa \\(y=10\\) y el modelo predice \\(9.2\\)."
+              },
+              {
+                "tagId": "PX-C10.S03-03",
+                "prompt": "Explica por que no conviene extrapolar muy lejos."
+              }
+            ],
+            "answersHtml": "<ol><li><p>\\(18\\).</p></li><li><p>\\(0.8\\).</p></li><li><p>La relacion puede cambiar fuera del intervalo observado.</p></li></ol>",
+            "solutionsHtml": "<p>Se sustituye \\(x=10\\): \\(3+1.5\\cdot10=18\\). El residuo es observado menos predicho: \\(10-9.2=0.8\\). Una extrapolacion supone, sin evidencia, que el patron continua.</p>"
+          },
+          "challenge": {}
+        },
+        {
+          "id": "C10.S04",
+          "title": "Muestreo, inferencia y tecnologia",
+          "rawTitle": "[C10.S04] Muestreo, inferencia y tecnologia",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Distinguir poblacion, muestra, parametro y estadistico.</p></li><li><p>Reconocer sesgos de seleccion y de respuesta.</p></li><li><p>Usar una muestra para emitir juicios prudentes.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Proporciones, medias y lectura critica de graficos.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>La poblacion es el conjunto sobre el que se desea concluir; la muestra es el subconjunto observado. Un estadistico muestral estima un parametro poblacional. Aumentar el tamaño reduce la variabilidad aleatoria, pero no corrige un procedimiento de seleccion sesgado.</p>"
+          },
+          "method": {
+            "title": "Auditoria de una conclusion estadistica",
+            "titleText": "Auditoria de una conclusion estadistica",
+            "tagId": "",
+            "html": "<ol><li><p>Identifica poblacion, muestra, variable y forma de seleccion.</p></li><li><p>Comprueba si algunos grupos han quedado fuera o responden menos.</p></li><li><p>Revisa unidades, valores ausentes y atipicos con una herramienta digital.</p></li><li><p>Redacta la conclusion indicando alcance y limitaciones.</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S04-01] Encuesta sobre transporte",
+            "titleText": "Encuesta sobre transporte",
+            "tagId": "EX-C10.S04-01",
+            "html": "<p>Un centro publica una encuesta en la aplicacion que solo usa el alumnado que va en autobus y concluye que el \\(84\\%\\) de todo el alumnado prefiere ampliar ese servicio. Aunque respondan muchas personas, la muestra esta autoseleccionada y sobrerrepresenta a quienes usan autobus. La conclusion no puede generalizarse sin una muestra que incluya de forma adecuada al resto.</p>"
+          },
+          "commonError": {
+            "title": "Creer que una muestra grande siempre es representativa",
+            "titleText": "Creer que una muestra grande siempre es representativa",
+            "tagId": "",
+            "html": "<p>Diez mil respuestas obtenidas con un mecanismo sesgado pueden ser menos utiles que una muestra aleatoria mas pequeña y bien diseñada.</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S04-01",
+              "title": "Mejorar el diseño",
+              "promptHtml": "<p>Propone una forma de seleccionar una muestra que represente cursos y grupos del centro.</p>",
+              "answerHtml": "<p>Muestreo aleatorio estratificado por curso y grupo.</p>",
+              "solutionHtml": "<p>Se divide la poblacion por curso y grupo y se selecciona al azar un numero proporcional de personas en cada estrato. Asi se evita que un unico nivel domine la muestra.</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S04-01",
+                "prompt": "Identifica poblacion y muestra en una encuesta a 120 de los 900 estudiantes del centro."
+              },
+              {
+                "tagId": "PX-C10.S04-02",
+                "prompt": "Explica el sesgo de entrevistar solo a quienes estan en la biblioteca."
+              },
+              {
+                "tagId": "PX-C10.S04-03",
+                "prompt": "Redacta una conclusion prudente si 72 de 120 respuestas apoyan una medida."
+              }
+            ],
+            "answersHtml": "<ol><li><p>Poblacion: 900; muestra: 120.</p></li><li><p>Excluye a quienes no frecuentan la biblioteca.</p></li><li><p>En la muestra, el \\(60\\%\\) apoya la medida; la generalizacion depende del muestreo.</p></li></ol>",
+            "solutionsHtml": "<p>La proporcion muestral es \\(72/120=0.60\\). Debe comunicarse como resultado de la muestra y acompañarse de informacion sobre seleccion, no como una verdad exacta sobre toda la poblacion.</p>"
+          },
+          "challenge": {}
+        },
+        {
+          "id": "C10.S05",
+          "title": "Experimentos aleatorios y algebra de sucesos",
+          "rawTitle": "[C10.S05] Experimentos aleatorios y algebra de sucesos",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Construir espacios muestrales y operar con sucesos.</p></li><li><p>Aplicar complementario, union, interseccion y leyes de Morgan.</p></li><li><p>Estimar probabilidades mediante frecuencia relativa.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Conjuntos, diagramas de Venn y fracciones.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>El espacio muestral \\(\\Omega\\) contiene los resultados posibles. Los sucesos son subconjuntos de \\(\\Omega\\). Se cumplen</p><div class=\"math-display\">\\[\nP(\\overline A)=1-P(A),\\qquad\nP(A\\cup B)=P(A)+P(B)-P(A\\cap B),\n\\]</div><p>y las leyes de Morgan</p><div class=\"math-display\">\\[\n\\overline{A\\cup B}=\\overline A\\cap\\overline B,\n\\qquad\n\\overline{A\\cap B}=\\overline A\\cup\\overline B.\n\\]</div>"
+          },
+          "method": {
+            "title": "Traducir antes de calcular",
+            "titleText": "Traducir antes de calcular",
+            "tagId": "",
+            "html": "<ol><li><p>Escribe el experimento y su espacio muestral.</p></li><li><p>Traduce palabras: ``al menos uno'' suele resolverse con el complementario.</p></li><li><p>Dibuja un diagrama de Venn si aparecen union e interseccion.</p></li><li><p>Comprueba que la probabilidad final esta entre \\(0\\) y \\(1\\).</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S05-01] Control de dos sensores",
+            "titleText": "Control de dos sensores",
+            "tagId": "EX-C10.S05-01",
+            "html": "<p>Sean \\(A\\): ``falla el sensor A'' y \\(B\\): ``falla el sensor B'', con \\(P(A)=0.08\\), \\(P(B)=0.05\\) y \\(P(A\\cap B)=0.02\\). Entonces</p><div class=\"math-display\">\\[\nP(A\\cup B)=0.08+0.05-0.02=0.11.\n\\]</div><p>La probabilidad de que no falle ninguno es el complementario:</p><div class=\"math-display\">\\[\nP(\\overline A\\cap\\overline B)=1-P(A\\cup B)=0.89.\n\\]</div>"
+          },
+          "commonError": {
+            "title": "Sumar sin restar la interseccion",
+            "titleText": "Sumar sin restar la interseccion",
+            "tagId": "",
+            "html": "<p>Al sumar \\(P(A)+P(B)\\), los resultados de \\(A\\cap B\\) se cuentan dos veces. Solo puede omitirse la interseccion cuando los sucesos son incompatibles.</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S05-01",
+              "title": "Frecuencia relativa",
+              "promptHtml": "<p>En \\(500\\) simulaciones un suceso ocurre \\(137\\) veces. Estima su probabilidad.</p>",
+              "answerHtml": "<p>\\(137/500=0.274\\).</p>",
+              "solutionHtml": "<p>La frecuencia relativa es \\(f_r=137/500=0.274\\). Es una estimacion experimental, no una igualdad exacta que deba repetirse en otra tanda.</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S05-01",
+                "prompt": "Si \\(P(A)=0.37\\), calcula \\(P(\\overline A)\\)."
+              },
+              {
+                "tagId": "PX-C10.S05-02",
+                "prompt": "Si \\(P(A)=0.5\\), \\(P(B)=0.4\\) y \\(P(A\\cap B)=0.2\\), calcula \\(P(A\\cup B)\\)."
+              },
+              {
+                "tagId": "PX-C10.S05-03",
+                "prompt": "Escribe con sucesos ``no ocurre ni A ni B''."
+              }
+            ],
+            "answersHtml": "<ol><li><p>\\(0.63\\).</p></li><li><p>\\(0.7\\).</p></li><li><p>\\(\\overline A\\cap\\overline B=\\overline{A\\cup B}\\).</p></li></ol>",
+            "solutionsHtml": "<p>Se usa el complementario para el primer caso y la formula de la union para el segundo: \\(0.5+0.4-0.2=0.7\\). La expresion ``ni A ni B'' excluye la union de ambos sucesos.</p>"
+          },
+          "challenge": {}
+        },
+        {
+          "id": "C10.S06",
+          "title": "Regla de Laplace y tecnicas de recuento",
+          "rawTitle": "[C10.S06] Regla de Laplace y tecnicas de recuento",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Aplicar Laplace solo cuando los resultados elementales son equiprobables.</p></li><li><p>Usar producto, permutaciones y combinaciones para contar.</p></li><li><p>Evitar enumeraciones incompletas o con duplicados.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Factoriales y operaciones con fracciones.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>Si los resultados elementales son equiprobables,</p><div class=\"math-display\">\\[\nP(A)=\\frac{\\text{casos favorables}}{\\text{casos posibles}}.\n\\]</div><p>El principio multiplicativo cuenta procesos por etapas. Si el orden importa aparecen permutaciones o variaciones; si no importa, combinaciones:</p><div class=\"math-display\">\\[\n\\binom nk=\\frac{n!}{k!(n-k)!}.\n\\]</div>"
+          },
+          "method": {
+            "title": "Decidir como contar",
+            "titleText": "Decidir como contar",
+            "tagId": "",
+            "html": "<ol><li><p>Describe un resultado elemental y comprueba la equiprobabilidad.</p></li><li><p>Separa el experimento en etapas y multiplica sus opciones.</p></li><li><p>Pregunta si intercambiar el orden produce un resultado distinto.</p></li><li><p>Cuenta favorables y posibles con el mismo criterio.</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S06-01] Equipo de laboratorio",
+            "titleText": "Equipo de laboratorio",
+            "tagId": "EX-C10.S06-01",
+            "html": "<p>De \\(8\\) estudiantes se eligen \\(3\\) para formar un equipo, sin cargos. Hay</p><div class=\"math-display\">\\[\n\\binom83=56\n\\]</div><p>equipos. Si dos estudiantes concretos, Ana y Bilal, deben estar juntos, se fija esa pareja y se elige una persona entre las otras \\(6\\): hay \\(6\\) casos favorables. Por tanto,</p><div class=\"math-display\">\\[\nP(\\text{Ana y Bilal juntos})=\\frac6{56}=\\frac3{28}.\n\\]</div>"
+          },
+          "commonError": {
+            "title": "Usar combinaciones cuando el orden si importa",
+            "titleText": "Usar combinaciones cuando el orden si importa",
+            "tagId": "",
+            "html": "<p>Elegir un equipo de tres personas no es lo mismo que asignar presidencia, secretaria y portavocia. En el segundo caso los cargos distinguen el orden.</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S06-01",
+              "title": "Codigos sin repeticion",
+              "promptHtml": "<p>¿Cuantos codigos de tres cifras distintas pueden formarse con \\(1,2,3,4,5\\)?</p>",
+              "answerHtml": "<p>\\(5\\cdot4\\cdot3=60\\).</p>",
+              "solutionHtml": "<p>Hay \\(5\\) opciones para la primera posicion, \\(4\\) para la segunda y \\(3\\) para la tercera. El orden importa porque \\(123\\) y \\(321\\) son codigos distintos.</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S06-01",
+                "prompt": "Calcula \\(\\binom{10}{2}\\)."
+              },
+              {
+                "tagId": "PX-C10.S06-02",
+                "prompt": "Cuenta las ordenaciones de cuatro libros distintos."
+              },
+              {
+                "tagId": "PX-C10.S06-03",
+                "prompt": "Al lanzar dos dados, calcula la probabilidad de suma \\(7\\)."
+              }
+            ],
+            "answersHtml": "<ol><li><p>\\(45\\).</p></li><li><p>\\(4!=24\\).</p></li><li><p>\\(6/36=1/6\\).</p></li></ol>",
+            "solutionsHtml": "<p>Las parejas no ordenadas se cuentan con \\(\\binom{10}{2}=45\\). Los libros admiten \\(4!\\) ordenaciones. Entre los \\(36\\) pares equiprobables de dos dados, seis suman \\(7\\).</p>"
+          },
+          "challenge": {}
+        },
+        {
+          "id": "C10.S07",
+          "title": "Probabilidad condicionada, total y Bayes",
+          "rawTitle": "[C10.S07] Probabilidad condicionada, total y Bayes",
+          "objectives": [
+            {
+              "label": "Objetivos de aprendizaje",
+              "html": "<ul><li><p>Interpretar probabilidad condicionada e independencia.</p></li><li><p>Resolver experimentos compuestos con tablas y diagramas de arbol.</p></li><li><p>Aplicar probabilidad total y Bayes en contexto.</p></li></ul>"
+            }
+          ],
+          "prerequisites": [
+            {
+              "label": "Prerrequisitos",
+              "html": "<ul><li><p>Algebra de sucesos, fracciones y porcentajes.</p></li></ul>"
+            }
+          ],
+          "theory": {
+            "title": "Idea minima",
+            "titleText": "Idea minima",
+            "tagId": "",
+            "html": "<p>Si \\(P(A)>0\\),</p><div class=\"math-display\">\\[\nP(B\\mid A)=\\frac{P(A\\cap B)}{P(A)}.\n\\]</div><p>Los sucesos son independientes si \\(P(A\\cap B)=P(A)P(B)\\). Para una particion \\(A_i\\),</p><div class=\"math-display\">\\[\nP(B)=\\sum_i P(A_i)P(B\\mid A_i),\n\\qquad\nP(A_j\\mid B)=\\frac{P(A_j)P(B\\mid A_j)}{P(B)}.\n\\]</div>"
+          },
+          "method": {
+            "title": "Arbol de probabilidades",
+            "titleText": "Arbol de probabilidades",
+            "tagId": "",
+            "html": "<ol><li><p>Separa las alternativas iniciales en ramas que sumen \\(1\\).</p></li><li><p>Escribe en la segunda etapa probabilidades condicionadas.</p></li><li><p>Multiplica a lo largo de cada camino.</p></li><li><p>Suma caminos para la probabilidad total y divide para invertir la condicion con Bayes.</p></li></ol>"
+          },
+          "solvedExample": {
+            "title": "[EX-C10.S07-01] Alerta de un sistema",
+            "titleText": "Alerta de un sistema",
+            "tagId": "EX-C10.S07-01",
+            "html": "<p>El \\(4\\%\\) de las piezas presenta un defecto. Un sistema alerta en el \\(95\\%\\) de las defectuosas y tambien alerta por error en el \\(3\\%\\) de las correctas. La probabilidad total de alerta es</p><div class=\"math-display\">\\[\nP(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668.\n\\]</div><p>Si hay alerta, la probabilidad de defecto es</p><div class=\"math-display\">\\[\nP(D\\mid A)=\\frac{0.04\\cdot0.95}{0.0668}\\approx0.5689.\n\\]</div><p>Una alerta no implica certeza: la baja frecuencia inicial del defecto importa.</p>"
+          },
+          "commonError": {
+            "title": "Intercambiar la condicion",
+            "titleText": "Intercambiar la condicion",
+            "tagId": "",
+            "html": "<p>\\(P(A\\mid D)\\) y \\(P(D\\mid A)\\) responden preguntas distintas. Bayes permite relacionarlas, pero no pueden intercambiarse sin calcular.</p>"
+          },
+          "guidedExercises": [
+            {
+              "tagId": "GX-C10.S07-01",
+              "title": "Independencia",
+              "promptHtml": "<p>Si \\(P(A)=0.4\\), \\(P(B)=0.5\\) y \\(P(A\\cap B)=0.2\\), decide si son independientes.</p>",
+              "answerHtml": "<p>Si, porque \\(0.4\\cdot0.5=0.2\\).</p>",
+              "solutionHtml": "<p>Se compara la interseccion observada con el producto de probabilidades. Como coinciden y ambas probabilidades son positivas, los sucesos son independientes.</p>"
+            }
+          ],
+          "practice": {
+            "label": "Practica autonoma graduada",
+            "items": [
+              {
+                "tagId": "PX-C10.S07-01",
+                "prompt": "Si \\(P(A\\cap B)=0.18\\) y \\(P(A)=0.6\\), calcula \\(P(B\\mid A)\\)."
+              },
+              {
+                "tagId": "PX-C10.S07-02",
+                "prompt": "Una maquina produce el \\(70\\%\\) de las piezas y otra el \\(30\\%\\); sus tasas de defecto son \\(2\\%\\) y \\(5\\%\\). Calcula la tasa total."
+              },
+              {
+                "tagId": "PX-C10.S07-03",
+                "prompt": "Explica por que un positivo no garantiza tener la condicion estudiada."
+              }
+            ],
+            "answersHtml": "<ol><li><p>\\(0.3\\).</p></li><li><p>\\(0.7\\cdot0.02+0.3\\cdot0.05=0.029\\).</p></li><li><p>Depende de falsos positivos y de la frecuencia inicial de la condicion.</p></li></ol>",
+            "solutionsHtml": "<p>La condicion restringe el denominador: \\(0.18/0.6=0.3\\). La probabilidad total suma los dos caminos de defecto y vale \\(0.029\\), es decir, \\(2.9\\%\\). Para interpretar un resultado positivo debe aplicarse Bayes e incorporar la prevalencia.</p>"
+          },
+          "challenge": {
+            "title": "[CH-C10.S07-01] Auditoria completa de una prediccion",
+            "titleText": "Auditoria completa de una prediccion",
+            "tagId": "CH-C10.S07-01",
+            "html": "<p>Diseña una pequeña investigacion con dos variables cuantitativas de tu entorno. Define poblacion y muestra, recoge al menos \\(12\\) pares, representa la nube, compara un ajuste lineal y uno cuadratico, analiza residuos, justifica una prediccion y explica por que no puedes afirmar causalidad solo con esos datos.</p>",
+            "answerHtml": "<p>La entrega debe incluir datos, grafico, modelos, \\(R^2\\), residuos, prediccion y limitaciones.</p>",
+            "solutionHtml": "<p>No existe una unica solucion numerica. Se valora que la muestra sea defendible, que los datos y unidades sean trazables, que el modelo elegido concuerde con la forma de la nube y los residuos, que la prediccion no extrapole sin justificacion y que la conclusion distinga asociacion de causa.</p>"
           }
         }
       ]

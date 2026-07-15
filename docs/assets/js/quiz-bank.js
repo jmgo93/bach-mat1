@@ -162,6 +162,69 @@ window.MATHBOOK_QUIZ_BANK = [
     explanation: "La derivada es \\(2x\\), asi que la pendiente en \\(x=2\\) es \\(4\\). Como pasa por \\((2,4)\\), resulta \\(y-4=4(x-2)\\)."
   },
   {
+    id: "Q-C10-01",
+    chapterId: "C10",
+    difficulty: "base",
+    prompt: "En una tabla, 18 de las 24 personas que usan una plataforma superan una prueba. El valor de \\(P(S\\mid U)\\) es:",
+    options: ["\\(18/40\\)", "\\(18/24\\)", "\\(24/40\\)", "\\(18/26\\)"],
+    correctIndex: 1,
+    explanation: "La condicion U restringe el denominador a quienes usan la plataforma: \\(P(S\\mid U)=18/24=0.75\\)."
+  },
+  {
+    id: "Q-C10-02",
+    chapterId: "C10",
+    difficulty: "media",
+    prompt: "Una correlacion \\(r=-0.88\\) indica:",
+    options: ["Causalidad negativa demostrada", "Asociacion lineal negativa fuerte", "Ausencia de relacion", "Que el 88 por ciento de los datos es erroneo"],
+    correctIndex: 1,
+    explanation: "El signo indica direccion y el valor absoluto, intensidad lineal. La correlacion no demuestra causalidad."
+  },
+  {
+    id: "Q-C10-03",
+    chapterId: "C10",
+    difficulty: "media",
+    prompt: "Si un ajuste lineal tiene \\(R^2=0.81\\), la interpretacion adecuada es:",
+    options: ["La recta causa el 81 por ciento de los datos", "El modelo explica aproximadamente el 81 por ciento de la variabilidad observada de y", "El 19 por ciento de los puntos debe eliminarse", "La prediccion es exacta fuera del rango"],
+    correctIndex: 1,
+    explanation: "R cuadrado cuantifica variabilidad explicada dentro de los datos y el modelo; no prueba causalidad ni garantiza extrapolaciones."
+  },
+  {
+    id: "Q-C10-04",
+    chapterId: "C10",
+    difficulty: "base",
+    prompt: "Una encuesta voluntaria publicada solo en una aplicacion usada por deportistas presenta sobre todo:",
+    options: ["Error algebraico", "Sesgo de seleccion", "Independencia", "Equiprobabilidad"],
+    correctIndex: 1,
+    explanation: "La forma de acceso sobrerrepresenta un grupo y deja fuera a parte de la poblacion. Aumentar respuestas no elimina ese sesgo."
+  },
+  {
+    id: "Q-C10-05",
+    chapterId: "C10",
+    difficulty: "base",
+    prompt: "Si \\(P(A)=0.5\\), \\(P(B)=0.4\\) y \\(P(A\\cap B)=0.2\\), entonces \\(P(A\\cup B)\\) vale:",
+    options: ["\\(0.7\\)", "\\(0.9\\)", "\\(0.2\\)", "\\(0.1\\)"],
+    correctIndex: 0,
+    explanation: "Se resta la interseccion contada dos veces: \\(0.5+0.4-0.2=0.7\\)."
+  },
+  {
+    id: "Q-C10-06",
+    chapterId: "C10",
+    difficulty: "media",
+    prompt: "El numero de equipos de 3 personas que pueden elegirse entre 8, sin cargos, es:",
+    options: ["\\(8^3\\)", "\\(8\\cdot7\\cdot6\\)", "\\(\\binom83=56\\)", "\\(3!=6\\)"],
+    correctIndex: 2,
+    explanation: "El orden no importa, por lo que se usan combinaciones: \\(\\binom83=8!/(3!5!)=56\\)."
+  },
+  {
+    id: "Q-C10-07",
+    chapterId: "C10",
+    difficulty: "estrategia",
+    prompt: "Una condicion afecta al 4 por ciento de la poblacion. Una prueba detecta el 95 por ciento de los casos y da un 3 por ciento de falsos positivos. Ante un positivo, lo primero que falta para aplicar Bayes es:",
+    options: ["Ignorar la prevalencia", "Calcular la probabilidad total de positivo", "Suponer que positivo implica certeza", "Sumar 0.95 y 0.03"],
+    correctIndex: 1,
+    explanation: "El denominador de Bayes es la probabilidad total de positivo, que suma verdaderos y falsos positivos ponderados por sus prevalencias."
+  },
+  {
     id: "Q-R10-01",
     chapterId: "R10",
     difficulty: "estrategia",

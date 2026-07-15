@@ -291,5 +291,159 @@ window.MATHBOOK_ACTIVITY_BANK = [
     explanation:
       "Si \\(x+y=10\\), entonces \\(A(x)=x(10-x)\\) es una parabola con maximo en \\(x=5\\).",
     includeInQuiz: true
+  },
+  {
+    id: "ACT-C02-03",
+    chapterId: "C02",
+    sectionId: "C02.S03",
+    type: "custom-sequence",
+    title: "Algoritmo de division polinomica",
+    difficulty: "media",
+    prompt: "Ordena el procedimiento completo para dividir polinomios sin perder terminos ni mezclar grados.",
+    steps: [
+      "Ordenar dividendo y divisor y completar los grados ausentes con coeficiente cero.",
+      "Dividir el termino principal del resto parcial entre el termino principal del divisor.",
+      "Multiplicar el nuevo termino del cociente por todo el divisor.",
+      "Restar alineando monomios del mismo grado.",
+      "Repetir hasta que el grado del resto sea menor que el del divisor."
+    ],
+    explanation: "La division termina solo cuando el resto tiene grado menor que el divisor; completar huecos evita desalinear coeficientes."
+  },
+  {
+    id: "ACT-C03-03",
+    chapterId: "C03",
+    sectionId: "C03.S02",
+    type: "custom-sequence",
+    title: "Control de una ecuacion irracional",
+    difficulty: "media",
+    prompt: "Ordena un protocolo que permita resolver una ecuacion con radicales y eliminar soluciones extranas.",
+    steps: [
+      "Aislar uno de los radicales y anotar las restricciones visibles.",
+      "Elevar al cuadrado ambos miembros.",
+      "Simplificar y repetir el aislamiento si queda otro radical.",
+      "Resolver la ecuacion algebraica obtenida.",
+      "Comprobar cada candidata en la ecuacion original."
+    ],
+    explanation: "Elevar al cuadrado puede introducir candidatas que no satisfacen la ecuacion inicial; la comprobacion final es obligatoria."
+  },
+  {
+    id: "ACT-C04-03",
+    chapterId: "C04",
+    sectionId: "C04.S03",
+    type: "custom-sequence",
+    title: "Tabla de signos racional",
+    difficulty: "media",
+    prompt: "Construye en orden el estudio de signo de una inecuacion racional.",
+    steps: [
+      "Llevar todos los terminos a un miembro y reducir a una sola fraccion.",
+      "Factorizar numerador y denominador.",
+      "Marcar ceros del numerador y valores prohibidos del denominador.",
+      "Estudiar el signo en cada intervalo determinado por los puntos criticos.",
+      "Elegir intervalos y extremos segun la desigualdad, excluyendo siempre el denominador cero."
+    ],
+    explanation: "Los ceros del denominador separan intervalos pero nunca se incluyen; los del numerador dependen de que la desigualdad admita igualdad."
+  },
+  {
+    id: "ACT-C07-03",
+    chapterId: "C07",
+    sectionId: "C07.S04",
+    type: "custom-sequence",
+    title: "Posicion relativa de dos rectas",
+    difficulty: "media",
+    prompt: "Ordena la estrategia para clasificar dos rectas y hallar su interseccion cuando exista.",
+    steps: [
+      "Extraer un vector director y un punto de cada recta.",
+      "Comparar los vectores directores para decidir si son paralelos.",
+      "Si son paralelos, comprobar si un punto de una recta pertenece a la otra.",
+      "Si no son paralelos, resolver el sistema de sus ecuaciones.",
+      "Interpretar el resultado como coincidentes, paralelas distintas o secantes."
+    ],
+    explanation: "La proporcionalidad de directores detecta paralelismo, pero hace falta comprobar un punto para distinguir paralelas de coincidentes."
+  },
+  {
+    id: "ACT-C08-03",
+    chapterId: "C08",
+    sectionId: "C08.S08",
+    type: "custom-sequence",
+    title: "Diagnostico de continuidad",
+    difficulty: "media",
+    prompt: "Ordena las comprobaciones necesarias para decidir si una funcion es continua en un punto.",
+    steps: [
+      "Comprobar que la funcion esta definida en el punto y calcular su valor.",
+      "Calcular el limite por la izquierda.",
+      "Calcular el limite por la derecha.",
+      "Verificar que ambos limites laterales coinciden.",
+      "Comparar el limite comun con el valor de la funcion."
+    ],
+    explanation: "Hay continuidad solo si existe el valor, existe el limite bilateral y ambos coinciden."
+  },
+  {
+    id: "ACT-C10-01",
+    chapterId: "C10",
+    sectionId: "C10.S02",
+    type: "custom-regression-lab",
+    title: "Un punto cambia la historia",
+    difficulty: "media",
+    prompt: "Mueve el ultimo dato hasta que la correlacion deje de ser fuerte. Observa a la vez la nube, la recta, \\(r\\) y \\(R^2\\).",
+    explanation: "Los valores influyentes pueden alterar mucho un ajuste; por eso el grafico debe preceder a cualquier interpretacion automatica."
+  },
+  {
+    id: "ACT-C10-02",
+    chapterId: "C10",
+    sectionId: "C10.S05",
+    type: "custom-probability-simulator",
+    title: "Frecuencia que se estabiliza",
+    difficulty: "base",
+    prompt: "Simula lanzamientos de una moneda en tandas crecientes y compara la frecuencia relativa de cara con la probabilidad teorica \\(0.5\\).",
+    explanation: "La frecuencia relativa fluctua, pero tiende a estabilizarse alrededor de la probabilidad teorica al aumentar los ensayos."
+  },
+  {
+    id: "ACT-C10-03",
+    chapterId: "C10",
+    sectionId: "C10.S02",
+    type: "mcq",
+    title: "Correlacion no es causalidad",
+    difficulty: "media",
+    prompt: "Una correlacion \\(r=0.94\\) permite afirmar que:",
+    options: [
+      "Una variable causa necesariamente la otra",
+      "Existe una asociacion lineal positiva fuerte en los datos",
+      "El 94 por ciento de los puntos coincide exactamente",
+      "No puede haber valores atipicos"
+    ],
+    correctIndex: 1,
+    explanation: "El coeficiente describe intensidad y signo de una asociacion lineal, pero no demuestra un mecanismo causal.",
+    includeInQuiz: true
+  },
+  {
+    id: "ACT-C10-04",
+    chapterId: "C10",
+    sectionId: "C10.S07",
+    type: "numeric",
+    title: "Condiciona el denominador",
+    difficulty: "media",
+    prompt: "Si \\(P(A\\cap B)=0.18\\) y \\(P(A)=0.6\\), calcula \\(P(B\\mid A)\\).",
+    placeholder: "Probabilidad condicionada",
+    answers: ["0.3", "0,3"],
+    tolerance: 0.001,
+    explanation: "Por definicion, \\(P(B\\mid A)=P(A\\cap B)/P(A)=0.18/0.6=0.3\\).",
+    hint: "La condicion A determina el denominador."
+  },
+  {
+    id: "ACT-R10-03",
+    chapterId: "R10",
+    sectionId: "R10.S01",
+    type: "custom-sequence",
+    title: "Protocolo de problema dificil",
+    difficulty: "estrategia",
+    prompt: "Ordena una estrategia transferible para abordar un problema nuevo sin lanzarte a operar a ciegas.",
+    steps: [
+      "Reescribir la pregunta y separar datos, restricciones e incognitas.",
+      "Representar la situacion con un dibujo, tabla, grafico o expresion.",
+      "Elegir un modelo y justificar por que encaja.",
+      "Resolver mostrando las decisiones importantes.",
+      "Comprobar unidades, restricciones y sentido de la respuesta."
+    ],
+    explanation: "Una solucion experta no es solo calculo: modeliza, justifica, verifica y comunica."
   }
 ];

@@ -1,4 +1,4 @@
-const CACHE_NAME = "mate1-interactivas-v7";
+const CACHE_NAME = "mate1-interactivas-v9";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -13,10 +13,19 @@ const CORE_ASSETS = [
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png"
 ];
+const OPTIONAL_ASSETS = [
+  "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS)).then(() => self.skipWaiting())
+    caches
+      .open(CACHE_NAME)
+      .then(async (cache) => {
+        await cache.addAll(CORE_ASSETS);
+        await Promise.allSettled(OPTIONAL_ASSETS.map((asset) => cache.add(asset)));
+      })
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -34,19 +43,29 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      return fetch(event.request)
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
         .then((networkResponse) => {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+          caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", networkResponse.clone()));
           return networkResponse;
         })
-        .catch(() => caches.match("./index.html"));
+        .catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      const networkRequest = fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.ok || networkResponse.type === "opaque") {
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse.clone()));
+          }
+          return networkResponse;
+        })
+        .catch(() => cachedResponse || new Response("Recurso no disponible sin conexion.", { status: 503 }));
+      return cachedResponse || networkRequest;
     })
   );
 });

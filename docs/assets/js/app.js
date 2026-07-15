@@ -66,6 +66,7 @@
     C07: { short: "Geometria analitica", block: "Trigonometria y geometria", accent: "warm" },
     C08: { short: "Limites y continuidad", block: "Analisis", accent: "cool" },
     C09: { short: "Derivadas", block: "Analisis", accent: "warm" },
+    C10: { short: "Estadistica y probabilidad", block: "Sentido estocastico", accent: "cool" },
     R10: { short: "Repaso final", block: "Repaso y simulacros", accent: "cool" }
   };
 
@@ -157,18 +158,26 @@
     examSubmitted: false,
     installPromptEvent: null,
     numberChallengeIndex: 0,
+    practiceIndex: 0,
     flashcardIndex: 0,
     flashcardFlipped: false,
     searchQuery: "",
+    questionOptionOrders: {},
+    sequencePools: {},
     activityDrafts: {},
+    revealedQuestions: new Set(),
+    revealedActivities: new Set(),
     translationTimer: null,
     lastScrollTarget: "",
     customLabs: {
       trigAngle: 45,
       vector: { ux: 3, uy: 2, vx: -1, vy: 4 },
       functionId: "poly",
-      functionPoint: 1
-    }
+      functionPoint: 1,
+      regressionOutlier: 13,
+      probability: { trials: 0, heads: 0 }
+    },
+    hasRendered: false
   };
 
   const dom = {};
@@ -196,6 +205,8 @@
     dom.installButton = document.getElementById("installButton");
     dom.languageSelect = document.getElementById("languageSelect");
     dom.mobileMenuButton = document.getElementById("mobileMenuButton");
+    dom.sidebarBackdrop = document.getElementById("sidebarBackdrop");
+    dom.routeAnnouncer = document.getElementById("routeAnnouncer");
     dom.translateFeedback = document.getElementById("translateFeedback");
     dom.translateFeedbackText = document.getElementById("translateFeedbackText");
     dom.xpValue = document.getElementById("xpValue");
@@ -211,8 +222,12 @@
       state.searchQuery = event.target.value.trim().toLowerCase();
       renderSidebar(parseRoute());
     });
-    dom.mobileMenuButton.addEventListener("click", () => {
-      dom.sidebar.classList.toggle("is-open");
+    dom.mobileMenuButton.addEventListener("click", () => setMobileMenuOpen(!dom.sidebar.classList.contains("is-open")));
+    dom.sidebarBackdrop.addEventListener("click", () => setMobileMenuOpen(false));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && dom.sidebar.classList.contains("is-open")) {
+        setMobileMenuOpen(false, true);
+      }
     });
     dom.languageSelect.addEventListener("change", handleLanguageChange);
     dom.installButton.addEventListener("click", installPwa);
@@ -225,7 +240,7 @@
     renderSidebar(route);
 
     if (route.name === "chapter") {
-      renderChapter(route.chapterId);
+      renderChapter(route.chapterId, route.sectionId);
     } else if (route.name === "practice") {
       renderPractice();
     } else if (route.name === "flashcards") {
@@ -241,8 +256,33 @@
     }
 
     updateProgressUi();
-    dom.sidebar.classList.remove("is-open");
+    setMobileMenuOpen(false);
     postRender(route);
+    announceRouteChange();
+  }
+
+  function setMobileMenuOpen(open, restoreFocus = false) {
+    dom.sidebar.classList.toggle("is-open", open);
+    dom.mobileMenuButton.setAttribute("aria-expanded", String(open));
+    dom.mobileMenuButton.setAttribute("aria-label", open ? "Cerrar navegación" : "Abrir navegación");
+    dom.sidebarBackdrop.hidden = !open;
+    document.body.classList.toggle("has-open-menu", open);
+    if (restoreFocus) {
+      dom.mobileMenuButton.focus();
+    }
+  }
+
+  function announceRouteChange() {
+    const heading = dom.app.querySelector("h1");
+    if (!heading) {
+      return;
+    }
+    document.title = `${heading.textContent.trim()} | Matemáticas I Interactivas`;
+    dom.routeAnnouncer.textContent = `Página cargada: ${heading.textContent.trim()}`;
+    if (state.hasRendered) {
+      dom.app.focus({ preventScroll: true });
+    }
+    state.hasRendered = true;
   }
 
   function parseRoute() {
@@ -299,7 +339,10 @@
   }
 
   function updateNav(route) {
-    document.querySelectorAll("[data-route-link]").forEach((link) => link.classList.remove("is-active"));
+    document.querySelectorAll("[data-route-link]").forEach((link) => {
+      link.classList.remove("is-active");
+      link.removeAttribute("aria-current");
+    });
     const routeName =
       route.name === "home"
         ? "inicio"
@@ -317,10 +360,39 @@
     if (!routeName) {
       return;
     }
-    document.querySelectorAll(`[data-route-link="${routeName}"]`).forEach((link) => link.classList.add("is-active"));
+    document.querySelectorAll(`[data-route-link="${routeName}"]`).forEach((link) => {
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
+    });
   }
 
   function renderSidebar(route) {
+    if (state.searchQuery) {
+      const results = buildSearchResults(state.searchQuery);
+      dom.chapterCountBadge.textContent = String(results.length);
+      dom.chapterLinks.innerHTML = results.length
+        ? results
+            .map(
+              (result) => `
+                <a class="chapter-link search-result" href="${result.href}">
+                  <span class="chapter-link__index">${result.code}</span>
+                  <span class="chapter-link__copy">
+                    <strong>${result.title}</strong>
+                    <small>${result.kind} - ${result.description}</small>
+                  </span>
+                </a>
+              `
+            )
+            .join("")
+        : `
+            <div class="sidebar-search-empty" role="status">
+              <strong>Sin resultados</strong>
+              <small>Prueba con una idea matematica, un tema o un codigo de apartado.</small>
+            </div>
+          `;
+      return;
+    }
+
     const chapters = filterChaptersBySearch();
     dom.chapterCountBadge.textContent = String(chapters.length);
     dom.chapterLinks.innerHTML = chapters
@@ -342,7 +414,7 @@
                       ? state.examChapter === chapter.id
                   : false;
         return `
-          <a class="chapter-link ${isActive ? "is-active" : ""}" href="#/capitulo/${chapter.id}">
+          <a class="chapter-link ${isActive ? "is-active" : ""}" href="#/capitulo/${chapter.id}" ${isActive ? 'aria-current="page"' : ""}>
             <span class="chapter-link__index">${String(index + 1).padStart(2, "0")}</span>
             <span class="chapter-link__copy">
               <strong>${chapter.id} - ${chapter.title}</strong>
@@ -355,26 +427,119 @@
   }
 
   function filterChaptersBySearch() {
-    if (!state.searchQuery) {
-      return content.chapters;
-    }
+    return content.chapters;
+  }
 
-    return content.chapters.filter((chapter) => {
-      const haystack = [
-        chapter.title,
-        chapter.id,
-        ...chapter.sections.map((section) => section.id),
-        ...chapter.sections.map((section) => section.title),
-        ...activityBank.filter((activity) => activity.chapterId === chapter.id).map((activity) => activity.title),
-        ...getProblemInventoryForChapter(chapter.id).map((item) => item.prompt),
-        ...getProblemModelsForChapter(chapter.id).map((item) => item.title),
-        ...getExamInventoryForChapter(chapter.id).map((item) => item.title),
-        ...getExamMiniModelsForChapter(chapter.id).map((item) => item.title)
-      ]
-        .join(" ")
-        .toLowerCase();
-      return haystack.includes(state.searchQuery);
+  function buildSearchResults(query) {
+    const needle = normalizeSearchText(query);
+    const results = [];
+    const seen = new Set();
+
+    const addResult = (result, searchableValue) => {
+      if (!normalizeSearchText(searchableValue).includes(needle)) {
+        return;
+      }
+      const key = `${result.href}|${result.title}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        results.push(result);
+      }
+    };
+
+    content.chapters.forEach((chapter) => {
+      addResult(
+        {
+          href: `#/capitulo/${chapter.id}`,
+          code: chapter.id,
+          title: chapter.title,
+          kind: "Tema",
+          description: `${chapter.sectionCount} apartados`
+        },
+        `${chapter.id} ${chapter.title}`
+      );
+
+      chapter.sections.forEach((section) => {
+        addResult(
+          {
+            href: `#/capitulo/${chapter.id}/${section.id}`,
+            code: section.id.replace(`${chapter.id}.`, ""),
+            title: section.title,
+            kind: "Teoria",
+            description: `${chapter.id} - ${chapter.title}`
+          },
+          `${section.id} ${section.title} ${searchRecordText(section)}`
+        );
+      });
     });
+
+    activityBank.forEach((activity) => {
+      addResult(
+        {
+          href: `#/capitulo/${activity.chapterId}/${activity.sectionId}`,
+          code: "LAB",
+          title: activity.title,
+          kind: "Actividad",
+          description: `${activity.sectionId} - ${getSectionTitle(activity.sectionId)}`
+        },
+        searchRecordText(activity)
+      );
+    });
+
+    supplements.problems.inventory.forEach((item) => {
+      addResult(
+        {
+          href: `#/problemas/${item.chapterId}`,
+          code: "PROB",
+          title: item.prompt,
+          kind: "Problema",
+          description: item.sectionTitle || item.chapterTitle
+        },
+        searchRecordText(item)
+      );
+    });
+
+    supplements.problems.models.forEach((item) => {
+      addResult(
+        {
+          href: `#/problemas/${item.chapterId}`,
+          code: "MOD",
+          title: item.title,
+          kind: "Problema resuelto",
+          description: (getChapter(item.chapterId) || {}).title || item.chapterId
+        },
+        searchRecordText(item)
+      );
+    });
+
+    [...supplements.exams.inventory, ...supplements.exams.miniModels].forEach((item) => {
+      addResult(
+        {
+          href: `#/examenes/${item.chapterId}`,
+          code: "EX",
+          title: item.title || item.prompt || `Examen ${item.chapterId}`,
+          kind: "Examen",
+          description: (getChapter(item.chapterId) || {}).title || item.chapterId
+        },
+        searchRecordText(item)
+      );
+    });
+
+    return results.slice(0, 30);
+  }
+
+  function searchRecordText(value) {
+    try {
+      return stripHtml(JSON.stringify(value));
+    } catch (error) {
+      return String(value || "");
+    }
+  }
+
+  function normalizeSearchText(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
   }
 
   function renderHome() {
@@ -474,7 +639,7 @@
     `;
   }
 
-  function renderChapter(chapterId) {
+  function renderChapter(chapterId, sectionId = null) {
     const chapter = getChapter(chapterId);
     if (!chapter) {
       renderHome();
@@ -491,6 +656,13 @@
     const chapterBlockExams = getExamBlockModelsForChapter(chapter.id);
     const dominatedQuestions = chapterQuestions.filter((question) => getQuestionStatus(question.id) === "mastered").length;
     const reviewQuestions = chapterQuestions.filter((question) => getQuestionStatus(question.id) === "review").length;
+    const activeSectionIndex = Math.max(
+      0,
+      chapter.sections.findIndex((section) => section.id === sectionId)
+    );
+    const activeSection = chapter.sections[activeSectionIndex];
+    const previousSection = chapter.sections[activeSectionIndex - 1] || null;
+    const nextSection = chapter.sections[activeSectionIndex + 1] || null;
 
     dom.app.innerHTML = `
       <section class="hero hero--chapter">
@@ -536,15 +708,36 @@
         ${chapter.sections
           .map(
             (section) => `
-              <button class="chip-link" type="button" data-scroll-target="${section.id.replace(/\./g, "-")}">${section.id}</button>
+              <a
+                class="chip-link ${section.id === activeSection.id ? "is-active" : ""}"
+                href="#/capitulo/${chapter.id}/${section.id}"
+                ${section.id === activeSection.id ? 'aria-current="step"' : ""}
+              >
+                <span>${section.id}</span>
+                <strong>${section.title}</strong>
+              </a>
             `
           )
           .join("")}
       </section>
 
-      <section class="search-grid">
-        ${chapter.sections.map((section) => renderSectionCard(chapter, section)).join("")}
+      <section class="search-grid section-focus">
+        ${renderSectionCard(chapter, activeSection)}
       </section>
+
+      <nav class="section-pagination" aria-label="Navegación entre apartados">
+        ${
+          previousSection
+            ? `<a class="ghost-button" href="#/capitulo/${chapter.id}/${previousSection.id}">Anterior: ${previousSection.title}</a>`
+            : `<a class="ghost-button" href="#/inicio">Volver al inicio</a>`
+        }
+        <span class="status-pill status-pill--progress">${activeSectionIndex + 1} de ${chapter.sections.length}</span>
+        ${
+          nextSection
+            ? `<a class="primary-button" href="#/capitulo/${chapter.id}/${nextSection.id}">Siguiente: ${nextSection.title}</a>`
+            : `<a class="primary-button" href="#/practica/${chapter.id}">Practicar el bloque</a>`
+        }
+      </nav>
     `;
   }
 
@@ -658,10 +851,10 @@
         </header>
 
         ${(objectives || prerequisites) ? `<div class="support-grid">${objectives}${prerequisites}</div>` : ""}
-        ${renderCallout("Teoria minima", getPrimaryBlock(section, "theory"), "cool")}
-        ${renderCallout("Metodo", getPrimaryBlock(section, "method"), "warm")}
-        ${renderCallout("Ejemplo resuelto", getPrimaryBlock(section, "solvedExample"), "cool")}
-        ${renderCallout("Error frecuente", getPrimaryBlock(section, "commonError"), "warm")}
+        ${renderCallout("Teoria minima", getPrimaryBlock(section, "theory"), "cool", section.id)}
+        ${renderCallout("Metodo", getPrimaryBlock(section, "method"), "warm", section.id)}
+        ${renderCallout("Ejemplo resuelto", getPrimaryBlock(section, "solvedExample"), "cool", section.id)}
+        ${renderCallout("Error frecuente", getPrimaryBlock(section, "commonError"), "warm", section.id)}
         ${guided}
         ${practice}
         ${renderChallengeCard(section.challenge)}
@@ -670,16 +863,103 @@
     `;
   }
 
-  function renderCallout(title, block, tone) {
+  function renderCallout(title, block, tone, sectionId = "") {
     if (!block || !block.html) {
       return "";
     }
+    const html = replaceFigureFallback(block.html, sectionId);
     return `
       <section class="callout-card callout-card--${tone}">
         <p class="card-kicker">${title}</p>
-        <div class="rich-text">${block.html}</div>
+        <div class="rich-text">${html}</div>
       </section>
     `;
+  }
+
+  function replaceFigureFallback(html, sectionId) {
+    if (!html.includes("figure-fallback")) {
+      return html;
+    }
+    const visual = buildSemanticFigure(sectionId);
+    if (!visual) {
+      return html.replace(
+        /<div class="figure-fallback">[\s\S]*?<\/div>/g,
+        '<div class="figure-fallback">Consulta el esquema relacionado y describe sus elementos antes de continuar.</div>'
+      );
+    }
+    return html.replace(/<div class="figure-fallback">[\s\S]*?<\/div>/g, visual);
+  }
+
+  function buildSemanticFigure(sectionId) {
+    const figures = {
+      "C05.S02": `
+        <figure class="semantic-figure">
+          <svg viewBox="0 0 520 260" role="img" aria-labelledby="triangleTitle triangleDesc">
+            <title id="triangleTitle">Triangulo rectangulo y razones trigonometricas</title>
+            <desc id="triangleDesc">Triangulo con cateto contiguo horizontal, cateto opuesto vertical, hipotenusa y angulo alfa.</desc>
+            <path class="diagram-shape" d="M70 210 L440 210 L440 50 Z"></path>
+            <path class="diagram-guide" d="M410 210 L410 180 L440 180"></path>
+            <path class="diagram-accent" d="M112 210 A42 42 0 0 0 102 184"></path>
+            <text x="250" y="242">cateto contiguo</text><text x="452" y="135">cateto opuesto</text>
+            <text x="235" y="116">hipotenusa</text><text x="112" y="196">α</text>
+          </svg>
+          <figcaption>Elige seno, coseno o tangente segun los lados conocidos y el lado buscado.</figcaption>
+        </figure>`,
+      "C05.S03": `
+        <figure class="semantic-figure">
+          <svg viewBox="0 0 420 320" role="img" aria-labelledby="circleTitle circleDesc">
+            <title id="circleTitle">Circulo trigonometrico por cuadrantes</title>
+            <desc id="circleDesc">Circunferencia unidad dividida en cuatro cuadrantes con los signos de seno y coseno.</desc>
+            <line class="diagram-axis" x1="30" y1="160" x2="390" y2="160"></line>
+            <line class="diagram-axis" x1="210" y1="295" x2="210" y2="25"></line>
+            <circle class="diagram-shape" cx="210" cy="160" r="110"></circle>
+            <text x="280" y="90">I: +,+</text><text x="105" y="90">II: −,+</text>
+            <text x="100" y="240">III: −,−</text><text x="275" y="240">IV: +,−</text>
+          </svg>
+          <figcaption>Cada pareja indica los signos de coseno y seno, es decir, de las coordenadas \((x,y)\).</figcaption>
+        </figure>`,
+      "C06.S06": `
+        <figure class="semantic-figure">
+          <svg viewBox="0 0 520 300" role="img" aria-labelledby="parallelogramTitle parallelogramDesc">
+            <title id="parallelogramTitle">Construccion vectorial de un paralelogramo</title>
+            <desc id="parallelogramDesc">Paralelogramo ABCD con lados opuestos paralelos y relacion C igual a B mas D menos A.</desc>
+            <path class="diagram-shape" d="M80 235 L330 205 L445 65 L195 95 Z"></path>
+            <circle class="diagram-point" cx="80" cy="235" r="5"></circle><text x="55" y="260">A</text>
+            <circle class="diagram-point" cx="330" cy="205" r="5"></circle><text x="338" y="228">B</text>
+            <circle class="diagram-point" cx="445" cy="65" r="5"></circle><text x="455" y="60">C</text>
+            <circle class="diagram-point" cx="195" cy="95" r="5"></circle><text x="168" y="90">D</text>
+            <text x="185" y="285">C = B + D − A</text>
+          </svg>
+          <figcaption>Los lados opuestos representan el mismo vector: \(\overrightarrow{AB}=\overrightarrow{DC}\).</figcaption>
+        </figure>`,
+      "C07.S07": `
+        <figure class="semantic-figure">
+          <svg viewBox="0 0 480 360" role="img" aria-labelledby="areaTitle areaDesc">
+            <title id="areaTitle">Triangulo en el plano cartesiano</title>
+            <desc id="areaDesc">Triangulo rectangulo con vertices A uno dos, B uno cinco y C cuatro dos.</desc>
+            <line class="diagram-axis" x1="45" y1="315" x2="445" y2="315"></line><line class="diagram-axis" x1="65" y1="335" x2="65" y2="25"></line>
+            <path class="diagram-shape diagram-fill" d="M135 245 L135 65 L345 245 Z"></path>
+            <circle class="diagram-point" cx="135" cy="245" r="5"></circle><text x="105" y="270">A(1,2)</text>
+            <circle class="diagram-point" cx="135" cy="65" r="5"></circle><text x="78" y="55">B(1,5)</text>
+            <circle class="diagram-point" cx="345" cy="245" r="5"></circle><text x="350" y="270">C(4,2)</text>
+          </svg>
+          <figcaption>Base y altura miden 3 unidades, por lo que el area es \(\frac{3\cdot3}{2}=\frac92\).</figcaption>
+        </figure>`,
+      "C08.S02": `
+        <figure class="semantic-figure">
+          <svg viewBox="0 0 560 360" role="img" aria-labelledby="graphTitle graphDesc">
+            <title id="graphTitle">Grafica de una parabola en un intervalo</title>
+            <desc id="graphDesc">Parabola concava hacia abajo, definida entre menos uno y tres, con maximo en uno cuatro.</desc>
+            <g class="diagram-grid"><path d="M70 45V315M150 45V315M230 45V315M310 45V315M390 45V315M470 45V315M70 75H500M70 135H500M70 195H500M70 255H500M70 315H500"></path></g>
+            <line class="diagram-axis" x1="50" y1="315" x2="515" y2="315"></line><line class="diagram-axis" x1="150" y1="335" x2="150" y2="30"></line>
+            <path class="diagram-accent diagram-curve" d="M70 255 C155 75 230 75 310 75 C390 75 455 170 470 255"></path>
+            <circle class="diagram-point" cx="230" cy="75" r="6"></circle><text x="242" y="65">maximo (1,4)</text>
+            <text x="61" y="340">−1</text><text x="224" y="340">1</text><text x="463" y="340">3</text>
+          </svg>
+          <figcaption>La funcion crece hasta \(x=1\), alcanza el valor maximo \(4\) y despues decrece.</figcaption>
+        </figure>`
+    };
+    return figures[sectionId] || "";
   }
 
   function renderSectionActivities(activities) {
@@ -821,7 +1101,10 @@
           </div>
           <div class="hero__actions">
             <button class="primary-button" id="generateExamButton" type="button">Generar simulacro</button>
+            <button class="ghost-button" id="exportProgressButton" type="button">Exportar progreso</button>
+            <button class="ghost-button" id="importProgressButton" type="button">Importar progreso</button>
             <button class="ghost-button" id="resetProgressButton" type="button">Reiniciar progreso</button>
+            <input id="progressImportInput" type="file" accept=".json,application/json" hidden>
           </div>
         </article>
 
@@ -845,21 +1128,54 @@
 
       ${examPanel}
 
-      <section class="practice-layout">
-        ${filteredQuestions.map(renderQuizCard).join("")}
-      </section>
+      ${renderPracticeSession(filteredQuestions)}
     `;
 
     wirePracticeEvents();
   }
 
+  function renderPracticeSession(questions) {
+    if (!questions.length) {
+      return `
+        <section class="empty-state" role="status">
+          <p class="card-kicker">Sesion completada</p>
+          <h2>No hay preguntas con este filtro</h2>
+          <p>Cambia el estado o el tema para continuar practicando.</p>
+        </section>
+      `;
+    }
+
+    state.practiceIndex = clamp(state.practiceIndex, 0, questions.length - 1);
+    const question = questions[state.practiceIndex];
+    const percent = Math.round(((state.practiceIndex + 1) / questions.length) * 100);
+    return `
+      <section class="study-session" aria-labelledby="practiceSessionTitle">
+        <div class="study-session__header">
+          <div>
+            <p class="card-kicker">Sesion guiada</p>
+            <h2 id="practiceSessionTitle">Pregunta ${state.practiceIndex + 1} de ${questions.length}</h2>
+          </div>
+          <span class="badge-soft">${percent}%</span>
+        </div>
+        <div class="study-session__progress" aria-hidden="true"><span style="width: ${percent}%"></span></div>
+        ${renderQuizCard(question)}
+        <div class="study-session__navigation" aria-label="Navegacion entre preguntas">
+          <button class="ghost-button" id="practicePrevButton" type="button" ${state.practiceIndex === 0 ? "disabled" : ""}>Anterior</button>
+          <button class="ghost-button" id="practiceRandomButton" type="button">Pregunta aleatoria</button>
+          <button class="primary-button" id="practiceNextButton" type="button" ${state.practiceIndex === questions.length - 1 ? "disabled" : ""}>Siguiente</button>
+        </div>
+      </section>
+    `;
+  }
+
   function renderQuizCard(question) {
     const record = getQuestionRecord(question.id);
     const status = getQuestionStatus(question.id);
+    const isRevealed = state.revealedQuestions.has(question.id);
     const chapterTitle = (getChapter(question.chapterId) || { title: question.chapterId }).title;
-    const feedback = record
+    const feedback = record && isRevealed
       ? `
-          <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}">
+          <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}" role="status" aria-live="polite">
             <div class="quiz-feedback__head">
               <strong>${record.lastCorrect ? "Respuesta correcta" : "Conviene revisarla"}</strong>
               <span>${statusLabel(status)}</span>
@@ -881,11 +1197,12 @@
         </div>
         <h3>${question.prompt}</h3>
         <div class="quiz-options">
-          ${question.options
-            .map((option, index) => {
-              const isSelected = record && record.selectedIndex === index;
-              const isCorrect = record && question.correctIndex === index;
-              const className = record
+          ${getQuestionOptionOrder(question)
+            .map((index) => {
+              const option = question.options[index];
+              const isSelected = isRevealed && record && record.selectedIndex === index;
+              const isCorrect = isRevealed && record && question.correctIndex === index;
+              const className = isRevealed && record
                 ? isCorrect
                   ? "option-button is-correct"
                   : isSelected
@@ -939,8 +1256,9 @@
                   </div>
                   <h3>${question.prompt}</h3>
                   <div class="quiz-options">
-                    ${question.options
-                      .map((option, index) => {
+                    ${getQuestionOptionOrder(question)
+                      .map((index) => {
+                        const option = question.options[index];
                         const checked = state.examAnswers[question.id] === index ? "checked" : "";
                         const isCorrect = state.examSubmitted && question.correctIndex === index;
                         const isWrong =
@@ -1033,7 +1351,7 @@
         <article class="summary-card">
           <p class="card-kicker">Dominadas</p>
           <h2>${stats.mastered}</h2>
-          <p>Ya las has identificado como estables en este dispositivo.</p>
+          <p>Recordadas con exito en dos dias distintos; volveran a aparecer cuando toque revisar.</p>
         </article>
         <article class="summary-card">
           <p class="card-kicker">Mazo total</p>
@@ -1100,7 +1418,7 @@
             <ol>
               <li>Intenta recordar la idea antes de girar la carta.</li>
               <li>Marca como repasar si dudas en algun paso clave.</li>
-              <li>Reserva el estado dominada para lo que ya salga con soltura.</li>
+              <li>Una tarjeta se consolida tras recordarla en dos dias distintos.</li>
               <li>Combina este mazo con los test del mismo capitulo.</li>
             </ol>
           </div>
@@ -1136,12 +1454,12 @@
         </div>
 
         <div class="flashcard ${state.flashcardFlipped ? "is-flipped" : ""}" id="flashcardDeck">
-          <article class="flashcard__face flashcard__face--front">
+          <article class="flashcard__face flashcard__face--front" aria-hidden="${state.flashcardFlipped}" ${state.flashcardFlipped ? "inert" : ""}>
             <p class="card-kicker">${FLASHCARD_TYPE_LABELS[card.type] || card.type}</p>
             <h3>${card.front}</h3>
             <p>Piensa la respuesta y gira la tarjeta cuando tengas una explicacion propia.</p>
           </article>
-          <article class="flashcard__face flashcard__face--back">
+          <article class="flashcard__face flashcard__face--back" aria-hidden="${!state.flashcardFlipped}" ${state.flashcardFlipped ? "" : "inert"}>
             <p class="card-kicker">${FLASHCARD_TYPE_LABELS[card.type] || card.type}</p>
             <div class="rich-text">${card.backHtml}</div>
           </article>
@@ -1155,11 +1473,11 @@
         </div>
 
         <div class="hero__actions">
-          <button class="primary-button" id="flashcardMasteredButton" type="button">Marcar como dominada</button>
-          <button class="ghost-button" id="flashcardReviewButton" type="button">Marcar para repasar</button>
+          <button class="primary-button" id="flashcardMasteredButton" type="button" ${state.flashcardFlipped ? "" : "disabled"}>La recordaba</button>
+          <button class="ghost-button" id="flashcardReviewButton" type="button" ${state.flashcardFlipped ? "" : "disabled"}>Necesito repasar</button>
         </div>
 
-        <p class="progress-card__hint">Tarjeta ${state.flashcardIndex + 1} de ${totalCards} en el filtro actual.</p>
+        <p class="progress-card__hint">Tarjeta ${state.flashcardIndex + 1} de ${totalCards}. Primero intenta responder y despues voltea la tarjeta para autoevaluarte.</p>
       </section>
     `;
   }
@@ -1268,12 +1586,12 @@
             <h1>Situaciones exigentes por tema, conectadas con la teoria que hace falta activar en cada caso.</h1>
             <p>
               Aqui se recoge el banco de problemas inspirado en los pdfs complementarios: modelos completos
-              resueltos y propuestas por apartado para entrenar lectura, modelizacion y justificacion.
+              resueltos y retos de transferencia por apartado para entrenar lectura, modelizacion y justificacion.
             </p>
           </div>
           <aside class="summary-card summary-card--accent">
             <p class="card-kicker">Cobertura actual</p>
-            <h2>${visibleModels.length} modelos y ${visibleInventory.length} propuestas</h2>
+            <h2>${visibleModels.length} modelos y ${visibleInventory.length} retos</h2>
             <p>Cada elemento incorpora enlaces directos a la teoria necesaria para preparar o repasar el contenido.</p>
           </aside>
         </div>
@@ -1286,9 +1604,9 @@
           <p>Problemas desarrollados con datos, respuesta breve y solucion completa.</p>
         </article>
         <article class="summary-card">
-          <p class="card-kicker">Semillas por apartado</p>
+          <p class="card-kicker">Retos por apartado</p>
           <h2>${visibleInventory.length}</h2>
-          <p>Propuestas listas para trabajar por seccion o para convertir en tareas de clase.</p>
+          <p>Tareas abiertas con nucleo tecnico, apoyo visual, pauta de entrega y solucion de contraste.</p>
         </article>
         <article class="summary-card">
           <p class="card-kicker">Nivel</p>
@@ -1331,7 +1649,7 @@
             <ol>
               <li>Abre primero el modelo completo del capitulo para ver el tipo de razonamiento esperado.</li>
               <li>Usa los enlaces de teoria para volver justo al apartado que sostiene el problema.</li>
-              <li>Continua con las semillas por seccion para variar contexto sin perder foco matematico.</li>
+              <li>Continua con los retos por seccion para variar contexto sin perder foco matematico.</li>
             </ol>
           </div>
         </article>
@@ -1392,9 +1710,9 @@
             <p class="card-kicker">${(CHAPTER_META[chapter.id] || {}).block || "Bloque"}</p>
             <h2>${chapter.id} - ${chapter.title}</h2>
           </div>
-          <span class="badge-soft">${items.length} propuestas</span>
+          <span class="badge-soft">${items.length} retos</span>
         </div>
-        <p>Propuestas contextualizadas por apartado para ampliar la teoria del capitulo con situaciones reales y exigentes.</p>
+        <p>Retos contextualizados por apartado con nucleo matematico, apoyo visual y criterios de entrega.</p>
         <div class="inventory-list">
           ${items.map(renderProblemSeedCard).join("")}
         </div>
@@ -1403,6 +1721,15 @@
   }
 
   function renderProblemSeedCard(item) {
+    const section = getSection(item.sectionId);
+    const practiceItems = section?.practice?.items || [];
+    const technicalCore = section?.challenge?.html
+      ? section.challenge.html
+      : practiceItems.length
+        ? `<p>${practiceItems[practiceItems.length - 1].prompt}</p>`
+        : `<p>Construye y resuelve un modelo que use de forma explicita ${item.sectionTitle.toLowerCase()}.</p>`;
+    const answerHtml = section?.challenge?.answerHtml || section?.practice?.answersHtml || "";
+    const solutionHtml = section?.challenge?.solutionHtml || section?.practice?.solutionsHtml || "";
     return `
       <details class="inline-details inventory-item">
         <summary>
@@ -1413,9 +1740,22 @@
           <span class="status-pill status-pill--cool">${item.level}</span>
         </summary>
         <div class="inventory-item__body">
-          <p><strong>Contexto:</strong> ${item.prompt}</p>
-          <p><strong>Apoyo visual sugerido:</strong> ${item.visual}</p>
+          <div class="challenge-brief">
+            <p class="card-kicker">Situacion</p>
+            <p>${item.prompt}. Trabajas como responsable del analisis y debes justificar una decision comprensible para una persona no especialista.</p>
+            <p class="card-kicker">Nucleo matematico</p>
+            <div class="rich-text">${technicalCore}</div>
+            <ol>
+              <li>Identifica datos, incognitas, restricciones y supuestos.</li>
+              <li>Resuelve el nucleo tecnico mostrando el modelo y las decisiones importantes.</li>
+              <li>Interpreta el resultado en el contexto y estudia que cambia si un dato varia un 10 por ciento.</li>
+              <li>Cierra con una recomendacion y una comprobacion independiente.</li>
+            </ol>
+          </div>
+          ${renderSuggestedVisual(item.visual, item.id, item.chapterId)}
           ${renderTheoryLinksPanel(item.relatedTheorySections)}
+          ${answerHtml ? `<details class="inline-details"><summary>Ver respuesta de contraste</summary><div class="rich-text">${answerHtml}</div></details>` : ""}
+          ${solutionHtml ? `<details class="inline-details"><summary>Ver solucion y procedimiento</summary><div class="rich-text">${solutionHtml}</div></details>` : ""}
         </div>
       </details>
     `;
@@ -1442,7 +1782,7 @@
             <p class="card-kicker">Examenes por secciones y por bloques</p>
             <h1>Modelos de evaluacion dificiles, resueltos y conectados con los apartados que necesitas reactivar.</h1>
             <p>
-              La seccion combina mini-examenes por apartado, examenes por bloques y un inventario de propuestas
+              La seccion combina mini-examenes por apartado, examenes por bloques y pruebas autocontenidas
               para preparar evaluaciones con criterio y volver a la teoria precisa en cada momento.
             </p>
           </div>
@@ -1466,9 +1806,9 @@
           <p>Versiones mas largas para mezclar contenidos de un mismo bloque curricular.</p>
         </article>
         <article class="summary-card">
-          <p class="card-kicker">Semillas de examen</p>
+          <p class="card-kicker">Pruebas por seccion</p>
           <h2>${visibleExamSeeds.length}</h2>
-          <p>Propuestas por apartado para construir pruebas relacionadas con cada tema.</p>
+          <p>Pruebas breves con ejercicios concretos, teoria asociada y correccion desplegable.</p>
         </article>
       </section>
 
@@ -1613,9 +1953,9 @@
             <p class="card-kicker">${(CHAPTER_META[chapter.id] || {}).block || "Bloque"}</p>
             <h2>${chapter.id} - ${chapter.title}</h2>
           </div>
-          <span class="badge-soft">${items.length} propuestas</span>
+          <span class="badge-soft">${items.length} pruebas</span>
         </div>
-        <p>Banco de semillas de examen para construir pruebas por secciones con enlace directo a la teoria de soporte.</p>
+        <p>Banco de pruebas breves por secciones con preguntas reales, tiempo orientativo y solucion.</p>
         <div class="inventory-list">
           ${items.map(renderExamSeedCard).join("")}
         </div>
@@ -1624,6 +1964,14 @@
   }
 
   function renderExamSeedCard(item) {
+    const section = getSection(item.sectionId);
+    const practiceItems = section?.practice?.items || [];
+    const guidedItems = section?.guidedExercises || [];
+    const questions = practiceItems.length
+      ? practiceItems.slice(0, 3).map((exercise) => exercise.prompt)
+      : guidedItems.slice(0, 3).map((exercise) => `${exercise.title}: ${stripHtml(exercise.promptHtml)}`);
+    const answerHtml = section?.practice?.answersHtml || guidedItems.map((exercise) => exercise.answerHtml).filter(Boolean).join("");
+    const solutionHtml = section?.practice?.solutionsHtml || guidedItems.map((exercise) => exercise.solutionHtml).filter(Boolean).join("");
     return `
       <details class="inline-details inventory-item">
         <summary>
@@ -1634,9 +1982,16 @@
           <span class="status-pill status-pill--cool">${item.duration}</span>
         </summary>
         <div class="inventory-item__body">
-          <p><strong>Mini-examen propuesto:</strong> ${item.title}</p>
-          <p><strong>Bloque:</strong> ${item.blockLabel}</p>
+          <p><strong>Consigna:</strong> ${item.title}. Responde sin consultar la solucion y justifica cada transformacion relevante.</p>
+          <ol class="exam-question-list">
+            ${questions.length ? questions.map((question) => `<li>${question}</li>`).join("") : `<li>Explica y aplica el procedimiento central de ${item.sectionTitle} en un ejemplo propio.</li>`}
+          </ol>
+          <div class="rubric-strip">
+            <span>Planteamiento: 30%</span><span>Procedimiento: 45%</span><span>Comprobacion y comunicacion: 25%</span>
+          </div>
           ${renderTheoryLinksPanel(item.relatedTheorySections)}
+          ${answerHtml ? `<details class="inline-details"><summary>Ver respuestas</summary><div class="rich-text">${answerHtml}</div></details>` : ""}
+          ${solutionHtml ? `<details class="inline-details"><summary>Ver correccion completa</summary><div class="rich-text">${solutionHtml}</div></details>` : ""}
         </div>
       </details>
     `;
@@ -1645,6 +2000,7 @@
   function renderActivityCard(activity, compact) {
     const record = getActivityRecord(activity.id);
     const status = getActivityStatus(activity.id);
+    const isRevealed = state.revealedActivities.has(activity.id);
     const meta = getSectionTitle(activity.sectionId);
     const commonHeader = `
       <div class="activity-card__head">
@@ -1658,17 +2014,17 @@
     `;
 
     if (activity.type === "mcq") {
-      const feedback = record
+      const feedback = record && isRevealed
         ? `
-            <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}">
+            <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}" role="status" aria-live="polite">
               <strong>${record.lastCorrect ? "Acertada" : "Ajustemos la idea"}</strong>
               <p>${activity.explanation}</p>
             </div>
           `
         : `
-            <div class="quiz-feedback">
-              <strong>Prueba rapida</strong>
-              <p>${activity.explanation}</p>
+            <div class="quiz-feedback quiz-feedback--neutral">
+              <strong>Piensa antes de elegir</strong>
+              <p>Selecciona una opcion. Despues recibiras una explicacion vinculada al procedimiento.</p>
             </div>
           `;
 
@@ -1678,9 +2034,9 @@
           <div class="quiz-options">
             ${activity.options
               .map((option, index) => {
-                const isSelected = record && record.selectedIndex === index;
-                const isCorrect = record && activity.correctIndex === index;
-                const className = record
+                const isSelected = isRevealed && record && record.selectedIndex === index;
+                const isCorrect = isRevealed && record && activity.correctIndex === index;
+                const className = isRevealed && record
                   ? isCorrect
                     ? "option-button is-correct"
                     : isSelected
@@ -1706,9 +2062,9 @@
     }
 
     if (activity.type === "numeric") {
-      const feedback = record
+      const feedback = record && isRevealed
         ? `
-            <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}">
+            <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}" role="status" aria-live="polite">
               <strong>${record.lastCorrect ? "Resultado correcto" : "Todavia no"}</strong>
               <p>${activity.explanation}</p>
             </div>
@@ -1822,18 +2178,93 @@
       `;
     }
 
+    if (activity.type === "custom-sequence") {
+      const selected = getSequenceDraft(activity);
+      const available = getSequencePool(activity).filter((index) => !selected.includes(index));
+      const feedback = isRevealed && record
+        ? `
+            <div class="quiz-feedback" data-state="${record.lastCorrect ? "correct" : "wrong"}" role="status" aria-live="polite">
+              <strong>${record.lastCorrect ? "Procedimiento bien ordenado" : "Revisa el orden"}</strong>
+              <p>${activity.explanation}</p>
+            </div>
+          `
+        : `
+            <div class="quiz-feedback quiz-feedback--neutral">
+              <strong>Construye el procedimiento</strong>
+              <p>Pulsa los pasos en el orden en que los aplicarias. Puedes deshacer antes de comprobar.</p>
+            </div>
+          `;
+      return `
+        <article class="activity-card ${compact ? "activity-card--compact" : ""}">
+          ${commonHeader}
+          <div class="sequence-builder">
+            <div>
+              <p class="card-kicker">Tu orden</p>
+              <ol class="sequence-selected">
+                ${selected.length ? selected.map((index) => `<li>${activity.steps[index]}</li>`).join("") : "<li>Empieza seleccionando un paso.</li>"}
+              </ol>
+            </div>
+            <div>
+              <p class="card-kicker">Pasos disponibles</p>
+              <div class="activity-tabs">
+                ${available.map((index) => `<button class="chip-button" type="button" data-sequence-add="${activity.id}" data-sequence-index="${index}">${activity.steps[index]}</button>`).join("")}
+              </div>
+            </div>
+          </div>
+          <div class="hero__actions">
+            <button class="ghost-button" type="button" data-sequence-undo="${activity.id}" ${selected.length ? "" : "disabled"}>Deshacer</button>
+            <button class="ghost-button" type="button" data-sequence-reset="${activity.id}" ${selected.length ? "" : "disabled"}>Reiniciar</button>
+            <button class="primary-button" type="button" data-sequence-check="${activity.id}" ${selected.length === activity.steps.length ? "" : "disabled"}>Comprobar orden</button>
+          </div>
+          ${feedback}
+        </article>
+      `;
+    }
+
+    if (activity.type === "custom-regression-lab") {
+      return `
+        <article class="activity-card ${compact ? "activity-card--compact" : ""}">
+          ${commonHeader}
+          <label class="range-control">
+            <span><strong>Altura del ultimo punto:</strong> <output id="regressionOutlierValue">${state.customLabs.regressionOutlier}</output></span>
+            <input class="range-input" id="regressionOutlierSlider" type="range" min="5" max="40" step="1" value="${state.customLabs.regressionOutlier}">
+          </label>
+          <div class="diagram-panel" id="regressionDiagram"></div>
+          <div class="activity-output" id="regressionFeedback" role="status" aria-live="polite"></div>
+        </article>
+      `;
+    }
+
+    if (activity.type === "custom-probability-simulator") {
+      return `
+        <article class="activity-card ${compact ? "activity-card--compact" : ""}">
+          ${commonHeader}
+          <div class="hero__actions">
+            <button class="secondary-button" type="button" data-simulate-count="10">Lanzar 10</button>
+            <button class="secondary-button" type="button" data-simulate-count="100">Lanzar 100</button>
+            <button class="primary-button" type="button" data-simulate-count="1000">Lanzar 1000</button>
+            <button class="ghost-button" id="probabilityResetButton" type="button">Reiniciar</button>
+          </div>
+          <div class="simulation-bars" id="probabilityDiagram"></div>
+          <div class="activity-output" id="probabilityFeedback" role="status" aria-live="polite"></div>
+        </article>
+      `;
+    }
+
     return "";
   }
 
   function wirePracticeEvents() {
     document.getElementById("practiceChapterSelect")?.addEventListener("change", (event) => {
       state.practiceChapter = event.target.value;
+      state.practiceIndex = 0;
       window.localStorage.setItem(STORAGE_KEYS.practiceChapter, state.practiceChapter);
       window.location.hash = state.practiceChapter === "ALL" ? "#/practica" : `#/practica/${state.practiceChapter}`;
     });
 
     document.getElementById("practiceStatusSelect")?.addEventListener("change", (event) => {
       state.practiceStatus = event.target.value;
+      state.practiceIndex = 0;
       window.localStorage.setItem(STORAGE_KEYS.practiceStatus, state.practiceStatus);
       renderPractice();
       postRender();
@@ -1847,6 +2278,9 @@
     document.getElementById("generateExamButton")?.addEventListener("click", () => {
       const source = getFilteredQuestions();
       state.examIds = shuffle(source.map((question) => question.id)).slice(0, Math.min(state.examCount, source.length));
+      state.examIds.forEach((questionId) => {
+        delete state.questionOptionOrders[questionId];
+      });
       state.examAnswers = {};
       state.examSubmitted = false;
       renderPractice();
@@ -1854,11 +2288,51 @@
     });
 
     document.getElementById("resetProgressButton")?.addEventListener("click", () => {
+      const confirmed = window.confirm(
+        "Se borraran los test, actividades, flashcards y XP guardados en este dispositivo. Esta accion no se puede deshacer."
+      );
+      if (!confirmed) {
+        return;
+      }
       state.progress = createEmptyProgress();
       state.examAnswers = {};
       state.examIds = [];
       state.examSubmitted = false;
+      state.revealedQuestions.clear();
+      state.revealedActivities.clear();
       saveProgress();
+      renderPractice();
+      postRender();
+    });
+
+    document.getElementById("exportProgressButton")?.addEventListener("click", exportProgress);
+    document.getElementById("importProgressButton")?.addEventListener("click", () => {
+      document.getElementById("progressImportInput")?.click();
+    });
+    document.getElementById("progressImportInput")?.addEventListener("change", importProgress);
+
+    document.getElementById("practicePrevButton")?.addEventListener("click", () => {
+      state.practiceIndex = Math.max(0, state.practiceIndex - 1);
+      renderPractice();
+      postRender();
+    });
+
+    document.getElementById("practiceNextButton")?.addEventListener("click", () => {
+      const total = getFilteredQuestions().length;
+      state.practiceIndex = Math.min(Math.max(0, total - 1), state.practiceIndex + 1);
+      renderPractice();
+      postRender();
+    });
+
+    document.getElementById("practiceRandomButton")?.addEventListener("click", () => {
+      const total = getFilteredQuestions().length;
+      if (total > 1) {
+        let nextIndex = state.practiceIndex;
+        while (nextIndex === state.practiceIndex) {
+          nextIndex = Math.floor(Math.random() * total);
+        }
+        state.practiceIndex = nextIndex;
+      }
       renderPractice();
       postRender();
     });
@@ -2085,6 +2559,84 @@
     if (document.getElementById("functionDiagram")) {
       syncFunctionControls();
     }
+
+    dom.app.querySelectorAll("[data-sequence-add]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const activity = getActivity(button.dataset.sequenceAdd);
+        if (!activity) {
+          return;
+        }
+        getSequenceDraft(activity).push(Number(button.dataset.sequenceIndex));
+        rerenderPreservingScroll();
+      });
+    });
+
+    dom.app.querySelectorAll("[data-sequence-undo]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const activity = getActivity(button.dataset.sequenceUndo);
+        if (activity) {
+          getSequenceDraft(activity).pop();
+          rerenderPreservingScroll();
+        }
+      });
+    });
+
+    dom.app.querySelectorAll("[data-sequence-reset]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.activityDrafts[`sequence-${button.dataset.sequenceReset}`] = [];
+        state.revealedActivities.delete(button.dataset.sequenceReset);
+        rerenderPreservingScroll();
+      });
+    });
+
+    dom.app.querySelectorAll("[data-sequence-check]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const activity = getActivity(button.dataset.sequenceCheck);
+        if (!activity) {
+          return;
+        }
+        const selected = getSequenceDraft(activity);
+        const correct = selected.length === activity.steps.length && selected.every((value, index) => value === index);
+        updateActivityProgress(activity.id, correct, { order: [...selected] });
+        rerenderPreservingScroll();
+      });
+    });
+
+    document.getElementById("regressionOutlierSlider")?.addEventListener("input", (event) => {
+      state.customLabs.regressionOutlier = Number(event.target.value);
+      updateRegressionLab();
+    });
+    if (document.getElementById("regressionDiagram")) {
+      updateRegressionLab();
+    }
+
+    dom.app.querySelectorAll("[data-simulate-count]").forEach((button) => {
+      button.addEventListener("click", () => {
+        runProbabilitySimulation(Number(button.dataset.simulateCount));
+      });
+    });
+    document.getElementById("probabilityResetButton")?.addEventListener("click", () => {
+      state.customLabs.probability = { trials: 0, heads: 0 };
+      updateProbabilityLab();
+    });
+    if (document.getElementById("probabilityDiagram")) {
+      updateProbabilityLab();
+    }
+  }
+
+  function getSequenceDraft(activity) {
+    const key = `sequence-${activity.id}`;
+    if (!Array.isArray(state.activityDrafts[key])) {
+      state.activityDrafts[key] = [];
+    }
+    return state.activityDrafts[key];
+  }
+
+  function getSequencePool(activity) {
+    if (!Array.isArray(state.sequencePools[activity.id])) {
+      state.sequencePools[activity.id] = shuffle(activity.steps.map((step, index) => index));
+    }
+    return state.sequencePools[activity.id];
   }
 
   function applyAnswer(questionId, selectedIndex, grantXp = true) {
@@ -2099,7 +2651,13 @@
       incorrectAttempts: 0,
       correctStreak: 0
     };
+    const now = new Date();
+    const today = now.toISOString().slice(0, 10);
     const correct = question.correctIndex === selectedIndex;
+    const successfulDays = Array.isArray(previous.successfulDays) ? [...previous.successfulDays] : [];
+    if (correct && !successfulDays.includes(today)) {
+      successfulDays.push(today);
+    }
     const next = {
       attempts: previous.attempts + 1,
       correctAttempts: previous.correctAttempts + (correct ? 1 : 0),
@@ -2107,12 +2665,21 @@
       correctStreak: correct ? previous.correctStreak + 1 : 0,
       selectedIndex,
       lastCorrect: correct,
-      lastSeenAt: new Date().toISOString()
+      successfulDays,
+      lastSeenAt: now.toISOString(),
+      nextReviewAt: correct
+        ? addDaysIso(now, successfulDays.length >= 2 ? 7 : 1)
+        : now.toISOString()
     };
-    next.mastered = next.correctStreak >= 2;
+    next.mastered = correct && successfulDays.length >= 2;
+    next.everMastered = Boolean(previous.everMastered || next.mastered);
 
     state.progress.questions[questionId] = next;
-    if (grantXp && correct && !previous.mastered) {
+    state.revealedQuestions.add(questionId);
+    if (grantXp && correct && previous.attempts === 0) {
+      state.progress.xp += 2;
+    }
+    if (grantXp && next.mastered && !previous.everMastered) {
       state.progress.xp += question.difficulty === "estrategia" ? 10 : question.difficulty === "media" ? 8 : 6;
     }
     saveProgress();
@@ -2136,6 +2703,7 @@
     };
     next.mastered = next.correctStreak >= 1 && correct;
     state.progress.activities[activityId] = next;
+    state.revealedActivities.add(activityId);
     if (correct && !previous.mastered) {
       state.progress.xp += 4;
     }
@@ -2161,17 +2729,27 @@
   }
 
   function recordFlashcardDecision(cardId, decision) {
-    const previous = getFlashcardRecord(cardId) || { seen: 0, masteredCount: 0, reviewCount: 0 };
+    const previous = getFlashcardRecord(cardId) || { seen: 0, masteredCount: 0, reviewCount: 0, successfulDays: [] };
+    const now = new Date();
+    const today = now.toISOString().slice(0, 10);
+    const successfulDays = Array.isArray(previous.successfulDays) ? [...new Set(previous.successfulDays)] : [];
+    if (decision === "mastered" && !successfulDays.includes(today)) {
+      successfulDays.push(today);
+    }
+    const mastered = decision === "mastered" && successfulDays.length >= 2;
     const next = {
       seen: previous.seen + 1,
       masteredCount: previous.masteredCount + (decision === "mastered" ? 1 : 0),
       reviewCount: previous.reviewCount + (decision === "review" ? 1 : 0),
       lastDecision: decision,
-      lastSeenAt: new Date().toISOString()
+      successfulDays,
+      mastered,
+      everMastered: Boolean(previous.everMastered || mastered),
+      nextReviewAt: decision === "review" ? now.toISOString() : addDaysIso(now, mastered ? 7 : 1),
+      lastSeenAt: now.toISOString()
     };
-    next.mastered = decision === "mastered" && next.masteredCount >= 2;
     state.progress.flashcards[cardId] = next;
-    if (decision === "mastered" && !previous.mastered) {
+    if (mastered && !previous.everMastered) {
       state.progress.xp += 3;
     }
     saveProgress();
@@ -2276,10 +2854,10 @@
     if (!record || !record.attempts) {
       return "new";
     }
-    if (record.mastered) {
+    if (record.mastered && !isReviewDue(record.nextReviewAt)) {
       return "mastered";
     }
-    if (!record.lastCorrect || record.incorrectAttempts > 0) {
+    if (!record.lastCorrect || isReviewDue(record.nextReviewAt)) {
       return "review";
     }
     return "learning";
@@ -2304,10 +2882,10 @@
     if (!record || !record.seen) {
       return "new";
     }
-    if (record.mastered) {
+    if (record.mastered && !isReviewDue(record.nextReviewAt)) {
       return "mastered";
     }
-    if (record.lastDecision === "review") {
+    if (record.lastDecision === "review" || isReviewDue(record.nextReviewAt)) {
       return "review";
     }
     return "learning";
@@ -2317,21 +2895,22 @@
     if (!record) {
       return "Sin intentos aun";
     }
-    return `${record.attempts} intento(s) - ${record.correctAttempts} acierto(s)`;
+    const successfulDays = Array.isArray(record.successfulDays) ? record.successfulDays.length : 0;
+    const reviewText = record.nextReviewAt ? ` - repaso ${formatReviewDate(record.nextReviewAt)}` : "";
+    return `${record.attempts} intento(s) - ${successfulDays}/2 dias consolidados${reviewText}`;
   }
 
   function updateProgressUi() {
     const masteredQuestions = questionBank.filter((question) => getQuestionStatus(question.id) === "mastered").length;
     const reviewQuestions = questionBank.filter((question) => getQuestionStatus(question.id) === "review").length;
+    const reviewCards = flashcardBank.filter((card) => getFlashcardStatus(card.id) === "review").length;
+    const masteredActivities = activityBank.filter((activity) => getActivityStatus(activity.id) === "mastered").length;
     const progressPercent = questionBank.length ? Math.round((masteredQuestions / questionBank.length) * 100) : 0;
 
     dom.xpValue.textContent = String(state.progress.xp);
     dom.quizValue.textContent = `${masteredQuestions}/${questionBank.length}`;
     dom.progressFill.style.width = `${progressPercent}%`;
-    dom.progressHint.textContent =
-      reviewQuestions > 0
-        ? `Tienes ${reviewQuestions} pregunta(s) en la zona de por aprender.`
-        : "Avanza bloque a bloque: teoria, actividad, test y flashcards.";
+    dom.progressHint.textContent = `${reviewQuestions} preguntas y ${reviewCards} tarjetas por repasar. ${masteredActivities}/${activityBank.length} actividades completadas.`;
   }
 
   function loadProgress() {
@@ -2352,18 +2931,18 @@
             correctStreak: answer.correct ? 1 : 0,
             selectedIndex: answer.selectedIndex,
             lastCorrect: Boolean(answer.correct),
-            mastered: Boolean(answer.correct),
+            successfulDays: [],
+            mastered: false,
+            everMastered: false,
             lastSeenAt: new Date().toISOString()
           };
         });
       }
 
-      return {
-        xp: typeof parsed.xp === "number" ? parsed.xp : 0,
-        questions: sanitizeRecordMap(parsed.questions || empty.questions),
-        activities: sanitizeRecordMap(parsed.activities),
-        flashcards: sanitizeRecordMap(parsed.flashcards)
-      };
+      return normalizeProgressData({
+        ...parsed,
+        questions: parsed.questions || empty.questions
+      });
     } catch (error) {
       return createEmptyProgress();
     }
@@ -2382,6 +2961,103 @@
     return value && typeof value === "object" ? value : {};
   }
 
+  function normalizeQuestionRecords(value) {
+    const records = sanitizeRecordMap(value);
+    return Object.fromEntries(
+      Object.entries(records).map(([questionId, record]) => {
+        const successfulDays = Array.isArray(record.successfulDays) ? [...new Set(record.successfulDays)] : [];
+        return [
+          questionId,
+          {
+            ...record,
+            successfulDays,
+            mastered: Boolean(record.mastered && successfulDays.length >= 2),
+            everMastered: Boolean(record.everMastered || (record.mastered && successfulDays.length >= 2))
+          }
+        ];
+      })
+    );
+  }
+
+  function normalizeFlashcardRecords(value) {
+    const records = sanitizeRecordMap(value);
+    return Object.fromEntries(
+      Object.entries(records).map(([cardId, record]) => {
+        const successfulDays = Array.isArray(record.successfulDays) ? [...new Set(record.successfulDays)] : [];
+        const mastered = Boolean(record.mastered && successfulDays.length >= 2);
+        return [
+          cardId,
+          {
+            ...record,
+            successfulDays,
+            mastered,
+            everMastered: Boolean(record.everMastered || mastered)
+          }
+        ];
+      })
+    );
+  }
+
+  function normalizeProgressData(value) {
+    const parsed = value && typeof value === "object" ? value : {};
+    return {
+      xp: typeof parsed.xp === "number" && Number.isFinite(parsed.xp) ? Math.max(0, parsed.xp) : 0,
+      questions: normalizeQuestionRecords(parsed.questions),
+      activities: sanitizeRecordMap(parsed.activities),
+      flashcards: normalizeFlashcardRecords(parsed.flashcards)
+    };
+  }
+
+  function exportProgress() {
+    const payload = {
+      schema: "bach-mat1-progress",
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      progress: state.progress
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `bach-mat1-progreso-${new Date().toISOString().slice(0, 10)}.json`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+    announceStudyMessage("Copia de progreso exportada.");
+  }
+
+  async function importProgress(event) {
+    const input = event.currentTarget;
+    const file = input.files && input.files[0];
+    if (!file) {
+      return;
+    }
+    try {
+      const parsed = JSON.parse(await file.text());
+      const imported = parsed && parsed.progress ? parsed.progress : parsed;
+      if (!imported || typeof imported !== "object") {
+        throw new Error("Formato no valido");
+      }
+      state.progress = normalizeProgressData(imported);
+      state.revealedQuestions.clear();
+      state.revealedActivities.clear();
+      saveProgress();
+      state.practiceIndex = 0;
+      renderPractice();
+      postRender();
+      announceStudyMessage("Progreso importado correctamente.");
+    } catch (error) {
+      announceStudyMessage("No se pudo importar el archivo. Comprueba que sea una copia valida de Bach Mat 1.");
+    } finally {
+      input.value = "";
+    }
+  }
+
+  function announceStudyMessage(message) {
+    if (dom.routeAnnouncer) {
+      dom.routeAnnouncer.textContent = message;
+    }
+  }
+
   function saveProgress() {
     window.localStorage.setItem(STORAGE_KEYS.progress, JSON.stringify(state.progress));
     updateProgressUi();
@@ -2393,12 +3069,16 @@
     const theme = stored || (preferredDark ? "dark" : "light");
     document.body.dataset.theme = theme;
     dom.themeToggle.textContent = theme === "dark" ? "Modo claro" : "Modo oscuro";
+    dom.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+    dom.themeToggle.setAttribute("aria-label", theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
   }
 
   function toggleTheme() {
     const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
     document.body.dataset.theme = nextTheme;
     dom.themeToggle.textContent = nextTheme === "dark" ? "Modo claro" : "Modo oscuro";
+    dom.themeToggle.setAttribute("aria-pressed", String(nextTheme === "dark"));
+    dom.themeToggle.setAttribute("aria-label", nextTheme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
     window.localStorage.setItem(STORAGE_KEYS.theme, nextTheme);
   }
 
@@ -2406,7 +3086,10 @@
     if (!("serviceWorker" in navigator) || window.location.protocol === "file:") {
       return;
     }
-    navigator.serviceWorker.register("./sw.js").catch(() => undefined);
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then((registration) => registration.update())
+      .catch(() => undefined);
   }
 
   function setupInstallPrompt() {
@@ -2446,6 +3129,8 @@
     showTranslationFeedback(`Aplicando traduccion a ${label}...`);
     if (window.location.protocol !== "file:") {
       setGoogleTranslateCookie(language);
+      window.setTimeout(() => window.location.reload(), 450);
+      return;
     }
     scheduleTranslationRefresh(language, true);
   }
@@ -2504,7 +3189,8 @@
       if (attempts < 20) {
         state.translationTimer = window.setTimeout(tick, 300);
       } else {
-        hideTranslationFeedback();
+        showTranslationFeedback("No se ha podido conectar con el servicio de traduccion. Comprueba la conexion e intentalo de nuevo.");
+        window.setTimeout(hideTranslationFeedback, 4500);
         state.translationTimer = null;
       }
     };
@@ -2527,6 +3213,7 @@
     if (dom.languageSelect) {
       dom.languageSelect.value = nextLanguage;
     }
+    document.documentElement.lang = nextLanguage;
     return nextLanguage;
   }
 
@@ -2613,7 +3300,14 @@
     if (!target || !window.MathJax || !window.MathJax.typesetPromise) {
       return Promise.resolve();
     }
-    return window.MathJax.typesetPromise([target]).catch(() => undefined);
+    return window.MathJax.typesetPromise([target])
+      .then(() => {
+        target.querySelectorAll("mjx-container").forEach((container) => {
+          container.classList.add("notranslate");
+          container.setAttribute("translate", "no");
+        });
+      })
+      .catch(() => undefined);
   }
 
   function scrollToRouteTarget(route) {
@@ -2786,6 +3480,110 @@
     typesetMath(document.getElementById("functionFeedback"));
   }
 
+  function updateRegressionLab() {
+    const slider = document.getElementById("regressionOutlierSlider");
+    if (!slider) {
+      return;
+    }
+    const outlier = Number(slider.value);
+    state.customLabs.regressionOutlier = outlier;
+    const points = [3, 5, 7, 9, 11, outlier].map((y, index) => ({ x: index + 1, y }));
+    const stats = calculateLinearStats(points);
+    const success = Math.abs(stats.r) < 0.85;
+    document.getElementById("regressionOutlierValue").textContent = String(outlier);
+    document.getElementById("regressionDiagram").innerHTML = buildRegressionSvg(points, stats);
+    document.getElementById("regressionFeedback").innerHTML = `
+      <p><strong>Recta ajustada:</strong> \(\hat y=${formatSigned(stats.slope)}x${formatIntercept(stats.intercept)}\)</p>
+      <p><strong>Correlacion:</strong> \(r=${formatDecimal(stats.r)}\) - <strong>determinacion:</strong> \(R^2=${formatDecimal(stats.r * stats.r)}\)</p>
+      <div class="quiz-feedback" data-state="${success ? "correct" : "wrong"}">
+        <strong>${success ? "Has roto la aparente relacion lineal" : "La tendencia sigue siendo muy lineal"}</strong>
+        <p>${
+          success
+            ? "Un solo punto influyente ha cambiado mucho el ajuste. Antes de interpretar r, siempre hay que mirar la nube."
+            : "Aleja el ultimo punto de la tendencia y observa como cambian la recta, r y R cuadrado."
+        }</p>
+      </div>
+    `;
+    if (success) {
+      unlockCustomActivity("ACT-C10-01");
+    }
+    typesetMath(document.getElementById("regressionFeedback"));
+  }
+
+  function calculateLinearStats(points) {
+    const meanX = points.reduce((sum, point) => sum + point.x, 0) / points.length;
+    const meanY = points.reduce((sum, point) => sum + point.y, 0) / points.length;
+    const covariance = points.reduce((sum, point) => sum + (point.x - meanX) * (point.y - meanY), 0);
+    const squareX = points.reduce((sum, point) => sum + (point.x - meanX) ** 2, 0);
+    const squareY = points.reduce((sum, point) => sum + (point.y - meanY) ** 2, 0);
+    const slope = covariance / squareX;
+    return {
+      slope,
+      intercept: meanY - slope * meanX,
+      r: squareY ? covariance / Math.sqrt(squareX * squareY) : 0
+    };
+  }
+
+  function buildRegressionSvg(points, stats) {
+    const xMap = (value) => 55 + ((value - 1) / 5) * 410;
+    const yMap = (value) => 270 - (value / 40) * 230;
+    const lineStart = stats.intercept + stats.slope;
+    const lineEnd = stats.intercept + stats.slope * 6;
+    return `
+      <svg viewBox="0 0 520 310" role="img" aria-label="Nube de puntos y recta de regresion">
+        <line class="lab-grid" x1="55" y1="270" x2="480" y2="270"></line>
+        <line class="lab-grid" x1="55" y1="285" x2="55" y2="30"></line>
+        <line class="regression-line" x1="${xMap(1)}" y1="${yMap(lineStart)}" x2="${xMap(6)}" y2="${yMap(lineEnd)}"></line>
+        ${points.map((point, index) => `<circle class="${index === points.length - 1 ? "lab-point lab-point--alert" : "lab-point"}" cx="${xMap(point.x)}" cy="${yMap(point.y)}" r="7"></circle>`).join("")}
+        <text x="470" y="295">x</text><text x="35" y="35">y</text>
+      </svg>
+    `;
+  }
+
+  function runProbabilitySimulation(count) {
+    for (let index = 0; index < count; index += 1) {
+      if (Math.random() < 0.5) {
+        state.customLabs.probability.heads += 1;
+      }
+    }
+    state.customLabs.probability.trials += count;
+    updateProbabilityLab();
+  }
+
+  function updateProbabilityLab() {
+    const diagram = document.getElementById("probabilityDiagram");
+    const feedback = document.getElementById("probabilityFeedback");
+    if (!diagram || !feedback) {
+      return;
+    }
+    const { trials, heads } = state.customLabs.probability;
+    const tails = trials - heads;
+    const relative = trials ? heads / trials : 0;
+    const headsPercent = trials ? relative * 100 : 0;
+    const tailsPercent = trials ? 100 - headsPercent : 0;
+    diagram.innerHTML = `
+      <div><span>Caras</span><div><i style="width:${headsPercent}%"></i></div><strong>${heads}</strong></div>
+      <div><span>Cruces</span><div><i style="width:${tailsPercent}%"></i></div><strong>${tails}</strong></div>
+    `;
+    feedback.innerHTML = trials
+      ? `
+          <p><strong>Ensayos:</strong> ${trials} - <strong>frecuencia relativa de cara:</strong> ${formatDecimal(relative)}</p>
+          <div class="quiz-feedback" data-state="${trials >= 1000 ? "correct" : "wrong"}">
+            <strong>${trials >= 1000 ? "Ya puedes observar la estabilizacion" : "Amplia la simulacion"}</strong>
+            <p>${trials >= 1000 ? "Al crecer el numero de ensayos, la frecuencia relativa tiende a acercarse a 0.5, aunque no tiene por que coincidir exactamente." : "Compara tandas pequenas y grandes para distinguir variabilidad de probabilidad teorica."}</p>
+          </div>
+        `
+      : `
+          <div class="quiz-feedback quiz-feedback--neutral">
+            <strong>Simulacion preparada</strong>
+            <p>Empieza con 10 lanzamientos y aumenta el numero para observar la ley de los grandes numeros.</p>
+          </div>
+        `;
+    if (trials >= 1000) {
+      unlockCustomActivity("ACT-C10-02");
+    }
+  }
+
   function getSelectedFunction() {
     const id = document.getElementById("functionSelect").value;
     return FUNCTION_LIBRARY.find((entry) => entry.id === id) || FUNCTION_LIBRARY[0];
@@ -2793,6 +3591,16 @@
 
   function getPrimaryBlock(section, key) {
     return section[key] && section[key].html ? section[key] : null;
+  }
+
+  function getSection(sectionId) {
+    for (const chapter of content.chapters) {
+      const section = chapter.sections.find((item) => item.id === sectionId);
+      if (section) {
+        return section;
+      }
+    }
+    return null;
   }
 
   function getChapter(chapterId) {
@@ -2873,13 +3681,78 @@
     `;
   }
 
+  function renderSuggestedVisual(label, itemId, chapterId) {
+    if (["C05", "C06", "C07"].includes(chapterId)) {
+      return `
+        <figure class="semantic-figure resource-visual">
+          <svg viewBox="0 0 520 270" role="img" aria-label="Esquema geometrico para organizar los datos del problema">
+            <line class="diagram-axis" x1="45" y1="230" x2="480" y2="230"></line>
+            <line class="diagram-axis" x1="65" y1="250" x2="65" y2="25"></line>
+            ${
+              chapterId === "C05"
+                ? '<path class="diagram-shape diagram-fill" d="M100 220 L430 220 L430 55 Z"></path><path class="diagram-guide" d="M400 220 L400 190 L430 190"></path><text x="235" y="250">base conocida</text><text x="440" y="145">altura</text><text x="120" y="208">α</text>'
+                : chapterId === "C06"
+                  ? '<line class="diagram-accent" x1="120" y1="210" x2="350" y2="75"></line><line class="diagram-shape" x1="120" y1="210" x2="410" y2="180"></line><circle class="diagram-point" cx="120" cy="210" r="5"></circle><text x="92" y="238">origen</text><text x="352" y="68">u</text><text x="415" y="176">v</text>'
+                  : '<path class="diagram-shape diagram-fill" d="M135 205 L195 55 L405 190 Z"></path><circle class="diagram-point" cx="135" cy="205" r="5"></circle><circle class="diagram-point" cx="195" cy="55" r="5"></circle><circle class="diagram-point" cx="405" cy="190" r="5"></circle><text x="105" y="228">A</text><text x="175" y="48">B</text><text x="415" y="195">C</text>'
+            }
+          </svg>
+          <figcaption>${label}. Anota en el dibujo los datos, las incognitas y las unidades antes de operar.</figcaption>
+        </figure>
+      `;
+    }
+
+    if (["C08", "C09", "C10"].includes(chapterId)) {
+      return `
+        <figure class="semantic-figure resource-visual">
+          <svg viewBox="0 0 560 300" role="img" aria-label="Grafico cartesiano para analizar el modelo">
+            <g class="diagram-grid"><path d="M60 40V260M140 40V260M220 40V260M300 40V260M380 40V260M460 40V260M60 60H510M60 110H510M60 160H510M60 210H510M60 260H510"></path></g>
+            <line class="diagram-axis" x1="45" y1="260" x2="520" y2="260"></line><line class="diagram-axis" x1="60" y1="280" x2="60" y2="25"></line>
+            ${
+              chapterId === "C10"
+                ? '<circle class="lab-point" cx="110" cy="225" r="6"></circle><circle class="lab-point" cx="180" cy="198" r="6"></circle><circle class="lab-point" cx="250" cy="170" r="6"></circle><circle class="lab-point" cx="320" cy="138" r="6"></circle><circle class="lab-point" cx="390" cy="112" r="6"></circle><circle class="lab-point lab-point--alert" cx="460" cy="62" r="7"></circle><line class="regression-line" x1="95" y1="232" x2="475" y2="75"></line>'
+                : '<path class="diagram-accent diagram-curve" d="M75 235 C160 220 195 85 285 75 C360 66 420 145 500 55"></path><circle class="diagram-point" cx="285" cy="75" r="6"></circle>'
+            }
+          </svg>
+          <figcaption>${label}. Marca dominio, puntos relevantes, tendencia y limites de validez del modelo.</figcaption>
+        </figure>
+      `;
+    }
+
+    const base = itemId.split("").reduce((sum, char) => sum + char.charCodeAt(0), 0);
+    const values = [base % 17 + 8, base % 13 + 15, base % 11 + 22];
+    return `
+      <div class="resource-visual">
+        <p class="card-kicker">Apoyo visual: ${label}</p>
+        <div class="table-scroll">
+          <table class="math-table">
+            <thead><tr><th scope="col">Escenario</th><th scope="col">Dato principal</th><th scope="col">Variacion</th></tr></thead>
+            <tbody>
+              <tr><td>Referencia</td><td>${values[0]}</td><td>0%</td></tr>
+              <tr><td>Escenario A</td><td>${values[1]}</td><td>+10%</td></tr>
+              <tr><td>Escenario B</td><td>${values[2]}</td><td>-10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
   function uniqueValues(items) {
     return [...new Set((items || []).filter(Boolean))];
   }
 
   function buildQuestionBank(baseQuestions, activities) {
+    const seenPrompts = new Set(baseQuestions.map((question) => normalizeQuestionPrompt(question.prompt)));
     const extras = activities
       .filter((activity) => activity.includeInQuiz && activity.type === "mcq")
+      .filter((activity) => {
+        const key = normalizeQuestionPrompt(activity.prompt);
+        if (seenPrompts.has(key)) {
+          return false;
+        }
+        seenPrompts.add(key);
+        return true;
+      })
       .map((activity) => ({
         id: `AQ-${activity.id}`,
         chapterId: activity.chapterId,
@@ -2893,6 +3766,42 @@
     return [...baseQuestions, ...extras];
   }
 
+  function getQuestionOptionOrder(question) {
+    const current = state.questionOptionOrders[question.id];
+    if (Array.isArray(current) && current.length === question.options.length) {
+      return current;
+    }
+    const order = shuffle(question.options.map((option, index) => index));
+    state.questionOptionOrders[question.id] = order;
+    return order;
+  }
+
+  function normalizeQuestionPrompt(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/\\[()\[\]]/g, "")
+      .replace(/[.,;:!?¿¡]/g, "")
+      .replace(/\s+/g, "");
+  }
+
+  function addDaysIso(date, days) {
+    const next = new Date(date.getTime());
+    next.setUTCDate(next.getUTCDate() + days);
+    return next.toISOString();
+  }
+
+  function isReviewDue(value) {
+    return Boolean(value && Date.parse(value) <= Date.now());
+  }
+
+  function formatReviewDate(value) {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+      return "pendiente";
+    }
+    return parsed.toLocaleDateString("es-ES", { day: "2-digit", month: "2-digit" });
+  }
+
   function buildFlashcardBank(bookContent) {
     const cards = [];
     bookContent.chapters.forEach((chapter) => {
@@ -2904,7 +3813,7 @@
             sectionId: section.id,
             sectionTitle: section.title,
             type: "concepto",
-            front: `Cual es la idea clave de ${section.title}?`,
+            front: `Define con tus palabras y relaciona las ideas clave de: ${section.title}.`,
             backHtml: section.theory.html
           });
         }
@@ -2915,7 +3824,7 @@
             sectionId: section.id,
             sectionTitle: section.title,
             type: "procedimiento",
-            front: `Que pasos deberias seguir en ${section.title}?`,
+            front: `Sin mirar, enumera y justifica los pasos para resolver: ${section.title}.`,
             backHtml: section.method.html
           });
         }
@@ -2926,7 +3835,7 @@
             sectionId: section.id,
             sectionTitle: section.title,
             type: "estrategia",
-            front: `Que error frecuente debes evitar en ${section.title}?`,
+            front: `Detecta el error clave que debes evitar y explica como prevenirlo en: ${section.title}.`,
             backHtml: section.commonError.html
           });
         }

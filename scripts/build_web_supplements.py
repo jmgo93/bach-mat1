@@ -30,6 +30,7 @@ CONTEXT_MODEL_THEORY_MAP = {
     "C07": ["C07.S07", "C07.S08", "C07.S09"],
     "C08": ["C08.S01", "C08.S04", "C08.S10"],
     "C09": ["C09.S07"],
+    "C10": ["C10.S02", "C10.S03", "C10.S07"],
 }
 
 BLOCK_CHAPTER_MAP = {
@@ -39,7 +40,18 @@ BLOCK_CHAPTER_MAP = {
     "B4": ["C07"],
     "B5": ["C08"],
     "B6": ["C09"],
+    "B7": ["C10"],
 }
+
+C10_SECTIONS = [
+    ("C10.S01", "Datos bidimensionales y tablas de contingencia", "Control de habitos de estudio y resultados", "Tabla de contingencia"),
+    ("C10.S02", "Nubes de puntos, correlacion y causalidad", "Auditoria de una relacion cientifica aparente", "Nube de puntos"),
+    ("C10.S03", "Regresion lineal y cuadratica", "Calibracion y prediccion de un sensor", "Grafica de ajuste y residuos"),
+    ("C10.S04", "Muestreo, inferencia y tecnologia", "Encuesta ambiental con riesgo de sesgo", "Tabla de muestra por estratos"),
+    ("C10.S05", "Experimentos aleatorios y algebra de sucesos", "Fiabilidad conjunta de dos componentes", "Diagrama de Venn"),
+    ("C10.S06", "Regla de Laplace y tecnicas de recuento", "Seleccion de equipos de laboratorio", "Arbol de recuento"),
+    ("C10.S07", "Probabilidad condicionada, total y Bayes", "Sistema de alerta con falsos positivos", "Diagrama de arbol"),
+]
 
 
 def clean_text(value: str) -> str:
@@ -291,12 +303,131 @@ def parse_exam_block_models() -> list[dict[str, object]]:
     return models
 
 
+def build_stochastic_supplements() -> dict[str, list[dict[str, object]]]:
+    problem_inventory = [
+        {
+            "id": section_id,
+            "chapterId": "C10",
+            "chapterTitle": "Estadistica, probabilidad e inferencia",
+            "sectionId": section_id,
+            "sectionTitle": title,
+            "prompt": prompt,
+            "visual": visual,
+            "level": "Alta",
+            "relatedTheorySections": [section_id],
+        }
+        for section_id, title, prompt, visual in C10_SECTIONS
+    ]
+    exam_inventory = [
+        {
+            "id": section_id,
+            "chapterId": "C10",
+            "chapterTitle": "Estadistica, probabilidad e inferencia",
+            "sectionId": section_id,
+            "sectionTitle": title,
+            "title": f"Prueba razonada: {title}",
+            "blockId": "B7",
+            "blockLabel": "B7 Sentido estocastico",
+            "duration": "25 min",
+            "relatedTheorySections": [section_id],
+        }
+        for section_id, title, _prompt, _visual in C10_SECTIONS
+    ]
+    problem_models = [
+        {
+            "id": "CTX-C10",
+            "chapterId": "C10",
+            "title": "Alerta de calidad: probabilidad, comunicacion y decision",
+            "promptTitle": "Situacion",
+            "promptHtml": (
+                "<p>El 4% de las piezas de una linea presenta un defecto. Un sistema alerta en el 95% de las piezas "
+                "defectuosas y produce un 3% de falsos positivos entre las correctas. Calcula la probabilidad de alerta, "
+                "la probabilidad de defecto tras una alerta y el numero esperado de revisiones innecesarias en 10 000 piezas.</p>"
+            ),
+            "resourceTitle": "Datos y arbol",
+            "resourceHtml": (
+                "<ul><li>\\(P(D)=0.04\\), \\(P(A\\mid D)=0.95\\).</li>"
+                "<li>\\(P(\\overline D)=0.96\\), \\(P(A\\mid\\overline D)=0.03\\).</li></ul>"
+            ),
+            "answerHtml": "<p>\\(P(A)=0.0668\\), \\(P(D\\mid A)\\approx0.5689\\) y se esperan 288 revisiones innecesarias.</p>",
+            "solutionHtml": (
+                "<p>Por probabilidad total, \\(P(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668\\). "
+                "Aplicando Bayes, \\(P(D\\mid A)=0.038/0.0668\\approx0.5689\\). Los falsos positivos esperados "
+                "son \\(10000\\cdot0.96\\cdot0.03=288\\). La alerta aumenta mucho la probabilidad de defecto, "
+                "pero no equivale a certeza.</p>"
+            ),
+            "relatedTheorySections": ["C10.S05", "C10.S07"],
+        }
+    ]
+    mini_models = [
+        {
+            "id": "MINI-C10.S03",
+            "chapterId": "C10",
+            "sectionId": "C10.S03",
+            "title": "Regresion, residuos y prediccion responsable",
+            "briefTitle": "Mini-examen",
+            "briefHtml": (
+                "<ol><li>Un ajuste es \\(\\hat y=1.8x+0.4\\). Predice para \\(x=6\\) e interpreta la pendiente.</li>"
+                "<li>Si se observa \\(y=12\\), calcula el residuo.</li>"
+                "<li>Explica por que \\(R^2=0.96\\) no autoriza a extrapolar hasta \\(x=100\\).</li></ol>"
+            ),
+            "rubricTitle": "Rubrica",
+            "rubricHtml": "<p>Calculo 40%, interpretacion con unidades 30%, juicio sobre fiabilidad 30%.</p>",
+            "answerHtml": "<p>Prediccion: 11.2; pendiente: 1.8 unidades de y por unidad de x; residuo: 0.8.</p>",
+            "solutionHtml": (
+                "<p>Se obtiene \\(1.8\\cdot6+0.4=11.2\\). El residuo es observado menos predicho: "
+                "\\(12-11.2=0.8\\). El ajuste solo ha sido contrastado en el rango observado; R cuadrado no "
+                "garantiza que el mecanismo continue fuera de el.</p>"
+            ),
+            "blockId": "B7",
+            "blockLabel": "B7 Sentido estocastico",
+            "duration": "25 min",
+            "relatedTheorySections": ["C10.S02", "C10.S03"],
+        }
+    ]
+    block_models = [
+        {
+            "id": "B7",
+            "blockId": "B7",
+            "title": "Datos, incertidumbre y decisiones",
+            "briefTitle": "Examen de bloque",
+            "briefHtml": (
+                "<ol><li>Analiza una tabla de contingencia y compara dos porcentajes condicionados.</li>"
+                "<li>Interpreta una nube con un valor atipico y decide entre ajuste lineal y cuadratico.</li>"
+                "<li>Resuelve un recuento sin orden y una probabilidad condicionada.</li>"
+                "<li>Aplica probabilidad total y Bayes a un sistema con falsos positivos.</li></ol>"
+            ),
+            "answerHtml": "<p>La correccion exige denominadores condicionados, lectura grafica previa, recuento coherente y arbol completo.</p>",
+            "solutionHtml": (
+                "<p>Modelo de correccion: identificar primero la poblacion condicionada; justificar el ajuste con nube, residuos y R cuadrado; "
+                "usar combinaciones solo si el orden no importa; multiplicar ramas y sumar caminos antes de invertir la condicion con Bayes. "
+                "Toda conclusion debe indicar alcance, unidades y limitaciones.</p>"
+            ),
+            "chapterIds": ["C10"],
+            "relatedTheoryChapters": ["C10"],
+        }
+    ]
+    return {
+        "problemInventory": problem_inventory,
+        "examInventory": exam_inventory,
+        "problemModels": problem_models,
+        "miniModels": mini_models,
+        "blockModels": block_models,
+    }
+
+
 def build_payload() -> dict[str, object]:
     contextual_inventory = parse_contextual_inventory()
     exams_inventory = parse_exams_inventory()
     contextual_models = parse_contextual_models()
     exam_mini_models = parse_exam_mini_models(exams_inventory)
     exam_block_models = parse_exam_block_models()
+    stochastic = build_stochastic_supplements()
+    contextual_inventory.extend(stochastic["problemInventory"])
+    exams_inventory.extend(stochastic["examInventory"])
+    contextual_models.extend(stochastic["problemModels"])
+    exam_mini_models.extend(stochastic["miniModels"])
+    exam_block_models.extend(stochastic["blockModels"])
 
     return {
         "meta": {

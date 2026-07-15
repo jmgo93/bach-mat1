@@ -1,11 +1,11 @@
 window.MATHBOOK_SUPPLEMENTS = {
   "meta": {
-    "generatedOn": "2026-07-13 15:06",
-    "contextualInventoryCount": 77,
-    "contextualModelCount": 9,
-    "examInventoryCount": 77,
-    "examMiniModelCount": 9,
-    "examBlockModelCount": 6
+    "generatedOn": "2026-07-15 10:44",
+    "contextualInventoryCount": 84,
+    "contextualModelCount": 10,
+    "examInventoryCount": 84,
+    "examMiniModelCount": 10,
+    "examBlockModelCount": 7
   },
   "problems": {
     "inventory": [
@@ -1009,6 +1009,97 @@ window.MATHBOOK_SUPPLEMENTS = {
         "relatedTheorySections": [
           "C09.S08"
         ]
+      },
+      {
+        "id": "C10.S01",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S01",
+        "sectionTitle": "Datos bidimensionales y tablas de contingencia",
+        "prompt": "Control de habitos de estudio y resultados",
+        "visual": "Tabla de contingencia",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S01"
+        ]
+      },
+      {
+        "id": "C10.S02",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S02",
+        "sectionTitle": "Nubes de puntos, correlacion y causalidad",
+        "prompt": "Auditoria de una relacion cientifica aparente",
+        "visual": "Nube de puntos",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S02"
+        ]
+      },
+      {
+        "id": "C10.S03",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S03",
+        "sectionTitle": "Regresion lineal y cuadratica",
+        "prompt": "Calibracion y prediccion de un sensor",
+        "visual": "Grafica de ajuste y residuos",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S03"
+        ]
+      },
+      {
+        "id": "C10.S04",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S04",
+        "sectionTitle": "Muestreo, inferencia y tecnologia",
+        "prompt": "Encuesta ambiental con riesgo de sesgo",
+        "visual": "Tabla de muestra por estratos",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S04"
+        ]
+      },
+      {
+        "id": "C10.S05",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S05",
+        "sectionTitle": "Experimentos aleatorios y algebra de sucesos",
+        "prompt": "Fiabilidad conjunta de dos componentes",
+        "visual": "Diagrama de Venn",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S05"
+        ]
+      },
+      {
+        "id": "C10.S06",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S06",
+        "sectionTitle": "Regla de Laplace y tecnicas de recuento",
+        "prompt": "Seleccion de equipos de laboratorio",
+        "visual": "Arbol de recuento",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S06"
+        ]
+      },
+      {
+        "id": "C10.S07",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S07",
+        "sectionTitle": "Probabilidad condicionada, total y Bayes",
+        "prompt": "Sistema de alerta con falsos positivos",
+        "visual": "Diagrama de arbol",
+        "level": "Alta",
+        "relatedTheorySections": [
+          "C10.S07"
+        ]
       }
     ],
     "models": [
@@ -1019,7 +1110,7 @@ window.MATHBOOK_SUPPLEMENTS = {
         "promptTitle": "Biblioteca, patio y escala de decibelios",
         "promptHtml": "<p>La biblioteca de un centro mide el nivel sonoro mediante la expresion</p><div class=\"math-display\">\\[\nL=10\\log\\left(\\frac{I}{I_0}\\right),\n\\]</div><p>donde \\(L\\) es el nivel en decibelios e \\(I_0\\) es la intensidad de referencia.</p><p>En una medicion se registran dos zonas:</p><ol><li><p>sala de estudio: \\(45\\) dB;</p></li><li><p>patio cubierto: \\(72\\) dB.</p></li></ol><p>Se pide:</p><ol><li><p>comparar la intensidad del patio con la de la sala;</p></li><li><p>fijar el mayor nivel admisible en una tercera zona para que su intensidad no supere en mil veces a la de la sala de estudio.</p></li></ol>",
         "resourceTitle": "Tabla de mediciones",
-        "resourceHtml": "<div class=\"centered-block\"><div class=\"figure-fallback\">Tabla resumida disponible en la version impresa.</div></div>",
+        "resourceHtml": "<div class=\"centered-block\"><div class=\"table-scroll\"><table class=\"math-table\"><thead><tr><th scope=\"col\"><p>Zona</p></th><th scope=\"col\"><p>Nivel registrado</p></th><th scope=\"col\"><p>Magnitud a estudiar</p></th></tr></thead><tbody><tr><td><p>Sala de estudio</p></td><td><p>\\(45\\) dB</p></td><td><p>Intensidad base</p></td></tr><tr><td><p>Patio cubierto</p></td><td><p>\\(72\\) dB</p></td><td><p>Factor de comparacion</p></td></tr><tr><td><p>Zona de lectura rapida</p></td><td><p>?</p></td><td><p>Limite de seguridad</p></td></tr></tbody></table></div></div>",
         "answerHtml": "<p>El patio tiene una intensidad aproximadamente \\(10^{2.7}\\approx 501\\) veces mayor que la sala. Para no superar un factor \\(1000\\), el tercer espacio no debe pasar de \\(75\\) dB.</p>",
         "solutionHtml": "<p>Si \\(L_1=45\\) y \\(L_2=72\\), entonces</p><div class=\"math-display\">\\[\nL_2-L_1=10\\log\\left(\\frac{I_2}{I_1}\\right).\n\\]</div><p>Por tanto,</p><div class=\"math-display\">\\[\n27=10\\log\\left(\\frac{I_2}{I_1}\\right)\n\\Longrightarrow\n\\log\\left(\\frac{I_2}{I_1}\\right)=2.7\n\\Longrightarrow\n\\frac{I_2}{I_1}=10^{2.7}\\approx 501.19.\n\\]</div><p>El patio multiplica aproximadamente por \\(501\\) la intensidad de la sala.</p><p>Para el limite de mil veces:</p><div class=\"math-display\">\\[\n\\frac{I}{I_1}\\leq 1000=10^3.\n\\]</div><p>Entonces</p><div class=\"math-display\">\\[\nL-L_1=10\\log\\left(\\frac{I}{I_1}\\right)\\leq 10\\log(10^3)=30.\n\\]</div><p>Como \\(L_1=45\\),</p><div class=\"math-display\">\\[\nL\\leq 45+30=75.\n\\]</div><p>El nivel maximo recomendable para la tercera zona es \\(75\\) dB.</p>",
         "relatedTheorySections": [
@@ -1145,6 +1236,21 @@ window.MATHBOOK_SUPPLEMENTS = {
         "solutionHtml": "<p>Si se vallan tres lados, la restriccion es</p><div class=\"math-display\">\\[\n2x+y=20 \\Longrightarrow y=20-2x.\n\\]</div><p>El area del rectangulo es</p><div class=\"math-display\">\\[\nA(x)=xy=x(20-2x)=20x-2x^2.\n\\]</div><p>Derivando,</p><div class=\"math-display\">\\[\nA'(x)=20-4x.\n\\]</div><p>El punto critico cumple</p><div class=\"math-display\">\\[\n20-4x=0 \\Longrightarrow x=5.\n\\]</div><p>La segunda derivada es</p><div class=\"math-display\">\\[\nA''(x)=-4<0,\n\\]</div><p>luego el punto critico corresponde a un maximo. Sustituyendo,</p><div class=\"math-display\">\\[\ny=20-2\\cdot 5=10.\n\\]</div><p>El area maxima vale</p><div class=\"math-display\">\\[\nA(5)=5\\cdot 10=50.\n\\]</div><p>Las dimensiones optimas son \\(5\\) metros de profundidad y \\(10\\) metros de ancho.</p>",
         "relatedTheorySections": [
           "C09.S07"
+        ]
+      },
+      {
+        "id": "CTX-C10",
+        "chapterId": "C10",
+        "title": "Alerta de calidad: probabilidad, comunicacion y decision",
+        "promptTitle": "Situacion",
+        "promptHtml": "<p>El 4% de las piezas de una linea presenta un defecto. Un sistema alerta en el 95% de las piezas defectuosas y produce un 3% de falsos positivos entre las correctas. Calcula la probabilidad de alerta, la probabilidad de defecto tras una alerta y el numero esperado de revisiones innecesarias en 10 000 piezas.</p>",
+        "resourceTitle": "Datos y arbol",
+        "resourceHtml": "<ul><li>\\(P(D)=0.04\\), \\(P(A\\mid D)=0.95\\).</li><li>\\(P(\\overline D)=0.96\\), \\(P(A\\mid\\overline D)=0.03\\).</li></ul>",
+        "answerHtml": "<p>\\(P(A)=0.0668\\), \\(P(D\\mid A)\\approx0.5689\\) y se esperan 288 revisiones innecesarias.</p>",
+        "solutionHtml": "<p>Por probabilidad total, \\(P(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668\\). Aplicando Bayes, \\(P(D\\mid A)=0.038/0.0668\\approx0.5689\\). Los falsos positivos esperados son \\(10000\\cdot0.96\\cdot0.03=288\\). La alerta aumenta mucho la probabilidad de defecto, pero no equivale a certeza.</p>",
+        "relatedTheorySections": [
+          "C10.S05",
+          "C10.S07"
         ]
       }
     ]
@@ -2228,6 +2334,104 @@ window.MATHBOOK_SUPPLEMENTS = {
         "relatedTheorySections": [
           "C09.S08"
         ]
+      },
+      {
+        "id": "C10.S01",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S01",
+        "sectionTitle": "Datos bidimensionales y tablas de contingencia",
+        "title": "Prueba razonada: Datos bidimensionales y tablas de contingencia",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S01"
+        ]
+      },
+      {
+        "id": "C10.S02",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S02",
+        "sectionTitle": "Nubes de puntos, correlacion y causalidad",
+        "title": "Prueba razonada: Nubes de puntos, correlacion y causalidad",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S02"
+        ]
+      },
+      {
+        "id": "C10.S03",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S03",
+        "sectionTitle": "Regresion lineal y cuadratica",
+        "title": "Prueba razonada: Regresion lineal y cuadratica",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S03"
+        ]
+      },
+      {
+        "id": "C10.S04",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S04",
+        "sectionTitle": "Muestreo, inferencia y tecnologia",
+        "title": "Prueba razonada: Muestreo, inferencia y tecnologia",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S04"
+        ]
+      },
+      {
+        "id": "C10.S05",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S05",
+        "sectionTitle": "Experimentos aleatorios y algebra de sucesos",
+        "title": "Prueba razonada: Experimentos aleatorios y algebra de sucesos",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S05"
+        ]
+      },
+      {
+        "id": "C10.S06",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S06",
+        "sectionTitle": "Regla de Laplace y tecnicas de recuento",
+        "title": "Prueba razonada: Regla de Laplace y tecnicas de recuento",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S06"
+        ]
+      },
+      {
+        "id": "C10.S07",
+        "chapterId": "C10",
+        "chapterTitle": "Estadistica, probabilidad e inferencia",
+        "sectionId": "C10.S07",
+        "sectionTitle": "Probabilidad condicionada, total y Bayes",
+        "title": "Prueba razonada: Probabilidad condicionada, total y Bayes",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S07"
+        ]
       }
     ],
     "miniModels": [
@@ -2392,6 +2596,25 @@ window.MATHBOOK_SUPPLEMENTS = {
         "relatedTheorySections": [
           "C09.S07"
         ]
+      },
+      {
+        "id": "MINI-C10.S03",
+        "chapterId": "C10",
+        "sectionId": "C10.S03",
+        "title": "Regresion, residuos y prediccion responsable",
+        "briefTitle": "Mini-examen",
+        "briefHtml": "<ol><li>Un ajuste es \\(\\hat y=1.8x+0.4\\). Predice para \\(x=6\\) e interpreta la pendiente.</li><li>Si se observa \\(y=12\\), calcula el residuo.</li><li>Explica por que \\(R^2=0.96\\) no autoriza a extrapolar hasta \\(x=100\\).</li></ol>",
+        "rubricTitle": "Rubrica",
+        "rubricHtml": "<p>Calculo 40%, interpretacion con unidades 30%, juicio sobre fiabilidad 30%.</p>",
+        "answerHtml": "<p>Prediccion: 11.2; pendiente: 1.8 unidades de y por unidad de x; residuo: 0.8.</p>",
+        "solutionHtml": "<p>Se obtiene \\(1.8\\cdot6+0.4=11.2\\). El residuo es observado menos predicho: \\(12-11.2=0.8\\). El ajuste solo ha sido contrastado en el rango observado; R cuadrado no garantiza que el mecanismo continue fuera de el.</p>",
+        "blockId": "B7",
+        "blockLabel": "B7 Sentido estocastico",
+        "duration": "25 min",
+        "relatedTheorySections": [
+          "C10.S02",
+          "C10.S03"
+        ]
       }
     ],
     "blockModels": [
@@ -2489,6 +2712,21 @@ window.MATHBOOK_SUPPLEMENTS = {
         ],
         "relatedTheoryChapters": [
           "C09"
+        ]
+      },
+      {
+        "id": "B7",
+        "blockId": "B7",
+        "title": "Datos, incertidumbre y decisiones",
+        "briefTitle": "Examen de bloque",
+        "briefHtml": "<ol><li>Analiza una tabla de contingencia y compara dos porcentajes condicionados.</li><li>Interpreta una nube con un valor atipico y decide entre ajuste lineal y cuadratico.</li><li>Resuelve un recuento sin orden y una probabilidad condicionada.</li><li>Aplica probabilidad total y Bayes a un sistema con falsos positivos.</li></ol>",
+        "answerHtml": "<p>La correccion exige denominadores condicionados, lectura grafica previa, recuento coherente y arbol completo.</p>",
+        "solutionHtml": "<p>Modelo de correccion: identificar primero la poblacion condicionada; justificar el ajuste con nube, residuos y R cuadrado; usar combinaciones solo si el orden no importa; multiplicar ramas y sumar caminos antes de invertir la condicion con Bayes. Toda conclusion debe indicar alcance, unidades y limitaciones.</p>",
+        "chapterIds": [
+          "C10"
+        ],
+        "relatedTheoryChapters": [
+          "C10"
         ]
       }
     ]
