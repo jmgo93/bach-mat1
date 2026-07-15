@@ -87,6 +87,7 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         worker = (DOCS / "sw.js").read_text(encoding="utf-8")
         self.assertIn('class="skip-link"', index)
         self.assertIn('aria-live="polite"', index)
+        self.assertIn('aria-label="Instalar aplicación"', index)
         self.assertLess(index.index("./assets/js/app.js"), index.index("translate.google.com"))
         self.assertNotIn('"orientation"', manifest)
         self.assertIn('event.request.mode === "navigate"', worker)
@@ -105,7 +106,35 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v17", worker)
+        self.assertIn("mate1-interactivas-v20", worker)
+
+    def test_global_search_covers_every_resource_family(self) -> None:
+        index = (DOCS / "index.html").read_text(encoding="utf-8")
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        styles = (DOCS / "assets" / "css" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('id="globalSearchButton"', index)
+        self.assertIn('id="globalSearchDialog"', index)
+        self.assertIn('id="globalSearchInput"', index)
+        self.assertIn("renderGlobalSearchResults", app)
+        self.assertIn('event.key.toLowerCase() === "k"', app)
+        for resource_kind in ("Pregunta tipo test", "Flashcard", "Actividad", "Problema", "Examen"):
+            self.assertIn(resource_kind, app)
+        self.assertIn(".global-search-dialog", styles)
+
+    def test_flashcards_have_feedback_session_and_failed_queue(self) -> None:
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        styles = (DOCS / "assets" / "css" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('FAILED: "Falladas anteriormente"', app)
+        self.assertIn('id="flashcardFailedModeButton"', app)
+        self.assertIn('id="flashcardResetSessionButton"', app)
+        self.assertIn('id="flashcardRetryButton"', app)
+        self.assertIn('id="flashcardFeedbackNextButton"', app)
+        self.assertIn("recordFlashcardSessionDecision", app)
+        self.assertIn("getFlashcardLearningExpectation", app)
+        self.assertIn("reviewCount || 0", app)
+        self.assertIn(".flashcard-session__metrics", styles)
+        self.assertIn(".flashcard-feedback--known", styles)
+        self.assertIn(".flashcard-feedback--review", styles)
 
     def test_chapter_navigation_uses_a_compact_selector(self) -> None:
         app = (JS / "app.js").read_text(encoding="utf-8")

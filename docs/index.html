@@ -93,6 +93,18 @@
       </nav>
 
       <div class="topbar__actions">
+        <button
+          id="globalSearchButton"
+          class="ghost-button global-search-trigger"
+          type="button"
+          data-icon="search"
+          aria-label="Buscar en todos los contenidos"
+          title="Buscar en todos los contenidos (Ctrl + K)"
+          aria-haspopup="dialog"
+          aria-controls="globalSearchDialog"
+        >
+          <span class="topbar-button__label">Buscar</span>
+        </button>
         <label class="language-picker notranslate" translate="no">
           <span class="sr-only">Seleccionar idioma</span>
           <select id="languageSelect" translate="no">
@@ -105,13 +117,43 @@
             <option value="ca">CA</option>
           </select>
         </label>
-        <button id="themeToggle" class="ghost-button" type="button" data-icon="moon" aria-pressed="false">Modo oscuro</button>
-        <button id="installButton" class="primary-button" type="button" data-icon="download" hidden>Instalar app</button>
+        <button id="themeToggle" class="ghost-button" type="button" data-icon="moon" aria-pressed="false">
+          <span class="topbar-button__label">Modo oscuro</span>
+        </button>
+        <button id="installButton" class="primary-button" type="button" data-icon="download" aria-label="Instalar aplicación" hidden>
+          <span class="topbar-button__label">Instalar app</span>
+        </button>
       </div>
     </header>
 
     <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar navegación" hidden></button>
     <div id="routeAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog id="globalSearchDialog" class="global-search-dialog" aria-labelledby="globalSearchTitle" aria-describedby="globalSearchHelp">
+      <div class="global-search-panel">
+        <header class="global-search-panel__head">
+          <div>
+            <p class="card-kicker" data-icon="search">Buscador global</p>
+            <h2 id="globalSearchTitle">Encuentra justo lo que necesitas</h2>
+          </div>
+          <button id="globalSearchCloseButton" class="ghost-button global-search-close" type="button" data-icon="close" aria-label="Cerrar buscador"></button>
+        </header>
+        <label class="global-search-field" for="globalSearchInput">
+          <span class="sr-only">Concepto, tema o recurso que quieres encontrar</span>
+          <span class="global-search-field__icon" aria-hidden="true" data-icon="search"></span>
+          <input
+            id="globalSearchInput"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Prueba con Bayes, Ruffini, tangente o vectores..."
+          >
+          <kbd class="notranslate" translate="no">Esc</kbd>
+        </label>
+        <p id="globalSearchHelp" class="global-search-help">Busca en la teoria, actividades, test, flashcards, problemas y examenes.</p>
+        <div id="globalSearchResults" class="global-search-results" aria-live="polite" aria-atomic="false"></div>
+      </div>
+    </dialog>
 
     <div class="layout">
       <aside class="sidebar" id="sidebar">

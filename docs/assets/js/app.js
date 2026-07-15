@@ -46,6 +46,7 @@
     ALL: "Todas",
     NEW: "Nuevas",
     REVIEW: "Repasar",
+    FAILED: "Falladas anteriormente",
     MASTERED: "Dominadas"
   };
 
@@ -88,6 +89,7 @@
     alert: '<path d="M10.3 4.2 2.7 18a2 2 0 0 0 1.8 3h15a2 2 0 0 0 1.8-3L13.7 4.2a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4m0 4h.01"></path>',
     check: '<circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16.5 8"></path>',
     search: '<circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path>',
+    close: '<path d="m6 6 12 12M18 6 6 18"></path>',
     moon: '<path d="M20.5 14.5A8 8 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>',
     sun: '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>',
     download: '<path d="M12 3v12m-4-4 4 4 4-4"></path><path d="M4 18v3h16v-3"></path>',
@@ -221,7 +223,9 @@
     practiceIndex: 0,
     flashcardIndex: 0,
     flashcardFlipped: false,
+    flashcardSession: createFlashcardSession(),
     searchQuery: "",
+    globalSearchQuery: "",
     questionOptionOrders: {},
     sequencePools: {},
     activityDrafts: {},
@@ -261,6 +265,11 @@
     dom.chapterLinks = document.getElementById("chapterLinks");
     dom.chapterCountBadge = document.getElementById("chapterCountBadge");
     dom.searchInput = document.getElementById("searchInput");
+    dom.globalSearchButton = document.getElementById("globalSearchButton");
+    dom.globalSearchDialog = document.getElementById("globalSearchDialog");
+    dom.globalSearchCloseButton = document.getElementById("globalSearchCloseButton");
+    dom.globalSearchInput = document.getElementById("globalSearchInput");
+    dom.globalSearchResults = document.getElementById("globalSearchResults");
     dom.themeToggle = document.getElementById("themeToggle");
     dom.installButton = document.getElementById("installButton");
     dom.languageSelect = document.getElementById("languageSelect");
@@ -282,15 +291,140 @@
       state.searchQuery = event.target.value.trim().toLowerCase();
       renderSidebar(parseRoute());
     });
+    dom.globalSearchButton.addEventListener("click", openGlobalSearch);
+    dom.globalSearchCloseButton.addEventListener("click", closeGlobalSearch);
+    dom.globalSearchInput.addEventListener("input", (event) => {
+      state.globalSearchQuery = event.target.value.trim();
+      renderGlobalSearchResults(state.globalSearchQuery);
+    });
+    dom.globalSearchInput.addEventListener("keydown", (event) => {
+      if (!["Enter", "ArrowDown"].includes(event.key)) {
+        return;
+      }
+      const firstResult = dom.globalSearchResults.querySelector(".global-search-result");
+      if (!firstResult) {
+        return;
+      }
+      event.preventDefault();
+      if (event.key === "Enter") {
+        firstResult.click();
+      } else {
+        firstResult.focus();
+      }
+    });
+    dom.globalSearchResults.addEventListener("click", (event) => {
+      const suggestion = event.target.closest("[data-search-suggestion]");
+      if (suggestion) {
+        const query = suggestion.dataset.searchSuggestion;
+        state.globalSearchQuery = query;
+        dom.globalSearchInput.value = query;
+        renderGlobalSearchResults(query);
+        dom.globalSearchInput.focus();
+        return;
+      }
+      if (event.target.closest("a")) {
+        closeGlobalSearch();
+      }
+    });
+    dom.globalSearchDialog.addEventListener("click", (event) => {
+      if (event.target === dom.globalSearchDialog) {
+        closeGlobalSearch();
+      }
+    });
     dom.mobileMenuButton.addEventListener("click", () => setMobileMenuOpen(!dom.sidebar.classList.contains("is-open")));
     dom.sidebarBackdrop.addEventListener("click", () => setMobileMenuOpen(false));
     document.addEventListener("keydown", (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        openGlobalSearch();
+        return;
+      }
       if (event.key === "Escape" && dom.sidebar.classList.contains("is-open")) {
         setMobileMenuOpen(false, true);
       }
     });
     dom.languageSelect.addEventListener("change", handleLanguageChange);
     dom.installButton.addEventListener("click", installPwa);
+  }
+
+  function openGlobalSearch() {
+    if (!dom.globalSearchDialog.open) {
+      dom.globalSearchDialog.showModal();
+    }
+    if (!state.globalSearchQuery && dom.searchInput.value.trim()) {
+      state.globalSearchQuery = dom.searchInput.value.trim();
+    }
+    dom.globalSearchInput.value = state.globalSearchQuery;
+    renderGlobalSearchResults(state.globalSearchQuery);
+    window.requestAnimationFrame(() => {
+      dom.globalSearchInput.focus();
+      dom.globalSearchInput.select();
+    });
+  }
+
+  function closeGlobalSearch() {
+    if (dom.globalSearchDialog.open) {
+      dom.globalSearchDialog.close();
+    }
+  }
+
+  function renderGlobalSearchResults(query) {
+    const normalizedQuery = normalizeSearchText(query).trim();
+    if (!normalizedQuery) {
+      const suggestions = ["logaritmos", "regla de Ruffini", "teorema de Bayes", "recta tangente", "vectores"];
+      dom.globalSearchResults.innerHTML = `
+        <section class="global-search-welcome">
+          <span class="global-search-welcome__visual" aria-hidden="true">${icon("sparkles")}</span>
+          <div>
+            <h3>¿Por dónde empezamos?</h3>
+            <p>Escribe una idea matemática o prueba una de estas búsquedas.</p>
+          </div>
+        </section>
+        <div class="global-search-suggestions" aria-label="Búsquedas sugeridas">
+          ${suggestions
+            .map(
+              (suggestion) =>
+                `<button class="chip-button" type="button" data-search-suggestion="${suggestion}">${icon(inferIconFromLabel(suggestion))}${suggestion}</button>`
+            )
+            .join("")}
+        </div>
+      `;
+      scheduleTranslationRefresh(getPreferredLanguage(), false);
+      return;
+    }
+
+    const results = buildSearchResults(normalizedQuery);
+    dom.globalSearchResults.innerHTML = results.length
+      ? `
+          <div class="global-search-results__head">
+            <p><strong>${results.length}</strong> resultado${results.length === 1 ? "" : "s"} conectado${results.length === 1 ? "" : "s"} con tu búsqueda</p>
+            <span class="badge-soft">${results.length}</span>
+          </div>
+          <div class="global-search-result-list">
+            ${results
+              .map(
+                (result) => `
+                  <a class="global-search-result" href="${result.href}">
+                    <span class="global-search-result__icon" aria-hidden="true">${icon(inferIconFromLabel(`${result.kind} ${result.title}`))}</span>
+                    <span class="global-search-result__copy">
+                      <span><strong>${result.title}</strong><small>${result.code}</small></span>
+                      <small>${result.kind} · ${result.description}</small>
+                    </span>
+                    <span class="global-search-result__arrow" aria-hidden="true">${icon("right")}</span>
+                  </a>
+                `
+              )
+              .join("")}
+          </div>
+        `
+      : `
+          <section class="global-search-empty" role="status">
+            <span aria-hidden="true">${icon("search")}</span>
+            <h3>No encontramos esa expresión</h3>
+            <p>Prueba con una palabra más general, el nombre de un tema o un código como C05.</p>
+          </section>
+        `;
+    scheduleTranslationRefresh(getPreferredLanguage(), false);
   }
 
   function renderRoute() {
@@ -381,6 +515,11 @@
       window.localStorage.setItem(STORAGE_KEYS.practiceChapter, state.practiceChapter);
     }
     if (route.name === "flashcards" && route.chapterId) {
+      if (state.flashcardChapter !== route.chapterId) {
+        state.flashcardIndex = 0;
+        state.flashcardFlipped = false;
+        state.flashcardSession.lastResult = null;
+      }
       state.flashcardChapter = route.chapterId;
       window.localStorage.setItem(STORAGE_KEYS.flashcardChapter, state.flashcardChapter);
     }
@@ -715,6 +854,32 @@
           `${section.id} ${section.title} ${searchRecordText(section)}`
         );
       });
+    });
+
+    questionBank.forEach((question) => {
+      addResult(
+        {
+          href: `#/practica/${question.chapterId}`,
+          code: "TEST",
+          title: excerptFromHtml(question.prompt, 120),
+          kind: "Pregunta tipo test",
+          description: `${question.sectionId || question.chapterId} - ${(getChapter(question.chapterId) || {}).title || question.chapterId}`
+        },
+        searchRecordText(question)
+      );
+    });
+
+    flashcardBank.forEach((card) => {
+      addResult(
+        {
+          href: `#/flashcards/${card.chapterId}`,
+          code: "CARD",
+          title: excerptFromHtml(card.front, 120),
+          kind: "Flashcard",
+          description: `${card.sectionId} - ${card.sectionTitle}`
+        },
+        searchRecordText(card)
+      );
     });
 
     activityBank.forEach((activity) => {
@@ -1557,10 +1722,16 @@
   }
 
   function renderFlashcards() {
+    const scopedCards = getFlashcardScopeCards();
     const filteredCards = getFilteredFlashcards();
-    const stats = getFlashcardStats(filteredCards);
+    const stats = getFlashcardStats(scopedCards);
+    const sessionStats = getFlashcardSessionStats();
+    const feedbackCard = state.flashcardSession.lastResult
+      ? flashcardBank.find((card) => card.id === state.flashcardSession.lastResult.cardId)
+      : null;
     const currentCard =
-      filteredCards.length > 0 ? filteredCards[clamp(state.flashcardIndex, 0, filteredCards.length - 1)] : null;
+      feedbackCard ||
+      (filteredCards.length > 0 ? filteredCards[clamp(state.flashcardIndex, 0, filteredCards.length - 1)] : null);
 
     dom.app.innerHTML = `
       <section class="hero">
@@ -1598,10 +1769,52 @@
           <p>Recordadas con exito en dos dias distintos; volveran a aparecer cuando toque revisar.</p>
         </article>
         <article class="summary-card">
-          <p class="card-kicker">Mazo total</p>
-          <h2>${flashcardBank.length}</h2>
-          <p>Tarjetas generadas automaticamente a partir de teoria, metodos y alertas.</p>
+          <p class="card-kicker">Falladas alguna vez</p>
+          <h2>${stats.everFailed}</h2>
+          <p>Se conservan en el historial para poder crear un mazo específico de recuperación.</p>
         </article>
+      </section>
+
+      <section class="flashcard-session" aria-labelledby="flashcardSessionTitle">
+        <div class="flashcard-session__head">
+          <div>
+            <p class="card-kicker">Sesión actual</p>
+            <h2 id="flashcardSessionTitle">Tu marcador de memoria</h2>
+            <p>Cada tarjeta cuenta una sola vez. Si la reintentas, se actualiza su resultado.</p>
+          </div>
+          <div class="flashcard-session__actions">
+            <button class="secondary-button" id="flashcardFailedModeButton" type="button" data-icon="refresh" ${stats.everFailed ? "" : "disabled"}>
+              Practicar ${stats.everFailed} fallada${stats.everFailed === 1 ? "" : "s"}
+            </button>
+            <button class="ghost-button" id="flashcardResetSessionButton" type="button" data-icon="refresh" ${sessionStats.total ? "" : "disabled"}>
+              Reiniciar marcador
+            </button>
+          </div>
+        </div>
+        <div class="flashcard-session__metrics">
+          <article class="flashcard-session__metric flashcard-session__metric--known">
+            <span aria-hidden="true">${icon("check")}</span>
+            <div><strong>${sessionStats.known}</strong><small>Las sé</small></div>
+          </article>
+          <article class="flashcard-session__metric flashcard-session__metric--review">
+            <span aria-hidden="true">${icon("alert")}</span>
+            <div><strong>${sessionStats.review}</strong><small>Por reforzar</small></div>
+          </article>
+          <article class="flashcard-session__metric">
+            <span aria-hidden="true">${icon("target")}</span>
+            <div><strong>${sessionStats.accuracy}%</strong><small>Precisión</small></div>
+          </article>
+          <article class="flashcard-session__metric">
+            <span aria-hidden="true">${icon("trophy")}</span>
+            <div><strong>${state.flashcardSession.bestStreak}</strong><small>Mejor racha · actual ${state.flashcardSession.currentStreak}</small></div>
+          </article>
+        </div>
+        <div class="flashcard-session__progress">
+          <div class="progress-bar" role="progressbar" aria-label="Precisión de la sesión" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${sessionStats.accuracy}">
+            <span style="width: ${sessionStats.accuracy}%"></span>
+          </div>
+          <p>${sessionStats.total ? `${sessionStats.total} tarjeta${sessionStats.total === 1 ? "" : "s"} evaluada${sessionStats.total === 1 ? "" : "s"} en esta sesión.` : "Voltea una tarjeta y evalúa tu recuerdo para iniciar el marcador."} Historial del filtro: ${stats.recallRate}% de recuerdos positivos.</p>
+        </div>
       </section>
 
       <section class="practice-layout">
@@ -1682,11 +1895,16 @@
       }
     `;
 
-    wireFlashcardEvents(filteredCards);
+    wireFlashcardEvents(filteredCards, currentCard);
   }
 
   function renderFlashcardStage(card, totalCards) {
     const status = getFlashcardStatus(card.id);
+    const activeResult = state.flashcardSession.lastResult?.cardId === card.id ? state.flashcardSession.lastResult : null;
+    const retrying = Boolean(activeResult?.retrying);
+    const feedback = activeResult && !retrying ? activeResult : null;
+    const position = activeResult?.position || (totalCards ? clamp(state.flashcardIndex, 0, totalCards - 1) + 1 : 1);
+    const deckSize = activeResult?.deckSize || Math.max(totalCards, 1);
     return `
       <section class="flashcard-stage">
         <div class="flashcard-stage__meta">
@@ -1697,7 +1915,7 @@
           <span class="status-pill status-pill--${statusClass(status)}">${statusLabel(status)}</span>
         </div>
 
-        <div class="flashcard ${state.flashcardFlipped ? "is-flipped" : ""}" id="flashcardDeck">
+        <div class="flashcard ${state.flashcardFlipped ? "is-flipped" : ""}" id="flashcardDeck" tabindex="-1">
           <article class="flashcard__face flashcard__face--front" aria-hidden="${state.flashcardFlipped}" ${state.flashcardFlipped ? "inert" : ""}>
             <p class="card-kicker">${FLASHCARD_TYPE_LABELS[card.type] || card.type}</p>
             <h3>${card.front}</h3>
@@ -1709,21 +1927,61 @@
           </article>
         </div>
 
-        <div class="hero__actions">
-          <button class="ghost-button" id="flashcardPrevButton" type="button">Tarjeta anterior</button>
-          <button class="secondary-button" id="flashcardFlipButton" type="button">${state.flashcardFlipped ? "Ver anverso" : "Voltear tarjeta"}</button>
-          <button class="ghost-button" id="flashcardNextButton" type="button">Tarjeta siguiente</button>
-          <button class="ghost-button" id="flashcardShuffleButton" type="button">Tarjeta aleatoria</button>
-        </div>
+        ${
+          feedback
+            ? renderFlashcardFeedback(card, feedback)
+            : `
+                <div class="hero__actions flashcard-navigation">
+                  ${retrying ? "" : '<button class="ghost-button" id="flashcardPrevButton" type="button">Tarjeta anterior</button>'}
+                  <button class="secondary-button" id="flashcardFlipButton" type="button">${state.flashcardFlipped ? "Ver anverso" : "Voltear tarjeta"}</button>
+                  ${retrying ? "" : '<button class="ghost-button" id="flashcardNextButton" type="button">Tarjeta siguiente</button>'}
+                  ${retrying ? "" : '<button class="ghost-button" id="flashcardShuffleButton" type="button">Tarjeta aleatoria</button>'}
+                </div>
 
-        <div class="hero__actions">
-          <button class="primary-button" id="flashcardMasteredButton" type="button" ${state.flashcardFlipped ? "" : "disabled"}>La recordaba</button>
-          <button class="ghost-button" id="flashcardReviewButton" type="button" ${state.flashcardFlipped ? "" : "disabled"}>Necesito repasar</button>
-        </div>
+                <div class="hero__actions flashcard-assessment" aria-label="Autoevaluación de la tarjeta">
+                  <button class="primary-button" id="flashcardMasteredButton" type="button" ${state.flashcardFlipped ? "" : "disabled"}>La sabía</button>
+                  <button class="ghost-button" id="flashcardReviewButton" type="button" ${state.flashcardFlipped ? "" : "disabled"}>Necesito reforzarla</button>
+                </div>
+              `
+        }
 
-        <p class="progress-card__hint">Tarjeta ${state.flashcardIndex + 1} de ${totalCards}. Primero intenta responder y despues voltea la tarjeta para autoevaluarte.</p>
+        <p class="progress-card__hint">Tarjeta ${position} de ${deckSize}. Primero intenta responder y después voltea la tarjeta para autoevaluarte.</p>
       </section>
     `;
+  }
+
+  function renderFlashcardFeedback(card, feedback) {
+    const remembered = feedback.decision === "mastered";
+    const expectation = getFlashcardLearningExpectation(card.type);
+    return `
+      <section class="flashcard-feedback flashcard-feedback--${remembered ? "known" : "review"}" role="status" aria-live="polite" tabindex="-1">
+        <span class="flashcard-feedback__visual" aria-hidden="true">${icon(remembered ? "trophy" : "alert")}</span>
+        <div class="flashcard-feedback__copy">
+          <p class="card-kicker">${remembered ? "Recuerdo conseguido" : "Objetivo detectado"}</p>
+          <h3>${remembered ? "¡Bien recuperada!" : "Buena decisión: esta tarjeta necesita otra vuelta"}</h3>
+          <p>${remembered ? "Tu autoevaluación suma esta tarjeta a «Las sé»." : "La tarjeta queda guardada en tu historial de falladas y vuelve a la cola de repaso."}</p>
+          <div class="flashcard-feedback__expectation">
+            <strong>Lo que esperamos que puedas explicar</strong>
+            <p>${expectation}</p>
+          </div>
+          <p class="flashcard-feedback__tip"><strong>${remembered ? "Para consolidarla:" : "Plan de 30 segundos:"}</strong> ${remembered ? "recupérala de nuevo otro día sin mirar; dos días distintos consolidan el aprendizaje." : "vuelve al anverso, dilo con tus palabras y contrasta solo después con la respuesta."}</p>
+        </div>
+        <div class="flashcard-feedback__actions">
+          ${remembered ? "" : '<button class="secondary-button" id="flashcardRetryButton" type="button" data-icon="refresh">Intentar de nuevo</button>'}
+          <button class="primary-button" id="flashcardFeedbackNextButton" type="button" data-icon="right">Siguiente tarjeta</button>
+        </div>
+      </section>
+    `;
+  }
+
+  function getFlashcardLearningExpectation(type) {
+    if (type === "procedimiento") {
+      return "Identificar el orden de los pasos, justificar la operación clave y comprobar que el resultado responde a la pregunta.";
+    }
+    if (type === "estrategia") {
+      return "Reconocer cuándo conviene usar la estrategia, por qué funciona y qué error frecuente ayuda a evitar.";
+    }
+    return "Dar la definición con tus palabras, señalar la idea matemática esencial y aportar un ejemplo o un contraejemplo sencillo.";
   }
 
   function renderLabs() {
@@ -2539,6 +2797,7 @@
         return;
       }
       state.progress = createEmptyProgress();
+      state.flashcardSession = createFlashcardSession();
       state.examAnswers = {};
       state.examIds = [];
       state.examSubmitted = false;
@@ -2606,11 +2865,12 @@
     });
   }
 
-  function wireFlashcardEvents(filteredCards) {
+  function wireFlashcardEvents(filteredCards, currentCard) {
     document.getElementById("flashcardChapterSelect")?.addEventListener("change", (event) => {
       state.flashcardChapter = event.target.value;
       state.flashcardIndex = 0;
       state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
       window.localStorage.setItem(STORAGE_KEYS.flashcardChapter, state.flashcardChapter);
       window.location.hash = state.flashcardChapter === "ALL" ? "#/flashcards" : `#/flashcards/${state.flashcardChapter}`;
     });
@@ -2619,6 +2879,7 @@
       state.flashcardType = event.target.value;
       state.flashcardIndex = 0;
       state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
       window.localStorage.setItem(STORAGE_KEYS.flashcardType, state.flashcardType);
       renderFlashcards();
       postRender();
@@ -2628,6 +2889,7 @@
       state.flashcardStatus = event.target.value;
       state.flashcardIndex = 0;
       state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
       window.localStorage.setItem(STORAGE_KEYS.flashcardStatus, state.flashcardStatus);
       renderFlashcards();
       postRender();
@@ -2645,6 +2907,7 @@
       }
       state.flashcardIndex = (state.flashcardIndex - 1 + filteredCards.length) % filteredCards.length;
       state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
       renderFlashcards();
       postRender();
     });
@@ -2655,6 +2918,7 @@
       }
       state.flashcardIndex = (state.flashcardIndex + 1) % filteredCards.length;
       state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
       renderFlashcards();
       postRender();
     });
@@ -2665,24 +2929,60 @@
       }
       state.flashcardIndex = Math.floor(Math.random() * filteredCards.length);
       state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
       renderFlashcards();
       postRender();
     });
 
     document.getElementById("flashcardMasteredButton")?.addEventListener("click", () => {
-      if (!filteredCards.length) {
+      if (!currentCard || !state.flashcardFlipped) {
         return;
       }
-      recordFlashcardDecision(filteredCards[state.flashcardIndex].id, "mastered");
-      moveToNextFlashcard(filteredCards.length);
+      recordFlashcardDecision(currentCard.id, "mastered");
+      recordFlashcardSessionDecision(currentCard.id, "mastered", filteredCards.length);
+      renderFlashcards();
+      updateProgressUi();
+      postRender();
+      focusFlashcardFeedback();
     });
 
     document.getElementById("flashcardReviewButton")?.addEventListener("click", () => {
-      if (!filteredCards.length) {
+      if (!currentCard || !state.flashcardFlipped) {
         return;
       }
-      recordFlashcardDecision(filteredCards[state.flashcardIndex].id, "review");
-      moveToNextFlashcard(filteredCards.length);
+      recordFlashcardDecision(currentCard.id, "review");
+      recordFlashcardSessionDecision(currentCard.id, "review", filteredCards.length);
+      renderFlashcards();
+      updateProgressUi();
+      postRender();
+      focusFlashcardFeedback();
+    });
+
+    document.getElementById("flashcardFeedbackNextButton")?.addEventListener("click", moveToNextFlashcard);
+
+    document.getElementById("flashcardRetryButton")?.addEventListener("click", () => {
+      state.flashcardSession.lastResult.retrying = true;
+      state.flashcardFlipped = false;
+      renderFlashcards();
+      postRender();
+      window.requestAnimationFrame(() => document.getElementById("flashcardDeck")?.focus({ preventScroll: true }));
+    });
+
+    document.getElementById("flashcardFailedModeButton")?.addEventListener("click", () => {
+      state.flashcardStatus = "FAILED";
+      state.flashcardIndex = 0;
+      state.flashcardFlipped = false;
+      state.flashcardSession.lastResult = null;
+      window.localStorage.setItem(STORAGE_KEYS.flashcardStatus, state.flashcardStatus);
+      renderFlashcards();
+      postRender();
+    });
+
+    document.getElementById("flashcardResetSessionButton")?.addEventListener("click", () => {
+      state.flashcardSession = createFlashcardSession();
+      state.flashcardFlipped = false;
+      renderFlashcards();
+      postRender();
     });
   }
 
@@ -2999,9 +3299,65 @@
     saveProgress();
   }
 
-  function moveToNextFlashcard(totalCards) {
+  function createFlashcardSession() {
+    return {
+      outcomes: {},
+      currentStreak: 0,
+      bestStreak: 0,
+      lastResult: null
+    };
+  }
+
+  function getFlashcardSessionStats() {
+    const outcomes = Object.values(state.flashcardSession.outcomes);
+    const known = outcomes.filter((decision) => decision === "mastered").length;
+    const review = outcomes.filter((decision) => decision === "review").length;
+    const total = known + review;
+    return {
+      known,
+      review,
+      total,
+      accuracy: total ? Math.round((known / total) * 100) : 0
+    };
+  }
+
+  function recordFlashcardSessionDecision(cardId, decision, deckSize) {
+    state.flashcardSession.outcomes[cardId] = decision;
+    if (decision === "mastered") {
+      state.flashcardSession.currentStreak += 1;
+      state.flashcardSession.bestStreak = Math.max(
+        state.flashcardSession.bestStreak,
+        state.flashcardSession.currentStreak
+      );
+    } else {
+      state.flashcardSession.currentStreak = 0;
+    }
+    state.flashcardSession.lastResult = {
+      cardId,
+      decision,
+      position: state.flashcardIndex + 1,
+      deckSize: Math.max(deckSize, 1),
+      retrying: false
+    };
+  }
+
+  function focusFlashcardFeedback() {
+    window.requestAnimationFrame(() => {
+      document.querySelector(".flashcard-feedback")?.focus({ preventScroll: true });
+    });
+  }
+
+  function moveToNextFlashcard() {
+    const completedCardId = state.flashcardSession.lastResult?.cardId;
+    const remainingCards = getFilteredFlashcards();
+    const completedIndex = remainingCards.findIndex((card) => card.id === completedCardId);
     state.flashcardFlipped = false;
-    state.flashcardIndex = totalCards ? (state.flashcardIndex + 1) % totalCards : 0;
+    state.flashcardIndex = remainingCards.length
+      ? completedIndex >= 0
+        ? (completedIndex + 1) % remainingCards.length
+        : clamp(state.flashcardIndex, 0, remainingCards.length - 1)
+      : 0;
+    state.flashcardSession.lastResult = null;
     renderFlashcards();
     postRender();
   }
@@ -3015,7 +3371,7 @@
     });
   }
 
-  function getFilteredFlashcards() {
+  function getFlashcardScopeCards() {
     return flashcardBank.filter((card) => {
       if (state.flashcardChapter !== "ALL" && card.chapterId !== state.flashcardChapter) {
         return false;
@@ -3023,8 +3379,12 @@
       if (state.flashcardType !== "ALL" && card.type !== state.flashcardType) {
         return false;
       }
-      return matchesFlashcardStatus(card.id, state.flashcardStatus);
+      return true;
     });
+  }
+
+  function getFilteredFlashcards() {
+    return getFlashcardScopeCards().filter((card) => matchesFlashcardStatus(card.id, state.flashcardStatus));
   }
 
   function matchesQuestionStatus(questionId, filter) {
@@ -3058,6 +3418,9 @@
     if (filter === "REVIEW") {
       return status === "review";
     }
+    if (filter === "FAILED") {
+      return (getFlashcardRecord(cardId)?.reviewCount || 0) > 0;
+    }
     if (filter === "MASTERED") {
       return status === "mastered";
     }
@@ -3074,10 +3437,16 @@
   }
 
   function getFlashcardStats(cards) {
+    const records = cards.map((card) => getFlashcardRecord(card.id)).filter(Boolean);
+    const masteredDecisions = records.reduce((total, record) => total + (record.masteredCount || 0), 0);
+    const reviewDecisions = records.reduce((total, record) => total + (record.reviewCount || 0), 0);
+    const decisions = masteredDecisions + reviewDecisions;
     return {
       newCount: cards.filter((card) => getFlashcardStatus(card.id) === "new").length,
       review: cards.filter((card) => getFlashcardStatus(card.id) === "review").length,
-      mastered: cards.filter((card) => getFlashcardStatus(card.id) === "mastered").length
+      mastered: cards.filter((card) => getFlashcardStatus(card.id) === "mastered").length,
+      everFailed: cards.filter((card) => (getFlashcardRecord(card.id)?.reviewCount || 0) > 0).length,
+      recallRate: decisions ? Math.round((masteredDecisions / decisions) * 100) : 0
     };
   }
 
@@ -3282,6 +3651,7 @@
         throw new Error("Formato no valido");
       }
       state.progress = normalizeProgressData(imported);
+      state.flashcardSession = createFlashcardSession();
       state.revealedQuestions.clear();
       state.revealedActivities.clear();
       saveProgress();
@@ -3324,7 +3694,13 @@
 
   function syncThemeControl(theme) {
     const isDark = theme === "dark";
-    dom.themeToggle.textContent = isDark ? "Modo claro" : "Modo oscuro";
+    let label = dom.themeToggle.querySelector(".topbar-button__label");
+    if (!label) {
+      label = document.createElement("span");
+      label.className = "topbar-button__label";
+      dom.themeToggle.appendChild(label);
+    }
+    label.textContent = isDark ? "Modo claro" : "Modo oscuro";
     dom.themeToggle.dataset.icon = isDark ? "sun" : "moon";
     dom.themeToggle.setAttribute("aria-pressed", String(isDark));
     dom.themeToggle.setAttribute("aria-label", isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
