@@ -1,6 +1,6 @@
 # Revision visual completa
 
-Fecha: 2026-07-11
+Fecha: 2026-07-15
 
 La auditoria visual reproducible del proyecto se genera con:
 
@@ -26,9 +26,10 @@ Uso editorial recomendado:
 Esta revision no sustituye al juicio editorial, pero deja trazabilidad reproducible de que todas
 las paginas han sido renderizadas y recorridas en el cierre de QA.
 
-Resultado de la ejecucion final del 2026-07-11:
+Resultado de la ejecucion final del 2026-07-15:
 
-- `435` paginas renderizadas entre las tres salidas.
-- `23` hojas de contacto generadas.
-- `3` paginas marcadas por densidad visual alta.
-- Las `3` paginas marcadas se revisaron a tamano completo y no revelaron incidencias reales.
+- `460` paginas renderizadas entre las tres salidas.
+- `24` hojas de contacto generadas.
+- `0` paginas marcadas automaticamente para inspeccion ampliada.
+- Se abrio ademas la pagina del nuevo arbol de Bayes a resolucion completa: el diagrama, las
+  probabilidades y las cajas conservan contraste, margenes y legibilidad de impresion.

@@ -23,6 +23,7 @@ BLOCK_MAP = {
     "C07": "B4 Geometria analitica",
     "C08": "B5 Limites y continuidad",
     "C09": "B6 Derivadas y aplicaciones",
+    "C10": "B7 Estadistica, probabilidad e inferencia",
 }
 
 
@@ -72,6 +73,18 @@ def detect_visual(chapter_id: str, title: str) -> str:
         if "graficas" in t or "representacion" in t or "asintotas" in t:
             return "Grafica con PGFPlots"
         return "Tabla de valores y grafica de apoyo"
+    if chapter_id == "C10":
+        if "datos bidimensionales" in t:
+            return "Tabla de contingencia"
+        if "nubes" in t or "regresion" in t:
+            return "Nube de puntos, ajuste y grafico de residuos"
+        if "muestreo" in t:
+            return "Tabla de muestra por estratos"
+        if "sucesos" in t:
+            return "Diagrama de Venn"
+        if "recuento" in t:
+            return "Arbol de recuento"
+        return "Diagrama de arbol de probabilidades"
     if chapter_id == "C04":
         if "dos variables" in t or "plano" in t:
             return "Semiplanos y region factible"
@@ -247,6 +260,20 @@ def detect_context(chapter_id: str, title: str) -> str:
         return "Diseno optimo de coste, area o beneficio"
     if "selectividad" in t or "ebau" in t:
         return "Estudio global tipo examen externo"
+    if chapter_id == "C10":
+        if "datos bidimensionales" in t:
+            return "Control de habitos de estudio mediante una tabla de contingencia"
+        if "nubes" in t:
+            return "Auditoria de una relacion cientifica aparente"
+        if "regresion" in t:
+            return "Calibracion y prediccion responsable de un sensor"
+        if "muestreo" in t:
+            return "Encuesta ambiental con riesgo de sesgo"
+        if "sucesos" in t:
+            return "Fiabilidad conjunta de dos componentes"
+        if "recuento" in t:
+            return "Seleccion de equipos de laboratorio"
+        return "Sistema de alerta con falsos positivos"
     return f"Aplicacion compleja de {title.lower()}"
 
 
@@ -262,6 +289,8 @@ def detect_exam_focus(chapter_id: str, title: str) -> str:
         return "Mini-examen con croquis obligatorio y justificacion geometrica"
     if chapter_id in {"C08", "C09"}:
         return "Mini-examen de lectura analitica, grafica y conclusion"
+    if chapter_id == "C10":
+        return "Mini-examen con datos, interpretacion y decision bajo incertidumbre"
     if chapter_id in {"C01", "C02"}:
         return "Mini-examen de modelizacion algebraica y cierre exacto"
     return "Mini-examen de tecnica y transferencia"
@@ -281,7 +310,12 @@ def detect_difficulty(chapter_id: str, title: str) -> str:
 def parse_sections() -> list[dict[str, str]]:
     sections = []
     for path in sorted(CHAPTERS_DIR.glob("[0-9][0-9]_*.tex")):
-        if "_answers" in path.name or path.name.startswith("00_") or path.name.startswith("10_") or path.name.startswith("09_recta_tangente"):
+        if (
+            "_answers" in path.name
+            or path.name.startswith("00_")
+            or path.name == "10_repaso_acumulativo.tex"
+            or path.name.startswith("09_recta_tangente")
+        ):
             continue
         chapter_id = f"C{path.name[:2]}"
         chapter_title = ""
@@ -399,7 +433,7 @@ def build_stats(sections: list[dict[str, str]]) -> str:
         [
             rf"\newcommand{{\SupplementChapterCount}}{{{chapter_count}}}",
             rf"\newcommand{{\SupplementSectionCount}}{{{len(sections)}}}",
-            r"\newcommand{\SupplementBlockCount}{6}",
+            r"\newcommand{\SupplementBlockCount}{7}",
             "",
         ]
     )

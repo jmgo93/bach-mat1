@@ -1,6 +1,6 @@
 window.MATHBOOK_SUPPLEMENTS = {
   "meta": {
-    "generatedOn": "2026-07-15 10:44",
+    "generatedOn": "2026-07-15 17:57",
     "contextualInventoryCount": 84,
     "contextualModelCount": 10,
     "examInventoryCount": 84,
@@ -1016,7 +1016,7 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S01",
         "sectionTitle": "Datos bidimensionales y tablas de contingencia",
-        "prompt": "Control de habitos de estudio y resultados",
+        "prompt": "Control de habitos de estudio mediante una tabla de contingencia",
         "visual": "Tabla de contingencia",
         "level": "Alta",
         "relatedTheorySections": [
@@ -1030,7 +1030,7 @@ window.MATHBOOK_SUPPLEMENTS = {
         "sectionId": "C10.S02",
         "sectionTitle": "Nubes de puntos, correlacion y causalidad",
         "prompt": "Auditoria de una relacion cientifica aparente",
-        "visual": "Nube de puntos",
+        "visual": "Nube de puntos, ajuste y grafico de residuos",
         "level": "Alta",
         "relatedTheorySections": [
           "C10.S02"
@@ -1042,8 +1042,8 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S03",
         "sectionTitle": "Regresion lineal y cuadratica",
-        "prompt": "Calibracion y prediccion de un sensor",
-        "visual": "Grafica de ajuste y residuos",
+        "prompt": "Calibracion y prediccion responsable de un sensor",
+        "visual": "Nube de puntos, ajuste y grafico de residuos",
         "level": "Alta",
         "relatedTheorySections": [
           "C10.S03"
@@ -1095,7 +1095,7 @@ window.MATHBOOK_SUPPLEMENTS = {
         "sectionId": "C10.S07",
         "sectionTitle": "Probabilidad condicionada, total y Bayes",
         "prompt": "Sistema de alerta con falsos positivos",
-        "visual": "Diagrama de arbol",
+        "visual": "Diagrama de arbol de probabilidades",
         "level": "Alta",
         "relatedTheorySections": [
           "C10.S07"
@@ -1122,11 +1122,11 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterId": "C02",
         "title": "Produccion por lotes y polinomios",
         "promptTitle": "Margen de un taller segun el numero de lotes",
-        "promptHtml": "<p>El margen semanal \\(M(n)\\), en centenas de euros, de un taller que fabrica lotes numerados se modeliza por</p><div class=\"math-display\">\\[\nM(n)=n^3-4n^2-n+4.\n\\]</div><p>Se pide:</p><ol><li><p>factorizar el polinomio para detectar semanas de equilibrio;</p></li><li><p>dividir \\(M(n)\\) entre \\(n-2\\) e interpretar el resto;</p></li><li><p>decidir si el margen se anula en \\(n=2\\).</p></li></ol>",
+        "promptHtml": "<p>El margen semanal \\(M(n)\\), en centenas de euros, de un taller que fabrica lotes numerados se modeliza por</p><div class=\"math-display\">\\[\nM(n)=n^3-4n^2-n+4.\n\\]</div><p>Se pide:</p><ol><li><p>factorizar el polinomio para detectar niveles de produccion de equilibrio;</p></li><li><p>dividir \\(M(n)\\) entre \\(n-2\\) e interpretar el resto;</p></li><li><p>decidir si el margen se anula en \\(n=2\\).</p></li></ol>",
         "resourceTitle": "",
         "resourceHtml": "",
-        "answerHtml": "<div class=\"math-display\">\\[\nM(n)=(n-1)(n+1)(n-4),\\qquad\nM(n)=(n-2)(n^2-2n-5)-6.\n\\]</div><p>Los puntos de equilibrio son \\(n=1\\), \\(n=-1\\) y \\(n=4\\). En \\(n=2\\) el margen no se anula: \\(M(2)=-6\\).</p>",
-        "solutionHtml": "<p>Agrupando,</p><div class=\"math-display\">\\[\nM(n)=n^2(n-4)-1(n-4)=(n^2-1)(n-4)=(n-1)(n+1)(n-4).\n\\]</div><p>Luego los ceros del modelo son</p><div class=\"math-display\">\\[\nn=1,\\qquad n=-1,\\qquad n=4.\n\\]</div><p>Dividiendo entre \\(n-2\\),</p><div class=\"math-display\">\\[\n\\begin{array}{r|rrrr}\n2 & 1 & -4 & -1 & 4\\\\\n  &   & 2 & -4 & -10\\\\\n\\hline\n  & 1 & -2 & -5 & -6\n\\end{array}\n\\]</div><p>por lo que</p><div class=\"math-display\">\\[\nM(n)=(n-2)(n^2-2n-5)-6.\n\\]</div><p>El resto es \\(-6\\), que coincide con \\(M(2)\\) por el teorema del resto. Por tanto, al tomar \\(n=2\\) el margen vale \\(-6\\) centenas de euros y no se alcanza equilibrio.</p>",
+        "answerHtml": "<div class=\"math-display\">\\[\nM(n)=(n-1)(n+1)(n-4),\\qquad\nM(n)=(n-2)(n^2-2n-5)-6.\n\\]</div><p>Los ceros algebraicos son \\(n=-1\\), \\(n=1\\) y \\(n=4\\). Si \\(n\\) representa un numero de lotes, \\(n=-1\\) se descarta: los niveles de produccion de equilibrio son \\(n=1\\) y \\(n=4\\). En \\(n=2\\), \\(M(2)=-6\\).</p>",
+        "solutionHtml": "<p>Agrupando,</p><div class=\"math-display\">\\[\nM(n)=n^2(n-4)-1(n-4)=(n^2-1)(n-4)=(n-1)(n+1)(n-4).\n\\]</div><p>Luego los ceros algebraicos del modelo son</p><div class=\"math-display\">\\[\nn=1,\\qquad n=-1,\\qquad n=4.\n\\]</div><p>Como el numero de lotes debe ser un entero no negativo, \\(n=-1\\) no tiene sentido en el contexto. Los niveles de equilibrio fisicamente admisibles son \\(n=1\\) y \\(n=4\\).</p><p>Dividiendo entre \\(n-2\\),</p><div class=\"math-display\">\\[\n\\begin{array}{r|rrrr}\n2 & 1 & -4 & -1 & 4\\\\\n  &   & 2 & -4 & -10\\\\\n\\hline\n  & 1 & -2 & -5 & -6\n\\end{array}\n\\]</div><p>por lo que</p><div class=\"math-display\">\\[\nM(n)=(n-2)(n^2-2n-5)-6.\n\\]</div><p>El resto es \\(-6\\), que coincide con \\(M(2)\\) por el teorema del resto. Por tanto, al tomar \\(n=2\\) el margen vale \\(-6\\) centenas de euros y no se alcanza equilibrio.</p>",
         "relatedTheorySections": [
           "C02.S03",
           "C02.S04",
@@ -1170,8 +1170,8 @@ window.MATHBOOK_SUPPLEMENTS = {
         "promptHtml": "<p>Desde un sendero recto se observa la parte superior de una torre. En el punto \\(A\\) el angulo de elevacion es \\(28^\\circ\\). Tras avanzar \\(40\\) metros hacia la base, en el punto \\(B\\), el angulo pasa a ser \\(41^\\circ\\).</p><p>Calcula la altura de la torre sobre el terreno horizontal.</p>",
         "resourceTitle": "Croquis trigonometrico",
         "resourceHtml": "<div class=\"centered-block\"><div class=\"figure-fallback\">Esquema disponible en el cuaderno PDF. Refuerza esta idea con el laboratorio interactivo.</div></div>",
-        "answerHtml": "<p>La altura es aproximadamente \\(53.4\\) metros.</p>",
-        "solutionHtml": "<p>Sea \\(x\\) la distancia desde \\(B\\) hasta la base de la torre. Entonces desde \\(A\\) la distancia horizontal es \\(x+40\\). Por trigonometria,</p><div class=\"math-display\">\\[\n\\tan 41^\\circ=\\frac{h}{x},\n\\qquad\n\\tan 28^\\circ=\\frac{h}{x+40}.\n\\]</div><p>Igualando \\(h\\),</p><div class=\"math-display\">\\[\nx\\tan 41^\\circ=(x+40)\\tan 28^\\circ.\n\\]</div><p>Despejamos:</p><div class=\"math-display\">\\[\nx(\\tan 41^\\circ-\\tan 28^\\circ)=40\\tan 28^\\circ,\n\\]</div><div class=\"math-display\">\\[\nx=\\frac{40\\tan 28^\\circ}{\\tan 41^\\circ-\\tan 28^\\circ}\\approx 61.43.\n\\]</div><p>La altura es</p><div class=\"math-display\">\\[\nh=x\\tan 41^\\circ\\approx 61.43\\cdot 0.8693\\approx 53.40.\n\\]</div><p>Por tanto, la torre mide aproximadamente \\(\\SI{53.4}{m}\\).</p>",
+        "answerHtml": "<p>La altura es aproximadamente \\(54.8\\) metros.</p>",
+        "solutionHtml": "<p>Sea \\(x\\) la distancia desde \\(B\\) hasta la base de la torre. Entonces desde \\(A\\) la distancia horizontal es \\(x+40\\). Por trigonometria,</p><div class=\"math-display\">\\[\n\\tan 41^\\circ=\\frac{h}{x},\n\\qquad\n\\tan 28^\\circ=\\frac{h}{x+40}.\n\\]</div><p>Igualando \\(h\\),</p><div class=\"math-display\">\\[\nx\\tan 41^\\circ=(x+40)\\tan 28^\\circ.\n\\]</div><p>Despejamos:</p><div class=\"math-display\">\\[\nx(\\tan 41^\\circ-\\tan 28^\\circ)=40\\tan 28^\\circ,\n\\]</div><div class=\"math-display\">\\[\nx=\\frac{40\\tan 28^\\circ}{\\tan 41^\\circ-\\tan 28^\\circ}\\approx 63.00.\n\\]</div><p>La altura es</p><div class=\"math-display\">\\[\nh=x\\tan 41^\\circ\\approx 63.00\\cdot 0.8693\\approx 54.77.\n\\]</div><p>Por tanto, la torre mide aproximadamente \\(\\SI{54.8}{m}\\).</p>",
         "relatedTheorySections": [
           "C05.S02",
           "C05.S08"
@@ -1241,13 +1241,13 @@ window.MATHBOOK_SUPPLEMENTS = {
       {
         "id": "CTX-C10",
         "chapterId": "C10",
-        "title": "Alerta de calidad: probabilidad, comunicacion y decision",
-        "promptTitle": "Situacion",
-        "promptHtml": "<p>El 4% de las piezas de una linea presenta un defecto. Un sistema alerta en el 95% de las piezas defectuosas y produce un 3% de falsos positivos entre las correctas. Calcula la probabilidad de alerta, la probabilidad de defecto tras una alerta y el numero esperado de revisiones innecesarias en 10 000 piezas.</p>",
-        "resourceTitle": "Datos y arbol",
-        "resourceHtml": "<ul><li>\\(P(D)=0.04\\), \\(P(A\\mid D)=0.95\\).</li><li>\\(P(\\overline D)=0.96\\), \\(P(A\\mid\\overline D)=0.03\\).</li></ul>",
-        "answerHtml": "<p>\\(P(A)=0.0668\\), \\(P(D\\mid A)\\approx0.5689\\) y se esperan 288 revisiones innecesarias.</p>",
-        "solutionHtml": "<p>Por probabilidad total, \\(P(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668\\). Aplicando Bayes, \\(P(D\\mid A)=0.038/0.0668\\approx0.5689\\). Los falsos positivos esperados son \\(10000\\cdot0.96\\cdot0.03=288\\). La alerta aumenta mucho la probabilidad de defecto, pero no equivale a certeza.</p>",
+        "title": "Alerta de calidad y decision bajo incertidumbre",
+        "promptTitle": "Falsos positivos en una linea de produccion",
+        "promptHtml": "<p>El \\(4\\%\\) de las piezas de una linea presenta un defecto. Un sistema automatico alerta en el \\(95\\%\\) de las piezas defectuosas y genera una alerta erronea en el \\(3\\%\\) de las piezas correctas. Se pide:</p><ol><li><p>calcular la probabilidad total de alerta;</p></li><li><p>hallar la probabilidad de que una pieza este defectuosa sabiendo que ha generado alerta;</p></li><li><p>estimar cuantas revisiones innecesarias se esperan al procesar \\(10\\,000\\) piezas;</p></li><li><p>explicar por que una alerta no equivale a certeza de defecto.</p></li></ol>",
+        "resourceTitle": "Arbol de probabilidades",
+        "resourceHtml": "<div class=\"centered-block\"><div class=\"figure-fallback\">Esquema disponible en el cuaderno PDF. Refuerza esta idea con el laboratorio interactivo.</div></div>",
+        "answerHtml": "<p>\\(P(A)=0.0668\\), \\(P(D\\mid A)\\approx0.5689\\) y se esperan \\(288\\) revisiones innecesarias.</p>",
+        "solutionHtml": "<p>Por probabilidad total,</p><div class=\"math-display\">\\[\nP(A)=P(D)P(A\\mid D)+P(\\overline D)P(A\\mid\\overline D)\n=0.04\\cdot0.95+0.96\\cdot0.03=0.0668.\n\\]</div><p>Aplicando Bayes,</p><div class=\"math-display\">\\[\nP(D\\mid A)=\\frac{P(D)P(A\\mid D)}{P(A)}\n=\\frac{0.04\\cdot0.95}{0.0668}\\approx0.5689.\n\\]</div><p>Las alertas erroneas esperadas entre \\(10\\,000\\) piezas son</p><div class=\"math-display\">\\[\n10\\,000\\cdot0.96\\cdot0.03=288.\n\\]</div><p>La alerta eleva la probabilidad de defecto del \\(4\\%\\) a aproximadamente el \\(56.9\\%\\), pero los falsos positivos y la baja prevalencia inicial impiden interpretarla como certeza.</p>",
         "relatedTheorySections": [
           "C10.S05",
           "C10.S07"
@@ -2341,10 +2341,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S01",
         "sectionTitle": "Datos bidimensionales y tablas de contingencia",
-        "title": "Prueba razonada: Datos bidimensionales y tablas de contingencia",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S01"
         ]
@@ -2355,10 +2355,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S02",
         "sectionTitle": "Nubes de puntos, correlacion y causalidad",
-        "title": "Prueba razonada: Nubes de puntos, correlacion y causalidad",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S02"
         ]
@@ -2369,10 +2369,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S03",
         "sectionTitle": "Regresion lineal y cuadratica",
-        "title": "Prueba razonada: Regresion lineal y cuadratica",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S03"
         ]
@@ -2383,10 +2383,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S04",
         "sectionTitle": "Muestreo, inferencia y tecnologia",
-        "title": "Prueba razonada: Muestreo, inferencia y tecnologia",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S04"
         ]
@@ -2397,10 +2397,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S05",
         "sectionTitle": "Experimentos aleatorios y algebra de sucesos",
-        "title": "Prueba razonada: Experimentos aleatorios y algebra de sucesos",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S05"
         ]
@@ -2411,10 +2411,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S06",
         "sectionTitle": "Regla de Laplace y tecnicas de recuento",
-        "title": "Prueba razonada: Regla de Laplace y tecnicas de recuento",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S06"
         ]
@@ -2425,10 +2425,10 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterTitle": "Estadistica, probabilidad e inferencia",
         "sectionId": "C10.S07",
         "sectionTitle": "Probabilidad condicionada, total y Bayes",
-        "title": "Prueba razonada: Probabilidad condicionada, total y Bayes",
+        "title": "Mini-examen con datos, interpretacion y decision bajo incertidumbre",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
           "C10.S07"
         ]
@@ -2534,8 +2534,8 @@ window.MATHBOOK_SUPPLEMENTS = {
         "briefHtml": "<p>Duracion sugerida: \\(30\\) minutos.</p><ol><li><p>Calcula el producto escalar de \\(\\vec u=(4,1)\\) y \\(\\vec v=(2,5)\\).</p></li><li><p>Halla el angulo entre ambos vectores.</p></li></ol>",
         "rubricTitle": "",
         "rubricHtml": "",
-        "answerHtml": "<div class=\"math-display\">\\[\n\\vec u\\cdot \\vec v=13,\n\\qquad\n\\cos\\theta=\\frac{13}{\\sqrt{17}\\sqrt{29}},\n\\]</div><p>de donde \\(\\theta\\approx 54.1^\\circ\\).</p>",
-        "solutionHtml": "<div class=\"math-display\">\\[\n\\vec u\\cdot \\vec v=4\\cdot 2+1\\cdot 5=13.\n\\]</div><p>Los modulos son</p><div class=\"math-display\">\\[\n\\|\\vec u\\|=\\sqrt{17},\\qquad \\|\\vec v\\|=\\sqrt{29}.\n\\]</div><p>Por la formula del producto escalar,</p><div class=\"math-display\">\\[\n\\cos\\theta=\\frac{\\vec u\\cdot \\vec v}{\\|\\vec u\\|\\,\\|\\vec v\\|}=\n\\frac{13}{\\sqrt{17}\\sqrt{29}}.\n\\]</div><p>Aplicando arco coseno:</p><div class=\"math-display\">\\[\n\\theta\\approx 54.1^\\circ.\n\\]</div>",
+        "answerHtml": "<div class=\"math-display\">\\[\n\\vec u\\cdot \\vec v=13,\n\\qquad\n\\cos\\theta=\\frac{13}{\\sqrt{17}\\sqrt{29}},\n\\]</div><p>de donde \\(\\theta\\approx 54.2^\\circ\\).</p>",
+        "solutionHtml": "<div class=\"math-display\">\\[\n\\vec u\\cdot \\vec v=4\\cdot 2+1\\cdot 5=13.\n\\]</div><p>Los modulos son</p><div class=\"math-display\">\\[\n\\|\\vec u\\|=\\sqrt{17},\\qquad \\|\\vec v\\|=\\sqrt{29}.\n\\]</div><p>Por la formula del producto escalar,</p><div class=\"math-display\">\\[\n\\cos\\theta=\\frac{\\vec u\\cdot \\vec v}{\\|\\vec u\\|\\,\\|\\vec v\\|}=\n\\frac{13}{\\sqrt{17}\\sqrt{29}}.\n\\]</div><p>Aplicando arco coseno:</p><div class=\"math-display\">\\[\n\\theta\\approx 54.2^\\circ.\n\\]</div>",
         "blockId": "B3",
         "blockLabel": "B3 Trigonometria y vectores",
         "duration": "25--35 min",
@@ -2602,17 +2602,16 @@ window.MATHBOOK_SUPPLEMENTS = {
         "chapterId": "C10",
         "sectionId": "C10.S03",
         "title": "Regresion, residuos y prediccion responsable",
-        "briefTitle": "Mini-examen",
-        "briefHtml": "<ol><li>Un ajuste es \\(\\hat y=1.8x+0.4\\). Predice para \\(x=6\\) e interpreta la pendiente.</li><li>Si se observa \\(y=12\\), calcula el residuo.</li><li>Explica por que \\(R^2=0.96\\) no autoriza a extrapolar hasta \\(x=100\\).</li></ol>",
-        "rubricTitle": "Rubrica",
-        "rubricHtml": "<p>Calculo 40%, interpretacion con unidades 30%, juicio sobre fiabilidad 30%.</p>",
-        "answerHtml": "<p>Prediccion: 11.2; pendiente: 1.8 unidades de y por unidad de x; residuo: 0.8.</p>",
-        "solutionHtml": "<p>Se obtiene \\(1.8\\cdot6+0.4=11.2\\). El residuo es observado menos predicho: \\(12-11.2=0.8\\). El ajuste solo ha sido contrastado en el rango observado; R cuadrado no garantiza que el mecanismo continue fuera de el.</p>",
+        "briefTitle": "Mini-examen de cierre",
+        "briefHtml": "<p>Duracion sugerida: \\(30\\) minutos.</p><ol><li><p>Un ajuste lineal es \\(\\hat y=1.8x+0.4\\). Predice \\(y\\) para \\(x=6\\) e interpreta la pendiente.</p></li><li><p>Si para \\(x=6\\) se observa \\(y=12\\), calcula el residuo.</p></li><li><p>Explica por que un valor \\(R^2=0.96\\) no autoriza a extrapolar hasta \\(x=100\\).</p></li></ol>",
+        "rubricTitle": "C10.S03",
+        "rubricHtml": "<ul><li><p>Prediccion e interpretacion de la pendiente: \\(4\\) puntos.</p></li><li><p>Residuo con signo correcto: \\(3\\) puntos.</p></li><li><p>Juicio razonado sobre extrapolacion: \\(3\\) puntos.</p></li></ul>",
+        "answerHtml": "<p>La prediccion es \\(11.2\\), la pendiente representa \\(1.8\\) unidades de \\(y\\) por cada unidad adicional de \\(x\\), y el residuo es \\(12-11.2=0.8\\). El valor de \\(R^2\\) solo describe el ajuste en el rango observado.</p>",
+        "solutionHtml": "<p>Sustituyendo \\(x=6\\),</p><div class=\"math-display\">\\[\n\\hat y=1.8\\cdot6+0.4=11.2.\n\\]</div><p>La pendiente indica que el modelo incrementa la respuesta prevista en \\(1.8\\) unidades por cada unidad adicional de \\(x\\). El residuo es observado menos predicho:</p><div class=\"math-display\">\\[\ne=y-\\hat y=12-11.2=0.8.\n\\]</div><p>Aunque \\(R^2=0.96\\) indique un ajuste alto en los datos empleados, no aporta evidencia sobre el comportamiento del proceso lejos del intervalo observado. Predecir en \\(x=100\\) seria una extrapolacion y necesita una justificacion externa al valor de \\(R^2\\).</p>",
         "blockId": "B7",
-        "blockLabel": "B7 Sentido estocastico",
-        "duration": "25 min",
+        "blockLabel": "B7 Estadistica, probabilidad e inferencia",
+        "duration": "25--35 min",
         "relatedTheorySections": [
-          "C10.S02",
           "C10.S03"
         ]
       }
@@ -2705,8 +2704,8 @@ window.MATHBOOK_SUPPLEMENTS = {
         "title": "Derivadas y aplicaciones",
         "briefTitle": "Examen modelo",
         "briefHtml": "<p>Duracion sugerida: \\(110\\) minutos.</p><ol><li><p>Deriva \\(f(x)=x^3-3x^2+2\\).</p></li><li><p>Estudia sus puntos criticos.</p></li><li><p>Halla la recta tangente en \\(x=1\\).</p></li></ol>",
-        "answerHtml": "<div class=\"math-display\">\\[\nf'(x)=3x^2-6x=3x(x-2).\n\\]</div><p>Los puntos criticos son \\(x=0\\) y \\(x=2\\). La tangente en \\(x=1\\) es \\(y=-3x+3\\).</p>",
-        "solutionHtml": "<div class=\"math-display\">\\[\nf'(x)=3x^2-6x=3x(x-2).\n\\]</div><p>Los puntos criticos son</p><div class=\"math-display\">\\[\nx=0,\\qquad x=2.\n\\]</div><p>Ademas,</p><div class=\"math-display\">\\[\nf(1)=1-3+2=0,\n\\qquad\nf'(1)=3-6=-3.\n\\]</div><p>La recta tangente en \\(x=1\\) es</p><div class=\"math-display\">\\[\ny-f(1)=f'(1)(x-1),\n\\]</div><p>es decir,</p><div class=\"math-display\">\\[\ny=-3(x-1)=-3x+3.\n\\]</div>",
+        "answerHtml": "<div class=\"math-display\">\\[\nf'(x)=3x^2-6x=3x(x-2).\n\\]</div><p>Hay un maximo local en \\((0,2)\\) y un minimo local en \\((2,-2)\\). La tangente en \\(x=1\\) es \\(y=-3x+3\\).</p>",
+        "solutionHtml": "<div class=\"math-display\">\\[\nf'(x)=3x^2-6x=3x(x-2).\n\\]</div><p>Los puntos criticos son</p><div class=\"math-display\">\\[\nx=0,\\qquad x=2.\n\\]</div><p>Como \\(f'\\) cambia de positivo a negativo en \\(x=0\\), existe un maximo local en \\((0,f(0))=(0,2)\\). En \\(x=2\\), \\(f'\\) cambia de negativo a positivo, por lo que hay un minimo local en \\((2,f(2))=(2,-2)\\). Ademas,</p><div class=\"math-display\">\\[\nf(1)=1-3+2=0,\n\\qquad\nf'(1)=3-6=-3.\n\\]</div><p>La recta tangente en \\(x=1\\) es</p><div class=\"math-display\">\\[\ny-f(1)=f'(1)(x-1),\n\\]</div><p>es decir,</p><div class=\"math-display\">\\[\ny=-3(x-1)=-3x+3.\n\\]</div>",
         "chapterIds": [
           "C09"
         ],
@@ -2717,11 +2716,11 @@ window.MATHBOOK_SUPPLEMENTS = {
       {
         "id": "B7",
         "blockId": "B7",
-        "title": "Datos, incertidumbre y decisiones",
-        "briefTitle": "Examen de bloque",
-        "briefHtml": "<ol><li>Analiza una tabla de contingencia y compara dos porcentajes condicionados.</li><li>Interpreta una nube con un valor atipico y decide entre ajuste lineal y cuadratico.</li><li>Resuelve un recuento sin orden y una probabilidad condicionada.</li><li>Aplica probabilidad total y Bayes a un sistema con falsos positivos.</li></ol>",
-        "answerHtml": "<p>La correccion exige denominadores condicionados, lectura grafica previa, recuento coherente y arbol completo.</p>",
-        "solutionHtml": "<p>Modelo de correccion: identificar primero la poblacion condicionada; justificar el ajuste con nube, residuos y R cuadrado; usar combinaciones solo si el orden no importa; multiplicar ramas y sumar caminos antes de invertir la condicion con Bayes. Toda conclusion debe indicar alcance, unidades y limitaciones.</p>",
+        "title": "Estadistica, probabilidad e inferencia",
+        "briefTitle": "Examen modelo",
+        "briefHtml": "<p>Duracion sugerida: \\(110\\) minutos. Se permite calculadora o software estadistico en el segundo apartado.</p><ol><li><p>En una clase, entre quienes usan una plataforma de estudio superan una prueba \\(18\\) de \\(24\\); entre quienes no la usan, \\(8\\) de \\(16\\). Calcula las dos proporciones condicionadas y valora si los datos prueban causalidad.</p></li><li><p>Para los pares \\((1,2),(2,4),(3,6),(4,8),(5,10),(6,20)\\), obtiene la recta de regresion, \\(r\\) y \\(R^2\\). Explica el efecto del ultimo punto.</p></li><li><p>Se elige al azar un equipo de \\(3\\) personas entre \\(8\\). Calcula la probabilidad de que dos personas concretas pertenezcan ambas al equipo.</p></li><li><p>El \\(4\\%\\) de las piezas tiene defecto. Un sistema alerta en el \\(95\\%\\) de las defectuosas y en el \\(3\\%\\) de las correctas. Calcula \\(P(A)\\) y \\(P(D\\mid A)\\).</p></li></ol>",
+        "answerHtml": "<p>Las proporciones son \\(0.75\\) y \\(0.50\\), pero la asociacion no prueba causalidad. La regresion es \\(\\hat y\\approx-2.667+3.143x\\), con \\(r\\approx0.922\\) y \\(R^2\\approx0.850\\). La probabilidad del equipo es \\(3/28\\). Finalmente, \\(P(A)=0.0668\\) y \\(P(D\\mid A)\\approx0.5689\\).</p>",
+        "solutionHtml": "<p>Las proporciones condicionadas son</p><div class=\"math-display\">\\[\nP(S\\mid U)=\\frac{18}{24}=0.75,\n\\qquad\nP(S\\mid\\overline U)=\\frac8{16}=0.50.\n\\]</div><p>La diferencia muestra asociacion en la muestra, pero no controla motivacion, tiempo de estudio u otras variables de confusion; por tanto, no demuestra causalidad.</p><p>Para la regresion, \\(\\bar x=3.5\\), \\(\\bar y=25/3\\), \\(S_{xx}=17.5\\) y \\(S_{xy}=55\\). Por ello,</p><div class=\"math-display\">\\[\nb=\\frac{S_{xy}}{S_{xx}}=\\frac{22}{7}\\approx3.143,\n\\qquad\na=\\bar y-b\\bar x=-\\frac83\\approx-2.667.\n\\]</div><p>El calculo tecnologico da \\(r\\approx0.922\\) y \\(R^2\\approx0.850\\). Los cinco primeros puntos siguen exactamente \\(y=2x\\); el ultimo es influyente y cambia de forma notable la pendiente y el ajuste, aunque \\(r\\) siga siendo alto.</p><p>Hay \\(\\binom83=56\\) equipos posibles. Si se fijan las dos personas, quedan \\(6\\) opciones para la tercera:</p><div class=\"math-display\">\\[\nP(\\text{ambas})=\\frac6{56}=\\frac3{28}.\n\\]</div><p>Por probabilidad total y Bayes,</p><div class=\"math-display\">\\[\nP(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668,\n\\]</div><div class=\"math-display\">\\[\nP(D\\mid A)=\\frac{0.04\\cdot0.95}{0.0668}\\approx0.5689.\n\\]</div><p>La alerta eleva mucho la probabilidad de defecto, pero no la convierte en certeza.</p>",
         "chapterIds": [
           "C10"
         ],

@@ -38,7 +38,7 @@ secciones activas}. La primera version operativa de este proyecto editorial reco
 \chapter{Banco Semilla de Problemas Modelo}
 
 \begin{planningbox}{Como leer este banco}
-Los nueve problemas siguientes no pretenden agotar el suplemento. Funcionan como semilla
+Los diez problemas siguientes no pretenden agotar el suplemento. Funcionan como semilla
 editorial: fijan tono, densidad, extension de solucion, tipo de grafico y nivel de exigencia.
 Cada uno puede inspirar despues varios problemas paralelos dentro del mismo capitulo.
 \end{planningbox}
@@ -125,7 +125,7 @@ M(n)=n^3-4n^2-n+4.
 \]
 Se pide:
 \begin{enumerate}
-  \item factorizar el polinomio para detectar semanas de equilibrio;
+  \item factorizar el polinomio para detectar niveles de produccion de equilibrio;
   \item dividir \(M(n)\) entre \(n-2\) e interpretar el resto;
   \item decidir si el margen se anula en \(n=2\).
 \end{enumerate}
@@ -136,8 +136,9 @@ Se pide:
 M(n)=(n-1)(n+1)(n-4),\qquad
 M(n)=(n-2)(n^2-2n-5)-6.
 \]
-Los puntos de equilibrio son \(n=1\), \(n=-1\) y \(n=4\). En \(n=2\) el margen no se anula:
-\(M(2)=-6\).
+Los ceros algebraicos son \(n=-1\), \(n=1\) y \(n=4\). Si \(n\) representa un numero de lotes,
+\(n=-1\) se descarta: los niveles de produccion de equilibrio son \(n=1\) y \(n=4\). En
+\(n=2\), \(M(2)=-6\).
 \end{shortanswer}
 
 \begin{fullsolution}{C02 modelo}
@@ -145,10 +146,12 @@ Agrupando,
 \[
 M(n)=n^2(n-4)-1(n-4)=(n^2-1)(n-4)=(n-1)(n+1)(n-4).
 \]
-Luego los ceros del modelo son
+Luego los ceros algebraicos del modelo son
 \[
 n=1,\qquad n=-1,\qquad n=4.
 \]
+Como el numero de lotes debe ser un entero no negativo, \(n=-1\) no tiene sentido en el
+contexto. Los niveles de equilibrio fisicamente admisibles son \(n=1\) y \(n=4\).
 
 Dividiendo entre \(n-2\),
 \[
@@ -326,7 +329,7 @@ Calcula la altura de la torre sobre el terreno horizontal.
 \end{databox}
 
 \begin{shortanswer}{C05 modelo}
-La altura es aproximadamente \(53.4\) metros.
+La altura es aproximadamente \(54.8\) metros.
 \end{shortanswer}
 
 \begin{fullsolution}{C05 modelo}
@@ -346,13 +349,13 @@ Despejamos:
 x(\tan 41^\circ-\tan 28^\circ)=40\tan 28^\circ,
 \]
 \[
-x=\frac{40\tan 28^\circ}{\tan 41^\circ-\tan 28^\circ}\approx 61.43.
+x=\frac{40\tan 28^\circ}{\tan 41^\circ-\tan 28^\circ}\approx 63.00.
 \]
 La altura es
 \[
-h=x\tan 41^\circ\approx 61.43\cdot 0.8693\approx 53.40.
+h=x\tan 41^\circ\approx 63.00\cdot 0.8693\approx 54.77.
 \]
-Por tanto, la torre mide aproximadamente \(\SI{53.4}{m}\).
+Por tanto, la torre mide aproximadamente \(\SI{54.8}{m}\).
 \end{fullsolution}
 
 \section{C06. Ruta vectorial de un dron}
@@ -614,6 +617,63 @@ A(5)=5\cdot 10=50.
 Las dimensiones optimas son \(5\) metros de profundidad y \(10\) metros de ancho.
 \end{fullsolution}
 
+\section{C10. Alerta de calidad y decision bajo incertidumbre}
+
+\begin{contextproblem}{Falsos positivos en una linea de produccion}
+El \(4\%\) de las piezas de una linea presenta un defecto. Un sistema automatico alerta en el
+\(95\%\) de las piezas defectuosas y genera una alerta erronea en el \(3\%\) de las piezas
+correctas. Se pide:
+\begin{enumerate}
+  \item calcular la probabilidad total de alerta;
+  \item hallar la probabilidad de que una pieza este defectuosa sabiendo que ha generado alerta;
+  \item estimar cuantas revisiones innecesarias se esperan al procesar \(10\,000\) piezas;
+  \item explicar por que una alerta no equivale a certeza de defecto.
+\end{enumerate}
+\end{contextproblem}
+
+\begin{databox}{Arbol de probabilidades}
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm,>=stealth,every node/.style={font=\small}]
+  \node (o) at (0,0) {Pieza};
+  \node (d) at (3,1.25) {Defectuosa \(D\)};
+  \node (c) at (3,-1.25) {Correcta \(\overline D\)};
+  \node (da) at (7,1.8) {Alerta \(A\)};
+  \node (dna) at (7,0.7) {Sin alerta};
+  \node (ca) at (7,-0.7) {Alerta \(A\)};
+  \node (cna) at (7,-1.8) {Sin alerta};
+  \draw[->] (o) -- node[above left] {\(0.04\)} (d);
+  \draw[->] (o) -- node[below left] {\(0.96\)} (c);
+  \draw[->] (d) -- node[above] {\(0.95\)} (da);
+  \draw[->] (d) -- node[below] {\(0.05\)} (dna);
+  \draw[->] (c) -- node[above] {\(0.03\)} (ca);
+  \draw[->] (c) -- node[below] {\(0.97\)} (cna);
+\end{tikzpicture}
+\end{center}
+\end{databox}
+
+\begin{shortanswer}{C10 modelo}
+\(P(A)=0.0668\), \(P(D\mid A)\approx0.5689\) y se esperan \(288\) revisiones innecesarias.
+\end{shortanswer}
+
+\begin{fullsolution}{C10 modelo}
+Por probabilidad total,
+\[
+P(A)=P(D)P(A\mid D)+P(\overline D)P(A\mid\overline D)
+=0.04\cdot0.95+0.96\cdot0.03=0.0668.
+\]
+Aplicando Bayes,
+\[
+P(D\mid A)=\frac{P(D)P(A\mid D)}{P(A)}
+=\frac{0.04\cdot0.95}{0.0668}\approx0.5689.
+\]
+Las alertas erroneas esperadas entre \(10\,000\) piezas son
+\[
+10\,000\cdot0.96\cdot0.03=288.
+\]
+La alerta eleva la probabilidad de defecto del \(4\%\) a aproximadamente el \(56.9\%\), pero
+los falsos positivos y la baja prevalencia inicial impiden interpretarla como certeza.
+\end{fullsolution}
+
 \chapter{Secuencia de Produccion}
 
 \begin{planningbox}{Ruta recomendada de ejecucion}
@@ -640,7 +700,7 @@ Las dimensiones optimas son \(5\) metros de profundidad y \(10\) metros de ancho
 \end{databox}
 
 \begin{planningbox}{Cierre esperado del suplemento definitivo}
-Cuando este proyecto se complete como cuaderno final, el PDF deberia quedar organizado en nueve
+Cuando este proyecto se complete como cuaderno final, el PDF deberia quedar organizado en diez
 capitulos, un reto integrador por tema, tres problemas globales de cierre y un apendice de
 indices por tecnica, recurso visual y nivel de dificultad.
 \end{planningbox}

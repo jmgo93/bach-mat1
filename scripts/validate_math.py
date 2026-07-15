@@ -2579,6 +2579,151 @@ def chapter9_results() -> list[dict[str, object]]:
     return results
 
 
+def chapter10_results() -> list[dict[str, object]]:
+    results: list[dict[str, object]] = []
+
+    results.append(
+        validate_value(
+            "EX-C10.S01-01",
+            "contingency_probabilities",
+            {"P(S|U)": sp.Rational(18, 24), "P(S|not U)": sp.Rational(8, 16)},
+            {"P(S|U)": sp.Rational(3, 4), "P(S|not U)": sp.Rational(1, 2)},
+            "Porcentajes condicionados de la tabla de uso de plataforma.",
+        )
+    )
+    results.append(validate_expression("GX-C10.S01-01", sp.Rational(18, 26), sp.Rational(9, 13), "Uso de plataforma condicionado a superar."))
+    results.append(validate_expression("PX-C10.S01-01", sp.Rational(18, 40), sp.Rational(9, 20), "Frecuencia relativa conjunta."))
+    results.append(
+        validate_value(
+            "PX-C10.S01-02",
+            "marginal_distribution",
+            (sp.Rational(26, 40), sp.Rational(14, 40)),
+            (sp.Rational(13, 20), sp.Rational(7, 20)),
+            "Distribucion marginal de superar y no superar.",
+        )
+    )
+
+    xs = [sp.Integer(value) for value in (1, 2, 3, 4)]
+    ys = [sp.Rational(21, 10), sp.Integer(4), sp.Rational(59, 10), sp.Integer(8)]
+    mean_x = sum(xs) / len(xs)
+    mean_y = sum(ys) / len(ys)
+    slope = sp.simplify(sum((px - mean_x) * (py - mean_y) for px, py in zip(xs, ys, strict=True)) / sum((px - mean_x) ** 2 for px in xs))
+    intercept = sp.simplify(mean_y - slope * mean_x)
+    predictions = [sp.simplify(intercept + slope * px) for px in xs]
+    r_squared = sp.simplify(1 - sum((py - pred) ** 2 for py, pred in zip(ys, predictions, strict=True)) / sum((py - mean_y) ** 2 for py in ys))
+    results.append(
+        validate_value(
+            "EX-C10.S03-01",
+            "linear_regression",
+            {"slope": slope, "intercept": intercept, "R2": r_squared, "prediction_2.5": intercept + slope * sp.Rational(5, 2)},
+            {"slope": sp.Rational(49, 25), "intercept": sp.Rational(1, 10), "R2": sp.Rational(4802, 4805), "prediction_2.5": 5},
+            "Ajuste lineal y prediccion del ejemplo de calibracion.",
+        )
+    )
+    results.append(validate_expression("PX-C10.S03-01", 3 + sp.Rational(3, 2) * 10, 18, "Prediccion con una recta de regresion."))
+    results.append(validate_expression("PX-C10.S03-02", 10 - sp.Rational(92, 10), sp.Rational(4, 5), "Residuo observado menos predicho."))
+    results.append(validate_expression("PX-C10.S04-03", sp.Rational(72, 120), sp.Rational(3, 5), "Proporcion muestral de apoyo."))
+
+    results.append(
+        validate_value(
+            "EX-C10.S05-01",
+            "event_algebra",
+            {"union": sp.Rational(8, 100) + sp.Rational(5, 100) - sp.Rational(2, 100), "neither": 1 - sp.Rational(11, 100)},
+            {"union": sp.Rational(11, 100), "neither": sp.Rational(89, 100)},
+            "Union de fallos y complementario.",
+        )
+    )
+    results.append(validate_expression("GX-C10.S05-01", sp.Rational(137, 500), sp.Rational(137, 500), "Frecuencia relativa experimental."))
+    results.append(validate_expression("PX-C10.S05-01", 1 - sp.Rational(37, 100), sp.Rational(63, 100), "Probabilidad del complementario."))
+    results.append(validate_expression("PX-C10.S05-02", sp.Rational(1, 2) + sp.Rational(2, 5) - sp.Rational(1, 5), sp.Rational(7, 10), "Formula de la union."))
+
+    results.append(
+        validate_value(
+            "EX-C10.S06-01",
+            "combinatorics_probability",
+            {"teams": sp.binomial(8, 3), "favourable": 6, "probability": sp.Rational(6, sp.binomial(8, 3))},
+            {"teams": 56, "favourable": 6, "probability": sp.Rational(3, 28)},
+            "Equipos de tres y probabilidad de incluir una pareja fija.",
+        )
+    )
+    results.append(validate_expression("GX-C10.S06-01", 5 * 4 * 3, 60, "Codigos de tres cifras distintas."))
+    results.append(validate_expression("PX-C10.S06-01", sp.binomial(10, 2), 45, "Combinaciones de diez elementos tomados de dos en dos."))
+    results.append(validate_expression("PX-C10.S06-02", sp.factorial(4), 24, "Ordenaciones de cuatro libros."))
+    results.append(validate_expression("PX-C10.S06-03", sp.Rational(6, 36), sp.Rational(1, 6), "Probabilidad de suma siete con dos dados."))
+
+    alert_probability = sp.Rational(4, 100) * sp.Rational(95, 100) + sp.Rational(96, 100) * sp.Rational(3, 100)
+    posterior = sp.simplify(sp.Rational(4, 100) * sp.Rational(95, 100) / alert_probability)
+    results.append(
+        validate_value(
+            "EX-C10.S07-01",
+            "bayes",
+            {"P(alert)": alert_probability, "P(defect|alert)": posterior},
+            {"P(alert)": sp.Rational(167, 2500), "P(defect|alert)": sp.Rational(95, 167)},
+            "Probabilidad total de alerta y posterior de defecto.",
+        )
+    )
+    results.append(validate_boolean("GX-C10.S07-01", sp.Rational(2, 5) * sp.Rational(1, 2) == sp.Rational(1, 5), True, "Criterio del producto para independencia."))
+    results.append(validate_expression("PX-C10.S07-01", sp.Rational(18, 100) / sp.Rational(6, 10), sp.Rational(3, 10), "Probabilidad condicionada."))
+    results.append(validate_expression("PX-C10.S07-02", sp.Rational(7, 10) * sp.Rational(2, 100) + sp.Rational(3, 10) * sp.Rational(5, 100), sp.Rational(29, 1000), "Tasa total de defecto."))
+
+    return results
+
+
+def supplement_results() -> list[dict[str, object]]:
+    results: list[dict[str, object]] = []
+
+    results.append(validate_value("CTX-C01", "context_model", {"factor": round(10**2.7, 2), "limit_db": 75}, {"factor": 501.19, "limit_db": 75}, "Escala logaritmica de ruido."))
+    polynomial = x**3 - 4 * x**2 - x + 4
+    results.append(
+        validate_value(
+            "CTX-C02",
+            "context_model",
+            {"factorization": sp.factor(polynomial), "remainder_at_2": polynomial.subs(x, 2), "context_roots": sp.FiniteSet(1, 4)},
+            {"factorization": (x - 1) * (x + 1) * (x - 4), "remainder_at_2": -6, "context_roots": sp.FiniteSet(1, 4)},
+            "Produccion por lotes con descarte de la raiz contextual negativa.",
+        )
+    )
+    b, s, p = sp.symbols("b s p", real=True)
+    subscription_solution = sp.solve([sp.Eq(b + s + p, 120), sp.Eq(18 * b + 25 * s + 40 * p, 3030), sp.Eq(b, 2 * p)], (b, s, p), dict=True)[0]
+    results.append(validate_value("CTX-C03", "context_model", subscription_solution, {b: 60, s: 30, p: 30}, "Sistema de suscripciones 3x3."))
+    vertices = [sp.Tuple(20, 10), sp.Tuple(20, 60), sp.Tuple(50, 45), sp.Tuple(sp.Rational(220, 3), 10)]
+    profits = [18 * px + 25 * py for px, py in vertices]
+    results.append(validate_value("CTX-C04", "context_model", {"vertices": sp.FiniteSet(*vertices), "maximum": max(profits), "point": vertices[profits.index(max(profits))]}, {"vertices": sp.FiniteSet(*vertices), "maximum": 2025, "point": sp.Tuple(50, 45)}, "Region factible y beneficio."))
+    tower_distance = 40 * sp.tan(deg(28)) / (sp.tan(deg(41)) - sp.tan(deg(28)))
+    tower_height = sp.simplify(tower_distance * sp.tan(deg(41)))
+    results.append(validate_value("CTX-C05", "context_model", {"distance": round(float(tower_distance.evalf()), 2), "height": round(float(tower_height.evalf()), 2)}, {"distance": 63.00, "height": 54.77}, "Altura de una torre desde dos puntos."))
+    route = point(6 - 1 + 3, 2 + 5 - 4)
+    results.append(validate_value("CTX-C06", "context_model", {"route": route, "norm": sp.sqrt(route[0] ** 2 + route[1] ** 2), "cos_a": sp.Rational(19, 1) / (sp.sqrt(73) * sp.sqrt(5)), "cos_b": sp.Rational(17, 1) / (sp.sqrt(73) * sp.sqrt(10))}, {"route": sp.Tuple(8, 3), "norm": sp.sqrt(73), "cos_a": 19 / sp.sqrt(365), "cos_b": 17 / sp.sqrt(730)}, "Ruta vectorial de un dron."))
+    results.append(validate_value("CTX-C07", "context_model", {"area": sp.Rational(8 * 6, 2), "altitude": vertical_line(2), "orthocenter": sp.Tuple(2, 2)}, {"area": 24, "altitude": vertical_line(2), "orthocenter": sp.Tuple(2, 2)}, "Triangulo urbano y ortocentro."))
+    results.append(validate_value("CTX-C08", "context_model", {"domain": sp.Interval(0, sp.oo), "limit": sp.limit(2 + 12 / (x + 1), x, sp.oo), "below_five": sp.Interval.open(3, sp.oo)}, {"domain": sp.Interval(0, sp.oo), "limit": 2, "below_five": sp.Interval.open(3, sp.oo)}, "Modelo de enfriamiento."))
+    results.append(validate_value("CTX-C09", "context_model", {"depth": 5, "width": 20 - 2 * 5, "area": 5 * (20 - 2 * 5)}, {"depth": 5, "width": 10, "area": 50}, "Optimizacion de un panel."))
+    alert = sp.Rational(167, 2500)
+    results.append(validate_value("CTX-C10", "context_model", {"alert": alert, "posterior": sp.Rational(38, 1000) / alert, "false_reviews": 10000 * sp.Rational(96, 100) * sp.Rational(3, 100)}, {"alert": sp.Rational(167, 2500), "posterior": sp.Rational(95, 167), "false_reviews": 288}, "Alerta de calidad y Bayes."))
+
+    results.append(validate_value("MINI-C01.S07", "exam_model", {"log_expression": sp.log(20), "db_increase": 20}, {"log_expression": sp.log(20), "db_increase": 20}, "Mini-examen de logaritmos."))
+    results.append(validate_value("MINI-C02.S04", "exam_model", {"parameter": -1, "factorization": (x - 2) * (x**2 - x - 3)}, {"parameter": -1, "factorization": x**3 - 3 * x**2 - x + 6}, "Mini-examen de teorema del resto."))
+    results.append(validate_value("MINI-C03.S09", "exam_model", {"general": 128, "reduced": 132}, {"general": 128, "reduced": 132}, "Mini-examen de sistema contextualizado."))
+    exam_vertices = sp.FiniteSet(sp.Tuple(1, 2), sp.Tuple(1, 7), sp.Tuple(6, 2))
+    results.append(validate_value("MINI-C04.S07", "exam_model", {"vertices": exam_vertices, "maximum": 22, "point": sp.Tuple(6, 2)}, {"vertices": exam_vertices, "maximum": 22, "point": sp.Tuple(6, 2)}, "Mini-examen de region factible."))
+    results.append(validate_value("MINI-C05.S06", "exam_model", sp.FiniteSet(sp.pi / 3, 2 * sp.pi / 3), sp.FiniteSet(sp.pi / 3, 2 * sp.pi / 3), "Mini-examen de ecuacion trigonometrica."))
+    angle = sp.acos(sp.Rational(13, 1) / (sp.sqrt(17) * sp.sqrt(29))) * 180 / sp.pi
+    results.append(validate_value("MINI-C06.S04", "exam_model", {"dot": 13, "angle_degrees": round(float(angle.evalf()), 1)}, {"dot": 13, "angle_degrees": 54.2}, "Mini-examen de producto escalar y angulo."))
+    results.append(validate_expression("MINI-C07.S06", 6 / sp.sqrt(5), 6 * sp.sqrt(5) / 5, "Distancia entre rectas paralelas."))
+    results.append(validate_value("MINI-C08.S09", "exam_model", {"parameter": sp.solve(sp.Eq(2 * a + 1, 3), a)[0], "join_value": 3}, {"parameter": 1, "join_value": 3}, "Continuidad con parametro."))
+    results.append(validate_value("MINI-C09.S07", "exam_model", {"side_x": 6, "side_y": 6, "area": 36}, {"side_x": 6, "side_y": 6, "area": 36}, "Optimizacion de rectangulo."))
+    results.append(validate_value("MINI-C10.S03", "exam_model", {"prediction": sp.Rational(18, 10) * 6 + sp.Rational(4, 10), "residual": 12 - sp.Rational(112, 10)}, {"prediction": sp.Rational(112, 10), "residual": sp.Rational(4, 5)}, "Regresion y residuo."))
+
+    results.append(validate_value("BLOCK-B1", "block_exam", {"decimal": sp.Rational(5, 18), "radicals": 3 * sp.sqrt(3), "parameter": 0, "rational_root": 3}, {"decimal": sp.Rational(5, 18), "radicals": 3 * sp.sqrt(3), "parameter": 0, "rational_root": 3}, "Examen de bloque B1."))
+    results.append(validate_value("BLOCK-B2", "block_exam", {"radical_root": 4, "system": sp.Tuple(4, 3), "inequality": sp.Interval(1, 4), "region_vertices": sp.FiniteSet(sp.Tuple(0, 0), sp.Tuple(5, 0), sp.Tuple(0, 5))}, {"radical_root": 4, "system": sp.Tuple(4, 3), "inequality": sp.Interval(1, 4), "region_vertices": sp.FiniteSet(sp.Tuple(0, 0), sp.Tuple(5, 0), sp.Tuple(0, 5))}, "Examen de bloque B2."))
+    results.append(validate_value("BLOCK-B3", "block_exam", {"degrees": 150, "legs": sp.FiniteSet(5, 5 * sp.sqrt(3)), "roots": sp.FiniteSet(sp.pi / 3, 5 * sp.pi / 3), "sum": sp.Tuple(4, 2), "dot": -5}, {"degrees": 150, "legs": sp.FiniteSet(5, 5 * sp.sqrt(3)), "roots": sp.FiniteSet(sp.pi / 3, 5 * sp.pi / 3), "sum": sp.Tuple(4, 2), "dot": -5}, "Examen de bloque B3."))
+    results.append(validate_value("BLOCK-B4", "block_exam", {"line": slope_intercept(1, 1), "perpendicular": slope_intercept(-1, 3), "area": 6}, {"line": slope_intercept(1, 1), "perpendicular": slope_intercept(-1, 3), "area": 6}, "Examen de bloque B4."))
+    results.append(validate_value("BLOCK-B5", "block_exam", {"domain": sp.Interval(1, sp.oo), "limit": 4, "continuous_at_1": True}, {"domain": sp.Interval(1, sp.oo), "limit": 4, "continuous_at_1": True}, "Examen de bloque B5."))
+    results.append(validate_value("BLOCK-B6", "block_exam", {"derivative": 3 * x * (x - 2), "maximum": sp.Tuple(0, 2), "minimum": sp.Tuple(2, -2), "tangent": slope_intercept(-3, 3)}, {"derivative": 3 * x * (x - 2), "maximum": sp.Tuple(0, 2), "minimum": sp.Tuple(2, -2), "tangent": slope_intercept(-3, 3)}, "Examen de bloque B6 con clasificacion de extremos."))
+    results.append(validate_value("BLOCK-B7", "block_exam", {"conditionals": (sp.Rational(3, 4), sp.Rational(1, 2)), "regression": (sp.Rational(-8, 3), sp.Rational(22, 7), sp.Rational(363, 427)), "team": sp.Rational(3, 28), "alert": sp.Rational(167, 2500), "posterior": sp.Rational(95, 167)}, {"conditionals": (sp.Rational(3, 4), sp.Rational(1, 2)), "regression": (sp.Rational(-8, 3), sp.Rational(22, 7), sp.Rational(363, 427)), "team": sp.Rational(3, 28), "alert": sp.Rational(167, 2500), "posterior": sp.Rational(95, 167)}, "Examen de bloque B7."))
+
+    return results
+
+
 def review_results() -> list[dict[str, object]]:
     results: list[dict[str, object]] = []
     positive_domain = sp.Interval.open(0, sp.oo)
@@ -2837,6 +2982,8 @@ def build_results() -> list[dict[str, object]]:
         + chapter7_results()
         + chapter8_results()
         + chapter9_results()
+        + chapter10_results()
+        + supplement_results()
         + review_results()
     )
 

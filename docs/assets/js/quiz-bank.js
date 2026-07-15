@@ -67,7 +67,7 @@ window.MATHBOOK_QUIZ_BANK = [
     chapterId: "C04",
     difficulty: "base",
     prompt: "El punto \\((0,0)\\) pertenece al semiplano definido por \\(2x+y\\le 4\\):",
-    options: ["Siempre no", "Solo si \\(x>0\\)", "Si", "Solo si \\(y<0\\)"],
+    options: ["No, porque el origen queda fuera", "Solo si \\(x>0\\)", "Si", "Solo si \\(y<0\\)"],
     correctIndex: 2,
     explanation: "Al sustituir \\((0,0)\\) queda \\(0\\le 4\\), que es verdadero."
   },

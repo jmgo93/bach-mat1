@@ -106,7 +106,7 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v21", worker)
+        self.assertIn("mate1-interactivas-v22", worker)
 
     def test_global_search_covers_every_resource_family(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -151,6 +151,24 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
             text = path.read_text(encoding="utf-8")
             for token in ("Ã", "Â", "â€"):
                 self.assertNotIn(token, text, f"{token} en {path.name}")
+
+    def test_javascript_math_delimiters_are_escaped(self) -> None:
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        self.assertIsNone(re.search(r"(?<!\\)\\\(", app))
+        self.assertIn(r"\\(\\hat y=", app)
+
+    def test_corrected_supplement_results_and_stochastic_block(self) -> None:
+        contextual = (ROOT / "tex" / "supplements" / "contextual_plan.tex").read_text(encoding="utf-8")
+        exams = (ROOT / "tex" / "supplements" / "exams_plan.tex").read_text(encoding="utf-8")
+        self.assertIn(r"\SI{54.8}{m}", contextual)
+        self.assertNotIn(r"\SI{53.4}{m}", contextual)
+        self.assertIn(r"\theta\approx 54.2^\circ", exams)
+        self.assertNotIn(r"\theta\approx 54.1^\circ", exams)
+        self.assertIn(r"\section{Bloque B7", exams)
+        self.assertIn(r"maximo local en \((0,2)\)", exams)
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        self.assertIn('"C10.S07": `', app)
+        self.assertIn("bayesTitle", app)
 
 
 if __name__ == "__main__":

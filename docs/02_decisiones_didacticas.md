@@ -13,7 +13,8 @@
    `scripts/build_phase2_outputs.py`.
 6. Los temas 2, 3 y 9 se consideran fuentes escaneadas y su taxonomia se sustenta en revision
    visual documentada, no en OCR ciego.
-7. El bloque de probabilidad queda fuera de esta iteracion por ausencia total de fuentes.
+7. El corpus no contiene una fuente de probabilidad. Para completar el sentido estocastico se
+   incorpora `C10` como contenido editorial original, sin atribuirle cobertura documental.
 8. La expansion editorial del corpus se ha ejecutado por bloques `C01-C04`, `C05-C07` y
    `C08-C09`, manteniendo el mismo patron de teoria minima, metodo explicito, ejemplo resuelto,
    guiados, practica graduada, autoevaluacion y extension.
@@ -21,8 +22,8 @@
    la cobertura fuente, sino que recombina tecnicas ya cubiertas para entrenar transferencia.
 10. El ensamblaje final incorpora portada actualizada, presentacion, guia de uso, indice rapido
     por tecnicas y tabla de seguimiento del alumnado dentro de las salidas principales.
-11. La validacion matematica ya no se limita a los capitulos fuente: cubre `C01-C09` y el nuevo
-    repaso acumulativo con `581` comprobaciones machine-readable en
+11. La validacion matematica ya no se limita a los capitulos fuente: cubre `C01-C10`, el repaso
+    acumulativo y los modelos de problemas y examenes con `629` comprobaciones machine-readable en
     `data/validation_results.json`.
 12. La auditoria visual de figuras se concentra en recursos exactos y funcionales; se descartan
     diagramas decorativos y se documenta la necesidad real en `docs/04_auditoria_figuras.md`.

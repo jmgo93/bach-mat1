@@ -1,4 +1,4 @@
-const CACHE_NAME = "mate1-interactivas-v21";
+const CACHE_NAME = "mate1-interactivas-v22";
 const CORE_ASSETS = [
   "./",
   "./index.html",

@@ -1325,7 +1325,7 @@
             <text x="280" y="90">I: +,+</text><text x="105" y="90">II: −,+</text>
             <text x="100" y="240">III: −,−</text><text x="275" y="240">IV: +,−</text>
           </svg>
-          <figcaption>Cada pareja indica los signos de coseno y seno, es decir, de las coordenadas \((x,y)\).</figcaption>
+          <figcaption>Cada pareja indica los signos de coseno y seno, es decir, de las coordenadas \\((x,y)\\).</figcaption>
         </figure>`,
       "C06.S06": `
         <figure class="semantic-figure">
@@ -1339,7 +1339,7 @@
             <circle class="diagram-point" cx="195" cy="95" r="5"></circle><text x="168" y="90">D</text>
             <text x="185" y="285">C = B + D − A</text>
           </svg>
-          <figcaption>Los lados opuestos representan el mismo vector: \(\overrightarrow{AB}=\overrightarrow{DC}\).</figcaption>
+          <figcaption>Los lados opuestos representan el mismo vector: \\(\\overrightarrow{AB}=\\overrightarrow{DC}\\).</figcaption>
         </figure>`,
       "C07.S07": `
         <figure class="semantic-figure">
@@ -1352,7 +1352,31 @@
             <circle class="diagram-point" cx="135" cy="65" r="5"></circle><text x="78" y="55">B(1,5)</text>
             <circle class="diagram-point" cx="345" cy="245" r="5"></circle><text x="350" y="270">C(4,2)</text>
           </svg>
-          <figcaption>Base y altura miden 3 unidades, por lo que el area es \(\frac{3\cdot3}{2}=\frac92\).</figcaption>
+          <figcaption>Base y altura miden 3 unidades, por lo que el area es \\(\\frac{3\\cdot3}{2}=\\frac92\\).</figcaption>
+        </figure>`,
+      "C10.S07": `
+        <figure class="semantic-figure">
+          <svg viewBox="0 0 560 330" role="img" aria-labelledby="bayesTitle bayesDesc">
+            <title id="bayesTitle">Arbol de probabilidades del sistema de alerta</title>
+            <desc id="bayesDesc">Una pieza puede ser defectuosa o correcta y, despues, generar o no una alerta.</desc>
+            <line class="diagram-shape" x1="55" y1="165" x2="205" y2="85"></line>
+            <line class="diagram-shape" x1="55" y1="165" x2="205" y2="245"></line>
+            <line class="diagram-shape" x1="205" y1="85" x2="405" y2="45"></line>
+            <line class="diagram-shape" x1="205" y1="85" x2="405" y2="125"></line>
+            <line class="diagram-shape" x1="205" y1="245" x2="405" y2="205"></line>
+            <line class="diagram-shape" x1="205" y1="245" x2="405" y2="285"></line>
+            <circle class="diagram-point" cx="55" cy="165" r="6"></circle>
+            <circle class="diagram-point" cx="205" cy="85" r="6"></circle>
+            <circle class="diagram-point" cx="205" cy="245" r="6"></circle>
+            <text x="25" y="190">Pieza</text>
+            <text x="180" y="70">D</text><text x="168" y="270">no D</text>
+            <text x="420" y="50">Alerta</text><text x="420" y="130">Sin alerta</text>
+            <text x="420" y="210">Alerta</text><text x="420" y="290">Sin alerta</text>
+            <text x="112" y="105">0.04</text><text x="112" y="235">0.96</text>
+            <text x="292" y="52">0.95</text><text x="292" y="122">0.05</text>
+            <text x="292" y="212">0.03</text><text x="292" y="282">0.97</text>
+          </svg>
+          <figcaption>Multiplica probabilidades a lo largo de cada rama y suma los caminos que terminan en alerta.</figcaption>
         </figure>`,
       "C08.S02": `
         <figure class="semantic-figure">
@@ -1365,7 +1389,7 @@
             <circle class="diagram-point" cx="230" cy="75" r="6"></circle><text x="242" y="65">maximo (1,4)</text>
             <text x="61" y="340">−1</text><text x="224" y="340">1</text><text x="463" y="340">3</text>
           </svg>
-          <figcaption>La funcion crece hasta \(x=1\), alcanza el valor maximo \(4\) y despues decrece.</figcaption>
+          <figcaption>La funcion crece hasta \\(x=1\\), alcanza el valor maximo \\(4\\) y despues decrece.</figcaption>
         </figure>`
     };
     return figures[sectionId] || "";
@@ -4084,8 +4108,9 @@
 
     const h = 0.0005;
     const f0 = selected.fn(point);
-    const left = selected.fn(point - 0.25);
-    const right = selected.fn(point + 0.25);
+    const lateralStep = 0.05;
+    const left = selected.fn(point - lateralStep);
+    const right = selected.fn(point + lateralStep);
     const derivative =
       Number.isFinite(selected.fn(point + h)) && Number.isFinite(selected.fn(point - h))
         ? (selected.fn(point + h) - selected.fn(point - h)) / (2 * h)
@@ -4099,7 +4124,7 @@
     document.getElementById("functionDiagram").innerHTML = buildFunctionSvg(selected, tangent, point);
     document.getElementById("functionFeedback").innerHTML = `
       <p><strong>\\(f(${formatDecimal(point)})\\):</strong> ${Number.isFinite(f0) ? `\\(${formatDecimal(f0)}\\)` : "no definida"}</p>
-      <p><strong>Aproximacion lateral:</strong> izquierda ${Number.isFinite(left) ? `\\(${formatDecimal(left)}\\)` : "no definida"} - derecha ${Number.isFinite(right) ? `\\(${formatDecimal(right)}\\)` : "no definida"}</p>
+      <p><strong>Valores proximos:</strong> \\(f(x_0-0.05)\\) = ${Number.isFinite(left) ? `\\(${formatDecimal(left)}\\)` : "no definida"} - \\(f(x_0+0.05)\\) = ${Number.isFinite(right) ? `\\(${formatDecimal(right)}\\)` : "no definida"}</p>
       <p><strong>Pendiente aproximada:</strong> ${Number.isFinite(derivative) ? `\\(${formatDecimal(derivative)}\\)` : "no disponible"}</p>
       <p><strong>Tangente local:</strong> ${
         tangent
@@ -4134,8 +4159,8 @@
     document.getElementById("regressionOutlierValue").textContent = String(outlier);
     document.getElementById("regressionDiagram").innerHTML = buildRegressionSvg(points, stats);
     document.getElementById("regressionFeedback").innerHTML = `
-      <p><strong>Recta ajustada:</strong> \(\hat y=${formatSigned(stats.slope)}x${formatIntercept(stats.intercept)}\)</p>
-      <p><strong>Correlacion:</strong> \(r=${formatDecimal(stats.r)}\) - <strong>determinacion:</strong> \(R^2=${formatDecimal(stats.r * stats.r)}\)</p>
+      <p><strong>Recta ajustada:</strong> \\(\\hat y=${formatSigned(stats.slope)}x${formatIntercept(stats.intercept)}\\)</p>
+      <p><strong>Correlacion:</strong> \\(r=${formatDecimal(stats.r)}\\) - <strong>determinacion:</strong> \\(R^2=${formatDecimal(stats.r * stats.r)}\\)</p>
       <div class="quiz-feedback" data-state="${success ? "correct" : "wrong"}">
         <strong>${success ? "Has roto la aparente relacion lineal" : "La tendencia sigue siendo muy lineal"}</strong>
         <p>${
@@ -4210,7 +4235,7 @@
       ? `
           <p><strong>Ensayos:</strong> ${trials} - <strong>frecuencia relativa de cara:</strong> ${formatDecimal(relative)}</p>
           <div class="quiz-feedback" data-state="${trials >= 1000 ? "correct" : "wrong"}">
-            <strong>${trials >= 1000 ? "Ya puedes observar la estabilizacion" : "Amplia la simulacion"}</strong>
+            <strong>${trials >= 1000 ? "Ya puedes analizar la estabilizacion" : "Amplia la simulacion"}</strong>
             <p>${trials >= 1000 ? "Al crecer el numero de ensayos, la frecuencia relativa tiende a acercarse a 0.5, aunque no tiene por que coincidir exactamente." : "Compara tandas pequenas y grandes para distinguir variabilidad de probabilidad teorica."}</p>
           </div>
         `

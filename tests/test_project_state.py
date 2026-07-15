@@ -48,6 +48,34 @@ class ProjectStateTests(unittest.TestCase):
         self.assertEqual(payload["passed_count"], payload["exercise_count"])
         self.assertTrue(all(item["status"] == "passed" for item in payload["results"]))
 
+    def test_validation_covers_stochastic_and_supplement_models(self) -> None:
+        target = ROOT / "data" / "validation_results.json"
+        payload = json.loads(target.read_text(encoding="utf-8"))
+        identifiers = {item["id"] for item in payload["results"]}
+        self.assertGreaterEqual(payload["exercise_count"], 629)
+        for identifier in (
+            "EX-C10.S01-01",
+            "EX-C10.S03-01",
+            "EX-C10.S07-01",
+            "CTX-C05",
+            "MINI-C06.S04",
+            "BLOCK-B7",
+        ):
+            self.assertIn(identifier, identifiers)
+
+    def test_probability_answers_are_in_the_answers_document(self) -> None:
+        main_answers = (ROOT / "tex" / "main_answers.tex").read_text(encoding="utf-8")
+        answer_file = ROOT / "tex" / "chapters" / "10_estadistica_probabilidad_answers.tex"
+        answer_text = answer_file.read_text(encoding="utf-8")
+        self.assertIn(r"\input{tex/chapters/10_estadistica_probabilidad_answers.tex}", main_answers)
+        for section_index in range(1, 8):
+            self.assertIn(f"C10.S{section_index:02d}", answer_text)
+        self.assertIn("CH-C10.S07-01", answer_text)
+
+    def test_visual_audit_removes_stale_artifacts(self) -> None:
+        script = (ROOT / "scripts" / "render_visual_audit.py").read_text(encoding="utf-8")
+        self.assertIn("shutil.rmtree(AUDIT_DIR)", script)
+
     def test_source_manifest_detects_pdf_corpus(self) -> None:
         target = ROOT / "data" / "source_manifest.yml"
         text = target.read_text(encoding="utf-8")

@@ -27,17 +27,18 @@ Los PDF fuente originales de trabajo no se publican en este repositorio.
 - Corpus auditado: `8` PDF.
 - Cobertura trazable actual: `167` ejercicios fuente mapeados y marcados como
   `chapter_validated`.
-- Capitulos implementados, compilados y validados: `C01-C09`, mas un capitulo original de
-  repaso acumulativo, simulacros y reto final.
-- Validaciones matematicas actuales: `581/581`.
+- Capitulos implementados, compilados y validados: `C01-C09`, un capitulo original `C10` de
+  estadistica y probabilidad, y un capitulo final de repaso acumulativo con simulacros y reto.
+- Validaciones matematicas actuales: `629/629`, incluidos `C10` y los modelos publicados de
+  problemas y examenes.
 - Salidas actuales:
-  - `build/cuaderno_estudiante.pdf`: `176` paginas
-  - `build/cuaderno_profesor.pdf`: `226` paginas
-  - `build/respuestas_breves.pdf`: `33` paginas
-  - `build/proyecto_problemas_contextualizados.pdf`: proyecto editorial compilable del futuro
-    suplemento de problemas contextualizados
-  - `build/proyecto_examenes_dificiles.pdf`: proyecto editorial compilable del futuro
-    suplemento de examenes por secciones y bloques
+  - `build/cuaderno_estudiante.pdf`: `187` paginas
+  - `build/cuaderno_profesor.pdf`: `238` paginas
+  - `build/respuestas_breves.pdf`: `35` paginas
+  - `build/proyecto_problemas_contextualizados.pdf`: `19` paginas con inventario de `84`
+    secciones y `10` problemas modelo resueltos
+  - `build/proyecto_examenes_dificiles.pdf`: `20` paginas con inventario de `84` secciones,
+    `10` mini-examenes modelo y `7` examenes de bloque resueltos
   - `build/cuaderno_problemas_contextualizados.pdf`: `21` paginas de cuaderno complementario
     resuelto, con bloque inicial `C05-C06` ya redactado y hoja de ruta para el resto
   - `build/cuaderno_examenes_dificiles.pdf`: `20` paginas de cuaderno complementario de
@@ -45,9 +46,10 @@ Los PDF fuente originales de trabajo no se publican en este repositorio.
   - `docs/`: web publicada con teoria, ejemplos resueltos, test interactivos, laboratorios,
     modo claro/oscuro, PWA y soporte multidioma con Google Translate
 - Contenido didactico activo:
-  - `78` ejemplos resueltos
-  - `642` ejercicios guiados, propuestos o de reto con respuesta breve y solucion docente
-- Bloque pendiente por falta de corpus: probabilidad.
+  - `85` ejemplos resueltos
+  - `671` ejercicios guiados, propuestos o de reto con respuesta breve y solucion docente
+- `C10` es contenido editorial original: no existe una relacion PDF de probabilidad en
+  `sources/`, por lo que se valida matematicamente pero no se atribuye a la cobertura fuente.
 - Siguiente trabajo recomendado: una revision visual editorial pagina a pagina solo si se desea
   un cierre todavia mas estricto; no quedan incidencias tecnicas criticas abiertas.
 
@@ -177,8 +179,8 @@ adicional. Tambien puede instalarse como aplicacion gracias al `manifest` y al `
 
 ## Limitaciones actuales
 
-- No hay fuentes de probabilidad en la carpeta actual, asi que los capitulos de ese bloque
-  quedan fuera de esta iteracion.
+- No hay una fuente PDF de probabilidad en la carpeta actual; `C10` debe contrastarse y
+  vincularse a la matriz de cobertura si se incorpora ese corpus en el futuro.
 - Los temas 2, 3 y 9 son fuentes escaneadas sin extraccion textual fiable; su trazabilidad se ha
   construido con revision visual.
 - La QA final queda cerrada para el corpus actual, aunque cualquier edicion futura con nuevas

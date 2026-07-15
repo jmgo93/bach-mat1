@@ -3,8 +3,9 @@
 ## Estado
 
 Plan editorial definido a partir de la auditoria real del corpus disponible.
-Ademas, el libro activo incorpora un bloque original de repaso acumulativo y simulacros
-que no suma filas nuevas a la cobertura porque no procede directamente de una fuente.
+Ademas, el libro activo incorpora un capitulo original de estadistica y probabilidad,
+junto con un bloque de repaso acumulativo y simulacros. Ninguno suma filas nuevas a la
+cobertura porque no procede directamente de una fuente del corpus.
 
 ## Corpus utilizado
 
@@ -148,12 +149,12 @@ que no suma filas nuevas a la cobertura porque no procede directamente de una fu
 ## Prioridad de desarrollo
 
 1. Implementado y validado: C01-C09 completos para todo el corpus matematico disponible.
-2. Ensamblaje activo: portada, guia de uso, indice rapido, repaso acumulativo, simulacros y tabla de seguimiento ya integrados.
+2. Extension original integrada: C10 de estadistica y probabilidad, repaso acumulativo y simulacros.
 3. Siguiente bloque recomendado: revision visual exhaustiva pagina a pagina si se quiere un cierre editorial todavia mas estricto.
-4. El bloque de probabilidad sigue fuera de alcance mientras no exista corpus real en la carpeta.
+4. Si aparece una fuente de probabilidad, debe contrastarse con C10 y anadirse a la matriz de cobertura.
 
 ## Advertencias curriculares
 
-- No hay corpus de probabilidad en la carpeta actual, asi que no se planifican capitulos de probabilidad en esta version.
+- No hay corpus fuente de probabilidad; C10 es una extension editorial original y no se presenta como contenido trazado a PDF.
 - Hay ejercicios de estilo selectividad en los temas 8 y 9; quedan marcados como ampliacion/EBAU.
 - Los temas 2, 3 y 9 exigen trazabilidad con revision visual, porque las fuentes son escaneadas sin extraccion textual fiable.

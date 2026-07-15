@@ -187,9 +187,10 @@ en contexto, no borrarse de forma automatica.
 
 \begin{theorybox}{Idea minima}
 Una recta de regresion tiene forma \(\hat y=a+bx\). El residuo de un dato es
-\(e_i=y_i-\hat y_i\). El coeficiente \(R^2\) mide que proporcion de la variabilidad de \(y\)
-queda explicada por el modelo. Un buen modelo combina ajuste numerico, residuos sin patron y
-sentido en el contexto.
+\(e_i=y_i-\hat y_i\). En un ajuste por minimos cuadrados con termino independiente, el
+coeficiente \(R^2\) mide que proporcion de la variabilidad observada de \(y\) recoge el modelo.
+Esta medida describe el ajuste en los datos analizados, pero no demuestra causalidad. Un buen
+modelo combina ajuste numerico, residuos sin patron y sentido en el contexto.
 \end{theorybox}
 
 \begin{methodbox}{Elegir y validar el modelo}
@@ -257,8 +258,9 @@ Se sustituye \(x=10\): \(3+1.5\cdot10=18\). El residuo es observado menos predic
 
 \begin{theorybox}{Idea minima}
 La poblacion es el conjunto sobre el que se desea concluir; la muestra es el subconjunto
-observado. Un estadistico muestral estima un parametro poblacional. Aumentar el tamaño reduce la
-variabilidad aleatoria, pero no corrige un procedimiento de seleccion sesgado.
+observado. Un estadistico muestral estima un parametro poblacional. Si se mantiene un muestreo
+aleatorio comparable, aumentar el tamaño suele reducir la variabilidad muestral, pero no corrige
+un procedimiento de seleccion sesgado.
 \end{theorybox}
 
 \begin{methodbox}{Auditoria de una conclusion estadistica}
@@ -503,6 +505,23 @@ P(A_j\mid B)=\frac{P(A_j)P(B\mid A_j)}{P(B)}.
 \begin{solvedexample}{[EX-C10.S07-01] Alerta de un sistema}
 El \(4\%\) de las piezas presenta un defecto. Un sistema alerta en el \(95\%\) de las defectuosas
 y tambien alerta por error en el \(3\%\) de las correctas. La probabilidad total de alerta es
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm,>=stealth,every node/.style={font=\small}]
+  \node (o) at (0,0) {Pieza};
+  \node (d) at (3,1.25) {Defectuosa \(D\)};
+  \node (c) at (3,-1.25) {Correcta \(\overline D\)};
+  \node (da) at (7,1.8) {Alerta \(A\)};
+  \node (dna) at (7,0.7) {Sin alerta};
+  \node (ca) at (7,-0.7) {Alerta \(A\)};
+  \node (cna) at (7,-1.8) {Sin alerta};
+  \draw[->] (o) -- node[above left] {\(0.04\)} (d);
+  \draw[->] (o) -- node[below left] {\(0.96\)} (c);
+  \draw[->] (d) -- node[above] {\(0.95\)} (da);
+  \draw[->] (d) -- node[below] {\(0.05\)} (dna);
+  \draw[->] (c) -- node[above] {\(0.03\)} (ca);
+  \draw[->] (c) -- node[below] {\(0.97\)} (cna);
+\end{tikzpicture}
+\end{center}
 \[
 P(A)=0.04\cdot0.95+0.96\cdot0.03=0.0668.
 \]
@@ -523,8 +542,9 @@ Si \(P(A)=0.4\), \(P(B)=0.5\) y \(P(A\cap B)=0.2\), decide si son independientes
 \end{guidedexercise}
 \begin{shortanswer}{[GX-C10.S07-01]} Si, porque \(0.4\cdot0.5=0.2\). \end{shortanswer}
 \begin{fullsolution}{[GX-C10.S07-01]}
-Se compara la interseccion observada con el producto de probabilidades. Como coinciden y ambas
-probabilidades son positivas, los sucesos son independientes.
+Se compara la interseccion observada con el producto de probabilidades. Como
+\(P(A\cap B)=P(A)P(B)=0.2\), los sucesos son independientes. La positividad solo seria necesaria
+si se quisiera expresar la independencia mediante probabilidades condicionadas.
 \end{fullsolution}
 
 \subsection*{Practica autonoma graduada}

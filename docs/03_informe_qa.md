@@ -1,81 +1,51 @@
 # Informe QA
 
-Fecha: 2026-07-11
+Fecha: 2026-07-15
 
 ## Alcance
 
-QA de la version que deja ensamblado el libro matematico activo para el corpus disponible:
-`C01-C09` quedan implementados e integrados, y se anade un capitulo original de repaso
-acumulativo con diagnostico, hoja mixta, seleccion de metodo, analisis de errores, dos
-simulacros y reto final.
+Auditoria del contenido matematico del libro, la web interactiva y los modelos publicados de
+problemas y examenes. El corpus fuente cubre `C01-C09`; `C10` es una extension editorial original
+de estadistica, probabilidad e inferencia y se declara separadamente de la cobertura documental.
 
-## Metricas
+## Metricas verificadas
 
-- Corpus auditado: `8` PDF
-- Filas de cobertura: `167`
-- Fuentes con revision visual necesaria: `3`
-- Paginas de `cuaderno_estudiante.pdf`: `176`
-- Paginas de `cuaderno_profesor.pdf`: `226`
-- Paginas de `respuestas_breves.pdf`: `33`
-- Ejemplos resueltos activos: `78`
-- Ejercicios con respuesta breve y solucion docente: `642`
-- Marcadores de figuras activas en capitulos incluidos (`tikzpicture` o `axis`): `12`
-- Items validados en `data/validation_results.json`: `581`
-- Items validados correctamente: `581`
+- Corpus auditado: `8` PDF.
+- Filas de cobertura fuente: `167`.
+- Capitulos web: `11` (`C01-C10` y `R10`).
+- Secciones web: `91`.
+- Ejemplos resueltos: `85`.
+- Ejercicios guiados, propuestos o de reto con respuesta y solucion: `671`.
+- Comprobaciones matematicas: `629/629`.
+- Pruebas automatizadas: `20/20`.
+- Inventario de suplementos: `84` secciones, `10` problemas modelo, `10` mini-examenes y `7`
+  examenes de bloque.
 
-## Cobertura por capitulo fuente
+## Compilacion
 
-- `C01`: `35` filas `chapter_validated`
-- `C02`: `30` filas `chapter_validated`
-- `C03`: `11` filas `chapter_validated`
-- `C04`: `8` filas `chapter_validated`
-- `C05`: `16` filas `chapter_validated`
-- `C06`: `10` filas `chapter_validated`
-- `C07`: `28` filas `chapter_validated`
-- `C08`: `12` filas `chapter_validated`
-- `C09`: `17` filas `chapter_validated`
+- `cuaderno_estudiante.pdf`: `187` paginas.
+- `cuaderno_profesor.pdf`: `238` paginas.
+- `respuestas_breves.pdf`: `35` paginas.
+- `proyecto_problemas_contextualizados.pdf`: `19` paginas.
+- `proyecto_examenes_dificiles.pdf`: `20` paginas.
+- Los cinco logs estan libres de `Overfull`, `Underfull`, referencias indefinidas y avisos de
+  LaTeX relevantes.
+- La auditoria visual renderiza `460` paginas, genera `24` hojas de contacto y no marca paginas
+  sospechosas; el nuevo arbol de Bayes se reviso tambien a tamano completo.
 
-Nota: el capitulo de repaso acumulativo no suma filas a la cobertura porque es un bloque
-original de entrenamiento transversal, no una redaccion asociada a una ficha fuente concreta.
+## Correcciones de esta auditoria
 
-## Revision tecnica
+- Corregidos dos resultados numericos en suplementos: torre (`54.8 m`) y angulo vectorial
+  (`54.2 grados`).
+- Completada la clasificacion de extremos del examen `B6`.
+- Convertido `B7` en un examen estocastico concreto y completamente resuelto.
+- Incorporadas las respuestas breves de `C10` al PDF independiente.
+- Precisadas las interpretaciones de `R^2`, independencia y variabilidad muestral.
+- Anadido un arbol de Bayes imprimible.
+- Corregido el escapado de MathJax en figuras semanticas y laboratorio de regresion.
 
-- Compilacion completada sin errores LaTeX en las tres salidas.
-- No se detectan referencias indefinidas.
-- No se detectan avisos relevantes `Warning`, `Overfull` ni `Underfull` en los logs generados.
-- La validacion matematica pasa `581/581`.
-- Los tests de estado del proyecto pasan `4/4`.
-- El flujo reproducible usado al cierre ha regenerado auditoria, cobertura, PDFs y validacion.
+## Riesgos residuales
 
-## Revision visual completa
-
-- Se ejecuta `python scripts/render_visual_audit.py` como paso reproducible de cierre.
-- El script renderiza todas las paginas de las tres salidas, genera miniaturas por pagina y
-  compone hojas de contacto en `build/visual_audit/contact_sheets/`.
-- Resultado de la ejecucion final: `435` paginas renderizadas, `23` hojas de contacto y `3`
-  paginas marcadas para inspeccion ampliada.
-- Las `3` paginas marcadas corresponden a bloques visualmente densos de practica/solucionario;
-  tras abrirlas a tamano completo no se detectan cortes, desbordes ni maquetacion incorrecta.
-- La revision global por hojas de contacto no muestra paginas en blanco inesperadas, saltos
-  anomalos, figuras truncadas ni cierres defectuosos al final de los documentos.
-- El detalle tecnico de la metodologia queda documentado en `docs/05_revision_visual.md`.
-- Ademas de la pasada global por hojas de contacto, se mantienen como comprobacion puntual las
-  capturas de `build/visual_checks/` sobre portada, frontmatter, arranque del capitulo `10`,
-  profesorado del repaso y cola de `respuestas_breves.pdf`.
-
-## Incidencias abiertas
-
-- No hay corpus de probabilidad, asi que ese bloque sigue fuera del alcance de esta version.
-- Los temas `2`, `3` y `9` mantienen dependencia de revision visual por ser fuentes escaneadas.
-
-## Comandos usados
-
-- `python scripts/build_phase2_outputs.py`
-- `python scripts/validate_math.py`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 clean`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 student`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 teacher`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 answers`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 visualqa`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 qa`
-- `powershell -ExecutionPolicy Bypass -File scripts/tasks.ps1 all`
+- `C10` no dispone de PDF fuente y, por ello, no tiene trazabilidad de origen; si se incorpora una
+  relacion de probabilidad, debera contrastarse y mapearse.
+- Los temas `2`, `3` y `9` proceden de fuentes escaneadas y conservan la marca de revision visual.

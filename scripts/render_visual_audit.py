@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import shutil
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -43,6 +44,8 @@ class PageAudit:
 
 
 def ensure_dirs() -> None:
+    if AUDIT_DIR.exists():
+        shutil.rmtree(AUDIT_DIR)
     for directory in (AUDIT_DIR, PAGES_DIR, CONTACT_DIR, FLAGGED_DIR):
         directory.mkdir(parents=True, exist_ok=True)
 

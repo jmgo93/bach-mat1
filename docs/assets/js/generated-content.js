@@ -2,7 +2,7 @@ window.MATHBOOK_CONTENT = {
   "meta": {
     "title": "Matematicas I Interactivas",
     "subtitle": "1º de Bachillerato - teoria, ejemplos resueltos, tests y laboratorios interactivos",
-    "generatedOn": "2026-07-15 10:39",
+    "generatedOn": "2026-07-15 17:57",
     "chapterCount": 11,
     "sectionCount": 91
   },
@@ -7133,7 +7133,7 @@ window.MATHBOOK_CONTENT = {
             "title": "Idea minima",
             "titleText": "Idea minima",
             "tagId": "",
-            "html": "<p>Una recta de regresion tiene forma \\(\\hat y=a+bx\\). El residuo de un dato es \\(e_i=y_i-\\hat y_i\\). El coeficiente \\(R^2\\) mide que proporcion de la variabilidad de \\(y\\) queda explicada por el modelo. Un buen modelo combina ajuste numerico, residuos sin patron y sentido en el contexto.</p>"
+            "html": "<p>Una recta de regresion tiene forma \\(\\hat y=a+bx\\). El residuo de un dato es \\(e_i=y_i-\\hat y_i\\). En un ajuste por minimos cuadrados con termino independiente, el coeficiente \\(R^2\\) mide que proporcion de la variabilidad observada de \\(y\\) recoge el modelo. Esta medida describe el ajuste en los datos analizados, pero no demuestra causalidad. Un buen modelo combina ajuste numerico, residuos sin patron y sentido en el contexto.</p>"
           },
           "method": {
             "title": "Elegir y validar el modelo",
@@ -7203,7 +7203,7 @@ window.MATHBOOK_CONTENT = {
             "title": "Idea minima",
             "titleText": "Idea minima",
             "tagId": "",
-            "html": "<p>La poblacion es el conjunto sobre el que se desea concluir; la muestra es el subconjunto observado. Un estadistico muestral estima un parametro poblacional. Aumentar el tamaño reduce la variabilidad aleatoria, pero no corrige un procedimiento de seleccion sesgado.</p>"
+            "html": "<p>La poblacion es el conjunto sobre el que se desea concluir; la muestra es el subconjunto observado. Un estadistico muestral estima un parametro poblacional. Si se mantiene un muestreo aleatorio comparable, aumentar el tamaño suele reducir la variabilidad muestral, pero no corrige un procedimiento de seleccion sesgado.</p>"
           },
           "method": {
             "title": "Auditoria de una conclusion estadistica",
@@ -7425,7 +7425,7 @@ window.MATHBOOK_CONTENT = {
             "title": "[EX-C10.S07-01] Alerta de un sistema",
             "titleText": "Alerta de un sistema",
             "tagId": "EX-C10.S07-01",
-            "html": "<p>El \\(4\\%\\) de las piezas presenta un defecto. Un sistema alerta en el \\(95\\%\\) de las defectuosas y tambien alerta por error en el \\(3\\%\\) de las correctas. La probabilidad total de alerta es</p><div class=\"math-display\">\\[\nP(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668.\n\\]</div><p>Si hay alerta, la probabilidad de defecto es</p><div class=\"math-display\">\\[\nP(D\\mid A)=\\frac{0.04\\cdot0.95}{0.0668}\\approx0.5689.\n\\]</div><p>Una alerta no implica certeza: la baja frecuencia inicial del defecto importa.</p>"
+            "html": "<p>El \\(4\\%\\) de las piezas presenta un defecto. Un sistema alerta en el \\(95\\%\\) de las defectuosas y tambien alerta por error en el \\(3\\%\\) de las correctas. La probabilidad total de alerta es</p><div class=\"centered-block\"><div class=\"figure-fallback\">Esquema disponible en el cuaderno PDF. Refuerza esta idea con el laboratorio interactivo.</div></div><div class=\"math-display\">\\[\nP(A)=0.04\\cdot0.95+0.96\\cdot0.03=0.0668.\n\\]</div><p>Si hay alerta, la probabilidad de defecto es</p><div class=\"math-display\">\\[\nP(D\\mid A)=\\frac{0.04\\cdot0.95}{0.0668}\\approx0.5689.\n\\]</div><p>Una alerta no implica certeza: la baja frecuencia inicial del defecto importa.</p>"
           },
           "commonError": {
             "title": "Intercambiar la condicion",
@@ -7439,7 +7439,7 @@ window.MATHBOOK_CONTENT = {
               "title": "Independencia",
               "promptHtml": "<p>Si \\(P(A)=0.4\\), \\(P(B)=0.5\\) y \\(P(A\\cap B)=0.2\\), decide si son independientes.</p>",
               "answerHtml": "<p>Si, porque \\(0.4\\cdot0.5=0.2\\).</p>",
-              "solutionHtml": "<p>Se compara la interseccion observada con el producto de probabilidades. Como coinciden y ambas probabilidades son positivas, los sucesos son independientes.</p>"
+              "solutionHtml": "<p>Se compara la interseccion observada con el producto de probabilidades. Como \\(P(A\\cap B)=P(A)P(B)=0.2\\), los sucesos son independientes. La positividad solo seria necesaria si se quisiera expresar la independencia mediante probabilidades condicionadas.</p>"
             }
           ],
           "practice": {

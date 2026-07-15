@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "generated_on": "2026-07-11T11:04:13",
-  "exercise_count": 581,
-  "passed_count": 581,
+  "generated_on": "2026-07-15T18:07:22",
+  "exercise_count": 629,
+  "passed_count": 629,
   "results": [
     {
       "id": "EX-C01.S01-01",
@@ -4688,6 +4688,390 @@
         }
       ],
       "note": "Reto de transferencia con interpretacion fisica."
+    },
+    {
+      "id": "EX-C10.S01-01",
+      "type": "contingency_probabilities",
+      "status": "passed",
+      "actual": "{P(S|U): 3/4, P(S|not U): 1/2}",
+      "expected": "{P(S|U): 3/4, P(S|not U): 1/2}",
+      "note": "Porcentajes condicionados de la tabla de uso de plataforma."
+    },
+    {
+      "id": "GX-C10.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "9/13",
+      "expected": "9/13",
+      "note": "Uso de plataforma condicionado a superar."
+    },
+    {
+      "id": "PX-C10.S01-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "9/20",
+      "expected": "9/20",
+      "note": "Frecuencia relativa conjunta."
+    },
+    {
+      "id": "PX-C10.S01-02",
+      "type": "marginal_distribution",
+      "status": "passed",
+      "actual": "[13/20, 7/20]",
+      "expected": "[13/20, 7/20]",
+      "note": "Distribucion marginal de superar y no superar."
+    },
+    {
+      "id": "EX-C10.S03-01",
+      "type": "linear_regression",
+      "status": "passed",
+      "actual": "{slope: 49/25, intercept: 1/10, R2: 4802/4805, prediction_2.5: 5}",
+      "expected": "{slope: 49/25, intercept: 1/10, R2: 4802/4805, prediction_2.5: 5}",
+      "note": "Ajuste lineal y prediccion del ejemplo de calibracion."
+    },
+    {
+      "id": "PX-C10.S03-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "18",
+      "expected": "18",
+      "note": "Prediccion con una recta de regresion."
+    },
+    {
+      "id": "PX-C10.S03-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "4/5",
+      "expected": "4/5",
+      "note": "Residuo observado menos predicho."
+    },
+    {
+      "id": "PX-C10.S04-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3/5",
+      "expected": "3/5",
+      "note": "Proporcion muestral de apoyo."
+    },
+    {
+      "id": "EX-C10.S05-01",
+      "type": "event_algebra",
+      "status": "passed",
+      "actual": "{union: 11/100, neither: 89/100}",
+      "expected": "{union: 11/100, neither: 89/100}",
+      "note": "Union de fallos y complementario."
+    },
+    {
+      "id": "GX-C10.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "137/500",
+      "expected": "137/500",
+      "note": "Frecuencia relativa experimental."
+    },
+    {
+      "id": "PX-C10.S05-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "63/100",
+      "expected": "63/100",
+      "note": "Probabilidad del complementario."
+    },
+    {
+      "id": "PX-C10.S05-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "7/10",
+      "expected": "7/10",
+      "note": "Formula de la union."
+    },
+    {
+      "id": "EX-C10.S06-01",
+      "type": "combinatorics_probability",
+      "status": "passed",
+      "actual": "{teams: 56, favourable: 6, probability: 3/28}",
+      "expected": "{teams: 56, favourable: 6, probability: 3/28}",
+      "note": "Equipos de tres y probabilidad de incluir una pareja fija."
+    },
+    {
+      "id": "GX-C10.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "60",
+      "expected": "60",
+      "note": "Codigos de tres cifras distintas."
+    },
+    {
+      "id": "PX-C10.S06-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "45",
+      "expected": "45",
+      "note": "Combinaciones de diez elementos tomados de dos en dos."
+    },
+    {
+      "id": "PX-C10.S06-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "24",
+      "expected": "24",
+      "note": "Ordenaciones de cuatro libros."
+    },
+    {
+      "id": "PX-C10.S06-03",
+      "type": "expression",
+      "status": "passed",
+      "actual": "1/6",
+      "expected": "1/6",
+      "note": "Probabilidad de suma siete con dos dados."
+    },
+    {
+      "id": "EX-C10.S07-01",
+      "type": "bayes",
+      "status": "passed",
+      "actual": "{P(alert): 167/2500, P(defect|alert): 95/167}",
+      "expected": "{P(alert): 167/2500, P(defect|alert): 95/167}",
+      "note": "Probabilidad total de alerta y posterior de defecto."
+    },
+    {
+      "id": "GX-C10.S07-01",
+      "type": "boolean",
+      "status": "passed",
+      "actual": "True",
+      "expected": "True",
+      "note": "Criterio del producto para independencia."
+    },
+    {
+      "id": "PX-C10.S07-01",
+      "type": "expression",
+      "status": "passed",
+      "actual": "3/10",
+      "expected": "3/10",
+      "note": "Probabilidad condicionada."
+    },
+    {
+      "id": "PX-C10.S07-02",
+      "type": "expression",
+      "status": "passed",
+      "actual": "29/1000",
+      "expected": "29/1000",
+      "note": "Tasa total de defecto."
+    },
+    {
+      "id": "CTX-C01",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{factor: 501.19, limit_db: 75}",
+      "expected": "{factor: 501.19, limit_db: 75}",
+      "note": "Escala logaritmica de ruido."
+    },
+    {
+      "id": "CTX-C02",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{factorization: (x - 4)*(x - 1)*(x + 1), remainder_at_2: -6, context_roots: {1, 4}}",
+      "expected": "{factorization: (x - 4)*(x - 1)*(x + 1), remainder_at_2: -6, context_roots: {1, 4}}",
+      "note": "Produccion por lotes con descarte de la raiz contextual negativa."
+    },
+    {
+      "id": "CTX-C03",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{b: 60, p: 30, s: 30}",
+      "expected": "{b: 60, s: 30, p: 30}",
+      "note": "Sistema de suscripciones 3x3."
+    },
+    {
+      "id": "CTX-C04",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{vertices: {(20, 10), (20, 60), (50, 45), (220/3, 10)}, maximum: 2025, point: (50, 45)}",
+      "expected": "{vertices: {(20, 10), (20, 60), (50, 45), (220/3, 10)}, maximum: 2025, point: (50, 45)}",
+      "note": "Region factible y beneficio."
+    },
+    {
+      "id": "CTX-C05",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{distance: 63.0, height: 54.77}",
+      "expected": "{distance: 63.0, height: 54.77}",
+      "note": "Altura de una torre desde dos puntos."
+    },
+    {
+      "id": "CTX-C06",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{route: (8, 3), norm: sqrt(73), cos_a: 19*sqrt(365)/365, cos_b: 17*sqrt(730)/730}",
+      "expected": "{route: (8, 3), norm: sqrt(73), cos_a: 19*sqrt(365)/365, cos_b: 17*sqrt(730)/730}",
+      "note": "Ruta vectorial de un dron."
+    },
+    {
+      "id": "CTX-C07",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{area: 24, altitude: {kind: vertical, x: 2}, orthocenter: (2, 2)}",
+      "expected": "{area: 24, altitude: {kind: vertical, x: 2}, orthocenter: (2, 2)}",
+      "note": "Triangulo urbano y ortocentro."
+    },
+    {
+      "id": "CTX-C08",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{domain: Interval(0, oo), limit: 2, below_five: Interval.open(3, oo)}",
+      "expected": "{domain: Interval(0, oo), limit: 2, below_five: Interval.open(3, oo)}",
+      "note": "Modelo de enfriamiento."
+    },
+    {
+      "id": "CTX-C09",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{depth: 5, width: 10, area: 50}",
+      "expected": "{depth: 5, width: 10, area: 50}",
+      "note": "Optimizacion de un panel."
+    },
+    {
+      "id": "CTX-C10",
+      "type": "context_model",
+      "status": "passed",
+      "actual": "{alert: 167/2500, posterior: 95/167, false_reviews: 288}",
+      "expected": "{alert: 167/2500, posterior: 95/167, false_reviews: 288}",
+      "note": "Alerta de calidad y Bayes."
+    },
+    {
+      "id": "MINI-C01.S07",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{log_expression: log(20), db_increase: 20}",
+      "expected": "{log_expression: log(20), db_increase: 20}",
+      "note": "Mini-examen de logaritmos."
+    },
+    {
+      "id": "MINI-C02.S04",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{parameter: -1, factorization: -(x - 2)*(-x**2 + x + 3)}",
+      "expected": "{parameter: -1, factorization: x**3 - 3*x**2 - x + 6}",
+      "note": "Mini-examen de teorema del resto."
+    },
+    {
+      "id": "MINI-C03.S09",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{general: 128, reduced: 132}",
+      "expected": "{general: 128, reduced: 132}",
+      "note": "Mini-examen de sistema contextualizado."
+    },
+    {
+      "id": "MINI-C04.S07",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{vertices: {(1, 2), (1, 7), (6, 2)}, maximum: 22, point: (6, 2)}",
+      "expected": "{vertices: {(1, 2), (1, 7), (6, 2)}, maximum: 22, point: (6, 2)}",
+      "note": "Mini-examen de region factible."
+    },
+    {
+      "id": "MINI-C05.S06",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{pi/3, 2*pi/3}",
+      "expected": "{pi/3, 2*pi/3}",
+      "note": "Mini-examen de ecuacion trigonometrica."
+    },
+    {
+      "id": "MINI-C06.S04",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{dot: 13, angle_degrees: 54.2}",
+      "expected": "{dot: 13, angle_degrees: 54.2}",
+      "note": "Mini-examen de producto escalar y angulo."
+    },
+    {
+      "id": "MINI-C07.S06",
+      "type": "expression",
+      "status": "passed",
+      "actual": "6*sqrt(5)/5",
+      "expected": "6*sqrt(5)/5",
+      "note": "Distancia entre rectas paralelas."
+    },
+    {
+      "id": "MINI-C08.S09",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{parameter: 1, join_value: 3}",
+      "expected": "{parameter: 1, join_value: 3}",
+      "note": "Continuidad con parametro."
+    },
+    {
+      "id": "MINI-C09.S07",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{side_x: 6, side_y: 6, area: 36}",
+      "expected": "{side_x: 6, side_y: 6, area: 36}",
+      "note": "Optimizacion de rectangulo."
+    },
+    {
+      "id": "MINI-C10.S03",
+      "type": "exam_model",
+      "status": "passed",
+      "actual": "{prediction: 56/5, residual: 4/5}",
+      "expected": "{prediction: 56/5, residual: 4/5}",
+      "note": "Regresion y residuo."
+    },
+    {
+      "id": "BLOCK-B1",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{decimal: 5/18, radicals: 3*sqrt(3), parameter: 0, rational_root: 3}",
+      "expected": "{decimal: 5/18, radicals: 3*sqrt(3), parameter: 0, rational_root: 3}",
+      "note": "Examen de bloque B1."
+    },
+    {
+      "id": "BLOCK-B2",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{radical_root: 4, system: (4, 3), inequality: Interval(1, 4), region_vertices: {(0, 0), (0, 5), (5, 0)}}",
+      "expected": "{radical_root: 4, system: (4, 3), inequality: Interval(1, 4), region_vertices: {(0, 0), (0, 5), (5, 0)}}",
+      "note": "Examen de bloque B2."
+    },
+    {
+      "id": "BLOCK-B3",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{degrees: 150, legs: {5, 5*sqrt(3)}, roots: {pi/3, 5*pi/3}, sum: (4, 2), dot: -5}",
+      "expected": "{degrees: 150, legs: {5, 5*sqrt(3)}, roots: {pi/3, 5*pi/3}, sum: (4, 2), dot: -5}",
+      "note": "Examen de bloque B3."
+    },
+    {
+      "id": "BLOCK-B4",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{line: {kind: slope_intercept, slope: 1, intercept: 1}, perpendicular: {kind: slope_intercept, slope: -1, intercept: 3}, area: 6}",
+      "expected": "{line: {kind: slope_intercept, slope: 1, intercept: 1}, perpendicular: {kind: slope_intercept, slope: -1, intercept: 3}, area: 6}",
+      "note": "Examen de bloque B4."
+    },
+    {
+      "id": "BLOCK-B5",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{domain: Interval(1, oo), limit: 4, continuous_at_1: True}",
+      "expected": "{domain: Interval(1, oo), limit: 4, continuous_at_1: True}",
+      "note": "Examen de bloque B5."
+    },
+    {
+      "id": "BLOCK-B6",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{derivative: 3*x*(x - 2), maximum: (0, 2), minimum: (2, -2), tangent: {kind: slope_intercept, slope: -3, intercept: 3}}",
+      "expected": "{derivative: 3*x*(x - 2), maximum: (0, 2), minimum: (2, -2), tangent: {kind: slope_intercept, slope: -3, intercept: 3}}",
+      "note": "Examen de bloque B6 con clasificacion de extremos."
+    },
+    {
+      "id": "BLOCK-B7",
+      "type": "block_exam",
+      "status": "passed",
+      "actual": "{conditionals: [3/4, 1/2], regression: [-8/3, 22/7, 363/427], team: 3/28, alert: 167/2500, posterior: 95/167}",
+      "expected": "{conditionals: [3/4, 1/2], regression: [-8/3, 22/7, 363/427], team: 3/28, alert: 167/2500, posterior: 95/167}",
+      "note": "Examen de bloque B7."
     },
     {
       "id": "EX-R10.S02-01",
