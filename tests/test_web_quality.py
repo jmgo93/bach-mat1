@@ -106,7 +106,7 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v20", worker)
+        self.assertIn("mate1-interactivas-v21", worker)
 
     def test_global_search_covers_every_resource_family(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")
