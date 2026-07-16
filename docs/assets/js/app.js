@@ -2253,6 +2253,8 @@
     if (!problem) {
       return "";
     }
+    const answerHtml = getPracticeCorrectionHtml(section, problem, "answerHtml", "answersHtml");
+    const solutionHtml = getPracticeCorrectionHtml(section, problem, "solutionHtml", "solutionsHtml");
     return `
       <details class="inline-details inventory-item">
         <summary>
@@ -2272,15 +2274,37 @@
           ${renderTheoryLinksPanel(item.relatedTheorySections)}
           <details class="inline-details">
             <summary>Comprobar respuesta</summary>
-            <div class="rich-text">${problem.answerHtml}</div>
+            <div class="rich-text">${answerHtml}</div>
           </details>
           <details class="inline-details">
             <summary>Ver solucion razonada</summary>
-            <div class="rich-text">${problem.solutionHtml}</div>
+            <div class="rich-text">${solutionHtml}</div>
           </details>
         </div>
       </details>
     `;
+  }
+
+  function getPracticeCorrectionHtml(section, problem, directKey, aggregateKey) {
+    const directHtml = problem?.[directKey];
+    if (typeof directHtml === "string" && directHtml.trim()) {
+      return directHtml;
+    }
+
+    const practiceItems = section?.practice?.items || [];
+    const problemIndex = practiceItems.indexOf(problem);
+    const aggregateHtml = section?.practice?.[aggregateKey];
+    if (problemIndex < 0 || typeof aggregateHtml !== "string" || !aggregateHtml.trim()) {
+      return "<p>La correccion no esta disponible en esta copia. Recarga la pagina para actualizar el contenido.</p>";
+    }
+
+    const template = document.createElement("template");
+    template.innerHTML = aggregateHtml;
+    const orderedList = template.content.querySelector("ol");
+    const listItems = orderedList
+      ? Array.from(orderedList.children).filter((element) => element.tagName === "LI")
+      : [];
+    return listItems[problemIndex]?.innerHTML || aggregateHtml;
   }
 
   function renderExams() {

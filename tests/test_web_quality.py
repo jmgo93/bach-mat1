@@ -92,6 +92,16 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertNotIn('"orientation"', manifest)
         self.assertIn('event.request.mode === "navigate"', worker)
         self.assertIn('new Response("Recurso no disponible sin conexion."', worker)
+        for asset in (
+            "generated-content.js",
+            "generated-supplements.js",
+            "activity-bank.js",
+            "quiz-bank.js",
+            "app.js",
+        ):
+            versioned_path = f"./assets/js/{asset}?v=25"
+            self.assertIn(versioned_path, index)
+            self.assertIn(versioned_path, worker)
 
     def test_visual_icon_system_is_local_and_accessible(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -106,7 +116,7 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v24", worker)
+        self.assertIn("mate1-interactivas-v25", worker)
 
     def test_global_search_covers_every_resource_family(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -186,6 +196,9 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn("Comprobar respuesta", app)
         self.assertIn("Ver solucion razonada", app)
         self.assertIn('kind: "Problema para resolver"', app)
+        self.assertIn("getPracticeCorrectionHtml", app)
+        self.assertNotIn("${problem.answerHtml}", app)
+        self.assertNotIn("${problem.solutionHtml}", app)
 
     def test_every_practice_problem_has_its_own_answer_and_solution(self) -> None:
         payload = load_generated_payload(JS / "generated-content.js", "MATHBOOK_CONTENT")
