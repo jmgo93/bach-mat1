@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "generated_on": "2026-07-15T18:07:22",
+  "generated_on": "2026-07-16T10:08:46",
   "exercise_count": 629,
   "passed_count": 629,
   "results": [
@@ -4861,16 +4861,16 @@
       "id": "CTX-C01",
       "type": "context_model",
       "status": "passed",
-      "actual": "{factor: 501.19, limit_db: 75}",
-      "expected": "{factor: 501.19, limit_db: 75}",
+      "actual": "{factor: 501.19, limit_db: 75, limit_factor_check: 1000.0}",
+      "expected": "{factor: 501.19, limit_db: 75, limit_factor_check: 1000.0}",
       "note": "Escala logaritmica de ruido."
     },
     {
       "id": "CTX-C02",
       "type": "context_model",
       "status": "passed",
-      "actual": "{factorization: (x - 4)*(x - 1)*(x + 1), remainder_at_2: -6, context_roots: {1, 4}}",
-      "expected": "{factorization: (x - 4)*(x - 1)*(x + 1), remainder_at_2: -6, context_roots: {1, 4}}",
+      "actual": "{factorization: (x - 4)*(x - 1)*(x + 1), remainder_at_2: -6, context_roots: {1, 4}, margin_euros_at_2: -600}",
+      "expected": "{factorization: (x - 4)*(x - 1)*(x + 1), remainder_at_2: -6, context_roots: {1, 4}, margin_euros_at_2: -600}",
       "note": "Produccion por lotes con descarte de la raiz contextual negativa."
     },
     {
@@ -4901,8 +4901,8 @@
       "id": "CTX-C06",
       "type": "context_model",
       "status": "passed",
-      "actual": "{route: (8, 3), norm: sqrt(73), cos_a: 19*sqrt(365)/365, cos_b: 17*sqrt(730)/730}",
-      "expected": "{route: (8, 3), norm: sqrt(73), cos_a: 19*sqrt(365)/365, cos_b: 17*sqrt(730)/730}",
+      "actual": "{route: (8, 3), norm: sqrt(73), cos_a: 19*sqrt(365)/365, cos_b: 17*sqrt(730)/730, angle_a: 6.0, angle_b: 51.0}",
+      "expected": "{route: (8, 3), norm: sqrt(73), cos_a: 19*sqrt(365)/365, cos_b: 17*sqrt(730)/730, angle_a: 6.0, angle_b: 51.0}",
       "note": "Ruta vectorial de un dron."
     },
     {
@@ -4917,8 +4917,8 @@
       "id": "CTX-C08",
       "type": "context_model",
       "status": "passed",
-      "actual": "{domain: Interval(0, oo), limit: 2, below_five: Interval.open(3, oo)}",
-      "expected": "{domain: Interval(0, oo), limit: 2, below_five: Interval.open(3, oo)}",
+      "actual": "{domain: Interval(0, oo), limit: 2, below_five: Interval.open(3, oo), boundary_value: 5, decreasing_at_0: True}",
+      "expected": "{domain: Interval(0, oo), limit: 2, below_five: Interval.open(3, oo), boundary_value: 5, decreasing_at_0: True}",
       "note": "Modelo de enfriamiento."
     },
     {
@@ -4933,8 +4933,8 @@
       "id": "CTX-C10",
       "type": "context_model",
       "status": "passed",
-      "actual": "{alert: 167/2500, posterior: 95/167, false_reviews: 288}",
-      "expected": "{alert: 167/2500, posterior: 95/167, false_reviews: 288}",
+      "actual": "{alert: 167/2500, posterior: 95/167, true_alerts: 380, false_reviews: 288, total_alerts: 668}",
+      "expected": "{alert: 167/2500, posterior: 95/167, true_alerts: 380, false_reviews: 288, total_alerts: 668}",
       "note": "Alerta de calidad y Bayes."
     },
     {

@@ -106,7 +106,7 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v22", worker)
+        self.assertIn("mate1-interactivas-v23", worker)
 
     def test_global_search_covers_every_resource_family(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -169,6 +169,30 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         app = (JS / "app.js").read_text(encoding="utf-8")
         self.assertIn('"C10.S07": `', app)
         self.assertIn("bayesTitle", app)
+
+    def test_problem_page_has_no_fabricated_support_data(self) -> None:
+        app = (JS / "app.js").read_text(encoding="utf-8")
+        for fragment in (
+            "Escenario A",
+            "Dato principal",
+            "base % 17",
+            "renderSuggestedVisual",
+            "Ver respuesta de contraste",
+            "Ver solucion y procedimiento",
+            "varia un 10 por ciento",
+        ):
+            self.assertNotIn(fragment, app)
+        self.assertIn("Idea editorial, no enunciado cerrado", app)
+        self.assertIn('kind: "Idea de ampliacion"', app)
+
+    def test_every_contextual_model_has_a_step_by_step_solution(self) -> None:
+        payload = load_generated_payload(JS / "generated-supplements.js", "MATHBOOK_SUPPLEMENTS")
+        models = payload["problems"]["models"]
+        self.assertEqual(len(models), 10)
+        for model in models:
+            self.assertGreaterEqual(model["solutionHtml"].count("<strong>Paso "), 3, model["id"])
+            self.assertTrue(model["answerHtml"].strip(), model["id"])
+            self.assertTrue(model["relatedTheorySections"], model["id"])
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ Fecha de actualizacion: 2026-07-15
 - El corpus fuente contiene `8` PDF y `167` filas de cobertura para `C01-C09`.
 - El libro incorpora ademas un capitulo original `C10` de estadistica, probabilidad e inferencia
   y un capitulo `11` de repaso acumulativo, simulacros y reto final.
-- La validacion matematica y de modelos pasa `629/629`; las pruebas automatizadas pasan `20/20`.
+- La validacion matematica y de modelos pasa `629/629`; las pruebas automatizadas pasan `22/22`.
 - La web contiene `11` bloques (`C01-C10` y `R10`) y `91` secciones, con teoria, ejercicios,
   test, flashcards, laboratorios, problemas y examenes.
 - Los suplementos cubren `84` secciones de `C01-C10`, con `10` problemas modelo, `10`
@@ -18,7 +18,7 @@ Fecha de actualizacion: 2026-07-15
 - `build/cuaderno_estudiante.pdf`: `187` paginas.
 - `build/cuaderno_profesor.pdf`: `238` paginas.
 - `build/respuestas_breves.pdf`: `35` paginas.
-- `build/proyecto_problemas_contextualizados.pdf`: `19` paginas.
+- `build/proyecto_problemas_contextualizados.pdf`: `20` paginas.
 - `build/proyecto_examenes_dificiles.pdf`: `20` paginas.
 - `build/cuaderno_problemas_contextualizados.pdf`: `21` paginas, con desarrollo actual de
   `C05-C06`.
@@ -34,6 +34,11 @@ Fecha de actualizacion: 2026-07-15
 - Se preciso el alcance de `R^2`, la independencia y el efecto del tamano muestral.
 - El solucionario breve incluye ya todas las respuestas de `C10`.
 - Se corrigieron los delimitadores y comandos MathJax generados desde JavaScript.
+- Se eliminaron las tablas de apoyo con datos aleatorios de la web. Las `84` entradas del mapa
+  se identifican como ideas editoriales, mientras que solo los `10` modelos verificados se
+  presentan como problemas resueltos.
+- Los `10` problemas modelo incorporan ahora entre `3` y `5` pasos, interpretacion y
+  comprobacion final.
 
 ## Trazabilidad y riesgos
 

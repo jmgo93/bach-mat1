@@ -17,7 +17,7 @@ de estadistica, probabilidad e inferencia y se declara separadamente de la cober
 - Ejemplos resueltos: `85`.
 - Ejercicios guiados, propuestos o de reto con respuesta y solucion: `671`.
 - Comprobaciones matematicas: `629/629`.
-- Pruebas automatizadas: `20/20`.
+- Pruebas automatizadas: `22/22`.
 - Inventario de suplementos: `84` secciones, `10` problemas modelo, `10` mini-examenes y `7`
   examenes de bloque.
 
@@ -26,7 +26,7 @@ de estadistica, probabilidad e inferencia y se declara separadamente de la cober
 - `cuaderno_estudiante.pdf`: `187` paginas.
 - `cuaderno_profesor.pdf`: `238` paginas.
 - `respuestas_breves.pdf`: `35` paginas.
-- `proyecto_problemas_contextualizados.pdf`: `19` paginas.
+- `proyecto_problemas_contextualizados.pdf`: `20` paginas.
 - `proyecto_examenes_dificiles.pdf`: `20` paginas.
 - Los cinco logs estan libres de `Overfull`, `Underfull`, referencias indefinidas y avisos de
   LaTeX relevantes.
@@ -43,6 +43,10 @@ de estadistica, probabilidad e inferencia y se declara separadamente de la cober
 - Precisadas las interpretaciones de `R^2`, independencia y variabilidad muestral.
 - Anadido un arbol de Bayes imprimible.
 - Corregido el escapado de MathJax en figuras semanticas y laboratorio de regresion.
+- Eliminado el generador de tablas con escenarios y cifras arbitrarias de la seccion Problemas.
+- Separadas las `84` ideas de ampliacion de los `10` problemas completos para que ninguna
+  propuesta muestre respuestas o soluciones que pertenezcan a otra practica.
+- Reescritas las diez soluciones completas con pasos explicitos, interpretacion y comprobacion.
 
 ## Riesgos residuales
 

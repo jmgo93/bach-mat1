@@ -899,9 +899,9 @@
       addResult(
         {
           href: `#/problemas/${item.chapterId}`,
-          code: "PROB",
+          code: "IDEA",
           title: item.prompt,
-          kind: "Problema",
+          kind: "Idea de ampliacion",
           description: item.sectionTitle || item.chapterTitle
         },
         searchRecordText(item)
@@ -1033,8 +1033,8 @@
         </article>
         <article class="summary-card">
           <p class="card-kicker">Problemas</p>
-          <h2>${contextualProblemCount} propuestas y ${contextualModelCount} modelos</h2>
-          <p>Problemas contextualizados conectados con la teoria necesaria para cada apartado.</p>
+          <h2>${contextualModelCount} resueltos y ${contextualProblemCount} ideas</h2>
+          <p>Los modelos estan verificados; las ideas se identifican como propuestas aun no cerradas.</p>
         </article>
         <article class="summary-card">
           <p class="card-kicker">Examenes</p>
@@ -1109,8 +1109,8 @@
         </article>
         <article class="summary-card">
           <p class="card-kicker">Recursos activos</p>
-          <h2>${chapterActivities.length} actividades, ${chapterProblems.length} problemas y ${chapterExamSeeds.length} examenes</h2>
-          <p>${chapterFlashcards.length} flashcards, ${chapterProblemModels.length} modelos contextualizados y ${chapterExamModels.length + chapterBlockExams.length} modelos de evaluacion conectados con el tema.</p>
+          <h2>${chapterActivities.length} actividades, ${chapterProblemModels.length} problemas resueltos y ${chapterExamSeeds.length} examenes</h2>
+          <p>${chapterFlashcards.length} flashcards, ${chapterProblems.length} ideas de ampliacion y ${chapterExamModels.length + chapterBlockExams.length} modelos de evaluacion conectados con el tema.</p>
         </article>
       </section>
 
@@ -2109,35 +2109,35 @@
         <div class="hero__grid">
           <div>
             <p class="card-kicker">Problemas contextualizados y relacionados</p>
-            <h1>Situaciones exigentes por tema, conectadas con la teoria que hace falta activar en cada caso.</h1>
+            <h1>Problemas completos y verificados, conectados con la teoria que hace falta activar en cada caso.</h1>
             <p>
-              Aqui se recoge el banco de problemas inspirado en los pdfs complementarios: modelos completos
-              resueltos y retos de transferencia por apartado para entrenar lectura, modelizacion y justificacion.
+              Los modelos incluyen datos coherentes, respuesta breve y solucion paso a paso. El mapa por
+              apartados se presenta aparte como ideas de ampliacion, nunca como problemas ya cerrados.
             </p>
           </div>
           <aside class="summary-card summary-card--accent">
             <p class="card-kicker">Cobertura actual</p>
-            <h2>${visibleModels.length} modelos y ${visibleInventory.length} retos</h2>
-            <p>Cada elemento incorpora enlaces directos a la teoria necesaria para preparar o repasar el contenido.</p>
+            <h2>${visibleModels.length} problemas resueltos</h2>
+            <p>${visibleInventory.length} ideas adicionales quedan identificadas como propuestas editoriales y enlazan con la teoria.</p>
           </aside>
         </div>
       </section>
 
       <section class="summary-grid">
         <article class="summary-card">
-          <p class="card-kicker">Modelos completos</p>
+          <p class="card-kicker">Problemas completos</p>
           <h2>${visibleModels.length}</h2>
-          <p>Problemas desarrollados con datos, respuesta breve y solucion completa.</p>
+          <p>Enunciados desarrollados con datos, respuesta breve, comprobacion y solucion paso a paso.</p>
         </article>
         <article class="summary-card">
-          <p class="card-kicker">Retos por apartado</p>
+          <p class="card-kicker">Mapa de ampliacion</p>
           <h2>${visibleInventory.length}</h2>
-          <p>Tareas abiertas con nucleo tecnico, apoyo visual, pauta de entrega y solucion de contraste.</p>
+          <p>Ideas de contexto por apartado. No se presentan como enunciados resueltos ni incorporan datos ficticios.</p>
         </article>
         <article class="summary-card">
           <p class="card-kicker">Nivel</p>
-          <h2>${visibleInventory.filter((item) => item.level === "Alta").length}</h2>
-          <p>La mayoria estan pensadas para consolidacion alta y transferencia a contextos reales.</p>
+          <h2>Verificado</h2>
+          <p>Todos los modelos completos han sido recalculados y contrastados de forma independiente.</p>
         </article>
       </section>
 
@@ -2175,7 +2175,7 @@
             <ol>
               <li>Abre primero el modelo completo del capitulo para ver el tipo de razonamiento esperado.</li>
               <li>Usa los enlaces de teoria para volver justo al apartado que sostiene el problema.</li>
-              <li>Continua con los retos por seccion para variar contexto sin perder foco matematico.</li>
+              <li>Consulta el mapa de ampliacion solo para explorar posibles contextos; no contiene enunciados cerrados.</li>
             </ol>
           </div>
         </article>
@@ -2236,9 +2236,9 @@
             <p class="card-kicker">${(CHAPTER_META[chapter.id] || {}).block || "Bloque"}</p>
             <h2>${chapter.id} - ${chapter.title}</h2>
           </div>
-          <span class="badge-soft">${items.length} retos</span>
+          <span class="badge-soft">${items.length} ideas</span>
         </div>
-        <p>Retos contextualizados por apartado con nucleo matematico, apoyo visual y criterios de entrega.</p>
+        <p>Mapa editorial de posibles contextos. Estas entradas no son problemas cerrados y no incluyen datos ni soluciones inventadas.</p>
         <div class="inventory-list">
           ${items.map(renderProblemSeedCard).join("")}
         </div>
@@ -2247,15 +2247,6 @@
   }
 
   function renderProblemSeedCard(item) {
-    const section = getSection(item.sectionId);
-    const practiceItems = section?.practice?.items || [];
-    const technicalCore = section?.challenge?.html
-      ? section.challenge.html
-      : practiceItems.length
-        ? `<p>${practiceItems[practiceItems.length - 1].prompt}</p>`
-        : `<p>Construye y resuelve un modelo que use de forma explicita ${item.sectionTitle.toLowerCase()}.</p>`;
-    const answerHtml = section?.challenge?.answerHtml || section?.practice?.answersHtml || "";
-    const solutionHtml = section?.challenge?.solutionHtml || section?.practice?.solutionsHtml || "";
     return `
       <details class="inline-details inventory-item">
         <summary>
@@ -2266,22 +2257,13 @@
           <span class="status-pill status-pill--cool">${item.level}</span>
         </summary>
         <div class="inventory-item__body">
-          <div class="challenge-brief">
-            <p class="card-kicker">Situacion</p>
-            <p>${item.prompt}. Trabajas como responsable del analisis y debes justificar una decision comprensible para una persona no especialista.</p>
-            <p class="card-kicker">Nucleo matematico</p>
-            <div class="rich-text">${technicalCore}</div>
-            <ol>
-              <li>Identifica datos, incognitas, restricciones y supuestos.</li>
-              <li>Resuelve el nucleo tecnico mostrando el modelo y las decisiones importantes.</li>
-              <li>Interpreta el resultado en el contexto y estudia que cambia si un dato varia un 10 por ciento.</li>
-              <li>Cierra con una recomendacion y una comprobacion independiente.</li>
-            </ol>
+          <div class="reading-panel">
+            <p class="card-kicker">Idea editorial, no enunciado cerrado</p>
+            <p><strong>Objetivo matematico:</strong> ${item.sectionTitle}.</p>
+            <p><strong>Contexto que puede desarrollarse:</strong> ${item.prompt}.</p>
+            <p>Para practicar ahora con datos y correccion fiables, entra en la teoria enlazada y utiliza sus ejercicios resueltos.</p>
           </div>
-          ${renderSuggestedVisual(item.visual, item.id, item.chapterId)}
           ${renderTheoryLinksPanel(item.relatedTheorySections)}
-          ${answerHtml ? `<details class="inline-details"><summary>Ver respuesta de contraste</summary><div class="rich-text">${answerHtml}</div></details>` : ""}
-          ${solutionHtml ? `<details class="inline-details"><summary>Ver solucion y procedimiento</summary><div class="rich-text">${solutionHtml}</div></details>` : ""}
         </div>
       </details>
     `;
@@ -4344,62 +4326,6 @@
           ${theoryLinks}
         </div>
       </section>
-    `;
-  }
-
-  function renderSuggestedVisual(label, itemId, chapterId) {
-    if (["C05", "C06", "C07"].includes(chapterId)) {
-      return `
-        <figure class="semantic-figure resource-visual">
-          <svg viewBox="0 0 520 270" role="img" aria-label="Esquema geometrico para organizar los datos del problema">
-            <line class="diagram-axis" x1="45" y1="230" x2="480" y2="230"></line>
-            <line class="diagram-axis" x1="65" y1="250" x2="65" y2="25"></line>
-            ${
-              chapterId === "C05"
-                ? '<path class="diagram-shape diagram-fill" d="M100 220 L430 220 L430 55 Z"></path><path class="diagram-guide" d="M400 220 L400 190 L430 190"></path><text x="235" y="250">base conocida</text><text x="440" y="145">altura</text><text x="120" y="208">α</text>'
-                : chapterId === "C06"
-                  ? '<line class="diagram-accent" x1="120" y1="210" x2="350" y2="75"></line><line class="diagram-shape" x1="120" y1="210" x2="410" y2="180"></line><circle class="diagram-point" cx="120" cy="210" r="5"></circle><text x="92" y="238">origen</text><text x="352" y="68">u</text><text x="415" y="176">v</text>'
-                  : '<path class="diagram-shape diagram-fill" d="M135 205 L195 55 L405 190 Z"></path><circle class="diagram-point" cx="135" cy="205" r="5"></circle><circle class="diagram-point" cx="195" cy="55" r="5"></circle><circle class="diagram-point" cx="405" cy="190" r="5"></circle><text x="105" y="228">A</text><text x="175" y="48">B</text><text x="415" y="195">C</text>'
-            }
-          </svg>
-          <figcaption>${label}. Anota en el dibujo los datos, las incognitas y las unidades antes de operar.</figcaption>
-        </figure>
-      `;
-    }
-
-    if (["C08", "C09", "C10"].includes(chapterId)) {
-      return `
-        <figure class="semantic-figure resource-visual">
-          <svg viewBox="0 0 560 300" role="img" aria-label="Grafico cartesiano para analizar el modelo">
-            <g class="diagram-grid"><path d="M60 40V260M140 40V260M220 40V260M300 40V260M380 40V260M460 40V260M60 60H510M60 110H510M60 160H510M60 210H510M60 260H510"></path></g>
-            <line class="diagram-axis" x1="45" y1="260" x2="520" y2="260"></line><line class="diagram-axis" x1="60" y1="280" x2="60" y2="25"></line>
-            ${
-              chapterId === "C10"
-                ? '<circle class="lab-point" cx="110" cy="225" r="6"></circle><circle class="lab-point" cx="180" cy="198" r="6"></circle><circle class="lab-point" cx="250" cy="170" r="6"></circle><circle class="lab-point" cx="320" cy="138" r="6"></circle><circle class="lab-point" cx="390" cy="112" r="6"></circle><circle class="lab-point lab-point--alert" cx="460" cy="62" r="7"></circle><line class="regression-line" x1="95" y1="232" x2="475" y2="75"></line>'
-                : '<path class="diagram-accent diagram-curve" d="M75 235 C160 220 195 85 285 75 C360 66 420 145 500 55"></path><circle class="diagram-point" cx="285" cy="75" r="6"></circle>'
-            }
-          </svg>
-          <figcaption>${label}. Marca dominio, puntos relevantes, tendencia y limites de validez del modelo.</figcaption>
-        </figure>
-      `;
-    }
-
-    const base = itemId.split("").reduce((sum, char) => sum + char.charCodeAt(0), 0);
-    const values = [base % 17 + 8, base % 13 + 15, base % 11 + 22];
-    return `
-      <div class="resource-visual">
-        <p class="card-kicker">Apoyo visual: ${label}</p>
-        <div class="table-scroll">
-          <table class="math-table">
-            <thead><tr><th scope="col">Escenario</th><th scope="col">Dato principal</th><th scope="col">Variacion</th></tr></thead>
-            <tbody>
-              <tr><td>Referencia</td><td>${values[0]}</td><td>0%</td></tr>
-              <tr><td>Escenario A</td><td>${values[1]}</td><td>+10%</td></tr>
-              <tr><td>Escenario B</td><td>${values[2]}</td><td>-10%</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     `;
   }
 

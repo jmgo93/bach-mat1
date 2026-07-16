@@ -50,7 +50,8 @@ La biblioteca de un centro mide el nivel sonoro mediante la expresion
 \[
 L=10\log\left(\frac{I}{I_0}\right),
 \]
-donde \(L\) es el nivel en decibelios e \(I_0\) es la intensidad de referencia.
+donde \(L\) es el nivel en decibelios, \(I_0\) es la intensidad de referencia y \(\log\)
+representa el logaritmo decimal.
 
 En una medicion se registran dos zonas:
 \begin{enumerate}
@@ -61,8 +62,8 @@ En una medicion se registran dos zonas:
 Se pide:
 \begin{enumerate}
   \item comparar la intensidad del patio con la de la sala;
-  \item fijar el mayor nivel admisible en una tercera zona para que su intensidad no supere en
-  mil veces a la de la sala de estudio.
+  \item fijar el mayor nivel admisible en una tercera zona para que su intensidad no sea mas de
+  mil veces la de la sala de estudio.
 \end{enumerate}
 \end{contextproblem}
 
@@ -86,6 +87,7 @@ Para no superar un factor \(1000\), el tercer espacio no debe pasar de \(75\) dB
 \end{shortanswer}
 
 \begin{fullsolution}{C01 modelo}
+\textbf{Paso 1. Relacionar la diferencia de decibelios con el cociente de intensidades.}
 Si \(L_1=45\) y \(L_2=72\), entonces
 \[
 L_2-L_1=10\log\left(\frac{I_2}{I_1}\right).
@@ -100,6 +102,7 @@ Por tanto,
 \]
 El patio multiplica aproximadamente por \(501\) la intensidad de la sala.
 
+\textbf{Paso 2. Traducir el limite de intensidad a decibelios.}
 Para el limite de mil veces:
 \[
 \frac{I}{I_1}\leq 1000=10^3.
@@ -113,12 +116,15 @@ Como \(L_1=45\),
 L\leq 45+30=75.
 \]
 El nivel maximo recomendable para la tercera zona es \(75\) dB.
+
+\textbf{Paso 3. Comprobar.} La diferencia respecto a la sala es \(75-45=30\) dB y
+\(10^{30/10}=10^3=1000\). Por tanto, el valor limite cumple exactamente la condicion.
 \end{fullsolution}
 
 \section{C02. Produccion por lotes y polinomios}
 
 \begin{contextproblem}{Margen de un taller segun el numero de lotes}
-El margen semanal \(M(n)\), en centenas de euros, de un taller que fabrica lotes numerados se
+El margen semanal \(M(n)\), en centenas de euros, de un taller que fabrica \(n\) lotes se
 modeliza por
 \[
 M(n)=n^3-4n^2-n+4.
@@ -142,6 +148,7 @@ Los ceros algebraicos son \(n=-1\), \(n=1\) y \(n=4\). Si \(n\) representa un nu
 \end{shortanswer}
 
 \begin{fullsolution}{C02 modelo}
+\textbf{Paso 1. Factorizar para localizar los ceros.}
 Agrupando,
 \[
 M(n)=n^2(n-4)-1(n-4)=(n^2-1)(n-4)=(n-1)(n+1)(n-4).
@@ -153,6 +160,7 @@ n=1,\qquad n=-1,\qquad n=4.
 Como el numero de lotes debe ser un entero no negativo, \(n=-1\) no tiene sentido en el
 contexto. Los niveles de equilibrio fisicamente admisibles son \(n=1\) y \(n=4\).
 
+\textbf{Paso 2. Dividir entre \(n-2\).}
 Dividiendo entre \(n-2\),
 \[
 \begin{array}{r|rrrr}
@@ -166,8 +174,13 @@ por lo que
 \[
 M(n)=(n-2)(n^2-2n-5)-6.
 \]
-El resto es \(-6\), que coincide con \(M(2)\) por el teorema del resto. Por tanto, al tomar
-\(n=2\) el margen vale \(-6\) centenas de euros y no se alcanza equilibrio.
+\textbf{Paso 3. Interpretar y comprobar el resto.} El teorema del resto afirma que ese resto es
+\(M(2)\). La sustitucion directa confirma
+\[
+M(2)=2^3-4\cdot2^2-2+4=8-16-2+4=-6.
+\]
+Por tanto, con \(2\) lotes el margen es \(-6\) centenas de euros, es decir, una perdida de
+\(600\) euros; no se alcanza el equilibrio.
 \end{fullsolution}
 
 \section{C03. Suscripciones y sistema lineal 3x3}
@@ -188,6 +201,7 @@ Se vendieron \(60\) planes basicos, \(30\) estandar y \(30\) premium.
 \end{shortanswer}
 
 \begin{fullsolution}{C03 modelo}
+\textbf{Paso 1. Definir las incognitas y traducir los datos.}
 Sean \(b,s,p\) los planes basico, estandar y premium. El sistema es
 \[
 \begin{cases}
@@ -196,6 +210,10 @@ b+s+p=120,\\
 b=2p.
 \end{cases}
 \]
+La primera ecuacion cuenta suscripciones, la segunda representa los ingresos y la tercera
+traduce que los planes basicos duplican a los premium.
+
+\textbf{Paso 2. Reducir el sistema a una incognita.}
 Sustituyendo \(b=2p\) en la primera ecuacion,
 \[
 2p+s+p=120 \Longrightarrow s=120-3p.
@@ -210,6 +228,7 @@ Desarrollando,
 \Longrightarrow p+3000=3030
 \Longrightarrow p=30.
 \]
+\textbf{Paso 3. Recuperar las demas incognitas.}
 Entonces
 \[
 b=2p=60,\qquad s=120-3p=30.
@@ -218,6 +237,15 @@ La distribucion final es:
 \[
 (b,s,p)=(60,30,30).
 \]
+\textbf{Paso 4. Comprobar en el contexto.}
+\[
+60+30+30=120,
+\]
+\[
+18\cdot60+25\cdot30+40\cdot30=1080+750+1200=3030,
+\qquad 60=2\cdot30.
+\]
+Las tres condiciones se cumplen y las cantidades son enteras no negativas.
 \end{fullsolution}
 
 \section{C04. Region factible y beneficio}
@@ -266,7 +294,17 @@ Los vertices son \((20,10)\), \((20,60)\), \((50,45)\) y
 \end{shortanswer}
 
 \begin{fullsolution}{C04 modelo}
-La interseccion de
+\textbf{Paso 1. Dibujar las fronteras y elegir los semiplanos.}
+Las fronteras son \(x+2y=140\), \(3x+2y=240\), \(x=20\) e \(y=10\). El punto
+\((30,20)\) satisface estrictamente las cuatro desigualdades, de modo que permite identificar el lado valido
+de cada frontera.
+
+\textbf{Paso 2. Calcular los vertices consecutivos.}
+La interseccion de \(x=20\) e \(y=10\) es \((20,10)\). Para \(x=20\) en la primera frontera,
+\[
+20+2y=140 \Longrightarrow y=60,
+\]
+lo que da \((20,60)\). La interseccion de
 \[
 x+2y=140
 \qquad\text{y}\qquad
@@ -280,10 +318,15 @@ Entonces
 \[
 50+2y=140 \Longrightarrow y=45.
 \]
-Con las restricciones \(x\geq 20\) e \(y\geq 10\), los vertices de la region son:
+Finalmente, para \(y=10\) en la segunda frontera,
+\[
+3x+20=240 \Longrightarrow x=\frac{220}{3}.
+\]
+Los cuatro puntos cumplen todas las restricciones, por lo que los vertices son
 \[
 (20,10),\qquad (20,60),\qquad (50,45),\qquad \left(\frac{220}{3},10\right).
 \]
+\textbf{Paso 3. Evaluar la funcion objetivo en todos los vertices.}
 Evaluamos el beneficio:
 \[
 B(20,10)=610,
@@ -295,14 +338,15 @@ B(50,45)=2025,
 \[
 B\left(\frac{220}{3},10\right)=18\cdot \frac{220}{3}+25\cdot 10=1570.
 \]
-El mayor valor es \(2025\), asi que el plan optimo es producir \(50\) cuadernos y \(45\)
-archivadores.
+\textbf{Paso 4. Interpretar.} Una funcion lineal alcanza sus extremos en los vertices de una
+region poligonal acotada. El mayor valor, \(2025\), es por tanto el maximo global: el plan
+optimo es producir \(50\) cuadernos y \(45\) archivadores.
 \end{fullsolution}
 
 \section{C05. Observacion de una torre desde dos puntos}
 
-\begin{contextproblem}{Topografia de una ladera}
-Desde un sendero recto se observa la parte superior de una torre. En el punto \(A\) el angulo
+\begin{contextproblem}{Topografia desde un sendero horizontal}
+Desde un sendero horizontal se observa la parte superior de una torre. En el punto \(A\) el angulo
 de elevacion es \(28^\circ\). Tras avanzar \(40\) metros hacia la base, en el punto \(B\), el
 angulo pasa a ser \(41^\circ\).
 
@@ -320,7 +364,7 @@ Calcula la altura de la torre sobre el terreno horizontal.
   \node[below] at (2.4,0) {\(B\)};
   \node[below] at (8,0) {Base};
   \node[right] at (8,2.4) {\(h\)};
-  \draw (0.9,0) arc[start angle=0,end angle=31,radius=0.9];
+  \draw (0.9,0) arc[start angle=0,end angle=28,radius=0.9];
   \node at (1.4,0.45) {\scriptsize \(28^\circ\)};
   \draw (3.1,0) arc[start angle=0,end angle=41,radius=0.7];
   \node at (3.55,0.45) {\scriptsize \(41^\circ\)};
@@ -333,6 +377,7 @@ La altura es aproximadamente \(54.8\) metros.
 \end{shortanswer}
 
 \begin{fullsolution}{C05 modelo}
+\textbf{Paso 1. Definir las distancias.}
 Sea \(x\) la distancia desde \(B\) hasta la base de la torre. Entonces desde \(A\) la distancia
 horizontal es \(x+40\). Por trigonometria,
 \[
@@ -340,6 +385,7 @@ horizontal es \(x+40\). Por trigonometria,
 \qquad
 \tan 28^\circ=\frac{h}{x+40}.
 \]
+\textbf{Paso 2. Expresar la misma altura de dos formas.}
 Igualando \(h\),
 \[
 x\tan 41^\circ=(x+40)\tan 28^\circ.
@@ -351,11 +397,16 @@ x(\tan 41^\circ-\tan 28^\circ)=40\tan 28^\circ,
 \[
 x=\frac{40\tan 28^\circ}{\tan 41^\circ-\tan 28^\circ}\approx 63.00.
 \]
+\textbf{Paso 3. Calcular la altura.}
 La altura es
 \[
 h=x\tan 41^\circ\approx 63.00\cdot 0.8693\approx 54.77.
 \]
 Por tanto, la torre mide aproximadamente \(\SI{54.8}{m}\).
+
+\textbf{Paso 4. Comprobar.} Desde \(B\),
+\(54.77/63.00\approx0.8694\approx\tan41^\circ\). Desde \(A\),
+\(54.77/103.00\approx0.5317\approx\tan28^\circ\). Ambos angulos se recuperan con el resultado.
 \end{fullsolution}
 
 \section{C06. Ruta vectorial de un dron}
@@ -393,14 +444,17 @@ alineado con \(\vec a=(2,1)\) que con \(\vec b=(1,3)\).
 \end{shortanswer}
 
 \begin{fullsolution}{C06 modelo}
+\textbf{Paso 1. Sumar los desplazamientos.}
 Sumamos coordenadas:
 \[
 \vec r=\vec u+\vec v+\vec w=(6,2)+(-1,5)+(3,-4)=(8,3).
 \]
+\textbf{Paso 2. Calcular el modulo del desplazamiento resultante.}
 Su modulo es
 \[
 \|\vec r\|=\sqrt{8^2+3^2}=\sqrt{73}.
 \]
+\textbf{Paso 3. Comparar direcciones, no solo productos escalares.}
 Para comparar alineacion usamos el producto escalar:
 \[
 \vec r\cdot \vec a=8\cdot 2+3\cdot 1=19,
@@ -413,8 +467,15 @@ Pero hay que tener en cuenta tambien los modulos:
 \qquad
 \cos(\widehat{r,b})=\frac{17}{\sqrt{73}\sqrt{10}}\approx 0.629.
 \]
-Como el coseno con \(\vec a\) es mucho mayor, la ruta final queda claramente mas alineada con
-\(\vec a\).
+Los angulos correspondientes son aproximadamente
+\[
+\widehat{r,a}\approx6.0^\circ,
+\qquad
+\widehat{r,b}\approx51.0^\circ.
+\]
+\textbf{Paso 4. Concluir y comprobar.} Como el angulo con \(\vec a\) es mucho menor, la ruta
+final queda claramente mas alineada con \(\vec a\). Ademas, el extremo dibujado coincide con la
+suma: \((6,2)+(-1,5)+(3,-4)=(8,3)\).
 \end{fullsolution}
 
 \section{C07. Triangulo urbano en coordenadas}
@@ -452,17 +513,20 @@ ortocentro es \(H(2,2)\).
 \end{shortanswer}
 
 \begin{fullsolution}{C07 modelo}
+\textbf{Paso 1. Calcular el area.}
 El lado \(AB\) es horizontal y mide \(8\). La distancia vertical desde \(C\) hasta \(AB\) es
 \(6\), asi que
 \[
 Area=\frac{8\cdot 6}{2}=24.
 \]
+\textbf{Paso 2. Hallar la altura desde \(C\).}
 Como \(AB\) tiene ecuacion \(y=0\), la altura desde \(C(2,6)\) es perpendicular a \(AB\) y por
 tanto vertical:
 \[
 x=2.
 \]
 
+\textbf{Paso 3. Hallar una segunda altura.}
 Para hallar el ortocentro necesitamos otra altura. La recta \(AC\) tiene pendiente
 \[
 m_{AC}=\frac{6-0}{2-0}=3.
@@ -479,6 +543,9 @@ Luego el ortocentro es
 \[
 H(2,2).
 \]
+\textbf{Paso 4. Comprobar.} El punto \(H\) pertenece a la primera altura porque su abscisa es
+\(2\), y pertenece a la segunda porque
+\(-2/3+8/3=2\). Por tanto, es la interseccion de ambas alturas.
 \end{fullsolution}
 
 \section{C08. Modelo de enfriamiento sencillo}
@@ -494,7 +561,7 @@ Se pide:
 \begin{enumerate}
   \item dar el dominio fisicamente razonable;
   \item estudiar la temperatura a largo plazo;
-  \item calcular a partir de que instante la temperatura baja de \(5^\circ\).
+  \item determinar para que tiempos la temperatura es inferior a \(5^\circ\).
 \end{enumerate}
 \end{contextproblem}
 
@@ -529,17 +596,25 @@ queda por debajo de \(5^\circ\) para \(t>3\) horas.
 \end{shortanswer}
 
 \begin{fullsolution}{C08 modelo}
+\textbf{Paso 1. Fijar el dominio del contexto.}
 La funcion algebraicamente no esta definida en \(t=-1\), pero en el contexto del problema solo
 tiene sentido considerar tiempos desde el inicio, de modo que el dominio fisico es
 \[
 [0,\infty).
 \]
+\textbf{Paso 2. Estudiar el comportamiento a largo plazo.}
 El limite en el infinito es
 \[
 \lim_{t\to\infty}\left(2+\frac{12}{t+1}\right)=2.
 \]
 Eso significa que la temperatura se estabiliza cerca de \(2^\circ\).
+Ademas,
+\[
+T'(t)=-\frac{12}{(t+1)^2}<0\qquad (t\geq0),
+\]
+por lo que la temperatura decrece durante todo el proceso considerado.
 
+\textbf{Paso 3. Resolver la desigualdad.}
 Para encontrar cuando \(T(t)<5\),
 \[
 2+\frac{12}{t+1}<5
@@ -556,7 +631,8 @@ Como \(t\geq 0\), se tiene \(t+1>0\) y se puede multiplicar:
 \Longrightarrow
 t>3.
 \]
-Por tanto, la temperatura cae por debajo de \(5^\circ\) despues de tres horas.
+\textbf{Paso 4. Comprobar el extremo.} En \(t=3\), \(T(3)=2+12/4=5\), de modo que ese instante
+no se incluye. Para cualquier \(t>3\), la temperatura es estrictamente inferior a \(5^\circ\).
 \end{fullsolution}
 
 \section{C09. Optimizar el area de un cartel}
@@ -586,14 +662,19 @@ El area maxima es \(50\) metros cuadrados.
 \end{shortanswer}
 
 \begin{fullsolution}{C09 modelo}
+\textbf{Paso 1. Traducir la restriccion y fijar el dominio.}
 Si se vallan tres lados, la restriccion es
 \[
 2x+y=20 \Longrightarrow y=20-2x.
 \]
+Para que ambos lados sean positivos debe cumplirse \(0<x<10\).
+
+\textbf{Paso 2. Construir la funcion objetivo.}
 El area del rectangulo es
 \[
 A(x)=xy=x(20-2x)=20x-2x^2.
 \]
+\textbf{Paso 3. Localizar y clasificar el punto critico.}
 Derivando,
 \[
 A'(x)=20-4x.
@@ -606,7 +687,8 @@ La segunda derivada es
 \[
 A''(x)=-4<0,
 \]
-luego el punto critico corresponde a un maximo. Sustituyendo,
+luego el punto critico corresponde a un maximo. Como la funcion es una parabola concava y
+\(x=5\) pertenece a \((0,10)\), se trata del maximo global en el dominio fisico. Sustituyendo,
 \[
 y=20-2\cdot 5=10.
 \]
@@ -614,7 +696,9 @@ El area maxima vale
 \[
 A(5)=5\cdot 10=50.
 \]
-Las dimensiones optimas son \(5\) metros de profundidad y \(10\) metros de ancho.
+\textbf{Paso 4. Interpretar y comprobar.} Las dimensiones optimas son \(5\) metros de
+profundidad y \(10\) metros de ancho. Usan exactamente \(2\cdot5+10=20\) metros de valla y
+producen un area maxima de \(50\) metros cuadrados.
 \end{fullsolution}
 
 \section{C10. Alerta de calidad y decision bajo incertidumbre}
@@ -656,22 +740,37 @@ correctas. Se pide:
 \end{shortanswer}
 
 \begin{fullsolution}{C10 modelo}
+\textbf{Paso 1. Calcular los dos caminos que producen una alerta.}
+Una pieza defectuosa y detectada tiene probabilidad
+\[
+P(D\cap A)=0.04\cdot0.95=0.038.
+\]
+Una pieza correcta que produce un falso positivo tiene probabilidad
+\[
+P(\overline D\cap A)=0.96\cdot0.03=0.0288.
+\]
+
+\textbf{Paso 2. Sumar los caminos para obtener la probabilidad total de alerta.}
 Por probabilidad total,
 \[
 P(A)=P(D)P(A\mid D)+P(\overline D)P(A\mid\overline D)
 =0.04\cdot0.95+0.96\cdot0.03=0.0668.
 \]
+\textbf{Paso 3. Invertir la condicion mediante Bayes.}
 Aplicando Bayes,
 \[
 P(D\mid A)=\frac{P(D)P(A\mid D)}{P(A)}
 =\frac{0.04\cdot0.95}{0.0668}\approx0.5689.
 \]
+\textbf{Paso 4. Calcular las revisiones innecesarias.}
 Las alertas erroneas esperadas entre \(10\,000\) piezas son
 \[
 10\,000\cdot0.96\cdot0.03=288.
 \]
-La alerta eleva la probabilidad de defecto del \(4\%\) a aproximadamente el \(56.9\%\), pero
-los falsos positivos y la baja prevalencia inicial impiden interpretarla como certeza.
+\textbf{Paso 5. Interpretar y comprobar con frecuencias esperadas.} En \(10\,000\) piezas se
+esperan \(380\) alertas verdaderas y \(288\) falsas, es decir, \(668\) alertas en total. La
+fraccion \(380/668\approx0.5689\) confirma el resultado de Bayes. La alerta eleva la probabilidad
+de defecto del \(4\%\) al \(56.9\%\), pero no equivale a certeza.
 \end{fullsolution}
 
 \chapter{Secuencia de Produccion}

@@ -35,7 +35,7 @@ Los PDF fuente originales de trabajo no se publican en este repositorio.
   - `build/cuaderno_estudiante.pdf`: `187` paginas
   - `build/cuaderno_profesor.pdf`: `238` paginas
   - `build/respuestas_breves.pdf`: `35` paginas
-  - `build/proyecto_problemas_contextualizados.pdf`: `19` paginas con inventario de `84`
+  - `build/proyecto_problemas_contextualizados.pdf`: `20` paginas con inventario de `84`
     secciones y `10` problemas modelo resueltos
   - `build/proyecto_examenes_dificiles.pdf`: `20` paginas con inventario de `84` secciones,
     `10` mini-examenes modelo y `7` examenes de bloque resueltos

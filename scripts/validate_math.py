@@ -2672,14 +2672,14 @@ def chapter10_results() -> list[dict[str, object]]:
 def supplement_results() -> list[dict[str, object]]:
     results: list[dict[str, object]] = []
 
-    results.append(validate_value("CTX-C01", "context_model", {"factor": round(10**2.7, 2), "limit_db": 75}, {"factor": 501.19, "limit_db": 75}, "Escala logaritmica de ruido."))
+    results.append(validate_value("CTX-C01", "context_model", {"factor": round(10**2.7, 2), "limit_db": 75, "limit_factor_check": 10 ** ((75 - 45) / 10)}, {"factor": 501.19, "limit_db": 75, "limit_factor_check": 1000.0}, "Escala logaritmica de ruido."))
     polynomial = x**3 - 4 * x**2 - x + 4
     results.append(
         validate_value(
             "CTX-C02",
             "context_model",
-            {"factorization": sp.factor(polynomial), "remainder_at_2": polynomial.subs(x, 2), "context_roots": sp.FiniteSet(1, 4)},
-            {"factorization": (x - 1) * (x + 1) * (x - 4), "remainder_at_2": -6, "context_roots": sp.FiniteSet(1, 4)},
+            {"factorization": sp.factor(polynomial), "remainder_at_2": polynomial.subs(x, 2), "context_roots": sp.FiniteSet(1, 4), "margin_euros_at_2": 100 * polynomial.subs(x, 2)},
+            {"factorization": (x - 1) * (x + 1) * (x - 4), "remainder_at_2": -6, "context_roots": sp.FiniteSet(1, 4), "margin_euros_at_2": -600},
             "Produccion por lotes con descarte de la raiz contextual negativa.",
         )
     )
@@ -2693,12 +2693,14 @@ def supplement_results() -> list[dict[str, object]]:
     tower_height = sp.simplify(tower_distance * sp.tan(deg(41)))
     results.append(validate_value("CTX-C05", "context_model", {"distance": round(float(tower_distance.evalf()), 2), "height": round(float(tower_height.evalf()), 2)}, {"distance": 63.00, "height": 54.77}, "Altura de una torre desde dos puntos."))
     route = point(6 - 1 + 3, 2 + 5 - 4)
-    results.append(validate_value("CTX-C06", "context_model", {"route": route, "norm": sp.sqrt(route[0] ** 2 + route[1] ** 2), "cos_a": sp.Rational(19, 1) / (sp.sqrt(73) * sp.sqrt(5)), "cos_b": sp.Rational(17, 1) / (sp.sqrt(73) * sp.sqrt(10))}, {"route": sp.Tuple(8, 3), "norm": sp.sqrt(73), "cos_a": 19 / sp.sqrt(365), "cos_b": 17 / sp.sqrt(730)}, "Ruta vectorial de un dron."))
+    cos_a = sp.Rational(19, 1) / (sp.sqrt(73) * sp.sqrt(5))
+    cos_b = sp.Rational(17, 1) / (sp.sqrt(73) * sp.sqrt(10))
+    results.append(validate_value("CTX-C06", "context_model", {"route": route, "norm": sp.sqrt(route[0] ** 2 + route[1] ** 2), "cos_a": cos_a, "cos_b": cos_b, "angle_a": round(float((sp.acos(cos_a) * 180 / sp.pi).evalf()), 1), "angle_b": round(float((sp.acos(cos_b) * 180 / sp.pi).evalf()), 1)}, {"route": sp.Tuple(8, 3), "norm": sp.sqrt(73), "cos_a": 19 / sp.sqrt(365), "cos_b": 17 / sp.sqrt(730), "angle_a": 6.0, "angle_b": 51.0}, "Ruta vectorial de un dron."))
     results.append(validate_value("CTX-C07", "context_model", {"area": sp.Rational(8 * 6, 2), "altitude": vertical_line(2), "orthocenter": sp.Tuple(2, 2)}, {"area": 24, "altitude": vertical_line(2), "orthocenter": sp.Tuple(2, 2)}, "Triangulo urbano y ortocentro."))
-    results.append(validate_value("CTX-C08", "context_model", {"domain": sp.Interval(0, sp.oo), "limit": sp.limit(2 + 12 / (x + 1), x, sp.oo), "below_five": sp.Interval.open(3, sp.oo)}, {"domain": sp.Interval(0, sp.oo), "limit": 2, "below_five": sp.Interval.open(3, sp.oo)}, "Modelo de enfriamiento."))
+    results.append(validate_value("CTX-C08", "context_model", {"domain": sp.Interval(0, sp.oo), "limit": sp.limit(2 + 12 / (x + 1), x, sp.oo), "below_five": sp.Interval.open(3, sp.oo), "boundary_value": (2 + 12 / (x + 1)).subs(x, 3), "decreasing_at_0": sp.diff(2 + 12 / (x + 1), x).subs(x, 0) < 0}, {"domain": sp.Interval(0, sp.oo), "limit": 2, "below_five": sp.Interval.open(3, sp.oo), "boundary_value": 5, "decreasing_at_0": True}, "Modelo de enfriamiento."))
     results.append(validate_value("CTX-C09", "context_model", {"depth": 5, "width": 20 - 2 * 5, "area": 5 * (20 - 2 * 5)}, {"depth": 5, "width": 10, "area": 50}, "Optimizacion de un panel."))
     alert = sp.Rational(167, 2500)
-    results.append(validate_value("CTX-C10", "context_model", {"alert": alert, "posterior": sp.Rational(38, 1000) / alert, "false_reviews": 10000 * sp.Rational(96, 100) * sp.Rational(3, 100)}, {"alert": sp.Rational(167, 2500), "posterior": sp.Rational(95, 167), "false_reviews": 288}, "Alerta de calidad y Bayes."))
+    results.append(validate_value("CTX-C10", "context_model", {"alert": alert, "posterior": sp.Rational(38, 1000) / alert, "true_alerts": 10000 * sp.Rational(4, 100) * sp.Rational(95, 100), "false_reviews": 10000 * sp.Rational(96, 100) * sp.Rational(3, 100), "total_alerts": 10000 * alert}, {"alert": sp.Rational(167, 2500), "posterior": sp.Rational(95, 167), "true_alerts": 380, "false_reviews": 288, "total_alerts": 668}, "Alerta de calidad y Bayes."))
 
     results.append(validate_value("MINI-C01.S07", "exam_model", {"log_expression": sp.log(20), "db_increase": 20}, {"log_expression": sp.log(20), "db_increase": 20}, "Mini-examen de logaritmos."))
     results.append(validate_value("MINI-C02.S04", "exam_model", {"parameter": -1, "factorization": (x - 2) * (x**2 - x - 3)}, {"parameter": -1, "factorization": x**3 - 3 * x**2 - x + 6}, "Mini-examen de teorema del resto."))
