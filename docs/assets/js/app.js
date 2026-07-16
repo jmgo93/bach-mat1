@@ -899,9 +899,9 @@
       addResult(
         {
           href: `#/problemas/${item.chapterId}`,
-          code: "IDEA",
-          title: item.prompt,
-          kind: "Idea de ampliacion",
+          code: "PROB",
+          title: item.sectionTitle,
+          kind: "Problema para resolver",
           description: item.sectionTitle || item.chapterTitle
         },
         searchRecordText(item)
@@ -1033,8 +1033,8 @@
         </article>
         <article class="summary-card">
           <p class="card-kicker">Problemas</p>
-          <h2>${contextualModelCount} resueltos y ${contextualProblemCount} ideas</h2>
-          <p>Los modelos estan verificados; las ideas se identifican como propuestas aun no cerradas.</p>
+          <h2>${contextualModelCount} contextualizados y ${contextualProblemCount} para resolver</h2>
+          <p>Todos muestran un enunciado cerrado y permiten desplegar su respuesta y solucion.</p>
         </article>
         <article class="summary-card">
           <p class="card-kicker">Examenes</p>
@@ -1110,7 +1110,7 @@
         <article class="summary-card">
           <p class="card-kicker">Recursos activos</p>
           <h2>${chapterActivities.length} actividades, ${chapterProblemModels.length} problemas resueltos y ${chapterExamSeeds.length} examenes</h2>
-          <p>${chapterFlashcards.length} flashcards, ${chapterProblems.length} ideas de ampliacion y ${chapterExamModels.length + chapterBlockExams.length} modelos de evaluacion conectados con el tema.</p>
+          <p>${chapterFlashcards.length} flashcards, ${chapterProblems.length} problemas para resolver y ${chapterExamModels.length + chapterBlockExams.length} modelos de evaluacion conectados con el tema.</p>
         </article>
       </section>
 
@@ -2109,16 +2109,16 @@
         <div class="hero__grid">
           <div>
             <p class="card-kicker">Problemas contextualizados y relacionados</p>
-            <h1>Problemas completos y verificados, conectados con la teoria que hace falta activar en cada caso.</h1>
+            <h1>Resuelve primero; comprueba despues con una respuesta y una solucion que corresponden exactamente.</h1>
             <p>
-              Los modelos incluyen datos coherentes, respuesta breve y solucion paso a paso. El mapa por
-              apartados se presenta aparte como ideas de ampliacion, nunca como problemas ya cerrados.
+              Los modelos contextualizados incluyen datos coherentes y desarrollo paso a paso. Ademas, cada
+              apartado propone un ejercicio concreto de dificultad alta con correccion individual.
             </p>
           </div>
           <aside class="summary-card summary-card--accent">
             <p class="card-kicker">Cobertura actual</p>
             <h2>${visibleModels.length} problemas resueltos</h2>
-            <p>${visibleInventory.length} ideas adicionales quedan identificadas como propuestas editoriales y enlazan con la teoria.</p>
+            <p>${visibleInventory.length} problemas adicionales estan listos para intentar y comprobar.</p>
           </aside>
         </div>
       </section>
@@ -2130,9 +2130,9 @@
           <p>Enunciados desarrollados con datos, respuesta breve, comprobacion y solucion paso a paso.</p>
         </article>
         <article class="summary-card">
-          <p class="card-kicker">Mapa de ampliacion</p>
+          <p class="card-kicker">Problemas por apartado</p>
           <h2>${visibleInventory.length}</h2>
-          <p>Ideas de contexto por apartado. No se presentan como enunciados resueltos ni incorporan datos ficticios.</p>
+          <p>Un enunciado cerrado por seccion, con respuesta y solucion ocultas hasta que decidas consultarlas.</p>
         </article>
         <article class="summary-card">
           <p class="card-kicker">Nivel</p>
@@ -2175,7 +2175,7 @@
             <ol>
               <li>Abre primero el modelo completo del capitulo para ver el tipo de razonamiento esperado.</li>
               <li>Usa los enlaces de teoria para volver justo al apartado que sostiene el problema.</li>
-              <li>Consulta el mapa de ampliacion solo para explorar posibles contextos; no contiene enunciados cerrados.</li>
+              <li>Intenta cada problema por apartado antes de abrir la respuesta o la solucion.</li>
             </ol>
           </div>
         </article>
@@ -2236,9 +2236,9 @@
             <p class="card-kicker">${(CHAPTER_META[chapter.id] || {}).block || "Bloque"}</p>
             <h2>${chapter.id} - ${chapter.title}</h2>
           </div>
-          <span class="badge-soft">${items.length} ideas</span>
+          <span class="badge-soft">${items.length} problemas</span>
         </div>
-        <p>Mapa editorial de posibles contextos. Estas entradas no son problemas cerrados y no incluyen datos ni soluciones inventadas.</p>
+        <p>Cada tarjeta contiene un ejercicio real del apartado. La respuesta y el procedimiento permanecen ocultos para que puedas intentarlo primero.</p>
         <div class="inventory-list">
           ${items.map(renderProblemSeedCard).join("")}
         </div>
@@ -2247,23 +2247,37 @@
   }
 
   function renderProblemSeedCard(item) {
+    const section = getSection(item.sectionId);
+    const practiceItems = section?.practice?.items || [];
+    const problem = practiceItems[practiceItems.length - 1];
+    if (!problem) {
+      return "";
+    }
     return `
       <details class="inline-details inventory-item">
         <summary>
           <span class="inventory-item__heading">
             <strong>${item.sectionId} - ${item.sectionTitle}</strong>
-            <small>${item.prompt}</small>
+            <small>Problema seleccionado del apartado</small>
           </span>
-          <span class="status-pill status-pill--cool">${item.level}</span>
+          <span class="status-pill status-pill--cool">Resolver</span>
         </summary>
         <div class="inventory-item__body">
-          <div class="reading-panel">
-            <p class="card-kicker">Idea editorial, no enunciado cerrado</p>
-            <p><strong>Objetivo matematico:</strong> ${item.sectionTitle}.</p>
-            <p><strong>Contexto que puede desarrollarse:</strong> ${item.prompt}.</p>
-            <p>Para practicar ahora con datos y correccion fiables, entra en la teoria enlazada y utiliza sus ejercicios resueltos.</p>
+          <div class="challenge-brief">
+            <p class="card-kicker">Problema para resolver</p>
+            <p class="badge-soft">${problem.tagId}</p>
+            <div class="rich-text"><p>${problem.prompt}</p></div>
+            <p>Trabaja el ejercicio en papel y comprueba restricciones, unidades o sustituciones antes de desplegar la correccion.</p>
           </div>
           ${renderTheoryLinksPanel(item.relatedTheorySections)}
+          <details class="inline-details">
+            <summary>Comprobar respuesta</summary>
+            <div class="rich-text">${problem.answerHtml}</div>
+          </details>
+          <details class="inline-details">
+            <summary>Ver solucion razonada</summary>
+            <div class="rich-text">${problem.solutionHtml}</div>
+          </details>
         </div>
       </details>
     `;

@@ -33,7 +33,7 @@ Los PDF fuente originales de trabajo no se publican en este repositorio.
   problemas y examenes.
 - Salidas actuales:
   - `build/cuaderno_estudiante.pdf`: `187` paginas
-  - `build/cuaderno_profesor.pdf`: `238` paginas
+  - `build/cuaderno_profesor.pdf`: `239` paginas
   - `build/respuestas_breves.pdf`: `35` paginas
   - `build/proyecto_problemas_contextualizados.pdf`: `20` paginas con inventario de `84`
     secciones y `10` problemas modelo resueltos
@@ -48,6 +48,7 @@ Los PDF fuente originales de trabajo no se publican en este repositorio.
 - Contenido didactico activo:
   - `85` ejemplos resueltos
   - `671` ejercicios guiados, propuestos o de reto con respuesta breve y solucion docente
+  - `84` problemas seleccionados por apartado en la web, con respuesta y solucion desplegables
 - `C10` es contenido editorial original: no existe una relacion PDF de probabilidad en
   `sources/`, por lo que se valida matematicamente pero no se atribuye a la cobertura fuente.
 - Siguiente trabajo recomendado: una revision visual editorial pagina a pagina solo si se desea

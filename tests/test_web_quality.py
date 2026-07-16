@@ -106,7 +106,7 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
         self.assertIn(".feature-icon", styles)
         self.assertIn(".hero-watermark", styles)
         self.assertNotIn("lucide", index.lower())
-        self.assertIn("mate1-interactivas-v23", worker)
+        self.assertIn("mate1-interactivas-v24", worker)
 
     def test_global_search_covers_every_resource_family(self) -> None:
         index = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -182,8 +182,40 @@ process.stdout.write(JSON.stringify({ total: keys.length, unique: new Set(keys).
             "varia un 10 por ciento",
         ):
             self.assertNotIn(fragment, app)
-        self.assertIn("Idea editorial, no enunciado cerrado", app)
-        self.assertIn('kind: "Idea de ampliacion"', app)
+        self.assertIn("Problema para resolver", app)
+        self.assertIn("Comprobar respuesta", app)
+        self.assertIn("Ver solucion razonada", app)
+        self.assertIn('kind: "Problema para resolver"', app)
+
+    def test_every_practice_problem_has_its_own_answer_and_solution(self) -> None:
+        payload = load_generated_payload(JS / "generated-content.js", "MATHBOOK_CONTENT")
+        practice_items = [
+            item
+            for chapter in payload["chapters"]
+            for section in chapter["sections"]
+            for item in section.get("practice", {}).get("items", [])
+        ]
+        self.assertEqual(len(practice_items), 507)
+        for item in practice_items:
+            self.assertTrue(item["prompt"].strip(), item["tagId"])
+            self.assertTrue(item["answerHtml"].strip(), item["tagId"])
+            self.assertTrue(item["solutionHtml"].strip(), item["tagId"])
+
+    def test_problem_inventory_points_to_solved_practice_items(self) -> None:
+        content = load_generated_payload(JS / "generated-content.js", "MATHBOOK_CONTENT")
+        supplements = load_generated_payload(JS / "generated-supplements.js", "MATHBOOK_SUPPLEMENTS")
+        sections = {
+            section["id"]: section
+            for chapter in content["chapters"]
+            for section in chapter["sections"]
+        }
+        inventory = supplements["problems"]["inventory"]
+        self.assertEqual(len(inventory), 84)
+        for item in inventory:
+            practice = sections[item["sectionId"]]["practice"]["items"]
+            self.assertTrue(practice, item["sectionId"])
+            self.assertTrue(practice[-1]["answerHtml"], item["sectionId"])
+            self.assertTrue(practice[-1]["solutionHtml"], item["sectionId"])
 
     def test_every_contextual_model_has_a_step_by_step_solution(self) -> None:
         payload = load_generated_payload(JS / "generated-supplements.js", "MATHBOOK_SUPPLEMENTS")

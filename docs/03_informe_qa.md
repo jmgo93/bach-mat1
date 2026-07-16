@@ -17,20 +17,20 @@ de estadistica, probabilidad e inferencia y se declara separadamente de la cober
 - Ejemplos resueltos: `85`.
 - Ejercicios guiados, propuestos o de reto con respuesta y solucion: `671`.
 - Comprobaciones matematicas: `629/629`.
-- Pruebas automatizadas: `22/22`.
+- Pruebas automatizadas: `24/24`.
 - Inventario de suplementos: `84` secciones, `10` problemas modelo, `10` mini-examenes y `7`
   examenes de bloque.
 
 ## Compilacion
 
 - `cuaderno_estudiante.pdf`: `187` paginas.
-- `cuaderno_profesor.pdf`: `238` paginas.
+- `cuaderno_profesor.pdf`: `239` paginas.
 - `respuestas_breves.pdf`: `35` paginas.
 - `proyecto_problemas_contextualizados.pdf`: `20` paginas.
 - `proyecto_examenes_dificiles.pdf`: `20` paginas.
 - Los cinco logs estan libres de `Overfull`, `Underfull`, referencias indefinidas y avisos de
   LaTeX relevantes.
-- La auditoria visual renderiza `460` paginas, genera `24` hojas de contacto y no marca paginas
+- La auditoria visual renderiza `461` paginas, genera `24` hojas de contacto y no marca paginas
   sospechosas; el nuevo arbol de Bayes se reviso tambien a tamano completo.
 
 ## Correcciones de esta auditoria
@@ -44,8 +44,10 @@ de estadistica, probabilidad e inferencia y se declara separadamente de la cober
 - Anadido un arbol de Bayes imprimible.
 - Corregido el escapado de MathJax en figuras semanticas y laboratorio de regresion.
 - Eliminado el generador de tablas con escenarios y cifras arbitrarias de la seccion Problemas.
-- Separadas las `84` ideas de ampliacion de los `10` problemas completos para que ninguna
-  propuesta muestre respuestas o soluciones que pertenezcan a otra practica.
+- Las `84` secciones ofrecen ahora un problema concreto que el estudiante puede intentar antes
+  de desplegar su respuesta breve y su solucion razonada.
+- Los `507` ejercicios de practica quedan emparejados individualmente con respuesta y solucion;
+  el generador interrumpe la construccion si las cantidades no coinciden.
 - Reescritas las diez soluciones completas con pasos explicitos, interpretacion y comprobacion.
 
 ## Riesgos residuales

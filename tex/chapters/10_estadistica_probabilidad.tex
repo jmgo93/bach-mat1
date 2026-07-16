@@ -99,9 +99,14 @@ Entre las \(26\) personas que superan la prueba, \(18\) usan la plataforma. Por 
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S01 practica autonoma}
-La frecuencia conjunta usa la celda \(18\) y el total \(40\). Las marginales usan los totales de
-columna. La diferencia entre porcentajes describe asociacion, pero no controla motivacion,
-tiempo de estudio u otras variables que tambien pueden explicar el resultado.
+\begin{enumerate}
+  \item La celda conjunta contiene \(18\) estudiantes y el total es \(40\), luego
+  \(P(U\cap S)=18/40=0.45\).
+  \item Los totales de columna son \(26\) y \(14\). Al dividir por \(40\), se obtiene
+  \(P(S)=26/40=0.65\) y \(P(\overline S)=14/40=0.35\); suman \(1\).
+  \item La diferencia entre porcentajes describe asociacion, pero no controla motivacion,
+  tiempo de estudio u otras variables de confusion. Por eso no demuestra causalidad.
+\end{enumerate}
 \end{fullsolution}
 
 \section{[C10.S02] Nubes de puntos, correlacion y causalidad}
@@ -166,9 +171,14 @@ una relacion cuadratica aunque la correlacion lineal sea casi nula.
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S02 practica autonoma}
-Una asociacion negativa indica que, al aumentar una variable, la otra tiende a disminuir. La
-causalidad exige un diseno y una argumentacion adicionales. Los valores atipicos deben estudiarse
-en contexto, no borrarse de forma automatica.
+\begin{enumerate}
+  \item Como \(r=-0.82\), el signo indica direccion decreciente y \(|r|=0.82\) indica una
+  asociacion lineal fuerte: al aumentar la velocidad, el tiempo tiende a disminuir.
+  \item \(r=1\) significa que los datos siguen exactamente una recta creciente, pero no prueba
+  un mecanismo causal. Puede existir una causa comun o una relacion construida.
+  \item Un valor atipico puede aumentar o reducir \(|r|\), e incluso cambiar su signo. Debe
+  revisarse su origen y compararse el calculo con y sin ese punto, sin eliminarlo automaticamente.
+\end{enumerate}
 \end{fullsolution}
 
 \section{[C10.S03] Regresion lineal y cuadratica}
@@ -238,8 +248,13 @@ gramos por hora.
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S03 practica autonoma}
-Se sustituye \(x=10\): \(3+1.5\cdot10=18\). El residuo es observado menos predicho:
-\(10-9.2=0.8\). Una extrapolacion supone, sin evidencia, que el patron continua.
+\begin{enumerate}
+  \item Se sustituye \(x=10\) en el modelo: \(\hat y=3+1.5\cdot10=18\).
+  \item El residuo es observado menos predicho: \(e=y-\hat y=10-9.2=0.8\). Es positivo porque
+  el valor observado queda por encima del modelo.
+  \item Una extrapolacion lejana supone, sin evidencia, que el patron continua fuera del rango
+  observado. Aunque \(R^2\) sea alto, la relacion puede cambiar.
+\end{enumerate}
 \end{fullsolution}
 
 \section{[C10.S04] Muestreo, inferencia y tecnologia}
@@ -305,8 +320,14 @@ personas en cada estrato. Asi se evita que un unico nivel domine la muestra.
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S04 practica autonoma}
-La proporcion muestral es \(72/120=0.60\). Debe comunicarse como resultado de la muestra y
-acompañarse de informacion sobre seleccion, no como una verdad exacta sobre toda la poblacion.
+\begin{enumerate}
+  \item La poblacion es el conjunto de \(900\) estudiantes sobre el que se quiere concluir; la
+  muestra son las \(120\) personas efectivamente encuestadas.
+  \item Entrevistar solo en la biblioteca infrarrepresenta a quienes no la frecuentan. Si el uso
+  de la biblioteca se relaciona con la opinion, aparece sesgo de seleccion.
+  \item La proporcion muestral es \(72/120=0.60\). La conclusion correcta es: ``el \(60\%\) de
+  la muestra apoya la medida''; generalizar a los \(900\) exige justificar el muestreo.
+\end{enumerate}
 \end{fullsolution}
 
 \section{[C10.S05] Experimentos aleatorios y algebra de sucesos}
@@ -385,8 +406,14 @@ igualdad exacta que deba repetirse en otra tanda.
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S05 practica autonoma}
-Se usa el complementario para el primer caso y la formula de la union para el segundo:
-\(0.5+0.4-0.2=0.7\). La expresion ``ni A ni B'' excluye la union de ambos sucesos.
+\begin{enumerate}
+  \item Por la regla del complementario,
+  \(P(\overline A)=1-P(A)=1-0.37=0.63\).
+  \item Se resta la interseccion porque se cuenta dos veces al sumar:
+  \(P(A\cup B)=0.5+0.4-0.2=0.7\).
+  \item ``No ocurre ni \(A\) ni \(B\)'' significa quedar fuera de ambos sucesos:
+  \(\overline A\cap\overline B\). Por Morgan, equivale a \(\overline{A\cup B}\).
+\end{enumerate}
 \end{fullsolution}
 
 \section{[C10.S06] Regla de Laplace y tecnicas de recuento}
@@ -462,8 +489,17 @@ orden importa porque \(123\) y \(321\) son codigos distintos.
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S06 practica autonoma}
-Las parejas no ordenadas se cuentan con \(\binom{10}{2}=45\). Los libros admiten \(4!\)
-ordenaciones. Entre los \(36\) pares equiprobables de dos dados, seis suman \(7\).
+\begin{enumerate}
+  \item Como el orden de la pareja no importa,
+  \(\binom{10}{2}=10!/(2!8!)=10\cdot9/2=45\).
+  \item Para ordenar cuatro libros distintos hay \(4\) opciones para el primero, luego \(3\),
+  \(2\) y \(1\): \(4!=4\cdot3\cdot2\cdot1=24\).
+  \item Hay \(6\cdot6=36\) resultados equiprobables. Los seis pares que suman \(7\) son
+  \[
+  (1,6),(2,5),(3,4),(4,3),(5,2),(6,1).
+  \]
+  Por tanto, \(P=6/36=1/6\).
+\end{enumerate}
 \end{fullsolution}
 
 \section{[C10.S07] Probabilidad condicionada, total y Bayes}
@@ -559,9 +595,15 @@ si se quisiera expresar la independencia mediante probabilidades condicionadas.
 \end{enumerate}
 \end{shortanswer}
 \begin{fullsolution}{C10.S07 practica autonoma}
-La condicion restringe el denominador: \(0.18/0.6=0.3\). La probabilidad total suma los dos
-caminos de defecto y vale \(0.029\), es decir, \(2.9\%\). Para interpretar un resultado positivo
-debe aplicarse Bayes e incorporar la prevalencia.
+\begin{enumerate}
+  \item La condicion \(A\) fija el denominador:
+  \(P(B\mid A)=P(A\cap B)/P(A)=0.18/0.6=0.3\).
+  \item La probabilidad total suma los dos caminos de defecto:
+  \(0.7\cdot0.02+0.3\cdot0.05=0.014+0.015=0.029\), es decir, \(2.9\%\).
+  \item Un positivo puede ser verdadero o falso. Para hallar la probabilidad de tener la
+  condicion tras el positivo hay que aplicar Bayes e incorporar su frecuencia inicial o
+  prevalencia.
+\end{enumerate}
 \end{fullsolution}
 
 \begin{challenge}{[CH-C10.S07-01] Auditoria completa de una prediccion}

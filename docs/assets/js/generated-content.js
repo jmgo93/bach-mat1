@@ -2,7 +2,7 @@ window.MATHBOOK_CONTENT = {
   "meta": {
     "title": "Matematicas I Interactivas",
     "subtitle": "1º de Bachillerato - teoria, ejemplos resueltos, tests y laboratorios interactivos",
-    "generatedOn": "2026-07-15 17:57",
+    "generatedOn": "2026-07-16 10:25",
     "chapterCount": 11,
     "sectionCount": 91
   },
@@ -76,27 +76,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S01-01",
-                "prompt": "Clasifica \\(\\sqrt{7}\\)."
+                "prompt": "Clasifica \\(\\sqrt{7}\\).",
+                "answerHtml": "<p>\\(\\mathbb{R}\\setminus\\mathbb{Q}\\)</p>",
+                "solutionHtml": "<p>\\(\\sqrt{7}\\) no es raiz exacta, luego es irracional.</p>"
               },
               {
                 "tagId": "PX-C01.S01-02",
-                "prompt": "Clasifica \\(\\dfrac{5}{4}\\)."
+                "prompt": "Clasifica \\(\\dfrac{5}{4}\\).",
+                "answerHtml": "<p>\\(\\mathbb{Q}\\)</p>",
+                "solutionHtml": "<p>\\(\\frac{5}{4}\\) es una fraccion de enteros con denominador no nulo, luego es racional.</p>"
               },
               {
                 "tagId": "PX-C01.S01-03",
-                "prompt": "Clasifica \\(-\\sqrt{81}\\)."
+                "prompt": "Clasifica \\(-\\sqrt{81}\\).",
+                "answerHtml": "<p>\\(\\mathbb{Z}\\)</p>",
+                "solutionHtml": "<p>\\(-\\sqrt{81}=-9\\), luego es entero.</p>"
               },
               {
                 "tagId": "PX-C01.S01-04",
-                "prompt": "Clasifica \\(0\\)."
+                "prompt": "Clasifica \\(0\\).",
+                "answerHtml": "<p>\\(\\mathbb{Z}\\)</p>",
+                "solutionHtml": "<p>\\(0\\) pertenece a \\(\\mathbb{Z}\\).</p>"
               },
               {
                 "tagId": "PX-C01.S01-05",
-                "prompt": "Clasifica \\(2-\\sqrt{4}\\)."
+                "prompt": "Clasifica \\(2-\\sqrt{4}\\).",
+                "answerHtml": "<p>\\(\\mathbb{Z}\\)</p>",
+                "solutionHtml": "<p>\\(2-\\sqrt{4}=2-2=0\\), luego pertenece a \\(\\mathbb{Z}\\).</p>"
               },
               {
                 "tagId": "PX-C01.S01-06",
-                "prompt": "Clasifica \\(3.1415\\)."
+                "prompt": "Clasifica \\(3.1415\\).",
+                "answerHtml": "<p>\\(\\mathbb{Q}\\)</p>",
+                "solutionHtml": "<p>\\(3.1415\\) es decimal exacto, luego es racional.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\mathbb{R}\\setminus\\mathbb{Q}\\)</p></li><li><p>\\(\\mathbb{Q}\\)</p></li><li><p>\\(\\mathbb{Z}\\)</p></li><li><p>\\(\\mathbb{Z}\\)</p></li><li><p>\\(\\mathbb{Z}\\)</p></li><li><p>\\(\\mathbb{Q}\\)</p></li></ol>",
@@ -165,27 +177,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S02-01",
-                "prompt": "Halla la fraccion generatriz de \\(0.7\\overline{2}\\)."
+                "prompt": "Halla la fraccion generatriz de \\(0.7\\overline{2}\\).",
+                "answerHtml": "<p>\\(\\dfrac{13}{18}\\)</p>",
+                "solutionHtml": "<p>Sea \\(x=0.7\\overline{2}\\). Entonces \\(10x=7.\\overline{2}\\) y \\(100x=72.\\overline{2}\\). Restando:</p><div class=\"math-display\">\\[\n  90x=65\\Longrightarrow x=\\frac{65}{90}=\\frac{13}{18}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S02-02",
-                "prompt": "Halla la fraccion generatriz de \\(3.\\overline{5}\\)."
+                "prompt": "Halla la fraccion generatriz de \\(3.\\overline{5}\\).",
+                "answerHtml": "<p>\\(\\dfrac{32}{9}\\)</p>",
+                "solutionHtml": "<p>Sea \\(x=3.\\overline{5}\\). Entonces \\(10x=35.\\overline{5}\\). Restando:</p><div class=\"math-display\">\\[\n  10x-x=32\\Longrightarrow 9x=32\\Longrightarrow x=\\frac{32}{9}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S02-03",
-                "prompt": "Escribe \\(0.125\\) como fraccion irreducible."
+                "prompt": "Escribe \\(0.125\\) como fraccion irreducible.",
+                "answerHtml": "<p>\\(\\dfrac{1}{8}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  0.125=\\frac{125}{1000}=\\frac{1}{8}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S02-04",
-                "prompt": "Halla la fraccion generatriz de \\(2.0\\overline{6}\\)."
+                "prompt": "Halla la fraccion generatriz de \\(2.0\\overline{6}\\).",
+                "answerHtml": "<p>\\(\\dfrac{31}{15}\\)</p>",
+                "solutionHtml": "<p>Sea \\(x=2.0\\overline{6}\\). Entonces \\(10x=20.\\overline{6}\\) y \\(100x=206.\\overline{6}\\). Restando:</p><div class=\"math-display\">\\[\n  90x=186\\Longrightarrow x=\\frac{186}{90}=\\frac{31}{15}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S02-05",
-                "prompt": "Indica si \\(7/40\\) produce un decimal exacto o periodico."
+                "prompt": "Indica si \\(7/40\\) produce un decimal exacto o periodico.",
+                "answerHtml": "<p>Decimal exacto</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{7}{40}=\\frac{7}{2^3\\cdot 5}.\n  \\]</div><p>El denominador solo tiene factores \\(2\\) y \\(5\\), asi que el decimal es exacto.</p>"
               },
               {
                 "tagId": "PX-C01.S02-06",
-                "prompt": "Indica si \\(5/12\\) produce un decimal exacto o periodico."
+                "prompt": "Indica si \\(5/12\\) produce un decimal exacto o periodico.",
+                "answerHtml": "<p>Decimal periodico mixto</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{5}{12}=\\frac{5}{2^2\\cdot 3}.\n  \\]</div><p>Como aparece un factor \\(3\\), el decimal no es exacto y resulta periodico mixto.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\dfrac{13}{18}\\)</p></li><li><p>\\(\\dfrac{32}{9}\\)</p></li><li><p>\\(\\dfrac{1}{8}\\)</p></li><li><p>\\(\\dfrac{31}{15}\\)</p></li><li><p>Decimal exacto</p></li><li><p>Decimal periodico mixto</p></li></ol>",
@@ -254,27 +278,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S03-01",
-                "prompt": "Escribe en intervalos: \\(x\\le 3\\) y \\(x>-2\\)."
+                "prompt": "Escribe en intervalos: \\(x\\le 3\\) y \\(x>-2\\).",
+                "answerHtml": "<p>\\((-2,3]\\)</p>",
+                "solutionHtml": "<p>``y'' significa interseccion, asi que deben cumplirse ambas condiciones:</p><div class=\"math-display\">\\[\n  (-2,3].\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S03-02",
-                "prompt": "Calcula \\((-\\infty,1]\\cap [1,4)\\)."
+                "prompt": "Calcula \\((-\\infty,1]\\cap [1,4)\\).",
+                "answerHtml": "<p>\\(\\{1\\}\\)</p>",
+                "solutionHtml": "<p>El unico punto comun es \\(1\\), luego:</p><div class=\"math-display\">\\[\n  (-\\infty,1]\\cap [1,4)=\\{1\\}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S03-03",
-                "prompt": "Calcula \\([0,5]\\cup (5,8)\\)."
+                "prompt": "Calcula \\([0,5]\\cup (5,8)\\).",
+                "answerHtml": "<p>\\([0,8)\\)</p>",
+                "solutionHtml": "<p>Como \\(5\\) ya esta incluido en el primer intervalo, la union es:</p><div class=\"math-display\">\\[\n  [0,8).\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S03-04",
-                "prompt": "Escribe en intervalos: \\(x>2\\)."
+                "prompt": "Escribe en intervalos: \\(x>2\\).",
+                "answerHtml": "<p>\\((2,+\\infty)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  x>2 \\Longleftrightarrow (2,+\\infty).\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S03-05",
-                "prompt": "Calcula \\((-3,-1)\\cap [-1,2]\\)."
+                "prompt": "Calcula \\((-3,-1)\\cap [-1,2]\\).",
+                "answerHtml": "<p>\\(\\varnothing\\)</p>",
+                "solutionHtml": "<p>El primer intervalo no incluye \\(-1\\) y el segundo empieza en \\(-1\\), asi que no hay punto comun:</p><div class=\"math-display\">\\[\n  \\varnothing.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S03-06",
-                "prompt": "Calcula \\((-\\infty,-2]\\cup (-2,3)\\)."
+                "prompt": "Calcula \\((-\\infty,-2]\\cup (-2,3)\\).",
+                "answerHtml": "<p>\\((-\\infty,3)\\)</p>",
+                "solutionHtml": "<p>Ambos tramos se tocan en \\(-2\\) y la union cubre todo hasta \\(3\\) sin incluirlo:</p><div class=\"math-display\">\\[\n  (-\\infty,3).\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-2,3]\\)</p></li><li><p>\\(\\{1\\}\\)</p></li><li><p>\\([0,8)\\)</p></li><li><p>\\((2,+\\infty)\\)</p></li><li><p>\\(\\varnothing\\)</p></li><li><p>\\((-\\infty,3)\\)</p></li></ol>",
@@ -343,27 +379,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S04-01",
-                "prompt": "Resuelve \\(|x|=7\\)."
+                "prompt": "Resuelve \\(|x|=7\\).",
+                "answerHtml": "<p>\\(x=\\pm 7\\)</p>",
+                "solutionHtml": "<p>\\(|x|=7\\) equivale a \\(x=7\\) o \\(x=-7\\).</p>"
               },
               {
                 "tagId": "PX-C01.S04-02",
-                "prompt": "Resuelve \\(|3x-1|=2\\)."
+                "prompt": "Resuelve \\(|3x-1|=2\\).",
+                "answerHtml": "<p>\\(x=1\\) o \\(x=-\\dfrac{1}{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  3x-1=2 \\quad \\text{o} \\quad 3x-1=-2.\n  \\]</div><p>De ahi se obtiene \\(x=1\\) o \\(x=-1/3\\).</p>"
               },
               {
                 "tagId": "PX-C01.S04-03",
-                "prompt": "Resuelve \\(|x+4|\\le 1\\)."
+                "prompt": "Resuelve \\(|x+4|\\le 1\\).",
+                "answerHtml": "<p>\\([-5,-3]\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  |x+4|\\le 1 \\Longleftrightarrow -1\\le x+4\\le 1.\n  \\]</div><p>Restando \\(4\\):</p><div class=\"math-display\">\\[\n  -5\\le x\\le -3.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S04-04",
-                "prompt": "Halla los puntos cuya distancia a \\(5\\) es \\(2\\)."
+                "prompt": "Halla los puntos cuya distancia a \\(5\\) es \\(2\\).",
+                "answerHtml": "<p>\\(x=3\\) o \\(x=7\\)</p>",
+                "solutionHtml": "<p>Distancia \\(2\\) a \\(5\\) significa:</p><div class=\"math-display\">\\[\n  |x-5|=2.\n  \\]</div><p>Entonces \\(x=7\\) o \\(x=3\\).</p>"
               },
               {
                 "tagId": "PX-C01.S04-05",
-                "prompt": "Resuelve \\(|2x+3|>1\\)."
+                "prompt": "Resuelve \\(|2x+3|>1\\).",
+                "answerHtml": "<p>\\(x<-2\\) o \\(x>-1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  |2x+3|>1 \\Longleftrightarrow 2x+3>1 \\quad \\text{o} \\quad 2x+3<-1.\n  \\]</div><p>Por tanto:</p><div class=\"math-display\">\\[\n  x>-1 \\quad \\text{o} \\quad x<-2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S04-06",
-                "prompt": "Resuelve \\(|x-1|=0\\)."
+                "prompt": "Resuelve \\(|x-1|=0\\).",
+                "answerHtml": "<p>\\(x=1\\)</p>",
+                "solutionHtml": "<p>La unica distancia cero es el propio punto:</p><div class=\"math-display\">\\[\n  x-1=0 \\Longrightarrow x=1.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=\\pm 7\\)</p></li><li><p>\\(x=1\\) o \\(x=-\\dfrac{1}{3}\\)</p></li><li><p>\\([-5,-3]\\)</p></li><li><p>\\(x=3\\) o \\(x=7\\)</p></li><li><p>\\(x<-2\\) o \\(x>-1\\)</p></li><li><p>\\(x=1\\)</p></li></ol>",
@@ -432,27 +480,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S05-01",
-                "prompt": "Calcula \\(3^{-2}\\)."
+                "prompt": "Calcula \\(3^{-2}\\).",
+                "answerHtml": "<p>\\(\\dfrac{1}{9}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  3^{-2}=\\frac{1}{3^2}=\\frac{1}{9}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S05-02",
-                "prompt": "Simplifica \\(\\sqrt{75}-\\sqrt{12}\\)."
+                "prompt": "Simplifica \\(\\sqrt{75}-\\sqrt{12}\\).",
+                "answerHtml": "<p>\\(3\\sqrt{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\sqrt{75}=5\\sqrt{3},\\qquad \\sqrt{12}=2\\sqrt{3},\n  \\]</div><p>luego:</p><div class=\"math-display\">\\[\n  \\sqrt{75}-\\sqrt{12}=3\\sqrt{3}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S05-03",
-                "prompt": "Calcula \\(16^{3/4}\\)."
+                "prompt": "Calcula \\(16^{3/4}\\).",
+                "answerHtml": "<p>\\(8\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  16^{3/4}=\\left(\\sqrt[4]{16}\\right)^3=2^3=8.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S05-04",
-                "prompt": "Simplifica \\(\\dfrac{\\sqrt[3]{54}}{\\sqrt[3]{2}}\\)."
+                "prompt": "Simplifica \\(\\dfrac{\\sqrt[3]{54}}{\\sqrt[3]{2}}\\).",
+                "answerHtml": "<p>\\(3\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{\\sqrt[3]{54}}{\\sqrt[3]{2}}=\\sqrt[3]{\\frac{54}{2}}=\\sqrt[3]{27}=3.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S05-05",
-                "prompt": "Simplifica \\(\\sqrt{45}+\\sqrt{5}\\)."
+                "prompt": "Simplifica \\(\\sqrt{45}+\\sqrt{5}\\).",
+                "answerHtml": "<p>\\(4\\sqrt{5}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\sqrt{45}=3\\sqrt{5},\n  \\]</div><p>asi que:</p><div class=\"math-display\">\\[\n  \\sqrt{45}+\\sqrt{5}=4\\sqrt{5}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S05-06",
-                "prompt": "Calcula \\(\\sqrt{2^4\\cdot 5^2}\\)."
+                "prompt": "Calcula \\(\\sqrt{2^4\\cdot 5^2}\\).",
+                "answerHtml": "<p>\\(20\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\sqrt{2^4\\cdot 5^2}=\\sqrt{16\\cdot 25}=\\sqrt{400}=20.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\dfrac{1}{9}\\)</p></li><li><p>\\(3\\sqrt{3}\\)</p></li><li><p>\\(8\\)</p></li><li><p>\\(3\\)</p></li><li><p>\\(4\\sqrt{5}\\)</p></li><li><p>\\(20\\)</p></li></ol>",
@@ -521,27 +581,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S06-01",
-                "prompt": "Racionaliza \\(\\dfrac{2}{\\sqrt{7}}\\)."
+                "prompt": "Racionaliza \\(\\dfrac{2}{\\sqrt{7}}\\).",
+                "answerHtml": "<p>\\(\\dfrac{2\\sqrt{7}}{7}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{2}{\\sqrt{7}}\\cdot\\frac{\\sqrt{7}}{\\sqrt{7}}=\\frac{2\\sqrt{7}}{7}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S06-02",
-                "prompt": "Racionaliza \\(\\dfrac{4}{3-\\sqrt{5}}\\)."
+                "prompt": "Racionaliza \\(\\dfrac{4}{3-\\sqrt{5}}\\).",
+                "answerHtml": "<p>\\(3+\\sqrt{5}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{4}{3-\\sqrt{5}}\\cdot\\frac{3+\\sqrt{5}}{3+\\sqrt{5}}\n  =\\frac{4(3+\\sqrt{5})}{9-5}=3+\\sqrt{5}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S06-03",
-                "prompt": "Racionaliza \\(\\dfrac{1}{2+\\sqrt{3}}\\)."
+                "prompt": "Racionaliza \\(\\dfrac{1}{2+\\sqrt{3}}\\).",
+                "answerHtml": "<p>\\(2-\\sqrt{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{1}{2+\\sqrt{3}}\\cdot\\frac{2-\\sqrt{3}}{2-\\sqrt{3}}\n  =\\frac{2-\\sqrt{3}}{4-3}=2-\\sqrt{3}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S06-04",
-                "prompt": "Simplifica \\(\\dfrac{\\sqrt{6}}{\\sqrt{2}}\\)."
+                "prompt": "Simplifica \\(\\dfrac{\\sqrt{6}}{\\sqrt{2}}\\).",
+                "answerHtml": "<p>\\(\\sqrt{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{\\sqrt{6}}{\\sqrt{2}}=\\sqrt{\\frac{6}{2}}=\\sqrt{3}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S06-05",
-                "prompt": "Racionaliza \\(\\dfrac{7}{\\sqrt{7}-1}\\)."
+                "prompt": "Racionaliza \\(\\dfrac{7}{\\sqrt{7}-1}\\).",
+                "answerHtml": "<p>\\(\\dfrac{7\\sqrt{7}+7}{6}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{7}{\\sqrt{7}-1}\\cdot\\frac{\\sqrt{7}+1}{\\sqrt{7}+1}\n  =\\frac{7(\\sqrt{7}+1)}{7-1}\n  =\\frac{7\\sqrt{7}+7}{6}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S06-06",
-                "prompt": "Racionaliza \\(\\dfrac{3}{1-\\sqrt{2}}\\)."
+                "prompt": "Racionaliza \\(\\dfrac{3}{1-\\sqrt{2}}\\).",
+                "answerHtml": "<p>\\(-3-3\\sqrt{2}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{3}{1-\\sqrt{2}}\\cdot\\frac{1+\\sqrt{2}}{1+\\sqrt{2}}\n  =\\frac{3(1+\\sqrt{2})}{1-2}\n  =-3-3\\sqrt{2}.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\dfrac{2\\sqrt{7}}{7}\\)</p></li><li><p>\\(3+\\sqrt{5}\\)</p></li><li><p>\\(2-\\sqrt{3}\\)</p></li><li><p>\\(\\sqrt{3}\\)</p></li><li><p>\\(\\dfrac{7\\sqrt{7}+7}{6}\\)</p></li><li><p>\\(-3-3\\sqrt{2}\\)</p></li></ol>",
@@ -610,27 +682,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C01.S07-01",
-                "prompt": "Calcula \\(\\log_{10}0.01\\)."
+                "prompt": "Calcula \\(\\log_{10}0.01\\).",
+                "answerHtml": "<p>\\(-2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  10^{-2}=0.01,\n  \\]</div><p>luego \\(\\log_{10}0.01=-2\\).</p>"
               },
               {
                 "tagId": "PX-C01.S07-02",
-                "prompt": "Calcula \\(\\log_4 64\\)."
+                "prompt": "Calcula \\(\\log_4 64\\).",
+                "answerHtml": "<p>\\(3\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  4^3=64,\n  \\]</div><p>asi que \\(\\log_4 64=3\\).</p>"
               },
               {
                 "tagId": "PX-C01.S07-03",
-                "prompt": "Calcula \\(\\ln(e^5)\\)."
+                "prompt": "Calcula \\(\\ln(e^5)\\).",
+                "answerHtml": "<p>\\(5\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\ln(e^5)=5.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S07-04",
-                "prompt": "Calcula \\(\\log_2 8+\\log_2 4\\)."
+                "prompt": "Calcula \\(\\log_2 8+\\log_2 4\\).",
+                "answerHtml": "<p>\\(5\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\log_2 8+\\log_2 4=3+2=5.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S07-05",
-                "prompt": "Calcula \\(\\log_3 27-\\log_3 9\\)."
+                "prompt": "Calcula \\(\\log_3 27-\\log_3 9\\).",
+                "answerHtml": "<p>\\(1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\log_3 27-\\log_3 9=3-2=1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C01.S07-06",
-                "prompt": "Resuelve \\(\\log_7 x=2\\)."
+                "prompt": "Resuelve \\(\\log_7 x=2\\).",
+                "answerHtml": "<p>\\(49\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\log_7 x=2 \\Longleftrightarrow x=7^2=49.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(-2\\)</p></li><li><p>\\(3\\)</p></li><li><p>\\(5\\)</p></li><li><p>\\(5\\)</p></li><li><p>\\(1\\)</p></li><li><p>\\(49\\)</p></li></ol>",
@@ -709,27 +793,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S01-01",
-                "prompt": "Calcula \\(A(0)\\) si \\(A(x)=x^2-3x+5\\)."
+                "prompt": "Calcula \\(A(0)\\) si \\(A(x)=x^2-3x+5\\).",
+                "answerHtml": "<p>\\(5\\)</p>",
+                "solutionHtml": "<p>\\(A(0)=0-0+5=5\\).</p>"
               },
               {
                 "tagId": "PX-C02.S01-02",
-                "prompt": "Calcula \\(B(-2)\\) si \\(B(x)=2x^2+x-1\\)."
+                "prompt": "Calcula \\(B(-2)\\) si \\(B(x)=2x^2+x-1\\).",
+                "answerHtml": "<p>\\(5\\)</p>",
+                "solutionHtml": "<p>\\(B(-2)=2\\cdot 4-2-1=5\\).</p>"
               },
               {
                 "tagId": "PX-C02.S01-03",
-                "prompt": "Calcula \\(C\\left(\\tfrac{1}{2}\\right)\\) si \\(C(x)=4x^2-1\\)."
+                "prompt": "Calcula \\(C\\left(\\tfrac{1}{2}\\right)\\) si \\(C(x)=4x^2-1\\).",
+                "answerHtml": "<p>\\(0\\)</p>",
+                "solutionHtml": "<p>\\(C\\left(\\tfrac{1}{2}\\right)=4\\cdot \\tfrac{1}{4}-1=0\\).</p>"
               },
               {
                 "tagId": "PX-C02.S01-04",
-                "prompt": "Calcula \\(D(3)\\) si \\(D(x)=x^3-2x+4\\)."
+                "prompt": "Calcula \\(D(3)\\) si \\(D(x)=x^3-2x+4\\).",
+                "answerHtml": "<p>\\(25\\)</p>",
+                "solutionHtml": "<p>\\(D(3)=27-6+4=25\\).</p>"
               },
               {
                 "tagId": "PX-C02.S01-05",
-                "prompt": "Calcula \\(E(-1)\\) si \\(E(x)=x^4-x^2+2\\)."
+                "prompt": "Calcula \\(E(-1)\\) si \\(E(x)=x^4-x^2+2\\).",
+                "answerHtml": "<p>\\(2\\)</p>",
+                "solutionHtml": "<p>\\(E(-1)=1-1+2=2\\).</p>"
               },
               {
                 "tagId": "PX-C02.S01-06",
-                "prompt": "Calcula \\(F(2)\\) si \\(F(x)=(x-1)(x+3)\\)."
+                "prompt": "Calcula \\(F(2)\\) si \\(F(x)=(x-1)(x+3)\\).",
+                "answerHtml": "<p>\\(5\\)</p>",
+                "solutionHtml": "<p>\\(F(2)=(2-1)(2+3)=5\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(5\\)</p></li><li><p>\\(5\\)</p></li><li><p>\\(0\\)</p></li><li><p>\\(25\\)</p></li><li><p>\\(2\\)</p></li><li><p>\\(5\\)</p></li></ol>",
@@ -798,27 +894,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S02-01",
-                "prompt": "Desarrolla \\((x-4)^2\\)."
+                "prompt": "Desarrolla \\((x-4)^2\\).",
+                "answerHtml": "<p>\\(x^2-8x+16\\)</p>",
+                "solutionHtml": "<p>\\((x-4)^2=x^2-8x+16\\).</p>"
               },
               {
                 "tagId": "PX-C02.S02-02",
-                "prompt": "Desarrolla \\((2x+1)^2\\)."
+                "prompt": "Desarrolla \\((2x+1)^2\\).",
+                "answerHtml": "<p>\\(4x^2+4x+1\\)</p>",
+                "solutionHtml": "<p>\\((2x+1)^2=4x^2+4x+1\\).</p>"
               },
               {
                 "tagId": "PX-C02.S02-03",
-                "prompt": "Desarrolla \\((x-3)(x+3)\\)."
+                "prompt": "Desarrolla \\((x-3)(x+3)\\).",
+                "answerHtml": "<p>\\(x^2-9\\)</p>",
+                "solutionHtml": "<p>\\((x-3)(x+3)=x^2-9\\).</p>"
               },
               {
                 "tagId": "PX-C02.S02-04",
-                "prompt": "Desarrolla \\((x+2)(x^2-x+3)\\)."
+                "prompt": "Desarrolla \\((x+2)(x^2-x+3)\\).",
+                "answerHtml": "<p>\\(x^3+x^2+x+6\\)</p>",
+                "solutionHtml": "<p>\\(x(x^2-x+3)+2(x^2-x+3)=x^3+x^2+x+6\\).</p>"
               },
               {
                 "tagId": "PX-C02.S02-05",
-                "prompt": "Desarrolla \\((2x-1)(x-4)\\)."
+                "prompt": "Desarrolla \\((2x-1)(x-4)\\).",
+                "answerHtml": "<p>\\(2x^2-9x+4\\)</p>",
+                "solutionHtml": "<p>\\((2x-1)(x-4)=2x^2-8x-x+4=2x^2-9x+4\\).</p>"
               },
               {
                 "tagId": "PX-C02.S02-06",
-                "prompt": "Simplifica \\((x+1)^2-(x-1)^2\\)."
+                "prompt": "Simplifica \\((x+1)^2-(x-1)^2\\).",
+                "answerHtml": "<p>\\(4x\\)</p>",
+                "solutionHtml": "<p>\\((x^2+2x+1)-(x^2-2x+1)=4x\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x^2-8x+16\\)</p></li><li><p>\\(4x^2+4x+1\\)</p></li><li><p>\\(x^2-9\\)</p></li><li><p>\\(x^3+x^2+x+6\\)</p></li><li><p>\\(2x^2-9x+4\\)</p></li><li><p>\\(4x\\)</p></li></ol>",
@@ -887,27 +995,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S03-01",
-                "prompt": "Divide \\(x^2-5x+6\\) entre \\(x-2\\)."
+                "prompt": "Divide \\(x^2-5x+6\\) entre \\(x-2\\).",
+                "answerHtml": "<p>Cociente: \\(x-3\\). Resto: \\(0\\).</p>",
+                "solutionHtml": "<p>\\(x^2-5x+6=(x-2)(x-3)\\).</p>"
               },
               {
                 "tagId": "PX-C02.S03-02",
-                "prompt": "Divide \\(2x^2+x-3\\) entre \\(x+1\\)."
+                "prompt": "Divide \\(2x^2+x-3\\) entre \\(x+1\\).",
+                "answerHtml": "<p>Cociente: \\(2x-1\\). Resto: \\(-2\\).</p>",
+                "solutionHtml": "<p>\\(2x^2+x-3=(x+1)(2x-1)-2\\).</p>"
               },
               {
                 "tagId": "PX-C02.S03-03",
-                "prompt": "Divide \\(x^3+4x^2+4x\\) entre \\(x\\)."
+                "prompt": "Divide \\(x^3+4x^2+4x\\) entre \\(x\\).",
+                "answerHtml": "<p>Cociente: \\(x^2+4x+4\\). Resto: \\(0\\).</p>",
+                "solutionHtml": "<p>\\(x^3+4x^2+4x=x(x^2+4x+4)\\).</p>"
               },
               {
                 "tagId": "PX-C02.S03-04",
-                "prompt": "Divide \\(4x^3-4\\) entre \\(x-1\\)."
+                "prompt": "Divide \\(4x^3-4\\) entre \\(x-1\\).",
+                "answerHtml": "<p>Cociente: \\(4x^2+4x+4\\). Resto: \\(0\\).</p>",
+                "solutionHtml": "<p>\\(4x^3-4=(x-1)(4x^2+4x+4)\\).</p>"
               },
               {
                 "tagId": "PX-C02.S03-05",
-                "prompt": "Divide \\(x^3-1\\) entre \\(x+1\\)."
+                "prompt": "Divide \\(x^3-1\\) entre \\(x+1\\).",
+                "answerHtml": "<p>Cociente: \\(x^2-x+1\\). Resto: \\(-2\\).</p>",
+                "solutionHtml": "<p>\\(x^3-1=(x+1)(x^2-x+1)-2\\).</p>"
               },
               {
                 "tagId": "PX-C02.S03-06",
-                "prompt": "Divide \\(2x^3+5x^2-3\\) entre \\(x+3\\)."
+                "prompt": "Divide \\(2x^3+5x^2-3\\) entre \\(x+3\\).",
+                "answerHtml": "<p>Cociente: \\(2x^2-x+3\\). Resto: \\(-12\\).</p>",
+                "solutionHtml": "<p>\\(2x^3+5x^2-3=(x+3)(2x^2-x+3)-12\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Cociente: \\(x-3\\). Resto: \\(0\\).</p></li><li><p>Cociente: \\(2x-1\\). Resto: \\(-2\\).</p></li><li><p>Cociente: \\(x^2+4x+4\\). Resto: \\(0\\).</p></li><li><p>Cociente: \\(4x^2+4x+4\\). Resto: \\(0\\).</p></li><li><p>Cociente: \\(x^2-x+1\\). Resto: \\(-2\\).</p></li><li><p>Cociente: \\(2x^2-x+3\\). Resto: \\(-12\\).</p></li></ol>",
@@ -976,27 +1096,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S04-01",
-                "prompt": "Halla el resto de dividir \\(x^2+3x-1\\) entre \\(x-2\\)."
+                "prompt": "Halla el resto de dividir \\(x^2+3x-1\\) entre \\(x-2\\).",
+                "answerHtml": "<p>\\(9\\)</p>",
+                "solutionHtml": "<p>\\(2^2+3\\cdot 2-1=9\\).</p>"
               },
               {
                 "tagId": "PX-C02.S04-02",
-                "prompt": "Decide si \\(x-3\\) es factor de \\(x^2-5x+6\\)."
+                "prompt": "Decide si \\(x-3\\) es factor de \\(x^2-5x+6\\).",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>\\(3^2-5\\cdot 3+6=0\\), luego \\(x-3\\) es factor.</p>"
               },
               {
                 "tagId": "PX-C02.S04-03",
-                "prompt": "Determina \\(a\\) para que \\(x+2\\) sea factor de \\(x^2+ax-8\\)."
+                "prompt": "Determina \\(a\\) para que \\(x+2\\) sea factor de \\(x^2+ax-8\\).",
+                "answerHtml": "<p>\\(a=-2\\)</p>",
+                "solutionHtml": "<p>\\(P(-2)=4-2a-8=0\\), de donde \\(a=-2\\).</p>"
               },
               {
                 "tagId": "PX-C02.S04-04",
-                "prompt": "Halla el resto de dividir \\(2x^3-x+1\\) entre \\(x+1\\)."
+                "prompt": "Halla el resto de dividir \\(2x^3-x+1\\) entre \\(x+1\\).",
+                "answerHtml": "<p>\\(0\\)</p>",
+                "solutionHtml": "<p>\\(P(-1)=2(-1)^3-(-1)+1=-2+1+1=0\\).</p>"
               },
               {
                 "tagId": "PX-C02.S04-05",
-                "prompt": "Determina \\(c\\) para que el resto de dividir \\(x^2+cx+4\\) entre \\(x-1\\) sea \\(8\\)."
+                "prompt": "Determina \\(c\\) para que el resto de dividir \\(x^2+cx+4\\) entre \\(x-1\\) sea \\(8\\).",
+                "answerHtml": "<p>\\(c=3\\)</p>",
+                "solutionHtml": "<p>\\(1+c+4=8\\), luego \\(c=3\\).</p>"
               },
               {
                 "tagId": "PX-C02.S04-06",
-                "prompt": "Decide si \\(x=1\\) es raiz de \\(x^3-4x+3\\)."
+                "prompt": "Decide si \\(x=1\\) es raiz de \\(x^3-4x+3\\).",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>\\(1-4+3=0\\), asi que \\(x=1\\) es raiz.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(9\\)</p></li><li><p>Si</p></li><li><p>\\(a=-2\\)</p></li><li><p>\\(0\\)</p></li><li><p>\\(c=3\\)</p></li><li><p>Si</p></li></ol>",
@@ -1065,27 +1197,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S05-01",
-                "prompt": "Factoriza \\(x^2+5x+6\\)."
+                "prompt": "Factoriza \\(x^2+5x+6\\).",
+                "answerHtml": "<p>\\((x+2)(x+3)\\)</p>",
+                "solutionHtml": "<p>Dos numeros que suman \\(5\\) y multiplican \\(6\\): \\(2\\) y \\(3\\).</p>"
               },
               {
                 "tagId": "PX-C02.S05-02",
-                "prompt": "Factoriza \\(x^3-4x^2+4x\\)."
+                "prompt": "Factoriza \\(x^3-4x^2+4x\\).",
+                "answerHtml": "<p>\\(x(x-2)^2\\)</p>",
+                "solutionHtml": "<p>Saco factor comun \\(x\\): \\(x(x^2-4x+4)=x(x-2)^2\\).</p>"
               },
               {
                 "tagId": "PX-C02.S05-03",
-                "prompt": "Factoriza \\(x^2-1\\)."
+                "prompt": "Factoriza \\(x^2-1\\).",
+                "answerHtml": "<p>\\((x-1)(x+1)\\)</p>",
+                "solutionHtml": "<p>Diferencia de cuadrados.</p>"
               },
               {
                 "tagId": "PX-C02.S05-04",
-                "prompt": "Factoriza \\(2x^2-8\\)."
+                "prompt": "Factoriza \\(2x^2-8\\).",
+                "answerHtml": "<p>\\(2(x-2)(x+2)\\)</p>",
+                "solutionHtml": "<p>\\(2x^2-8=2(x^2-4)=2(x-2)(x+2)\\).</p>"
               },
               {
                 "tagId": "PX-C02.S05-05",
-                "prompt": "Factoriza \\(x^3+3x^2\\)."
+                "prompt": "Factoriza \\(x^3+3x^2\\).",
+                "answerHtml": "<p>\\(x^2(x+3)\\)</p>",
+                "solutionHtml": "<p>Factor comun \\(x^2\\): \\(x^2(x+3)\\).</p>"
               },
               {
                 "tagId": "PX-C02.S05-06",
-                "prompt": "Factoriza \\(x^4-16\\)."
+                "prompt": "Factoriza \\(x^4-16\\).",
+                "answerHtml": "<p>\\((x-2)(x+2)(x^2+4)\\)</p>",
+                "solutionHtml": "<p>\\(x^4-16=(x^2-4)(x^2+4)=(x-2)(x+2)(x^2+4)\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((x+2)(x+3)\\)</p></li><li><p>\\(x(x-2)^2\\)</p></li><li><p>\\((x-1)(x+1)\\)</p></li><li><p>\\(2(x-2)(x+2)\\)</p></li><li><p>\\(x^2(x+3)\\)</p></li><li><p>\\((x-2)(x+2)(x^2+4)\\)</p></li></ol>",
@@ -1154,27 +1298,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S06-01",
-                "prompt": "Indica el dominio de \\(\\dfrac{1}{x-4}\\)."
+                "prompt": "Indica el dominio de \\(\\dfrac{1}{x-4}\\).",
+                "answerHtml": "<p>\\(D=\\mathbb{R}\\setminus\\{4\\}\\)</p>",
+                "solutionHtml": "<p>El denominador se anula en \\(x=4\\).</p>"
               },
               {
                 "tagId": "PX-C02.S06-02",
-                "prompt": "Simplifica \\(\\dfrac{x^2-x}{x^2-1}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2-x}{x^2-1}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x}{x+1}\\), con \\(x\\neq -1,1\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{x(x-1)}{(x-1)(x+1)}=\\dfrac{x}{x+1}\\), con \\(x\\neq -1,1\\).</p>"
               },
               {
                 "tagId": "PX-C02.S06-03",
-                "prompt": "Simplifica \\(\\dfrac{x^2-16}{x^2-8x+16}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2-16}{x^2-8x+16}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x+4}{x-4}\\), con \\(x\\neq 4\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{(x-4)(x+4)}{(x-4)^2}=\\dfrac{x+4}{x-4}\\), con \\(x\\neq 4\\).</p>"
               },
               {
                 "tagId": "PX-C02.S06-04",
-                "prompt": "Simplifica \\(\\dfrac{x^2+5x}{x}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2+5x}{x}\\).",
+                "answerHtml": "<p>\\(x+5\\), con \\(x\\neq 0\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{x(x+5)}{x}=x+5\\), con \\(x\\neq 0\\).</p>"
               },
               {
                 "tagId": "PX-C02.S06-05",
-                "prompt": "Simplifica \\(\\dfrac{x^2-25}{5-x}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2-25}{5-x}\\).",
+                "answerHtml": "<p>\\(-(x+5)\\), con \\(x\\neq 5\\)</p>",
+                "solutionHtml": "<p>\\(5-x=-(x-5)\\), luego \\(\\dfrac{(x-5)(x+5)}{5-x}=-(x+5)\\), con \\(x\\neq 5\\).</p>"
               },
               {
                 "tagId": "PX-C02.S06-06",
-                "prompt": "Simplifica \\(\\dfrac{x^2-6x+9}{x^2-9}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2-6x+9}{x^2-9}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x-3}{x+3}\\), con \\(x\\neq -3,3\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{(x-3)^2}{(x-3)(x+3)}=\\dfrac{x-3}{x+3}\\), con \\(x\\neq -3,3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(D=\\mathbb{R}\\setminus\\{4\\}\\)</p></li><li><p>\\(\\dfrac{x}{x+1}\\), con \\(x\\neq -1,1\\)</p></li><li><p>\\(\\dfrac{x+4}{x-4}\\), con \\(x\\neq 4\\)</p></li><li><p>\\(x+5\\), con \\(x\\neq 0\\)</p></li><li><p>\\(-(x+5)\\), con \\(x\\neq 5\\)</p></li><li><p>\\(\\dfrac{x-3}{x+3}\\), con \\(x\\neq -3,3\\)</p></li></ol>",
@@ -1243,27 +1399,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S07-01",
-                "prompt": "Calcula \\(\\dfrac{1}{x}+\\dfrac{2}{x}\\)."
+                "prompt": "Calcula \\(\\dfrac{1}{x}+\\dfrac{2}{x}\\).",
+                "answerHtml": "<p>\\(\\dfrac{3}{x}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{1}{x}+\\dfrac{2}{x}=\\dfrac{3}{x}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S07-02",
-                "prompt": "Calcula \\(\\dfrac{1}{x-2}+\\dfrac{1}{x+2}\\)."
+                "prompt": "Calcula \\(\\dfrac{1}{x-2}+\\dfrac{1}{x+2}\\).",
+                "answerHtml": "<p>\\(\\dfrac{2x}{x^2-4}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{x+2+x-2}{(x-2)(x+2)}=\\dfrac{2x}{x^2-4}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S07-03",
-                "prompt": "Calcula \\(\\dfrac{3}{x}-\\dfrac{1}{2x}\\)."
+                "prompt": "Calcula \\(\\dfrac{3}{x}-\\dfrac{1}{2x}\\).",
+                "answerHtml": "<p>\\(\\dfrac{5}{2x}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{6}{2x}-\\dfrac{1}{2x}=\\dfrac{5}{2x}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S07-04",
-                "prompt": "Calcula \\(\\dfrac{2}{x+1}-\\dfrac{1}{x-1}\\)."
+                "prompt": "Calcula \\(\\dfrac{2}{x+1}-\\dfrac{1}{x-1}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x-3}{x^2-1}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{2(x-1)-(x+1)}{(x+1)(x-1)}=\\dfrac{x-3}{x^2-1}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S07-05",
-                "prompt": "Calcula \\(\\dfrac{x}{x+1}+\\dfrac{1}{x+1}\\)."
+                "prompt": "Calcula \\(\\dfrac{x}{x+1}+\\dfrac{1}{x+1}\\).",
+                "answerHtml": "<p>\\(1\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{x+1}{x+1}=1\\).</p>"
               },
               {
                 "tagId": "PX-C02.S07-06",
-                "prompt": "Calcula \\(\\dfrac{1}{x^2-1}-\\dfrac{1}{x-1}\\)."
+                "prompt": "Calcula \\(\\dfrac{1}{x^2-1}-\\dfrac{1}{x-1}\\).",
+                "answerHtml": "<p>\\(-\\dfrac{x}{x^2-1}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{1-(x+1)}{x^2-1}=-\\dfrac{x}{x^2-1}\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\dfrac{3}{x}\\)</p></li><li><p>\\(\\dfrac{2x}{x^2-4}\\)</p></li><li><p>\\(\\dfrac{5}{2x}\\)</p></li><li><p>\\(\\dfrac{x-3}{x^2-1}\\)</p></li><li><p>\\(1\\)</p></li><li><p>\\(-\\dfrac{x}{x^2-1}\\)</p></li></ol>",
@@ -1332,27 +1500,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S08-01",
-                "prompt": "Simplifica \\(\\dfrac{x-1}{x+3}\\cdot \\dfrac{x+3}{x+1}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x-1}{x+3}\\cdot \\dfrac{x+3}{x+1}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x-1}{x+1}\\)</p>",
+                "solutionHtml": "<p>Se simplifica \\(x+3\\).</p>"
               },
               {
                 "tagId": "PX-C02.S08-02",
-                "prompt": "Simplifica \\(\\dfrac{x^2-9}{x-3}\\cdot \\dfrac{1}{x}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2-9}{x-3}\\cdot \\dfrac{1}{x}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x+3}{x}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{(x-3)(x+3)}{x-3}\\cdot \\dfrac{1}{x}=\\dfrac{x+3}{x}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S08-03",
-                "prompt": "Simplifica \\(\\dfrac{x+2}{x}:\\dfrac{2}{x}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x+2}{x}:\\dfrac{2}{x}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x+2}{2}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{x+2}{x}\\cdot \\dfrac{x}{2}=\\dfrac{x+2}{2}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S08-04",
-                "prompt": "Simplifica \\(\\dfrac{x}{x-1}\\cdot \\dfrac{x-1}{x}\\)."
+                "prompt": "Simplifica \\(\\dfrac{x}{x-1}\\cdot \\dfrac{x-1}{x}\\).",
+                "answerHtml": "<p>\\(1\\)</p>",
+                "solutionHtml": "<p>Todos los factores se cancelan y queda \\(1\\).</p>"
               },
               {
                 "tagId": "PX-C02.S08-05",
-                "prompt": "Simplifica \\(\\dfrac{x^2-1}{x}:(x-1)\\)."
+                "prompt": "Simplifica \\(\\dfrac{x^2-1}{x}:(x-1)\\).",
+                "answerHtml": "<p>\\(\\dfrac{x+1}{x}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{(x-1)(x+1)}{x}\\cdot \\dfrac{1}{x-1}=\\dfrac{x+1}{x}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S08-06",
-                "prompt": "Simplifica \\(\\dfrac{2}{x+1}\\cdot \\dfrac{x^2-1}{3}\\)."
+                "prompt": "Simplifica \\(\\dfrac{2}{x+1}\\cdot \\dfrac{x^2-1}{3}\\).",
+                "answerHtml": "<p>\\(\\dfrac{2(x-1)}{3}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{2}{x+1}\\cdot \\dfrac{(x-1)(x+1)}{3}=\\dfrac{2(x-1)}{3}\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\dfrac{x-1}{x+1}\\)</p></li><li><p>\\(\\dfrac{x+3}{x}\\)</p></li><li><p>\\(\\dfrac{x+2}{2}\\)</p></li><li><p>\\(1\\)</p></li><li><p>\\(\\dfrac{x+1}{x}\\)</p></li><li><p>\\(\\dfrac{2(x-1)}{3}\\)</p></li></ol>",
@@ -1421,27 +1601,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C02.S09-01",
-                "prompt": "Resuelve \\(\\dfrac{1}{x}=5\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x}=5\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{1}{5}\\)</p>",
+                "solutionHtml": "<p>\\(1=5x\\), luego \\(x=\\frac{1}{5}\\).</p>"
               },
               {
                 "tagId": "PX-C02.S09-02",
-                "prompt": "Resuelve \\(\\dfrac{x}{x-1}=2\\)."
+                "prompt": "Resuelve \\(\\dfrac{x}{x-1}=2\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>\\(x=2x-2\\), luego \\(x=2\\), que es admisible.</p>"
               },
               {
                 "tagId": "PX-C02.S09-03",
-                "prompt": "Resuelve \\(\\dfrac{3}{x+1}=1\\)."
+                "prompt": "Resuelve \\(\\dfrac{3}{x+1}=1\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>\\(3=x+1\\), luego \\(x=2\\).</p>"
               },
               {
                 "tagId": "PX-C02.S09-04",
-                "prompt": "Resuelve \\(\\dfrac{x-1}{x+1}=0\\)."
+                "prompt": "Resuelve \\(\\dfrac{x-1}{x+1}=0\\).",
+                "answerHtml": "<p>\\(x=1\\)</p>",
+                "solutionHtml": "<p>Una fraccion vale \\(0\\) cuando el numerador vale \\(0\\) y el denominador no: \\(x=1\\).</p>"
               },
               {
                 "tagId": "PX-C02.S09-05",
-                "prompt": "Resuelve \\(\\dfrac{1}{x-2}=\\dfrac{1}{x+2}\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x-2}=\\dfrac{1}{x+2}\\).",
+                "answerHtml": "<p>Sin solucion</p>",
+                "solutionHtml": "<p>Igualando en cruz sale \\(x+2=x-2\\), contradiccion. No hay solucion.</p>"
               },
               {
                 "tagId": "PX-C02.S09-06",
-                "prompt": "Resuelve \\(\\dfrac{2}{x-1}+1=3\\)."
+                "prompt": "Resuelve \\(\\dfrac{2}{x-1}+1=3\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{2}{x-1}=2\\), luego \\(1=x-1\\) y por tanto \\(x=2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=\\dfrac{1}{5}\\)</p></li><li><p>\\(x=2\\)</p></li><li><p>\\(x=2\\)</p></li><li><p>\\(x=1\\)</p></li><li><p>Sin solucion</p></li><li><p>\\(x=2\\)</p></li></ol>",
@@ -1520,27 +1712,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S01-01",
-                "prompt": "Resuelve \\(\\dfrac{1}{x}=2\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x}=2\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{1}{2}\\)</p>",
+                "solutionHtml": "<p>\\(1=2x\\), luego \\(x=\\tfrac{1}{2}\\).</p>"
               },
               {
                 "tagId": "PX-C03.S01-02",
-                "prompt": "Resuelve \\(\\dfrac{5}{x-3}=1\\)."
+                "prompt": "Resuelve \\(\\dfrac{5}{x-3}=1\\).",
+                "answerHtml": "<p>\\(x=8\\)</p>",
+                "solutionHtml": "<p>\\(5=x-3\\), luego \\(x=8\\).</p>"
               },
               {
                 "tagId": "PX-C03.S01-03",
-                "prompt": "Resuelve \\(\\dfrac{1}{x+1}+\\dfrac{1}{x-1}=1\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x+1}+\\dfrac{1}{x-1}=1\\).",
+                "answerHtml": "<p>\\(x=1\\pm \\sqrt{2}\\)</p>",
+                "solutionHtml": "<p>\\(\\dfrac{2x}{x^2-1}=1 \\Longrightarrow x^2-2x-1=0\\), de donde \\(x=1\\pm \\sqrt{2}\\).</p>"
               },
               {
                 "tagId": "PX-C03.S01-04",
-                "prompt": "Resuelve \\(\\dfrac{x-2}{x+1}=0\\)."
+                "prompt": "Resuelve \\(\\dfrac{x-2}{x+1}=0\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>El numerador debe valer \\(0\\): \\(x-2=0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S01-05",
-                "prompt": "Resuelve \\(\\dfrac{1}{x-2}=\\dfrac{1}{x+2}\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x-2}=\\dfrac{1}{x+2}\\).",
+                "answerHtml": "<p>Sin solucion</p>",
+                "solutionHtml": "<p>Igualando en cruz: \\(x+2=x-2\\), contradiccion.</p>"
               },
               {
                 "tagId": "PX-C03.S01-06",
-                "prompt": "Resuelve \\(\\dfrac{x+3}{x}=4\\)."
+                "prompt": "Resuelve \\(\\dfrac{x+3}{x}=4\\).",
+                "answerHtml": "<p>\\(x=1\\)</p>",
+                "solutionHtml": "<p>\\(x+3=4x\\), luego \\(x=1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=\\dfrac{1}{2}\\)</p></li><li><p>\\(x=8\\)</p></li><li><p>\\(x=1\\pm \\sqrt{2}\\)</p></li><li><p>\\(x=2\\)</p></li><li><p>Sin solucion</p></li><li><p>\\(x=1\\)</p></li></ol>",
@@ -1609,27 +1813,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S02-01",
-                "prompt": "Resuelve \\(\\sqrt{x}=5\\)."
+                "prompt": "Resuelve \\(\\sqrt{x}=5\\).",
+                "answerHtml": "<p>\\(x=25\\)</p>",
+                "solutionHtml": "<p>\\(x=25\\).</p>"
               },
               {
                 "tagId": "PX-C03.S02-02",
-                "prompt": "Resuelve \\(\\sqrt{x+4}=2\\)."
+                "prompt": "Resuelve \\(\\sqrt{x+4}=2\\).",
+                "answerHtml": "<p>\\(x=0\\)</p>",
+                "solutionHtml": "<p>\\(x+4=4\\), luego \\(x=0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S02-03",
-                "prompt": "Resuelve \\(\\sqrt{3x-2}=4\\)."
+                "prompt": "Resuelve \\(\\sqrt{3x-2}=4\\).",
+                "answerHtml": "<p>\\(x=6\\)</p>",
+                "solutionHtml": "<p>\\(3x-2=16\\), luego \\(x=6\\).</p>"
               },
               {
                 "tagId": "PX-C03.S02-04",
-                "prompt": "Resuelve \\(\\sqrt{x+6}=x\\)."
+                "prompt": "Resuelve \\(\\sqrt{x+6}=x\\).",
+                "answerHtml": "<p>\\(x=3\\)</p>",
+                "solutionHtml": "<p>\\(x+6=x^2\\), de donde \\(x^2-x-6=0\\). Solo vale \\(x=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S02-05",
-                "prompt": "Resuelve \\(\\sqrt{x-1}=x-5\\)."
+                "prompt": "Resuelve \\(\\sqrt{x-1}=x-5\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{11+\\sqrt{17}}{2}\\)</p>",
+                "solutionHtml": "<p>\\(x-1=(x-5)^2\\), luego \\(x^2-11x+26=0\\). Las raices son \\(\\dfrac{11\\pm\\sqrt{17}}{2}\\), pero solo cumple \\(x\\geq 5\\) la mayor.</p>"
               },
               {
                 "tagId": "PX-C03.S02-06",
-                "prompt": "Resuelve \\(\\sqrt{2x+1}=x+1\\)."
+                "prompt": "Resuelve \\(\\sqrt{2x+1}=x+1\\).",
+                "answerHtml": "<p>\\(x=0\\)</p>",
+                "solutionHtml": "<p>\\(2x+1=(x+1)^2\\), luego \\(x^2=0\\) y por tanto \\(x=0\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=25\\)</p></li><li><p>\\(x=0\\)</p></li><li><p>\\(x=6\\)</p></li><li><p>\\(x=3\\)</p></li><li><p>\\(x=\\dfrac{11+\\sqrt{17}}{2}\\)</p></li><li><p>\\(x=0\\)</p></li></ol>",
@@ -1698,27 +1914,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S03-01",
-                "prompt": "Resuelve \\(x^2-16=0\\)."
+                "prompt": "Resuelve \\(x^2-16=0\\).",
+                "answerHtml": "<p>\\(x=\\pm 4\\)</p>",
+                "solutionHtml": "<p>\\(x^2=16\\), luego \\(x=\\pm 4\\).</p>"
               },
               {
                 "tagId": "PX-C03.S03-02",
-                "prompt": "Resuelve \\(x^4-13x^2+36=0\\)."
+                "prompt": "Resuelve \\(x^4-13x^2+36=0\\).",
+                "answerHtml": "<p>\\(x=\\pm 2,\\pm 3\\)</p>",
+                "solutionHtml": "<p>Con \\(y=x^2\\): \\(y^2-13y+36=0=(y-4)(y-9)\\).</p>"
               },
               {
                 "tagId": "PX-C03.S03-03",
-                "prompt": "Resuelve \\(x^3-9x=0\\)."
+                "prompt": "Resuelve \\(x^3-9x=0\\).",
+                "answerHtml": "<p>\\(x=-3,0,3\\)</p>",
+                "solutionHtml": "<p>\\(x(x^2-9)=0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S03-04",
-                "prompt": "Resuelve \\(x^4=x^2\\)."
+                "prompt": "Resuelve \\(x^4=x^2\\).",
+                "answerHtml": "<p>\\(x=-1,0,1\\)</p>",
+                "solutionHtml": "<p>\\(x^4-x^2=0 \\Longrightarrow x^2(x^2-1)=0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S03-05",
-                "prompt": "Resuelve \\(x^2+5x=0\\)."
+                "prompt": "Resuelve \\(x^2+5x=0\\).",
+                "answerHtml": "<p>\\(x=0,-5\\)</p>",
+                "solutionHtml": "<p>\\(x(x+5)=0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S03-06",
-                "prompt": "Resuelve \\(x^4-1=0\\)."
+                "prompt": "Resuelve \\(x^4-1=0\\).",
+                "answerHtml": "<p>\\(x=\\pm 1\\)</p>",
+                "solutionHtml": "<p>\\(x^4-1=(x^2-1)(x^2+1)\\), y sobre \\(\\mathbb{R}\\) solo salen \\(x=\\pm 1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=\\pm 4\\)</p></li><li><p>\\(x=\\pm 2,\\pm 3\\)</p></li><li><p>\\(x=-3,0,3\\)</p></li><li><p>\\(x=-1,0,1\\)</p></li><li><p>\\(x=0,-5\\)</p></li><li><p>\\(x=\\pm 1\\)</p></li></ol>",
@@ -1787,27 +2015,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S04-01",
-                "prompt": "Resuelve \\(2^x=16\\)."
+                "prompt": "Resuelve \\(2^x=16\\).",
+                "answerHtml": "<p>\\(x=4\\)</p>",
+                "solutionHtml": "<p>\\(16=2^4\\).</p>"
               },
               {
                 "tagId": "PX-C03.S04-02",
-                "prompt": "Resuelve \\(4^{x+1}=64\\)."
+                "prompt": "Resuelve \\(4^{x+1}=64\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>\\(64=4^3\\), asi que \\(x+1=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S04-03",
-                "prompt": "Resuelve \\(9^x=3\\)."
+                "prompt": "Resuelve \\(9^x=3\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{1}{2}\\)</p>",
+                "solutionHtml": "<p>\\(9^x=(3^2)^x=3^{2x}=3^1\\), luego \\(2x=1\\).</p>"
               },
               {
                 "tagId": "PX-C03.S04-04",
-                "prompt": "Resuelve \\(2^x=2^{3x-4}\\)."
+                "prompt": "Resuelve \\(2^x=2^{3x-4}\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>Igualamos exponentes: \\(x=3x-4\\).</p>"
               },
               {
                 "tagId": "PX-C03.S04-05",
-                "prompt": "Resuelve \\(10^{x-1}=1000\\)."
+                "prompt": "Resuelve \\(10^{x-1}=1000\\).",
+                "answerHtml": "<p>\\(x=4\\)</p>",
+                "solutionHtml": "<p>\\(1000=10^3\\), por tanto \\(x-1=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S04-06",
-                "prompt": "Resuelve \\(5^x=\\dfrac{1}{25}\\)."
+                "prompt": "Resuelve \\(5^x=\\dfrac{1}{25}\\).",
+                "answerHtml": "<p>\\(x=-2\\)</p>",
+                "solutionHtml": "<p>\\(\\tfrac{1}{25}=5^{-2}\\), luego \\(x=-2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=4\\)</p></li><li><p>\\(x=2\\)</p></li><li><p>\\(x=\\dfrac{1}{2}\\)</p></li><li><p>\\(x=2\\)</p></li><li><p>\\(x=4\\)</p></li><li><p>\\(x=-2\\)</p></li></ol>",
@@ -1876,27 +2116,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S05-01",
-                "prompt": "Resuelve \\(\\log_3 x=2\\)."
+                "prompt": "Resuelve \\(\\log_3 x=2\\).",
+                "answerHtml": "<p>\\(x=9\\)</p>",
+                "solutionHtml": "<p>\\(x=3^2=9\\).</p>"
               },
               {
                 "tagId": "PX-C03.S05-02",
-                "prompt": "Resuelve \\(\\ln x=0\\)."
+                "prompt": "Resuelve \\(\\ln x=0\\).",
+                "answerHtml": "<p>\\(x=1\\)</p>",
+                "solutionHtml": "<p>\\(\\ln x=0\\) implica \\(x=e^0=1\\).</p>"
               },
               {
                 "tagId": "PX-C03.S05-03",
-                "prompt": "Resuelve \\(\\log(x-2)=0\\)."
+                "prompt": "Resuelve \\(\\log(x-2)=0\\).",
+                "answerHtml": "<p>\\(x=3\\)</p>",
+                "solutionHtml": "<p>\\(x-2=10^0=1\\), luego \\(x=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S05-04",
-                "prompt": "Resuelve \\(\\log_2(x+1)=4\\)."
+                "prompt": "Resuelve \\(\\log_2(x+1)=4\\).",
+                "answerHtml": "<p>\\(x=15\\)</p>",
+                "solutionHtml": "<p>\\(x+1=2^4=16\\), luego \\(x=15\\).</p>"
               },
               {
                 "tagId": "PX-C03.S05-05",
-                "prompt": "Resuelve \\(\\log x+\\log x=2\\)."
+                "prompt": "Resuelve \\(\\log x+\\log x=2\\).",
+                "answerHtml": "<p>\\(x=10\\)</p>",
+                "solutionHtml": "<p>\\(\\log(x^2)=2\\), asi que \\(x^2=100\\). Por dominio, \\(x=10\\).</p>"
               },
               {
                 "tagId": "PX-C03.S05-06",
-                "prompt": "Resuelve \\(\\log_3(x-1)+\\log_3(x-1)=2\\)."
+                "prompt": "Resuelve \\(\\log_3(x-1)+\\log_3(x-1)=2\\).",
+                "answerHtml": "<p>\\(x=4\\)</p>",
+                "solutionHtml": "<p>\\(2\\log_3(x-1)=2\\), luego \\(\\log_3(x-1)=1\\) y \\(x=4\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=9\\)</p></li><li><p>\\(x=1\\)</p></li><li><p>\\(x=3\\)</p></li><li><p>\\(x=15\\)</p></li><li><p>\\(x=10\\)</p></li><li><p>\\(x=4\\)</p></li></ol>",
@@ -1965,27 +2217,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S06-01",
-                "prompt": "Resuelve \\((x-3)(x+2)=0\\)."
+                "prompt": "Resuelve \\((x-3)(x+2)=0\\).",
+                "answerHtml": "<p>\\(x=3,-2\\)</p>",
+                "solutionHtml": "<p>Ecuacion factorizada: cada factor se iguala a \\(0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S06-02",
-                "prompt": "Resuelve \\(\\sqrt{x+9}=5\\)."
+                "prompt": "Resuelve \\(\\sqrt{x+9}=5\\).",
+                "answerHtml": "<p>\\(x=16\\)</p>",
+                "solutionHtml": "<p>Ecuacion irracional: \\(x+9=25\\).</p>"
               },
               {
                 "tagId": "PX-C03.S06-03",
-                "prompt": "Resuelve \\(2^x=8\\)."
+                "prompt": "Resuelve \\(2^x=8\\).",
+                "answerHtml": "<p>\\(x=3\\)</p>",
+                "solutionHtml": "<p>Ecuacion exponencial: \\(8=2^3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S06-04",
-                "prompt": "Resuelve \\(\\log x=2\\)."
+                "prompt": "Resuelve \\(\\log x=2\\).",
+                "answerHtml": "<p>\\(x=100\\)</p>",
+                "solutionHtml": "<p>Ecuacion logaritmica decimal: \\(x=10^2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S06-05",
-                "prompt": "Resuelve \\(x^4-17x^2+16=0\\)."
+                "prompt": "Resuelve \\(x^4-17x^2+16=0\\).",
+                "answerHtml": "<p>\\(x=\\pm 1,\\pm 4\\)</p>",
+                "solutionHtml": "<p>Con \\(y=x^2\\): \\(y^2-17y+16=0=(y-1)(y-16)\\).</p>"
               },
               {
                 "tagId": "PX-C03.S06-06",
-                "prompt": "Resuelve \\(\\dfrac{1}{x-1}=2\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x-1}=2\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{3}{2}\\)</p>",
+                "solutionHtml": "<p>Ecuacion racional: \\(1=2(x-1)\\), luego \\(x=\\tfrac{3}{2}\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=3,-2\\)</p></li><li><p>\\(x=16\\)</p></li><li><p>\\(x=3\\)</p></li><li><p>\\(x=100\\)</p></li><li><p>\\(x=\\pm 1,\\pm 4\\)</p></li><li><p>\\(x=\\dfrac{3}{2}\\)</p></li></ol>",
@@ -2054,27 +2318,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S07-01",
-                "prompt": "Resuelve \\(\\begin{cases}x+y=6\\\\ x-y=2\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+y=6\\\\ x-y=2\\end{cases}\\).",
+                "answerHtml": "<p>\\((4,2)\\)</p>",
+                "solutionHtml": "<p>Sumando: \\(2x=8\\), luego \\(x=4\\), \\(y=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S07-02",
-                "prompt": "Resuelve \\(\\begin{cases}3x+y=11\\\\ x+y=5\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}3x+y=11\\\\ x+y=5\\end{cases}\\).",
+                "answerHtml": "<p>\\((3,2)\\)</p>",
+                "solutionHtml": "<p>Restando ecuaciones: \\(2x=6\\), luego \\(x=3\\), \\(y=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S07-03",
-                "prompt": "Resuelve \\(\\begin{cases}2x-y=7\\\\ x+y=5\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}2x-y=7\\\\ x+y=5\\end{cases}\\).",
+                "answerHtml": "<p>\\((4,1)\\)</p>",
+                "solutionHtml": "<p>De \\(x+y=5\\), \\(y=5-x\\). Sustituyendo sale \\(x=4\\), \\(y=1\\).</p>"
               },
               {
                 "tagId": "PX-C03.S07-04",
-                "prompt": "Resuelve \\(\\begin{cases}x+2y=8\\\\ 3x-y=3\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+2y=8\\\\ 3x-y=3\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,3)\\)</p>",
+                "solutionHtml": "<p>Sustituyendo \\(x=8-2y\\) se obtiene \\(24-7y=3\\), luego \\(y=3\\) y \\(x=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S07-05",
-                "prompt": "Resuelve \\(\\begin{cases}2x+3y=13\\\\ x+y=5\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}2x+3y=13\\\\ x+y=5\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,3)\\)</p>",
+                "solutionHtml": "<p>De \\(x+y=5\\), \\(x=5-y\\). Sale \\(10-2y+3y=13\\), luego \\(y=3\\), \\(x=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S07-06",
-                "prompt": "Resuelve \\(\\begin{cases}x+3y=11\\\\ 2x-y=1\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+3y=11\\\\ 2x-y=1\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,3)\\)</p>",
+                "solutionHtml": "<p>De \\(2x-y=3\\), \\(y=2x-3\\). Sale \\(x+6x-9=11\\), luego \\(x=2\\), \\(y=3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((4,2)\\)</p></li><li><p>\\((3,2)\\)</p></li><li><p>\\((4,1)\\)</p></li><li><p>\\((2,3)\\)</p></li><li><p>\\((2,3)\\)</p></li><li><p>\\((2,3)\\)</p></li></ol>",
@@ -2143,27 +2419,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S08-01",
-                "prompt": "Resuelve \\(\\begin{cases}x+y+z=6\\\\ x+z=4\\\\ y+z=5\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+y+z=6\\\\ x+z=4\\\\ y+z=5\\end{cases}\\).",
+                "answerHtml": "<p>\\((1,2,3)\\)</p>",
+                "solutionHtml": "<p>De \\(x+z=4\\) y \\(y+z=5\\), junto con \\(x+y+z=6\\), sale \\(z=3\\), \\(x=1\\), \\(y=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S08-02",
-                "prompt": "Resuelve \\(\\begin{cases}x+y+z=9\\\\ x-y+z=5\\\\ x+y-z=3\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+y+z=9\\\\ x-y+z=5\\\\ x+y-z=3\\end{cases}\\).",
+                "answerHtml": "<p>\\((4,2,3)\\)</p>",
+                "solutionHtml": "<p>Restando la segunda y tercera a la primera se obtiene \\(2y=4\\) y \\(2z=6\\), luego \\(y=2\\), \\(z=3\\), \\(x=4\\).</p>"
               },
               {
                 "tagId": "PX-C03.S08-03",
-                "prompt": "Clasifica \\(\\begin{cases}x+y+z=1\\\\ x+y+z=3\\\\ x-y=0\\end{cases}\\)."
+                "prompt": "Clasifica \\(\\begin{cases}x+y+z=1\\\\ x+y+z=3\\\\ x-y=0\\end{cases}\\).",
+                "answerHtml": "<p>Incompatible</p>",
+                "solutionHtml": "<p>Las dos primeras ecuaciones se contradicen, luego no hay solucion.</p>"
               },
               {
                 "tagId": "PX-C03.S08-04",
-                "prompt": "Clasifica \\(\\begin{cases}x+y+z=2\\\\ 2x+2y+2z=4\\\\ x-y=0\\end{cases}\\)."
+                "prompt": "Clasifica \\(\\begin{cases}x+y+z=2\\\\ 2x+2y+2z=4\\\\ x-y=0\\end{cases}\\).",
+                "answerHtml": "<p>Compatible indeterminado</p>",
+                "solutionHtml": "<p>La segunda ecuacion es el doble de la primera; con \\(x-y=0\\) quedan infinitas soluciones.</p>"
               },
               {
                 "tagId": "PX-C03.S08-05",
-                "prompt": "Resuelve \\(\\begin{cases}2x+y+z=7\\\\ x-y+z=3\\\\ x+y-z=1\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}2x+y+z=7\\\\ x-y+z=3\\\\ x+y-z=1\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,1,2)\\)</p>",
+                "solutionHtml": "<p>Sustituyendo se obtiene \\(z=2\\), \\(y=1\\), \\(x=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S08-06",
-                "prompt": "Resuelve \\(\\begin{cases}x+2y-z=2\\\\ 2x-y+z=3\\\\ x+y+z=6\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+2y-z=2\\\\ 2x-y+z=3\\\\ x+y+z=6\\end{cases}\\).",
+                "answerHtml": "<p>\\((1,2,3)\\)</p>",
+                "solutionHtml": "<p>El sistema lo verifica \\((1,2,3)\\) y es la unica solucion.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((1,2,3)\\)</p></li><li><p>\\((4,2,3)\\)</p></li><li><p>Incompatible</p></li><li><p>Compatible indeterminado</p></li><li><p>\\((2,1,2)\\)</p></li><li><p>\\((1,2,3)\\)</p></li></ol>",
@@ -2232,27 +2520,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S09-01",
-                "prompt": "La suma de dos numeros es \\(20\\) y uno supera al otro en \\(4\\)."
+                "prompt": "La suma de dos numeros es \\(20\\) y uno supera al otro en \\(4\\).",
+                "answerHtml": "<p>\\(12\\) y \\(8\\)</p>",
+                "solutionHtml": "<p>Sistema \\(x+y=20\\), \\(x-y=4\\). Sale \\(x=12\\), \\(y=8\\).</p>"
               },
               {
                 "tagId": "PX-C03.S09-02",
-                "prompt": "Dos entradas adultas y tres infantiles cuestan \\(25\\) euros; una adulta y una infantil cuestan \\(11\\) euros."
+                "prompt": "Dos entradas adultas y tres infantiles cuestan \\(25\\) euros; una adulta y una infantil cuestan \\(11\\) euros.",
+                "answerHtml": "<p>Adulta: \\(8\\) euros. Infantil: \\(3\\) euros.</p>",
+                "solutionHtml": "<p>Si \\(a\\) es adulta e \\(i\\) infantil: \\(\\begin{cases}2a+3i=25\\\\ a+i=11\\end{cases}\\), de donde \\(a=8\\), \\(i=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S09-03",
-                "prompt": "En una granja hay \\(10\\) cabezas y \\(28\\) patas entre gallinas y conejos."
+                "prompt": "En una granja hay \\(10\\) cabezas y \\(28\\) patas entre gallinas y conejos.",
+                "answerHtml": "<p>\\(6\\) gallinas y \\(4\\) conejos</p>",
+                "solutionHtml": "<p>\\(g+c=10\\), \\(2g+4c=28\\). Sale \\(c=4\\), \\(g=6\\).</p>"
               },
               {
                 "tagId": "PX-C03.S09-04",
-                "prompt": "Un numero de dos cifras tiene suma de cifras \\(9\\) y la cifra de las decenas supera en \\(3\\) a la de las unidades."
+                "prompt": "Un numero de dos cifras tiene suma de cifras \\(9\\) y la cifra de las decenas supera en \\(3\\) a la de las unidades.",
+                "answerHtml": "<p>\\(63\\)</p>",
+                "solutionHtml": "<p>Si la decena es \\(d\\) y la unidad \\(u\\): \\(d+u=9\\), \\(d-u=3\\). Sale \\(d=6\\), \\(u=3\\), numero \\(63\\).</p>"
               },
               {
                 "tagId": "PX-C03.S09-05",
-                "prompt": "Tres cuadernos y dos lapices cuestan \\(13\\) euros; un cuaderno y un lapiz cuestan \\(5\\) euros."
+                "prompt": "Tres cuadernos y dos lapices cuestan \\(13\\) euros; un cuaderno y un lapiz cuestan \\(5\\) euros.",
+                "answerHtml": "<p>Cuaderno: \\(3\\) euros. Lapiz: \\(2\\) euros.</p>",
+                "solutionHtml": "<p>\\(3c+2l=13\\), \\(c+l=5\\). Sale \\(c=3\\), \\(l=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S09-06",
-                "prompt": "Hay monedas de \\(1\\) y \\(2\\) euros. En total son \\(8\\) monedas y suman \\(13\\) euros."
+                "prompt": "Hay monedas de \\(1\\) y \\(2\\) euros. En total son \\(8\\) monedas y suman \\(13\\) euros.",
+                "answerHtml": "<p>\\(3\\) monedas de \\(1\\) euro y \\(5\\) monedas de \\(2\\) euros</p>",
+                "solutionHtml": "<p>\\(x+y=8\\), \\(x+2y=13\\). Sale \\(y=5\\), \\(x=3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(12\\) y \\(8\\)</p></li><li><p>Adulta: \\(8\\) euros. Infantil: \\(3\\) euros.</p></li><li><p>\\(6\\) gallinas y \\(4\\) conejos</p></li><li><p>\\(63\\)</p></li><li><p>Cuaderno: \\(3\\) euros. Lapiz: \\(2\\) euros.</p></li><li><p>\\(3\\) monedas de \\(1\\) euro y \\(5\\) monedas de \\(2\\) euros</p></li></ol>",
@@ -2321,27 +2621,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S10-01",
-                "prompt": "Resuelve \\(\\begin{cases}x+y=7\\\\ xy=12\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+y=7\\\\ xy=12\\end{cases}\\).",
+                "answerHtml": "<p>\\((3,4)\\) y \\((4,3)\\)</p>",
+                "solutionHtml": "<p>\\(y=7-x\\). Sale \\(x^2-7x+12=0\\), luego \\(x=3\\) o \\(4\\).</p>"
               },
               {
                 "tagId": "PX-C03.S10-02",
-                "prompt": "Resuelve \\(\\begin{cases}y=x^2\\\\ y=4\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}y=x^2\\\\ y=4\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,4)\\) y \\((-2,4)\\)</p>",
+                "solutionHtml": "<p>Si \\(x^2=4\\), entonces \\(x=\\pm 2\\) y \\(y=4\\).</p>"
               },
               {
                 "tagId": "PX-C03.S10-03",
-                "prompt": "Resuelve \\(\\begin{cases}x^2+y^2=13\\\\ y=2\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x^2+y^2=13\\\\ y=2\\end{cases}\\).",
+                "answerHtml": "<p>\\((3,2)\\) y \\((-3,2)\\)</p>",
+                "solutionHtml": "<p>\\(x^2+4=13\\), luego \\(x=\\pm 3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S10-04",
-                "prompt": "Resuelve \\(\\begin{cases}x-y=5\\\\ xy=14\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x-y=5\\\\ xy=14\\end{cases}\\).",
+                "answerHtml": "<p>\\((7,2)\\) y \\((-2,-7)\\)</p>",
+                "solutionHtml": "<p>\\(y=x-5\\). Sale \\(x^2-5x-14=0\\), luego \\(x=7\\) o \\(-2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S10-05",
-                "prompt": "Resuelve \\(\\begin{cases}x+y=1\\\\ x^2+y^2=1\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x+y=1\\\\ x^2+y^2=1\\end{cases}\\).",
+                "answerHtml": "<p>\\((0,1)\\) y \\((1,0)\\)</p>",
+                "solutionHtml": "<p>\\((x+y)^2=x^2+y^2+2xy\\) da \\(1=1+2xy\\), luego \\(xy=0\\).</p>"
               },
               {
                 "tagId": "PX-C03.S10-06",
-                "prompt": "Resuelve \\(\\begin{cases}y=2x\\\\ x^2+y^2=20\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}y=2x\\\\ x^2+y^2=20\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,4)\\) y \\((-2,-4)\\)</p>",
+                "solutionHtml": "<p>Sustituyendo \\(y=2x\\): \\(x^2+4x^2=20\\), de donde \\(x=\\pm 2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((3,4)\\) y \\((4,3)\\)</p></li><li><p>\\((2,4)\\) y \\((-2,4)\\)</p></li><li><p>\\((3,2)\\) y \\((-3,2)\\)</p></li><li><p>\\((7,2)\\) y \\((-2,-7)\\)</p></li><li><p>\\((0,1)\\) y \\((1,0)\\)</p></li><li><p>\\((2,4)\\) y \\((-2,-4)\\)</p></li></ol>",
@@ -2410,27 +2722,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C03.S11-01",
-                "prompt": "Resuelve \\(\\begin{cases}3^x=27\\\\ x+y=5\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}3^x=27\\\\ x+y=5\\end{cases}\\).",
+                "answerHtml": "<p>\\((3,2)\\)</p>",
+                "solutionHtml": "<p>\\(3^x=27\\) da \\(x=3\\). Entonces \\(y=2\\).</p>"
               },
               {
                 "tagId": "PX-C03.S11-02",
-                "prompt": "Resuelve \\(\\begin{cases}2^x\\cdot 2^y=64\\\\ x-y=0\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}2^x\\cdot 2^y=64\\\\ x-y=0\\end{cases}\\).",
+                "answerHtml": "<p>\\((3,3)\\)</p>",
+                "solutionHtml": "<p>\\(2^{x+y}=64=2^6\\), asi que \\(x+y=6\\). Con \\(x-y=0\\), sale \\(x=y=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S11-03",
-                "prompt": "Resuelve \\(\\begin{cases}\\log x=2\\\\ y=x-95\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}\\log x=2\\\\ y=x-95\\end{cases}\\).",
+                "answerHtml": "<p>\\((100,5)\\)</p>",
+                "solutionHtml": "<p>\\(\\log x=2\\) implica \\(x=100\\). Luego \\(y=5\\).</p>"
               },
               {
                 "tagId": "PX-C03.S11-04",
-                "prompt": "Resuelve \\(\\begin{cases}\\ln x=0\\\\ x+y=4\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}\\ln x=0\\\\ x+y=4\\end{cases}\\).",
+                "answerHtml": "<p>\\((1,3)\\)</p>",
+                "solutionHtml": "<p>\\(\\ln x=0\\) implica \\(x=1\\). Luego \\(y=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S11-05",
-                "prompt": "Resuelve \\(\\begin{cases}2^x=4\\\\ 3^y=27\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}2^x=4\\\\ 3^y=27\\end{cases}\\).",
+                "answerHtml": "<p>\\((2,3)\\)</p>",
+                "solutionHtml": "<p>\\(x=2\\) y \\(y=3\\).</p>"
               },
               {
                 "tagId": "PX-C03.S11-06",
-                "prompt": "Resuelve \\(\\begin{cases}\\log_2 x=3\\\\ x-y=5\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}\\log_2 x=3\\\\ x-y=5\\end{cases}\\).",
+                "answerHtml": "<p>\\((8,3)\\)</p>",
+                "solutionHtml": "<p>\\(\\log_2 x=3\\) implica \\(x=8\\). Como \\(x-y=5\\), sale \\(y=3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((3,2)\\)</p></li><li><p>\\((3,3)\\)</p></li><li><p>\\((100,5)\\)</p></li><li><p>\\((1,3)\\)</p></li><li><p>\\((2,3)\\)</p></li><li><p>\\((8,3)\\)</p></li></ol>",
@@ -2509,27 +2833,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S01-01",
-                "prompt": "Resuelve \\(x-4<0\\)."
+                "prompt": "Resuelve \\(x-4<0\\).",
+                "answerHtml": "<p>\\(x<4\\)</p>",
+                "solutionHtml": "<p>\\(x<4\\).</p>"
               },
               {
                 "tagId": "PX-C04.S01-02",
-                "prompt": "Resuelve \\(5x+1\\geq 11\\)."
+                "prompt": "Resuelve \\(5x+1\\geq 11\\).",
+                "answerHtml": "<p>\\(x\\geq 2\\)</p>",
+                "solutionHtml": "<p>\\(5x\\geq 10\\), luego \\(x\\geq 2\\).</p>"
               },
               {
                 "tagId": "PX-C04.S01-03",
-                "prompt": "Resuelve \\(7-2x>1\\)."
+                "prompt": "Resuelve \\(7-2x>1\\).",
+                "answerHtml": "<p>\\(x<3\\)</p>",
+                "solutionHtml": "<p>\\(-2x>-6\\), al dividir por \\(-2\\), \\(x<3\\).</p>"
               },
               {
                 "tagId": "PX-C04.S01-04",
-                "prompt": "Resuelve \\(4x-3\\leq 5\\)."
+                "prompt": "Resuelve \\(4x-3\\leq 5\\).",
+                "answerHtml": "<p>\\(x\\leq 2\\)</p>",
+                "solutionHtml": "<p>\\(4x\\leq 8\\), luego \\(x\\leq 2\\).</p>"
               },
               {
                 "tagId": "PX-C04.S01-05",
-                "prompt": "Resuelve \\(2-3x<11\\)."
+                "prompt": "Resuelve \\(2-3x<11\\).",
+                "answerHtml": "<p>\\(x>-3\\)</p>",
+                "solutionHtml": "<p>\\(-3x<9\\), al dividir por \\(-3\\), \\(x>-3\\).</p>"
               },
               {
                 "tagId": "PX-C04.S01-06",
-                "prompt": "Resuelve \\(-x+8\\geq 10\\)."
+                "prompt": "Resuelve \\(-x+8\\geq 10\\).",
+                "answerHtml": "<p>\\(x\\leq -2\\)</p>",
+                "solutionHtml": "<p>\\(-x\\geq 2\\), luego \\(x\\leq -2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x<4\\)</p></li><li><p>\\(x\\geq 2\\)</p></li><li><p>\\(x<3\\)</p></li><li><p>\\(x\\leq 2\\)</p></li><li><p>\\(x>-3\\)</p></li><li><p>\\(x\\leq -2\\)</p></li></ol>",
@@ -2598,27 +2934,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S02-01",
-                "prompt": "Resuelve \\(x^2-1\\geq 0\\)."
+                "prompt": "Resuelve \\(x^2-1\\geq 0\\).",
+                "answerHtml": "<p>\\((-\\infty,-1]\\cup [1,+\\infty)\\)</p>",
+                "solutionHtml": "<p>\\((x-1)(x+1)\\geq 0\\) fuera de las raices.</p>"
               },
               {
                 "tagId": "PX-C04.S02-02",
-                "prompt": "Resuelve \\(x^2-6x+8<0\\)."
+                "prompt": "Resuelve \\(x^2-6x+8<0\\).",
+                "answerHtml": "<p>\\((2,4)\\)</p>",
+                "solutionHtml": "<p>\\((x-2)(x-4)<0\\) entre \\(2\\) y \\(4\\).</p>"
               },
               {
                 "tagId": "PX-C04.S02-03",
-                "prompt": "Resuelve \\(x^2+4x+3\\leq 0\\)."
+                "prompt": "Resuelve \\(x^2+4x+3\\leq 0\\).",
+                "answerHtml": "<p>\\([-3,-1]\\)</p>",
+                "solutionHtml": "<p>\\((x+1)(x+3)\\leq 0\\) entre las raices e incluyendolas.</p>"
               },
               {
                 "tagId": "PX-C04.S02-04",
-                "prompt": "Resuelve \\(x^2-9>0\\)."
+                "prompt": "Resuelve \\(x^2-9>0\\).",
+                "answerHtml": "<p>\\((-\\infty,-3)\\cup (3,+\\infty)\\)</p>",
+                "solutionHtml": "<p>\\(x^2-9>0\\) fuera de \\(\\pm 3\\).</p>"
               },
               {
                 "tagId": "PX-C04.S02-05",
-                "prompt": "Resuelve \\(x^2-2x-3\\geq 0\\)."
+                "prompt": "Resuelve \\(x^2-2x-3\\geq 0\\).",
+                "answerHtml": "<p>\\((-\\infty,-1]\\cup [3,+\\infty)\\)</p>",
+                "solutionHtml": "<p>\\((x-3)(x+1)\\geq 0\\) fuera del intervalo interior.</p>"
               },
               {
                 "tagId": "PX-C04.S02-06",
-                "prompt": "Resuelve \\(-x^2+4x-4\\leq 0\\)."
+                "prompt": "Resuelve \\(-x^2+4x-4\\leq 0\\).",
+                "answerHtml": "<p>\\(\\mathbb{R}\\)</p>",
+                "solutionHtml": "<p>\\(-x^2+4x-4=-(x-2)^2\\leq 0\\) para todo real.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-\\infty,-1]\\cup [1,+\\infty)\\)</p></li><li><p>\\((2,4)\\)</p></li><li><p>\\([-3,-1]\\)</p></li><li><p>\\((-\\infty,-3)\\cup (3,+\\infty)\\)</p></li><li><p>\\((-\\infty,-1]\\cup [3,+\\infty)\\)</p></li><li><p>\\(\\mathbb{R}\\)</p></li></ol>",
@@ -2687,27 +3035,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S03-01",
-                "prompt": "Resuelve \\(x(x-1)(x+1)<0\\)."
+                "prompt": "Resuelve \\(x(x-1)(x+1)<0\\).",
+                "answerHtml": "<p>\\((-\\infty,-1)\\cup (0,1)\\)</p>",
+                "solutionHtml": "<p>El signo alterna en \\(-1\\), \\(0\\) y \\(1\\), quedando negativo en \\((-\\infty,-1)\\) y \\((0,1)\\).</p>"
               },
               {
                 "tagId": "PX-C04.S03-02",
-                "prompt": "Resuelve \\((x-2)^2(x+3)\\geq 0\\)."
+                "prompt": "Resuelve \\((x-2)^2(x+3)\\geq 0\\).",
+                "answerHtml": "<p>\\([-3,+\\infty)\\)</p>",
+                "solutionHtml": "<p>\\((x-2)^2\\geq 0\\), asi que el signo lo decide \\(x+3\\); se incluye \\(-3\\).</p>"
               },
               {
                 "tagId": "PX-C04.S03-03",
-                "prompt": "Resuelve \\(x(x-4)^2\\leq 0\\)."
+                "prompt": "Resuelve \\(x(x-4)^2\\leq 0\\).",
+                "answerHtml": "<p>\\((-\\infty,0]\\cup \\{4\\}\\)</p>",
+                "solutionHtml": "<p>El signo lo decide \\(x\\), pero en \\(x=4\\) el producto vale \\(0\\).</p>"
               },
               {
                 "tagId": "PX-C04.S03-04",
-                "prompt": "Resuelve \\((x+2)(x-5)>0\\)."
+                "prompt": "Resuelve \\((x+2)(x-5)>0\\).",
+                "answerHtml": "<p>\\((-\\infty,-2)\\cup (5,+\\infty)\\)</p>",
+                "solutionHtml": "<p>Producto positivo fuera de las raices.</p>"
               },
               {
                 "tagId": "PX-C04.S03-05",
-                "prompt": "Resuelve \\(x^2(x-1)\\leq 0\\)."
+                "prompt": "Resuelve \\(x^2(x-1)\\leq 0\\).",
+                "answerHtml": "<p>\\((-\\infty,1]\\)</p>",
+                "solutionHtml": "<p>Como \\(x^2\\geq 0\\), el signo depende de \\(x-1\\) y el producto es no positivo si \\(x\\leq 1\\).</p>"
               },
               {
                 "tagId": "PX-C04.S03-06",
-                "prompt": "Resuelve \\((x-3)^3\\geq 0\\)."
+                "prompt": "Resuelve \\((x-3)^3\\geq 0\\).",
+                "answerHtml": "<p>\\([3,+\\infty)\\)</p>",
+                "solutionHtml": "<p>Una potencia impar conserva el signo de \\(x-3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-\\infty,-1)\\cup (0,1)\\)</p></li><li><p>\\([-3,+\\infty)\\)</p></li><li><p>\\((-\\infty,0]\\cup \\{4\\}\\)</p></li><li><p>\\((-\\infty,-2)\\cup (5,+\\infty)\\)</p></li><li><p>\\((-\\infty,1]\\)</p></li><li><p>\\([3,+\\infty)\\)</p></li></ol>",
@@ -2776,27 +3136,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S04-01",
-                "prompt": "Resuelve \\(\\dfrac{1}{x-4}<0\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x-4}<0\\).",
+                "answerHtml": "<p>\\((-\\infty,4)\\)</p>",
+                "solutionHtml": "<p>El signo lo decide \\(x-4\\); la fraccion es negativa si \\(x<4\\).</p>"
               },
               {
                 "tagId": "PX-C04.S04-02",
-                "prompt": "Resuelve \\(\\dfrac{x-2}{x+2}\\geq 0\\)."
+                "prompt": "Resuelve \\(\\dfrac{x-2}{x+2}\\geq 0\\).",
+                "answerHtml": "<p>\\((-\\infty,-2)\\cup [2,+\\infty)\\)</p>",
+                "solutionHtml": "<p>Mismo signo en numerador y denominador, incluyendo \\(x=2\\).</p>"
               },
               {
                 "tagId": "PX-C04.S04-03",
-                "prompt": "Resuelve \\(\\dfrac{x}{x+1}\\leq 0\\)."
+                "prompt": "Resuelve \\(\\dfrac{x}{x+1}\\leq 0\\).",
+                "answerHtml": "<p>\\((-1,0]\\)</p>",
+                "solutionHtml": "<p>Entre \\(-1\\) y \\(0\\) el cociente es no positivo, e incluye \\(x=0\\).</p>"
               },
               {
                 "tagId": "PX-C04.S04-04",
-                "prompt": "Resuelve \\(\\dfrac{x+3}{x-1}>0\\)."
+                "prompt": "Resuelve \\(\\dfrac{x+3}{x-1}>0\\).",
+                "answerHtml": "<p>\\((-\\infty,-3)\\cup (1,+\\infty)\\)</p>",
+                "solutionHtml": "<p>Positiva si ambos factores tienen el mismo signo, sin incluir \\(x=-3\\) porque hace cero el numerador.</p>"
               },
               {
                 "tagId": "PX-C04.S04-05",
-                "prompt": "Resuelve \\(\\dfrac{x-1}{x-3}<0\\)."
+                "prompt": "Resuelve \\(\\dfrac{x-1}{x-3}<0\\).",
+                "answerHtml": "<p>\\((1,3)\\)</p>",
+                "solutionHtml": "<p>Negativa entre las raices y sin incluirlas.</p>"
               },
               {
                 "tagId": "PX-C04.S04-06",
-                "prompt": "Resuelve \\(\\dfrac{1}{x^2-4}>0\\)."
+                "prompt": "Resuelve \\(\\dfrac{1}{x^2-4}>0\\).",
+                "answerHtml": "<p>\\((-\\infty,-2)\\cup (2,+\\infty)\\)</p>",
+                "solutionHtml": "<p>\\(x^2-4=(x-2)(x+2)\\); el producto es positivo fuera de \\([-2,2]\\), sin incluir los extremos.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-\\infty,4)\\)</p></li><li><p>\\((-\\infty,-2)\\cup [2,+\\infty)\\)</p></li><li><p>\\((-1,0]\\)</p></li><li><p>\\((-\\infty,-3)\\cup (1,+\\infty)\\)</p></li><li><p>\\((1,3)\\)</p></li><li><p>\\((-\\infty,-2)\\cup (2,+\\infty)\\)</p></li></ol>",
@@ -2865,27 +3237,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S05-01",
-                "prompt": "Resuelve \\(\\begin{cases}x>-3\\\\ x<4\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x>-3\\\\ x<4\\end{cases}\\).",
+                "answerHtml": "<p>\\((-3,4)\\)</p>",
+                "solutionHtml": "<p>Interseccion de \\(( -3,+\\infty)\\) y \\((-\\infty,4)\\).</p>"
               },
               {
                 "tagId": "PX-C04.S05-02",
-                "prompt": "Resuelve \\(\\begin{cases}x\\geq 0\\\\ x\\leq 6\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x\\geq 0\\\\ x\\leq 6\\end{cases}\\).",
+                "answerHtml": "<p>\\([0,6]\\)</p>",
+                "solutionHtml": "<p>Interseccion de \\([0,+\\infty)\\) y \\((-\\infty,6]\\).</p>"
               },
               {
                 "tagId": "PX-C04.S05-03",
-                "prompt": "Resuelve \\(\\begin{cases}x-1>0\\\\ 3-x\\geq 0\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x-1>0\\\\ 3-x\\geq 0\\end{cases}\\).",
+                "answerHtml": "<p>\\((1,3]\\)</p>",
+                "solutionHtml": "<p>\\(x>1\\) y \\(x\\leq 3\\).</p>"
               },
               {
                 "tagId": "PX-C04.S05-04",
-                "prompt": "Resuelve \\(\\begin{cases}2x\\leq 8\\\\ x+5>0\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}2x\\leq 8\\\\ x+5>0\\end{cases}\\).",
+                "answerHtml": "<p>\\((-5,4]\\)</p>",
+                "solutionHtml": "<p>\\(x\\leq 4\\) y \\(x>-5\\).</p>"
               },
               {
                 "tagId": "PX-C04.S05-05",
-                "prompt": "Resuelve \\(\\begin{cases}x<2\\\\ x\\geq 2\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x<2\\\\ x\\geq 2\\end{cases}\\).",
+                "answerHtml": "<p>\\(\\varnothing\\)</p>",
+                "solutionHtml": "<p>No existe ningun \\(x\\) que cumpla ambas condiciones.</p>"
               },
               {
                 "tagId": "PX-C04.S05-06",
-                "prompt": "Resuelve \\(\\begin{cases}x\\leq -1\\\\ x>-4\\end{cases}\\)."
+                "prompt": "Resuelve \\(\\begin{cases}x\\leq -1\\\\ x>-4\\end{cases}\\).",
+                "answerHtml": "<p>\\((-4,-1]\\)</p>",
+                "solutionHtml": "<p>\\(x\\in(-4,-1]\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-3,4)\\)</p></li><li><p>\\([0,6]\\)</p></li><li><p>\\((1,3]\\)</p></li><li><p>\\((-5,4]\\)</p></li><li><p>\\(\\varnothing\\)</p></li><li><p>\\((-4,-1]\\)</p></li></ol>",
@@ -2954,27 +3338,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S06-01",
-                "prompt": "Describe la solucion de \\(x+y\\leq 3\\)."
+                "prompt": "Describe la solucion de \\(x+y\\leq 3\\).",
+                "answerHtml": "<p>Recta \\(x+y=3\\); semiplano que contiene \\((0,0)\\)</p>",
+                "solutionHtml": "<p>La frontera es \\(x+y=3\\). El origen satisface \\(0\\leq 3\\).</p>"
               },
               {
                 "tagId": "PX-C04.S06-02",
-                "prompt": "Describe la solucion de \\(y\\geq 2\\)."
+                "prompt": "Describe la solucion de \\(y\\geq 2\\).",
+                "answerHtml": "<p>Recta \\(y=2\\); semiplano superior, que contiene \\((0,3)\\)</p>",
+                "solutionHtml": "<p>La frontera es horizontal: \\(y=2\\). Se toman los puntos con ordenada mayor o igual que \\(2\\).</p>"
               },
               {
                 "tagId": "PX-C04.S06-03",
-                "prompt": "Describe la solucion de \\(x<4\\)."
+                "prompt": "Describe la solucion de \\(x<4\\).",
+                "answerHtml": "<p>Recta \\(x=4\\); semiplano izquierdo, que contiene \\((0,0)\\)</p>",
+                "solutionHtml": "<p>La frontera es \\(x=4\\). Como \\(0<4\\), se toma el lado izquierdo.</p>"
               },
               {
                 "tagId": "PX-C04.S06-04",
-                "prompt": "Describe la solucion de \\(2x-y>0\\)."
+                "prompt": "Describe la solucion de \\(2x-y>0\\).",
+                "answerHtml": "<p>Recta \\(y=2x\\); semiplano inferior, que contiene \\((1,0)\\)</p>",
+                "solutionHtml": "<p>\\(2x-y>0\\) equivale a \\(y<2x\\); la frontera es \\(y=2x\\).</p>"
               },
               {
                 "tagId": "PX-C04.S06-05",
-                "prompt": "Describe la solucion de \\(x+y\\geq 0\\)."
+                "prompt": "Describe la solucion de \\(x+y\\geq 0\\).",
+                "answerHtml": "<p>Recta \\(x+y=0\\); semiplano que contiene \\((1,0)\\)</p>",
+                "solutionHtml": "<p>La frontera es \\(x+y=0\\). El punto \\((1,0)\\) cumple \\(1\\geq 0\\).</p>"
               },
               {
                 "tagId": "PX-C04.S06-06",
-                "prompt": "Describe la solucion de \\(y\\leq -x+2\\)."
+                "prompt": "Describe la solucion de \\(y\\leq -x+2\\).",
+                "answerHtml": "<p>Recta \\(y=-x+2\\); semiplano inferior, que contiene \\((0,0)\\)</p>",
+                "solutionHtml": "<p>Ya esta despejada: \\(y\\leq -x+2\\), es el semiplano por debajo de la recta.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Recta \\(x+y=3\\); semiplano que contiene \\((0,0)\\)</p></li><li><p>Recta \\(y=2\\); semiplano superior, que contiene \\((0,3)\\)</p></li><li><p>Recta \\(x=4\\); semiplano izquierdo, que contiene \\((0,0)\\)</p></li><li><p>Recta \\(y=2x\\); semiplano inferior, que contiene \\((1,0)\\)</p></li><li><p>Recta \\(x+y=0\\); semiplano que contiene \\((1,0)\\)</p></li><li><p>Recta \\(y=-x+2\\); semiplano inferior, que contiene \\((0,0)\\)</p></li></ol>",
@@ -3043,27 +3439,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C04.S07-01",
-                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ x+y\\leq 2\\end{cases}\\)."
+                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ x+y\\leq 2\\end{cases}\\).",
+                "answerHtml": "<p>Triangulo con vertices \\((0,0)\\), \\((2,0)\\), \\((0,2)\\)</p>",
+                "solutionHtml": "<p>Primer cuadrante por debajo de \\(x+y=2\\).</p>"
               },
               {
                 "tagId": "PX-C04.S07-02",
-                "prompt": "Describe la region de \\(\\begin{cases}x\\geq -1\\\\ y\\geq 0\\\\ x+y\\leq 3\\end{cases}\\)."
+                "prompt": "Describe la region de \\(\\begin{cases}x\\geq -1\\\\ y\\geq 0\\\\ x+y\\leq 3\\end{cases}\\).",
+                "answerHtml": "<p>Triangulo con vertices \\((-1,0)\\), \\((3,0)\\), \\((-1,4)\\)</p>",
+                "solutionHtml": "<p>La recta \\(x=-1\\), el eje \\(x\\) y \\(x+y=3\\) recortan ese triangulo.</p>"
               },
               {
                 "tagId": "PX-C04.S07-03",
-                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ x\\leq 3\\\\ y\\leq 2\\end{cases}\\)."
+                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ x\\leq 3\\\\ y\\leq 2\\end{cases}\\).",
+                "answerHtml": "<p>Rectangulo con vertices \\((0,0)\\), \\((3,0)\\), \\((3,2)\\), \\((0,2)\\)</p>",
+                "solutionHtml": "<p>Interseccion de cuatro semiplanos: banda horizontal y banda vertical.</p>"
               },
               {
                 "tagId": "PX-C04.S07-04",
-                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ y\\leq x\\\\ x+y\\leq 4\\end{cases}\\)."
+                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ y\\leq x\\\\ x+y\\leq 4\\end{cases}\\).",
+                "answerHtml": "<p>Triangulo con vertices \\((0,0)\\), \\((4,0)\\), \\((2,2)\\)</p>",
+                "solutionHtml": "<p>La recta \\(y=x\\) corta a \\(x+y=4\\) en \\((2,2)\\), y el eje \\(x\\) aporta \\((0,0)\\) y \\((4,0)\\).</p>"
               },
               {
                 "tagId": "PX-C04.S07-05",
-                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 1\\\\ y\\geq 1\\\\ x+y\\leq 5\\end{cases}\\)."
+                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 1\\\\ y\\geq 1\\\\ x+y\\leq 5\\end{cases}\\).",
+                "answerHtml": "<p>Triangulo con vertices \\((1,1)\\), \\((4,1)\\), \\((1,4)\\)</p>",
+                "solutionHtml": "<p>Desplazando el primer cuadrante al punto \\((1,1)\\) y cortando con \\(x+y=5\\).</p>"
               },
               {
                 "tagId": "PX-C04.S07-06",
-                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ x+2y\\leq 4\\end{cases}\\)."
+                "prompt": "Describe la region de \\(\\begin{cases}x\\geq 0\\\\ y\\geq 0\\\\ x+2y\\leq 4\\end{cases}\\).",
+                "answerHtml": "<p>Triangulo con vertices \\((0,0)\\), \\((4,0)\\), \\((0,2)\\)</p>",
+                "solutionHtml": "<p>Interseccion con los ejes y la recta \\(x+2y=4\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Triangulo con vertices \\((0,0)\\), \\((2,0)\\), \\((0,2)\\)</p></li><li><p>Triangulo con vertices \\((-1,0)\\), \\((3,0)\\), \\((-1,4)\\)</p></li><li><p>Rectangulo con vertices \\((0,0)\\), \\((3,0)\\), \\((3,2)\\), \\((0,2)\\)</p></li><li><p>Triangulo con vertices \\((0,0)\\), \\((4,0)\\), \\((2,2)\\)</p></li><li><p>Triangulo con vertices \\((1,1)\\), \\((4,1)\\), \\((1,4)\\)</p></li><li><p>Triangulo con vertices \\((0,0)\\), \\((4,0)\\), \\((0,2)\\)</p></li></ol>",
@@ -3142,27 +3550,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S01-01",
-                "prompt": "Convierte \\(30^\\circ\\) a radianes."
+                "prompt": "Convierte \\(30^\\circ\\) a radianes.",
+                "answerHtml": "<p>\\(\\frac{\\pi}{6}\\) rad</p>",
+                "solutionHtml": "<p>\\(30^\\circ=\\frac{30\\pi}{180}=\\frac{\\pi}{6}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S01-02",
-                "prompt": "Convierte \\(300^\\circ\\) a radianes."
+                "prompt": "Convierte \\(300^\\circ\\) a radianes.",
+                "answerHtml": "<p>\\(\\frac{5\\pi}{3}\\) rad</p>",
+                "solutionHtml": "<p>\\(300^\\circ=\\frac{300\\pi}{180}=\\frac{5\\pi}{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S01-03",
-                "prompt": "Convierte \\(\\frac{\\pi}{5}\\) radianes a grados."
+                "prompt": "Convierte \\(\\frac{\\pi}{5}\\) radianes a grados.",
+                "answerHtml": "<p>\\(36^\\circ\\)</p>",
+                "solutionHtml": "<p>\\(\\frac{\\pi}{5}\\cdot \\frac{180^\\circ}{\\pi}=36^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S01-04",
-                "prompt": "Convierte \\(\\frac{11\\pi}{6}\\) radianes a grados."
+                "prompt": "Convierte \\(\\frac{11\\pi}{6}\\) radianes a grados.",
+                "answerHtml": "<p>\\(330^\\circ\\)</p>",
+                "solutionHtml": "<p>\\(\\frac{11\\pi}{6}\\cdot \\frac{180^\\circ}{\\pi}=330^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S01-05",
-                "prompt": "Convierte \\(225^\\circ\\) a radianes."
+                "prompt": "Convierte \\(225^\\circ\\) a radianes.",
+                "answerHtml": "<p>\\(\\frac{5\\pi}{4}\\) rad</p>",
+                "solutionHtml": "<p>\\(225^\\circ=\\frac{225\\pi}{180}=\\frac{5\\pi}{4}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S01-06",
-                "prompt": "Convierte \\(\\frac{2\\pi}{3}\\) radianes a grados."
+                "prompt": "Convierte \\(\\frac{2\\pi}{3}\\) radianes a grados.",
+                "answerHtml": "<p>\\(120^\\circ\\)</p>",
+                "solutionHtml": "<p>\\(\\frac{2\\pi}{3}\\cdot \\frac{180^\\circ}{\\pi}=120^\\circ\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\frac{\\pi}{6}\\) rad</p></li><li><p>\\(\\frac{5\\pi}{3}\\) rad</p></li><li><p>\\(36^\\circ\\)</p></li><li><p>\\(330^\\circ\\)</p></li><li><p>\\(\\frac{5\\pi}{4}\\) rad</p></li><li><p>\\(120^\\circ\\)</p></li></ol>",
@@ -3231,27 +3651,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S02-01",
-                "prompt": "En un triangulo rectangulo, el cateto opuesto a \\(30^\\circ\\) mide \\(\\SI{4}{cm}\\). Halla la hipotenusa y el otro cateto."
+                "prompt": "En un triangulo rectangulo, el cateto opuesto a \\(30^\\circ\\) mide \\(\\SI{4}{cm}\\). Halla la hipotenusa y el otro cateto.",
+                "answerHtml": "<p>Hipotenusa: \\(\\SI{8}{cm}\\). Otro cateto: \\(4\\sqrt{3}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>\\(\\sen 30^\\circ=\\frac{4}{h}\\), luego \\(h=8\\). El otro cateto es \\(8\\cos 30^\\circ=4\\sqrt{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S02-02",
-                "prompt": "En un triangulo rectangulo, la hipotenusa mide \\(\\SI{12}{cm}\\) y un angulo agudo es \\(60^\\circ\\). Halla los catetos."
+                "prompt": "En un triangulo rectangulo, la hipotenusa mide \\(\\SI{12}{cm}\\) y un angulo agudo es \\(60^\\circ\\). Halla los catetos.",
+                "answerHtml": "<p>Catetos: \\(\\SI{6}{cm}\\) y \\(6\\sqrt{3}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>\\(12\\cos 60^\\circ=6\\) y \\(12\\sen 60^\\circ=6\\sqrt{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S02-03",
-                "prompt": "Un triangulo isosceles tiene lados iguales de \\(\\SI{10}{cm}\\) y angulo del vertice \\(120^\\circ\\). Halla la base."
+                "prompt": "Un triangulo isosceles tiene lados iguales de \\(\\SI{10}{cm}\\) y angulo del vertice \\(120^\\circ\\). Halla la base.",
+                "answerHtml": "<p>\\(10\\sqrt{3}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>Es el mismo calculo del ejemplo: la base vale \\(10\\sqrt{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S02-04",
-                "prompt": "Un rombo tiene lado \\(\\SI{8}{cm}\\) y angulo agudo \\(60^\\circ\\). Halla sus diagonales."
+                "prompt": "Un rombo tiene lado \\(\\SI{8}{cm}\\) y angulo agudo \\(60^\\circ\\). Halla sus diagonales.",
+                "answerHtml": "<p>\\(\\SI{8}{cm}\\) y \\(8\\sqrt{3}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>Las semidiagonales forman triangulos rectangulos: \\(d_1=8\\) y \\(d_2=8\\sqrt{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S02-05",
-                "prompt": "Un hexagono regular tiene lado \\(\\SI{4}{cm}\\). Halla su apotema."
+                "prompt": "Un hexagono regular tiene lado \\(\\SI{4}{cm}\\). Halla su apotema.",
+                "answerHtml": "<p>\\(2\\sqrt{3}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>En el triangulo central, la apotema es \\(4\\cos 30^\\circ=2\\sqrt{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S02-06",
-                "prompt": "Un rectangulo tiene diagonal \\(\\SI{10}{cm}\\) y la diagonal forma \\(30^\\circ\\) con la base. Halla las longitudes de base y altura."
+                "prompt": "Un rectangulo tiene diagonal \\(\\SI{10}{cm}\\) y la diagonal forma \\(30^\\circ\\) con la base. Halla las longitudes de base y altura.",
+                "answerHtml": "<p>Base: \\(5\\sqrt{3}\\,\\si{cm}\\). Altura: \\(\\SI{5}{cm}\\)</p>",
+                "solutionHtml": "<p>Base \\(=10\\cos 30^\\circ=5\\sqrt{3}\\) y altura \\(=10\\sen 30^\\circ=5\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Hipotenusa: \\(\\SI{8}{cm}\\). Otro cateto: \\(4\\sqrt{3}\\,\\si{cm}\\)</p></li><li><p>Catetos: \\(\\SI{6}{cm}\\) y \\(6\\sqrt{3}\\,\\si{cm}\\)</p></li><li><p>\\(10\\sqrt{3}\\,\\si{cm}\\)</p></li><li><p>\\(\\SI{8}{cm}\\) y \\(8\\sqrt{3}\\,\\si{cm}\\)</p></li><li><p>\\(2\\sqrt{3}\\,\\si{cm}\\)</p></li><li><p>Base: \\(5\\sqrt{3}\\,\\si{cm}\\). Altura: \\(\\SI{5}{cm}\\)</p></li></ol>",
@@ -3320,27 +3752,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S03-01",
-                "prompt": "Calcula \\(\\cos 135^\\circ\\)."
+                "prompt": "Calcula \\(\\cos 135^\\circ\\).",
+                "answerHtml": "<p>\\(-\\frac{\\sqrt{2}}{2}\\)</p>",
+                "solutionHtml": "<p>\\(\\cos 135^\\circ=\\cos(180^\\circ-45^\\circ)=-\\cos 45^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S03-02",
-                "prompt": "Calcula \\(\\sen 225^\\circ\\)."
+                "prompt": "Calcula \\(\\sen 225^\\circ\\).",
+                "answerHtml": "<p>\\(-\\frac{\\sqrt{2}}{2}\\)</p>",
+                "solutionHtml": "<p>\\(\\sen 225^\\circ=\\sen(180^\\circ+45^\\circ)=-\\sen 45^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S03-03",
-                "prompt": "Calcula \\(\\tg 150^\\circ\\)."
+                "prompt": "Calcula \\(\\tg 150^\\circ\\).",
+                "answerHtml": "<p>\\(-\\frac{\\sqrt{3}}{3}\\)</p>",
+                "solutionHtml": "<p>\\(\\tg 150^\\circ=\\tg(180^\\circ-30^\\circ)=-\\tg 30^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S03-04",
-                "prompt": "Calcula \\(\\cos 330^\\circ\\)."
+                "prompt": "Calcula \\(\\cos 330^\\circ\\).",
+                "answerHtml": "<p>\\(\\frac{\\sqrt{3}}{2}\\)</p>",
+                "solutionHtml": "<p>\\(\\cos 330^\\circ=\\cos(360^\\circ-30^\\circ)=\\cos 30^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S03-05",
-                "prompt": "Calcula \\(\\sen 600^\\circ\\)."
+                "prompt": "Calcula \\(\\sen 600^\\circ\\).",
+                "answerHtml": "<p>\\(-\\frac{\\sqrt{3}}{2}\\)</p>",
+                "solutionHtml": "<p>\\(600^\\circ=240^\\circ\\), luego \\(\\sen 600^\\circ=\\sen 240^\\circ=-\\sen 60^\\circ\\).</p>"
               },
               {
                 "tagId": "PX-C05.S03-06",
-                "prompt": "Calcula \\(\\tg 210^\\circ\\)."
+                "prompt": "Calcula \\(\\tg 210^\\circ\\).",
+                "answerHtml": "<p>\\(\\frac{\\sqrt{3}}{3}\\)</p>",
+                "solutionHtml": "<p>\\(\\tg 210^\\circ=\\tg(180^\\circ+30^\\circ)=\\tg 30^\\circ\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(-\\frac{\\sqrt{2}}{2}\\)</p></li><li><p>\\(-\\frac{\\sqrt{2}}{2}\\)</p></li><li><p>\\(-\\frac{\\sqrt{3}}{3}\\)</p></li><li><p>\\(\\frac{\\sqrt{3}}{2}\\)</p></li><li><p>\\(-\\frac{\\sqrt{3}}{2}\\)</p></li><li><p>\\(\\frac{\\sqrt{3}}{3}\\)</p></li></ol>",
@@ -3409,27 +3853,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S04-01",
-                "prompt": "Si \\(\\cos x=\\frac{5}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\sen x\\) y \\(\\tg x\\)."
+                "prompt": "Si \\(\\cos x=\\frac{5}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\sen x\\) y \\(\\tg x\\).",
+                "answerHtml": "<p>\\(\\sen x=\\frac{12}{13}\\), \\(\\tg x=\\frac{12}{5}\\)</p>",
+                "solutionHtml": "<p>Es un triangulo \\(5\\)-\\(12\\)-\\(13\\), todo positivo en el primer cuadrante.</p>"
               },
               {
                 "tagId": "PX-C05.S04-02",
-                "prompt": "Si \\(\\sen x=-\\frac{4}{5}\\) y \\(x\\) esta en el cuarto cuadrante, calcula \\(\\cos x\\) y \\(\\tg x\\)."
+                "prompt": "Si \\(\\sen x=-\\frac{4}{5}\\) y \\(x\\) esta en el cuarto cuadrante, calcula \\(\\cos x\\) y \\(\\tg x\\).",
+                "answerHtml": "<p>\\(\\cos x=\\frac{3}{5}\\), \\(\\tg x=-\\frac{4}{3}\\)</p>",
+                "solutionHtml": "<p>Si el seno es \\(-\\frac{4}{5}\\), el coseno tiene modulo \\(\\frac{3}{5}\\) y es positivo.</p>"
               },
               {
                 "tagId": "PX-C05.S04-03",
-                "prompt": "Si \\(\\tg x=\\frac{3}{4}\\) y \\(x\\) esta en el tercer cuadrante, calcula \\(\\sen x\\) y \\(\\cos x\\)."
+                "prompt": "Si \\(\\tg x=\\frac{3}{4}\\) y \\(x\\) esta en el tercer cuadrante, calcula \\(\\sen x\\) y \\(\\cos x\\).",
+                "answerHtml": "<p>\\(\\sen x=-\\frac{3}{5}\\), \\(\\cos x=-\\frac{4}{5}\\)</p>",
+                "solutionHtml": "<p>Para \\(\\tg x=\\frac{3}{4}\\) en el tercer cuadrante, seno y coseno son negativos.</p>"
               },
               {
                 "tagId": "PX-C05.S04-04",
-                "prompt": "Si \\(\\cos x=-\\frac{8}{17}\\) y \\(x\\) esta en el segundo cuadrante, calcula \\(\\sen x\\) y \\(\\tg x\\)."
+                "prompt": "Si \\(\\cos x=-\\frac{8}{17}\\) y \\(x\\) esta en el segundo cuadrante, calcula \\(\\sen x\\) y \\(\\tg x\\).",
+                "answerHtml": "<p>\\(\\sen x=\\frac{15}{17}\\), \\(\\tg x=-\\frac{15}{8}\\)</p>",
+                "solutionHtml": "<p>Es un triangulo \\(8\\)-\\(15\\)-\\(17\\) y en el segundo cuadrante la tangente es negativa.</p>"
               },
               {
                 "tagId": "PX-C05.S04-05",
-                "prompt": "Si \\(\\sen x=\\frac{12}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\cos x\\) y \\(\\tg x\\)."
+                "prompt": "Si \\(\\sen x=\\frac{12}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\cos x\\) y \\(\\tg x\\).",
+                "answerHtml": "<p>\\(\\cos x=\\frac{5}{13}\\), \\(\\tg x=\\frac{12}{5}\\)</p>",
+                "solutionHtml": "<p>El cateto restante vale \\(5\\), con todo positivo.</p>"
               },
               {
                 "tagId": "PX-C05.S04-06",
-                "prompt": "Si \\(\\tg x=-1\\) y \\(x\\) esta en el segundo cuadrante, calcula \\(\\sen x\\) y \\(\\cos x\\)."
+                "prompt": "Si \\(\\tg x=-1\\) y \\(x\\) esta en el segundo cuadrante, calcula \\(\\sen x\\) y \\(\\cos x\\).",
+                "answerHtml": "<p>\\(\\sen x=\\frac{\\sqrt{2}}{2}\\), \\(\\cos x=-\\frac{\\sqrt{2}}{2}\\)</p>",
+                "solutionHtml": "<p>Si \\(|\\tg x|=1\\), los catetos tienen igual modulo. En el segundo cuadrante el seno es positivo y el coseno negativo.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\sen x=\\frac{12}{13}\\), \\(\\tg x=\\frac{12}{5}\\)</p></li><li><p>\\(\\cos x=\\frac{3}{5}\\), \\(\\tg x=-\\frac{4}{3}\\)</p></li><li><p>\\(\\sen x=-\\frac{3}{5}\\), \\(\\cos x=-\\frac{4}{5}\\)</p></li><li><p>\\(\\sen x=\\frac{15}{17}\\), \\(\\tg x=-\\frac{15}{8}\\)</p></li><li><p>\\(\\cos x=\\frac{5}{13}\\), \\(\\tg x=\\frac{12}{5}\\)</p></li><li><p>\\(\\sen x=\\frac{\\sqrt{2}}{2}\\), \\(\\cos x=-\\frac{\\sqrt{2}}{2}\\)</p></li></ol>",
@@ -3498,27 +3954,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S05-01",
-                "prompt": "Si \\(\\cos x=\\frac{12}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\sen 2x\\)."
+                "prompt": "Si \\(\\cos x=\\frac{12}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\sen 2x\\).",
+                "answerHtml": "<p>\\(\\frac{120}{169}\\)</p>",
+                "solutionHtml": "<p>El seno vale \\(\\frac{5}{13}\\). Luego \\(\\sen 2x=2\\cdot \\frac{5}{13}\\cdot \\frac{12}{13}=\\frac{120}{169}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S05-02",
-                "prompt": "Si \\(\\sen x=\\frac{5}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\cos 2x\\)."
+                "prompt": "Si \\(\\sen x=\\frac{5}{13}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\cos 2x\\).",
+                "answerHtml": "<p>\\(\\frac{119}{169}\\)</p>",
+                "solutionHtml": "<p>\\(\\cos 2x=1-2\\sen^2 x=1-2\\cdot \\frac{25}{169}=\\frac{119}{169}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S05-03",
-                "prompt": "Simplifica \\(\\sen(\\pi-x)\\)."
+                "prompt": "Simplifica \\(\\sen(\\pi-x)\\).",
+                "answerHtml": "<p>\\(\\sen x\\)</p>",
+                "solutionHtml": "<p>\\(\\sen(\\pi-x)=\\sen x\\).</p>"
               },
               {
                 "tagId": "PX-C05.S05-04",
-                "prompt": "Simplifica \\(\\cos(\\pi+x)\\)."
+                "prompt": "Simplifica \\(\\cos(\\pi+x)\\).",
+                "answerHtml": "<p>\\(-\\cos x\\)</p>",
+                "solutionHtml": "<p>\\(\\cos(\\pi+x)=-\\cos x\\).</p>"
               },
               {
                 "tagId": "PX-C05.S05-05",
-                "prompt": "Si \\(\\tg x=\\frac{3}{4}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\tg 2x\\)."
+                "prompt": "Si \\(\\tg x=\\frac{3}{4}\\) y \\(x\\) esta en el primer cuadrante, calcula \\(\\tg 2x\\).",
+                "answerHtml": "<p>\\(\\frac{24}{7}\\)</p>",
+                "solutionHtml": "<p>\\(\\tg 2x=\\frac{2\\tg x}{1-\\tg^2 x}=\\frac{2\\cdot 3/4}{1-9/16}=\\frac{24}{7}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S05-06",
-                "prompt": "Si \\(\\sen x=\\frac{3}{5}\\) y \\(x\\) esta en el segundo cuadrante, calcula \\(\\cos 2x\\)."
+                "prompt": "Si \\(\\sen x=\\frac{3}{5}\\) y \\(x\\) esta en el segundo cuadrante, calcula \\(\\cos 2x\\).",
+                "answerHtml": "<p>\\(\\frac{7}{25}\\)</p>",
+                "solutionHtml": "<p>Aunque \\(\\cos x\\) sea negativo en el segundo cuadrante, \\(\\cos 2x\\) depende de los cuadrados: \\(\\cos 2x=\\frac{16}{25}-\\frac{9}{25}=\\frac{7}{25}\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\frac{120}{169}\\)</p></li><li><p>\\(\\frac{119}{169}\\)</p></li><li><p>\\(\\sen x\\)</p></li><li><p>\\(-\\cos x\\)</p></li><li><p>\\(\\frac{24}{7}\\)</p></li><li><p>\\(\\frac{7}{25}\\)</p></li></ol>",
@@ -3587,27 +4055,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S06-01",
-                "prompt": "Resuelve \\(\\cos x=0\\)."
+                "prompt": "Resuelve \\(\\cos x=0\\).",
+                "answerHtml": "<p>\\(x=\\frac{\\pi}{2}+k\\pi\\)</p>",
+                "solutionHtml": "<p>En \\([0,2\\pi)\\), las soluciones son \\(\\frac{\\pi}{2}\\) y \\(\\frac{3\\pi}{2}\\), que se agrupan como \\(\\frac{\\pi}{2}+k\\pi\\).</p>"
               },
               {
                 "tagId": "PX-C05.S06-02",
-                "prompt": "Resuelve \\(\\tg x=1\\)."
+                "prompt": "Resuelve \\(\\tg x=1\\).",
+                "answerHtml": "<p>\\(x=\\frac{\\pi}{4}+k\\pi\\)</p>",
+                "solutionHtml": "<p>La tangente vale \\(1\\) en \\(\\frac{\\pi}{4}\\) y repite cada \\(\\pi\\).</p>"
               },
               {
                 "tagId": "PX-C05.S06-03",
-                "prompt": "Resuelve \\(\\sen x=-1\\)."
+                "prompt": "Resuelve \\(\\sen x=-1\\).",
+                "answerHtml": "<p>\\(x=\\frac{3\\pi}{2}+2k\\pi\\)</p>",
+                "solutionHtml": "<p>El seno solo vale \\(-1\\) en \\(\\frac{3\\pi}{2}\\) mas vueltas completas.</p>"
               },
               {
                 "tagId": "PX-C05.S06-04",
-                "prompt": "Resuelve \\(\\cos x=\\frac{\\sqrt{2}}{2}\\)."
+                "prompt": "Resuelve \\(\\cos x=\\frac{\\sqrt{2}}{2}\\).",
+                "answerHtml": "<p>\\(x=\\frac{\\pi}{4}+2k\\pi\\) o \\(x=\\frac{7\\pi}{4}+2k\\pi\\)</p>",
+                "solutionHtml": "<p>El coseno es \\(\\frac{\\sqrt{2}}{2}\\) en los cuadrantes I y IV.</p>"
               },
               {
                 "tagId": "PX-C05.S06-05",
-                "prompt": "Resuelve \\(\\sen x=\\frac{\\sqrt{3}}{2}\\)."
+                "prompt": "Resuelve \\(\\sen x=\\frac{\\sqrt{3}}{2}\\).",
+                "answerHtml": "<p>\\(x=\\frac{\\pi}{3}+2k\\pi\\) o \\(x=\\frac{2\\pi}{3}+2k\\pi\\)</p>",
+                "solutionHtml": "<p>El seno es \\(\\frac{\\sqrt{3}}{2}\\) en los cuadrantes I y II.</p>"
               },
               {
                 "tagId": "PX-C05.S06-06",
-                "prompt": "Resuelve \\(\\tg x=-\\sqrt{3}\\)."
+                "prompt": "Resuelve \\(\\tg x=-\\sqrt{3}\\).",
+                "answerHtml": "<p>\\(x=-\\frac{\\pi}{3}+k\\pi\\)</p>",
+                "solutionHtml": "<p>La tangente vale \\(-\\sqrt{3}\\) con angulo de referencia \\(\\frac{\\pi}{3}\\) y periodo \\(\\pi\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=\\frac{\\pi}{2}+k\\pi\\)</p></li><li><p>\\(x=\\frac{\\pi}{4}+k\\pi\\)</p></li><li><p>\\(x=\\frac{3\\pi}{2}+2k\\pi\\)</p></li><li><p>\\(x=\\frac{\\pi}{4}+2k\\pi\\) o \\(x=\\frac{7\\pi}{4}+2k\\pi\\)</p></li><li><p>\\(x=\\frac{\\pi}{3}+2k\\pi\\) o \\(x=\\frac{2\\pi}{3}+2k\\pi\\)</p></li><li><p>\\(x=-\\frac{\\pi}{3}+k\\pi\\)</p></li></ol>",
@@ -3676,27 +4156,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S07-01",
-                "prompt": "En un triangulo \\(A=45^\\circ\\), \\(B=45^\\circ\\) y \\(a=\\SI{4}{cm}\\). Halla \\(C\\), \\(b\\) y \\(c\\)."
+                "prompt": "En un triangulo \\(A=45^\\circ\\), \\(B=45^\\circ\\) y \\(a=\\SI{4}{cm}\\). Halla \\(C\\), \\(b\\) y \\(c\\).",
+                "answerHtml": "<p>\\(C=90^\\circ\\), \\(b=\\SI{4}{cm}\\), \\(c=4\\sqrt{2}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>Es un triangulo isosceles rectangulo: \\(b=a=4\\) y \\(c=4\\sqrt{2}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S07-02",
-                "prompt": "En un triangulo \\(A=30^\\circ\\), \\(C=90^\\circ\\) y \\(a=\\SI{3}{cm}\\). Halla \\(B\\), \\(b\\) y \\(c\\)."
+                "prompt": "En un triangulo \\(A=30^\\circ\\), \\(C=90^\\circ\\) y \\(a=\\SI{3}{cm}\\). Halla \\(B\\), \\(b\\) y \\(c\\).",
+                "answerHtml": "<p>\\(B=60^\\circ\\), \\(b=3\\sqrt{3}\\,\\si{cm}\\), \\(c=\\SI{6}{cm}\\)</p>",
+                "solutionHtml": "<p>\\(B=60^\\circ\\). Con el teorema del seno, \\(\\frac{3}{\\sen 30^\\circ}=6\\), luego \\(b=6\\sen 60^\\circ=3\\sqrt{3}\\) y \\(c=6\\).</p>"
               },
               {
                 "tagId": "PX-C05.S07-03",
-                "prompt": "Un triangulo rectangulo tiene catetos \\(\\SI{6}{cm}\\) y \\(\\SI{8}{cm}\\). Halla la hipotenusa."
+                "prompt": "Un triangulo rectangulo tiene catetos \\(\\SI{6}{cm}\\) y \\(\\SI{8}{cm}\\). Halla la hipotenusa.",
+                "answerHtml": "<p>\\(\\SI{10}{cm}\\)</p>",
+                "solutionHtml": "<p>Por Pitagoras, \\(\\sqrt{6^2+8^2}=10\\).</p>"
               },
               {
                 "tagId": "PX-C05.S07-04",
-                "prompt": "En un triangulo, \\(a=\\SI{5}{cm}\\), \\(b=\\SI{5}{cm}\\) y \\(C=60^\\circ\\). Halla \\(c\\)."
+                "prompt": "En un triangulo, \\(a=\\SI{5}{cm}\\), \\(b=\\SI{5}{cm}\\) y \\(C=60^\\circ\\). Halla \\(c\\).",
+                "answerHtml": "<p>\\(\\SI{5}{cm}\\)</p>",
+                "solutionHtml": "<p>Teorema del coseno: \\(c^2=25+25-50\\cos 60^\\circ=25\\).</p>"
               },
               {
                 "tagId": "PX-C05.S07-05",
-                "prompt": "En un triangulo \\(A=30^\\circ\\), \\(B=60^\\circ\\) y \\(a=\\SI{4}{cm}\\). Halla \\(C\\), \\(b\\) y \\(c\\)."
+                "prompt": "En un triangulo \\(A=30^\\circ\\), \\(B=60^\\circ\\) y \\(a=\\SI{4}{cm}\\). Halla \\(C\\), \\(b\\) y \\(c\\).",
+                "answerHtml": "<p>\\(C=90^\\circ\\), \\(b=4\\sqrt{3}\\,\\si{cm}\\), \\(c=\\SI{8}{cm}\\)</p>",
+                "solutionHtml": "<p>Igual que el ejemplo, pero escalado: \\(C=90^\\circ\\), \\(b=4\\sqrt{3}\\), \\(c=8\\).</p>"
               },
               {
                 "tagId": "PX-C05.S07-06",
-                "prompt": "En un triangulo rectangulo, la hipotenusa mide \\(\\SI{2}{cm}\\) y uno de los angulos agudos es \\(60^\\circ\\). Halla los catetos."
+                "prompt": "En un triangulo rectangulo, la hipotenusa mide \\(\\SI{2}{cm}\\) y uno de los angulos agudos es \\(60^\\circ\\). Halla los catetos.",
+                "answerHtml": "<p>Catetos: \\(\\SI{1}{cm}\\) y \\(\\sqrt{3}\\,\\si{cm}\\)</p>",
+                "solutionHtml": "<p>El cateto opuesto a \\(60^\\circ\\) vale \\(2\\sen 60^\\circ=\\sqrt{3}\\) y el contiguo \\(2\\cos 60^\\circ=1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(C=90^\\circ\\), \\(b=\\SI{4}{cm}\\), \\(c=4\\sqrt{2}\\,\\si{cm}\\)</p></li><li><p>\\(B=60^\\circ\\), \\(b=3\\sqrt{3}\\,\\si{cm}\\), \\(c=\\SI{6}{cm}\\)</p></li><li><p>\\(\\SI{10}{cm}\\)</p></li><li><p>\\(\\SI{5}{cm}\\)</p></li><li><p>\\(C=90^\\circ\\), \\(b=4\\sqrt{3}\\,\\si{cm}\\), \\(c=\\SI{8}{cm}\\)</p></li><li><p>Catetos: \\(\\SI{1}{cm}\\) y \\(\\sqrt{3}\\,\\si{cm}\\)</p></li></ol>",
@@ -3765,27 +4257,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C05.S08-01",
-                "prompt": "Desde un punto a \\(\\SI{12}{m}\\) de un poste se observa la parte alta con un angulo de \\(45^\\circ\\). Halla la altura del poste."
+                "prompt": "Desde un punto a \\(\\SI{12}{m}\\) de un poste se observa la parte alta con un angulo de \\(45^\\circ\\). Halla la altura del poste.",
+                "answerHtml": "<p>\\(\\SI{12}{m}\\)</p>",
+                "solutionHtml": "<p>Igual que en el guiado: \\(\\tg 45^\\circ=\\frac{h}{12}\\), luego \\(h=12\\).</p>"
               },
               {
                 "tagId": "PX-C05.S08-02",
-                "prompt": "Dos puntos alineados con la base de un edificio estan separados \\(\\SI{30}{m}\\). Los angulos de elevacion a la azotea son \\(60^\\circ\\) y \\(30^\\circ\\). Halla la altura del edificio."
+                "prompt": "Dos puntos alineados con la base de un edificio estan separados \\(\\SI{30}{m}\\). Los angulos de elevacion a la azotea son \\(60^\\circ\\) y \\(30^\\circ\\). Halla la altura del edificio.",
+                "answerHtml": "<p>\\(15\\sqrt{3}\\,\\si{m}\\)</p>",
+                "solutionHtml": "<p>Si \\(x\\) es la distancia al punto cercano, \\(\\tg 60^\\circ=\\frac{h}{x}\\) y \\(\\tg 30^\\circ=\\frac{h}{x+30}\\). Sale \\(x=15\\) y por tanto \\(h=15\\sqrt{3}\\).</p>"
               },
               {
                 "tagId": "PX-C05.S08-03",
-                "prompt": "Dos barcos parten del mismo puerto. Tras cierto tiempo estan a \\(\\SI{20}{km}\\) y \\(\\SI{30}{km}\\) del puerto, con un angulo de \\(60^\\circ\\) entre sus rumbos. Halla la distancia entre ellos."
+                "prompt": "Dos barcos parten del mismo puerto. Tras cierto tiempo estan a \\(\\SI{20}{km}\\) y \\(\\SI{30}{km}\\) del puerto, con un angulo de \\(60^\\circ\\) entre sus rumbos. Halla la distancia entre ellos.",
+                "answerHtml": "<p>\\(10\\sqrt{7}\\,\\si{km}\\)</p>",
+                "solutionHtml": "<p>Por el teorema del coseno:</p><div class=\"math-display\">\\[\n  d^2=20^2+30^2-2\\cdot 20\\cdot 30\\cos 60^\\circ=700.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C05.S08-04",
-                "prompt": "En un parque triangular, dos lados miden \\(\\SI{6}{m}\\) y \\(\\SI{10}{m}\\), y el angulo comprendido es \\(120^\\circ\\). Halla el tercer lado."
+                "prompt": "En un parque triangular, dos lados miden \\(\\SI{6}{m}\\) y \\(\\SI{10}{m}\\), y el angulo comprendido es \\(120^\\circ\\). Halla el tercer lado.",
+                "answerHtml": "<p>\\(\\SI{14}{m}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  c^2=6^2+10^2-2\\cdot 6\\cdot 10\\cos 120^\\circ=36+100+60=196.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C05.S08-05",
-                "prompt": "Un jugador esta a \\(\\SI{5}{m}\\) de un poste y a \\(\\SI{8}{m}\\) del otro. Si la distancia entre postes es \\(\\SI{7}{m}\\), halla el angulo con el que ve la porteria."
+                "prompt": "Un jugador esta a \\(\\SI{5}{m}\\) de un poste y a \\(\\SI{8}{m}\\) del otro. Si la distancia entre postes es \\(\\SI{7}{m}\\), halla el angulo con el que ve la porteria.",
+                "answerHtml": "<p>\\(60^\\circ\\)</p>",
+                "solutionHtml": "<p>El angulo \\(\\theta\\) verifica</p><div class=\"math-display\">\\[\n  \\cos\\theta=\\frac{5^2+8^2-7^2}{2\\cdot 5\\cdot 8}=\\frac{1}{2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C05.S08-06",
-                "prompt": "Un cable llega a la parte alta de una pared de \\(\\SI{12}{m}\\) y forma \\(30^\\circ\\) con el suelo. Halla la longitud del cable."
+                "prompt": "Un cable llega a la parte alta de una pared de \\(\\SI{12}{m}\\) y forma \\(30^\\circ\\) con el suelo. Halla la longitud del cable.",
+                "answerHtml": "<p>\\(\\SI{24}{m}\\)</p>",
+                "solutionHtml": "<p>Si el cable forma \\(30^\\circ\\) con el suelo, entonces</p><div class=\"math-display\">\\[\n  \\sen 30^\\circ=\\frac{12}{L}=\\frac{1}{2},\n  \\]</div><p>y por tanto \\(L=24\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\SI{12}{m}\\)</p></li><li><p>\\(15\\sqrt{3}\\,\\si{m}\\)</p></li><li><p>\\(10\\sqrt{7}\\,\\si{km}\\)</p></li><li><p>\\(\\SI{14}{m}\\)</p></li><li><p>\\(60^\\circ\\)</p></li><li><p>\\(\\SI{24}{m}\\)</p></li></ol>",
@@ -3864,27 +4368,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C06.S01-01",
-                "prompt": "Decide si \\((1,0)\\) y \\((0,1)\\) forman base de \\(\\R^2\\)."
+                "prompt": "Decide si \\((1,0)\\) y \\((0,1)\\) forman base de \\(\\R^2\\).",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>El determinante vale \\(1\\), luego si forman base.</p>"
               },
               {
                 "tagId": "PX-C06.S01-02",
-                "prompt": "Decide si \\((1,3)\\) y \\((2,6)\\) forman base de \\(\\R^2\\)."
+                "prompt": "Decide si \\((1,3)\\) y \\((2,6)\\) forman base de \\(\\R^2\\).",
+                "answerHtml": "<p>No</p>",
+                "solutionHtml": "<p>\\((2,6)=2(1,3)\\), asi que no forman base.</p>"
               },
               {
                 "tagId": "PX-C06.S01-03",
-                "prompt": "Halla \\(k\\) para que \\((1,2)\\) y \\((k,6)\\) sean dependientes."
+                "prompt": "Halla \\(k\\) para que \\((1,2)\\) y \\((k,6)\\) sean dependientes.",
+                "answerHtml": "<p>\\(k=3\\)</p>",
+                "solutionHtml": "<p>La dependencia exige \\(6=2k\\), luego \\(k=3\\).</p>"
               },
               {
                 "tagId": "PX-C06.S01-04",
-                "prompt": "Halla el valor de \\(a\\) para que \\((a,1)\\) y \\((2,3)\\) no formen base."
+                "prompt": "Halla el valor de \\(a\\) para que \\((a,1)\\) y \\((2,3)\\) no formen base.",
+                "answerHtml": "<p>\\(a=\\frac{2}{3}\\)</p>",
+                "solutionHtml": "<p>El determinante es \\(3a-2\\). Para que no formen base debe anularse.</p>"
               },
               {
                 "tagId": "PX-C06.S01-05",
-                "prompt": "Expresa \\((5,1)\\) en la base \\(u=(1,1)\\), \\(v=(2,-1)\\)."
+                "prompt": "Expresa \\((5,1)\\) en la base \\(u=(1,1)\\), \\(v=(2,-1)\\).",
+                "answerHtml": "<p>\\((5,1)=\\frac{7}{3}u+\\frac{4}{3}v\\)</p>",
+                "solutionHtml": "<p>Buscando \\(a\\) y \\(b\\),</p><div class=\"math-display\">\\[\n  \\begin{cases}\n  a+2b=5,\\\\\n  a-b=1,\n  \\end{cases}\n  \\]</div><p>de donde \\(b=\\frac{4}{3}\\) y \\(a=\\frac{7}{3}\\).</p>"
               },
               {
                 "tagId": "PX-C06.S01-06",
-                "prompt": "Decide si \\((0,1)\\) y \\((2,0)\\) forman base de \\(\\R^2\\)."
+                "prompt": "Decide si \\((0,1)\\) y \\((2,0)\\) forman base de \\(\\R^2\\).",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>El determinante vale \\(-2\\), distinto de cero.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Si</p></li><li><p>No</p></li><li><p>\\(k=3\\)</p></li><li><p>\\(a=\\frac{2}{3}\\)</p></li><li><p>\\((5,1)=\\frac{7}{3}u+\\frac{4}{3}v\\)</p></li><li><p>Si</p></li></ol>",
@@ -3953,27 +4469,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C06.S02-01",
-                "prompt": "Si \\(u=(2,1)\\) y \\(v=(-1,4)\\), calcula \\(u+v\\)."
+                "prompt": "Si \\(u=(2,1)\\) y \\(v=(-1,4)\\), calcula \\(u+v\\).",
+                "answerHtml": "<p>\\((1,5)\\)</p>",
+                "solutionHtml": "<p>\\((2,1)+(-1,4)=(1,5)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S02-02",
-                "prompt": "Si \\(u=(5,0)\\) y \\(v=(2,-3)\\), calcula \\(u-v\\)."
+                "prompt": "Si \\(u=(5,0)\\) y \\(v=(2,-3)\\), calcula \\(u-v\\).",
+                "answerHtml": "<p>\\((3,3)\\)</p>",
+                "solutionHtml": "<p>\\((5,0)-(2,-3)=(3,3)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S02-03",
-                "prompt": "Si \\(u=(1,-2)\\), calcula \\(-3u\\)."
+                "prompt": "Si \\(u=(1,-2)\\), calcula \\(-3u\\).",
+                "answerHtml": "<p>\\((-3,6)\\)</p>",
+                "solutionHtml": "<p>\\(-3(1,-2)=(-3,6)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S02-04",
-                "prompt": "Si \\(u=(4,1)\\) y \\(v=(2,5)\\), calcula \\(\\frac{1}{2}(u+v)\\)."
+                "prompt": "Si \\(u=(4,1)\\) y \\(v=(2,5)\\), calcula \\(\\frac{1}{2}(u+v)\\).",
+                "answerHtml": "<p>\\((3,3)\\)</p>",
+                "solutionHtml": "<p>\\(\\frac{1}{2}(6,6)=(3,3)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S02-05",
-                "prompt": "Si \\(u=(3,-2)\\) y \\(v=(-1,1)\\), calcula \\(4u+v\\)."
+                "prompt": "Si \\(u=(3,-2)\\) y \\(v=(-1,1)\\), calcula \\(4u+v\\).",
+                "answerHtml": "<p>\\((11,-7)\\)</p>",
+                "solutionHtml": "<p>\\(4(3,-2)+(-1,1)=(12,-8)+(-1,1)=(11,-7)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S02-06",
-                "prompt": "Si \\(u=(2,3)\\) y \\(v=(4,-1)\\), calcula \\(v-2u\\)."
+                "prompt": "Si \\(u=(2,3)\\) y \\(v=(4,-1)\\), calcula \\(v-2u\\).",
+                "answerHtml": "<p>\\((0,-7)\\)</p>",
+                "solutionHtml": "<p>\\((4,-1)-(4,6)=(0,-7)\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((1,5)\\)</p></li><li><p>\\((3,3)\\)</p></li><li><p>\\((-3,6)\\)</p></li><li><p>\\((3,3)\\)</p></li><li><p>\\((11,-7)\\)</p></li><li><p>\\((0,-7)\\)</p></li></ol>",
@@ -4042,27 +4570,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C06.S03-01",
-                "prompt": "Halla el modulo de \\((3,4)\\)."
+                "prompt": "Halla el modulo de \\((3,4)\\).",
+                "answerHtml": "<p>\\(5\\)</p>",
+                "solutionHtml": "<p>\\(\\sqrt{3^2+4^2}=5\\).</p>"
               },
               {
                 "tagId": "PX-C06.S03-02",
-                "prompt": "Halla el argumento principal de \\((0,-2)\\)."
+                "prompt": "Halla el argumento principal de \\((0,-2)\\).",
+                "answerHtml": "<p>\\(\\frac{3\\pi}{2}\\)</p>",
+                "solutionHtml": "<p>El vector cae sobre el eje \\(Y\\) negativo.</p>"
               },
               {
                 "tagId": "PX-C06.S03-03",
-                "prompt": "Halla un vector unitario con la misma direccion y sentido que \\((0,5)\\)."
+                "prompt": "Halla un vector unitario con la misma direccion y sentido que \\((0,5)\\).",
+                "answerHtml": "<p>\\((0,1)\\)</p>",
+                "solutionHtml": "<p>\\((0,5)\\) dividido entre su modulo \\(5\\) da \\((0,1)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S03-04",
-                "prompt": "Halla \\(k>0\\) si el vector \\((k,4)\\) tiene modulo \\(5\\)."
+                "prompt": "Halla \\(k>0\\) si el vector \\((k,4)\\) tiene modulo \\(5\\).",
+                "answerHtml": "<p>\\(k=3\\)</p>",
+                "solutionHtml": "<p>Es el mismo calculo que en el guiado.</p>"
               },
               {
                 "tagId": "PX-C06.S03-05",
-                "prompt": "Halla un vector de modulo \\(2\\) y argumento \\(150^\\circ\\)."
+                "prompt": "Halla un vector de modulo \\(2\\) y argumento \\(150^\\circ\\).",
+                "answerHtml": "<p>\\((-\\sqrt{3},1)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  2(\\cos 150^\\circ,\\sen 150^\\circ)=2\\left(-\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)=(-\\sqrt{3},1).\n  \\]</div>"
               },
               {
                 "tagId": "PX-C06.S03-06",
-                "prompt": "Halla el modulo y el argumento principal de \\((-\\sqrt{3},1)\\)."
+                "prompt": "Halla el modulo y el argumento principal de \\((-\\sqrt{3},1)\\).",
+                "answerHtml": "<p>Modulo \\(2\\), argumento \\(\\frac{5\\pi}{6}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  |u|=\\sqrt{3+1}=2,\n  \\]</div><p>y el vector esta en el segundo cuadrante con referencia \\(\\frac{\\pi}{6}\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(5\\)</p></li><li><p>\\(\\frac{3\\pi}{2}\\)</p></li><li><p>\\((0,1)\\)</p></li><li><p>\\(k=3\\)</p></li><li><p>\\((-\\sqrt{3},1)\\)</p></li><li><p>Modulo \\(2\\), argumento \\(\\frac{5\\pi}{6}\\)</p></li></ol>",
@@ -4131,27 +4671,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C06.S04-01",
-                "prompt": "Calcula \\((2,3)\\cdot (1,-1)\\)."
+                "prompt": "Calcula \\((2,3)\\cdot (1,-1)\\).",
+                "answerHtml": "<p>\\(-1\\)</p>",
+                "solutionHtml": "<p>\\(2\\cdot 1+3\\cdot (-1)=-1\\).</p>"
               },
               {
                 "tagId": "PX-C06.S04-02",
-                "prompt": "Decide si \\((1,2)\\) y \\((2,-1)\\) son perpendiculares."
+                "prompt": "Decide si \\((1,2)\\) y \\((2,-1)\\) son perpendiculares.",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>El producto escalar es \\(0\\), luego si.</p>"
               },
               {
                 "tagId": "PX-C06.S04-03",
-                "prompt": "Halla el angulo entre \\((1,1)\\) y \\((1,-1)\\)."
+                "prompt": "Halla el angulo entre \\((1,1)\\) y \\((1,-1)\\).",
+                "answerHtml": "<p>\\(\\frac{\\pi}{2}\\)</p>",
+                "solutionHtml": "<p>El producto escalar vale \\(0\\), asi que el angulo es recto.</p>"
               },
               {
                 "tagId": "PX-C06.S04-04",
-                "prompt": "Halla el angulo entre \\((1,0)\\) y \\((1,\\sqrt{3})\\)."
+                "prompt": "Halla el angulo entre \\((1,0)\\) y \\((1,\\sqrt{3})\\).",
+                "answerHtml": "<p>\\(\\frac{\\pi}{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\cos \\theta=\\frac{1}{|(1,\\sqrt{3})|}=\\frac{1}{2},\n  \\]</div><p>y por tanto \\(\\theta=\\frac{\\pi}{3}\\).</p>"
               },
               {
                 "tagId": "PX-C06.S04-05",
-                "prompt": "Halla un vector de modulo \\(5\\), en el primer cuadrante, que forme \\(60^\\circ\\) con el eje \\(X\\)."
+                "prompt": "Halla un vector de modulo \\(5\\), en el primer cuadrante, que forme \\(60^\\circ\\) con el eje \\(X\\).",
+                "answerHtml": "<p>\\(\\left(\\frac{5}{2},\\frac{5\\sqrt{3}}{2}\\right)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  5(\\cos 60^\\circ,\\sen 60^\\circ)=\\left(\\frac{5}{2},\\frac{5\\sqrt{3}}{2}\\right).\n  \\]</div>"
               },
               {
                 "tagId": "PX-C06.S04-06",
-                "prompt": "Si \\(|u|=3\\), \\(|v|=4\\) y el angulo entre ellos es \\(60^\\circ\\), calcula \\(u\\cdot v\\)."
+                "prompt": "Si \\(|u|=3\\), \\(|v|=4\\) y el angulo entre ellos es \\(60^\\circ\\), calcula \\(u\\cdot v\\).",
+                "answerHtml": "<p>\\(6\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  u\\cdot v=|u|\\,|v|\\,\\cos 60^\\circ=3\\cdot 4\\cdot \\frac{1}{2}=6.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(-1\\)</p></li><li><p>Si</p></li><li><p>\\(\\frac{\\pi}{2}\\)</p></li><li><p>\\(\\frac{\\pi}{3}\\)</p></li><li><p>\\(\\left(\\frac{5}{2},\\frac{5\\sqrt{3}}{2}\\right)\\)</p></li><li><p>\\(6\\)</p></li></ol>",
@@ -4220,27 +4772,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C06.S05-01",
-                "prompt": "Decide la relacion entre \\((3,2)\\) y \\((6,4)\\)."
+                "prompt": "Decide la relacion entre \\((3,2)\\) y \\((6,4)\\).",
+                "answerHtml": "<p>Paralelos</p>",
+                "solutionHtml": "<p>\\((6,4)=2(3,2)\\), luego son paralelos.</p>"
               },
               {
                 "tagId": "PX-C06.S05-02",
-                "prompt": "Decide la relacion entre \\((1,3)\\) y \\((3,-1)\\)."
+                "prompt": "Decide la relacion entre \\((1,3)\\) y \\((3,-1)\\).",
+                "answerHtml": "<p>Perpendiculares</p>",
+                "solutionHtml": "<p>\\(1\\cdot 3+3\\cdot (-1)=0\\), luego son perpendiculares.</p>"
               },
               {
                 "tagId": "PX-C06.S05-03",
-                "prompt": "Decide si \\(A(0,1)\\), \\(B(2,3)\\) y \\(C(4,5)\\) estan alineados."
+                "prompt": "Decide si \\(A(0,1)\\), \\(B(2,3)\\) y \\(C(4,5)\\) estan alineados.",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>\\(\\overrightarrow{AB}=(2,2)\\) y \\(\\overrightarrow{AC}=(4,4)\\), luego si.</p>"
               },
               {
                 "tagId": "PX-C06.S05-04",
-                "prompt": "Decide si \\(A(1,1)\\), \\(B(2,4)\\) y \\(C(4,5)\\) estan alineados."
+                "prompt": "Decide si \\(A(1,1)\\), \\(B(2,4)\\) y \\(C(4,5)\\) estan alineados.",
+                "answerHtml": "<p>No</p>",
+                "solutionHtml": "<p>\\(\\overrightarrow{AB}=(1,3)\\) y \\(\\overrightarrow{AC}=(3,4)\\) no son paralelos.</p>"
               },
               {
                 "tagId": "PX-C06.S05-05",
-                "prompt": "Halla \\(k\\) para que \\((k,2)\\) sea perpendicular a \\((1,-4)\\)."
+                "prompt": "Halla \\(k\\) para que \\((k,2)\\) sea perpendicular a \\((1,-4)\\).",
+                "answerHtml": "<p>\\(k=8\\)</p>",
+                "solutionHtml": "<p>\\(k\\cdot 1+2\\cdot (-4)=0\\), de donde \\(k=8\\).</p>"
               },
               {
                 "tagId": "PX-C06.S05-06",
-                "prompt": "Halla \\(k\\) para que \\((2,k)\\) sea paralelo a \\((6,9)\\)."
+                "prompt": "Halla \\(k\\) para que \\((2,k)\\) sea paralelo a \\((6,9)\\).",
+                "answerHtml": "<p>\\(k=3\\)</p>",
+                "solutionHtml": "<p>La razon de proporcionalidad es \\(3\\), asi que \\(k=3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Paralelos</p></li><li><p>Perpendiculares</p></li><li><p>Si</p></li><li><p>No</p></li><li><p>\\(k=8\\)</p></li><li><p>\\(k=3\\)</p></li></ol>",
@@ -4309,27 +4873,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C06.S06-01",
-                "prompt": "Halla el cuarto vertice del paralelogramo con \\(A(0,0)\\), \\(B(3,1)\\) y \\(D(1,4)\\)."
+                "prompt": "Halla el cuarto vertice del paralelogramo con \\(A(0,0)\\), \\(B(3,1)\\) y \\(D(1,4)\\).",
+                "answerHtml": "<p>\\(C(4,5)\\)</p>",
+                "solutionHtml": "<p>\\(C=B+D-A=(3,1)+(1,4)=(4,5)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S06-02",
-                "prompt": "Traslada el punto \\(P(2,-1)\\) con el vector \\((-3,4)\\)."
+                "prompt": "Traslada el punto \\(P(2,-1)\\) con el vector \\((-3,4)\\).",
+                "answerHtml": "<p>\\(P'(-1,3)\\)</p>",
+                "solutionHtml": "<p>\\(P'=P+(-3,4)=(-1,3)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S06-03",
-                "prompt": "Halla el punto medio del segmento con extremos \\(A(1,5)\\) y \\(B(7,-1)\\)."
+                "prompt": "Halla el punto medio del segmento con extremos \\(A(1,5)\\) y \\(B(7,-1)\\).",
+                "answerHtml": "<p>\\(M(4,2)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  M\\left(\\frac{1+7}{2},\\frac{5+(-1)}{2}\\right)=(4,2).\n  \\]</div>"
               },
               {
                 "tagId": "PX-C06.S06-04",
-                "prompt": "Si \\(M(3,2)\\) es el punto medio de \\(A(1,0)\\) y \\(B\\), halla \\(B\\)."
+                "prompt": "Si \\(M(3,2)\\) es el punto medio de \\(A(1,0)\\) y \\(B\\), halla \\(B\\).",
+                "answerHtml": "<p>\\(B(5,4)\\)</p>",
+                "solutionHtml": "<p>De la formula del punto medio:</p><div class=\"math-display\">\\[\n  \\frac{1+x_B}{2}=3,\\qquad \\frac{0+y_B}{2}=2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C06.S06-05",
-                "prompt": "Si \\(A(1,-1)\\) y \\(\\overrightarrow{AB}=(2,5)\\), halla \\(B\\)."
+                "prompt": "Si \\(A(1,-1)\\) y \\(\\overrightarrow{AB}=(2,5)\\), halla \\(B\\).",
+                "answerHtml": "<p>\\(B(3,4)\\)</p>",
+                "solutionHtml": "<p>\\(B=A+\\overrightarrow{AB}=(1,-1)+(2,5)=(3,4)\\).</p>"
               },
               {
                 "tagId": "PX-C06.S06-06",
-                "prompt": "En el paralelogramo \\(ABCD\\), se conocen \\(A(2,1)\\), \\(B(5,3)\\) y \\(C(7,6)\\). Halla \\(D\\)."
+                "prompt": "En el paralelogramo \\(ABCD\\), se conocen \\(A(2,1)\\), \\(B(5,3)\\) y \\(C(7,6)\\). Halla \\(D\\).",
+                "answerHtml": "<p>\\(D(4,4)\\)</p>",
+                "solutionHtml": "<p>En un paralelogramo,</p><div class=\"math-display\">\\[\n  D=A+C-B=(2,1)+(7,6)-(5,3)=(4,4).\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(C(4,5)\\)</p></li><li><p>\\(P'(-1,3)\\)</p></li><li><p>\\(M(4,2)\\)</p></li><li><p>\\(B(5,4)\\)</p></li><li><p>\\(B(3,4)\\)</p></li><li><p>\\(D(4,4)\\)</p></li></ol>",
@@ -4408,27 +4984,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S01-01",
-                "prompt": "Halla la ecuacion de la recta que pasa por \\((2,1)\\) y \\((2,5)\\)."
+                "prompt": "Halla la ecuacion de la recta que pasa por \\((2,1)\\) y \\((2,5)\\).",
+                "answerHtml": "<p>\\(x=2\\)</p>",
+                "solutionHtml": "<p>Es una recta vertical, luego \\(x=2\\).</p>"
               },
               {
                 "tagId": "PX-C07.S01-02",
-                "prompt": "Halla la ecuacion de la recta que pasa por \\((0,-1)\\) y tiene pendiente \\(3\\)."
+                "prompt": "Halla la ecuacion de la recta que pasa por \\((0,-1)\\) y tiene pendiente \\(3\\).",
+                "answerHtml": "<p>\\(y=3x-1\\)</p>",
+                "solutionHtml": "<p>Con pendiente \\(3\\) y paso por \\((0,-1)\\), sale \\(y=3x-1\\).</p>"
               },
               {
                 "tagId": "PX-C07.S01-03",
-                "prompt": "Halla la ecuacion de la recta que pasa por \\((1,4)\\) y \\((3,0)\\)."
+                "prompt": "Halla la ecuacion de la recta que pasa por \\((1,4)\\) y \\((3,0)\\).",
+                "answerHtml": "<p>\\(y=-2x+6\\)</p>",
+                "solutionHtml": "<p>La pendiente es \\(\\frac{0-4}{3-1}=-2\\), asi que \\(y=-2x+6\\).</p>"
               },
               {
                 "tagId": "PX-C07.S01-04",
-                "prompt": "Indica un vector normal de la recta \\(x-2y+5=0\\)."
+                "prompt": "Indica un vector normal de la recta \\(x-2y+5=0\\).",
+                "answerHtml": "<p>\\((1,-2)\\)</p>",
+                "solutionHtml": "<p>De la forma general, el vector normal es \\((1,-2)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S01-05",
-                "prompt": "Indica un vector director de la recta \\(3x+y-7=0\\)."
+                "prompt": "Indica un vector director de la recta \\(3x+y-7=0\\).",
+                "answerHtml": "<p>\\((1,-3)\\)</p>",
+                "solutionHtml": "<p>Un director perpendicular a \\((3,1)\\) es \\((1,-3)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S01-06",
-                "prompt": "Halla la recta que pasa por \\((-1,2)\\) y es paralela a \\(x+y=4\\)."
+                "prompt": "Halla la recta que pasa por \\((-1,2)\\) y es paralela a \\(x+y=4\\).",
+                "answerHtml": "<p>\\(y=-x+1\\)</p>",
+                "solutionHtml": "<p>La recta \\(x+y=4\\) tiene pendiente \\(-1\\). Pasando por \\((-1,2)\\), queda \\(y=-x+1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=2\\)</p></li><li><p>\\(y=3x-1\\)</p></li><li><p>\\(y=-2x+6\\)</p></li><li><p>\\((1,-2)\\)</p></li><li><p>\\((1,-3)\\)</p></li><li><p>\\(y=-x+1\\)</p></li></ol>",
@@ -4497,27 +5085,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S02-01",
-                "prompt": "Halla \\(m\\) para que \\(2x+(m-1)y=5\\) pase por \\((1,1)\\)."
+                "prompt": "Halla \\(m\\) para que \\(2x+(m-1)y=5\\) pase por \\((1,1)\\).",
+                "answerHtml": "<p>\\(m=4\\)</p>",
+                "solutionHtml": "<p>\\(2+(m-1)=5\\), luego \\(m=4\\).</p>"
               },
               {
                 "tagId": "PX-C07.S02-02",
-                "prompt": "Halla \\(k\\) para que \\(y=(2k-1)x+4\\) sea paralela a \\(y=3x-2\\)."
+                "prompt": "Halla \\(k\\) para que \\(y=(2k-1)x+4\\) sea paralela a \\(y=3x-2\\).",
+                "answerHtml": "<p>\\(k=2\\)</p>",
+                "solutionHtml": "<p>Para que sea paralela a pendiente \\(3\\): \\(2k-1=3\\), de donde \\(k=2\\).</p>"
               },
               {
                 "tagId": "PX-C07.S02-03",
-                "prompt": "Halla \\(a\\) para que \\(ax-y+2=0\\) sea perpendicular a \\(y=2x+1\\)."
+                "prompt": "Halla \\(a\\) para que \\(ax-y+2=0\\) sea perpendicular a \\(y=2x+1\\).",
+                "answerHtml": "<p>\\(a=-\\frac{1}{2}\\)</p>",
+                "solutionHtml": "<p>La recta es \\(y=ax+2\\). Su pendiente debe ser \\(-\\frac{1}{2}\\).</p>"
               },
               {
                 "tagId": "PX-C07.S02-04",
-                "prompt": "Halla \\(b\\) para que \\(x+by-6=0\\) pase por \\((2,4)\\)."
+                "prompt": "Halla \\(b\\) para que \\(x+by-6=0\\) pase por \\((2,4)\\).",
+                "answerHtml": "<p>\\(b=1\\)</p>",
+                "solutionHtml": "<p>\\(2+4b-6=0\\), luego \\(b=1\\).</p>"
               },
               {
                 "tagId": "PX-C07.S02-05",
-                "prompt": "Halla \\(c\\) para que \\((c+1)x+2y=0\\) sea paralela a \\(x-2y+3=0\\)."
+                "prompt": "Halla \\(c\\) para que \\((c+1)x+2y=0\\) sea paralela a \\(x-2y+3=0\\).",
+                "answerHtml": "<p>\\(c=-2\\)</p>",
+                "solutionHtml": "<p>La recta dada tiene pendiente \\(\\frac{1}{2}\\). Como la nuestra tiene pendiente \\(-\\frac{c+1}{2}\\), sale \\(c=-2\\).</p>"
               },
               {
                 "tagId": "PX-C07.S02-06",
-                "prompt": "Halla \\(d\\) para que \\(x-dy+1=0\\) sea perpendicular a \\(y=-x\\)."
+                "prompt": "Halla \\(d\\) para que \\(x-dy+1=0\\) sea perpendicular a \\(y=-x\\).",
+                "answerHtml": "<p>\\(d=1\\)</p>",
+                "solutionHtml": "<p>La recta \\(y=-x\\) tiene pendiente \\(-1\\), asi que la perpendicular debe tener pendiente \\(1\\). En \\(x-dy+1=0\\), la pendiente es \\(\\frac{1}{d}\\), luego \\(d=1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(m=4\\)</p></li><li><p>\\(k=2\\)</p></li><li><p>\\(a=-\\frac{1}{2}\\)</p></li><li><p>\\(b=1\\)</p></li><li><p>\\(c=-2\\)</p></li><li><p>\\(d=1\\)</p></li></ol>",
@@ -4586,27 +5186,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S03-01",
-                "prompt": "Halla el simetrico de \\((2,-1)\\) respecto del origen."
+                "prompt": "Halla el simetrico de \\((2,-1)\\) respecto del origen.",
+                "answerHtml": "<p>\\((-2,1)\\)</p>",
+                "solutionHtml": "<p>Respecto del origen cambian de signo ambas coordenadas.</p>"
               },
               {
                 "tagId": "PX-C07.S03-02",
-                "prompt": "Halla el simetrico de \\((-3,4)\\) respecto del eje \\(Y\\)."
+                "prompt": "Halla el simetrico de \\((-3,4)\\) respecto del eje \\(Y\\).",
+                "answerHtml": "<p>\\((3,4)\\)</p>",
+                "solutionHtml": "<p>Respecto del eje \\(Y\\), cambia el signo de \\(x\\).</p>"
               },
               {
                 "tagId": "PX-C07.S03-03",
-                "prompt": "Halla el simetrico de \\((5,1)\\) respecto de la recta \\(x=1\\)."
+                "prompt": "Halla el simetrico de \\((5,1)\\) respecto de la recta \\(x=1\\).",
+                "answerHtml": "<p>\\((-3,1)\\)</p>",
+                "solutionHtml": "<p>La recta \\(x=1\\) queda como punto medio entre \\(x=5\\) y \\(x'=-3\\).</p>"
               },
               {
                 "tagId": "PX-C07.S03-04",
-                "prompt": "Halla el simetrico de \\((2,5)\\) respecto de la recta \\(y=1\\)."
+                "prompt": "Halla el simetrico de \\((2,5)\\) respecto de la recta \\(y=1\\).",
+                "answerHtml": "<p>\\((2,-3)\\)</p>",
+                "solutionHtml": "<p>Respecto de \\(y=1\\), la distancia vertical es \\(4\\), luego \\(y'=-3\\).</p>"
               },
               {
                 "tagId": "PX-C07.S03-05",
-                "prompt": "Halla el simetrico de \\(P(4,0)\\) respecto de \\(M(1,-2)\\)."
+                "prompt": "Halla el simetrico de \\(P(4,0)\\) respecto de \\(M(1,-2)\\).",
+                "answerHtml": "<p>\\((-2,-4)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{4+x}{2}=1,\\qquad \\frac{0+y}{2}=-2,\n  \\]</div><p>de donde \\(x=-2\\), \\(y=-4\\).</p>"
               },
               {
                 "tagId": "PX-C07.S03-06",
-                "prompt": "Halla el simetrico de \\((3,1)\\) respecto de la recta \\(y=x\\)."
+                "prompt": "Halla el simetrico de \\((3,1)\\) respecto de la recta \\(y=x\\).",
+                "answerHtml": "<p>\\((1,3)\\)</p>",
+                "solutionHtml": "<p>En la recta \\(y=x\\) se intercambian las coordenadas.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-2,1)\\)</p></li><li><p>\\((3,4)\\)</p></li><li><p>\\((-3,1)\\)</p></li><li><p>\\((2,-3)\\)</p></li><li><p>\\((-2,-4)\\)</p></li><li><p>\\((1,3)\\)</p></li></ol>",
@@ -4675,27 +5287,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S04-01",
-                "prompt": "Estudia la posicion relativa de \\(y=2x+1\\) y \\(y=-x+4\\)."
+                "prompt": "Estudia la posicion relativa de \\(y=2x+1\\) y \\(y=-x+4\\).",
+                "answerHtml": "<p>Secantes en \\((1,3)\\)</p>",
+                "solutionHtml": "<p>Las pendientes son \\(2\\) y \\(-1\\). Resolviendo sale \\((1,3)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S04-02",
-                "prompt": "Estudia la posicion relativa de \\(x-3y=2\\) y \\(2x-6y=5\\)."
+                "prompt": "Estudia la posicion relativa de \\(x-3y=2\\) y \\(2x-6y=5\\).",
+                "answerHtml": "<p>Paralelas</p>",
+                "solutionHtml": "<p>Tienen la misma pendiente y distinto termino independiente.</p>"
               },
               {
                 "tagId": "PX-C07.S04-03",
-                "prompt": "Estudia la posicion relativa de \\(x+y=0\\) y \\(3x+3y=0\\)."
+                "prompt": "Estudia la posicion relativa de \\(x+y=0\\) y \\(3x+3y=0\\).",
+                "answerHtml": "<p>Coincidentes</p>",
+                "solutionHtml": "<p>La segunda es el triple de la primera.</p>"
               },
               {
                 "tagId": "PX-C07.S04-04",
-                "prompt": "Estudia la posicion relativa de \\(x=2\\) y \\(y=3\\)."
+                "prompt": "Estudia la posicion relativa de \\(x=2\\) y \\(y=3\\).",
+                "answerHtml": "<p>Secantes en \\((2,3)\\)</p>",
+                "solutionHtml": "<p>Una es vertical y la otra horizontal, luego se cortan en \\((2,3)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S04-05",
-                "prompt": "Estudia la posicion relativa de \\(y=-2x+5\\) y \\(2y=-4x+1\\)."
+                "prompt": "Estudia la posicion relativa de \\(y=-2x+5\\) y \\(2y=-4x+1\\).",
+                "answerHtml": "<p>Paralelas</p>",
+                "solutionHtml": "<p>La segunda se escribe \\(y=-2x+\\frac{1}{2}\\), paralela a la primera.</p>"
               },
               {
                 "tagId": "PX-C07.S04-06",
-                "prompt": "Estudia la posicion relativa de \\(x-y=1\\) y \\(x+y=5\\)."
+                "prompt": "Estudia la posicion relativa de \\(x-y=1\\) y \\(x+y=5\\).",
+                "answerHtml": "<p>Secantes en \\((3,2)\\)</p>",
+                "solutionHtml": "<p>Sumando ecuaciones: \\(2x=6\\), luego \\(x=3\\) y \\(y=2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Secantes en \\((1,3)\\)</p></li><li><p>Paralelas</p></li><li><p>Coincidentes</p></li><li><p>Secantes en \\((2,3)\\)</p></li><li><p>Paralelas</p></li><li><p>Secantes en \\((3,2)\\)</p></li></ol>",
@@ -4764,27 +5388,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S05-01",
-                "prompt": "Halla la recta paralela a \\(y=2x-1\\) que pasa por \\((1,0)\\)."
+                "prompt": "Halla la recta paralela a \\(y=2x-1\\) que pasa por \\((1,0)\\).",
+                "answerHtml": "<p>\\(y=2x-2\\)</p>",
+                "solutionHtml": "<p>Mantiene la pendiente \\(2\\) y pasa por \\((1,0)\\), luego \\(y=2x-2\\).</p>"
               },
               {
                 "tagId": "PX-C07.S05-02",
-                "prompt": "Halla la recta perpendicular a \\(y=-x+4\\) que pasa por \\((2,1)\\)."
+                "prompt": "Halla la recta perpendicular a \\(y=-x+4\\) que pasa por \\((2,1)\\).",
+                "answerHtml": "<p>\\(y=x-1\\)</p>",
+                "solutionHtml": "<p>La perpendicular a pendiente \\(-1\\) tiene pendiente \\(1\\). Al pasar por \\((2,1)\\), queda \\(y=x-1\\).</p>"
               },
               {
                 "tagId": "PX-C07.S05-03",
-                "prompt": "Halla la recta paralela a \\(x=5\\) que pasa por \\((-2,3)\\)."
+                "prompt": "Halla la recta paralela a \\(x=5\\) que pasa por \\((-2,3)\\).",
+                "answerHtml": "<p>\\(x=-2\\)</p>",
+                "solutionHtml": "<p>Toda paralela a \\(x=5\\) es vertical.</p>"
               },
               {
                 "tagId": "PX-C07.S05-04",
-                "prompt": "Halla la recta perpendicular a \\(x=1\\) que pasa por \\((0,4)\\)."
+                "prompt": "Halla la recta perpendicular a \\(x=1\\) que pasa por \\((0,4)\\).",
+                "answerHtml": "<p>\\(y=4\\)</p>",
+                "solutionHtml": "<p>La perpendicular a una vertical es horizontal.</p>"
               },
               {
                 "tagId": "PX-C07.S05-05",
-                "prompt": "Escribe la bisectriz del primer y tercer cuadrantes."
+                "prompt": "Escribe la bisectriz del primer y tercer cuadrantes.",
+                "answerHtml": "<p>\\(y=x\\)</p>",
+                "solutionHtml": "<p>Es la recta \\(y=x\\).</p>"
               },
               {
                 "tagId": "PX-C07.S05-06",
-                "prompt": "Escribe la bisectriz del segundo y cuarto cuadrantes."
+                "prompt": "Escribe la bisectriz del segundo y cuarto cuadrantes.",
+                "answerHtml": "<p>\\(y=-x\\)</p>",
+                "solutionHtml": "<p>Es la recta \\(y=-x\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(y=2x-2\\)</p></li><li><p>\\(y=x-1\\)</p></li><li><p>\\(x=-2\\)</p></li><li><p>\\(y=4\\)</p></li><li><p>\\(y=x\\)</p></li><li><p>\\(y=-x\\)</p></li></ol>",
@@ -4853,27 +5489,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S06-01",
-                "prompt": "Calcula la distancia entre \\(x-y+2=0\\) y \\(x-y-4=0\\)."
+                "prompt": "Calcula la distancia entre \\(x-y+2=0\\) y \\(x-y-4=0\\).",
+                "answerHtml": "<p>\\(3\\sqrt{2}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  d=\\frac{|(-4)-2|}{\\sqrt{1^2+(-1)^2}}=\\frac{6}{\\sqrt{2}}=3\\sqrt{2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C07.S06-02",
-                "prompt": "Calcula la distancia del origen a la recta \\(3x+4y-5=0\\)."
+                "prompt": "Calcula la distancia del origen a la recta \\(3x+4y-5=0\\).",
+                "answerHtml": "<p>\\(1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  d=\\frac{|0+0-5|}{\\sqrt{3^2+4^2}}=\\frac{5}{5}=1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C07.S06-03",
-                "prompt": "Halla el angulo entre \\(y=2x\\) y \\(y=-\\frac{1}{2}x\\)."
+                "prompt": "Halla el angulo entre \\(y=2x\\) y \\(y=-\\frac{1}{2}x\\).",
+                "answerHtml": "<p>\\(\\frac{\\pi}{2}\\)</p>",
+                "solutionHtml": "<p>Las pendientes cumplen \\(2\\cdot \\left(-\\frac{1}{2}\\right)=-1\\), luego son perpendiculares.</p>"
               },
               {
                 "tagId": "PX-C07.S06-04",
-                "prompt": "Halla el angulo entre \\(x=0\\) y \\(y=0\\)."
+                "prompt": "Halla el angulo entre \\(x=0\\) y \\(y=0\\).",
+                "answerHtml": "<p>\\(\\frac{\\pi}{2}\\)</p>",
+                "solutionHtml": "<p>Una recta es vertical y la otra horizontal.</p>"
               },
               {
                 "tagId": "PX-C07.S06-05",
-                "prompt": "Calcula la distancia entre \\(y=3\\) y \\(y=-1\\)."
+                "prompt": "Calcula la distancia entre \\(y=3\\) y \\(y=-1\\).",
+                "answerHtml": "<p>\\(4\\)</p>",
+                "solutionHtml": "<p>La distancia vertical entre ambas es \\(4\\).</p>"
               },
               {
                 "tagId": "PX-C07.S06-06",
-                "prompt": "Calcula la distancia del punto \\((2,-1)\\) a la recta \\(x=5\\)."
+                "prompt": "Calcula la distancia del punto \\((2,-1)\\) a la recta \\(x=5\\).",
+                "answerHtml": "<p>\\(3\\)</p>",
+                "solutionHtml": "<p>La recta \\(x=5\\) queda a \\(3\\) unidades horizontales del punto dado.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(3\\sqrt{2}\\)</p></li><li><p>\\(1\\)</p></li><li><p>\\(\\frac{\\pi}{2}\\)</p></li><li><p>\\(\\frac{\\pi}{2}\\)</p></li><li><p>\\(4\\)</p></li><li><p>\\(3\\)</p></li></ol>",
@@ -4942,27 +5590,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S07-01",
-                "prompt": "Halla el area del triangulo de vertices \\((0,0)\\), \\((4,0)\\) y \\((0,3)\\)."
+                "prompt": "Halla el area del triangulo de vertices \\((0,0)\\), \\((4,0)\\) y \\((0,3)\\).",
+                "answerHtml": "<p>\\(6\\)</p>",
+                "solutionHtml": "<p>Base \\(4\\) y altura \\(3\\): area \\(6\\).</p>"
               },
               {
                 "tagId": "PX-C07.S07-02",
-                "prompt": "Halla los vertices y el area del triangulo delimitado por \\(x=2\\), \\(y=1\\) y \\(x+y=6\\)."
+                "prompt": "Halla los vertices y el area del triangulo delimitado por \\(x=2\\), \\(y=1\\) y \\(x+y=6\\).",
+                "answerHtml": "<p>Vertices \\((2,1)\\), \\((2,4)\\), \\((5,1)\\). Area \\(\\frac{9}{2}\\)</p>",
+                "solutionHtml": "<p>Las intersecciones son \\((2,1)\\), \\((2,4)\\) y \\((5,1)\\). Base \\(3\\), altura \\(3\\).</p>"
               },
               {
                 "tagId": "PX-C07.S07-03",
-                "prompt": "Sean \\(A(1,1)\\), \\(B(4,1)\\) y \\(D(2,3)\\). Halla \\(C\\) y el area del paralelogramo \\(ABCD\\)."
+                "prompt": "Sean \\(A(1,1)\\), \\(B(4,1)\\) y \\(D(2,3)\\). Halla \\(C\\) y el area del paralelogramo \\(ABCD\\).",
+                "answerHtml": "<p>\\(C(5,3)\\). Area \\(6\\)</p>",
+                "solutionHtml": "<p>\\(C=B+D-A=(5,3)\\). Base \\(3\\), altura \\(2\\), area \\(6\\).</p>"
               },
               {
                 "tagId": "PX-C07.S07-04",
-                "prompt": "Halla los vertices y el area del triangulo delimitado por \\(x=0\\), \\(y=2\\) y \\(y=x+5\\)."
+                "prompt": "Halla los vertices y el area del triangulo delimitado por \\(x=0\\), \\(y=2\\) y \\(y=x+5\\).",
+                "answerHtml": "<p>Vertices \\((0,2)\\), \\((0,5)\\), \\((-3,2)\\). Area \\(\\frac{9}{2}\\)</p>",
+                "solutionHtml": "<p>La recta \\(y=x+5\\) corta a \\(x=0\\) en \\((0,5)\\) y a \\(y=2\\) en \\((-3,2)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S07-05",
-                "prompt": "Halla el area del triangulo de vertices \\((1,1)\\), \\((5,1)\\) y \\((3,4)\\)."
+                "prompt": "Halla el area del triangulo de vertices \\((1,1)\\), \\((5,1)\\) y \\((3,4)\\).",
+                "answerHtml": "<p>\\(6\\)</p>",
+                "solutionHtml": "<p>Base \\(4\\) y altura \\(3\\): area \\(6\\).</p>"
               },
               {
                 "tagId": "PX-C07.S07-06",
-                "prompt": "Halla el area del rectangulo delimitado por \\(x=0\\), \\(x=4\\), \\(y=-1\\) y \\(y=2\\)."
+                "prompt": "Halla el area del rectangulo delimitado por \\(x=0\\), \\(x=4\\), \\(y=-1\\) y \\(y=2\\).",
+                "answerHtml": "<p>\\(12\\)</p>",
+                "solutionHtml": "<p>Lados \\(4\\) y \\(3\\): area \\(12\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(6\\)</p></li><li><p>Vertices \\((2,1)\\), \\((2,4)\\), \\((5,1)\\). Area \\(\\frac{9}{2}\\)</p></li><li><p>\\(C(5,3)\\). Area \\(6\\)</p></li><li><p>Vertices \\((0,2)\\), \\((0,5)\\), \\((-3,2)\\). Area \\(\\frac{9}{2}\\)</p></li><li><p>\\(6\\)</p></li><li><p>\\(12\\)</p></li></ol>",
@@ -5031,27 +5691,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S08-01",
-                "prompt": "Halla el punto medio del segmento con extremos \\(A(-1,2)\\) y \\(B(5,4)\\)."
+                "prompt": "Halla el punto medio del segmento con extremos \\(A(-1,2)\\) y \\(B(5,4)\\).",
+                "answerHtml": "<p>\\((2,3)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\left(\\frac{-1+5}{2},\\frac{2+4}{2}\\right)=(2,3).\n  \\]</div>"
               },
               {
                 "tagId": "PX-C07.S08-02",
-                "prompt": "Halla la mediatriz del segmento con extremos \\(A(2,1)\\) y \\(B(2,5)\\)."
+                "prompt": "Halla la mediatriz del segmento con extremos \\(A(2,1)\\) y \\(B(2,5)\\).",
+                "answerHtml": "<p>\\(y=3\\)</p>",
+                "solutionHtml": "<p>El segmento es vertical y su punto medio es \\((2,3)\\), luego la mediatriz es horizontal: \\(y=3\\).</p>"
               },
               {
                 "tagId": "PX-C07.S08-03",
-                "prompt": "Halla la mediana trazada desde \\(A(0,0)\\) en el triangulo \\(A(0,0)\\), \\(B(4,0)\\), \\(C(0,2)\\)."
+                "prompt": "Halla la mediana trazada desde \\(A(0,0)\\) en el triangulo \\(A(0,0)\\), \\(B(4,0)\\), \\(C(0,2)\\).",
+                "answerHtml": "<p>\\(y=\\frac{x}{2}\\)</p>",
+                "solutionHtml": "<p>El punto medio de \\(BC\\) es \\((2,1)\\). La recta por \\((0,0)\\) y \\((2,1)\\) es \\(y=\\frac{x}{2}\\).</p>"
               },
               {
                 "tagId": "PX-C07.S08-04",
-                "prompt": "Halla la altura trazada desde \\(A(0,0)\\) al lado \\(BC\\) si \\(B(2,0)\\) y \\(C(2,4)\\)."
+                "prompt": "Halla la altura trazada desde \\(A(0,0)\\) al lado \\(BC\\) si \\(B(2,0)\\) y \\(C(2,4)\\).",
+                "answerHtml": "<p>\\(y=0\\)</p>",
+                "solutionHtml": "<p>El lado \\(BC\\) es vertical, asi que la altura es horizontal: \\(y=0\\).</p>"
               },
               {
                 "tagId": "PX-C07.S08-05",
-                "prompt": "Halla la mediatriz del segmento con extremos \\(A(-2,0)\\) y \\(B(2,0)\\)."
+                "prompt": "Halla la mediatriz del segmento con extremos \\(A(-2,0)\\) y \\(B(2,0)\\).",
+                "answerHtml": "<p>\\(x=0\\)</p>",
+                "solutionHtml": "<p>El punto medio es el origen y el segmento es horizontal.</p>"
               },
               {
                 "tagId": "PX-C07.S08-06",
-                "prompt": "Halla la mediana trazada desde \\(C(0,6)\\) en el triangulo \\(A(0,0)\\), \\(B(6,0)\\), \\(C(0,6)\\)."
+                "prompt": "Halla la mediana trazada desde \\(C(0,6)\\) en el triangulo \\(A(0,0)\\), \\(B(6,0)\\), \\(C(0,6)\\).",
+                "answerHtml": "<p>\\(y=-2x+6\\)</p>",
+                "solutionHtml": "<p>El punto medio de \\(AB\\) es \\((3,0)\\). La recta por \\((0,6)\\) y \\((3,0)\\) es \\(y=-2x+6\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((2,3)\\)</p></li><li><p>\\(y=3\\)</p></li><li><p>\\(y=\\frac{x}{2}\\)</p></li><li><p>\\(y=0\\)</p></li><li><p>\\(x=0\\)</p></li><li><p>\\(y=-2x+6\\)</p></li></ol>",
@@ -5120,27 +5792,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S09-01",
-                "prompt": "Halla el ortocentro del triangulo \\(A(0,0)\\), \\(B(5,0)\\), \\(C(0,2)\\)."
+                "prompt": "Halla el ortocentro del triangulo \\(A(0,0)\\), \\(B(5,0)\\), \\(C(0,2)\\).",
+                "answerHtml": "<p>\\((0,0)\\)</p>",
+                "solutionHtml": "<p>Es rectangulo en \\(A\\), luego \\(H=A=(0,0)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S09-02",
-                "prompt": "Halla las bisectrices de las rectas \\(y=x\\) e \\(y=-x\\)."
+                "prompt": "Halla las bisectrices de las rectas \\(y=x\\) e \\(y=-x\\).",
+                "answerHtml": "<p>\\(x=0\\) e \\(y=0\\)</p>",
+                "solutionHtml": "<p>Las rectas dadas son perpendiculares y simetricas respecto de los ejes, que actuan como bisectrices.</p>"
               },
               {
                 "tagId": "PX-C07.S09-03",
-                "prompt": "Halla el lugar geometrico de los puntos equidistantes de \\(A(1,1)\\) y \\(B(5,1)\\)."
+                "prompt": "Halla el lugar geometrico de los puntos equidistantes de \\(A(1,1)\\) y \\(B(5,1)\\).",
+                "answerHtml": "<p>\\(x=3\\)</p>",
+                "solutionHtml": "<p>El segmento \\(AB\\) es horizontal y su punto medio es \\((3,1)\\), asi que la mediatriz es \\(x=3\\).</p>"
               },
               {
                 "tagId": "PX-C07.S09-04",
-                "prompt": "Halla el punto de la recta \\(y=2\\) que esta a la misma distancia de \\(A(0,0)\\) y \\(B(4,0)\\)."
+                "prompt": "Halla el punto de la recta \\(y=2\\) que esta a la misma distancia de \\(A(0,0)\\) y \\(B(4,0)\\).",
+                "answerHtml": "<p>\\((2,2)\\)</p>",
+                "solutionHtml": "<p>Los puntos equidistantes de \\(A\\) y \\(B\\) cumplen \\(x=2\\). Con \\(y=2\\), sale \\((2,2)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S09-05",
-                "prompt": "Halla el ortocentro del triangulo \\(A(1,1)\\), \\(B(5,1)\\), \\(C(3,3)\\)."
+                "prompt": "Halla el ortocentro del triangulo \\(A(1,1)\\), \\(B(5,1)\\), \\(C(3,3)\\).",
+                "answerHtml": "<p>\\((3,3)\\)</p>",
+                "solutionHtml": "<p>Los lados \\(AC\\) y \\(BC\\) son perpendiculares, luego el triangulo es rectangulo en \\(C\\) y el ortocentro es \\(C=(3,3)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S09-06",
-                "prompt": "Halla el lugar geometrico de los puntos equidistantes de los ejes coordenados en los cuadrantes I y III."
+                "prompt": "Halla el lugar geometrico de los puntos equidistantes de los ejes coordenados en los cuadrantes I y III.",
+                "answerHtml": "<p>\\(y=x\\)</p>",
+                "solutionHtml": "<p>La distancia a ambos ejes coincide cuando \\(|x|=|y|\\). En los cuadrantes I y III eso da \\(y=x\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((0,0)\\)</p></li><li><p>\\(x=0\\) e \\(y=0\\)</p></li><li><p>\\(x=3\\)</p></li><li><p>\\((2,2)\\)</p></li><li><p>\\((3,3)\\)</p></li><li><p>\\(y=x\\)</p></li></ol>",
@@ -5209,27 +5893,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C07.S10-01",
-                "prompt": "La base de un triangulo isosceles es \\(A(0,0)\\), \\(B(4,0)\\) y su vertice esta en la recta \\(x=2\\) y tiene ordenada \\(3\\). Halla el vertice y el area."
+                "prompt": "La base de un triangulo isosceles es \\(A(0,0)\\), \\(B(4,0)\\) y su vertice esta en la recta \\(x=2\\) y tiene ordenada \\(3\\). Halla el vertice y el area.",
+                "answerHtml": "<p>\\(C(2,3)\\). Area \\(6\\)</p>",
+                "solutionHtml": "<p>Las condiciones ya fijan \\(C=(2,3)\\). La base mide \\(4\\) y la altura \\(3\\), asi que el area es \\(6\\).</p>"
               },
               {
                 "tagId": "PX-C07.S10-02",
-                "prompt": "Halla el punto de la recta \\(y=1\\) equidistante de \\(A(0,0)\\) y \\(B(4,0)\\)."
+                "prompt": "Halla el punto de la recta \\(y=1\\) equidistante de \\(A(0,0)\\) y \\(B(4,0)\\).",
+                "answerHtml": "<p>\\((2,1)\\)</p>",
+                "solutionHtml": "<p>El lugar equidistante de \\(A\\) y \\(B\\) es \\(x=2\\). Con \\(y=1\\), sale \\((2,1)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S10-03",
-                "prompt": "Halla el centro del cuadrado de vertices \\((-2,-2)\\), \\((2,-2)\\), \\((2,2)\\), \\((-2,2)\\)."
+                "prompt": "Halla el centro del cuadrado de vertices \\((-2,-2)\\), \\((2,-2)\\), \\((2,2)\\), \\((-2,2)\\).",
+                "answerHtml": "<p>\\((0,0)\\)</p>",
+                "solutionHtml": "<p>El centro es el punto medio de cualquier diagonal del cuadrado.</p>"
               },
               {
                 "tagId": "PX-C07.S10-04",
-                "prompt": "La base de un triangulo isosceles es \\(A(-3,0)\\), \\(B(3,0)\\) y su altura es \\(4\\). Halla el area."
+                "prompt": "La base de un triangulo isosceles es \\(A(-3,0)\\), \\(B(3,0)\\) y su altura es \\(4\\). Halla el area.",
+                "answerHtml": "<p>\\(12\\)</p>",
+                "solutionHtml": "<p>Base \\(6\\) y altura \\(4\\): area \\(12\\).</p>"
               },
               {
                 "tagId": "PX-C07.S10-05",
-                "prompt": "En un hexagono regular de centro \\(O(0,0)\\), un vertice es \\(A(2,0)\\). Halla el vertice opuesto."
+                "prompt": "En un hexagono regular de centro \\(O(0,0)\\), un vertice es \\(A(2,0)\\). Halla el vertice opuesto.",
+                "answerHtml": "<p>\\((-2,0)\\)</p>",
+                "solutionHtml": "<p>El vertice opuesto al punto \\((2,0)\\) respecto del centro es \\((-2,0)\\).</p>"
               },
               {
                 "tagId": "PX-C07.S10-06",
-                "prompt": "Decide si existe un punto de la recta \\(x=1\\) equidistante de \\(A(0,0)\\) y \\(B(4,0)\\)."
+                "prompt": "Decide si existe un punto de la recta \\(x=1\\) equidistante de \\(A(0,0)\\) y \\(B(4,0)\\).",
+                "answerHtml": "<p>No existe</p>",
+                "solutionHtml": "<p>Los puntos equidistantes de \\(A\\) y \\(B\\) cumplen \\(x=2\\). Como eso no corta a la recta \\(x=1\\), no existe solucion.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(C(2,3)\\). Area \\(6\\)</p></li><li><p>\\((2,1)\\)</p></li><li><p>\\((0,0)\\)</p></li><li><p>\\(12\\)</p></li><li><p>\\((-2,0)\\)</p></li><li><p>No existe</p></li></ol>",
@@ -5308,27 +6004,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S01-01",
-                "prompt": "Halla el dominio de \\(f(x)=x^3-2x+1\\)."
+                "prompt": "Halla el dominio de \\(f(x)=x^3-2x+1\\).",
+                "answerHtml": "<p>\\(\\R\\)</p>",
+                "solutionHtml": "<p>Los polinomios estan definidos en todo \\(\\R\\).</p>"
               },
               {
                 "tagId": "PX-C08.S01-02",
-                "prompt": "Halla el dominio de \\(f(x)=\\dfrac{1}{x-5}\\)."
+                "prompt": "Halla el dominio de \\(f(x)=\\dfrac{1}{x-5}\\).",
+                "answerHtml": "<p>\\(\\R\\setminus\\{5\\}\\)</p>",
+                "solutionHtml": "<p>Solo se excluye el cero del denominador: \\(x\\neq 5\\).</p>"
               },
               {
                 "tagId": "PX-C08.S01-03",
-                "prompt": "Halla el dominio de \\(f(x)=\\sqrt{x-4}\\)."
+                "prompt": "Halla el dominio de \\(f(x)=\\sqrt{x-4}\\).",
+                "answerHtml": "<p>\\([4,\\infty)\\)</p>",
+                "solutionHtml": "<p>La raiz exige \\(x-4\\geq 0\\), luego \\(x\\geq 4\\).</p>"
               },
               {
                 "tagId": "PX-C08.S01-04",
-                "prompt": "Halla el dominio de \\(f(x)=\\sqrt{\\dfrac{x-1}{x+2}}\\)."
+                "prompt": "Halla el dominio de \\(f(x)=\\sqrt{\\dfrac{x-1}{x+2}}\\).",
+                "answerHtml": "<p>\\((-\\infty,-2)\\cup[1,\\infty)\\)</p>",
+                "solutionHtml": "<p>Debe cumplirse</p><div class=\"math-display\">\\[\n  \\frac{x-1}{x+2}\\geq 0,\\qquad x\\neq -2.\n  \\]</div><p>El estudio de signo da \\((-\\infty,-2)\\cup[1,\\infty)\\).</p>"
               },
               {
                 "tagId": "PX-C08.S01-05",
-                "prompt": "Halla el dominio de \\(f(x)=\\ln(x^2-4)\\)."
+                "prompt": "Halla el dominio de \\(f(x)=\\ln(x^2-4)\\).",
+                "answerHtml": "<p>\\((-\\infty,-2)\\cup(2,\\infty)\\)</p>",
+                "solutionHtml": "<p>El argumento del logaritmo debe ser positivo:</p><div class=\"math-display\">\\[\n  x^2-4>0 \\Longrightarrow |x|>2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S01-06",
-                "prompt": "Halla el dominio de \\(f(x)=\\dfrac{\\sqrt{9-x^2}}{x+1}\\)."
+                "prompt": "Halla el dominio de \\(f(x)=\\dfrac{\\sqrt{9-x^2}}{x+1}\\).",
+                "answerHtml": "<p>\\([-3,-1)\\cup(-1,3]\\)</p>",
+                "solutionHtml": "<p>La raiz exige \\(9-x^2\\geq 0\\), es decir, \\(-3\\leq x\\leq 3\\), y ademas \\(x\\neq -1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(\\R\\)</p></li><li><p>\\(\\R\\setminus\\{5\\}\\)</p></li><li><p>\\([4,\\infty)\\)</p></li><li><p>\\((-\\infty,-2)\\cup[1,\\infty)\\)</p></li><li><p>\\((-\\infty,-2)\\cup(2,\\infty)\\)</p></li><li><p>\\([-3,-1)\\cup(-1,3]\\)</p></li></ol>",
@@ -5397,27 +6105,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S02-01",
-                "prompt": "Una grafica corta al eje \\(Y\\) en \\(3\\) y al eje \\(X\\) en \\(-2\\) y \\(1\\). Indica \\(f(0)\\) y las raices."
+                "prompt": "Una grafica corta al eje \\(Y\\) en \\(3\\) y al eje \\(X\\) en \\(-2\\) y \\(1\\). Indica \\(f(0)\\) y las raices.",
+                "answerHtml": "<p>\\(f(0)=3\\). Raices: \\(-2\\) y \\(1\\)</p>",
+                "solutionHtml": "<p>El corte con el eje \\(Y\\) da \\(f(0)=3\\); las raices salen de los cortes con el eje \\(X\\).</p>"
               },
               {
                 "tagId": "PX-C08.S02-02",
-                "prompt": "En una grafica el punto mas alto es \\((1,4)\\) y el mas bajo es \\((-2,-1)\\). Indica maximo y minimo absolutos."
+                "prompt": "En una grafica el punto mas alto es \\((1,4)\\) y el mas bajo es \\((-2,-1)\\). Indica maximo y minimo absolutos.",
+                "answerHtml": "<p>Maximo absoluto \\(4\\). Minimo absoluto \\(-1\\)</p>",
+                "solutionHtml": "<p>Los valores extremos absolutos son las ordenadas del punto mas alto y del mas bajo.</p>"
               },
               {
                 "tagId": "PX-C08.S02-03",
-                "prompt": "Una grafica es creciente en \\((-3,0)\\) y decreciente en \\((0,2)\\). En que abscisa aparece un maximo local?"
+                "prompt": "Una grafica es creciente en \\((-3,0)\\) y decreciente en \\((0,2)\\). En que abscisa aparece un maximo local?",
+                "answerHtml": "<p>En \\(x=0\\)</p>",
+                "solutionHtml": "<p>Si primero crece y despues decrece, el cambio se produce en un maximo local en \\(x=0\\).</p>"
               },
               {
                 "tagId": "PX-C08.S02-04",
-                "prompt": "En \\(x=1\\), la grafica se acerca a \\(2\\) por la izquierda y a \\(5\\) por la derecha. Existe \\(\\lim_{x\\to 1}f(x)\\)?"
+                "prompt": "En \\(x=1\\), la grafica se acerca a \\(2\\) por la izquierda y a \\(5\\) por la derecha. Existe \\(\\lim_{x\\to 1}f(x)\\)?",
+                "answerHtml": "<p>No existe</p>",
+                "solutionHtml": "<p>Como los limites laterales son distintos, el limite global no existe.</p>"
               },
               {
                 "tagId": "PX-C08.S02-05",
-                "prompt": "Una grafica tiene un agujero en \\((3,-1)\\) y un punto relleno en \\((3,2)\\). Indica \\(f(3)\\) y \\(\\lim_{x\\to 3}f(x)\\)."
+                "prompt": "Una grafica tiene un agujero en \\((3,-1)\\) y un punto relleno en \\((3,2)\\). Indica \\(f(3)\\) y \\(\\lim_{x\\to 3}f(x)\\).",
+                "answerHtml": "<p>\\(f(3)=2\\) y \\(\\lim_{x\\to 3}f(x)=-1\\)</p>",
+                "solutionHtml": "<p>El punto relleno fija el valor de la funcion y el agujero indica la tendencia.</p>"
               },
               {
                 "tagId": "PX-C08.S02-06",
-                "prompt": "Al avanzar hacia la derecha, una grafica se aproxima a la recta \\(y=4\\). Que comportamiento global se observa?"
+                "prompt": "Al avanzar hacia la derecha, una grafica se aproxima a la recta \\(y=4\\). Que comportamiento global se observa?",
+                "answerHtml": "<p>La funcion tiende a una asintota horizontal \\(y=4\\)</p>",
+                "solutionHtml": "<p>Aproximarse a la recta \\(y=4\\) para \\(x\\) grande significa tener una asintota horizontal de ecuacion \\(y=4\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(f(0)=3\\). Raices: \\(-2\\) y \\(1\\)</p></li><li><p>Maximo absoluto \\(4\\). Minimo absoluto \\(-1\\)</p></li><li><p>En \\(x=0\\)</p></li><li><p>No existe</p></li><li><p>\\(f(3)=2\\) y \\(\\lim_{x\\to 3}f(x)=-1\\)</p></li><li><p>La funcion tiende a una asintota horizontal \\(y=4\\)</p></li></ol>",
@@ -5486,27 +6206,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S03-01",
-                "prompt": "Calcula \\(\\lim_{x\\to 2}(x^2+3)\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 2}(x^2+3)\\).",
+                "answerHtml": "<p>\\(7\\)</p>",
+                "solutionHtml": "<p>Sustitucion directa: \\(2^2+3=7\\).</p>"
               },
               {
                 "tagId": "PX-C08.S03-02",
-                "prompt": "Calcula \\(\\lim_{x\\to -1}\\dfrac{x^2+1}{x+2}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to -1}\\dfrac{x^2+1}{x+2}\\).",
+                "answerHtml": "<p>\\(2\\)</p>",
+                "solutionHtml": "<p>El denominador no se anula en \\(-1\\), asi que</p><div class=\"math-display\">\\[\n  \\frac{(-1)^2+1}{-1+2}=2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S03-03",
-                "prompt": "Estudia \\(\\lim_{x\\to 0}\\dfrac{|x|}{x}\\)."
+                "prompt": "Estudia \\(\\lim_{x\\to 0}\\dfrac{|x|}{x}\\).",
+                "answerHtml": "<p>No existe</p>",
+                "solutionHtml": "<p>Por la izquierda vale \\(-1\\) y por la derecha vale \\(1\\), luego el limite global no existe.</p>"
               },
               {
                 "tagId": "PX-C08.S03-04",
-                "prompt": "Calcula \\(\\lim_{x\\to 4}\\sqrt{x+5}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 4}\\sqrt{x+5}\\).",
+                "answerHtml": "<p>\\(3\\)</p>",
+                "solutionHtml": "<p>\\(\\sqrt{4+5}=3\\).</p>"
               },
               {
                 "tagId": "PX-C08.S03-05",
-                "prompt": "Estudia los limites laterales de \\(\\dfrac{1}{x-3}\\) cuando \\(x\\to 3\\)."
+                "prompt": "Estudia los limites laterales de \\(\\dfrac{1}{x-3}\\) cuando \\(x\\to 3\\).",
+                "answerHtml": "<p>\\(-\\infty\\) por la izquierda y \\(+\\infty\\) por la derecha</p>",
+                "solutionHtml": "<p>Si \\(x\\to 3^-\\), el denominador es negativo y muy pequeno: sale \\(-\\infty\\). Si \\(x\\to 3^+\\), sale \\(+\\infty\\).</p>"
               },
               {
                 "tagId": "PX-C08.S03-06",
-                "prompt": "Existe \\(\\lim_{x\\to 1}\\dfrac{x-1}{|x-1|}\\)?"
+                "prompt": "Existe \\(\\lim_{x\\to 1}\\dfrac{x-1}{|x-1|}\\)?",
+                "answerHtml": "<p>No</p>",
+                "solutionHtml": "<p>Es la misma estructura que el ejemplo, con laterales \\(-1\\) y \\(1\\), asi que no existe.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(7\\)</p></li><li><p>\\(2\\)</p></li><li><p>No existe</p></li><li><p>\\(3\\)</p></li><li><p>\\(-\\infty\\) por la izquierda y \\(+\\infty\\) por la derecha</p></li><li><p>No</p></li></ol>",
@@ -5575,27 +6307,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S04-01",
-                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\dfrac{3x^2+1}{x^2-4}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\dfrac{3x^2+1}{x^2-4}\\).",
+                "answerHtml": "<p>\\(3\\)</p>",
+                "solutionHtml": "<p>Grados iguales: manda \\(3/1\\).</p>"
               },
               {
                 "tagId": "PX-C08.S04-02",
-                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\dfrac{2x+5}{x^2+1}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\dfrac{2x+5}{x^2+1}\\).",
+                "answerHtml": "<p>\\(0\\)</p>",
+                "solutionHtml": "<p>El denominador tiene mayor grado, asi que el limite es \\(0\\).</p>"
               },
               {
                 "tagId": "PX-C08.S04-03",
-                "prompt": "Calcula \\(\\lim_{x\\to-\\infty}\\dfrac{x^3-1}{2x^2+3}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to-\\infty}\\dfrac{x^3-1}{2x^2+3}\\).",
+                "answerHtml": "<p>\\(-\\infty\\)</p>",
+                "solutionHtml": "<p>El numerador tiene grado \\(3\\) y signo negativo para \\(x\\to-\\infty\\), mientras el denominador es positivo de grado \\(2\\), luego el cociente tiende a \\(-\\infty\\).</p>"
               },
               {
                 "tagId": "PX-C08.S04-04",
-                "prompt": "Calcula \\(\\lim_{x\\to-\\infty}\\dfrac{4x^2-x}{2x^2+1}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to-\\infty}\\dfrac{4x^2-x}{2x^2+1}\\).",
+                "answerHtml": "<p>\\(2\\)</p>",
+                "solutionHtml": "<p>Grados iguales: \\(\\frac{4}{2}=2\\).</p>"
               },
               {
                 "tagId": "PX-C08.S04-05",
-                "prompt": "Calcula \\(\\lim_{x\\to\\infty}(\\sqrt{x^2+1}-x)\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to\\infty}(\\sqrt{x^2+1}-x)\\).",
+                "answerHtml": "<p>\\(0\\)</p>",
+                "solutionHtml": "<p>Racionalizando:</p><div class=\"math-display\">\\[\n  \\sqrt{x^2+1}-x=\\frac{1}{\\sqrt{x^2+1}+x}\\to 0.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S04-06",
-                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\dfrac{x^2-5x}{3x^2+x}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\dfrac{x^2-5x}{3x^2+x}\\).",
+                "answerHtml": "<p>\\(\\frac{1}{3}\\)</p>",
+                "solutionHtml": "<p>Grados iguales: manda \\(1/3\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(3\\)</p></li><li><p>\\(0\\)</p></li><li><p>\\(-\\infty\\)</p></li><li><p>\\(2\\)</p></li><li><p>\\(0\\)</p></li><li><p>\\(\\frac{1}{3}\\)</p></li></ol>",
@@ -5664,27 +6408,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S05-01",
-                "prompt": "Calcula \\(\\lim_{x\\to 1}\\dfrac{x^2-1}{x-1}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 1}\\dfrac{x^2-1}{x-1}\\).",
+                "answerHtml": "<p>\\(2\\)</p>",
+                "solutionHtml": "<p>Se factoriza \\(x^2-1=(x-1)(x+1)\\) y queda \\(x+1\\), cuyo limite es \\(2\\).</p>"
               },
               {
                 "tagId": "PX-C08.S05-02",
-                "prompt": "Calcula \\(\\lim_{x\\to -2}\\dfrac{x^2+3x+2}{x+2}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to -2}\\dfrac{x^2+3x+2}{x+2}\\).",
+                "answerHtml": "<p>\\(-1\\)</p>",
+                "solutionHtml": "<p>\\(x^2+3x+2=(x+1)(x+2)\\), luego queda \\(x+1\\) y el limite vale \\(-1\\).</p>"
               },
               {
                 "tagId": "PX-C08.S05-03",
-                "prompt": "Calcula \\(\\lim_{x\\to 0}\\dfrac{\\sqrt{1+x}-1}{x}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 0}\\dfrac{\\sqrt{1+x}-1}{x}\\).",
+                "answerHtml": "<p>\\(\\frac{1}{2}\\)</p>",
+                "solutionHtml": "<p>Racionalizando se obtiene</p><div class=\"math-display\">\\[\n  \\frac{1}{\\sqrt{1+x}+1}\\to \\frac{1}{2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S05-04",
-                "prompt": "Calcula \\(\\lim_{x\\to 4}\\dfrac{\\sqrt{x}-2}{x-4}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 4}\\dfrac{\\sqrt{x}-2}{x-4}\\).",
+                "answerHtml": "<p>\\(\\frac{1}{4}\\)</p>",
+                "solutionHtml": "<p>Racionalizando:</p><div class=\"math-display\">\\[\n  \\frac{\\sqrt{x}-2}{x-4}=\\frac{1}{\\sqrt{x}+2}\\to \\frac{1}{4}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S05-05",
-                "prompt": "Calcula \\(\\lim_{x\\to 2}\\dfrac{x^2-5x+6}{x-2}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 2}\\dfrac{x^2-5x+6}{x-2}\\).",
+                "answerHtml": "<p>\\(-1\\)</p>",
+                "solutionHtml": "<p>\\(x^2-5x+6=(x-2)(x-3)\\), luego el limite es \\(2-3=-1\\).</p>"
               },
               {
                 "tagId": "PX-C08.S05-06",
-                "prompt": "Calcula \\(\\lim_{x\\to 0}\\dfrac{1-\\cos x}{x^2}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 0}\\dfrac{1-\\cos x}{x^2}\\).",
+                "answerHtml": "<p>\\(\\frac{1}{2}\\)</p>",
+                "solutionHtml": "<p>Usando \\(1-\\cos x=2\\sen^2(x/2)\\), se obtiene el limite conocido \\(1/2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(2\\)</p></li><li><p>\\(-1\\)</p></li><li><p>\\(\\frac{1}{2}\\)</p></li><li><p>\\(\\frac{1}{4}\\)</p></li><li><p>\\(-1\\)</p></li><li><p>\\(\\frac{1}{2}\\)</p></li></ol>",
@@ -5753,27 +6509,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S06-01",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{3x-1}{x+4}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{3x-1}{x+4}\\).",
+                "answerHtml": "<p>Vertical \\(x=-4\\). Horizontal \\(y=3\\)</p>",
+                "solutionHtml": "<p>Cero del denominador en \\(-4\\) y grados iguales: horizontal \\(y=3\\).</p>"
               },
               {
                 "tagId": "PX-C08.S06-02",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x+2}{x^2+1}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x+2}{x^2+1}\\).",
+                "answerHtml": "<p>Horizontal \\(y=0\\)</p>",
+                "solutionHtml": "<p>El denominador domina al numerador, luego \\(y=0\\) es horizontal y no hay verticales.</p>"
               },
               {
                 "tagId": "PX-C08.S06-03",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2-4}{x-2}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2-4}{x-2}\\).",
+                "answerHtml": "<p>No tiene asintota vertical; la grafica coincide con \\(y=x+2\\) salvo en \\(x=2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{x^2-4}{x-2}=x+2 \\quad (x\\neq 2).\n  \\]</div><p>Hay un agujero en \\(x=2\\), no una vertical.</p>"
               },
               {
                 "tagId": "PX-C08.S06-04",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2+3x}{x}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2+3x}{x}\\).",
+                "answerHtml": "<p>No tiene asintota vertical; la grafica coincide con \\(y=x+3\\) salvo en \\(x=0\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{x^2+3x}{x}=x+3\\quad (x\\neq 0).\n  \\]</div><p>De nuevo aparece un agujero en \\(x=0\\).</p>"
               },
               {
                 "tagId": "PX-C08.S06-05",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2+2}{x+1}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2+2}{x+1}\\).",
+                "answerHtml": "<p>Vertical \\(x=-1\\). Oblicua \\(y=x-1\\)</p>",
+                "solutionHtml": "<p>Division:</p><div class=\"math-display\">\\[\n  \\frac{x^2+2}{x+1}=x-1+\\frac{3}{x+1}.\n  \\]</div><p>La vertical es \\(x=-1\\) y la oblicua queda \\(y=x-1\\). Pero al simplificar bien:</p><div class=\"math-display\">\\[\n  x^2+2=(x+1)(x-1)+3,\n  \\]</div><p>asi que la oblicua es \\(y=x-1\\).</p>"
               },
               {
                 "tagId": "PX-C08.S06-06",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{5}{x^2-9}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{5}{x^2-9}\\).",
+                "answerHtml": "<p>Verticales \\(x=-3\\) y \\(x=3\\). Horizontal \\(y=0\\)</p>",
+                "solutionHtml": "<p>El denominador se anula en \\(\\pm 3\\) y para \\(|x|\\to\\infty\\) la funcion tiende a \\(0\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Vertical \\(x=-4\\). Horizontal \\(y=3\\)</p></li><li><p>Horizontal \\(y=0\\)</p></li><li><p>No tiene asintota vertical; la grafica coincide con \\(y=x+2\\) salvo en \\(x=2\\)</p></li><li><p>No tiene asintota vertical; la grafica coincide con \\(y=x+3\\) salvo en \\(x=0\\)</p></li><li><p>Vertical \\(x=-1\\). Oblicua \\(y=x-1\\)</p></li><li><p>Verticales \\(x=-3\\) y \\(x=3\\). Horizontal \\(y=0\\)</p></li></ol>",
@@ -5842,27 +6610,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S07-01",
-                "prompt": "Estudia la continuidad en \\(x=2\\) de \\(f(x)=x^2-1\\)."
+                "prompt": "Estudia la continuidad en \\(x=2\\) de \\(f(x)=x^2-1\\).",
+                "answerHtml": "<p>Si, es continua</p>",
+                "solutionHtml": "<p>Los polinomios son continuos en todo \\(\\R\\).</p>"
               },
               {
                 "tagId": "PX-C08.S07-02",
-                "prompt": "Clasifica la discontinuidad de \\(f(x)=\\dfrac{x^2-4}{x-2}\\) en \\(x=2\\)."
+                "prompt": "Clasifica la discontinuidad de \\(f(x)=\\dfrac{x^2-4}{x-2}\\) en \\(x=2\\).",
+                "answerHtml": "<p>Removible</p>",
+                "solutionHtml": "<p>Se simplifica a \\(x+2\\) para \\(x\\neq 2\\), con limite \\(4\\) finito y falta de valor en el punto: discontinuidad removible.</p>"
               },
               {
                 "tagId": "PX-C08.S07-03",
-                "prompt": "Clasifica la discontinuidad de \\(f(x)=\\dfrac{1}{x+1}\\) en \\(x=-1\\)."
+                "prompt": "Clasifica la discontinuidad de \\(f(x)=\\dfrac{1}{x+1}\\) en \\(x=-1\\).",
+                "answerHtml": "<p>Infinita</p>",
+                "solutionHtml": "<p>La funcion diverge en \\(x=-1\\), luego la discontinuidad es infinita.</p>"
               },
               {
                 "tagId": "PX-C08.S07-04",
-                "prompt": "Estudia en \\(x=1\\) la funcion \\(f(x)=\\begin{cases}2,&x<1\\\\5,&x\\geq1\\end{cases}\\)."
+                "prompt": "Estudia en \\(x=1\\) la funcion \\(f(x)=\\begin{cases}2,&x<1\\\\5,&x\\geq1\\end{cases}\\).",
+                "answerHtml": "<p>De salto</p>",
+                "solutionHtml": "<p>Los laterales son \\(2\\) y \\(5\\), distintos entre si.</p>"
               },
               {
                 "tagId": "PX-C08.S07-05",
-                "prompt": "Estudia en \\(x=0\\) la continuidad de \\(f(x)=|x|\\)."
+                "prompt": "Estudia en \\(x=0\\) la continuidad de \\(f(x)=|x|\\).",
+                "answerHtml": "<p>Si, es continua</p>",
+                "solutionHtml": "<p>El valor absoluto es continuo en todo \\(\\R\\), incluido \\(x=0\\).</p>"
               },
               {
                 "tagId": "PX-C08.S07-06",
-                "prompt": "La funcion tiene un agujero en \\((3,2)\\) y un punto relleno en \\((3,2)\\). Es continua en \\(x=3\\)?"
+                "prompt": "La funcion tiene un agujero en \\((3,2)\\) y un punto relleno en \\((3,2)\\). Es continua en \\(x=3\\)?",
+                "answerHtml": "<p>Si</p>",
+                "solutionHtml": "<p>Si el valor de la funcion coincide con el del agujero-limite, la continuidad queda restablecida.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Si, es continua</p></li><li><p>Removible</p></li><li><p>Infinita</p></li><li><p>De salto</p></li><li><p>Si, es continua</p></li><li><p>Si</p></li></ol>",
@@ -5931,27 +6711,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S08-01",
-                "prompt": "Estudia la continuidad en \\(x=0\\) de \\(f(x)=\\begin{cases}x+2,&x<0\\\\x^2+2,&x\\geq0\\end{cases}\\)."
+                "prompt": "Estudia la continuidad en \\(x=0\\) de \\(f(x)=\\begin{cases}x+2,&x<0\\\\x^2+2,&x\\geq0\\end{cases}\\).",
+                "answerHtml": "<p>Si, es continua</p>",
+                "solutionHtml": "<p>Los laterales y el valor en \\(0\\) valen \\(2\\), luego es continua.</p>"
               },
               {
                 "tagId": "PX-C08.S08-02",
-                "prompt": "Estudia la continuidad en \\(x=1\\) de \\(f(x)=\\begin{cases}2x,&x<1\\\\x+1,&x\\geq1\\end{cases}\\)."
+                "prompt": "Estudia la continuidad en \\(x=1\\) de \\(f(x)=\\begin{cases}2x,&x<1\\\\x+1,&x\\geq1\\end{cases}\\).",
+                "answerHtml": "<p>Si, es continua</p>",
+                "solutionHtml": "<p>En \\(x=1\\), ambos tramos dan \\(2\\), asi que enlazan sin salto.</p>"
               },
               {
                 "tagId": "PX-C08.S08-03",
-                "prompt": "Calcula \\(f(2)\\) si \\(f(x)=\\begin{cases}x^2,&x<2\\\\3x-2,&x\\geq2\\end{cases}\\)."
+                "prompt": "Calcula \\(f(2)\\) si \\(f(x)=\\begin{cases}x^2,&x<2\\\\3x-2,&x\\geq2\\end{cases}\\).",
+                "answerHtml": "<p>\\(4\\)</p>",
+                "solutionHtml": "<p>El segundo tramo incluye \\(x=2\\), luego</p><div class=\"math-display\">\\[\n  f(2)=3\\cdot 2-2=4.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S08-04",
-                "prompt": "Indica si la grafica de \\(f(x)=\\begin{cases}-x,&x<0\\\\x,&x\\geq0\\end{cases}\\) tiene pico o salto en \\(x=0\\)."
+                "prompt": "Indica si la grafica de \\(f(x)=\\begin{cases}-x,&x<0\\\\x,&x\\geq0\\end{cases}\\) tiene pico o salto en \\(x=0\\).",
+                "answerHtml": "<p>Tiene un pico, no un salto</p>",
+                "solutionHtml": "<p>Los laterales coinciden en \\(0\\), pero cambia la pendiente; la grafica forma un pico.</p>"
               },
               {
                 "tagId": "PX-C08.S08-05",
-                "prompt": "Estudia la continuidad en \\(x=-1\\) de \\(f(x)=\\begin{cases}x+3,&x<-1\\\\2,&x\\geq-1\\end{cases}\\)."
+                "prompt": "Estudia la continuidad en \\(x=-1\\) de \\(f(x)=\\begin{cases}x+3,&x<-1\\\\2,&x\\geq-1\\end{cases}\\).",
+                "answerHtml": "<p>Si, es continua</p>",
+                "solutionHtml": "<p>El primer tramo tiende a \\(2\\) al acercarse a \\(-1\\), y el segundo vale \\(2\\) en ese punto.</p>"
               },
               {
                 "tagId": "PX-C08.S08-06",
-                "prompt": "Describe brevemente la grafica de \\(f(x)=\\begin{cases}1,&x<0\\\\x+1,&x\\geq0\\end{cases}\\)."
+                "prompt": "Describe brevemente la grafica de \\(f(x)=\\begin{cases}1,&x<0\\\\x+1,&x\\geq0\\end{cases}\\).",
+                "answerHtml": "<p>Semirrecta horizontal \\(y=1\\) a la izquierda y recta \\(y=x+1\\) a la derecha, unidas en \\((0,1)\\)</p>",
+                "solutionHtml": "<p>La descripcion sale directamente de cada formula y de la continuidad en \\((0,1)\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Si, es continua</p></li><li><p>Si, es continua</p></li><li><p>\\(4\\)</p></li><li><p>Tiene un pico, no un salto</p></li><li><p>Si, es continua</p></li><li><p>Semirrecta horizontal \\(y=1\\) a la izquierda y recta \\(y=x+1\\) a la derecha, unidas en \\((0,1)\\)</p></li></ol>",
@@ -6020,27 +6812,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S09-01",
-                "prompt": "Halla \\(a\\) para que \\(f(x)=\\begin{cases}ax+2,&x<1\\\\5,&x\\geq1\\end{cases}\\) sea continua en \\(x=1\\)."
+                "prompt": "Halla \\(a\\) para que \\(f(x)=\\begin{cases}ax+2,&x<1\\\\5,&x\\geq1\\end{cases}\\) sea continua en \\(x=1\\).",
+                "answerHtml": "<p>\\(a=3\\)</p>",
+                "solutionHtml": "<p>En \\(x=1\\): \\(a+2=5\\), luego \\(a=3\\).</p>"
               },
               {
                 "tagId": "PX-C08.S09-02",
-                "prompt": "Halla \\(b\\) para que \\(f(x)=\\begin{cases}x+b,&x<3\\\\7,&x\\geq3\\end{cases}\\) sea continua en \\(x=3\\)."
+                "prompt": "Halla \\(b\\) para que \\(f(x)=\\begin{cases}x+b,&x<3\\\\7,&x\\geq3\\end{cases}\\) sea continua en \\(x=3\\).",
+                "answerHtml": "<p>\\(b=4\\)</p>",
+                "solutionHtml": "<p>En \\(x=3\\): \\(3+b=7\\), luego \\(b=4\\).</p>"
               },
               {
                 "tagId": "PX-C08.S09-03",
-                "prompt": "Halla \\(c\\) para que \\(f(x)=\\begin{cases}c,&x<0\\\\x^2+4,&x\\geq0\\end{cases}\\) sea continua en \\(x=0\\)."
+                "prompt": "Halla \\(c\\) para que \\(f(x)=\\begin{cases}c,&x<0\\\\x^2+4,&x\\geq0\\end{cases}\\) sea continua en \\(x=0\\).",
+                "answerHtml": "<p>\\(c=4\\)</p>",
+                "solutionHtml": "<p>En \\(x=0\\): el valor del tramo derecho es \\(4\\), asi que \\(c=4\\).</p>"
               },
               {
                 "tagId": "PX-C08.S09-04",
-                "prompt": "Halla \\(d\\) para que \\(f(x)=\\begin{cases}2x+d,&x<2\\\\x+4,&x\\geq2\\end{cases}\\) sea continua en \\(x=2\\)."
+                "prompt": "Halla \\(d\\) para que \\(f(x)=\\begin{cases}2x+d,&x<2\\\\x+4,&x\\geq2\\end{cases}\\) sea continua en \\(x=2\\).",
+                "answerHtml": "<p>\\(d=2\\)</p>",
+                "solutionHtml": "<p>En \\(x=2\\): \\(4+d=6\\), luego \\(d=2\\).</p>"
               },
               {
                 "tagId": "PX-C08.S09-05",
-                "prompt": "Halla \\(k\\) para que \\(f(x)=\\begin{cases}\\dfrac{x^2-9}{x-3},&x\\neq3\\\\k,&x=3\\end{cases}\\) sea continua en \\(x=3\\)."
+                "prompt": "Halla \\(k\\) para que \\(f(x)=\\begin{cases}\\dfrac{x^2-9}{x-3},&x\\neq3\\\\k,&x=3\\end{cases}\\) sea continua en \\(x=3\\).",
+                "answerHtml": "<p>\\(k=6\\)</p>",
+                "solutionHtml": "<p>Se simplifica a \\(x+3\\) para \\(x\\neq 3\\), asi que el limite vale \\(6\\).</p>"
               },
               {
                 "tagId": "PX-C08.S09-06",
-                "prompt": "Halla \\(m\\) para que \\(f(x)=\\begin{cases}mx-1,&x<1\\\\2x-2,&x\\geq1\\end{cases}\\) sea continua en \\(x=1\\)."
+                "prompt": "Halla \\(m\\) para que \\(f(x)=\\begin{cases}mx-1,&x<1\\\\2x-2,&x\\geq1\\end{cases}\\) sea continua en \\(x=1\\).",
+                "answerHtml": "<p>\\(m=1\\)</p>",
+                "solutionHtml": "<p>En \\(x=1\\): \\(m-1=0\\), luego \\(m=1\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(a=3\\)</p></li><li><p>\\(b=4\\)</p></li><li><p>\\(c=4\\)</p></li><li><p>\\(d=2\\)</p></li><li><p>\\(k=6\\)</p></li><li><p>\\(m=1\\)</p></li></ol>",
@@ -6109,27 +6913,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S10-01",
-                "prompt": "Sea \\(f(t)=10+\\dfrac{40}{t+2}\\). Halla \\(f(0)\\)."
+                "prompt": "Sea \\(f(t)=10+\\dfrac{40}{t+2}\\). Halla \\(f(0)\\).",
+                "answerHtml": "<p>\\(30\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f(0)=10+\\frac{40}{2}=30.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S10-02",
-                "prompt": "Sea \\(g(t)=3+\\dfrac{9}{t+1}\\). Halla \\(\\lim_{t\\to\\infty}g(t)\\)."
+                "prompt": "Sea \\(g(t)=3+\\dfrac{9}{t+1}\\). Halla \\(\\lim_{t\\to\\infty}g(t)\\).",
+                "answerHtml": "<p>\\(3\\)</p>",
+                "solutionHtml": "<p>El termino fraccionario tiende a \\(0\\), luego el limite es \\(3\\).</p>"
               },
               {
                 "tagId": "PX-C08.S10-03",
-                "prompt": "Sea \\(h(t)=100-\\dfrac{60}{t+4}\\). Halla el valor inicial y el valor limite."
+                "prompt": "Sea \\(h(t)=100-\\dfrac{60}{t+4}\\). Halla el valor inicial y el valor limite.",
+                "answerHtml": "<p>Inicial \\(85\\). Limite \\(100\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  h(0)=100-\\frac{60}{4}=85,\\qquad \\lim_{t\\to\\infty}h(t)=100.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S10-04",
-                "prompt": "Un deposito se modeliza con \\(V(t)=20+\\dfrac{80}{t+5}\\). Que valor marca a largo plazo?"
+                "prompt": "Un deposito se modeliza con \\(V(t)=20+\\dfrac{80}{t+5}\\). Que valor marca a largo plazo?",
+                "answerHtml": "<p>\\(20\\)</p>",
+                "solutionHtml": "<p>La asintota horizontal es \\(y=20\\), asi que el modelo se aproxima a \\(20\\).</p>"
               },
               {
                 "tagId": "PX-C08.S10-05",
-                "prompt": "Sea \\(M(t)=7-\\dfrac{14}{t+2}\\). Halla \\(M(0)\\)."
+                "prompt": "Sea \\(M(t)=7-\\dfrac{14}{t+2}\\). Halla \\(M(0)\\).",
+                "answerHtml": "<p>\\(0\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  M(0)=7-\\frac{14}{2}=0.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S10-06",
-                "prompt": "Sea \\(N(t)=4+\\dfrac{12}{t+6}\\). Halla \\(N(0)\\) y \\(\\lim_{t\\to\\infty}N(t)\\)."
+                "prompt": "Sea \\(N(t)=4+\\dfrac{12}{t+6}\\). Halla \\(N(0)\\) y \\(\\lim_{t\\to\\infty}N(t)\\).",
+                "answerHtml": "<p>\\(6\\) y \\(4\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  N(0)=4+\\frac{12}{6}=6,\\qquad \\lim_{t\\to\\infty}N(t)=4.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(30\\)</p></li><li><p>\\(3\\)</p></li><li><p>Inicial \\(85\\). Limite \\(100\\)</p></li><li><p>\\(20\\)</p></li><li><p>\\(0\\)</p></li><li><p>\\(6\\) y \\(4\\)</p></li></ol>",
@@ -6198,27 +7014,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C08.S11-01",
-                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\left(\\sqrt{x^2+2x}-x\\right)\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to\\infty}\\left(\\sqrt{x^2+2x}-x\\right)\\).",
+                "answerHtml": "<p>\\(1\\)</p>",
+                "solutionHtml": "<p>Racionalizando queda</p><div class=\"math-display\">\\[\n  \\frac{2x}{\\sqrt{x^2+2x}+x}=\\frac{2}{\\sqrt{1+\\frac{2}{x}}+1}\\to 1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S11-02",
-                "prompt": "Calcula \\(\\lim_{x\\to 1}\\dfrac{x^2-1}{x^2-2x+1}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 1}\\dfrac{x^2-1}{x^2-2x+1}\\).",
+                "answerHtml": "<p>No existe como numero finito; diverge</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\frac{x^2-1}{x^2-2x+1}=\\frac{(x-1)(x+1)}{(x-1)^2}=\\frac{x+1}{x-1},\n  \\]</div><p>que diverge al acercarse a \\(1\\).</p>"
               },
               {
                 "tagId": "PX-C08.S11-03",
-                "prompt": "Halla \\(k\\) para que \\(f(x)=\\begin{cases}kx+1,&x<2\\\\x+3,&x\\geq2\\end{cases}\\) sea continua en \\(x=2\\)."
+                "prompt": "Halla \\(k\\) para que \\(f(x)=\\begin{cases}kx+1,&x<2\\\\x+3,&x\\geq2\\end{cases}\\) sea continua en \\(x=2\\).",
+                "answerHtml": "<p>\\(k=2\\)</p>",
+                "solutionHtml": "<p>En \\(x=2\\), \\(2k+1=5\\), luego \\(k=2\\).</p>"
               },
               {
                 "tagId": "PX-C08.S11-04",
-                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2+1}{x+2}\\)."
+                "prompt": "Estudia las asintotas de \\(f(x)=\\dfrac{x^2+1}{x+2}\\).",
+                "answerHtml": "<p>Vertical \\(x=-2\\). Oblicua \\(y=x-2\\)</p>",
+                "solutionHtml": "<p>Division:</p><div class=\"math-display\">\\[\n  \\frac{x^2+1}{x+2}=x-2+\\frac{5}{x+2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S11-05",
-                "prompt": "Calcula \\(\\lim_{x\\to 0}\\dfrac{\\sqrt{1+2x}-1}{x}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 0}\\dfrac{\\sqrt{1+2x}-1}{x}\\).",
+                "answerHtml": "<p>\\(1\\)</p>",
+                "solutionHtml": "<p>Racionalizando:</p><div class=\"math-display\">\\[\n  \\frac{\\sqrt{1+2x}-1}{x}=\\frac{2}{\\sqrt{1+2x}+1}\\to 1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C08.S11-06",
-                "prompt": "Decide si \\(f(x)=\\dfrac{x^2-9}{x-3}\\) es continua en \\(x=3\\)."
+                "prompt": "Decide si \\(f(x)=\\dfrac{x^2-9}{x-3}\\) es continua en \\(x=3\\).",
+                "answerHtml": "<p>No</p>",
+                "solutionHtml": "<p>El limite en \\(x=3\\) existe y vale \\(6\\), pero la funcion original no esta definida en ese punto, asi que no es continua.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(1\\)</p></li><li><p>No existe como numero finito; diverge</p></li><li><p>\\(k=2\\)</p></li><li><p>Vertical \\(x=-2\\). Oblicua \\(y=x-2\\)</p></li><li><p>\\(1\\)</p></li><li><p>No</p></li></ol>",
@@ -6297,35 +7125,51 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S01-01",
-                "prompt": "Deriva \\(f(x)=x^4-3x+2\\)."
+                "prompt": "Deriva \\(f(x)=x^4-3x+2\\).",
+                "answerHtml": "<p>\\(4x^3-3\\)</p>",
+                "solutionHtml": "<p>\\((x^4-3x+2)'=4x^3-3\\).</p>"
               },
               {
                 "tagId": "PX-C09.S01-02",
-                "prompt": "Deriva \\(f(x)=(x^2+1)(x-3)\\)."
+                "prompt": "Deriva \\(f(x)=(x^2+1)(x-3)\\).",
+                "answerHtml": "<p>\\(3x^2-6x+1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=2x(x-3)+(x^2+1)=3x^2-6x+1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S01-03",
-                "prompt": "Deriva \\(f(x)=\\dfrac{2x+1}{x-2}\\)."
+                "prompt": "Deriva \\(f(x)=\\dfrac{2x+1}{x-2}\\).",
+                "answerHtml": "<p>\\(-\\dfrac{5}{(x-2)^2}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=\\frac{2(x-2)-(2x+1)}{(x-2)^2}=-\\frac{5}{(x-2)^2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S01-04",
-                "prompt": "Deriva \\(f(x)=\\sqrt{x^2+4}\\)."
+                "prompt": "Deriva \\(f(x)=\\sqrt{x^2+4}\\).",
+                "answerHtml": "<p>\\(\\dfrac{x}{\\sqrt{x^2+4}}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=\\frac{1}{2}(x^2+4)^{-1/2}\\cdot 2x=\\frac{x}{\\sqrt{x^2+4}}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S01-05",
-                "prompt": "Deriva \\(f(x)=e^{3x}\\)."
+                "prompt": "Deriva \\(f(x)=e^{3x}\\).",
+                "answerHtml": "<p>\\(3e^{3x}\\)</p>",
+                "solutionHtml": "<p>\\((e^{3x})'=3e^{3x}\\).</p>"
               },
               {
                 "tagId": "PX-C09.S01-06",
-                "prompt": "Deriva \\(f(x)=\\ln(x^2+1)\\)."
+                "prompt": "Deriva \\(f(x)=\\ln(x^2+1)\\).",
+                "answerHtml": "<p>\\(\\dfrac{2x}{x^2+1}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  (\\ln(x^2+1))'=\\frac{2x}{x^2+1}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S01-07",
-                "prompt": "Deriva \\(f(x)=\\sen x\\cos x\\)."
+                "prompt": "Deriva \\(f(x)=\\sen x\\cos x\\).",
+                "answerHtml": "<p>\\(\\cos^2 x-\\sen^2 x\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  (\\sen x\\cos x)'=\\cos x\\cos x+\\sen x(-\\sen x)=\\cos^2 x-\\sen^2 x.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S01-08",
-                "prompt": "Deriva \\(f(x)=(x^2-1)^3\\)."
+                "prompt": "Deriva \\(f(x)=(x^2-1)^3\\).",
+                "answerHtml": "<p>\\(6x(x^2-1)^2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\bigl((x^2-1)^3\\bigr)'=3(x^2-1)^2\\cdot 2x=6x(x^2-1)^2.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(4x^3-3\\)</p></li><li><p>\\(3x^2-6x+1\\)</p></li><li><p>\\(-\\dfrac{5}{(x-2)^2}\\)</p></li><li><p>\\(\\dfrac{x}{\\sqrt{x^2+4}}\\)</p></li><li><p>\\(3e^{3x}\\)</p></li><li><p>\\(\\dfrac{2x}{x^2+1}\\)</p></li><li><p>\\(\\cos^2 x-\\sen^2 x\\)</p></li><li><p>\\(6x(x^2-1)^2\\)</p></li></ol>",
@@ -6394,27 +7238,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S02-01",
-                "prompt": "Estudia monotonia y extremos de \\(f(x)=-x^2+4x\\)."
+                "prompt": "Estudia monotonia y extremos de \\(f(x)=-x^2+4x\\).",
+                "answerHtml": "<p>Crece en \\((-\\infty,2)\\), decrece en \\((2,\\infty)\\) y tiene maximo en \\((2,4)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=-2x+4=-2(x-2).\n  \\]</div><p>Es positiva si \\(x<2\\) y negativa si \\(x>2\\). Luego hay maximo en</p><div class=\"math-display\">\\[\n  f(2)=4.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S02-02",
-                "prompt": "Estudia monotonia, extremos e inflexion de \\(f(x)=x^3-6x^2\\)."
+                "prompt": "Estudia monotonia, extremos e inflexion de \\(f(x)=x^3-6x^2\\).",
+                "answerHtml": "<p>Crece en \\((-\\infty,0)\\cup(4,\\infty)\\), decrece en \\((0,4)\\), maximo en \\((0,0)\\), minimo en \\((4,-32)\\) e inflexion en \\((2,-16)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=3x^2-12x=3x(x-4),\\qquad f''(x)=6x-12.\n  \\]</div><p>De aqui salen los intervalos de crecimiento y decrecimiento, el maximo en \\(x=0\\), el minimo en \\(x=4\\) y el cambio de concavidad en \\(x=2\\). Los valores son</p><div class=\"math-display\">\\[\n  f(0)=0,\\qquad f(4)=-32,\\qquad f(2)=-16.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S02-03",
-                "prompt": "Estudia monotonia y extremos de \\(f(x)=x^4-2x^2\\)."
+                "prompt": "Estudia monotonia y extremos de \\(f(x)=x^4-2x^2\\).",
+                "answerHtml": "<p>Decrece en \\((-\\infty,-1)\\cup(0,1)\\), crece en \\((-1,0)\\cup(1,\\infty)\\), maximo en \\((0,0)\\) y minimos en \\((-1,-1)\\) y \\((1,-1)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=4x^3-4x=4x(x-1)(x+1).\n  \\]</div><p>La tabla de signos produce los cuatro intervalos indicados. Los valores criticos son</p><div class=\"math-display\">\\[\n  f(-1)=-1,\\qquad f(0)=0,\\qquad f(1)=-1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S02-04",
-                "prompt": "Halla los extremos absolutos de \\(f(x)=x^2-4x+5\\) en \\([0,3]\\)."
+                "prompt": "Halla los extremos absolutos de \\(f(x)=x^2-4x+5\\) en \\([0,3]\\).",
+                "answerHtml": "<p>Maximo absoluto \\(5\\) en \\(x=0\\); minimo absoluto \\(1\\) en \\(x=2\\)</p>",
+                "solutionHtml": "<p>En \\([0,3]\\) comparamos extremos y punto critico interior:</p><div class=\"math-display\">\\[\n  f(0)=5,\\qquad f(2)=1,\\qquad f(3)=2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S02-05",
-                "prompt": "Estudia monotonia y curvatura de \\(f(x)=\\ln x\\)."
+                "prompt": "Estudia monotonia y curvatura de \\(f(x)=\\ln x\\).",
+                "answerHtml": "<p>Crece en \\((0,\\infty)\\), es concava hacia abajo en \\((0,\\infty)\\) y no tiene inflexion</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=\\frac{1}{x}>0,\\qquad f''(x)=-\\frac{1}{x^2}<0\n  \\]</div><p>para todo \\(x>0\\).</p>"
               },
               {
                 "tagId": "PX-C09.S02-06",
-                "prompt": "Estudia monotonia y extremos de \\(f(x)=e^x-x\\)."
+                "prompt": "Estudia monotonia y extremos de \\(f(x)=e^x-x\\).",
+                "answerHtml": "<p>Decrece en \\((-\\infty,0)\\), crece en \\((0,\\infty)\\) y tiene minimo en \\((0,1)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=e^x-1.\n  \\]</div><p>Se anula en \\(x=0\\), es negativa si \\(x<0\\) y positiva si \\(x>0\\). Ademas,</p><div class=\"math-display\">\\[\n  f(0)=1.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>Crece en \\((-\\infty,2)\\), decrece en \\((2,\\infty)\\) y tiene maximo en \\((2,4)\\)</p></li><li><p>Crece en \\((-\\infty,0)\\cup(4,\\infty)\\), decrece en \\((0,4)\\), maximo en \\((0,0)\\), minimo en \\((4,-32)\\) e inflexion en \\((2,-16)\\)</p></li><li><p>Decrece en \\((-\\infty,-1)\\cup(0,1)\\), crece en \\((-1,0)\\cup(1,\\infty)\\), maximo en \\((0,0)\\) y minimos en \\((-1,-1)\\) y \\((1,-1)\\)</p></li><li><p>Maximo absoluto \\(5\\) en \\(x=0\\); minimo absoluto \\(1\\) en \\(x=2\\)</p></li><li><p>Crece en \\((0,\\infty)\\), es concava hacia abajo en \\((0,\\infty)\\) y no tiene inflexion</p></li><li><p>Decrece en \\((-\\infty,0)\\), crece en \\((0,\\infty)\\) y tiene minimo en \\((0,1)\\)</p></li></ol>",
@@ -6483,27 +7339,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S03-01",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=x^2+2x\\) en \\(x=2\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=x^2+2x\\) en \\(x=2\\).",
+                "answerHtml": "<p>Tangente: \\(y=6x-4\\). Normal: \\(y=-\\dfrac{x}{6}+\\dfrac{25}{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f(2)=8,\\qquad f'(x)=2x+2,\\qquad f'(2)=6.\n  \\]</div><p>Tangente:</p><div class=\"math-display\">\\[\n  y-8=6(x-2)\\Longrightarrow y=6x-4.\n  \\]</div><p>Normal:</p><div class=\"math-display\">\\[\n  y-8=-\\frac{1}{6}(x-2)\\Longrightarrow y=-\\frac{x}{6}+\\frac{25}{3}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S03-02",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=\\dfrac{x+1}{x-1}\\) en \\(x=3\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=\\dfrac{x+1}{x-1}\\) en \\(x=3\\).",
+                "answerHtml": "<p>Tangente: \\(y=-\\dfrac{x}{2}+\\dfrac{7}{2}\\). Normal: \\(y=2x-4\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f(3)=2,\\qquad f'(x)=\\frac{(x-1)-(x+1)}{(x-1)^2}=-\\frac{2}{(x-1)^2},\n  \\]</div><p>luego \\(f'(3)=-1/2\\). La tangente es</p><div class=\"math-display\">\\[\n  y-2=-\\frac{1}{2}(x-3)\\Longrightarrow y=-\\frac{x}{2}+\\frac{7}{2}.\n  \\]</div><p>La normal tiene pendiente \\(2\\):</p><div class=\"math-display\">\\[\n  y-2=2(x-3)\\Longrightarrow y=2x-4.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S03-03",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=\\sqrt{x+1}\\) en \\(x=3\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=\\sqrt{x+1}\\) en \\(x=3\\).",
+                "answerHtml": "<p>Tangente: \\(y=\\dfrac{x}{4}+\\dfrac{5}{4}\\). Normal: \\(y=-4x+14\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f(3)=2,\\qquad f'(x)=\\frac{1}{2\\sqrt{x+1}},\\qquad f'(3)=\\frac{1}{4}.\n  \\]</div><div class=\"math-display\">\\[\n  y-2=\\frac{1}{4}(x-3)\\Longrightarrow y=\\frac{x}{4}+\\frac{5}{4}.\n  \\]</div><p>La normal tiene pendiente \\(-4\\):</p><div class=\"math-display\">\\[\n  y-2=-4(x-3)\\Longrightarrow y=-4x+14.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S03-04",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=e^x\\) en \\(x=0\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=e^x\\) en \\(x=0\\).",
+                "answerHtml": "<p>Tangente: \\(y=x+1\\). Normal: \\(y=-x+1\\)</p>",
+                "solutionHtml": "<p>Como \\(f(0)=1\\) y \\(f'(0)=1\\),</p><div class=\"math-display\">\\[\n  y-1=x\\Longrightarrow y=x+1.\n  \\]</div><p>La normal es</p><div class=\"math-display\">\\[\n  y-1=-x\\Longrightarrow y=-x+1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S03-05",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=\\ln x\\) en \\(x=1\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=\\ln x\\) en \\(x=1\\).",
+                "answerHtml": "<p>Tangente: \\(y=x-1\\). Normal: \\(y=-x+1\\)</p>",
+                "solutionHtml": "<p>Como \\(f(1)=0\\) y \\(f'(1)=1\\),</p><div class=\"math-display\">\\[\n  y=x-1,\\qquad y=-x+1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S03-06",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=x^3\\) en \\(x=0\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=x^3\\) en \\(x=0\\).",
+                "answerHtml": "<p>Tangente: \\(y=0\\). Normal: \\(x=0\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f(0)=0,\\qquad f'(0)=0.\n  \\]</div><p>La tangente es \\(y=0\\) y la normal \\(x=0\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Tangente: \\(y=6x-4\\). Normal: \\(y=-\\dfrac{x}{6}+\\dfrac{25}{3}\\)</p></li><li><p>Tangente: \\(y=-\\dfrac{x}{2}+\\dfrac{7}{2}\\). Normal: \\(y=2x-4\\)</p></li><li><p>Tangente: \\(y=\\dfrac{x}{4}+\\dfrac{5}{4}\\). Normal: \\(y=-4x+14\\)</p></li><li><p>Tangente: \\(y=x+1\\). Normal: \\(y=-x+1\\)</p></li><li><p>Tangente: \\(y=x-1\\). Normal: \\(y=-x+1\\)</p></li><li><p>Tangente: \\(y=0\\). Normal: \\(x=0\\)</p></li></ol>",
@@ -6572,27 +7440,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S04-01",
-                "prompt": "Halla la tangente a \\(f(x)=x^2+1\\) con pendiente \\(4\\)."
+                "prompt": "Halla la tangente a \\(f(x)=x^2+1\\) con pendiente \\(4\\).",
+                "answerHtml": "<p>\\(y=4x-3\\)</p>",
+                "solutionHtml": "<p>\\(f'(x)=2x\\). Igualando a \\(4\\), sale \\(x=2\\). Como \\(f(2)=5\\),</p><div class=\"math-display\">\\[\n  y-5=4(x-2)\\Longrightarrow y=4x-3.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S04-02",
-                "prompt": "Halla las tangentes a \\(f(x)=x^3\\) paralelas a la recta \\(y=12x+1\\)."
+                "prompt": "Halla las tangentes a \\(f(x)=x^3\\) paralelas a la recta \\(y=12x+1\\).",
+                "answerHtml": "<p>\\(y=12x+16\\) y \\(y=12x-16\\)</p>",
+                "solutionHtml": "<p>\\(f'(x)=3x^2\\). Igualando a \\(12\\), sale \\(x=\\pm 2\\). Los puntos son \\((-2,-8)\\) y \\((2,8)\\), asi que</p><div class=\"math-display\">\\[\n  y+8=12(x+2)\\Longrightarrow y=12x+16,\n  \\]</div><div class=\"math-display\">\\[\n  y-8=12(x-2)\\Longrightarrow y=12x-16.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S04-03",
-                "prompt": "Halla la tangente a \\(f(x)=\\ln x\\) paralela a la recta \\(y=x+3\\)."
+                "prompt": "Halla la tangente a \\(f(x)=\\ln x\\) paralela a la recta \\(y=x+3\\).",
+                "answerHtml": "<p>\\(y=x-1\\)</p>",
+                "solutionHtml": "<p>\\((\\ln x)'=1/x\\). Igualando a \\(1\\), sale \\(x=1\\). Como \\(f(1)=0\\),</p><div class=\"math-display\">\\[\n  y=x-1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S04-04",
-                "prompt": "Halla la tangente a \\(f(x)=e^x\\) cuya pendiente sea \\(e^2\\)."
+                "prompt": "Halla la tangente a \\(f(x)=e^x\\) cuya pendiente sea \\(e^2\\).",
+                "answerHtml": "<p>\\(y=e^2x-e^2\\)</p>",
+                "solutionHtml": "<p>Si \\(f'(x)=e^x=e^2\\), entonces \\(x=2\\). Como \\(f(2)=e^2\\),</p><div class=\"math-display\">\\[\n  y-e^2=e^2(x-2)\\Longrightarrow y=e^2x-e^2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S04-05",
-                "prompt": "Halla las tangentes horizontales de \\(f(x)=x+\\dfrac{1}{x}\\)."
+                "prompt": "Halla las tangentes horizontales de \\(f(x)=x+\\dfrac{1}{x}\\).",
+                "answerHtml": "<p>\\(y=2\\) y \\(y=-2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=1-\\frac{1}{x^2}=0 \\Longrightarrow x=\\pm 1.\n  \\]</div><p>Los valores son \\(f(1)=2\\) y \\(f(-1)=-2\\), luego las tangentes son \\(y=2\\) e \\(y=-2\\).</p>"
               },
               {
                 "tagId": "PX-C09.S04-06",
-                "prompt": "Sea \\(f(x)=x^2+ax\\). Determina \\(a\\) para que la tangente en \\(x=1\\) sea paralela a la recta \\(y=5x-2\\), y escribe despues esa tangente."
+                "prompt": "Sea \\(f(x)=x^2+ax\\). Determina \\(a\\) para que la tangente en \\(x=1\\) sea paralela a la recta \\(y=5x-2\\), y escribe despues esa tangente.",
+                "answerHtml": "<p>\\(a=3\\) y la tangente es \\(y=5x-1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=2x+a,\\qquad f'(1)=2+a.\n  \\]</div><p>Debe valer \\(5\\), asi que \\(a=3\\). Entonces \\(f(1)=4\\) y</p><div class=\"math-display\">\\[\n  y-4=5(x-1)\\Longrightarrow y=5x-1.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(y=4x-3\\)</p></li><li><p>\\(y=12x+16\\) y \\(y=12x-16\\)</p></li><li><p>\\(y=x-1\\)</p></li><li><p>\\(y=e^2x-e^2\\)</p></li><li><p>\\(y=2\\) y \\(y=-2\\)</p></li><li><p>\\(a=3\\) y la tangente es \\(y=5x-1\\)</p></li></ol>",
@@ -6661,27 +7541,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S05-01",
-                "prompt": "Halla \\(a\\) para que \\(f(x)=x^3+ax\\) tenga tangente horizontal en \\(x=1\\)."
+                "prompt": "Halla \\(a\\) para que \\(f(x)=x^3+ax\\) tenga tangente horizontal en \\(x=1\\).",
+                "answerHtml": "<p>\\(a=-3\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=3x^2+a,\\qquad f'(1)=3+a=0.\n  \\]</div><p>Luego \\(a=-3\\).</p>"
               },
               {
                 "tagId": "PX-C09.S05-02",
-                "prompt": "Halla \\(b\\) para que \\(f(x)=x^2+bx+1\\) tenga un minimo en \\(x=2\\)."
+                "prompt": "Halla \\(b\\) para que \\(f(x)=x^2+bx+1\\) tenga un minimo en \\(x=2\\).",
+                "answerHtml": "<p>\\(b=-4\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=2x+b,\\qquad f'(2)=4+b=0.\n  \\]</div><p>Sale \\(b=-4\\). Como la segunda derivada vale \\(2>0\\), el extremo es minimo.</p>"
               },
               {
                 "tagId": "PX-C09.S05-03",
-                "prompt": "Halla \\(c\\) para que \\(f(x)=x^3+cx^2\\) tenga punto de inflexion en \\(x=1\\)."
+                "prompt": "Halla \\(c\\) para que \\(f(x)=x^3+cx^2\\) tenga punto de inflexion en \\(x=1\\).",
+                "answerHtml": "<p>\\(c=-3\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f''(x)=6x+2c,\\qquad f''(1)=6+2c=0.\n  \\]</div><p>Luego \\(c=-3\\).</p>"
               },
               {
                 "tagId": "PX-C09.S05-04",
-                "prompt": "Halla \\(k\\) para que \\(f(x)=x^2+kx\\) tenga en \\(x=0\\) una tangente paralela a \\(y=2x-1\\)."
+                "prompt": "Halla \\(k\\) para que \\(f(x)=x^2+kx\\) tenga en \\(x=0\\) una tangente paralela a \\(y=2x-1\\).",
+                "answerHtml": "<p>\\(k=2\\)</p>",
+                "solutionHtml": "<p>La pendiente pedida es \\(2\\). Como</p><div class=\"math-display\">\\[\n  f'(x)=2x+k,\n  \\]</div><p>en \\(x=0\\) debe cumplirse \\(k=2\\).</p>"
               },
               {
                 "tagId": "PX-C09.S05-05",
-                "prompt": "Halla \\(m\\) para que \\(f(x)=x^3+mx^2\\) tenga un punto critico en \\(x=2\\)."
+                "prompt": "Halla \\(m\\) para que \\(f(x)=x^3+mx^2\\) tenga un punto critico en \\(x=2\\).",
+                "answerHtml": "<p>\\(m=-3\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=3x^2+2mx,\\qquad f'(2)=12+4m=0.\n  \\]</div><p>Luego \\(m=-3\\).</p>"
               },
               {
                 "tagId": "PX-C09.S05-06",
-                "prompt": "Halla \\(p\\) para que \\(f(x)=px^2+4x\\) tenga tangente horizontal en \\(x=-1\\)."
+                "prompt": "Halla \\(p\\) para que \\(f(x)=px^2+4x\\) tenga tangente horizontal en \\(x=-1\\).",
+                "answerHtml": "<p>\\(p=2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=2px+4,\\qquad f'(-1)=-2p+4=0.\n  \\]</div><p>Por tanto, \\(p=2\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(a=-3\\)</p></li><li><p>\\(b=-4\\)</p></li><li><p>\\(c=-3\\)</p></li><li><p>\\(k=2\\)</p></li><li><p>\\(m=-3\\)</p></li><li><p>\\(p=2\\)</p></li></ol>",
@@ -6750,27 +7642,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S06-01",
-                "prompt": "Estudia en \\(x=1\\) la continuidad y derivabilidad de \\( f(x)= \\begin{cases} 2x+1,& x<1,\\\\ x^2+2,& x\\geq 1. \\end{cases} \\)"
+                "prompt": "Estudia en \\(x=1\\) la continuidad y derivabilidad de \\( f(x)= \\begin{cases} 2x+1,& x<1,\\\\ x^2+2,& x\\geq 1. \\end{cases} \\)",
+                "answerHtml": "<p>Es continua y derivable</p>",
+                "solutionHtml": "<p>En \\(x=1\\),</p><div class=\"math-display\">\\[\n  2\\cdot 1+1=3,\\qquad 1^2+2=3.\n  \\]</div><p>Hay continuidad. Las derivadas laterales valen</p><div class=\"math-display\">\\[\n  2 \\quad \\text{y} \\quad 2x|_{x=1}=2,\n  \\]</div><p>luego tambien es derivable.</p>"
               },
               {
                 "tagId": "PX-C09.S06-02",
-                "prompt": "Estudia en \\(x=3\\) la continuidad y derivabilidad de \\( f(x)= \\begin{cases} x+2,& x<3,\\\\ 5,& x\\geq 3. \\end{cases} \\)"
+                "prompt": "Estudia en \\(x=3\\) la continuidad y derivabilidad de \\( f(x)= \\begin{cases} x+2,& x<3,\\\\ 5,& x\\geq 3. \\end{cases} \\)",
+                "answerHtml": "<p>Es continua, pero no derivable</p>",
+                "solutionHtml": "<p>En \\(x=3\\),</p><div class=\"math-display\">\\[\n  \\lim_{x\\to 3^-}(x+2)=5,\\qquad f(3)=5.\n  \\]</div><p>Es continua. Pero las pendientes laterales son \\(1\\) y \\(0\\), asi que no es derivable.</p>"
               },
               {
                 "tagId": "PX-C09.S06-03",
-                "prompt": "Halla \\(a\\) para que \\( f(x)= \\begin{cases} ax+2,& x<0,\\\\ x^2+2,& x\\geq 0 \\end{cases} \\) sea derivable en \\(x=0\\)."
+                "prompt": "Halla \\(a\\) para que \\( f(x)= \\begin{cases} ax+2,& x<0,\\\\ x^2+2,& x\\geq 0 \\end{cases} \\) sea derivable en \\(x=0\\).",
+                "answerHtml": "<p>\\(a=0\\)</p>",
+                "solutionHtml": "<p>La continuidad ya se cumple:</p><div class=\"math-display\">\\[\n  \\lim_{x\\to 0^-}(ax+2)=2,\\qquad f(0)=2.\n  \\]</div><p>Para derivabilidad se necesita</p><div class=\"math-display\">\\[\n  a=2x|_{x=0}=0.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S06-04",
-                "prompt": "Estudia en \\(x=0\\) la continuidad y derivabilidad de \\( f(x)= \\begin{cases} -x,& x<0,\\\\ x,& x\\geq 0. \\end{cases} \\)"
+                "prompt": "Estudia en \\(x=0\\) la continuidad y derivabilidad de \\( f(x)= \\begin{cases} -x,& x<0,\\\\ x,& x\\geq 0. \\end{cases} \\)",
+                "answerHtml": "<p>Es continua, pero no derivable</p>",
+                "solutionHtml": "<p>Ambas ramas dan \\(0\\) en el origen, asi que hay continuidad. Las derivadas laterales son \\(-1\\) y \\(1\\), luego no hay derivabilidad.</p>"
               },
               {
                 "tagId": "PX-C09.S06-05",
-                "prompt": "Halla \\(b\\) para que \\( f(x)= \\begin{cases} x^2,& x<2,\\\\ 4x+b,& x\\geq 2 \\end{cases} \\) sea continua y derivable en \\(x=2\\)."
+                "prompt": "Halla \\(b\\) para que \\( f(x)= \\begin{cases} x^2,& x<2,\\\\ 4x+b,& x\\geq 2 \\end{cases} \\) sea continua y derivable en \\(x=2\\).",
+                "answerHtml": "<p>\\(b=-4\\), y con ese valor es continua y derivable</p>",
+                "solutionHtml": "<p>La continuidad exige</p><div class=\"math-display\">\\[\n  2^2=4\\cdot 2+b \\Longrightarrow 4=8+b \\Longrightarrow b=-4.\n  \\]</div><p>Con ese valor, las derivadas laterales son \\(2x|_{x=2}=4\\) y \\(4\\), por lo que tambien hay derivabilidad.</p>"
               },
               {
                 "tagId": "PX-C09.S06-06",
-                "prompt": "Halla \\(m\\) para que \\( f(x)= \\begin{cases} mx+1,& x<1,\\\\ x^2+m,& x\\geq 1 \\end{cases} \\) sea derivable en \\(x=1\\)."
+                "prompt": "Halla \\(m\\) para que \\( f(x)= \\begin{cases} mx+1,& x<1,\\\\ x^2+m,& x\\geq 1 \\end{cases} \\) sea derivable en \\(x=1\\).",
+                "answerHtml": "<p>\\(m=2\\)</p>",
+                "solutionHtml": "<p>La continuidad se cumple siempre:</p><div class=\"math-display\">\\[\n  m+1=1+m.\n  \\]</div><p>Para derivabilidad:</p><div class=\"math-display\">\\[\n  m=2x|_{x=1}=2.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>Es continua y derivable</p></li><li><p>Es continua, pero no derivable</p></li><li><p>\\(a=0\\)</p></li><li><p>Es continua, pero no derivable</p></li><li><p>\\(b=-4\\), y con ese valor es continua y derivable</p></li><li><p>\\(m=2\\)</p></li></ol>",
@@ -6839,27 +7743,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S07-01",
-                "prompt": "Entre los rectangulos de perimetro \\(24\\), halla el de area maxima."
+                "prompt": "Entre los rectangulos de perimetro \\(24\\), halla el de area maxima.",
+                "answerHtml": "<p>El cuadrado de lado \\(6\\). Area maxima: \\(36\\)</p>",
+                "solutionHtml": "<p>Si \\(x+y=12\\), el area es</p><div class=\"math-display\">\\[\n  A(x)=x(12-x).\n  \\]</div><p>Su derivada es \\(12-2x\\), que se anula en \\(x=6\\). Luego el rectangulo optimo es el cuadrado de lado \\(6\\), con area \\(36\\).</p>"
               },
               {
                 "tagId": "PX-C09.S07-02",
-                "prompt": "Dos numeros positivos suman \\(10\\). Halla el producto maximo."
+                "prompt": "Dos numeros positivos suman \\(10\\). Halla el producto maximo.",
+                "answerHtml": "<p>Se alcanza con \\(5\\) y \\(5\\). Producto maximo: \\(25\\)</p>",
+                "solutionHtml": "<p>Si un numero es \\(x\\), el otro es \\(10-x\\). El producto es</p><div class=\"math-display\">\\[\n  P(x)=x(10-x).\n  \\]</div><p>Como \\(P'(x)=10-2x\\), el maximo aparece en \\(x=5\\).</p>"
               },
               {
                 "tagId": "PX-C09.S07-03",
-                "prompt": "Halla el minimo de \\(f(x)=x+\\dfrac{4}{x}\\) para \\(x>0\\)."
+                "prompt": "Halla el minimo de \\(f(x)=x+\\dfrac{4}{x}\\) para \\(x>0\\).",
+                "answerHtml": "<p>El minimo es \\(4\\) y se alcanza en \\(x=2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=1-\\frac{4}{x^2}.\n  \\]</div><p>Igualando a cero:</p><div class=\"math-display\">\\[\n  x^2=4 \\Longrightarrow x=2\n  \\]</div><p>por ser \\(x>0\\). El valor minimo es</p><div class=\"math-display\">\\[\n  f(2)=2+\\frac{4}{2}=4.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S07-04",
-                "prompt": "Con \\(30\\) metros de valla, se cierran tres lados de un rectangulo apoyado en un rio. Halla las dimensiones de area maxima."
+                "prompt": "Con \\(30\\) metros de valla, se cierran tres lados de un rectangulo apoyado en un rio. Halla las dimensiones de area maxima.",
+                "answerHtml": "<p>Lados perpendiculares de \\(7{,}5\\) m y lado paralelo de \\(15\\) m. Area maxima: \\(\\dfrac{225}{2}\\ \\text{m}^2\\)</p>",
+                "solutionHtml": "<p>Si \\(x\\) es la anchura perpendicular al rio, el lado paralelo vale \\(30-2x\\). El area:</p><div class=\"math-display\">\\[\n  A(x)=x(30-2x),\\qquad 0<x<15.\n  \\]</div><div class=\"math-display\">\\[\n  A'(x)=30-4x=0 \\Longrightarrow x=\\frac{15}{2}=7{,}5.\n  \\]</div><p>El otro lado vale \\(15\\), y el area maxima</p><div class=\"math-display\">\\[\n  A\\left(\\frac{15}{2}\\right)=\\frac{225}{2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S07-05",
-                "prompt": "Halla el maximo de \\(A(x)=x(12-x)\\) en \\([0,12]\\)."
+                "prompt": "Halla el maximo de \\(A(x)=x(12-x)\\) en \\([0,12]\\).",
+                "answerHtml": "<p>Maximo \\(36\\) en \\(x=6\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  A'(x)=12-2x=0 \\Longrightarrow x=6.\n  \\]</div><p>Entonces \\(A(6)=36\\).</p>"
               },
               {
                 "tagId": "PX-C09.S07-06",
-                "prompt": "Se corta un cuadrado de lado \\(8\\) cm en las esquinas para formar una caja sin tapa. Si el lado del recorte es \\(x\\), halla el valor de \\(x\\) que maximiza el volumen."
+                "prompt": "Se corta un cuadrado de lado \\(8\\) cm en las esquinas para formar una caja sin tapa. Si el lado del recorte es \\(x\\), halla el valor de \\(x\\) que maximiza el volumen.",
+                "answerHtml": "<p>\\(x=\\dfrac{4}{3}\\) cm</p>",
+                "solutionHtml": "<p>El volumen es</p><div class=\"math-display\">\\[\n  V(x)=x(8-2x)^2,\\qquad 0<x<4.\n  \\]</div><p>Derivando y factorizando:</p><div class=\"math-display\">\\[\n  V'(x)=4(8-2x)(2- \\tfrac{3}{2}x)=0.\n  \\]</div><p>Los candidatos son \\(x=4\\) y \\(x=4/3\\), pero \\(x=4\\) anula la caja. El maximo util se alcanza en</p><div class=\"math-display\">\\[\n  x=\\frac{4}{3}\\text{ cm}.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>El cuadrado de lado \\(6\\). Area maxima: \\(36\\)</p></li><li><p>Se alcanza con \\(5\\) y \\(5\\). Producto maximo: \\(25\\)</p></li><li><p>El minimo es \\(4\\) y se alcanza en \\(x=2\\)</p></li><li><p>Lados perpendiculares de \\(7{,}5\\) m y lado paralelo de \\(15\\) m. Area maxima: \\(\\dfrac{225}{2}\\ \\text{m}^2\\)</p></li><li><p>Maximo \\(36\\) en \\(x=6\\)</p></li><li><p>\\(x=\\dfrac{4}{3}\\) cm</p></li></ol>",
@@ -6928,27 +7844,39 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C09.S08-01",
-                "prompt": "Estudia monotonia, extremos e inflexion de \\(f(x)=x^3-6x\\)."
+                "prompt": "Estudia monotonia, extremos e inflexion de \\(f(x)=x^3-6x\\).",
+                "answerHtml": "<p>Crece en \\((-\\infty,-\\sqrt{2})\\cup(\\sqrt{2},\\infty)\\) y decrece en \\((-\\sqrt{2},\\sqrt{2})\\). Tiene maximo en \\((-\\sqrt{2},4\\sqrt{2})\\), minimo en \\((\\sqrt{2},-4\\sqrt{2})\\) e inflexion en \\((0,0)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=3x^2-6=3(x^2-2),\\qquad f''(x)=6x.\n  \\]</div><p>Los puntos criticos son \\(x=\\pm \\sqrt{2}\\). La derivada es positiva fuera del intervalo \\((-\\sqrt{2},\\sqrt{2})\\) y negativa dentro. Ademas,</p><div class=\"math-display\">\\[\n  f(-\\sqrt{2})=4\\sqrt{2},\\qquad f(\\sqrt{2})=-4\\sqrt{2}.\n  \\]</div><p>La segunda derivada cambia de signo en \\(x=0\\), donde \\(f(0)=0\\).</p>"
               },
               {
                 "tagId": "PX-C09.S08-02",
-                "prompt": "Calcula la tangente y la normal a \\(f(x)=x^3-3x+1\\) en \\(x=0\\)."
+                "prompt": "Calcula la tangente y la normal a \\(f(x)=x^3-3x+1\\) en \\(x=0\\).",
+                "answerHtml": "<p>Tangente: \\(y=-3x+1\\). Normal: \\(y=\\dfrac{x}{3}+1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f(0)=1,\\qquad f'(x)=3x^2-3,\\qquad f'(0)=-3.\n  \\]</div><p>Tangente:</p><div class=\"math-display\">\\[\n  y-1=-3x\\Longrightarrow y=-3x+1.\n  \\]</div><p>Normal:</p><div class=\"math-display\">\\[\n  y-1=\\frac{1}{3}x\\Longrightarrow y=\\frac{x}{3}+1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S08-03",
-                "prompt": "Halla las tangentes horizontales de \\(f(x)=x^3-12x\\)."
+                "prompt": "Halla las tangentes horizontales de \\(f(x)=x^3-12x\\).",
+                "answerHtml": "<p>En \\(x=-2\\) y \\(x=2\\). Las tangentes son \\(y=16\\) y \\(y=-16\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=3x^2-12=3(x-2)(x+2).\n  \\]</div><p>Las tangentes horizontales aparecen en \\(x=\\pm 2\\). Como</p><div class=\"math-display\">\\[\n  f(-2)=16,\\qquad f(2)=-16,\n  \\]</div><p>las rectas son \\(y=16\\) e \\(y=-16\\).</p>"
               },
               {
                 "tagId": "PX-C09.S08-04",
-                "prompt": "Halla los extremos absolutos de \\(f(x)=x^3-3x\\) en \\([-2,2]\\)."
+                "prompt": "Halla los extremos absolutos de \\(f(x)=x^3-3x\\) en \\([-2,2]\\).",
+                "answerHtml": "<p>Maximo absoluto \\(2\\) en \\(x=-1\\) y \\(x=2\\); minimo absoluto \\(-2\\) en \\(x=-2\\) y \\(x=1\\)</p>",
+                "solutionHtml": "<p>Comparamos extremos del intervalo y puntos criticos interiores:</p><div class=\"math-display\">\\[\n  f(-2)=-2,\\qquad f(-1)=2,\\qquad f(1)=-2,\\qquad f(2)=2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S08-05",
-                "prompt": "Estudia los puntos criticos y extremos de \\(f(x)=x^4-4x^2\\)."
+                "prompt": "Estudia los puntos criticos y extremos de \\(f(x)=x^4-4x^2\\).",
+                "answerHtml": "<p>Puntos criticos en \\(x=-\\sqrt{2},0,\\sqrt{2}\\). Maximo local en \\((0,0)\\) y minimos locales en \\((-\\sqrt{2},-4)\\) y \\((\\sqrt{2},-4)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=4x^3-8x=4x(x^2-2).\n  \\]</div><p>Los puntos criticos son \\(-\\sqrt{2},0,\\sqrt{2}\\). La derivada cambia de \\(+\\) a \\(-\\) en \\(0\\), por lo que hay maximo local en \\((0,0)\\). Cambia de \\(-\\) a \\(+\\) en \\(\\pm \\sqrt{2}\\), y</p><div class=\"math-display\">\\[\n  f(\\pm \\sqrt{2})=4-8=-4.\n  \\]</div>"
               },
               {
                 "tagId": "PX-C09.S08-06",
-                "prompt": "Halla \\(a\\) y \\(b\\) para que \\( f(x)= \\begin{cases} x^2,& x<1,\\\\ ax+b,& x\\geq 1 \\end{cases} \\) sea continua y derivable en \\(x=1\\)."
+                "prompt": "Halla \\(a\\) y \\(b\\) para que \\( f(x)= \\begin{cases} x^2,& x<1,\\\\ ax+b,& x\\geq 1 \\end{cases} \\) sea continua y derivable en \\(x=1\\).",
+                "answerHtml": "<p>\\(a=2,\\ b=-1\\)</p>",
+                "solutionHtml": "<p>La continuidad exige</p><div class=\"math-display\">\\[\n  1=a+b.\n  \\]</div><p>La derivabilidad exige</p><div class=\"math-display\">\\[\n  2=a.\n  \\]</div><p>Por tanto,</p><div class=\"math-display\">\\[\n  a=2,\\qquad b=-1.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>Crece en \\((-\\infty,-\\sqrt{2})\\cup(\\sqrt{2},\\infty)\\) y decrece en \\((-\\sqrt{2},\\sqrt{2})\\). Tiene maximo en \\((-\\sqrt{2},4\\sqrt{2})\\), minimo en \\((\\sqrt{2},-4\\sqrt{2})\\) e inflexion en \\((0,0)\\)</p></li><li><p>Tangente: \\(y=-3x+1\\). Normal: \\(y=\\dfrac{x}{3}+1\\)</p></li><li><p>En \\(x=-2\\) y \\(x=2\\). Las tangentes son \\(y=16\\) y \\(y=-16\\)</p></li><li><p>Maximo absoluto \\(2\\) en \\(x=-1\\) y \\(x=2\\); minimo absoluto \\(-2\\) en \\(x=-2\\) y \\(x=1\\)</p></li><li><p>Puntos criticos en \\(x=-\\sqrt{2},0,\\sqrt{2}\\). Maximo local en \\((0,0)\\) y minimos locales en \\((-\\sqrt{2},-4)\\) y \\((\\sqrt{2},-4)\\)</p></li><li><p>\\(a=2,\\ b=-1\\)</p></li></ol>",
@@ -7027,19 +7955,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S01-01",
-                "prompt": "Calcula la frecuencia relativa conjunta de usar la plataforma y superar la prueba."
+                "prompt": "Calcula la frecuencia relativa conjunta de usar la plataforma y superar la prueba.",
+                "answerHtml": "<p>\\(18/40=0.45\\).</p>",
+                "solutionHtml": "<p>La celda conjunta contiene \\(18\\) estudiantes y el total es \\(40\\), luego \\(P(U\\cap S)=18/40=0.45\\).</p>"
               },
               {
                 "tagId": "PX-C10.S01-02",
-                "prompt": "Calcula la distribucion marginal de superar y no superar."
+                "prompt": "Calcula la distribucion marginal de superar y no superar.",
+                "answerHtml": "<p>Supera: \\(26/40=0.65\\); no supera: \\(14/40=0.35\\).</p>",
+                "solutionHtml": "<p>Los totales de columna son \\(26\\) y \\(14\\). Al dividir por \\(40\\), se obtiene \\(P(S)=26/40=0.65\\) y \\(P(\\overline S)=14/40=0.35\\); suman \\(1\\).</p>"
               },
               {
                 "tagId": "PX-C10.S01-03",
-                "prompt": "Explica por que la tabla no demuestra causalidad."
+                "prompt": "Explica por que la tabla no demuestra causalidad.",
+                "answerHtml": "<p>Es un estudio observacional y pueden existir variables de confusion.</p>",
+                "solutionHtml": "<p>La diferencia entre porcentajes describe asociacion, pero no controla motivacion, tiempo de estudio u otras variables de confusion. Por eso no demuestra causalidad.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(18/40=0.45\\).</p></li><li><p>Supera: \\(26/40=0.65\\); no supera: \\(14/40=0.35\\).</p></li><li><p>Es un estudio observacional y pueden existir variables de confusion.</p></li></ol>",
-            "solutionsHtml": "<p>La frecuencia conjunta usa la celda \\(18\\) y el total \\(40\\). Las marginales usan los totales de columna. La diferencia entre porcentajes describe asociacion, pero no controla motivacion, tiempo de estudio u otras variables que tambien pueden explicar el resultado.</p>"
+            "solutionsHtml": "<ol><li><p>La celda conjunta contiene \\(18\\) estudiantes y el total es \\(40\\), luego \\(P(U\\cap S)=18/40=0.45\\).</p></li><li><p>Los totales de columna son \\(26\\) y \\(14\\). Al dividir por \\(40\\), se obtiene \\(P(S)=26/40=0.65\\) y \\(P(\\overline S)=14/40=0.35\\); suman \\(1\\).</p></li><li><p>La diferencia entre porcentajes describe asociacion, pero no controla motivacion, tiempo de estudio u otras variables de confusion. Por eso no demuestra causalidad.</p></li></ol>"
           },
           "challenge": {}
         },
@@ -7097,19 +8031,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S02-01",
-                "prompt": "Interpreta \\(r=-0.82\\) en un contexto de velocidad y tiempo de viaje."
+                "prompt": "Interpreta \\(r=-0.82\\) en un contexto de velocidad y tiempo de viaje.",
+                "answerHtml": "<p>Asociacion lineal negativa fuerte.</p>",
+                "solutionHtml": "<p>Como \\(r=-0.82\\), el signo indica direccion decreciente y \\(|r|=0.82\\) indica una asociacion lineal fuerte: al aumentar la velocidad, el tiempo tiende a disminuir.</p>"
               },
               {
                 "tagId": "PX-C10.S02-02",
-                "prompt": "Decide si \\(r=1\\) implica causalidad."
+                "prompt": "Decide si \\(r=1\\) implica causalidad.",
+                "answerHtml": "<p>No.</p>",
+                "solutionHtml": "<p>\\(r=1\\) significa que los datos siguen exactamente una recta creciente, pero no prueba un mecanismo causal. Puede existir una causa comun o una relacion construida.</p>"
               },
               {
                 "tagId": "PX-C10.S02-03",
-                "prompt": "Explica el efecto posible de un valor atipico sobre \\(r\\)."
+                "prompt": "Explica el efecto posible de un valor atipico sobre \\(r\\).",
+                "answerHtml": "<p>Puede aumentar, reducir o incluso cambiar el signo de la correlacion.</p>",
+                "solutionHtml": "<p>Un valor atipico puede aumentar o reducir \\(|r|\\), e incluso cambiar su signo. Debe revisarse su origen y compararse el calculo con y sin ese punto, sin eliminarlo automaticamente.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Asociacion lineal negativa fuerte.</p></li><li><p>No.</p></li><li><p>Puede aumentar, reducir o incluso cambiar el signo de la correlacion.</p></li></ol>",
-            "solutionsHtml": "<p>Una asociacion negativa indica que, al aumentar una variable, la otra tiende a disminuir. La causalidad exige un diseno y una argumentacion adicionales. Los valores atipicos deben estudiarse en contexto, no borrarse de forma automatica.</p>"
+            "solutionsHtml": "<ol><li><p>Como \\(r=-0.82\\), el signo indica direccion decreciente y \\(|r|=0.82\\) indica una asociacion lineal fuerte: al aumentar la velocidad, el tiempo tiende a disminuir.</p></li><li><p>\\(r=1\\) significa que los datos siguen exactamente una recta creciente, pero no prueba un mecanismo causal. Puede existir una causa comun o una relacion construida.</p></li><li><p>Un valor atipico puede aumentar o reducir \\(|r|\\), e incluso cambiar su signo. Debe revisarse su origen y compararse el calculo con y sin ese punto, sin eliminarlo automaticamente.</p></li></ol>"
           },
           "challenge": {}
         },
@@ -7167,19 +8107,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S03-01",
-                "prompt": "Predice \\(y\\) para \\(x=10\\) con \\(\\hat y=3+1.5x\\)."
+                "prompt": "Predice \\(y\\) para \\(x=10\\) con \\(\\hat y=3+1.5x\\).",
+                "answerHtml": "<p>\\(18\\).</p>",
+                "solutionHtml": "<p>Se sustituye \\(x=10\\) en el modelo: \\(\\hat y=3+1.5\\cdot10=18\\).</p>"
               },
               {
                 "tagId": "PX-C10.S03-02",
-                "prompt": "Calcula el residuo si para \\(x=4\\) se observa \\(y=10\\) y el modelo predice \\(9.2\\)."
+                "prompt": "Calcula el residuo si para \\(x=4\\) se observa \\(y=10\\) y el modelo predice \\(9.2\\).",
+                "answerHtml": "<p>\\(0.8\\).</p>",
+                "solutionHtml": "<p>El residuo es observado menos predicho: \\(e=y-\\hat y=10-9.2=0.8\\). Es positivo porque el valor observado queda por encima del modelo.</p>"
               },
               {
                 "tagId": "PX-C10.S03-03",
-                "prompt": "Explica por que no conviene extrapolar muy lejos."
+                "prompt": "Explica por que no conviene extrapolar muy lejos.",
+                "answerHtml": "<p>La relacion puede cambiar fuera del intervalo observado.</p>",
+                "solutionHtml": "<p>Una extrapolacion lejana supone, sin evidencia, que el patron continua fuera del rango observado. Aunque \\(R^2\\) sea alto, la relacion puede cambiar.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(18\\).</p></li><li><p>\\(0.8\\).</p></li><li><p>La relacion puede cambiar fuera del intervalo observado.</p></li></ol>",
-            "solutionsHtml": "<p>Se sustituye \\(x=10\\): \\(3+1.5\\cdot10=18\\). El residuo es observado menos predicho: \\(10-9.2=0.8\\). Una extrapolacion supone, sin evidencia, que el patron continua.</p>"
+            "solutionsHtml": "<ol><li><p>Se sustituye \\(x=10\\) en el modelo: \\(\\hat y=3+1.5\\cdot10=18\\).</p></li><li><p>El residuo es observado menos predicho: \\(e=y-\\hat y=10-9.2=0.8\\). Es positivo porque el valor observado queda por encima del modelo.</p></li><li><p>Una extrapolacion lejana supone, sin evidencia, que el patron continua fuera del rango observado. Aunque \\(R^2\\) sea alto, la relacion puede cambiar.</p></li></ol>"
           },
           "challenge": {}
         },
@@ -7237,19 +8183,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S04-01",
-                "prompt": "Identifica poblacion y muestra en una encuesta a 120 de los 900 estudiantes del centro."
+                "prompt": "Identifica poblacion y muestra en una encuesta a 120 de los 900 estudiantes del centro.",
+                "answerHtml": "<p>Poblacion: 900; muestra: 120.</p>",
+                "solutionHtml": "<p>La poblacion es el conjunto de \\(900\\) estudiantes sobre el que se quiere concluir; la muestra son las \\(120\\) personas efectivamente encuestadas.</p>"
               },
               {
                 "tagId": "PX-C10.S04-02",
-                "prompt": "Explica el sesgo de entrevistar solo a quienes estan en la biblioteca."
+                "prompt": "Explica el sesgo de entrevistar solo a quienes estan en la biblioteca.",
+                "answerHtml": "<p>Excluye a quienes no frecuentan la biblioteca.</p>",
+                "solutionHtml": "<p>Entrevistar solo en la biblioteca infrarrepresenta a quienes no la frecuentan. Si el uso de la biblioteca se relaciona con la opinion, aparece sesgo de seleccion.</p>"
               },
               {
                 "tagId": "PX-C10.S04-03",
-                "prompt": "Redacta una conclusion prudente si 72 de 120 respuestas apoyan una medida."
+                "prompt": "Redacta una conclusion prudente si 72 de 120 respuestas apoyan una medida.",
+                "answerHtml": "<p>En la muestra, el \\(60\\%\\) apoya la medida; la generalizacion depende del muestreo.</p>",
+                "solutionHtml": "<p>La proporcion muestral es \\(72/120=0.60\\). La conclusion correcta es: ``el \\(60\\%\\) de la muestra apoya la medida''; generalizar a los \\(900\\) exige justificar el muestreo.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>Poblacion: 900; muestra: 120.</p></li><li><p>Excluye a quienes no frecuentan la biblioteca.</p></li><li><p>En la muestra, el \\(60\\%\\) apoya la medida; la generalizacion depende del muestreo.</p></li></ol>",
-            "solutionsHtml": "<p>La proporcion muestral es \\(72/120=0.60\\). Debe comunicarse como resultado de la muestra y acompañarse de informacion sobre seleccion, no como una verdad exacta sobre toda la poblacion.</p>"
+            "solutionsHtml": "<ol><li><p>La poblacion es el conjunto de \\(900\\) estudiantes sobre el que se quiere concluir; la muestra son las \\(120\\) personas efectivamente encuestadas.</p></li><li><p>Entrevistar solo en la biblioteca infrarrepresenta a quienes no la frecuentan. Si el uso de la biblioteca se relaciona con la opinion, aparece sesgo de seleccion.</p></li><li><p>La proporcion muestral es \\(72/120=0.60\\). La conclusion correcta es: ``el \\(60\\%\\) de la muestra apoya la medida''; generalizar a los \\(900\\) exige justificar el muestreo.</p></li></ol>"
           },
           "challenge": {}
         },
@@ -7307,19 +8259,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S05-01",
-                "prompt": "Si \\(P(A)=0.37\\), calcula \\(P(\\overline A)\\)."
+                "prompt": "Si \\(P(A)=0.37\\), calcula \\(P(\\overline A)\\).",
+                "answerHtml": "<p>\\(0.63\\).</p>",
+                "solutionHtml": "<p>Por la regla del complementario, \\(P(\\overline A)=1-P(A)=1-0.37=0.63\\).</p>"
               },
               {
                 "tagId": "PX-C10.S05-02",
-                "prompt": "Si \\(P(A)=0.5\\), \\(P(B)=0.4\\) y \\(P(A\\cap B)=0.2\\), calcula \\(P(A\\cup B)\\)."
+                "prompt": "Si \\(P(A)=0.5\\), \\(P(B)=0.4\\) y \\(P(A\\cap B)=0.2\\), calcula \\(P(A\\cup B)\\).",
+                "answerHtml": "<p>\\(0.7\\).</p>",
+                "solutionHtml": "<p>Se resta la interseccion porque se cuenta dos veces al sumar: \\(P(A\\cup B)=0.5+0.4-0.2=0.7\\).</p>"
               },
               {
                 "tagId": "PX-C10.S05-03",
-                "prompt": "Escribe con sucesos ``no ocurre ni A ni B''."
+                "prompt": "Escribe con sucesos ``no ocurre ni A ni B''.",
+                "answerHtml": "<p>\\(\\overline A\\cap\\overline B=\\overline{A\\cup B}\\).</p>",
+                "solutionHtml": "<p>``No ocurre ni \\(A\\) ni \\(B\\)'' significa quedar fuera de ambos sucesos: \\(\\overline A\\cap\\overline B\\). Por Morgan, equivale a \\(\\overline{A\\cup B}\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(0.63\\).</p></li><li><p>\\(0.7\\).</p></li><li><p>\\(\\overline A\\cap\\overline B=\\overline{A\\cup B}\\).</p></li></ol>",
-            "solutionsHtml": "<p>Se usa el complementario para el primer caso y la formula de la union para el segundo: \\(0.5+0.4-0.2=0.7\\). La expresion ``ni A ni B'' excluye la union de ambos sucesos.</p>"
+            "solutionsHtml": "<ol><li><p>Por la regla del complementario, \\(P(\\overline A)=1-P(A)=1-0.37=0.63\\).</p></li><li><p>Se resta la interseccion porque se cuenta dos veces al sumar: \\(P(A\\cup B)=0.5+0.4-0.2=0.7\\).</p></li><li><p>``No ocurre ni \\(A\\) ni \\(B\\)'' significa quedar fuera de ambos sucesos: \\(\\overline A\\cap\\overline B\\). Por Morgan, equivale a \\(\\overline{A\\cup B}\\).</p></li></ol>"
           },
           "challenge": {}
         },
@@ -7377,19 +8335,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S06-01",
-                "prompt": "Calcula \\(\\binom{10}{2}\\)."
+                "prompt": "Calcula \\(\\binom{10}{2}\\).",
+                "answerHtml": "<p>\\(45\\).</p>",
+                "solutionHtml": "<p>Como el orden de la pareja no importa, \\(\\binom{10}{2}=10!/(2!8!)=10\\cdot9/2=45\\).</p>"
               },
               {
                 "tagId": "PX-C10.S06-02",
-                "prompt": "Cuenta las ordenaciones de cuatro libros distintos."
+                "prompt": "Cuenta las ordenaciones de cuatro libros distintos.",
+                "answerHtml": "<p>\\(4!=24\\).</p>",
+                "solutionHtml": "<p>Para ordenar cuatro libros distintos hay \\(4\\) opciones para el primero, luego \\(3\\), \\(2\\) y \\(1\\): \\(4!=4\\cdot3\\cdot2\\cdot1=24\\).</p>"
               },
               {
                 "tagId": "PX-C10.S06-03",
-                "prompt": "Al lanzar dos dados, calcula la probabilidad de suma \\(7\\)."
+                "prompt": "Al lanzar dos dados, calcula la probabilidad de suma \\(7\\).",
+                "answerHtml": "<p>\\(6/36=1/6\\).</p>",
+                "solutionHtml": "<p>Hay \\(6\\cdot6=36\\) resultados equiprobables. Los seis pares que suman \\(7\\) son</p><div class=\"math-display\">\\[\n  (1,6),(2,5),(3,4),(4,3),(5,2),(6,1).\n  \\]</div><p>Por tanto, \\(P=6/36=1/6\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(45\\).</p></li><li><p>\\(4!=24\\).</p></li><li><p>\\(6/36=1/6\\).</p></li></ol>",
-            "solutionsHtml": "<p>Las parejas no ordenadas se cuentan con \\(\\binom{10}{2}=45\\). Los libros admiten \\(4!\\) ordenaciones. Entre los \\(36\\) pares equiprobables de dos dados, seis suman \\(7\\).</p>"
+            "solutionsHtml": "<ol><li><p>Como el orden de la pareja no importa, \\(\\binom{10}{2}=10!/(2!8!)=10\\cdot9/2=45\\).</p></li><li><p>Para ordenar cuatro libros distintos hay \\(4\\) opciones para el primero, luego \\(3\\), \\(2\\) y \\(1\\): \\(4!=4\\cdot3\\cdot2\\cdot1=24\\).</p></li><li><p>Hay \\(6\\cdot6=36\\) resultados equiprobables. Los seis pares que suman \\(7\\) son</p><div class=\"math-display\">\\[\n  (1,6),(2,5),(3,4),(4,3),(5,2),(6,1).\n  \\]</div><p>Por tanto, \\(P=6/36=1/6\\).</p></li></ol>"
           },
           "challenge": {}
         },
@@ -7447,19 +8411,25 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-C10.S07-01",
-                "prompt": "Si \\(P(A\\cap B)=0.18\\) y \\(P(A)=0.6\\), calcula \\(P(B\\mid A)\\)."
+                "prompt": "Si \\(P(A\\cap B)=0.18\\) y \\(P(A)=0.6\\), calcula \\(P(B\\mid A)\\).",
+                "answerHtml": "<p>\\(0.3\\).</p>",
+                "solutionHtml": "<p>La condicion \\(A\\) fija el denominador: \\(P(B\\mid A)=P(A\\cap B)/P(A)=0.18/0.6=0.3\\).</p>"
               },
               {
                 "tagId": "PX-C10.S07-02",
-                "prompt": "Una maquina produce el \\(70\\%\\) de las piezas y otra el \\(30\\%\\); sus tasas de defecto son \\(2\\%\\) y \\(5\\%\\). Calcula la tasa total."
+                "prompt": "Una maquina produce el \\(70\\%\\) de las piezas y otra el \\(30\\%\\); sus tasas de defecto son \\(2\\%\\) y \\(5\\%\\). Calcula la tasa total.",
+                "answerHtml": "<p>\\(0.7\\cdot0.02+0.3\\cdot0.05=0.029\\).</p>",
+                "solutionHtml": "<p>La probabilidad total suma los dos caminos de defecto: \\(0.7\\cdot0.02+0.3\\cdot0.05=0.014+0.015=0.029\\), es decir, \\(2.9\\%\\).</p>"
               },
               {
                 "tagId": "PX-C10.S07-03",
-                "prompt": "Explica por que un positivo no garantiza tener la condicion estudiada."
+                "prompt": "Explica por que un positivo no garantiza tener la condicion estudiada.",
+                "answerHtml": "<p>Depende de falsos positivos y de la frecuencia inicial de la condicion.</p>",
+                "solutionHtml": "<p>Un positivo puede ser verdadero o falso. Para hallar la probabilidad de tener la condicion tras el positivo hay que aplicar Bayes e incorporar su frecuencia inicial o prevalencia.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(0.3\\).</p></li><li><p>\\(0.7\\cdot0.02+0.3\\cdot0.05=0.029\\).</p></li><li><p>Depende de falsos positivos y de la frecuencia inicial de la condicion.</p></li></ol>",
-            "solutionsHtml": "<p>La condicion restringe el denominador: \\(0.18/0.6=0.3\\). La probabilidad total suma los dos caminos de defecto y vale \\(0.029\\), es decir, \\(2.9\\%\\). Para interpretar un resultado positivo debe aplicarse Bayes e incorporar la prevalencia.</p>"
+            "solutionsHtml": "<ol><li><p>La condicion \\(A\\) fija el denominador: \\(P(B\\mid A)=P(A\\cap B)/P(A)=0.18/0.6=0.3\\).</p></li><li><p>La probabilidad total suma los dos caminos de defecto: \\(0.7\\cdot0.02+0.3\\cdot0.05=0.014+0.015=0.029\\), es decir, \\(2.9\\%\\).</p></li><li><p>Un positivo puede ser verdadero o falso. Para hallar la probabilidad de tener la condicion tras el positivo hay que aplicar Bayes e incorporar su frecuencia inicial o prevalencia.</p></li></ol>"
           },
           "challenge": {
             "title": "[CH-C10.S07-01] Auditoria completa de una prediccion",
@@ -7501,19 +8471,27 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-R10.S01-01",
-                "prompt": "Halla el dominio de \\(f(x)=\\dfrac{\\ln(x-1)}{x+2}\\)."
+                "prompt": "Halla el dominio de \\(f(x)=\\dfrac{\\ln(x-1)}{x+2}\\).",
+                "answerHtml": "<p>\\((1,\\infty)\\)</p>",
+                "solutionHtml": "<p>El logaritmo exige \\(x-1>0\\), luego \\(x>1\\). Ademas \\(x+2\\neq 0\\), pero esa restriccion ya queda absorbida por \\(x>1\\). Por tanto,</p><div class=\"math-display\">\\[\n  D_f=(1,\\infty).\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S01-02",
-                "prompt": "Resuelve \\(\\sqrt{x+5}=x-1\\)."
+                "prompt": "Resuelve \\(\\sqrt{x+5}=x-1\\).",
+                "answerHtml": "<p>\\(x=4\\)</p>",
+                "solutionHtml": "<p>Debe cumplirse \\(x-1\\geq 0\\), es decir, \\(x\\geq 1\\). Elevando al cuadrado:</p><div class=\"math-display\">\\[\n  x+5=(x-1)^2=x^2-2x+1\n  \\Longrightarrow x^2-3x-4=0.\n  \\]</div><p>Factorizando,</p><div class=\"math-display\">\\[\n  (x-4)(x+1)=0.\n  \\]</div><p>Las candidatas son \\(x=4\\) y \\(x=-1\\), pero solo \\(x=4\\) respeta \\(x\\geq 1\\). La solucion es \\(x=4\\).</p>"
               },
               {
                 "tagId": "PX-R10.S01-03",
-                "prompt": "Resuelve \\(2\\cos x=1\\) en \\([0,2\\pi)\\)."
+                "prompt": "Resuelve \\(2\\cos x=1\\) en \\([0,2\\pi)\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{\\pi}{3}\\) o \\(x=\\dfrac{5\\pi}{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  2\\cos x=1 \\Longrightarrow \\cos x=\\frac{1}{2}.\n  \\]</div><p>En \\([0,2\\pi)\\) ocurre en</p><div class=\"math-display\">\\[\n  x=\\frac{\\pi}{3},\\qquad x=\\frac{5\\pi}{3}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S01-04",
-                "prompt": "Halla la recta tangente a \\(f(x)=x^2-3x\\) en \\(x=1\\)."
+                "prompt": "Halla la recta tangente a \\(f(x)=x^2-3x\\) en \\(x=1\\).",
+                "answerHtml": "<p>\\(y=-x-1\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=2x-3,\\qquad f'(1)=-1,\\qquad f(1)=1-3=-2.\n  \\]</div><p>La tangente por \\((1,-2)\\) con pendiente \\(-1\\) es</p><div class=\"math-display\">\\[\n  y+2=-(x-1),\n  \\]</div><p>luego</p><div class=\"math-display\">\\[\n  y=-x-1.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((1,\\infty)\\)</p></li><li><p>\\(x=4\\)</p></li><li><p>\\(x=\\dfrac{\\pi}{3}\\) o \\(x=\\dfrac{5\\pi}{3}\\)</p></li><li><p>\\(y=-x-1\\)</p></li></ol>",
@@ -7547,19 +8525,27 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-R10.S02-01",
-                "prompt": "Halla la recta que pasa por \\(A(1,2)\\) y es perpendicular a \\(2x-y+3=0\\)."
+                "prompt": "Halla la recta que pasa por \\(A(1,2)\\) y es perpendicular a \\(2x-y+3=0\\).",
+                "answerHtml": "<p>\\(y=-\\dfrac{1}{2}x+\\dfrac{5}{2}\\)</p>",
+                "solutionHtml": "<p>La recta dada es</p><div class=\"math-display\">\\[\n  y=2x+3,\n  \\]</div><p>asi que su pendiente es \\(2\\). La recta perpendicular tiene pendiente \\(-\\dfrac{1}{2}\\). Por el punto \\(A(1,2)\\):</p><div class=\"math-display\">\\[\n  y-2=-\\frac{1}{2}(x-1).\n  \\]</div><p>Despejando,</p><div class=\"math-display\">\\[\n  y=-\\frac{1}{2}x+\\frac{5}{2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S02-02",
-                "prompt": "Calcula \\(\\lim_{x\\to 2}\\dfrac{x^2-4}{x-2}\\)."
+                "prompt": "Calcula \\(\\lim_{x\\to 2}\\dfrac{x^2-4}{x-2}\\).",
+                "answerHtml": "<p>\\(4\\)</p>",
+                "solutionHtml": "<p>Factorizamos:</p><div class=\"math-display\">\\[\n  \\frac{x^2-4}{x-2}=\\frac{(x-2)(x+2)}{x-2}=x+2 \\quad (x\\neq 2).\n  \\]</div><p>Luego</p><div class=\"math-display\">\\[\n  \\lim_{x\\to 2}\\frac{x^2-4}{x-2}=\\lim_{x\\to 2}(x+2)=4.\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S02-03",
-                "prompt": "Entre todos los rectangulos de perimetro \\(20\\), halla el de area maxima."
+                "prompt": "Entre todos los rectangulos de perimetro \\(20\\), halla el de area maxima.",
+                "answerHtml": "<p>El cuadrado de lado \\(5\\), con area \\(25\\)</p>",
+                "solutionHtml": "<p>Si los lados son \\(x\\) e \\(y\\), entonces</p><div class=\"math-display\">\\[\n  2x+2y=20 \\Longrightarrow y=10-x.\n  \\]</div><p>El area vale</p><div class=\"math-display\">\\[\n  A(x)=x(10-x)=10x-x^2.\n  \\]</div><p>Es una parabola concava; su maximo se alcanza en</p><div class=\"math-display\">\\[\n  x=\\frac{10}{2}=5.\n  \\]</div><p>Entonces \\(y=5\\) y el area maxima es \\(25\\).</p>"
               },
               {
                 "tagId": "PX-R10.S02-04",
-                "prompt": "Resuelve el sistema \\[ \\begin{cases} x+y=5,\\\\ x^2+y^2=13. \\end{cases} \\]"
+                "prompt": "Resuelve el sistema \\[ \\begin{cases} x+y=5,\\\\ x^2+y^2=13. \\end{cases} \\]",
+                "answerHtml": "<p>\\((2,3)\\) y \\((3,2)\\)</p>",
+                "solutionHtml": "<p>De \\(x+y=5\\) se obtiene</p><div class=\"math-display\">\\[\n  (x+y)^2=25=x^2+y^2+2xy=13+2xy,\n  \\]</div><p>luego \\(2xy=12\\) y por tanto \\(xy=6\\). Los numeros \\(x\\) e \\(y\\) suman \\(5\\) y multiplican \\(6\\), asi que son las raices de</p><div class=\"math-display\">\\[\n  t^2-5t+6=0=(t-2)(t-3).\n  \\]</div><p>Por tanto,</p><div class=\"math-display\">\\[\n  (x,y)=(2,3)\\quad \\text{o}\\quad (3,2).\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(y=-\\dfrac{1}{2}x+\\dfrac{5}{2}\\)</p></li><li><p>\\(4\\)</p></li><li><p>El cuadrado de lado \\(5\\), con area \\(25\\)</p></li><li><p>\\((2,3)\\) y \\((3,2)\\)</p></li></ol>",
@@ -7588,15 +8574,21 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-R10.S03-01",
-                "prompt": "Resuelve \\(\\ln(x-1)+\\ln(x+1)=\\ln 8\\)."
+                "prompt": "Resuelve \\(\\ln(x-1)+\\ln(x+1)=\\ln 8\\).",
+                "answerHtml": "<p>\\(x=3\\)</p>",
+                "solutionHtml": "<p>El dominio exige \\(x-1>0\\) y \\(x+1>0\\), luego \\(x>1\\). Usamos la propiedad</p><div class=\"math-display\">\\[\n  \\ln a+\\ln b=\\ln(ab):\n  \\]</div><div class=\"math-display\">\\[\n  \\ln\\bigl((x-1)(x+1)\\bigr)=\\ln 8.\n  \\]</div><p>Como el logaritmo es inyectivo en su dominio,</p><div class=\"math-display\">\\[\n  x^2-1=8 \\Longrightarrow x^2=9 \\Longrightarrow x=\\pm 3.\n  \\]</div><p>Por la restriccion \\(x>1\\), la unica solucion valida es \\(x=3\\).</p>"
               },
               {
                 "tagId": "PX-R10.S03-02",
-                "prompt": "Halla las asintotas de \\[ f(x)=\\frac{x^2+1}{x-1}. \\]"
+                "prompt": "Halla las asintotas de \\[ f(x)=\\frac{x^2+1}{x-1}. \\]",
+                "answerHtml": "<p>Asintota vertical \\(x=1\\); asintota oblicua \\(y=x+1\\)</p>",
+                "solutionHtml": "<p>La asintota vertical aparece donde el denominador se anula y el cociente diverge:</p><div class=\"math-display\">\\[\n  x-1=0 \\Longrightarrow x=1.\n  \\]</div><p>Dividimos polinomios:</p><div class=\"math-display\">\\[\n  \\frac{x^2+1}{x-1}=x+1+\\frac{2}{x-1}.\n  \\]</div><p>Como \\(\\dfrac{2}{x-1}\\to 0\\) cuando \\(x\\to \\pm \\infty\\), la asintota oblicua es</p><div class=\"math-display\">\\[\n  y=x+1.\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S03-03",
-                "prompt": "Estudia la monotonia y los extremos de \\[ f(x)=x^3-3x. \\]"
+                "prompt": "Estudia la monotonia y los extremos de \\[ f(x)=x^3-3x. \\]",
+                "answerHtml": "<p>Crece en \\((-\\infty,-1)\\cup(1,\\infty)\\), decrece en \\((-1,1)\\), maximo local \\((-1,2)\\), minimo local \\((1,-2)\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=3x^2-3=3(x-1)(x+1).\n  \\]</div><p>Los puntos criticos son \\(x=-1\\) y \\(x=1\\). El signo de \\(f'\\) es positivo fuera del intervalo \\([-1,1]\\) y negativo dentro, de modo que:</p><div class=\"math-display\">\\[\n  \\text{crece en }(-\\infty,-1)\\cup(1,\\infty),\\qquad\n  \\text{decrece en }(-1,1).\n  \\]</div><p>Ademas,</p><div class=\"math-display\">\\[\n  f(-1)=2,\\qquad f(1)=-2.\n  \\]</div><p>Luego hay maximo local en \\((-1,2)\\) y minimo local en \\((1,-2)\\).</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=3\\)</p></li><li><p>Asintota vertical \\(x=1\\); asintota oblicua \\(y=x+1\\)</p></li><li><p>Crece en \\((-\\infty,-1)\\cup(1,\\infty)\\), decrece en \\((-1,1)\\), maximo local \\((-1,2)\\), minimo local \\((1,-2)\\)</p></li></ol>",
@@ -7620,15 +8612,21 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "PX-R10.S04-01",
-                "prompt": "Un alumno resuelve \\(|2x-1|=5\\) asi: \\[ 2x-1=5 \\Longrightarrow x=3. \\] Explica el error y da la solucion correcta."
+                "prompt": "Un alumno resuelve \\(|2x-1|=5\\) asi: \\[ 2x-1=5 \\Longrightarrow x=3. \\] Explica el error y da la solucion correcta.",
+                "answerHtml": "<p>Falta el caso \\(2x-1=-5\\); la solucion correcta es \\(x=3\\) o \\(x=-2\\)</p>",
+                "solutionHtml": "<p>En una ecuacion con valor absoluto hay dos ramas:</p><div class=\"math-display\">\\[\n  |2x-1|=5 \\Longrightarrow 2x-1=5 \\quad \\text{o}\\quad 2x-1=-5.\n  \\]</div><p>De la primera sale \\(x=3\\); de la segunda,</p><div class=\"math-display\">\\[\n  2x=-4 \\Longrightarrow x=-2.\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S04-02",
-                "prompt": "Una alumna afirma que \\[ \\frac{1}{\\sqrt{3}-1}=\\sqrt{3}-1. \\] Indica por que es falso y racionaliza correctamente."
+                "prompt": "Una alumna afirma que \\[ \\frac{1}{\\sqrt{3}-1}=\\sqrt{3}-1. \\] Indica por que es falso y racionaliza correctamente.",
+                "answerHtml": "<p>Hay que multiplicar por el conjugado; el resultado correcto es \\(\\dfrac{\\sqrt{3}+1}{2}\\)</p>",
+                "solutionHtml": "<p>Basta comprobar que</p><div class=\"math-display\">\\[\n  (\\sqrt{3}-1)(\\sqrt{3}-1)=4-2\\sqrt{3}\\neq 1.\n  \\]</div><p>La racionalizacion correcta es</p><div class=\"math-display\">\\[\n  \\frac{1}{\\sqrt{3}-1}\\cdot \\frac{\\sqrt{3}+1}{\\sqrt{3}+1}\n  =\\frac{\\sqrt{3}+1}{3-1}\n  =\\frac{\\sqrt{3}+1}{2}.\n  \\]</div>"
               },
               {
                 "tagId": "PX-R10.S04-03",
-                "prompt": "En \\(f(x)=x^2\\), un alumno dice que la normal en \\(x=1\\) tiene pendiente \\(\\dfrac{1}{2}\\) porque la tangente tiene pendiente \\(2\\). Corrige la idea y escribe la recta normal."
+                "prompt": "En \\(f(x)=x^2\\), un alumno dice que la normal en \\(x=1\\) tiene pendiente \\(\\dfrac{1}{2}\\) porque la tangente tiene pendiente \\(2\\). Corrige la idea y escribe la recta normal.",
+                "answerHtml": "<p>La pendiente normal es la opuesta inversa, \\(-\\dfrac{1}{2}\\); la normal es \\(y=-\\dfrac{1}{2}x+\\dfrac{3}{2}\\)</p>",
+                "solutionHtml": "<p>La normal no tiene pendiente \\(\\dfrac{1}{2}\\), sino la opuesta inversa de la tangente. Como</p><div class=\"math-display\">\\[\n  f'(x)=2x,\\qquad f'(1)=2,\\qquad f(1)=1,\n  \\]</div><p>la pendiente tangente es \\(2\\) y la pendiente normal es</p><div class=\"math-display\">\\[\n  m_n=-\\frac{1}{2}.\n  \\]</div><p>Por el punto \\((1,1)\\):</p><div class=\"math-display\">\\[\n  y-1=-\\frac{1}{2}(x-1)\n  \\Longrightarrow y=-\\frac{1}{2}x+\\frac{3}{2}.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>Falta el caso \\(2x-1=-5\\); la solucion correcta es \\(x=3\\) o \\(x=-2\\)</p></li><li><p>Hay que multiplicar por el conjugado; el resultado correcto es \\(\\dfrac{\\sqrt{3}+1}{2}\\)</p></li><li><p>La pendiente normal es la opuesta inversa, \\(-\\dfrac{1}{2}\\); la normal es \\(y=-\\dfrac{1}{2}x+\\dfrac{3}{2}\\)</p></li></ol>",
@@ -7652,19 +8650,27 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "SM-R10.S05-01",
-                "prompt": "[2 puntos] Halla el dominio de \\[ f(x)=\\sqrt{\\frac{x+1}{x-2}}. \\]"
+                "prompt": "[2 puntos] Halla el dominio de \\[ f(x)=\\sqrt{\\frac{x+1}{x-2}}. \\]",
+                "answerHtml": "<p>\\((-\\infty,-1]\\cup(2,\\infty)\\)</p>",
+                "solutionHtml": "<p>Debe cumplirse</p><div class=\"math-display\">\\[\n  \\frac{x+1}{x-2}\\geq 0,\\qquad x\\neq 2.\n  \\]</div><p>Los puntos criticos son \\(-1\\) y \\(2\\). El estudio de signo da</p><div class=\"math-display\">\\[\n  D_f=(-\\infty,-1]\\cup(2,\\infty).\n  \\]</div><p><strong>Baremo orientativo:</strong> 1 punto por plantear la condicion y 1 punto por el intervalo final correcto.</p>"
               },
               {
                 "tagId": "SM-R10.S05-02",
-                "prompt": "[2 puntos] Resuelve \\(\\sen x=\\dfrac{\\sqrt{3}}{2}\\) en \\([0,2\\pi)\\)."
+                "prompt": "[2 puntos] Resuelve \\(\\sen x=\\dfrac{\\sqrt{3}}{2}\\) en \\([0,2\\pi)\\).",
+                "answerHtml": "<p>\\(x=\\dfrac{\\pi}{3}\\) o \\(x=\\dfrac{2\\pi}{3}\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  \\sen x=\\frac{\\sqrt{3}}{2}\n  \\]</div><p>ocurre en el primer y segundo cuadrante:</p><div class=\"math-display\">\\[\n  x=\\frac{\\pi}{3},\\qquad x=\\frac{2\\pi}{3}.\n  \\]</div><p><strong>Baremo orientativo:</strong> 1 punto por localizar el angulo notable y 1 punto por cuadrantes.</p>"
               },
               {
                 "tagId": "SM-R10.S05-03",
-                "prompt": "[3 puntos] Estudia la continuidad en \\(x=2\\) de \\[ f(x)= \\begin{cases} x+1, & x<2,\\\\ ax-1, & x\\geq 2. \\end{cases} \\] Halla el valor de \\(a\\) para que sea continua."
+                "prompt": "[3 puntos] Estudia la continuidad en \\(x=2\\) de \\[ f(x)= \\begin{cases} x+1, & x<2,\\\\ ax-1, & x\\geq 2. \\end{cases} \\] Halla el valor de \\(a\\) para que sea continua.",
+                "answerHtml": "<p>\\(a=2\\)</p>",
+                "solutionHtml": "<p>La continuidad en \\(x=2\\) exige igualdad entre limite lateral izquierdo y valor por la rama derecha:</p><div class=\"math-display\">\\[\n  \\lim_{x\\to 2^-}(x+1)=3,\n  \\qquad\n  f(2)=2a-1.\n  \\]</div><p>Por tanto,</p><div class=\"math-display\">\\[\n  3=2a-1 \\Longrightarrow a=2.\n  \\]</div><p><strong>Baremo orientativo:</strong> 1 punto por plantear la condicion, 1 punto por sustituir bien y 1 punto por despejar \\(a\\).</p>"
               },
               {
                 "tagId": "SM-R10.S05-04",
-                "prompt": "[3 puntos] Halla la recta tangente a \\(f(x)=x^2+1\\) que sea paralela a \\(y=4x-3\\)."
+                "prompt": "[3 puntos] Halla la recta tangente a \\(f(x)=x^2+1\\) que sea paralela a \\(y=4x-3\\).",
+                "answerHtml": "<p>\\(y=4x-3\\)</p>",
+                "solutionHtml": "<p>Si la tangente es paralela a \\(y=4x-3\\), debe tener pendiente \\(4\\). Como</p><div class=\"math-display\">\\[\n  f'(x)=2x,\n  \\]</div><p>imponemos</p><div class=\"math-display\">\\[\n  2x=4 \\Longrightarrow x=2.\n  \\]</div><p>El punto de tangencia es</p><div class=\"math-display\">\\[\n  (2,f(2))=(2,5).\n  \\]</div><p>La tangente pedida es</p><div class=\"math-display\">\\[\n  y-5=4(x-2),\n  \\]</div><p>es decir,</p><div class=\"math-display\">\\[\n  y=4x-3.\n  \\]</div><p><strong>Baremo orientativo:</strong> 1 punto por imponer la pendiente, 1 punto por el punto de tangencia y 1 punto por la recta final.</p>"
               }
             ],
             "answersHtml": "<ol><li><p>\\((-\\infty,-1]\\cup(2,\\infty)\\)</p></li><li><p>\\(x=\\dfrac{\\pi}{3}\\) o \\(x=\\dfrac{2\\pi}{3}\\)</p></li><li><p>\\(a=2\\)</p></li><li><p>\\(y=4x-3\\)</p></li></ol>",
@@ -7688,19 +8694,27 @@ window.MATHBOOK_CONTENT = {
             "items": [
               {
                 "tagId": "SM-R10.S06-01",
-                "prompt": "[2 puntos] Resuelve \\[ \\frac{1}{x-1}+\\frac{1}{x+1}=1. \\]"
+                "prompt": "[2 puntos] Resuelve \\[ \\frac{1}{x-1}+\\frac{1}{x+1}=1. \\]",
+                "answerHtml": "<p>\\(x=1+\\sqrt{2}\\) o \\(x=1-\\sqrt{2}\\)</p>",
+                "solutionHtml": "<p>El dominio exige \\(x\\neq 1\\) y \\(x\\neq -1\\). Sumamos fracciones:</p><div class=\"math-display\">\\[\n  \\frac{(x+1)+(x-1)}{x^2-1}=1\n  \\Longrightarrow \\frac{2x}{x^2-1}=1.\n  \\]</div><p>Multiplicando,</p><div class=\"math-display\">\\[\n  2x=x^2-1 \\Longrightarrow x^2-2x-1=0.\n  \\]</div><p>Entonces</p><div class=\"math-display\">\\[\n  x=\\frac{2\\pm \\sqrt{4+4}}{2}=1\\pm \\sqrt{2}.\n  \\]</div><p>Ambas soluciones respetan el dominio.</p>"
               },
               {
                 "tagId": "SM-R10.S06-02",
-                "prompt": "[2 puntos] Calcula la distancia del punto \\((1,-1)\\) a la recta \\(x+2y-5=0\\)."
+                "prompt": "[2 puntos] Calcula la distancia del punto \\((1,-1)\\) a la recta \\(x+2y-5=0\\).",
+                "answerHtml": "<p>\\(\\dfrac{6}{\\sqrt{5}}=\\dfrac{6\\sqrt{5}}{5}\\)</p>",
+                "solutionHtml": "<p>La formula de distancia es</p><div class=\"math-display\">\\[\n  d=\\frac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}.\n  \\]</div><p>Aqui \\(A=1\\), \\(B=2\\), \\(C=-5\\) y \\((x_0,y_0)=(1,-1)\\). Luego</p><div class=\"math-display\">\\[\n  d=\\frac{|1+2(-1)-5|}{\\sqrt{1^2+2^2}}=\\frac{6}{\\sqrt{5}}=\\frac{6\\sqrt{5}}{5}.\n  \\]</div>"
               },
               {
                 "tagId": "SM-R10.S06-03",
-                "prompt": "[3 puntos] Halla la asintota oblicua de \\[ f(x)=\\frac{x^2-2x+3}{x-1}. \\]"
+                "prompt": "[3 puntos] Halla la asintota oblicua de \\[ f(x)=\\frac{x^2-2x+3}{x-1}. \\]",
+                "answerHtml": "<p>\\(y=x-1\\)</p>",
+                "solutionHtml": "<p>Dividimos polinomios:</p><div class=\"math-display\">\\[\n  \\frac{x^2-2x+3}{x-1}=x-1+\\frac{2}{x-1}.\n  \\]</div><p>Como el resto partido por \\(x-1\\) tiende a \\(0\\) en el infinito, la asintota oblicua es</p><div class=\"math-display\">\\[\n  y=x-1.\n  \\]</div>"
               },
               {
                 "tagId": "SM-R10.S06-04",
-                "prompt": "[3 puntos] Halla el minimo de \\(f(x)=x+\\dfrac{4}{x}\\) para \\(x>0\\)."
+                "prompt": "[3 puntos] Halla el minimo de \\(f(x)=x+\\dfrac{4}{x}\\) para \\(x>0\\).",
+                "answerHtml": "<p>Minimo \\(4\\), alcanzado en \\(x=2\\)</p>",
+                "solutionHtml": "<div class=\"math-display\">\\[\n  f'(x)=1-\\frac{4}{x^2}.\n  \\]</div><p>El punto critico en \\(x>0\\) cumple</p><div class=\"math-display\">\\[\n  1-\\frac{4}{x^2}=0 \\Longrightarrow x^2=4 \\Longrightarrow x=2.\n  \\]</div><p>Ademas \\(f'\\) pasa de negativo a positivo, asi que hay minimo en \\(x=2\\). El valor minimo es</p><div class=\"math-display\">\\[\n  f(2)=2+\\frac{4}{2}=4.\n  \\]</div>"
               }
             ],
             "answersHtml": "<ol><li><p>\\(x=1+\\sqrt{2}\\) o \\(x=1-\\sqrt{2}\\)</p></li><li><p>\\(\\dfrac{6}{\\sqrt{5}}=\\dfrac{6\\sqrt{5}}{5}\\)</p></li><li><p>\\(y=x-1\\)</p></li><li><p>Minimo \\(4\\), alcanzado en \\(x=2\\)</p></li></ol>",

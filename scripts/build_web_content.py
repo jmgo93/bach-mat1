@@ -324,6 +324,15 @@ def split_challenge_region(section_body: str) -> tuple[str, str]:
     return section_body[:challenge_start], section_body[challenge_start:]
 
 
+def split_ordered_list_html(html: str) -> list[str]:
+    if not html.strip():
+        return []
+    match = re.fullmatch(r"\s*<ol>(.*)</ol>\s*", html, re.S)
+    if not match:
+        return [html]
+    return [item.strip() for item in re.findall(r"<li>(.*?)</li>", match.group(1), re.S)]
+
+
 def parse_practice(section_body: str) -> dict[str, object]:
     main_region, _ = split_challenge_region(section_body)
     practice_match = re.search(r"\\subsection\*\{([^}]*Practica[^}]*)\}", main_region)
@@ -337,22 +346,38 @@ def parse_practice(section_body: str) -> dict[str, object]:
         practice_region = main_region[first_exercise.start() :]
         label = "Practica autonoma graduada"
 
+    exercises = collect_envs(practice_region, "exercise")
+    answers = collect_envs(practice_region, "shortanswer")
+    solutions = collect_envs(practice_region, "fullsolution")
+    answers_html = answers[0]["html"] if answers else ""
+    solutions_html = solutions[0]["html"] if solutions else ""
+    answer_items = split_ordered_list_html(answers_html)
+    solution_items = split_ordered_list_html(solutions_html)
+
+    expected_count = len(exercises)
+    if expected_count and (len(answer_items) != expected_count or len(solution_items) != expected_count):
+        section_id = extract_tag_id(exercises[0]["title"]).split("-")[1] if exercises else "desconocida"
+        raise ValueError(
+            f"Correspondencia incompleta en {section_id}: "
+            f"{expected_count} ejercicios, {len(answer_items)} respuestas y {len(solution_items)} soluciones"
+        )
+
     items = []
-    for exercise in collect_envs(practice_region, "exercise"):
+    for index, exercise in enumerate(exercises):
         items.append(
             {
                 "tagId": exercise["tagId"],
                 "prompt": exercise["titleText"],
+                "answerHtml": answer_items[index],
+                "solutionHtml": solution_items[index],
             }
         )
 
-    answers = collect_envs(practice_region, "shortanswer")
-    solutions = collect_envs(practice_region, "fullsolution")
     return {
         "label": label,
         "items": items,
-        "answersHtml": answers[0]["html"] if answers else "",
-        "solutionsHtml": solutions[0]["html"] if solutions else "",
+        "answersHtml": answers_html,
+        "solutionsHtml": solutions_html,
     }
 
 
